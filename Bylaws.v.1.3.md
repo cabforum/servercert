@@ -1,6 +1,7 @@
 
 **| --- |**
-**| BYLAWS OF THE CA/BROWSER FORUM Adopted effective as of 10 July 2015 |**
+**| BYLAWS OF THE CA/BROWSER FORUM|**
+**| Version 1.3 - Adopted effective as of 10 July 2015 |**
 **| --- |**
 
 
