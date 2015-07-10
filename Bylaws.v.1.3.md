@@ -1,11 +1,11 @@
 
-**| -------------------------------------------------- |**
-**|                                                    |**
-**|         BYLAWS OF THE CA/BROWSER FORUM             |**
-**|                                                    |**
-**| Version 1.3 - Adopted effective as of 10 July 2015 |**
-**|                                                    |**
-**| -------------------------------------------------- |**
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+**BYLAWS OF THE CA/BROWSER FORUM** 
+
+**Version 1.3 - Adopted effective as of 10 July 2015**
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 
 **1.  CA/BROWSER FORUM – PURPOSE, STATUS, AND ANTITRUST LAWS**
