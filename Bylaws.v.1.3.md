@@ -1,12 +1,11 @@
 
-**| --- |**
-
-**| BYLAWS OF THE CA/BROWSER FORUM |**
-
+**| -------------------------------------------------- |**
+**|                                                    |**
+**|         BYLAWS OF THE CA/BROWSER FORUM             |**
+**|                                                    |**
 **| Version 1.3 - Adopted effective as of 10 July 2015 |**
-
-**| --- |**
-
+**|                                                    |**
+**| -------------------------------------------------- |**
 
 
 **1.  CA/BROWSER FORUM – PURPOSE, STATUS, AND ANTITRUST LAWS**
@@ -14,7 +13,6 @@
 **1.1        Purpose of the Forum:**
 
 The Certification Authority Browser Forum (CA/Browser Forum) is a voluntary gathering of leading certification authorities (CAs) and vendors of Internet browser software and other applications.
-
 
 Members of the CA/Browser Forum have worked closely together in defining the guidelines and means of implementation for best practices as a way of providing a heightened security for Internet transactions and creating a more intuitive method of displaying secure sites to Internet users.
 
