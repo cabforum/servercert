@@ -1,6 +1,7 @@
 
-| BYLAWS OF THE CA/BROWSER FORUM Adopted effective as of 16 October 2014 |
-| --- |
+**| --- |**
+**| BYLAWS OF THE CA/BROWSER FORUM Adopted effective as of 10 July 2015 |**
+**| --- |**
 
 
 
@@ -45,29 +46,34 @@ The Chair will read an antitrust compliance statement at the start of all Forum 
 
 (a)        CA/Browser Forum members shall meet at least one of the following criteria.
 
-(1)        Issuing CA: The member organization operates a certification authority that has a current and successful WebTrust for CAs audit, or ETSI 102042 or ETSI 101456 audit report prepared by a properly-qualified auditor, and that actively issues certificates to Web servers that are openly accessible from the Internet using any one of the mainstream browsers.
+(1)        __Issuing CA__: The member organization operates a certification authority that has a current and successful WebTrust for CAs audit, or ETSI 102042 or ETSI 101456 audit report prepared by a properly-qualified auditor, and that actively issues certificates to Web servers that are openly accessible from the Internet using a browser created by a Browser member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
 
-(2)        Root CA: The member organization operates a certification authority that has a current and successful WebTrust for CAs, or ETSI 102042 or ETSI 101456 audit report prepared by a properly-qualified auditor, and that actively issues certificates to subordinate CAs that, in turn, actively issue certificates to Web servers that are openly accessible from the Internet using any one of the mainstream browsers.
+(2)        __Root CA__: The member organization operates a certification authority that has a current and successful WebTrust for CAs, or ETSI 102042 or ETSI 101456 audit report prepared by a properly-qualified auditor, and that actively issues certificates to subordinate CAs that, in turn, actively issue certificates to Web servers that are openly accessible from the Internet using a browser created by a Browser member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
 
-(3)        Browser: The member organization produces a software product intended for use by the general public for browsing the Web securely.
+(3)        __Browser__: The member organization produces a software product intended for use by the general public for browsing the Web securely.
 
 (b)        Applicants should supply the following information:
 
 (1)        Confirmation that the applicant satisfies at least one of the membership criteria (and if it satisfies more than one, indication of the single category under which the applicant wishes to apply).
 
-(2)        URL of the current qualifying performance audit report.
+(2)        The organization name, as you wish it to appear on the Forum Web site and in official Forum documents.
 
-(3)        The organization name, as you wish it to appear on the Forum Web site and in official Forum documents.
+(3)        URL of the applicant's main Web site.
 
-(4)        URL of the applicant's main Web site.
+(4)        Names and email addresses of employees who will participate in the Forum mail list.
 
-(5)        Names and email addresses of employees who will participate in the Forum mail list.
+(5)        Emergency contact information for security issues related to certificate trust.
 
-(6)  Emergency contact information for security issues related to certificate trust.
+CA Applicants should supply the following additional information:
+ 
+(6) URL of the current qualifying performance audit report.
+ 
+(7) Links or references to issued certificates that demonstrate compliance with all applicable certificate, CRL, and OCSP requirements.
 
-(c)        An Applicant shall become a Member once the Forum has determined by vote that the Applicant meets all of the requirements of subsection (a).  A vote of Members shall be held as soon as the Applicant indicates that it has presented all information required under subsection (b) and has responded to all follow-up questions from the Forum and the Member has complied with the requirements of Section 5.5.
 
-**2.2        Ballots**** Among Forum Members**
+(c)        An Applicant shall become a Member once the Forum has determined by consensus among the Members during a teleconference or meeting that the Applicant meets all of the requirements of subsection (a) or, upon the request of any Member, by a Ballot among the Members.  Acceptance by consensus shall be determined or a Ballot of Members shall be held as soon as the Applicant indicates that it has presented all information required under subsection (b) and has responded to all follow-up questions from the Forum and the Member has complied with the requirements of Section 5.5.
+
+**2.2        Ballots Among Forum Members**
 
 Ballots will be conducted in accordance with the following rules.
 
@@ -167,7 +173,7 @@ Members have discretion about which mailing list they use, but are strongly enco
 
 Members are strongly discouraged from posting the text of Member Mail List messages to the Public Mail List without the permission of the author or commenter.
 
-5.2 Public Mail List and Public Web Site
+**5.2 Public Mail List and Public Web Site**
 
 The Chair shall appoint a List Manager who shall maintain a Public Mail List.  Forum Members and Interested Parties may post to the Public Mail List in compliance with these Bylaws.  Anyone else is allowed to subscribe to and receive messages posted to the Public Mail List, which may be crawled and indexed by Internet search engines.
 
@@ -197,7 +203,7 @@ The Forum shall review the final recommendations from a Working Groups and may a
 
 The Forum shall not be required to submit any matter to a Working Group, but may itself draft requirements and guidelines without a Working Group in its discretion.
 
-5.4 Forum Teleconferences and Forum Meetings
+**5.4 Forum Teleconferences and Forum Meetings**
 
 From time to time the Forum will hold Forum Teleconferences and Forum Meetings among the Members and Associate Members, who may participate in person or (where feasible) by teleconference.  Interested Parties and others may be invited by the Chair, in the Chair's discretion, to participate in those portions of Forum Teleconferences and Forum Meetings that are relevant to their expertise or their participation in Working Groups.
 
@@ -213,7 +219,7 @@ In general, Forum projects will follow the model Project Lifecycle attached as E
 
 **6.  MISCELLANEOUS**
 
-6.1 Posting and Amendment of the Bylaws
+**6.1  Posting and Amendment of the Bylaws**
 
 The current Bylaws shall be posted to the Public Web Site.  These Bylaws may be amended by subsequent ballot of the Members.
 
@@ -231,7 +237,7 @@ The Forum procedure for dealing with questions and comments sent to the Question
 
 (e)        If consensus cannot be achieved, or one or more objections are received, then the matter should be dealt with in the next Forum Meeting or Forum Teleconference.
 
-DEFINITIONS
+**DEFINITIONS**
 
 **Forum Meetings:** Face-to-face meetings of Members as scheduled from time to time.
 
@@ -243,8 +249,6 @@ DEFINITIONS
 
 **Member Web Site:** The password-protected web site available only to Members (currently called the CA/Browser Forum Wiki).
 
-
-
 **Public Mail List:** The public email list-serv currently located at public@cabforum.org maintained by the Forum for communications by and among Members and Interested Parties.  The Public Mail List may be read by Other Parties, but Other Parties may not post to the Public Mail List.
 
 **Public Web Site:** The web site available only to Members, Interested Parties, and Other Parties (currently located at [cabforum.org](http://www.cabforum.org/)).  A Forum Member will be appointed as Webmaster and will control all postings to the Public Web Site.
@@ -253,7 +257,7 @@ DEFINITIONS
 
 
 
-Exhibit A
+**Exhibit A**
 
 **CAB Forum IPR Policy Agreement**
 
@@ -265,7 +269,7 @@ The party signing this Agreement intends that it shall take effect as an instrum
 
 The Participant represents and warrants that either: (a) it has the authority to enter into this Agreement on behalf of all of its Affiliates; or (b) it has no Affiliates; or (c) each of its Affiliates has executed and delivered to the CAB Forum a countersignature to this Agreement, indicating that it consents to this Agreement, and agrees to enforce this Agreement's terms as to any of such Affiliate's Intellectual Property, including such terms as may properly be changed by the CAB Forum by notice to the Participant under this Agreement.
 
-PARTICIPANT
+**PARTICIPANT**
 
 
 
