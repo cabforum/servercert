@@ -8,14 +8,12 @@ all: deploy
 docs:
 	$(MAKE) -C docs
 	$(MAKE) -C assets
-	$(MAKE) -C output
 
 deploy: docs
 	$(MAKE) -C docs deploy
 	$(MAKE) -C assets deploy
-	$(MAKE) -C output deploy
 
 clean:
 	$(MAKE) -C docs clean 
 	$(MAKE) -C assets clean
-	$(MAKE) -C output clean 
+    find output/ -mindepth 1 -maxdepth 1 -exec rm -r "{}" "+"
