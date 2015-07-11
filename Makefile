@@ -16,4 +16,4 @@ deploy: docs
 clean:
 	$(MAKE) -C docs clean 
 	$(MAKE) -C assets clean
-    find output/ -mindepth 1 -maxdepth 1 -exec rm -r "{}" "+"
+	find output/ -mindepth 1 -maxdepth 1 -exec rm -r "{}" "+"
