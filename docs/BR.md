@@ -3,22 +3,16 @@
 
 
 **Baseline Requirements**
-
 **Certificate Policy**
-
 **for the**
-
 **Issuance and Management of**
-
 **Publicly-Trusted Certificates**
 
 
 
 
 **CA/Browser Forum**
-
 **Version 1.3.0**
-
 **April 16, 2015**
 
 *www.cabforum.org**
@@ -320,7 +314,7 @@ No stipulation.
 
 ### 1.6.2   Acronyms
 
-
+| --- | --- |
 | AICPA | American Institute of Certified Public Accountants |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
@@ -347,6 +341,7 @@ No stipulation.
 | TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
 | VOIP | Voice Over Internet Protocol |
+
 
 
 
