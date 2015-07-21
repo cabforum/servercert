@@ -1,6 +1,40 @@
+**CA/Browser Forum**
+
+
+
+**Baseline Requirements**
+**Certificate Policy**
+**for the**
+**Issuance and Management of**
+**Publicly-Trusted Certificates**
+
+
+
+
+**CA/Browser Forum**
+**Version 1.3.0**
+**April 16, 2015**
+
+*www.cabforum.org**
+
+
+
 # 1. INTRODUCTION
 
 ## 1.1 Overview
+This CP describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software.  The requirements are not mandatory for Certification Authorities unless and until they become adopted and enforced by relying–party Application Software Suppliers.  
+
+**Notice to Readers**
+
+The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
+
+These Requirements do not address all of the issues relevant to the issuance and management of Publicly-Trusted Certificates.  In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this CP includes all sections of the RFC 3647 framework.  However, rather than beginning with a “no stipulation” comment in all empty sections, the CA/Browser Forum is leaving such sections initially blank until a decision of “no stipulation” is made.  The CA/Browser Forum may update these Requirements from time to time, in order to address both existing and emerging threats to online security.  In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.
+
+These Requirements only address Certificates intended to be used for authenticating servers accessible through the Internet.  Similar requirements for code signing, S/MIME, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
+
+These Requirements do not address the issuance, or management of Certificates by enterprises that operate their own Public Key Infrastructure for internal purposes only, and for which the Root Certificate is not distributed by any Application Software Supplier.
+
+These Requirements are applicable to all Certification Authorities within a chain of trust. They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.
 
 ## 1.2 Document name and identification
 This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum.
@@ -13,15 +47,68 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) subject-identity-validated(2)} (2.23.140.1.2.2).
 {:.br data-sect="9.3.1"}
 
-## 1.3 PKI participants
+
+
+### 1.2.1.Revisions
+
+| **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
+| --- | --- | --- | --- | --- |
+| 1.0.0 | 62 |  Version 1.0 of the Baseline Requirements Adopted | 22-Nov-11 | 01-Jul-12 |
+| 1.0.1 | 71 |  Revised Auditor Qualifications | 08-May-12 | 01-Jan-13 |
+| 1.0.2 | 75 |  Non-critical Name Constraints allowed as exception to RFC 5280 | 08-Jun-12 | 08-Jun-12 |
+| 1.0.3 | 78 |  Revised Domain/IP Address Validation, High Risk Requests, and Data Sources | 22-Jun-12 | 22-Jun-12 |
+| 1.0.4 | 80 |  OCSP responses for non-issued certificates | 02-Aug-12 | 01-Feb-13 01-Aug-13 |
+| -- | 83 |  Network and Certificate System Security Requirements adopted | 03-Aug-13 | 01-Jan-13 |
+| 1.0.5 | 88 |  User-assigned country code of XX allowed | 12-Sep-12 | 12-Sep-12 |
+| 1.1.0 | -- |  Published as Version 1.1 with no changes from 1.0.5 | 14-Sep-12 | 14-Sep-12 |
+| 1.1.1 | 93 |  Reasons for Revocation and Public Key Parameter checking | 07-Nov-12 | 07-Nov-12 01-Jan-13 |
+| 1.1.2 | 96 |  Wildcard certificates and new gTLDs | 20-Feb-13 | 20-Feb-13 01-Sep-13 |
+| 1.1.3 | 97 |  Prevention of Unknown Certificate Contents | 21-Feb-13 | 21-Feb-13 |
+| 1.1.4 | 99 | Add DSA Keys (BR v.1.1.4) | 3-May-2013 | 3-May-2013 |
+| 1.1.5 | 102 | Revision to subject domainComponent language in section 9.2.3 | 31-May-2013 | 31-May-2013 |
+| 1.1.6 | 105 | Technical Constraints for Subordinate Certificate Authorities | 29-July-2013 | 29-July-2013 |
+| 1.1.7 | 112 | Replace Definition of  "Internal Server Name" with "Internal Name" | 3-April-2014 | 3-April-2014 |
+| 1.1.8 | 120 | Affiliate Authority to Verify Domain | 5-June-2014 | 5-June-2014 |
+| 1.1.9 | 129 | Clarification of PSL mentioned in Section 11.1.3 | 4-Aug-2014 | 4-Aug-2014 |
+| 1.2.0 | 125 | CAA Records | 14-Oct-2014 | 15-Apr-2015 |
+| 1.2.1 | 118 | SHA-1 Sunset | 16-Oct-2014 | 16-Jan-2015 1-Jan-2016 1-Jan-2017 |
+| 1.2.2 | 134 | Application of RFC 5280 to Pre-certificates | 16-Oct-2014 | 16-Oct-2014 |
+| 1.2.3 | 135 | ETSI Auditor Qualifications | 16-Oct-2014 | 16-Oct-2014 |
+| 1.2.4 | 144 | Validation Rules for .onion Names | 18-Feb-2015 | 18-Feb-2015 |
+| 1.2.5 | 148 | Issuer Field Correction | 2-April-2015 | 2-April-2015 |
+| 1.3.0 | 146 | Convert Baseline Requirements to RFC 3647 Framework | 16-Apr-2015 | 16-Apr-2015 |
+
+\* Effective Date and Additionally Relevant Compliance Date(s)
+
+### 1.2.2.Relevant Dates
+
+| **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
+| --- | --- | --- |
+| 2013-01-01 | 6.1.6 | For RSA public keys, CAs SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. |
+| 2013-01-01 | 4.9.10 | CAs SHALL support an OCSP capability using the GET method. |
+| 2013-01-01 | 5 | CAs SHALL comply with the Network and Certificate System Security Requirements. |
+| 2013-08-01 | 4.9.10 | OCSP Responders SHALL NOT respond "Good" for Unissued Certificates. |
+| 2013-09-01 | 3.2.2.6 | CAs SHALL revoke any certificate where wildcard character occurs in the first label position immediately to the left of a "registry-controlled" label or "public suffix". |
+| 2013-12-31 | 6.1.5 | CAs SHALL confirm that the RSA Public Key is at least 2048 bits or that one of the following ECC curves is used: P-256, P-384, or P-521.  A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor. |
+| 2015-01-16 | 7.1.3 | CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017. |
+| 2015-04-01 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 39 months. |
+| 2015-04-15 | 2.2 | A CA's CPS must state whether it reviews CAA Records, and if so, its policy or practice on processing CAA records for Fully Qualified Domain Names. |
+| 2015-11-01 | 7.1.4.2.1 | Issuance of Certificates with Reserved IP Address or Internal Name prohibited. |
+| 2016-01-01 | 7.1.3 | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. |
+| 2016-10-01 | 7.1.4.2.1 | All Certificates with Reserved IP Address or Internal Name must be revoked. |
+| 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
+
+
+
+## 1.3 PKI Participants
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
 {:.br data-sect="ii"}
 
-### 1.3.1 Certification authorities
+### 1.3.1 Certification Authorities
 Certification Authority (CA) is defined in Section 1.6, Definitions. Current CA Members of the CA/Browser Forum are listed here: https://cabforum.org/members.
 {:.br data-sect="ii"}
 
-### 1.3.2 Registration authorities
+### 1.3.2 Registration Authorities
 The CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Section 3.2.
 
 Before the CA authorizes a Delegated Third Party to perform a delegated function, the CA SHALL contractually require the Delegated Third Party to:
@@ -45,39 +132,218 @@ The CA SHALL impose these limitations as a contractual requirement on the Enterp
 As defined in Section 1.6.1 Definitions.
 {:.br data-sect="unk"}
 
-### 1.3.4 Relying parties
+### 1.3.4 Relying Parties
 Relying Party" and "Application Software Supplier" are defined in Section 1.6.1, Definitions. Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here: https://cabforum.org/members.
 {:.br data-sect="ii"}
 
-### 1.3.5 Other participants
+### 1.3.5 Other Participants
 Other groups that have participated in the development of these Requirements include the AICPA/CICA WebTrust for Certification Authorities task force and ETSI ESI. Participation by such groups does not imply their endorsement, recommendation, or approval of the final product.
 {:.br data-sect="ii"}
 
-## 1.4 Certificate usage
+## 1.4 Certificate Usage
 
-### 1.4.1 Appropriate certificate uses
+### 1.4.1 Appropriate Certificate Uses
 The primary goal of these Requirements is to enable efficient and secure electronic communication, while addressing user concerns about the trustworthiness of Certificates. These Requirements also serve to inform users and help them to make informed decisions when relying on Certificates.
 {:.br data-sect="2"}
 
-### 1.4.2 Prohibited certificate uses
+### 1.4.2 Prohibited Certificate Uses
 No stipulation.
 
 ## 1.5 Policy administration
 This Certificate Policy for Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates present criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum. Because one of the primary beneficiaries of this CP is the end user, the Forum openly invites anyone to make recommendations and suggestions by email to the CA/Browser Forum at questions@cabforum.org. The Forum members value all input, regardless of source, and will seriously consider all such input.
 {:.br data-sect="Notice to Readers"}
 
-### 1.5.1 Organization administering the document
+### 1.5.1 Organization Administering the Document
 No stipulation.
 
-### 1.5.2 Contact person
+### 1.5.2 Contact Person
 No stipulation.
 
-### 1.5.3 Person determining CPS suitability for the policy
+### 1.5.3 Person Determining CPS suitability for the policy
 
 ### 1.5.4 CPS approval procedures
 No stipulation.
 
-## 1.6 Definitions and acronyms
+## 1.6 Definitions and Acronyms
+
+### 1.6.1  Definitions
+
+**Affiliate:**  A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
+
+**Applicant:**  The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate.  Once the Certificate issues, the Applicant is referred to as the Subscriber.  For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
+
+**Applicant Representative:**  A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant:  (i) who signs and submits, or approves a certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges and agrees to the Certificate Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA.
+
+**Application Software Supplier:**  A supplier of Internet browser software or other relying-party application software that displays or uses Certificates and incorporates Root Certificates.
+
+**Attestation Letter:** A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
+
+**Audit Report:** A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
+
+**CAA:**  From RFC 6844 ( [http:tools.ietf.org/html/rfc6844](http://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
+
+**Certificate:** An electronic document that uses a digital signature to bind a public key and an identity.
+
+**Certificate Data:**  Certificate requests and data related thereto (whether obtained from the Applicant or otherwise) in the CA's possession or control or to which the CA has access.
+
+**Certificate Management Process:**  Processes, practices, and procedures associated with the use of keys, software, and hardware, by which the CA verifies Certificate Data, issues Certificates, maintains a Repository, and revokes Certificates.
+
+**Certificate Policy:**  A set of rules that indicates the applicability of a named Certificate to a particular community and/or PKI implementation with common security requirements.
+
+**Certificate Problem Report:**  Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates.
+
+**Certificate Revocation List:**  A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
+
+**Certification Authority:**  An organization that is responsible for the creation, issuance, revocation, and management of Certificates.  The term applies equally to both Roots CAs and Subordinate CAs.
+
+**Certification Practice Statement:**  One of several documents forming the governance framework in which Certificates are created, issued, managed, and used.
+
+**Control:**  "Control" (and its correlative meanings, "controlled by" and "under common control with") means possession, directly or indirectly, of the power to: (1) direct the management, personnel, finances, or plans of such entity; (2) control the election of a majority of the directors ; or (3) vote that portion of voting shares required for  "control" under the law of the entity's Jurisdiction of Incorporation or Registration but in no case less than 10%.
+
+**Country:** Either a member of the United Nations OR a geographic region recognized as a sovereign nation by at least two UN member nations.
+
+**Cross Certificate:**   A certificate that is used to establish a trust relationship between two Root CAs.
+
+**Delegated Third Party:** A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
+
+**Domain Authorization Document** :  Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
+
+**Domain Name:** The label assigned to a node in the Domain Name System.
+
+**Domain Namespace:**  The set of all possible Domain Names that are subordinate to a single node in the Domain Name System.
+
+**Domain Name Registrant:**  Sometimes referred to as the "owner" of a Domain Name, but more properly the person(s) or entity(ies) registered with a Domain Name Registrar as having the right to control how a Domain Name is used, such as the natural person or Legal Entity that is listed  as the "Registrant" by WHOIS or the Domain Name Registrar.
+
+**Domain Name Registrar:**  A person or entity that registers Domain Names under the auspices of or by agreement with: (i) the Internet Corporation for Assigned Names and Numbers (ICANN), (ii) a national Domain Name authority/registry, or (iii) a Network Information Center (including their affiliates, contractors, delegates, successors, or assigns).
+
+**Effective Date:**   1 July 2012.
+
+**Enterprise RA:**  An employee or agent of an organization unaffiliated with the CA who authorizes issuance of Certificates to that organization.
+
+**Expiry Date:**   The "Not After" date in a Certificate that defines the end of a Certificate's validity period.
+
+**Fully-Qualified Domain Name:** A Domain Name that includes the labels of all superior nodes in the Internet Domain Name System.
+
+**Government Entity:** A government-operated legal entity, agency, department, ministry, branch, or similar element of the government of a country, or political subdivision within such country (such as a state, province, city, county, etc.).
+
+**High Risk Certificate Request:** A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
+
+**Internal  Name:**  A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
+
+**Issuing CA:**  In relation to a particular Certificate, the CA that issued the Certificate.  This could be either a Root CA or a Subordinate CA.
+
+**Key Compromise:** A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, an unauthorized person has had access to it, or there exists a practical technique by which an unauthorized person may discover its value.  A Private Key is also considered compromised if methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys) or if there is clear evidence that the specific method used to generate the Private Key was flawed.
+
+**Key Generation Script:**  A documented plan of procedures for the generation of a CA Key Pair **.**
+
+**Key Pair:**  The Private Key and its associated Public Key.
+
+**Legal Entity:** An [association](http://www.businessdictionary.com/definition/association.html), [corporation](http://www.businessdictionary.com/definition/corporation.html), [partnership](http://www.businessdictionary.com/definition/partnership.html), [proprietorship](http://www.businessdictionary.com/definition/proprietorship.html), [trust](http://www.businessdictionary.com/definition/trust.html), government entity or other entity with [legal](http://www.businessdictionary.com/definition/legal.html) [standing](http://www.investorwords.com/7216/standing.html)in a country's legal system.
+
+**Object Identifier:**  A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
+
+**OCSP Responder:**  An online server operated under the authority of the CA and connected to its Repository for processing Certificate status requests.  See also, Online Certificate Status Protocol.
+
+**Online Certificate Status Protocol:**  An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate.  See also OCSP Responder.
+
+**Parent Company:**  A company that Controls a Subsidiary Company.
+
+**Private Key:**  The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
+
+**Public Key:**  The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used by a Relying Party to verify Digital Signatures created with the holder's corresponding Private Key and/or to encrypt messages so that they can be decrypted only with the holder's corresponding Private Key.
+
+**Public Key Infrastructure:**  A set of hardware, software, people, procedures, rules, policies, and obligations used to facilitate the trustworthy creation, issuance, management, and use of Certificates and keys based on Public Key Cryptography.
+
+**Publicly-Trusted Certificate:**  A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
+
+**Qualified Auditor:** A natural person or Legal Entity that meets the requirements of Section 8.3 (Auditor Qualifications).
+
+**Registered Domain Name:** A Domain Name that has been registered with a Domain Name Registrar.
+
+**Registration Authority (RA):**  Any Legal Entity that is responsible for identification and authentication of subjects of Certificates, but is not a CA, and hence does not sign or issue Certificates. An RA may assist in the certificate application process or revocation process or both.  When "RA" is used as an adjective to describe a role or function, it does not necessarily imply a separate body, but can be part of the CA.
+
+**Reliable Data Source:** An identification document or source of data used to verify Subject Identity Information that is generally recognized among commercial enterprises and governments as reliable, and which was created by a third party for a purpose other than the Applicant obtaining a Certificate.
+
+**Reliable Method of Communication:** A method of communication, such as a postal/courier delivery address, telephone number, or email address, that was verified using a source other than the Applicant Representative.
+
+**Relying Party:**  Any natural person or Legal Entity that relies on a Valid Certificate.  An Application Software Supplier is not considered a Relying Party when software distributed by such Supplier merely displays information relating to a Certificate.
+
+**Repository:**  An online database containing publicly-disclosed PKI governance documents (such as Certificate Policies and Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
+
+**Requirements:**  The Baseline Requirements found in this document.
+
+**Reserved IP Address:**  An IPv4 or IPv6 address that the IANA has marked as reserved:
+
+[http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
+
+[http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml](http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
+
+**Root CA:**  The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
+
+**Root Certificate:**  The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
+
+**Sovereign State:** A state or country that administers its own government, and is not dependent upon, or subject to, another power.
+
+**Subject:**  The natural person, device, system, unit, or Legal Entity identified in a Certificate as the Subject.  The Subject is either the Subscriber or a device under the control and operation of the Subscriber.
+
+**Subject Identity Information:** Information that identifies the Certificate Subject.  Subject Identity Information does not include a domain name listed in the subjectAltName extension or the Subject commonName field.
+
+**Subordinate CA:**  A Certification Authority whose Certificate is signed by the Root CA, or another Subordinate CA.
+
+**Subscriber:**  A natural person or Legal Entity to whom a Certificate is issued and who is legally bound by a Subscriber or Terms of Use Agreement.
+
+**Subscriber Agreement:**  An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
+
+**Subsidiary Company:**  A company that is controlled by a Parent Company.
+
+**Technically Constrained Subordinate CA Certificate:** A Subordinate CA certificate which uses a combination of Extended Key Usage settings and Name Constraint settings to limit the scope within which the Subordinate CA Certificate may issue Subscriber or additional Subordinate CA Certificates.
+
+**Terms of Use:**  Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA.
+
+**Trustworthy System:**  Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
+
+**Unregistered Domain Name:** A Domain Name that is not a Registered Domain Name.
+
+**Valid Certificate:**  A Certificate that passes the validation procedure specified in RFC 5280.
+
+**Validation Specialists:**  Someone who performs the information verification duties specified by these Requirements.
+
+**Validity Period:**   The period of time measured from the date when the Certificate is issued until the Expiry Date.
+
+**Wildcard Certificate:**  A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
+
+### 1.6.2   Acronyms
+
+| --- | --- |
+| AICPA | American Institute of Certified Public Accountants |
+| CA | Certification Authority |
+| CAA | Certification Authority Authorization |
+| ccTLD | Country Code Top-Level Domain |
+| CICA | Canadian Institute of Chartered Accountants |
+| CP | Certificate Policy |
+| CPS | Certification Practice Statement |
+| CRL | Certificate Revocation List |
+| DBA | Doing Business As |
+| DNS | Domain Name System |
+| FIPS | (US Government) Federal Information Processing Standard |
+| FQDN | Fully Qualified Domain Name |
+| IM | Instant Messaging |
+| IANA | Internet Assigned Numbers Authority |
+| ICANN | Internet Corporation for Assigned Names and Numbers |
+| ISO | International Organization for Standardization |
+| NIST | (US Government) National Institute of Standards and Technology |
+| OCSP | Online Certificate Status Protocol |
+| OID | Object Identifier |
+| PKI | Public Key Infrastructure |
+| RA | Registration Authority |
+| S/MIME | Secure MIME (Multipurpose Internet Mail Extensions) |
+| SSL | Secure Sockets Layer |
+| TLD | Top-Level Domain |
+| TLS | Transport Layer Security |
+| VOIP | Voice Over Internet Protocol |
+
+
+
 
 ### 1.6.3 References
 ETSI TS 119 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - General Requirements and Guidance.
@@ -171,7 +437,7 @@ If the Applicant requests a Certificate that will contain Subject Identity Infor
 #### 3.2.2.1 Identity
 If the Subject Identity Information is to include the name or address of an organization, the CA SHALL verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  The CA SHALL verify the identity and address of the Applicant using documentation provided by, or through communication with, at least one of the following:
 
-1. A <ins>G</ins><del>g</del>overnment <ins>A</ins><del>a</del>gency in the <del>jurisdiction of the</del> Applicant's <del>legal creation, existence, or recognition</del><ins>Jurisdiction of Incorporation or Jurisdiction of Registration</ins>;
+1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
 2. A third party database that is periodically updated and considered a Reliable Data Source;
 3. A site visit by the CA or a third party who is acting as an agent for the CA; or
 4. An Attestation Letter.
