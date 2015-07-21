@@ -2,18 +2,25 @@
 
 
 
-**Baseline Requirements
-Certificate Policy**
+**Baseline Requirements**
+
+**Certificate Policy**
+
 **for the**
-**Issuance and Management of
-Publicly-Trusted Certificates**
+
+**Issuance and Management of**
+
+**Publicly-Trusted Certificates**
 
 
 
 
 **CA/Browser Forum**
+
 **Version 1.3.0**
+
 **April 16, 2015**
+
 *www.cabforum.org**
 
 
@@ -56,12 +63,12 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.0.1 | 71 |  Revised Auditor Qualifications | 08-May-12 | 01-Jan-13 |
 | 1.0.2 | 75 |  Non-critical Name Constraints allowed as exception to RFC 5280 | 08-Jun-12 | 08-Jun-12 |
 | 1.0.3 | 78 |  Revised Domain/IP Address Validation, High Risk Requests, and Data Sources | 22-Jun-12 | 22-Jun-12 |
-| 1.0.4 | 80 |  OCSP responses for non-issued certificates | 02-Aug-12 | 01-Feb-1301-Aug-13 |
+| 1.0.4 | 80 |  OCSP responses for non-issued certificates | 02-Aug-12 | 01-Feb-13 01-Aug-13 |
 | -- | 83 |  Network and Certificate System Security Requirements adopted | 03-Aug-13 | 01-Jan-13 |
 | 1.0.5 | 88 |  User-assigned country code of XX allowed | 12-Sep-12 | 12-Sep-12 |
 | 1.1.0 | -- |  Published as Version 1.1 with no changes from 1.0.5 | 14-Sep-12 | 14-Sep-12 |
-| 1.1.1 | 93 |  Reasons for Revocation and Public Key Parameter checking | 07-Nov-12 | 07-Nov-1201-Jan-13 |
-| 1.1.2 | 96 |  Wildcard certificates and new gTLDs | 20-Feb-13 | 20-Feb-1301-Sep-13 |
+| 1.1.1 | 93 |  Reasons for Revocation and Public Key Parameter checking | 07-Nov-12 | 07-Nov-12 01-Jan-13 |
+| 1.1.2 | 96 |  Wildcard certificates and new gTLDs | 20-Feb-13 | 20-Feb-13 01-Sep-13 |
 | 1.1.3 | 97 |  Prevention of Unknown Certificate Contents | 21-Feb-13 | 21-Feb-13 |
 | 1.1.4 | 99 | Add DSA Keys (BR v.1.1.4) | 3-May-2013 | 3-May-2013 |
 | 1.1.5 | 102 | Revision to subject domainComponent language in section 9.2.3 | 31-May-2013 | 31-May-2013 |
@@ -70,7 +77,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.1.8 | 120 | Affiliate Authority to Verify Domain | 5-June-2014 | 5-June-2014 |
 | 1.1.9 | 129 | Clarification of PSL mentioned in Section 11.1.3 | 4-Aug-2014 | 4-Aug-2014 |
 | 1.2.0 | 125 | CAA Records | 14-Oct-2014 | 15-Apr-2015 |
-| 1.2.1 | 118 | SHA-1 Sunset | 16-Oct-2014 | 16-Jan-20151-Jan-20161-Jan-2017 |
+| 1.2.1 | 118 | SHA-1 Sunset | 16-Oct-2014 | 16-Jan-2015 1-Jan-2016 1-Jan-2017 |
 | 1.2.2 | 134 | Application of RFC 5280 to Pre-certificates | 16-Oct-2014 | 16-Oct-2014 |
 | 1.2.3 | 135 | ETSI Auditor Qualifications | 16-Oct-2014 | 16-Oct-2014 |
 | 1.2.4 | 144 | Validation Rules for .onion Names | 18-Feb-2015 | 18-Feb-2015 |
@@ -175,13 +182,13 @@ No stipulation.
 
 **Application Software Supplier:**  A supplier of Internet browser software or other relying-party application software that displays or uses Certificates and incorporates Root Certificates.
 
-**Attestation Letter:  ** A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
+**Attestation Letter:** A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
 
-**Audit Report:  ** A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
+**Audit Report:** A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
 
 **CAA:**  From RFC 6844 ( [http:tools.ietf.org/html/rfc6844](http://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
 
-**Certificate:  ** An electronic document that uses a digital signature to bind a public key and an identity.
+**Certificate:** An electronic document that uses a digital signature to bind a public key and an identity.
 
 **Certificate Data:**  Certificate requests and data related thereto (whether obtained from the Applicant or otherwise) in the CA's possession or control or to which the CA has access.
 
@@ -203,11 +210,11 @@ No stipulation.
 
 **Cross Certificate:**   A certificate that is used to establish a trust relationship between two Root CAs.
 
-**Delegated Third Party:  ** A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
+**Delegated Third Party:** A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
 **Domain Authorization Document** :  Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
-**Domain Name:  ** The label assigned to a node in the Domain Name System.
+**Domain Name:** The label assigned to a node in the Domain Name System.
 
 **Domain Namespace:**  The set of all possible Domain Names that are subordinate to a single node in the Domain Name System.
 
@@ -221,13 +228,13 @@ No stipulation.
 
 **Expiry Date:**   The "Not After" date in a Certificate that defines the end of a Certificate's validity period.
 
-**Fully-Qualified Domain Name:  ** A Domain Name that includes the labels of all superior nodes in the Internet Domain Name System.
+**Fully-Qualified Domain Name:** A Domain Name that includes the labels of all superior nodes in the Internet Domain Name System.
 
-**Government Entity:  ** A government-operated legal entity, agency, department, ministry, branch, or similar element of the government of a country, or political subdivision within such country (such as a state, province, city, county, etc.).
+**Government Entity:** A government-operated legal entity, agency, department, ministry, branch, or similar element of the government of a country, or political subdivision within such country (such as a state, province, city, county, etc.).
 
 **High Risk Certificate Request:** A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
 
-**Internal  Name:  **  A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
+**Internal  Name:**  A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
 
 **Issuing CA:**  In relation to a particular Certificate, the CA that issued the Certificate.  This could be either a Root CA or a Subordinate CA.
 
@@ -255,7 +262,7 @@ No stipulation.
 
 **Publicly-Trusted Certificate:**  A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
 
-**Qualified Auditor:  ** A natural person or Legal Entity that meets the requirements of Section 8.3 (Auditor Qualifications).
+**Qualified Auditor:** A natural person or Legal Entity that meets the requirements of Section 8.3 (Auditor Qualifications).
 
 **Registered Domain Name:** A Domain Name that has been registered with a Domain Name Registrar.
 
@@ -271,7 +278,7 @@ No stipulation.
 
 **Requirements:**  The Baseline Requirements found in this document.
 
-**Reserved IP Address**** :**  An IPv4 or IPv6 address that the IANA has marked as reserved:
+**Reserved IP Address:**  An IPv4 or IPv6 address that the IANA has marked as reserved:
 
 [http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
 
@@ -285,13 +292,13 @@ No stipulation.
 
 **Subject:**  The natural person, device, system, unit, or Legal Entity identified in a Certificate as the Subject.  The Subject is either the Subscriber or a device under the control and operation of the Subscriber.
 
-**Subject Identity Information:  ** Information that identifies the Certificate Subject.  Subject Identity Information does not include a domain name listed in the subjectAltName extension or the Subject commonName field.
+**Subject Identity Information:** Information that identifies the Certificate Subject.  Subject Identity Information does not include a domain name listed in the subjectAltName extension or the Subject commonName field.
 
 **Subordinate CA:**  A Certification Authority whose Certificate is signed by the Root CA, or another Subordinate CA.
 
 **Subscriber:**  A natural person or Legal Entity to whom a Certificate is issued and who is legally bound by a Subscriber or Terms of Use Agreement.
 
-**Subscriber Agreement** :  An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
+**Subscriber Agreement:**  An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
 
 **Subsidiary Company:**  A company that is controlled by a Parent Company.
 
@@ -307,7 +314,7 @@ No stipulation.
 
 **Validation Specialists:**  Someone who performs the information verification duties specified by these Requirements.
 
-**Validity Period** :  The period of time measured from the date when the Certificate is issued until the Expiry Date.
+**Validity Period:**   The period of time measured from the date when the Certificate is issued until the Expiry Date.
 
 **Wildcard Certificate:**  A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
 
