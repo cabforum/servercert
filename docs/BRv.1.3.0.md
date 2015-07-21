@@ -313,7 +313,7 @@ This Certificate Policy for Baseline Requirements for the Issuance and Managemen
 
 ### 1.6.2   Acronyms
 
-| AICPA | American Institute of Certified Public Accountants |
+| AICPA |American Institute of Certified Public Accountants |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
@@ -428,11 +428,11 @@ If the Applicant requests a Certificate that will contain Subject Identity Infor
 #### 3.2.2.1.Identity
 
 If the Subject Identity Information is to include the name or address of an organization, the CA SHALL verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  The CA SHALL verify the identity and address of the Applicant using documentation provided by, or through communication with, at least one of the following:
-
-1. 1.A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
-2. 2.A third party database that is periodically updated and considered a Reliable Data Source; 
-3. 3.A site visit by the CA or a third party who is acting as an agent for the CA; or
-4. 4.An Attestation Letter.
+ 
+1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
+2. A third party database that is periodically updated and considered a Reliable Data Source; 
+3. A site visit by the CA or a third party who is acting as an agent for the CA; or
+4. An Attestation Letter.
 
 The CA MAY use the same documentation or communication described in 1 through 4 above to verify both the Applicant's identity and address.
 
@@ -442,11 +442,11 @@ Alternatively, the CA MAY verify the address of the Applicant (but not the ident
 
 If the Subject Identity Information is to include a DBA or tradename, the CA SHALL verify the Applicant's right to use the DBA/tradename using at least one of the following:
 
-1. 1.Documentation provided by, or communication with, a government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
-2. 2.A Reliable Data Source; 
-3. 3.Communication with a government agency responsible for the management of such DBAs or tradenames;  
-4. 4.An Attestation Letter accompanied by documentary support; or
-5. 5.A utility bill, bank statement, credit card statement, government-issued tax document, or other form of identification that the CA determines to be reliable.  
+1. Documentation provided by, or communication with, a government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
+2. A Reliable Data Source; 
+3. Communication with a government agency responsible for the management of such DBAs or tradenames;  
+4. An Attestation Letter accompanied by documentary support; or
+5. A utility bill, bank statement, credit card statement, government-issued tax document, or other form of identification that the CA determines to be reliable.  
 
 #### 3.2.2.3.Verification of Country
 
@@ -1013,7 +1013,7 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 
 2. Assesses the likelihood and potential damage of these threats, taking into consideration the sensitivity of the Certificate Data and Certificate Management Processes; and
 
-3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats.  [BR 16.2]
+3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats. 
 
 ## 5.5.Records archival
 
@@ -1262,11 +1262,11 @@ Except as provided for below, Subscriber Certificates issued after 1 April 2015 
 
 Beyond 1 April 2015, CAs MAY continue to issue Subscriber Certificates with a Validity Period greater than 39 months but not greater than 60 months provided that the CA documents that the Certificate is for a system or software that:
 
-1. (a)was in use prior to the Effective Date; 
-2. (b)is currently in use by either the Applicant or a substantial number of Relying Parties; 
-3. (c)fails to operate if the Validity Period is shorter than 60 months;
-4. (d)does not contain known security risks to Relying Parties; and 
-5. (e)is difficult to patch or replace without substantial economic outlay.
+(a)was in use prior to the Effective Date; 
+(b)is currently in use by either the Applicant or a substantial number of Relying Parties; 
+(c)fails to operate if the Validity Period is shorter than 60 months;
+(d)does not contain known security risks to Relying Parties; and 
+(e)is difficult to patch or replace without substantial economic outlay.
 
 ## 6.4.Activation data
 
@@ -1587,19 +1587,13 @@ If the Subordinate CA Certificate is not allowed to issue certificates with an i
 
 A decoded example for issuance to the domain and sub domains of example.com by organization :- Example LLC, Boston, Massachusetts, US would be:-
 
-X509v3 Name Constraints:
-
-Permitted:
-
-DNS:example.com
-
-DirName: C=US, ST=MA, L=Boston, O=Example LLC
-
-Excluded:
-
-IP:0.0.0.0/0.0.0.0
-
-IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0
+> X509v3 Name Constraints:
+> Permitted:
+> DNS:example.com
+> DirName: C=US, ST=MA, L=Boston, O=Example LLC
+> Excluded:
+> IP:0.0.0.0/0.0.0.0
+> IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0
 
 If the Subordinate CA is not allowed to issue certificates with dNSNames, then the Subordinate CA Certificate MUST include a zero-length dNSName in excludedSubtrees. Otherwise, the Subordinate CA Certificate MUST include at least one dNSName in permittedSubtrees.
 
