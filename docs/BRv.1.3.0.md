@@ -11,7 +11,7 @@
 
 
 
-**CA/Browser Forum**
+
 **Version 1.3.0**
 **April 16, 2015**
 
