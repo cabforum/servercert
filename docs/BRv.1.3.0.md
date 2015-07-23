@@ -151,19 +151,19 @@ The primary goal of these Requirements is to enable efficient and secure electro
 
 ### 1.4.2.Prohibited Certificate Uses
 
-## 1.5.Policy administration
+## 1.5.Policy Administration
 
-### 1.5.1.Organization administering the document
+### 1.5.1.Organization Administering the Document
 
 This Certificate Policy for Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates present criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates.  This CP may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum.  Because one of the primary beneficiaries of this CP is the end user, the Forum openly invites anyone to make recommendations and suggestions by email to the CA/Browser Forum at [questions@cabforum.org](mailto:questions@cabforum.org).  The Forum members value all input, regardless of source, and will seriously consider all such input.
 
-### 1.5.2.Contact person
+### 1.5.2.Contact Person
 
-### 1.5.3.Person determining CPS suitability for the policy
+### 1.5.3.Person Determining CPS suitability for the Policy
 
-### 1.5.4.CPS approval procedures
+### 1.5.4.CPS Approval Procedures
 
-## 1.6.Definitions and acronyms
+## 1.6.Definitions and Acronyms
 
 ### 1.6.1  Definitions
 
@@ -205,7 +205,7 @@ This Certificate Policy for Baseline Requirements for the Issuance and Managemen
 
 **Delegated Third Party:** A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
-**Domain Authorization Document** :  Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
+**Domain Authorization Document:**  Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
 **Domain Name:** The label assigned to a node in the Domain Name System.
 
@@ -237,7 +237,7 @@ This Certificate Policy for Baseline Requirements for the Issuance and Managemen
 
 **Key Pair:**  The Private Key and its associated Public Key.
 
-**Legal Entity:** An [association](http://www.businessdictionary.com/definition/association.html), [corporation](http://www.businessdictionary.com/definition/corporation.html), [partnership](http://www.businessdictionary.com/definition/partnership.html), [proprietorship](http://www.businessdictionary.com/definition/proprietorship.html), [trust](http://www.businessdictionary.com/definition/trust.html), government entity or other entity with [legal](http://www.businessdictionary.com/definition/legal.html) [standing](http://www.investorwords.com/7216/standing.html)in a country's legal system.
+**Legal Entity:** An association, corporation, partnership, proprietorship, trust, government entity or other entity with legal standing in a country’s legal system. 
 
 **Object Identifier:**  A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
 
@@ -353,6 +353,8 @@ FIPS 140-2, Federal Information Processing Standards Publication - Security Requ
 
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
+Network and Certificate System Security Requirements, v.1.0, 1/1/2013.
+
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf.
 
 RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
@@ -375,8 +377,10 @@ X.509v3 , ITU-T Recommendation X.509 (2005) \| ISO/IEC 9594-8:2005, Information 
 
 
 ### 1.6.4 Conventions
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Requirements shall be interpreted in accordance with RFC 2119.
 
+Terms not otherwise defined in these Requirements shall be as defined in applicable agreements, user manuals, Certificate Policies and Certification Practice Statements, of the CA.
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Requirements shall be interpreted in accordance with RFC 2119.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
@@ -386,7 +390,7 @@ The CA SHALL develop, implement, enforce, and annually update a Certificate Poli
 
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
 
-## 2.2   Publication of information
+## 2.2   Publication of Information
 
 The CA SHALL publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 2527 or RFC 3647, and MUST be structured in accordance with either RFC 2527 or RFC 3647. Effective as of 15 April 2015, section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement (section 4.1 for CAs still conforming to RFC 2527) SHALL state whether the CA reviews CAA Records, and if so, the CA's policy or practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
@@ -826,7 +830,6 @@ Certificate
 The CA SHALL operate and maintain its CRL and OCSP capability with resources sufficient to provide a response time of ten seconds or less under normal operating conditions.
 
 
-
 The CA SHALL maintain an online 24x7 Repository that application software can use to automatically check the current status of all unexpired Certificates issued by the CA.
 
 The CA SHALL maintain a continuous 24x7 ability to respond internally to a high-priority Certificate Problem Report, and where appropriate, forward such a complaint to law enforcement authorities, and/or revoke a Certificate that is the subject of such a complaint.
@@ -841,7 +844,7 @@ The CA SHALL maintain a continuous 24x7 ability to respond internally to a high-
 
 ### 4.12.2.Session key encapsulation and recovery policy and practices
 
-# 5.MANAGEMENT, OPERATIONAL, and Physical CONTROLS
+# 5.MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
 
 The CA/Browser Forum's Network and Certificate System Security Requirements are incorporated by reference as if fully set forth herein.
 
@@ -963,7 +966,7 @@ b. All verification activities stipulated in these Requirements and the CA's Cer
 
 c. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
 
-                d. Acceptance and rejection of certificate requests;
+d. Acceptance and rejection of certificate requests;
 
 e. Issuance of Certificates; and
 
@@ -1179,12 +1182,7 @@ on or before 31 Dec 2013 | Validity period ending after 31 Dec 2013 |
 
 ### 6.1.6.Public Key Parameters Generation and Quality Checking
 
-RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2
-
-# 16
-+1 and 2
-# 256
--1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89].
+RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2^16∨ +1 and 2^256∨ -1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89].
 
 DSA: Although FIPS 800-57 says that domain parameters may be made available at some accessible site, compliant DSA certificates MUST include all domain parameters. This is to insure maximum interoperability among relying party software. The CA MUST confirm that the value of the public key has the unique correct representation and range in the field, and that the key has the correct order in the subgroup. [Source: Section 5.3.1, NIST SP 800-89].
 
@@ -1507,7 +1505,7 @@ Name that is one of the values contained in the Certificate's subjectAltName ext
 
 Section 9.2.1).
 
-1**b.**** Certificate Field: **subject:organizationName (OID 2.5.4.10)
+**b.**** Certificate Field: **subject:organizationName (OID 2.5.4.10)
 
 Optional.
 
