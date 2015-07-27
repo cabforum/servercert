@@ -13,7 +13,10 @@ addons:
       - libgdk-pixbuf2.0-0
       - libffi-dev
       - shared-mime-info
+      - python-virtualenv
 script:
+- virtualenv --system-site-packages ./venv
+- . ./venv/bin/activate
 - pip install WeasyPrint
 - make
 - make deploy
