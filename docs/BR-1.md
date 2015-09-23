@@ -310,6 +310,7 @@ No stipulation.
 
 ### 1.6.2   Acronyms
 
+| **Acronym** | **Meaning** |
 | --- | --- |
 | AICPA | American Institute of Certified Public Accountants |
 | CA | Certification Authority |
