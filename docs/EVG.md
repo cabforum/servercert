@@ -1386,11 +1386,11 @@ CAs MAY limit their liability as described in Section 9.8 of the Baseline Requir
 
 A CA's indemnification obligations and a Root CA's obligations with respect to subordinate CAs are set forth in Section 9.9 of the Baseline Requirements.
 
-**Appendix A - User Agent Verification (Normative)**
+# Appendix A - User Agent Verification (Normative)
 
 The CA MUST host test Web pages that allow Application Software Suppliers to test their software with EV Certificates that chain up to each EV Root Certificate.  At a minimum, the CA MUST host separate Web pages using certificates that are (i) valid (ii) revoked and (iii) expired.
 
-**Appendix B - Sample Attorney Opinions Confirming Specified Information**
+# Appendix B - Sample Attorney Opinions Confirming Specified Information
 
 **(Informative)**
 
@@ -1419,7 +1419,7 @@ On this basis, we hereby offer the following opinion:
 
 4. That Company has a physical presence and its place of business is at the following location: 
 
-5.That Company can be contacted at its stated place of business at the following telephone number:
+5. That Company can be contacted at its stated place of business at the following telephone number:
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -1429,9 +1429,9 @@ On this basis, we hereby offer the following opinion:
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-[Insert customary limitations and disclaimers for opinion letters in your jurisdiction.
+Insert customary limitations and disclaimers for opinion letters in your jurisdiction.
 
-[Name and signature]
+(Name and signature)
 
 _[Jurisdiction(s) in which attorney / Latin notary is admitted to practice]_/#3
 
@@ -1439,16 +1439,14 @@ _[Jurisdiction(s) in which attorney / Latin notary is admitted to practice]_/#3
 cc:   [Send copy to Client_]_
 
 
-/#1
- Note:  This must be the Client's exact corporate name, as registered with the relevant Incorporating Agency in the Client's Jurisdiction of Incorporation.  This is the name that will be included in the EV Certificate.
+Footnote /#1:  This must be the Client's exact corporate name, as registered with the relevant Incorporating Agency in the Client's Jurisdiction of Incorporation.  This is the name that will be included in the EV Certificate.
 
-/#2
- Note:  If necessary to establish the Client Representative's actual authority, you may rely on a Power of Attorney from an officer of Client who has authority to delegate the authority to the Client Representative.
+Footnote /#2:  If necessary to establish the Client Representative's actual authority, you may rely on a Power of Attorney from an officer of Client who has authority to delegate the authority to the Client Representative.
 
-/#3
- Note:  This letter may be issued by in-house counsel for the Client so long as permitted by the rules of your jurisdiction.
+Footnote /#3:  This letter may be issued by in-house counsel for the Client so long as permitted by the rules of your jurisdiction.
  
-**Appendix C - Sample Accountant Letters Confirming Specified Information**
+ 
+# Appendix C - Sample Accountant Letters Confirming Specified Information**
 
 **(Informative)**
 
@@ -1487,7 +1485,7 @@ This report is intended solely for the information and use of the Certification 
 
 [Date]
 
-CANADA
+**CANADA**
 
 To:  [Name of Certification Authority]
 
@@ -1520,11 +1518,11 @@ City
 
 (signed) ......................................
 
-**Appendix D -**** Country-Specific Interpretative Guidelines ****(Normative)**
+# Appendix D - Country-Specific Interpretative Guidelines (Normative)
 
 NOTE:  This appendix provides alternative interpretations of the EV Guidelines for countries that have a language, cultural, technical, or legal reason for deviating from a strict interpretation of the EV Guidelines.  More specific information for particular countries may be added to this appendix in the future.
 
-1. Organization Names
+**1. Organization Names**
 
 (1) Non-Latin Organization Name
 
@@ -1554,7 +1552,7 @@ In order to include a Latin character name in the EV certificate that is not a d
 
 (D) Confirmed by a Verified Legal Opinion or Accountant's Letter to be a translated trading name associated with the registered organization.
 
-Country-Specific Procedures
+# Country-Specific Procedures
 
 **D-1. Japan**
 
@@ -1604,15 +1602,13 @@ In Japan:
 
  any other authoritative source recognized by the Japanese Ministry of Justice ( [http://www.moj.go.jp](http://www.moj.go.jp/)) as providing the current registration status of such professionals.
 
-
-
-**Appendix E - Sample Contract Signer's Representation/Warranty (Informative)**
+# Appendix E - Sample Contract Signer's Representation/Warranty (Informative)
 
 A CA may rely on the Contract Signer's authority to enter into the Subscriber Agreement using a representation/warranty executed by the Contract Signer.  An example of an acceptable warranty is as follows:
 
 [CA] and Applicant are entering into a legally valid and enforceable Subscriber Agreement that creates extensive obligations on Applicant.  An EV Certificate serves as a form of digital identity for Applicant.  The loss or misuse of this identity can result in great harm to the Applicant.  By signing this Subscriber Agreement, the contract signer acknowledges that they have the authority to obtain the digital equivalent of a company stamp, seal, or (where applicable) officer's signature to establish the authenticity of the company's website, and that [Applicant name] is responsible for all uses of its EV Certificate.  By signing this Agreement on behalf of [Applicant name], the contract signer represents that the contract signer (i) is acting as an authorized representative of [Applicant name], (ii) is expressly authorized by [Applicant name] to sign Subscriber Agreements and approve EV Certificate requests on Applicant's behalf, and (iii) has confirmed Applicant's right to use the domain(s) to be included in EV Certificates.
 
-Appendix F – Issuance of Certificates for .onion Domain Names
+# Appendix F – Issuance of Certificates for .onion Domain Names
 
 A CA may issue an EV Certificate with .onion in the right-most label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix: 1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31) The CAB Forum has created an extension of the TBSCertificate for use in conveying hashes of keys related to .onion addresses. The Tor Service Descriptor Hash extension has the following format:
 
