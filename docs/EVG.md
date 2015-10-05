@@ -76,7 +76,7 @@ These Guidelines address the basic issue of validating Subject identity informat
 
 These Guidelines do not address the verification of information, or the issuance, use, maintenance, or revocation of EV Certificates by enterprises that operate their own Public Key Infrastructure for internal purposes only, where its Root CA Certificate is not distributed by any Application Software Supplier.
 
-# 2.  Purpose**
+# 2.  Purpose
 
 ## 2.1.  Purpose of EV Certificates
 
@@ -884,7 +884,7 @@ For both the Contract Signer and the Certificate Approver, the CA MUST verify th
 
 (C)        Approve EV Certificate Requests submitted by a Certificate Requester.
 
-11.8.2.  Acceptable Methods of Verification – Name, Title and Agency
+### 11.8.2.  Acceptable Methods of Verification – Name, Title and Agency
 
 Acceptable methods of verification of the name, title, and agency status of the Contract Signer and the Certificate Approver include the following.
 
@@ -930,7 +930,7 @@ Acceptable methods of verification of the Signing Authority of the Contract Sign
 
 (ii) Has participated in the approval of one or more certificate requests, for certificates issued by the CA and which are currently and verifiably in use by the Applicant.  In this case the CA MUST have contacted the Certificate Approver by phone at a previously validated phone number or have accepted a signed and notarized letter approving the certificate request.
 
-(6)   **QIIS or QGIS** : The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by a QIIS or QGIS that identifies the Contract Signer and/or the Certificate Approver as a corporate officer, sole proprietor, or other senior official of the Applicant.
+(6)   **QIIS or QGIS:**  The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by a QIIS or QGIS that identifies the Contract Signer and/or the Certificate Approver as a corporate officer, sole proprietor, or other senior official of the Applicant.
 
 (7) **Contract Signer's Representation/Warranty:** Provided that the CA verifies that the Contract Signer is an employee or agent of the Applicant, the CA MAY rely on the signing authority of the Contract Signer by obtaining a duly executed representation or warranty from the Contract Signer that includes the following acknowledgments:
 
@@ -1028,15 +1028,15 @@ In circumstances where the opinion is digitally signed, in a manner that confirm
 
  (A) **Status of Author:**  The CA MUST verify that the accountant letter is authored by an Accounting Practitioner retained or employed by the Applicant and licensed within the country of the Applicant's Jurisdiction of Incorporation, Jurisdiction of Registration, or country where the Applicant maintains an office or physical facility.  Verification of license MUST be  through the member organization or regulatory organization in the Accounting Practitioner's country or jurisdiction that is appropriate to contact when verifying an accountant's license to practice in that country or jurisdiction.  Such country or jurisdiction must have an accounting standards body that maintains full membership status with the International Federation of Accountants.
 
- (B) **Basis of Opinion:  ** The CA MUST verify that the Accounting Practitioner is acting on behalf of the Applicant and that the conclusions of the Verified Accountant Letter are based on the Accounting Practitioner's stated familiarity with the relevant facts and the exercise of the Accounting Practitioner's professional judgment and expertise;
+ (B) **Basis of Opinion:**  The CA MUST verify that the Accounting Practitioner is acting on behalf of the Applicant and that the conclusions of the Verified Accountant Letter are based on the Accounting Practitioner's stated familiarity with the relevant facts and the exercise of the Accounting Practitioner's professional judgment and expertise;
 
-(C)  **Authenticity:  ** The CA MUST confirm the authenticity of the Verified Accountant Letter.
+(C)  **Authenticity:**  The CA MUST confirm the authenticity of the Verified Accountant Letter.
 
-(2)  **Acceptable Methods of Verification:  **  Acceptable methods of establishing the foregoing requirements for a Verified Accountant Letter are listed here.
+(2)  **Acceptable Methods of Verification:**  Acceptable methods of establishing the foregoing requirements for a Verified Accountant Letter are listed here.
 
-(A)  **Status of Author:  ** The CA MUST verify the professional status of the author of the accountant letter by directly contacting the authority responsible for registering or licensing such Accounting Practitioners in the applicable jurisdiction.
+(A)  **Status of Author:**  The CA MUST verify the professional status of the author of the accountant letter by directly contacting the authority responsible for registering or licensing such Accounting Practitioners in the applicable jurisdiction.
 
-(B)  **Basis of Opinion:  ** The text of the Verified Accountant Letter MUST make clear that the Accounting Practitioner is acting on behalf of the Applicant and that the information in the letter is based on the Accounting Practitioner's stated familiarity with the relevant facts and the exercise of the practitioner's professional judgment and expertise.  The Verified Accountant Letter MAY also include disclaimers and other limitations customary in the Accounting Practitioner's jurisdiction, provided that the scope of the disclaimed responsibility is not so great as to eliminate any substantial risk (financial, professional, and/or reputational) to the Accounting Practitioner, should the Verified Accountant Letter prove to be erroneous.  Acceptable forms of Verified Accountant Letter are attached as Appendix C.
+(B)  **Basis of Opinion:**  The text of the Verified Accountant Letter MUST make clear that the Accounting Practitioner is acting on behalf of the Applicant and that the information in the letter is based on the Accounting Practitioner's stated familiarity with the relevant facts and the exercise of the practitioner's professional judgment and expertise.  The Verified Accountant Letter MAY also include disclaimers and other limitations customary in the Accounting Practitioner's jurisdiction, provided that the scope of the disclaimed responsibility is not so great as to eliminate any substantial risk (financial, professional, and/or reputational) to the Accounting Practitioner, should the Verified Accountant Letter prove to be erroneous.  Acceptable forms of Verified Accountant Letter are attached as Appendix C.
 
 (C)  **Authenticity:**  To confirm the authenticity of the accountant's opinion, the CA MUST make a telephone call or send a copy of the Verified Accountant Letter back to the Accounting Practitioner at the address, phone number, facsimile, or (if available) e-mail address for the Accounting Practitioner listed with the authority responsible for registering or licensing such Accounting Practitioners and obtain confirmation from the Accounting Practitioner or the Accounting Practitioner's assistant that the accountant letter is authentic.  If a phone number is not available from the licensing authority, the CA MAY use the number listed for the Accountant in records provided by the applicable phone company, QGIS, or QIIS.
 
@@ -1132,7 +1132,7 @@ The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirem
 
 ### 11.12.2.  Denied Lists and Other Legal Black Lists
 
-(1)  **Verification Requirements:  ** The CA MUST verify whether the Applicant, the Contract Signer, the Certificate Approver, the Applicant's Jurisdiction of Incorporation, Registration, or Place of Business:
+(1)  **Verification Requirements:**  The CA MUST verify whether the Applicant, the Contract Signer, the Certificate Approver, the Applicant's Jurisdiction of Incorporation, Registration, or Place of Business:
 
 (A)  Is identified on any government denied list, list of prohibited persons, or other list that prohibits doing business with such organization or person under the laws of the country of the CA's jurisdiction(s) of operation; or
 
@@ -1140,7 +1140,7 @@ The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirem
 
 The CA MUST NOT issue any EV Certificate to the Applicant if either the Applicant, the Contract Signer, or Certificate Approver or if the Applicant's Jurisdiction of Incorporation or Registration or Place of Business is on any such list.
 
- (2)  **Acceptable Methods of Verification:  ** The CA MUST take reasonable steps to verify with the following lists and regulations:
+ (2)  **Acceptable Methods of Verification**  The CA MUST take reasonable steps to verify with the following lists and regulations:
 
 (A) If the CA has operations in the U.S., the CA MUST take reasonable steps to verify with the following US Government denied lists and regulations:
 
@@ -1303,54 +1303,54 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 
 The CA MAY contractually authorize the Subject of a specified Valid EV Certificate to perform the RA function and authorize the CA to issue additional EV Certificates at third and higher domain levels that are contained within the domain of the original EV Certificate (also known as an Enterprise EV Certificate).  In such case, the Subject SHALL be considered an Enterprise RA, and the following requirements SHALL apply:
 
-(1)        An Enterprise RA SHALL NOT authorize the CA to issue an Enterprise EV Certificate at the third or higher domain levels to any Subject other than the Enterprise RA or a business that is owned or directly controlled by the Enterprise RA;
+(1)  An Enterprise RA SHALL NOT authorize the CA to issue an Enterprise EV Certificate at the third or higher domain levels to any Subject other than the Enterprise RA or a business that is owned or directly controlled by the Enterprise RA;
 
-(2)        In all cases, the Subject of an Enterprise EV Certificate MUST be an organization verified by the CA in accordance with these Guidelines;
+(2)  In all cases, the Subject of an Enterprise EV Certificate MUST be an organization verified by the CA in accordance with these Guidelines;
 
-(3)        The CA MUST impose these limitations as a contractual requirement with the Enterprise RA and monitor compliance by the Enterprise RA;
+(3)  The CA MUST impose these limitations as a contractual requirement with the Enterprise RA and monitor compliance by the Enterprise RA;
 
-(4        The Final Cross-Correlation and Due Diligence requirements of Section 11.13 of these Guidelines MAY be performed by a single person representing the Enterprise RA; and
+(4)  The Final Cross-Correlation and Due Diligence requirements of Section 11.13 of these Guidelines MAY be performed by a single person representing the Enterprise RA; and
 
-(5)        The audit requirements of Section 17.1 of these Guidelines SHALL apply to the Enterprise RA, except in the case where the CA maintains control over the Root CA Private Key or Subordinate CA Private Key used to issue the Enterprise EV Certificates, in which case, the Enterprise RA MAY be exempted from the audit requirements.
+(5)  The audit requirements of Section 17.1 of these Guidelines SHALL apply to the Enterprise RA, except in the case where the CA maintains control over the Root CA Private Key or Subordinate CA Private Key used to issue the Enterprise EV Certificates, in which case, the Enterprise RA MAY be exempted from the audit requirements.
 
 ### 14.2.3.  Guidelines Compliance Obligation
 
 In all cases, the CA MUST contractually obligate each Affiliate, RA, subcontractor, and Enterprise RA to comply with all applicable requirements in these Guidelines and to perform them as required of the CA itself.  The CA SHALL enforce these obligations and internally audit each Affiliate's, RA's, subcontractor's, and Enterprise RA's compliance with these Requirements on an annual basis.
 
-Allocation of Liability
+### 14.2.4.  Allocation of Liability
 
 As specified in Section 9.8 of the Baseline Requirements.
 
-Data Records
+# 15. Data Records
 
 As specified in Section 5.4 of the Baseline Requirements.
 
-Data Security
+# 16. Data Security
 
 As specified in Section 5 of the Baseline Requirements. In addition, systems used to process and approve EV Certificate Requests MUST require actions by at least two trusted persons before creating an EV Certificate.
 
-Audit
+# 17. Audit
 
-## 0.35.Eligible Audit Schemes
+## 17.1. Eligible Audit Schemes
 
 A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following schemes:
 
-1. (i)WebTrust Program for CAs audit and WebTrust EV Program audit, orÃÂ
-2. (ii)ETSI TS 102 042 ÃÂ audit. ÃÂ ÃÂ
+ (i) WebTrust Program for CAs audit and WebTrust EV Program audit, or
+ (ii) ETSI TS 102 042 audit. 
 
 If the CA is a Government Entity, an audit of the CA by the appropriate internal government auditing agency is acceptable in lieu of the audits specified above, provided that such internal government auditing agency publicly certifies in writing that its audit addresses the criteria specified in one of the above audit schemes and certifies that the government CA has successfully passed the audit.
 
 EV audits MUST cover all CA obligations under these Guidelines regardless of whether they are performed directly by the CA or delegated to an RA or subcontractor.
 
-## 0.36.Audit Period
+## 17.2.  Audit Period
 
 CAs issuing EV Certificates MUST undergo an annual audit that meets the criteria of Section 17.1.
 
-## 0.37.Audit Record
+## 17.3  Audit Record
 
 CAs SHOULD make its audit report publicly available no later than three months after the end of the audit period.  If there is a delay greater than three months and if so requested by an Application Software Supplier, the CA MUST provide an explanatory letter signed by its auditor.
 
-## 0.38.Pre-Issuance Readiness Audit
+## 17.4.  Pre-Issuance Readiness Audit
 
 (1)  If the CA has a currently valid WebTrust Seal of Assurance for CAs, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against the WebTrust EV Program.
 
@@ -1360,27 +1360,27 @@ CAs SHOULD make its audit report publicly available no later than three months a
 
 The CA MUST complete any required point-in-time readiness assessment no earlier than twelve (12) months prior to issuing an EV Certificate.  The CA MUST undergo a complete audit under such scheme within ninety (90) days of issuing the first EV Certificate.
 
-## 0.39.Regular Self Audits
+## 17.5.  Regular Self Audits
 
 During the period in which it issues EV Certificates, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least three percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.  For all EV Certificates where the Final Cross-Correlation and Due Diligence requirements of Section 11.13 of these Guidelines is performed by an RA, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least six percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.
 
-## 0.40. Auditor Qualification
+## 17.6.  Auditor Qualification
 
 A Qualified Auditor (as defined in Section 8.2 of the Baseline Requirements) MUST perform the CA's audit.
 
-## 0.41.Root CA Key Pair Generation
+## 17.7.  Root CA Key Pair Generation
 
 All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally to EV Certificates. However, for Root CA Key Pairs generated after the release of these Guidelines, the Root CA Key Pair generation ceremony MUST be witnessed by the CA's Qualified Auditor in order to observe the process and the controls over the integrity and confidentiality of the Root CA Key Pairs produced.  The Qualified Auditor MUST then issue a report opining that the CA, during its Root CA Key Pair and Certificate generation process:
 
-        Documented its Root CA key generation and protection procedures in its Certificate Policy, and its Certification Practices Statement;
+(1)  Documented its Root CA key generation and protection procedures in its Certificate Policy, and its Certification Practices Statement;
 
-        Included appropriate detail in its Root Key Generation Script;
+(2)  Included appropriate detail in its Root Key Generation Script;
 
-        Maintained effective controls to provide reasonable assurance that the Root CA key pair was generated and protected in conformity with the procedures described in its CP/CPS and with its Root Key Generation Script;
+(3)  Maintained effective controls to provide reasonable assurance that the Root CA key pair was generated and protected in conformity with the procedures described in its CP/CPS and with its Root Key Generation Script;
 
-        Performed, during the Root CA key generation process, all the procedures required by its Root Key Generation Script.
+(4)  Performed, during the Root CA key generation process, all the procedures required by its Root Key Generation Script.
 
-Liability and Indemnification
+# 18. Liability and Indemnification
 
 CAs MAY limit their liability as described in Section 9.8 of the Baseline Requirements except that a CA MAY NOT limit its liability to Subscribers or Relying Parties for legally recognized and provable claims to a monetary amount less than two thousand US dollars per Subscriber or Relying Party per EV Certificate.
 
@@ -1415,14 +1415,14 @@ On this basis, we hereby offer the following opinion:
 
 1.
   1.
-    1. 1.That [exact company name of Client] ("Company") is a duly formed [corporation, LLC, etc.] that is "active," "valid," "current," or the equivalent under the laws of the state/province of [name of governing jurisdiction where Client is incorporated or registered] and is not under any legal disability known to the author of this letter.ÃÂ
-    2. 2.That Company conducts business under the assumed name or "DBA"_[assumed name of the Applicant]_ and has registered such name with the appropriate government agency in the jurisdiction of its place of business below.ÃÂ
+    1. 1.That [exact company name of Client] ("Company") is a duly formed [corporation, LLC, etc.] that is "active," "valid," "current," or the equivalent under the laws of the state/province of [name of governing jurisdiction where Client is incorporated or registered] and is not under any legal disability known to the author of this letter.
+    2. 2.That Company conducts business under the assumed name or "DBA"_[assumed name of the Applicant]_ and has registered such name with the appropriate government agency in the jurisdiction of its place of business below.
     3.
 That _[name of Client's Representative]_
 # _2_
  has authority to act on behalf of Company to:  [_select as appropriate_] (a) provide the information about Company required for issuance of the EV Certificates as contained in the attached Application, (b) request one or more EV Certificates and to designate other persons to request EV Certificates, and (c) agree to the relevant contractual obligations contained in the Subscriber Agreement on behalf of Company.
 
-1. **4.** That Company has a physical presence and its place of business is at the following location: ÃÂ ÃÂ
+1. **4.** That Company has a physical presence and its place of business is at the following location: 
 
 
 
@@ -1430,13 +1430,13 @@ That _[name of Client's Representative]_
 
 
 
-1. **5.** That Company can be contacted at its stated place of business at the following telephone number:ÃÂ
+1. **5.** That Company can be contacted at its stated place of business at the following telephone number:
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-1. **6.** That Company has an active current Demand Deposit Account with a regulated financial institution.ÃÂ
+1. **6.** That Company has an active current Demand Deposit Account with a regulated financial institution.
 
-1. **7.** That Company has the right to use the following Domain Name in identifying itself on the Internet:ÃÂ
+1. **7.** That Company has the right to use the following Domain Name in identifying itself on the Internet:
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
