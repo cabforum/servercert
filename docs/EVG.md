@@ -1446,7 +1446,7 @@ Footnote /#2:  If necessary to establish the Client Representative's actual auth
 Footnote /#3:  This letter may be issued by in-house counsel for the Client so long as permitted by the rules of your jurisdiction.
  
  
-# Appendix C - Sample Accountant Letters Confirming Specified Information**
+# Appendix C - Sample Accountant Letters Confirming Specified Information
 
 **(Informative)**
 
