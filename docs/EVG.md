@@ -706,55 +706,55 @@ Such verification MAY be by direct contact with the appropriate Government Entit
 
 (i) A Personal Statement that includes the following information:
 
-1. Full name or names by which a person is, or has been, known (including all other names used);
+    1. Full name or names by which a person is, or has been, known (including all other names used);
 
-2. Residential Address at which he/she can be located;
+    2. Residential Address at which he/she can be located;
 
-3. Date of birth; and
+    3. Date of birth; and
 
-4. An affirmation that all of the information contained in the Certificate Request is true and correct.
+    4. An affirmation that all of the information contained in the Certificate Request is true and correct.
 
 (ii) A current signed government-issued identification document that includes a photo of the Individual and is signed by the Individual such as:
 
-1. A passport;
+    1. A passport;
 
-2. A driver's license;
+    2. A driver's license;
 
-3. A personal identification card;
+    3. A personal identification card;
 
-4. A concealed weapons permit; or
+    4. A concealed weapons permit; or
 
-5. A military ID.
+    5. A military ID.
 
 (iii) At least two secondary documentary evidences to establish his/her identity that include the name of the Individual, one of which MUST be from a financial institution.
 
-1. Acceptable financial institution documents include:
+    1. Acceptable financial institution documents include:
 
-a. A major credit card, provided that it contains an expiration date and it has not expired'
+     a. A major credit card, provided that it contains an expiration date and it has not expired'
 
-b. A debit card from a regulated financial institution, provided that it contains an expiration date and it has not expired,
+     b. A debit card from a regulated financial institution, provided that it contains an expiration date and it has not expired,
 
-c. A mortgage statement from a recognizable lender that is less than six months old,
+     c. A mortgage statement from a recognizable lender that is less than six months old,
 
-d. A bank statement from a regulated financial institution that is less than six months old.
+     d. A bank statement from a regulated financial institution that is less than six months old.
 
-2. Acceptable non-financial documents include:
+    2. Acceptable non-financial documents include:
 
-a. Recent original utility bills or certificates from a utility company confirming the arrangement to pay for the services at a fixed address (not a mobile/cellular telephone bill),
+     a. Recent original utility bills or certificates from a utility company confirming the arrangement to pay for the services at a fixed address (not a mobile/cellular telephone bill),
 
-b. A copy of a statement for payment of a lease, provided that the statement is dated within the past six months,
+     b. A copy of a statement for payment of a lease, provided that the statement is dated within the past six months,
 
-c. A certified copy of a birth certificate,
+     c. A certified copy of a birth certificate,
 
-d. A local authority tax bill for the current year,
+     d. A local authority tax bill for the current year,
 
-e. A certified copy of a court order, such as a divorce certificate, annulment papers, or adoption papers.
+     e. A certified copy of a court order, such as a divorce certificate, annulment papers, or adoption papers.
 
 The Third-Party Validator performing the face-to-face validation MUST:
 
-(i) Attest to the signing of the Personal Statement and the identity of the signer; and
+  (i) Attest to the signing of the Personal Statement and the identity of the signer; and
 
-(ii) Identify the original Vetting Documents used to perform the identification.  In addition, the Third-Party Validator MUST attest on a copy of the current signed government-issued photo identification document that it is a full, true, and accurate reproduction of the original.
+  (ii) Identify the original Vetting Documents used to perform the identification.  In addition, the Third-Party Validator MUST attest on a copy of the current signed government-issued photo identification document that it is a full, true, and accurate reproduction of the original.
 
  (B) **Verification of Third-Party Validator:  ** The CA MUST independently verify that the Third-Party Validator is a legally-qualified Latin Notary or Notary (or legal equivalent in the Applicant's jurisdiction), lawyer, or accountant in the jurisdiction of the Individual's residency, and that the Third-Party Validator actually did perform the services and did attest to the signature of the Individual.
 
@@ -766,19 +766,19 @@ The Third-Party Validator performing the face-to-face validation MUST:
 
  (5)  **Non-Commercial Entity Subjects (International Organization):**  Unless verified under subsection (6), all items listed in Section 11.2.1(4) MUST be verified either:
 
- (A)  With reference to the constituent document under which the International Organization was formed; or
+   (A)  With reference to the constituent document under which the International Organization was formed; or
 
- (B)  Directly with a signatory country's government in which the CA is permitted to do business.  Such verification may be obtained from an appropriate government agency or from the laws of that country, or by verifying that the country's government has a mission to represent it at the International Organization; or
+   (B)  Directly with a signatory country's government in which the CA is permitted to do business.  Such verification may be obtained from an appropriate government agency or from the laws of that country, or by verifying that the country's government has a mission to represent it at the International Organization; or
 
- (C) Directly against any current list of qualified entities that the CA/Browser Forum may maintain at www.cabforum.org.
+   (C) Directly against any current list of qualified entities that the CA/Browser Forum may maintain at www.cabforum.org.
 
- (D)  In cases where the International Organization applying for the EV Certificate is an organ or agency - including a non-governmental organization of a verified International Organization, then the CA may verify the International Organization Applicant directly with the verified umbrella International Organization of which the Applicant is an organ or agency.
+   (D)  In cases where the International Organization applying for the EV Certificate is an organ or agency - including a non-governmental organization of a verified International Organization, then the CA may verify the International Organization Applicant directly with the verified umbrella International Organization of which the Applicant is an organ or agency.
 
 (6)  The CA may rely on a Verified Professional Letter to establish the Applicant's information listed in (1)-(5) above if (i) the Verified Professional Letter includes a copy of supporting documentation used to establish the Applicant's legal existence, such as a certificate of registration, articles of incorporation, operating agreement, statute, or regulatory act, and (ii) the CA confirms the Applicant's organization name specified in the Verified Professional Letter with a QIIS or QGIS.
 
-## 0.21.Verification of Applicant's Legal Existence and Identity – Assumed Name
+## 11.3.  Verification of Applicant's Legal Existence and Identity – Assumed Name
 
-Verification Requirements
+### 11.3.1  Verification Requirements
 
 If, in addition to the Applicant's formal legal name, as recorded with the applicable Incorporating Agency or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, the Applicant's identity, as asserted in the EV Certificate, is to contain any assumed name (also known as "doing business as", "DBA", or "d/b/a" in the US, and "trading as" in the UK) under which the Applicant conducts business, the CA MUST verify that:  (i) the Applicant has registered its use of the assumed name with the appropriate government agency for such filings in the jurisdiction of its Place of Business (as verified in accordance with these Guidelines), and (ii) that such filing continues to be valid.
 
