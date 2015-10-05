@@ -241,6 +241,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 # 5.  Abbreviations and Acronyms
 
 Abbreviations and Acronyms are defined in the Baseline Requirements except as otherwise defined herein:
+
 | Acronym | Meaning |
 | --- | --- |
 |BIPM |International Bureau of Weights and Measures|
