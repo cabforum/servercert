@@ -270,9 +270,9 @@ Terms not otherwise defined in these Guidelines shall be as defined in applicabl
 
 The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Guidelines shall be interpreted in accordance with RFC 2119.
 
-Certificate Warranties and Representations
+# 7.  Certificate Warranties and Representations
 
-## 0.2. EV Certificate Warranties
+## 7.1. EV Certificate Warranties
 
 When the CA issues an EV Certificate, the CA and its Root CA represent and warrant to the Certificate Beneficiaries listed in Section 9.6.1 of the Baseline Requirements, during the period when the EV Certificate is Valid, that the CA has followed the requirements of these Guidelines and its EV Policies in issuing and managing the EV Certificate and in verifying the accuracy of the information contained in the EV Certificate.  The EV Certificate Warranties specifically include, but are not limited to, the following:
 
@@ -292,21 +292,21 @@ When the CA issues an EV Certificate, the CA and its Root CA represent and warra
 
 (H)        **Revocation:  ** The CA will follow the requirements of these Guidelines and revoke the EV Certificate for any of the revocation reasons specified in these Guidelines.
 
-## 0.3.By the Applicant
+## 7.2.  By the Applicant
 
 EV Certificate Applicants make the commitments and warranties set forth in Section 9.6.3 of the Baseline Requirements for the benefit of the CA and Certificate Beneficiaries.
 
-Community and Applicability
+# 8. Community and Applicability
 
-## 0.4.Issuance of EV Certificates
+## 8.1.  Issuance of EV Certificates
 
 The CA MAY issue EV Certificates, provided that the CA and its Root CA satisfy the requirements in these Guidelines and the Baseline Requirements.
 
 If a court or government body with jurisdiction over the activities covered by these Guidelines determines that the performance of any mandatory requirement is illegal, then such requirement is considered reformed to the minimum extent necessary to make the requirement valid and legal.  This applies only to operations or certificate issuances that are subject to the laws of that jurisdiction.  The parties involved SHALL notify the CA / Browser Forum of the facts, circumstances, and law(s) involved, so that the CA/Browser Forum may revise these Guidelines accordingly.
 
-## 0.5.EV Policies
+## 8.2.  EV Policies
 
-Implementation
+### 8.2.1.  Implementation
 
 Each CA must develop, implement, enforce, display prominently on its Web site, and periodically update as necessary its own auditable EV Certificate practices, policies and procedures, such as a Certification Practice Statement (CPS) and Certificate Policy (CP) that:
 
@@ -316,11 +316,11 @@ Each CA must develop, implement, enforce, display prominently on its Web site, a
 
 (C)        Specify the CA's and its Root CA's entire root certificate hierarchy including all roots that its EV Certificates depend on for proof of those EV Certificates' authenticity.
 
-Disclosure
+###  8.2.2.  Disclosure
 
 Each CA must publicly disclose their EV Policies through an appropriate and readily accessible online means that is available on a 24x7 basis.  The CA is also REQUIRED to publicly disclose its CA business practices as required by both WebTrust for CAs and ETSI TS 102 042.  The disclosures MUST be structured in accordance with either RFC 2527 or RFC 3647.
 
-## 0.6.Commitment to Comply with Recommendations
+## 8.3.  Commitment to Comply with Recommendations
 
 Each CA SHALL publicly give effect to these Guidelines and represent that they will adhere to the latest published version by incorporating them into their respective EV Policies, using a clause such as the following (which must include a link to the official version of these Guidelines):
 
@@ -328,7 +328,7 @@ Each CA SHALL publicly give effect to these Guidelines and represent that they w
 
 In addition, the CA MUST include (directly or by reference) the applicable requirements of these Guidelines in all contracts with Subordinate CAs, RAs, Enterprise RAs, and subcontractors that involve or relate to the issuance or maintenance of EV Certificates.  The CA MUST enforce compliance with such terms.
 
-## 0.7.Insurance
+## 8.4.  Insurance
 
 Each CA SHALL maintain the following insurance related to their respective performance and obligations under these Guidelines:
 
@@ -340,13 +340,13 @@ Such insurance must be with a company rated no less than A- as to Policy Holder'
 
 A CA MAY self-insure for liabilities that arise from such party's performance and obligations under these Guidelines provided that it has at least five hundred million US dollars in liquid assets based on audited financial statements in the past twelve months, and a quick ratio (ratio of liquid assets to current liabilities) of not less than 1.0.
 
-## 0.8.Obtaining EV Certificates
+## 8.5.  Obtaining EV Certificates
 
-General
+### 8.5.1.  General
 
 The CA MAY only issue EV Certificates to Applicants that meet the Private Organization, Government Entity, Business Entity and Non-Commercial Entity requirements specified below.
 
-Private Organization Subjects
+### 8.5.2.  Private Organization Subjects
 
 An Applicant qualifies as a Private Organization if:
 
@@ -362,7 +362,7 @@ An Applicant qualifies as a Private Organization if:
 
 (6) The entity is not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
 
-Government Entity Subjects
+### 8.5.3.  Government Entity Subjects
 
 An Applicant qualifies as a Government Entity if:
 
@@ -372,7 +372,7 @@ An Applicant qualifies as a Government Entity if:
 
 (3) The entity is not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
 
-Business Entity Subjects
+### 8.5.4.  Business Entity Subjects
 
 An Applicant qualifies as a Business Entity if:
 
@@ -390,7 +390,7 @@ An Applicant qualifies as a Business Entity if:
 
 (7) The entity and the identified Principal Individual associated with the entity are not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
 
-Non-Commercial Entity Subjects
+### 8.5.5.  Non-Commercial Entity Subjects
 
 An Applicant qualifies as a Non-Commercial Entity if:
 
@@ -402,19 +402,19 @@ An Applicant qualifies as a Non-Commercial Entity if:
 
 Subsidiary organizations or agencies of an entity that qualifies as a Non-Commercial Entity also qualifies for EV Certificates as a Non-Commercial Entity.
 
-EV Certificate Content and Profile
+# 9. EV Certificate Content and Profile
 
 This section sets forth minimum requirements for the content of the EV Certificate as they relate to the identity of the CA and the Subject of the EV Certificate.
 
-## 0.9.Issuer Information
+## 9.1.  Issuer Information
 
 Issuer Information listed in an EV Certificate MUST comply with Section 7.1.4.1 of the Baseline Requirements.
 
-## 0.10.Subject Information
+## 9.2.  Subject Information
 
 Subject to the requirements of these Guidelines, the EV Certificate and certificates issued to Subordinate CAs that are not controlled by the same entity as the CA MUST include the following information about the Subject organization in the fields listed:
 
-Subject Organization Name Field
+### 9.2.1.  Subject Organization Name Field
 
 **Certificate field:** subject:organizationName (OID 2.5.4.10 )
 
@@ -428,23 +428,23 @@ In addition, an assumed name or DBA name used by the Subject MAY be included at 
 
 If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with section 11.12.1 and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the EV Certificate.
 
-Subject Alternative Name Extension
+### 9.2.2.  Subject Alternative Name Extension
 
-**        Certificate field:  ** subjectAltName:dNSName
+**Certificate field:  ** subjectAltName:dNSName
 
 **Required/Optional:  ** Required
 
 **Contents:  **  This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
 
-Subject Common Name Field
+### 9.2.3.  Subject Common Name Field
 
-**        Certificate field:  ** subject:commonName (OID:  2.5.4.3)
+**Certificate field:  ** subject:commonName (OID:  2.5.4.3)
 
 **Required/Optional:  ** Deprecated (Discouraged, but not prohibited)
 
 **Contents:  **  If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates except as permitted under Appendix F.
 
-Subject Business Category Field
+### 9.2.4.  Subject Business Category Field
 
 **Certificate field** :   _subject:businessCategory_ (OID:  2.5.4.15)
 
@@ -452,7 +452,7 @@ Subject Business Category Field
 
 **Contents:** This field MUST contain one of the following strings: "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity" depending upon whether the Subject qualifies under the terms of Section 8.5.2, 8.5.3, 8.5.4 or 8.5.5 of these Guidelines, respectively.
 
-Subject Jurisdiction of Incorporation or Registration Field
+### 9.2.5.  Subject Jurisdiction of Incorporation or Registration Field
 
 Certificate fields:
 
@@ -478,7 +478,7 @@ ASN.1 – _X520countryName_ as specified in RFC 5280
 
 **Contents** :   These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency.  For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information.  Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information.  And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information.  Country information MUST be specified using the applicable ISO country code.  State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
-Subject Registration Number Field
+### 9.2.6.  Subject Registration Number Field
 
 **Certificate field** :   Subject:serialNumber (OID:  2.5.4.5)
 
@@ -490,7 +490,7 @@ For Government Entities that do not have a Registration Number or readily verifi
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field.  For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
 
-Subject Physical Address of Place of Business Field
+### 9.2.7.  Subject Physical Address of Place of Business Field
 
 Certificate fields:
 
