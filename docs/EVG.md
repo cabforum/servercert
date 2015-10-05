@@ -508,184 +508,187 @@ Postal code: subject:postalCode (OID:  2.5.4.17)
 
 **Contents:**   This field MUST contain the address of the physical location of the Subject's Place of Business.
 
-Other Subject Attributes
+### 9.2.8.  Other Subject Attributes
 
 All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. CAs SHALL NOT include Fully-Qualified Domain Names in Subject attributes except as specified in Sections 9.2.1 and SHALL NOT include any Subject Organization Information except as specified in Section 9.2. Optional subfields within the Subject field MUST either contain information verified by the CA or MUST be left empty.  Metadata such as '.', '-', and ' ' characters, and/or any other indication that the field is empty, absent or incomplete, MUST not be used.
 
-## 0.11.Certificate Policy Identification
+## 9.3.  Certificate Policy Identification
 
-EV Certificate Policy Identification Requirements
+### 9.3.1.  EV Certificate Policy Identification Requirements
 
 This section sets forth minimum requirements for the contents of EV Certificates as they relate to the identification of EV Certificate Policy.
 
-EV Subscriber Certificates
+### 9.3.2.  EV Subscriber Certificates
 
 Each EV Certificate issued by the CA to a Subscriber MUST contain a policy identifier defined by the CA in the certificate's certificatePolicies extension that:  (i) indicates which CA policy statement relates to that Certificate, (ii) asserts the CA's adherence to and compliance with these Guidelines, and (iii), by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
 
-Root CA Certificates
+### 9.3.3.  Root CA Certificates
 
 The Application Software Supplier identifies Root CAs that are approved to issue EV Certificates by storing EV policy identifiers in metadata associated with Root CA Certificates.
 
-EV Subordinate CA Certificates
+### 9.3.4.  EV Subordinate CA Certificates
 
 (1) Certificates issued to Subordinate CAs that are not controlled by the issuing CA MUST contain one or more policy identifiers defined by the issuing CA that explicitly identify the EV Policies that are implemented by the Subordinate CA.
 
 (2) Certificates issued to Subordinate CAs that are controlled by the Root CA MAY contain the special anyPolicy identifier (OID:  2.5.29.32.0).
 
-Subscriber Certificates
+### 9.3.5.  Subscriber Certificates
 
 A Certificate issued to a Subscriber MUST contain one or more policy identifier(s), defined by the Issuing CA, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with these Guidelines.  Each CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Guidelines.
 
-## 0.12.Maximum Validity Period For EV Certificate
+## 9.4.  Maximum Validity Period For EV Certificate
 
 The validity period for an EV Certificate SHALL NOT exceed twenty seven months.  It is RECOMMENDED that EV Subscriber Certificates have a maximum validity period of twelve months.
 
-## 0.13.Subscriber Public Key
+## 9.5.  Subscriber Public Key
 
 The requirements in Section 6.1.1.3 of the Baseline requirements apply equally to EV Certificates.
 
-## 0.14.Certificate Serial Number
+## 9.6. Certificate Serial Number
 
 The requirements in Section 7.1 of the Baseline requirements apply equally to EV Certificates.
 
-## 0.15.Additional Technical Requirements for EV Certificates
+## 9.7.  Additional Technical Requirements for EV Certificates
 
 All provisions of the Baseline Requirements concerning Minimum Cryptographic Algorithms, Key Sizes, and Certificate Extensions apply to EV Certificates with the following exceptions:
 
-1. **1)** If a Subordinate CA Certificates is issued to a Subordinate CA not controlled by the entity that controls the Root CA, the policy identifiers in the certificatePolicies extension MUST include the CA's Extended Validation policy identifier. ÃÂ Otherwise, it MAY contain the anyPolicy identifier.ÃÂ
-2. **2)** The following fields MUST be present if the Subordinate CA is not controlled by the entity that controls the Root CA.ÃÂ
+(1)  If a Subordinate CA Certificates is issued to a Subordinate CA not controlled by the entity that controls the Root CA, the policy identifiers in the certificatePolicies extension MUST include the CA's Extended Validation policy identifier. 
 
-certificatePolicies:policyQualifiers:policyQualifierId
+Otherwise, it MAY contain the anyPolicy identifier.
 
-        id-qt 1 [RFC 5280]
+(2)  The following fields MUST be present if the Subordinate CA is not controlled by the entity that controls the Root CA.
 
-certificatePolicies:policyQualifiers:qualifier:cPSuri
+   certificatePolicies:policyQualifiers:policyQualifierId
 
-        HTTP URL for the Root CA's Certification Practice Statement
+    - id-qt 1 [RFC 5280]
 
-1. **3)** The certificatePolicies extension in EV Certificates issued to Subscribers MUST include the following:ÃÂ
+   certificatePolicies:policyQualifiers:qualifier:cPSuri
 
-certificatePolicies:policyIdentifier (Required)
+    - HTTP URL for the Root CA's Certification Practice Statement
 
-        The Issuer's EV policy identifier
+(3) The certificatePolicies extension in EV Certificates issued to Subscribers MUST include the following:ÃÂ
 
-certificatePolicies:policyQualifiers:policyQualifierId (Required)
+   certificatePolicies:policyIdentifier (Required)
 
-        id-qt 1 [RFC 5280]
+     - The Issuer's EV policy identifier
 
-certificatePolicies:policyQualifiers:qualifier:cPSuri (Required)
+   certificatePolicies:policyQualifiers:policyQualifierId (Required)
 
-        HTTP URL for the Subordinate CA's Certification Practice Statement
+     - id-qt 1 [RFC 5280]
 
-1. **4)** The cRLDistribution Point extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an authorityInformationAccess extension.ÃÂ
+   certificatePolicies:policyQualifiers:qualifier:cPSuri (Required)
 
-EV Certificate Request Requirements
+     - HTTP URL for the Subordinate CA's Certification Practice Statement
 
-## 0.16.General Requirements
+(4)  The cRLDistribution Point extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an authorityInformationAccess extension.
 
-Documentation Requirements
+# 10. EV Certificate Request Requirements
+
+## 10.1.  General Requirements
+
+### 10.1.1.  Documentation Requirements
 
 The documentation requirements in Section 4.1.2 of the Baseline requirements apply equally to EV Certificates.
 
-Role Requirements
+### 10.1.2.  Role Requirements
 
 The following Applicant roles are required for the issuance of an EV Certificate.
 
-        **Certificate Requester:  ** The EV Certificate Request MUST be submitted by an authorized Certificate Requester.  A Certificate Requester is a natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits an EV Certificate Request on behalf of the Applicant.
+(1) **Certificate Requester:**  The EV Certificate Request MUST be submitted by an authorized Certificate Requester.  A Certificate Requester is a natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits an EV Certificate Request on behalf of the Applicant.
 
-        **Certificate Approver:  ** The EV Certificate Request MUST be approved by an authorized Certificate Approver.  A Certificate Approver is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to (i) act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and (ii) to approve EV Certificate Requests submitted by other Certificate Requesters.
+(2)  **Certificate Approver:**  The EV Certificate Request MUST be approved by an authorized Certificate Approver.  A Certificate Approver is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to (i) act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and (ii) to approve EV Certificate Requests submitted by other Certificate Requesters.
 
-        **Contract Signer:  ** A Subscriber Agreement applicable to the requested EV Certificate MUST be signed by an authorized Contract Signer.  A Contract Signer is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
+(3)  **Contract Signer:**  Subcriber Agreement applicable to the requested EV Certificate MUST be signed by an authorized Contract Signer.  A Contract Signer is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
 
-(4)   **Applicant Representative** :  In the case where the CA and the Subscriber are affiliated, Terms of Use applicable to the requested EV Certificate MUST be acknowledged and agreed to by an authorized Applicant Representative.  An Applicant Representative is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to acknowledge and agree to the Terms of Use.
+(4)   **Applicant Representative:**   In the case where the CA and the Subscriber are affiliated, Terms of Use applicable to the requested EV Certificate MUST be acknowledged and agreed to by an authorized Applicant Representative.  An Applicant Representative is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to acknowledge and agree to the Terms of Use.
 
 The Applicant MAY authorize one individual to occupy two or more of these roles. The Applicant MAY authorize more than one individual to occupy any of these roles.
 
-## 0.17.EV Certificate Request Requirements
+## 10.2.  EV Certificate Request Requirements
 
 The Certificate Request requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates subject to the additional more stringent ageing and updating requirement of Section 11.14 of these Guidelines.
 
-## 0.18.Requirements for Subscriber Agreement and Terms of Use
+## 10.3. Requirements for Subscriber Agreement and Terms of Use
 
 Section 9.6.3 of the Baseline Requirements applies equally to EV Certificates.  In cases where the Certificate Request does not contain all necessary information about the Applicant, the CA MUST additionally confirm the data with the Certificate Approver or Contract Signer rather than the Certificate Requester.
 
-Verification Requirements
+# 11.  Verification Requirements
 
-## 0.19.General Overview
+## 11.1.  General Overview
 
-This part of the Guidelines sets forth Verification Requirements and Acceptable Methods of Verification for each such Requirement **.**
+This part of the Guidelines sets forth Verification Requirements and Acceptable Methods of Verification for each such Requirement.
 
-Verification Requirements – Overview
+###  11.1.1.  Verification Requirements – Overview
 
 Before issuing an EV Certificate, the CA MUST ensure that all Subject organization information to be included in the EV Certificate conforms to the requirements of, and is verified in accordance with, these Guidelines and matches the information confirmed and documented by the CA pursuant to its verification processes.  Such verification processes are intended to accomplish the following:
 
-        Verify Applicant's existence and identity, including;
+(1)   Verify Applicant's existence and identity, including;
 
-(A)        Verify the Applicant's legal existence and identity (as more fully set forth in Section 11.2 herein),
+  (A)  Verify the Applicant's legal existence and identity (as more fully set forth in Section 11.2 herein),
 
-(B)        Verify the Applicant's physical existence (business presence at a physical address), and
+  (B)  Verify the Applicant's physical existence (business presence at a physical address), and
 
-(C)        Verify the Applicant's operational existence (business activity).
+  (C)  Verify the Applicant's operational existence (business activity).
 
-        Verify the Applicant is a registered holder, or has control, of the Domain Name(s) to be included in the EV Certificate;
+(2)  Verify the Applicant is a registered holder, or has control, of the Domain Name(s) to be included in the EV Certificate;
 
 (3)  Verify a reliable means of communication with the entity to be named as the Subject in the Certificate;
 
-        Verify the Applicant's authorization for the EV Certificate, including;
+(4)  Verify the Applicant's authorization for the EV Certificate, including;
 
-(A)        Verify the name, title, and authority of the Contract Signer, Certificate Approver, and Certificate Requester,
+  (A)  Verify the name, title, and authority of the Contract Signer, Certificate Approver, and Certificate Requester,
 
-(B)        Verify that a Contract Signer signed the Subscriber Agreement or that a duly authorized Applicant Representative acknowledged and agreed to the Terms of Use; and
+  (B)  Verify that a Contract Signer signed the Subscriber Agreement or that a duly authorized Applicant Representative acknowledged and agreed to the Terms of Use; and
 
-(C)        Verify that a Certificate Approver has signed or otherwise approved the EV Certificate Request.
+  (C)  Verify that a Certificate Approver has signed or otherwise approved the EV Certificate Request.
 
-Acceptable Methods of Verification – Overview
+###  11.1.2.  Acceptable Methods of Verification – Overview
 
 As a general rule, the CA is responsible for taking all verification steps reasonably necessary to satisfy each of the Verification Requirements set forth in the subsections below.  The Acceptable Methods of Verification set forth in each of Sections 11.2 through 11.14 (which usually include alternatives) are considered to be the minimum acceptable level of verification required of the CA.  In all cases, however, the CA is responsible for taking any additional verification steps that may be reasonably necessary under the circumstances to satisfy the applicable Verification Requirement.
 
-## 0.20.Verification of Applicant's Legal Existence and Identity
+## 11.2.  Verification of Applicant's Legal Existence and Identity
 
-Verification Requirements
+### 11.2.1.  Verification Requirements
 
 To verify the Applicant's legal existence and identity, the CA MUST do the following.
 
 (1)  **Private Organization Subjects**
 
-(A)  **Legal Existence:  ** Verify that the Applicant is a legally recognized entity, in existence and validly formed (e.g., incorporated) with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, and not designated on the records of the Incorporating or Registration Agency by labels such as "inactive", "invalid", "not current", or the equivalent.
+  (A)  **Legal Existence:  ** Verify that the Applicant is a legally recognized entity, in existence and validly formed (e.g., incorporated) with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, and not designated on the records of the Incorporating or Registration Agency by labels such as "inactive", "invalid", "not current", or the equivalent.
 
-(B)   **Organization Name:  ** Verify that the Applicant's formal legal name as recorded with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration matches the Applicant's name in the EV Certificate Request.
+  (B)   **Organization Name:  ** Verify that the Applicant's formal legal name as recorded with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration matches the Applicant's name in the EV Certificate Request.
 
-(C)  **Registration Number:  ** Obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration.  Where the Incorporating or Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Incorporation or Registration.
+  (C)  **Registration Number:  ** Obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration.  Where the Incorporating or Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Incorporation or Registration.
 
-(D)   **Registered Agent:**  Obtain the identity and address of the Applicant's Registered Agent or Registered Office (as applicable in the Applicant's Jurisdiction of Incorporation or Registration).
+  (D)   **Registered Agent:**  Obtain the identity and address of the Applicant's Registered Agent or Registered Office (as applicable in the Applicant's Jurisdiction of Incorporation or Registration).
 
 (2)  **Government Entity Subjects**
 
-(A)  **Legal Existence:**  Verify that the Applicant is a legally recognized Government Entity, in existence in the political subdivision in which such Government Entity operates.
+  (A)  **Legal Existence:**  Verify that the Applicant is a legally recognized Government Entity, in existence in the political subdivision in which such Government Entity operates.
 
-(B)  **Entity Name:**  Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
+  (B)  **Entity Name:**  Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
 
-(C)  **Registration Number:**  The CA MUST attempt to obtain the Applicant's date of incorporation, registration, or formation, or the identifier for the legislative act that created the Government Entity.  In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is a Government Entity.
+  (C)  **Registration Number:**  The CA MUST attempt to obtain the Applicant's date of incorporation, registration, or formation, or the identifier for the legislative act that created the Government Entity.  In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is a Government Entity.
 
 (3)  **Business Entity Subjects**
 
-(A)  **Legal Existence:**  Verify that the Applicant is engaged in business under the name submitted by the Applicant in the Application.
+  (A)  **Legal Existence:**  Verify that the Applicant is engaged in business under the name submitted by the Applicant in the Application.
 
-(B)  **Organization Name:**  Verify that the Applicant's formal legal name as recognized by the Registration Authority in the Applicant's Jurisdiction of Registration matches the Applicant's name in the EV Certificate Request.
+  (B)  **Organization Name:**  Verify that the Applicant's formal legal name as recognized by the Registration Authority in the Applicant's Jurisdiction of Registration matches the Applicant's name in the EV Certificate Request.
 
-(C)  **Registration Number:**  Attempt to obtain the specific unique Registration Number assigned to the Applicant by the Registration Agency in the Applicant's Jurisdiction of Registration.  Where the Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Registration.
+  (C)  **Registration Number:**  Attempt to obtain the specific unique Registration Number assigned to the Applicant by the Registration Agency in the Applicant's Jurisdiction of Registration.  Where the Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Registration.
 
-(D)  **Principal Individual:**  Verify the identity of the identified Principal Individual.
+  (D)  **Principal Individual:**  Verify the identity of the identified Principal Individual.
 
 (4)   **Non-Commercial Entity Subjects (International Organizations)**
 
-(A)  **Legal Existence:  ** Verify that the Applicant is a legally recognized International Organization Entity.
+  (A)  **Legal Existence:  ** Verify that the Applicant is a legally recognized International Organization Entity.
 
-(B)  **Entity Name:  ** Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
+  (B)  **Entity Name:  ** Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
 
-(C)  **Registration Number:  ** The CA MUST attempt to obtain the Applicant's date of formation, or the identifier for the legislative act that created the International Organization Entity.  In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is an International Organization Entity.
+  (C)  **Registration Number:  ** The CA MUST attempt to obtain the Applicant's date of formation, or the identifier for the legislative act that created the International Organization Entity.  In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is an International Organization Entity.
 
-Acceptable Method of Verification
+###  11.2.2.  Acceptable Method of Verification
 
 (1)  **Private Organization Subjects:** Unless verified under subsection (6),all items listed in Section 11.2.1(1) MUST be verified directly with, or obtained directly from, the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Such verification MAY be through use of a Qualified Government Information Source operated by, or on behalf of, the Incorporating or Registration Agency, or by direct contact with the Incorporating or Registration Agency in person or via mail, e-mail, Web address, or telephone, using an address or phone number obtained directly from the Qualified Government Information Source, Incorporating or Registration Agency, or from a Qualified Independent Information Source.
 
@@ -699,7 +702,7 @@ Such verification MAY be by direct contact with the appropriate Government Entit
 
 (4)  **Principal Individual:  ** A Principal Individual associated with the Business Entity MUST be validated in a face-to-face setting.  The CA MAY rely upon a face-to-face validation of the Principal Individual performed by the Registration Agency, provided that the CA has evaluated the validation procedure and concluded that it satisfies the requirements of the Guidelines for face-to-face validation procedures.  Where no face-to-face validation was conducted by the Registration Agency, or the Registration Agency's face-to-face validation procedure does not satisfy the requirements of the Guidelines, the CA SHALL perform face-to-face validation.
 
-(A) **Face-To-Face Validation:  ** The face-to-face validation MUST be conducted before either an employee of the CA, a Latin Notary, a Notary (or equivalent in the Applicant's jurisdiction), a Lawyer, or Accountant (Third-Party Validator).  The Principal Individual(s) MUST present the following documentation (Vetting Documents) directly to the Third-Party Validator:
+  (A) **Face-To-Face Validation:  ** The face-to-face validation MUST be conducted before either an employee of the CA, a Latin Notary, a Notary (or equivalent in the Applicant's jurisdiction), a Lawyer, or Accountant (Third-Party Validator).  The Principal Individual(s) MUST present the following documentation (Vetting Documents) directly to the Third-Party Validator:
 
 (i) A Personal Statement that includes the following information:
 
