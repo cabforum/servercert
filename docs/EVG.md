@@ -9,9 +9,6 @@
 
 
 
-
-
-
 ## Guidelines For The Issuance And Management Of
 
 ## Extended Validation Certificates
@@ -156,7 +153,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **EV Certificate Warranties:**   In conjunction with the CA issuing an EV Certificate, the CA and its Root CA, during the period when the EV Certificate is Valid, promise that the CA has followed the requirements of these Guidelines and the CA's EV Policies in issuing the EV Certificate and in verifying the accuracy of the information contained in the EV Certificate.
 
-**EV OID:**  An identifying number, in the form of an "object identifier," that is included in the _certificatePolicies_ field of a certificate that:  (i) indicates which CA policy statement relates to that certificate, and (ii) by pre-agreement with one or more Application Software Supplier, marks the certificate as being an EV Certificate.
+**EV OID:**  An identifying number, in the form of an "object identifier," that is included in the _certificatePolicies_ field of a certificate that:  (i) indicates which CA policy statement relates to that certificate, and (ii) is either the CA/Browser Forum EV policy identifier or a  policy identifier that, by pre-agreement with one or more Application Software Supplier, marks the certificate as being an EV Certificate.
 
 **EV Policies:**  Auditable EV Certificate practices, policies and procedures, such as a certification practice statement  and certificate policy, that are developed, implemented, and enforced by the CA and its Root CA.
 
@@ -520,7 +517,11 @@ This section sets forth minimum requirements for the contents of EV Certificates
 
 ### 9.3.2.  EV Subscriber Certificates
 
-Each EV Certificate issued by the CA to a Subscriber MUST contain a policy identifier defined by the CA in the certificate's certificatePolicies extension that:  (i) indicates which CA policy statement relates to that Certificate, (ii) asserts the CA's adherence to and compliance with these Guidelines, and (iii), by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
+Each EV Certificate issued by the CA to a Subscriber MUST contain a policy identifier that is either defined by these Guidelines or the CA in the certificate's certificatePolicies extension that:  (i) indicates which CA policy statement relates to that Certificate, (ii) asserts the CA's adherence to and compliance with these Guidelines, and (iii) is either the CA/Browser Forum’s EV policy identifier or a policy identifier that, by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
+
+The following Certificate Policy identifier is the CA/Browser Forum’s EV policy identifier: 
+{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines (1) } (2.23.140.1.1), if the Certificate complies with these Guidelines.
+
 
 ### 9.3.3.  Root CA Certificates
 
