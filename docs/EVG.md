@@ -430,31 +430,31 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 ### 9.2.2.  Subject Alternative Name Extension
 
-**Certificate field:  ** subjectAltName:dNSName
+**Certificate field:**  subjectAltName:dNSName
 
-**Required/Optional:  ** Required
+**Required/Optional:**  Required
 
-**Contents:  **  This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
+**Contents:**   This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
 
 ### 9.2.3.  Subject Common Name Field
 
-**Certificate field:  ** subject:commonName (OID:  2.5.4.3)
+**Certificate field:**  subject:commonName (OID:  2.5.4.3)
 
-**Required/Optional:  ** Deprecated (Discouraged, but not prohibited)
+**Required/Optional:**  Deprecated (Discouraged, but not prohibited)
 
-**Contents:  **  If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates except as permitted under Appendix F.
+**Contents:**   If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates except as permitted under Appendix F.
 
 ### 9.2.4.  Subject Business Category Field
 
-**Certificate field** :   _subject:businessCategory_ (OID:  2.5.4.15)
+**Certificate field:**    _subject:businessCategory_ (OID:  2.5.4.15)
 
-**Required/Optional** :   Required
+**Required/Optional:**    Required
 
 **Contents:** This field MUST contain one of the following strings: "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity" depending upon whether the Subject qualifies under the terms of Section 8.5.2, 8.5.3, 8.5.4 or 8.5.5 of these Guidelines, respectively.
 
 ### 9.2.5.  Subject Jurisdiction of Incorporation or Registration Field
 
-Certificate fields:
+**Certificate fields:**
 
 Locality (if required):
 
@@ -474,17 +474,17 @@ Country:
 
 ASN.1 – _X520countryName_ as specified in RFC 5280
 
-**Required/Optional:  ** Required
+**Required/Optional:**  Required
 
-**Contents** :   These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency.  For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information.  Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information.  And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information.  Country information MUST be specified using the applicable ISO country code.  State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
+**Contents:**    These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency.  For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information.  Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information.  And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information.  Country information MUST be specified using the applicable ISO country code.  State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
 ### 9.2.6.  Subject Registration Number Field
 
-**Certificate field** :   Subject:serialNumber (OID:  2.5.4.5)
+**Certificate field:**    Subject:serialNumber (OID:  2.5.4.5)
 
-**Required/Optional** :   Required
+**Required/Optional:**    Required
 
-**Contents** :   For Private Organizations, this field MUST contain the Registration (or similar) Number assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate.  If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the date of Incorporation or Registration SHALL be entered into this field in any one of the common date formats.
+**Contents:**    For Private Organizations, this field MUST contain the Registration (or similar) Number assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate.  If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the date of Incorporation or Registration SHALL be entered into this field in any one of the common date formats.
 
 For Government Entities that do not have a Registration Number or readily verifiable date of creation, the CA SHALL enter appropriate language to indicate that the Subject is a Government Entity.
 
@@ -492,7 +492,7 @@ For Business Entities, the Registration Number that was received by the Business
 
 ### 9.2.7.  Subject Physical Address of Place of Business Field
 
-Certificate fields:
+**Certificate fields:**
 
 Number and street: subject:streetAddress (OID:  2.5.4.9)
 
@@ -1400,10 +1400,10 @@ The CA MUST host test Web pages that allow Application Software Suppliers to tes
 
 | To: | [Name of Issuing Certification Authority][Address / fax number of Issuing CA – may be sent by fax or email attachment] |
 | --- | --- |
-| Re: | **EV Certificate Request No.****             ****        [CA Reference Number]** |
-| Client:  | **[**** Exact ****company name of Client – see footnote 1]** |
-| Client Representative: | **[**** Exact ****name of Client Representative who signed the Application – see footnote 2]** |
-| Application Date: | [Insert date of Client's Application to the Issuing CA,] |
+| Re: | **EV Certificate Request No. (CA Reference Number)** |
+| Client:  | **(Exact company name of Client – see footnote 1)** |
+| Client Representative: | **(Exact name of Client Representative who signed the Application – see footnote 2)** |
+| Application Date: | [Insert date of Client's Application to the Issuing CA |
 
 This firm represents _[__exact__ company name of Client]_
 # _1_
@@ -1413,30 +1413,22 @@ This firm represents _[__exact__ company name of Client]_
 
 On this basis, we hereby offer the following opinion:
 
-1.
-  1.
-    1. 1.That [exact company name of Client] ("Company") is a duly formed [corporation, LLC, etc.] that is "active," "valid," "current," or the equivalent under the laws of the state/province of [name of governing jurisdiction where Client is incorporated or registered] and is not under any legal disability known to the author of this letter.
-    2. 2.That Company conducts business under the assumed name or "DBA"_[assumed name of the Applicant]_ and has registered such name with the appropriate government agency in the jurisdiction of its place of business below.
-    3.
-That _[name of Client's Representative]_
+1. That [exact company name of Client] ("Company") is a duly formed [corporation, LLC, etc.] that is "active," "valid," "current," or the equivalent under the laws of the state/province of [name of governing jurisdiction where Client is incorporated or registered] and is not under any legal disability known to the author of this letter.
+
+2. That Company conducts business under the assumed name or "DBA"_[assumed name of the Applicant]_ and has registered such name with the appropriate government agency in the jurisdiction of its place of business below.
+3. That _[name of Client's Representative]_
 # _2_
  has authority to act on behalf of Company to:  [_select as appropriate_] (a) provide the information about Company required for issuance of the EV Certificates as contained in the attached Application, (b) request one or more EV Certificates and to designate other persons to request EV Certificates, and (c) agree to the relevant contractual obligations contained in the Subscriber Agreement on behalf of Company.
 
-1. **4.** That Company has a physical presence and its place of business is at the following location: 
+**4.** That Company has a physical presence and its place of business is at the following location: 
 
-
-
-
-
-
-
-1. **5.** That Company can be contacted at its stated place of business at the following telephone number:
+**5.** That Company can be contacted at its stated place of business at the following telephone number:
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-1. **6.** That Company has an active current Demand Deposit Account with a regulated financial institution.
+**6.** That Company has an active current Demand Deposit Account with a regulated financial institution.
 
-1. **7.** That Company has the right to use the following Domain Name in identifying itself on the Internet:
+**7.** That Company has the right to use the following Domain Name in identifying itself on the Internet:
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -1675,13 +1667,12 @@ cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 6. On or before May 1, 2015, each CA MUST revoke all Certificates issued with the Subject Alternative Name extension or Common Name field that includes a Domain Name where .onion is in the right-most label of the Domain Name unless the Certificate was issued in compliance with this Appendix F.
 
 
-
-# 1
+/#1
  Note:  This must be the Client's exact corporate name, as registered with the relevant Incorporating Agency in the Client's Jurisdiction of Incorporation.  This is the name that will be included in the EV Certificate.
 
-# 2
+/#2
  Note:  If necessary to establish the Client Representative's actual authority, you may rely on a Power of Attorney from an officer of Client who has authority to delegate the authority to the Client Representative.
 
-# 3
+/#3
  Note:  This letter may be issued by in-house counsel for the Client so long as permitted by the rules of your jurisdiction.
 
