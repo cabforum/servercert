@@ -22,15 +22,15 @@
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This CP describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software.  The requirements are not mandatory for Certification Authorities unless and until they become adopted and enforced by relying–party Application Software Suppliers.  
+This CP describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software. The requirements are not mandatory for Certification Authorities unless and until they become adopted and enforced by relying-party Application Software Suppliers.
 
 **Notice to Readers**
 
-The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
+The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
 
-These Requirements do not address all of the issues relevant to the issuance and management of Publicly-Trusted Certificates.  In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this CP includes all sections of the RFC 3647 framework.  However, rather than beginning with a “no stipulation” comment in all empty sections, the CA/Browser Forum is leaving such sections initially blank until a decision of “no stipulation” is made.  The CA/Browser Forum may update these Requirements from time to time, in order to address both existing and emerging threats to online security.  In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.
+These Requirements do not address all of the issues relevant to the issuance and management of Publicly-Trusted Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this CP includes all sections of the RFC 3647 framework. However, rather than beginning with a "no stipulation" comment in all empty sections, the CA/Browser Forum is leaving such sections initially blank until a decision of "no stipulation" is made. The CA/Browser Forum may update these Requirements from time to time, in order to address both existing and emerging threats to online security. In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.
 
-These Requirements only address Certificates intended to be used for authenticating servers accessible through the Internet.  Similar requirements for code signing, S/MIME, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
+These Requirements only address Certificates intended to be used for authenticating servers accessible through the Internet. Similar requirements for code signing, S/MIME, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
 
 These Requirements do not address the issuance, or management of Certificates by enterprises that operate their own Public Key Infrastructure for internal purposes only, and for which the Root Certificate is not distributed by any Application Software Supplier.
 
@@ -51,21 +51,21 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 | **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
 | --- | --- | --- | --- | --- |
-| 1.0.0 | 62 |  Version 1.0 of the Baseline Requirements Adopted | 22-Nov-11 | 01-Jul-12 |
-| 1.0.1 | 71 |  Revised Auditor Qualifications | 08-May-12 | 01-Jan-13 |
-| 1.0.2 | 75 |  Non-critical Name Constraints allowed as exception to RFC 5280 | 08-Jun-12 | 08-Jun-12 |
-| 1.0.3 | 78 |  Revised Domain/IP Address Validation, High Risk Requests, and Data Sources | 22-Jun-12 | 22-Jun-12 |
-| 1.0.4 | 80 |  OCSP responses for non-issued certificates | 02-Aug-12 | 01-Feb-13 01-Aug-13 |
-| -- | 83 |  Network and Certificate System Security Requirements adopted | 03-Aug-13 | 01-Jan-13 |
-| 1.0.5 | 88 |  User-assigned country code of XX allowed | 12-Sep-12 | 12-Sep-12 |
-| 1.1.0 | -- |  Published as Version 1.1 with no changes from 1.0.5 | 14-Sep-12 | 14-Sep-12 |
-| 1.1.1 | 93 |  Reasons for Revocation and Public Key Parameter checking | 07-Nov-12 | 07-Nov-12 01-Jan-13 |
-| 1.1.2 | 96 |  Wildcard certificates and new gTLDs | 20-Feb-13 | 20-Feb-13 01-Sep-13 |
-| 1.1.3 | 97 |  Prevention of Unknown Certificate Contents | 21-Feb-13 | 21-Feb-13 |
+| 1.0.0 | 62 | Version 1.0 of the Baseline Requirements Adopted | 22-Nov-11 | 01-Jul-12 |
+| 1.0.1 | 71 | Revised Auditor Qualifications | 08-May-12 | 01-Jan-13 |
+| 1.0.2 | 75 | Non-critical Name Constraints allowed as exception to RFC 5280 | 08-Jun-12 | 08-Jun-12 |
+| 1.0.3 | 78 | Revised Domain/IP Address Validation, High Risk Requests, and Data Sources | 22-Jun-12 | 22-Jun-12 |
+| 1.0.4 | 80 | OCSP responses for non-issued certificates | 02-Aug-12 | 01-Feb-13 01-Aug-13 |
+| -- | 83 | Network and Certificate System Security Requirements adopted | 03-Aug-13 | 01-Jan-13 |
+| 1.0.5 | 88 | User-assigned country code of XX allowed | 12-Sep-12 | 12-Sep-12 |
+| 1.1.0 | -- | Published as Version 1.1 with no changes from 1.0.5 | 14-Sep-12 | 14-Sep-12 |
+| 1.1.1 | 93 | Reasons for Revocation and Public Key Parameter checking | 07-Nov-12 | 07-Nov-12 01-Jan-13 |
+| 1.1.2 | 96 | Wildcard certificates and new gTLDs | 20-Feb-13 | 20-Feb-13 01-Sep-13 |
+| 1.1.3 | 97 | Prevention of Unknown Certificate Contents | 21-Feb-13 | 21-Feb-13 |
 | 1.1.4 | 99 | Add DSA Keys (BR v.1.1.4) | 3-May-2013 | 3-May-2013 |
 | 1.1.5 | 102 | Revision to subject domainComponent language in section 9.2.3 | 31-May-2013 | 31-May-2013 |
 | 1.1.6 | 105 | Technical Constraints for Subordinate Certificate Authorities | 29-July-2013 | 29-July-2013 |
-| 1.1.7 | 112 | Replace Definition of  "Internal Server Name" with "Internal Name" | 3-April-2014 | 3-April-2014 |
+| 1.1.7 | 112 | Replace Definition of "Internal Server Name" with "Internal Name" | 3-April-2014 | 3-April-2014 |
 | 1.1.8 | 120 | Affiliate Authority to Verify Domain | 5-June-2014 | 5-June-2014 |
 | 1.1.9 | 129 | Clarification of PSL mentioned in Section 11.1.3 | 4-Aug-2014 | 4-Aug-2014 |
 | 1.2.0 | 125 | CAA Records | 14-Oct-2014 | 15-Apr-2015 |
@@ -87,7 +87,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2013-01-01 | 5 | CAs SHALL comply with the Network and Certificate System Security Requirements. |
 | 2013-08-01 | 4.9.10 | OCSP Responders SHALL NOT respond "Good" for Unissued Certificates. |
 | 2013-09-01 | 3.2.2.6 | CAs SHALL revoke any certificate where wildcard character occurs in the first label position immediately to the left of a "registry-controlled" label or "public suffix". |
-| 2013-12-31 | 6.1.5 | CAs SHALL confirm that the RSA Public Key is at least 2048 bits or that one of the following ECC curves is used: P-256, P-384, or P-521.  A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor. |
+| 2013-12-31 | 6.1.5 | CAs SHALL confirm that the RSA Public Key is at least 2048 bits or that one of the following ECC curves is used: P-256, P-384, or P-521. A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor. |
 | 2015-01-16 | 7.1.3 | CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017. |
 | 2015-04-01 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 39 months. |
 | 2015-04-15 | 2.2 | A CA's CPS must state whether it reviews CAA Records, and if so, its policy or practice on processing CAA records for Fully Qualified Domain Names. |
@@ -102,7 +102,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
 
 ### 1.3.1 Certification Authorities
-Certification Authority (CA) is defined in Section 1.6, Definitions. Current CA Members of the CA/Browser Forum are listed here: https://cabforum.org/members.
+Certification Authority (CA) is defined in Section 1.6. Current CA Members of the CA/Browser Forum are listed here: https://cabforum.org/members.
 
 ### 1.3.2 Registration Authorities
 The CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Section 3.2.
@@ -125,11 +125,11 @@ The CA SHALL impose these limitations as a contractual requirement on the Enterp
 
 
 ### 1.3.3 Subscribers
-As defined in Section 1.6.1 Definitions.
+As defined in Section 1.6.1.
 
 
 ### 1.3.4 Relying Parties
-Relying Party" and "Application Software Supplier" are defined in Section 1.6.1, Definitions. Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here: https://cabforum.org/members.
+"Relying Party" and "Application Software Supplier" are defined in Section 1.6.1. Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here: https://cabforum.org/members.
 
 
 ### 1.3.5 Other Participants
@@ -162,153 +162,153 @@ No stipulation.
 
 ## 1.6 Definitions and Acronyms
 
-### 1.6.1  Definitions
+### 1.6.1 Definitions
 
-**Affiliate:**  A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
+**Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
-**Applicant:**  The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate.  Once the Certificate issues, the Applicant is referred to as the Subscriber.  For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
+**Applicant**: The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate issues, the Applicant is referred to as the Subscriber. For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
 
-**Applicant Representative:**  A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant:  (i) who signs and submits, or approves a certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges and agrees to the Certificate Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA.
+**Applicant Representative**: A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant: (i) who signs and submits, or approves a certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges and agrees to the Certificate Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA.
 
-**Application Software Supplier:**  A supplier of Internet browser software or other relying-party application software that displays or uses Certificates and incorporates Root Certificates.
+**Application Software Supplier**: A supplier of Internet browser software or other relying-party application software that displays or uses Certificates and incorporates Root Certificates.
 
-**Attestation Letter:** A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
+**Attestation Letter**: A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
 
-**Audit Report:** A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
+**Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
 
-**CAA:**  From RFC 6844 ( [http:tools.ietf.org/html/rfc6844](http://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
+**CAA**: From RFC 6844 ([http:tools.ietf.org/html/rfc6844](http://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
 
-**Certificate:** An electronic document that uses a digital signature to bind a public key and an identity.
+**Certificate**: An electronic document that uses a digital signature to bind a public key and an identity.
 
-**Certificate Data:**  Certificate requests and data related thereto (whether obtained from the Applicant or otherwise) in the CA's possession or control or to which the CA has access.
+**Certificate Data**: Certificate requests and data related thereto (whether obtained from the Applicant or otherwise) in the CA's possession or control or to which the CA has access.
 
-**Certificate Management Process:**  Processes, practices, and procedures associated with the use of keys, software, and hardware, by which the CA verifies Certificate Data, issues Certificates, maintains a Repository, and revokes Certificates.
+**Certificate Management Process**: Processes, practices, and procedures associated with the use of keys, software, and hardware, by which the CA verifies Certificate Data, issues Certificates, maintains a Repository, and revokes Certificates.
 
-**Certificate Policy:**  A set of rules that indicates the applicability of a named Certificate to a particular community and/or PKI implementation with common security requirements.
+**Certificate Policy**: A set of rules that indicates the applicability of a named Certificate to a particular community and/or PKI implementation with common security requirements.
 
-**Certificate Problem Report:**  Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates.
+**Certificate Problem Report**: Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates.
 
-**Certificate Revocation List:**  A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
+**Certificate Revocation List**: A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
-**Certification Authority:**  An organization that is responsible for the creation, issuance, revocation, and management of Certificates.  The term applies equally to both Roots CAs and Subordinate CAs.
+**Certification Authority**: An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs.
 
-**Certification Practice Statement:**  One of several documents forming the governance framework in which Certificates are created, issued, managed, and used.
+**Certification Practice Statement**: One of several documents forming the governance framework in which Certificates are created, issued, managed, and used.
 
-**Control:**  "Control" (and its correlative meanings, "controlled by" and "under common control with") means possession, directly or indirectly, of the power to: (1) direct the management, personnel, finances, or plans of such entity; (2) control the election of a majority of the directors ; or (3) vote that portion of voting shares required for  "control" under the law of the entity's Jurisdiction of Incorporation or Registration but in no case less than 10%.
+**Control**: "Control" (and its correlative meanings, "controlled by" and "under common control with") means possession, directly or indirectly, of the power to: (1) direct the management, personnel, finances, or plans of such entity; (2) control the election of a majority of the directors ; or (3) vote that portion of voting shares required for "control" under the law of the entity's Jurisdiction of Incorporation or Registration but in no case less than 10%.
 
-**Country:** Either a member of the United Nations OR a geographic region recognized as a sovereign nation by at least two UN member nations.
+**Country**: Either a member of the United Nations OR a geographic region recognized as a sovereign nation by at least two UN member nations.
 
-**Cross Certificate:**   A certificate that is used to establish a trust relationship between two Root CAs.
+**Cross Certificate**: A certificate that is used to establish a trust relationship between two Root CAs.
 
-**Delegated Third Party:** A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
+**Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
-**Domain Authorization Document** :  Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
+**Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
-**Domain Name:** The label assigned to a node in the Domain Name System.
+**Domain Name**: The label assigned to a node in the Domain Name System.
 
-**Domain Namespace:**  The set of all possible Domain Names that are subordinate to a single node in the Domain Name System.
+**Domain Namespace**: The set of all possible Domain Names that are subordinate to a single node in the Domain Name System.
 
-**Domain Name Registrant:**  Sometimes referred to as the "owner" of a Domain Name, but more properly the person(s) or entity(ies) registered with a Domain Name Registrar as having the right to control how a Domain Name is used, such as the natural person or Legal Entity that is listed  as the "Registrant" by WHOIS or the Domain Name Registrar.
+**Domain Name Registrant**: Sometimes referred to as the "owner" of a Domain Name, but more properly the person(s) or entity(ies) registered with a Domain Name Registrar as having the right to control how a Domain Name is used, such as the natural person or Legal Entity that is listed as the "Registrant" by WHOIS or the Domain Name Registrar.
 
-**Domain Name Registrar:**  A person or entity that registers Domain Names under the auspices of or by agreement with: (i) the Internet Corporation for Assigned Names and Numbers (ICANN), (ii) a national Domain Name authority/registry, or (iii) a Network Information Center (including their affiliates, contractors, delegates, successors, or assigns).
+**Domain Name Registrar**: A person or entity that registers Domain Names under the auspices of or by agreement with: (i) the Internet Corporation for Assigned Names and Numbers (ICANN), (ii) a national Domain Name authority/registry, or (iii) a Network Information Center (including their affiliates, contractors, delegates, successors, or assigns).
 
-**Effective Date:**   1 July 2012.
+**Effective Date**: 1 July 2012.
 
-**Enterprise RA:**  An employee or agent of an organization unaffiliated with the CA who authorizes issuance of Certificates to that organization.
+**Enterprise RA**: An employee or agent of an organization unaffiliated with the CA who authorizes issuance of Certificates to that organization.
 
-**Expiry Date:**   The "Not After" date in a Certificate that defines the end of a Certificate's validity period.
+**Expiry Date**: The "Not After" date in a Certificate that defines the end of a Certificate's validity period.
 
-**Fully-Qualified Domain Name:** A Domain Name that includes the labels of all superior nodes in the Internet Domain Name System.
+**Fully-Qualified Domain Name**: A Domain Name that includes the labels of all superior nodes in the Internet Domain Name System.
 
-**Government Entity:** A government-operated legal entity, agency, department, ministry, branch, or similar element of the government of a country, or political subdivision within such country (such as a state, province, city, county, etc.).
+**Government Entity**: A government-operated legal entity, agency, department, ministry, branch, or similar element of the government of a country, or political subdivision within such country (such as a state, province, city, county, etc.).
 
-**High Risk Certificate Request:** A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
+**High Risk Certificate Request**: A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
 
-**Internal  Name:**  A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
+**Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
 
-**Issuing CA:**  In relation to a particular Certificate, the CA that issued the Certificate.  This could be either a Root CA or a Subordinate CA.
+**Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
 
-**Key Compromise:** A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, an unauthorized person has had access to it, or there exists a practical technique by which an unauthorized person may discover its value.  A Private Key is also considered compromised if methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys) or if there is clear evidence that the specific method used to generate the Private Key was flawed.
+**Key Compromise**: A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, an unauthorized person has had access to it, or there exists a practical technique by which an unauthorized person may discover its value. A Private Key is also considered compromised if methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys) or if there is clear evidence that the specific method used to generate the Private Key was flawed.
 
-**Key Generation Script:**  A documented plan of procedures for the generation of a CA Key Pair **.**
+**Key Generation Script**: A documented plan of procedures for the generation of a CA Key Pair **.**
 
-**Key Pair:**  The Private Key and its associated Public Key.
+**Key Pair**: The Private Key and its associated Public Key.
 
-**Legal Entity:** An [association](http://www.businessdictionary.com/definition/association.html), [corporation](http://www.businessdictionary.com/definition/corporation.html), [partnership](http://www.businessdictionary.com/definition/partnership.html), [proprietorship](http://www.businessdictionary.com/definition/proprietorship.html), [trust](http://www.businessdictionary.com/definition/trust.html), government entity or other entity with [legal](http://www.businessdictionary.com/definition/legal.html) [standing](http://www.investorwords.com/7216/standing.html)in a country's legal system.
+**Legal Entity**: An [association](http://www.businessdictionary.com/definition/association.html), [corporation](http://www.businessdictionary.com/definition/corporation.html), [partnership](http://www.businessdictionary.com/definition/partnership.html), [proprietorship](http://www.businessdictionary.com/definition/proprietorship.html), [trust](http://www.businessdictionary.com/definition/trust.html), government entity or other entity with [legal](http://www.businessdictionary.com/definition/legal.html) [standing](http://www.investorwords.com/7216/standing.html)in a country's legal system.
 
-**Object Identifier:**  A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
+**Object Identifier**: A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
 
-**OCSP Responder:**  An online server operated under the authority of the CA and connected to its Repository for processing Certificate status requests.  See also, Online Certificate Status Protocol.
+**OCSP Responder**: An online server operated under the authority of the CA and connected to its Repository for processing Certificate status requests. See also, Online Certificate Status Protocol.
 
-**Online Certificate Status Protocol:**  An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate.  See also OCSP Responder.
+**Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. See also OCSP Responder.
 
-**Parent Company:**  A company that Controls a Subsidiary Company.
+**Parent Company**: A company that Controls a Subsidiary Company.
 
-**Private Key:**  The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
+**Private Key**: The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
 
-**Public Key:**  The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used by a Relying Party to verify Digital Signatures created with the holder's corresponding Private Key and/or to encrypt messages so that they can be decrypted only with the holder's corresponding Private Key.
+**Public Key**: The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used by a Relying Party to verify Digital Signatures created with the holder's corresponding Private Key and/or to encrypt messages so that they can be decrypted only with the holder's corresponding Private Key.
 
-**Public Key Infrastructure:**  A set of hardware, software, people, procedures, rules, policies, and obligations used to facilitate the trustworthy creation, issuance, management, and use of Certificates and keys based on Public Key Cryptography.
+**Public Key Infrastructure**: A set of hardware, software, people, procedures, rules, policies, and obligations used to facilitate the trustworthy creation, issuance, management, and use of Certificates and keys based on Public Key Cryptography.
 
-**Publicly-Trusted Certificate:**  A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
+**Publicly-Trusted Certificate**: A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
 
-**Qualified Auditor:** A natural person or Legal Entity that meets the requirements of Section 8.3 (Auditor Qualifications).
+**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.3.
 
-**Registered Domain Name:** A Domain Name that has been registered with a Domain Name Registrar.
+**Registered Domain Name**: A Domain Name that has been registered with a Domain Name Registrar.
 
-**Registration Authority (RA):**  Any Legal Entity that is responsible for identification and authentication of subjects of Certificates, but is not a CA, and hence does not sign or issue Certificates. An RA may assist in the certificate application process or revocation process or both.  When "RA" is used as an adjective to describe a role or function, it does not necessarily imply a separate body, but can be part of the CA.
+**Registration Authority (RA)**: Any Legal Entity that is responsible for identification and authentication of subjects of Certificates, but is not a CA, and hence does not sign or issue Certificates. An RA may assist in the certificate application process or revocation process or both. When "RA" is used as an adjective to describe a role or function, it does not necessarily imply a separate body, but can be part of the CA.
 
-**Reliable Data Source:** An identification document or source of data used to verify Subject Identity Information that is generally recognized among commercial enterprises and governments as reliable, and which was created by a third party for a purpose other than the Applicant obtaining a Certificate.
+**Reliable Data Source**: An identification document or source of data used to verify Subject Identity Information that is generally recognized among commercial enterprises and governments as reliable, and which was created by a third party for a purpose other than the Applicant obtaining a Certificate.
 
-**Reliable Method of Communication:** A method of communication, such as a postal/courier delivery address, telephone number, or email address, that was verified using a source other than the Applicant Representative.
+**Reliable Method of Communication**: A method of communication, such as a postal/courier delivery address, telephone number, or email address, that was verified using a source other than the Applicant Representative.
 
-**Relying Party:**  Any natural person or Legal Entity that relies on a Valid Certificate.  An Application Software Supplier is not considered a Relying Party when software distributed by such Supplier merely displays information relating to a Certificate.
+**Relying Party**: Any natural person or Legal Entity that relies on a Valid Certificate. An Application Software Supplier is not considered a Relying Party when software distributed by such Supplier merely displays information relating to a Certificate.
 
-**Repository:**  An online database containing publicly-disclosed PKI governance documents (such as Certificate Policies and Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
+**Repository**: An online database containing publicly-disclosed PKI governance documents (such as Certificate Policies and Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
 
-**Requirements:**  The Baseline Requirements found in this document.
+**Requirements**: The Baseline Requirements found in this document.
 
-**Reserved IP Address:**  An IPv4 or IPv6 address that the IANA has marked as reserved:
+**Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
 
 [http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
 
 [http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml](http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
 
-**Root CA:**  The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
+**Root CA**: The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
 
-**Root Certificate:**  The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
+**Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
 
-**Sovereign State:** A state or country that administers its own government, and is not dependent upon, or subject to, another power.
+**Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
 
-**Subject:**  The natural person, device, system, unit, or Legal Entity identified in a Certificate as the Subject.  The Subject is either the Subscriber or a device under the control and operation of the Subscriber.
+**Subject**: The natural person, device, system, unit, or Legal Entity identified in a Certificate as the Subject. The Subject is either the Subscriber or a device under the control and operation of the Subscriber.
 
-**Subject Identity Information:** Information that identifies the Certificate Subject.  Subject Identity Information does not include a domain name listed in the subjectAltName extension or the Subject commonName field.
+**Subject Identity Information**: Information that identifies the Certificate Subject. Subject Identity Information does not include a domain name listed in the subjectAltName extension or the Subject commonName field.
 
-**Subordinate CA:**  A Certification Authority whose Certificate is signed by the Root CA, or another Subordinate CA.
+**Subordinate CA**: A Certification Authority whose Certificate is signed by the Root CA, or another Subordinate CA.
 
-**Subscriber:**  A natural person or Legal Entity to whom a Certificate is issued and who is legally bound by a Subscriber or Terms of Use Agreement.
+**Subscriber**: A natural person or Legal Entity to whom a Certificate is issued and who is legally bound by a Subscriber or Terms of Use Agreement.
 
-**Subscriber Agreement:**  An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
+**Subscriber Agreement**: An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
 
-**Subsidiary Company:**  A company that is controlled by a Parent Company.
+**Subsidiary Company**: A company that is controlled by a Parent Company.
 
-**Technically Constrained Subordinate CA Certificate:** A Subordinate CA certificate which uses a combination of Extended Key Usage settings and Name Constraint settings to limit the scope within which the Subordinate CA Certificate may issue Subscriber or additional Subordinate CA Certificates.
+**Technically Constrained Subordinate CA Certificate**: A Subordinate CA certificate which uses a combination of Extended Key Usage settings and Name Constraint settings to limit the scope within which the Subordinate CA Certificate may issue Subscriber or additional Subordinate CA Certificates.
 
-**Terms of Use:**  Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA.
+**Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA.
 
-**Trustworthy System:**  Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
+**Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
 
-**Unregistered Domain Name:** A Domain Name that is not a Registered Domain Name.
+**Unregistered Domain Name**: A Domain Name that is not a Registered Domain Name.
 
-**Valid Certificate:**  A Certificate that passes the validation procedure specified in RFC 5280.
+**Valid Certificate**: A Certificate that passes the validation procedure specified in RFC 5280.
 
-**Validation Specialists:**  Someone who performs the information verification duties specified by these Requirements.
+**Validation Specialists**: Someone who performs the information verification duties specified by these Requirements.
 
-**Validity Period:**   The period of time measured from the date when the Certificate is issued until the Expiry Date.
+**Validity Period**: The period of time measured from the date when the Certificate is issued until the Expiry Date.
 
-**Wildcard Certificate:**  A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
+**Wildcard Certificate**: A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
 
-### 1.6.2   Acronyms
+### 1.6.2 Acronyms
 
 | **Acronym** | **Meaning** |
 | --- | --- |
@@ -369,7 +369,7 @@ RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: C
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
-X.509v3 , ITU-T Recommendation X.509 (2005) \| ISO/IEC 9594-8:2005, Information technology - Open Systems Interconnection - The Directory: Public-key and attribute certificate frameworks.
+X.509v3, ITU-T Recommendation X.509 (2005) \| ISO/IEC 9594-8:2005, Information technology - Open Systems Interconnection - The Directory: Public-key and attribute certificate frameworks.
 
 
 ### 1.6.4 Conventions
@@ -383,14 +383,14 @@ The CA SHALL develop, implement, enforce, and annually update a Certification Pr
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
 
 ## 2.2 Publication of information
-The CA SHALL publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 2527 or RFC 3647, and MUST be structured in accordance with either RFC 2527 or RFC 3647.  Effective as of 15 April 2015, section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement (section 4.1 for CAs still conforming to RFC 2527) SHALL state whether the CA reviews CAA Records, and if so, the CA's policy or practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
+The CA SHALL publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 2527 or RFC 3647, and MUST be structured in accordance with either RFC 2527 or RFC 3647. Effective as of 15 April 2015, section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement (section 4.1 for CAs still conforming to RFC 2527) SHALL state whether the CA reviews CAA Records, and if so, the CA's policy or practice on processing CAA Records for Fully Qualified Domain Names. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
 The CA SHALL publicly give effect to these Requirements and represent that it will adhere to the latest published version. The CA MAY fulfill this requirement by incorporating these Requirements directly into its Certificate Policy and/or Certification Practice Statements or by incorporating them by reference using a clause such as the following (which MUST include a link to the official version of these Requirements):
 
 > [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
 
 
-The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate.  At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
+The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
 
@@ -417,10 +417,10 @@ The CA SHALL host test Web pages that allow Application Software Suppliers to te
 ### 3.2.1 Method to prove possession of private key
 
 ### 3.2.2 Authentication of Organization and Domain Identity
-If the Applicant requests a Certificate that will contain Subject Identity Information comprised only of the countryName field, then the CA SHALL verify the country associated with the Subject using a verification process meeting the requirements of Section 3.2.2.3 and that is described in the CA's Certificate Policy and/or Certification Practice Statement.  If the Applicant requests a Certificate that will contain the countryName field and other Subject Identity Information, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements of this Section 3.2.2.1 and that is described in the CA's Certificate Policy and/or Certification Practice Statement.  The CA SHALL inspect any document relied upon under this Section for alteration or falsification.
+If the Applicant requests a Certificate that will contain Subject Identity Information comprised only of the countryName field, then the CA SHALL verify the country associated with the Subject using a verification process meeting the requirements of Section 3.2.2.3 and that is described in the CA's Certificate Policy and/or Certification Practice Statement. If the Applicant requests a Certificate that will contain the countryName field and other Subject Identity Information, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements of this Section 3.2.2.1 and that is described in the CA's Certificate Policy and/or Certification Practice Statement. The CA SHALL inspect any document relied upon under this Section for alteration or falsification.
 
 #### 3.2.2.1 Identity
-If the Subject Identity Information is to include the name or address of an organization, the CA SHALL verify the identity and address of the organization and that the address is the Applicant's address of existence or operation.  The CA SHALL verify the identity and address of the Applicant using documentation provided by, or through communication with, at least one of the following:
+If the Subject Identity Information is to include the name or address of an organization, the CA SHALL verify the identity and address of the organization and that the address is the Applicant's address of existence or operation. The CA SHALL verify the identity and address of the Applicant using documentation provided by, or through communication with, at least one of the following:
 
 1. A government agency in the jurisdiction of the Applicant's legal creation, existence, or recognition;
 2. A third party database that is periodically updated and considered a Reliable Data Source;
@@ -441,18 +441,18 @@ If the Subject Identity Information is to include a DBA or tradename, the CA SHA
 5. A utility bill, bank statement, credit card statement, government-issued tax document, or other form of identification that the CA determines to be reliable.
 
 #### 3.2.2.3 Verification of Country
-If the subject:countryName field is present, then the CA SHALL verify the country associated with the Subject using one of the following: (a) the IP Address range assignment by country for either (i) the web site's IP address, as indicated by the DNS record for the web site or (ii) the Applicant's IP address; (b) the ccTLD of the requested Domain Name; (c) information provided by the Domain Name Registrar; or (d) a method identified in Section 3.2.2.1.  The CA SHOULD implement a process to screen proxy servers in order to prevent reliance upon IP addresses assigned in countries other than where the Applicant is actually located.
+If the subject:countryName field is present, then the CA SHALL verify the country associated with the Subject using one of the following: (a) the IP Address range assignment by country for either (i) the web site's IP address, as indicated by the DNS record for the web site or (ii) the Applicant's IP address; (b) the ccTLD of the requested Domain Name; (c) information provided by the Domain Name Registrar; or (d) a method identified in Section 3.2.2.1. The CA SHOULD implement a process to screen proxy servers in order to prevent reliance upon IP addresses assigned in countries other than where the Applicant is actually located.
 
 #### 3.2.2.4 Authorization by Domain Name Registrant
 For each Fully-Qualified Domain Name listed in a Certificate, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section) either is the Domain Name Registrant or has control over the FQDN by:
 
 1. Confirming the Applicant as the Domain Name Registrant directly with the Domain Name Registrar;
-2.  Communicating directly with the Domain Name Registrant using an address, email, or telephone number provided by the Domain Name Registrar;
-3.  Communicating directly with the Domain Name Registrant using the contact information listed in the WHOIS record's "registrant", "technical", or "administrative" field;
-4.  Communicating with the Domain's administrator using an email address created by pre-pending 'admin', 'administrator', 'webmaster', 'hostmaster', or 'postmaster' in the local part, followed by the at-sign ("@"), followed by the Domain Name, which may be formed by pruning zero or more components from the requested FQDN;
-5.  Relying upon a Domain Authorization Document;
-6.  Having the Applicant demonstrate practical control over the FQDN by making an agreed-upon change to information found on an online Web page identified by a uniform resource identifier containing the FQDN; or
-7.  Using any other method of confirmation, provided that the CA maintains documented evidence that the method of confirmation establishes that the Applicant is the Domain Name Registrant or has control over the FQDN to at least the same level of assurance as those methods previously described.
+2. Communicating directly with the Domain Name Registrant using an address, email, or telephone number provided by the Domain Name Registrar;
+3. Communicating directly with the Domain Name Registrant using the contact information listed in the WHOIS record's "registrant", "technical", or "administrative" field;
+4. Communicating with the Domain's administrator using an email address created by pre-pending 'admin', 'administrator', 'webmaster', 'hostmaster', or 'postmaster' in the local part, followed by the at-sign ("@"), followed by the Domain Name, which may be formed by pruning zero or more components from the requested FQDN;
+5. Relying upon a Domain Authorization Document;
+6. Having the Applicant demonstrate practical control over the FQDN by making an agreed-upon change to information found on an online Web page identified by a uniform resource identifier containing the FQDN; or
+7. Using any other method of confirmation, provided that the CA maintains documented evidence that the method of confirmation establishes that the Applicant is the Domain Name Registrant or has control over the FQDN to at least the same level of assurance as those methods previously described.
 
 Note: For purposes of determining the appropriate domain name level or Domain Namespace, the registerable Domain Name is the second-level domain for generic top-level domains (gTLD) such as .com, .net, or .org, or, if the Fully Qualified Domain Name contains a 2 letter Country Code Top-Level Domain (ccTLD), then the domain level is whatever is allowed for registration according to the rules of that ccTLD.
 If the CA relies upon a Domain Authorization Document to confirm the Applicant's control over a FQDN, then the Domain Authorization Document MUST substantiate that the communication came from either the Domain Name Registrant (including any private, anonymous, or proxy registration service) or the Domain Name Registrar listed in the WHOIS. The CA MUST verify that the Domain Authorization Document was either (i) dated on or after the certificate request date or (ii) used by the CA to verify a previously issued certificate and that the Domain Name's WHOIS record has not been modified since the previous certificate's issuance.
@@ -462,10 +462,10 @@ Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subje
 #### 3.2.2.5 Authentication for an IP Address
 For each IP Address listed in a Certificate, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant has control over the IP Address by:
 
-1.  Having the Applicant demonstrate practical control over the IP Address by making an agreed-upon change to information found on an online Web page identified by a uniform resource identifier containing the IP Address;
-2.  Obtaining documentation of IP address assignment from the Internet Assigned Numbers Authority (IANA) or a Regional Internet Registry (RIPE, APNIC, ARIN, AfriNIC, LACNIC);
-3.  Performing a reverse-IP address lookup and then verifying control over the resulting Domain Name under Section 3.2.2.4; or
-4.  Using any other method of confirmation, provided that the CA maintains documented evidence that the method of confirmation establishes that the Applicant has control over the IP Address to at least the same level of assurance as the methods previously described.
+1. Having the Applicant demonstrate practical control over the IP Address by making an agreed-upon change to information found on an online Web page identified by a uniform resource identifier containing the IP Address;
+2. Obtaining documentation of IP address assignment from the Internet Assigned Numbers Authority (IANA) or a Regional Internet Registry (RIPE, APNIC, ARIN, AfriNIC, LACNIC);
+3. Performing a reverse-IP address lookup and then verifying control over the resulting Domain Name under Section 3.2.2.4; or
+4. Using any other method of confirmation, provided that the CA maintains documented evidence that the method of confirmation establishes that the Applicant has control over the IP Address to at least the same level of assurance as the methods previously described.
 
 Note: IPAddresses may be listed in Subscriber Certificates using IPAddress in the subjectAltName extension or in Subordinate CA Certificates via IPAddress in permittedSubtrees within the Name Constraints extension.
 
@@ -473,10 +473,10 @@ Note: IPAddresses may be listed in Subscriber Certificates using IPAddress in th
 #### 3.2.2.6 Wildcard Domain Validation
 Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName of type DNS-ID, the CA MUST establish and follow a documented procedure[^pubsuffix] that determines if the wildcard character occurs in the first label position to the left of a "registry-controlled" label or "public suffix" (e.g. "\*.com", "\*.co.uk", see RFC 6454 Section 8.2 for further explanation).
 
-If a wildcard would fall within the label immediately to the left of a registry-controlled†[^pubsuffix] or public suffix, CAs MUST refuse issuance unless the applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.).
+If a wildcard would fall within the label immediately to the left of a registry-controlled[^pubsuffix] or public suffix, CAs MUST refuse issuance unless the applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.).
 <del>Prior to September 1, 2013, each CA MUST revoke any valid certificate that does not comply with this section of the Requirements.</del>
 
-†[^pubsuffix]: Determination of what is "registry-controlled" versus the registerable portion of a Country Code Top-Level Domain Namespace is not standardized at the time of writing and is not a property of the DNS itself. Current best practice is to consult a "public suffix list" such as <http://publicsuffix.org/> (PSL), and to retrieve a fresh copy regularly. If using the PSL, a CA SHOULD consult the "ICANN DOMAINS" section only, not the "PRIVATE DOMAINS" section. The PSL is updated regularly to contain new gTLDs delegated by ICANN, which are listed in the "ICANN DOMAINS" section. A CA is not prohibited from issuing a Wildcard Certificate to the Registrant of an entire gTLD, provided that control of the entire namespace is demonstrated in an appropriate way.
+[^pubsuffix]: Determination of what is "registry-controlled" versus the registerable portion of a Country Code Top-Level Domain Namespace is not standardized at the time of writing and is not a property of the DNS itself. Current best practice is to consult a "public suffix list" such as <http://publicsuffix.org/> (PSL), and to retrieve a fresh copy regularly. If using the PSL, a CA SHOULD consult the "ICANN DOMAINS" section only, not the "PRIVATE DOMAINS" section. The PSL is updated regularly to contain new gTLDs delegated by ICANN, which are listed in the "ICANN DOMAINS" section. A CA is not prohibited from issuing a Wildcard Certificate to the Registrant of an entire gTLD, provided that control of the entire namespace is demonstrated in an appropriate way.
 
 #### 3.2.2.7 Data Source Accuracy
 Prior to using any data source as a Reliable Data Source, the CA SHALL evaluate the source for its reliability, accuracy, and resistance to alteration or falsification. The CA SHOULD consider the following during its evaluation:
@@ -490,11 +490,11 @@ Prior to using any data source as a Reliable Data Source, the CA SHALL evaluate 
 Databases maintained by the CA, its owner, or its affiliated companies do not qualify as a Reliable Data Source if the primary purpose of the database is to collect information for the purpose of fulfilling the validation requirements under this Section 3.2.
 
 ### 3.2.3 Authentication of individual identity
-If an Applicant subject to this Section  is a natural person, then the CA SHALL verify the Applicant's name, Applicant's address, and the authenticity of the certificate request.
+If an Applicant subject to this Section is a natural person, then the CA SHALL verify the Applicant's name, Applicant's address, and the authenticity of the certificate request.
 
-The CA SHALL verify the Applicant's name using a legible copy, which discernibly shows the Applicant's face, of at least one currently valid government-issued photo ID (passport, drivers license, military ID, national ID, or equivalent document type).  The CA SHALL inspect the copy for any indication of alteration or falsification.
+The CA SHALL verify the Applicant's name using a legible copy, which discernibly shows the Applicant's face, of at least one currently valid government-issued photo ID (passport, drivers license, military ID, national ID, or equivalent document type). The CA SHALL inspect the copy for any indication of alteration or falsification.
 
-The CA SHALL verify the Applicant's address using a form of identification that the CA determines to be reliable, such as a government ID, utility bill, or bank or credit card statement.  The CA MAY rely on the same government-issued ID that was used to verify the Applicant's name.
+The CA SHALL verify the Applicant's address using a form of identification that the CA determines to be reliable, such as a government ID, utility bill, or bank or credit card statement. The CA MAY rely on the same government-issued ID that was used to verify the Applicant's name.
 
 The CA SHALL verify the certificate request with the Applicant using a Reliable Method of Communication.
 
@@ -503,9 +503,9 @@ The CA SHALL verify the certificate request with the Applicant using a Reliable 
 ### 3.2.5 Validation of authority
 If the Applicant for a Certificate containing Subject Identity Information is an organization, the CA SHALL use a Reliable Method of Communication to verify the authenticity of the Applicant Representative's certificate request.
 
-The CA MAY use the sources listed in section 3.2.2.1 to verify the Reliable Method of Communication.  Provided that the CA uses a Reliable Method of Communication, the CA MAY establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices, corporate offices, human resource offices, information technology offices, or other department that the CA deems appropriate.
+The CA MAY use the sources listed in section 3.2.2.1 to verify the Reliable Method of Communication. Provided that the CA uses a Reliable Method of Communication, the CA MAY establish the authenticity of the certificate request directly with the Applicant Representative or with an authoritative source within the Applicant's organization, such as the Applicant's main business offices, corporate offices, human resource offices, information technology offices, or other department that the CA deems appropriate.
 
-In addition, the CA SHALL establish a process that allows an Applicant to specify the individuals who may request Certificates.  If an Applicant specifies, in writing, the individuals who may request a Certificate, then the CA SHALL NOT accept any certificate requests that are outside this specification.  The CA SHALL provide an Applicant with a list of its authorized certificate requesters upon the Applicant's verified written request.
+In addition, the CA SHALL establish a process that allows an Applicant to specify the individuals who may request Certificates. If an Applicant specifies, in writing, the individuals who may request a Certificate, then the CA SHALL NOT accept any certificate requests that are outside this specification. The CA SHALL provide an Applicant with a list of its authorized certificate requesters upon the Applicant's verified written request.
 
 ### 3.2.6 Criteria for Interoperation or Certification
 The CA SHALL disclose all Cross Certificates that identify the CA as the Subject, provided that the CA arranged for or accepted the establishment of the trust relationship (i.e. the Cross Certificate at issue).
@@ -513,7 +513,7 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 ## 3.3 Identification and authentication for re-key requests
 
 ### 3.3.1 Identification and authentication for routine re-key
-Section 6.3.2 limits the validity period of Subscriber Certificates.   The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provide that the CA obtained the data or document from a source specified under Section 3.2 no more than thirty-nine (39) months prior to issuing the Certificate.
+Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provide that the CA obtained the data or document from a source specified under Section 3.2 no more than thirty-nine (39) months prior to issuing the Certificate.
 
 ### 3.3.2 Identification and authentication for re-key after revocation
 
@@ -524,7 +524,7 @@ Section 6.3.2 limits the validity period of Subscriber Certificates.   The CA MA
 ## 4.1 Certificate Application
 
 ### 4.1.1 Who can submit a certificate application
-In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns.  The CA SHALL use this information to identify subsequent suspicious certificate requests.
+In accordance with Section 5.5.2, the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
 
 ### 4.1.2 Enrollment process and responsibilities
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
@@ -534,14 +534,14 @@ Prior to the issuance of a Certificate, the CA SHALL obtain the following docume
 
 The CA SHOULD obtain any additional documentation the CA determines necessary to meet these Requirements.
 
-Prior to the issuance of a Certificate, the CA SHALL obtain from the Applicant a certificate request in a form prescribed by the CA and that complies with these Requirements.  One certificate request MAY suffice for multiple Certificates to be issued to the same Applicant, subject to the aging and updating requirement in Section 3.3.1, provided that each Certificate is supported by a valid, current certificate request signed by the appropriate Applicant Representative on behalf of the Applicant.  The certificate request MAY be made, submitted and/or signed electronically.
+Prior to the issuance of a Certificate, the CA SHALL obtain from the Applicant a certificate request in a form prescribed by the CA and that complies with these Requirements. One certificate request MAY suffice for multiple Certificates to be issued to the same Applicant, subject to the aging and updating requirement in Section 3.3.1, provided that each Certificate is supported by a valid, current certificate request signed by the appropriate Applicant Representative on behalf of the Applicant. The certificate request MAY be made, submitted and/or signed electronically.
 
 The certificate request MUST contain a request from, or on behalf of, the Applicant for the issuance of a Certificate, and a certification by, or on behalf of, the Applicant that all of the information contained therein is correct.
 
 ## 4.2 Certificate application processing
 
 ### 4.2.1 Performing identification and authentication functions
-The certificate request MAY include all factual information about the Applicant to be included in the Certificate, and such additional information as is necessary for the CA to obtain from the Applicant in order to comply with these Requirements and the CA's Certificate Policy and/or Certification Practice Statement.  In cases where the certificate request does not contain all the necessary information about the Applicant, the CA SHALL obtain the remaining information from the Applicant or, having obtained it from a reliable, independent, third-party data source, confirm it with the Applicant.  The CA SHALL establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
+The certificate request MAY include all factual information about the Applicant to be included in the Certificate, and such additional information as is necessary for the CA to obtain from the Applicant in order to comply with these Requirements and the CA's Certificate Policy and/or Certification Practice Statement. In cases where the certificate request does not contain all the necessary information about the Applicant, the CA SHALL obtain the remaining information from the Applicant or, having obtained it from a reliable, independent, third-party data source, confirm it with the Applicant. The CA SHALL establish and follow a documented procedure for verifying all data requested for inclusion in the Certificate by the Applicant.
 
 Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name or IP address to be included in the Certificate's SubjectAltName extension.
 
@@ -636,7 +636,7 @@ The CA SHALL revoke a Certificate within 24 hours if one or more of the followin
 
 1. The Subscriber requests in writing that the CA revoke the Certificate;
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization;
-3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise  or no longer complies with the requirements of Appendix A;
+3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Appendix A;
 4. The CA obtains evidence that the Certificate was misused;
 5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
 6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);
@@ -857,7 +857,7 @@ The CA SHALL record at least the following events:
 
   a. Key generation, backup, storage, recovery, archival, and destruction; and
   b. Cryptographic device lifecycle management events.
-  
+
 2. CA and Subscriber Certificate lifecycle management events, including:
 
   a. Certificate requests, renewal, and re-key requests, and revocation;
@@ -875,7 +875,7 @@ The CA SHALL record at least the following events:
   d. System crashes, hardware failures, and other anomalies;
   e. Firewall and router activities; and
   f. Entries to and exits from the CA facility.
-  
+
 Log entries MUST include the following elements:
 
 1. Date and time of entry;
@@ -1003,21 +1003,21 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 |--|--|--|
 |Digest algorithm|MD5 (NOT RECOMMENDED), SHA-1, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
 |Minimum RSA modulus size (bits)|2048\*\*|2048|
-|ECC  curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
+|ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
 |Minimum DSA modulus and divisor size (bits)|L= 2048 N= 224 or L= 2048 N= 256|L= 2048 N= 224 or L= 2048 N= 256|
 
 (2) Subordinate CA Certificates
 
 |Digest algorithm|SHA-1*, SHA-256, SHA-384 or SHA-512|
 |Minimum RSA modulus size (bits)|2048|
-|ECC  curve|NIST P-256, P-384, or P-521|
+|ECC curve|NIST P-256, P-384, or P-521|
 |Minimum DSA modulus and divisor size (bits)|L= 2048 N= 224 or L= 2048 N= 256
 
 (3) Subscriber Certificates
 
 |Digest algorithm|SHA-1*, SHA-256, SHA-384 or SHA-512|
 |Minimum RSA modulus size (bits)|2048|
-|ECC  curve|NIST P-256, P-384, or P-521|
+|ECC curve|NIST P-256, P-384, or P-521|
 |Minimum DSA modulus and divisor size (bits)|L= 2048 N= 224 or L= 2048 N= 256
 
 \* SHA-1 MAY be used with RSA keys until SHA-256 is supported widely by browsers used by a substantial portion of relying-parties worldwide.
@@ -1047,10 +1047,10 @@ Root CA Private Keys MUST NOT be used to sign Certificates except in the followi
     c. The Applicant's application is in active use by the Applicant or the CA uses a documented process to establish that the Certificate's use is required by a substantial number of Relying Parties;
     d. The CA follows a documented process to determine that the Applicant's application poses no known security risks to Relying Parties; and
     e. The CA documents that the Applicant's application cannot be patched or replaced without substantial economic outlay.
-    
+
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
-The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the Private Key outside the validated system or device specified above MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key.  The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
+The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the Private Key outside the validated system or device specified above MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
 
 ### 6.2.1 Cryptographic module standards and controls
 
@@ -1065,7 +1065,7 @@ See Section 5.2.2.
 Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Private Keys.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
-If the Issuing CA generated the Private Key on behalf of the Subordinate CA, then the Issuing CA SHALL encrypt the Private Key for transport to the Subordinate CA.   If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
+If the Issuing CA generated the Private Key on behalf of the Subordinate CA, then the Issuing CA SHALL encrypt the Private Key for transport to the Subordinate CA. If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
 ### 6.2.7 Private key storage on cryptographic module
 The CA SHALL protect its Private Key in a system or device that has been validated as meeting at least FIPS 140 level 3 or an appropriate Common Criteria Protection Profile or Security Target, EAL 4 (or higher), which includes requirements to protect the Private Key and other assets against known threats.
@@ -1125,7 +1125,8 @@ The CA SHALL enforce multi-factor authentication for all accounts capable of dir
 # 7. CERTIFICATE, CRL, AND OCSP PROFILES
 
 ## 7.1 Certificate profile
-The CA SHALL meet the technical requirements set forth in Section 2.2 -- Publication of Information, Section 6.1.5- Key Sizes, and Section 6.1.6 - Public Key Parameters Generation and Quality Checking.
+
+The CA SHALL meet the technical requirements set forth in Section 2.2, Section 6.1.5, and Section 6.1.6.
 
 CAs SHOULD generate non-sequential Certificate serial numbers that exhibit at least 20 bits of entropy.
 
@@ -1138,10 +1139,10 @@ This section specifies the additional requirements for Certificate content and e
 
 #### 7.1.2.1 Root CA Certificate
 a. basicConstraints
-This extension MUST appear as a critical extension.  The cA field MUST be set true.  The pathLenConstraint field SHOULD NOT be present.
+This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field SHOULD NOT be present.
 
 b. keyUsage
-This extension MUST be present and MUST be marked critical.  Bit positions for keyCertSign and cRLSign MUST be set.  If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
 
 c. certificatePolicies
 This extension SHOULD NOT be present.
@@ -1157,7 +1158,7 @@ The Certificate Subject MUST contain the following:
 - organizationName (OID 2.5.4.10). This field MUST contain the name (or abbreviation thereof), trademark, or other meaningful identifier for the CA, provided that they accurately identify the CA. The field MUST NOT contain exclusively a generic designation such as "Root 1".
 
 #### 7.1.2.2 Subordinate CA Certificate
-a.  certificatePolicies
+a. certificatePolicies
 
     This extension MUST be present and SHOULD NOT be marked critical.
 
@@ -1173,31 +1174,31 @@ a.  certificatePolicies
 
             *   HTTP URL for the Root CA's Certificate Polic<ins>y</ins><del>ies</del>, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the CA.
 
-b.   cRLDistributionPoints
+b. cRLDistributionPoints
 
-    This extension MUST be present and MUST NOT be marked critical.  It MUST contain the HTTP URL of the CA's CRL service.
+    This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.
 
-c.   authorityInformationAccess
+c. authorityInformationAccess
 
-    With the exception of stapling, which is noted below, this extension MUST be present.  It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1).  It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
+    With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
 
     The HTTP URL of the Issuing CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
 
-d.   basicConstraints
-    
-    This extension MUST be present and MUST be marked critical.  The cA field MUST be set true.  The pathLenConstraint field MAY be present.
+d. basicConstraints
 
-e.  keyUsage
-    
-    This extension MUST be present and MUST be marked critical.  Bit positions for keyCertSign and cRLSign MUST be set.  If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+    This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MAY be present.
 
-f.   nameConstraints (optional)
-    
+e. keyUsage
+
+    This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+
+f. nameConstraints (optional)
+
     If present, this extension SHOULD be marked critical\*.
 
     \* Non-critical Name Constraints are an exception to RFC 5280 (4.2.1.10), however, they MAY be used until the Name Constraints extension is supported by Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
 
-g.   extkeyUsage (optional)
+g. extkeyUsage (optional)
 
     For Subordinate CA Certificates to be Technically constrained in line with section 7.1.5, then either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present\*\*.
 
@@ -1207,14 +1208,14 @@ g.   extkeyUsage (optional)
 
     \*\* Generally Extended Key Usage will only appear within end entity certificates (as highlighted in RFC 5280 (4.2.1.12)), however, Subordinate CAs MAY include the extension to further protect relying parties until the use of the extension is consistent between Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
 
-h.	Subject Information
+h. Subject Information
 
 The Certificate Subject MUST contain the following:
-- countryName (OID 2.5.4.6). This field MUST contain the two-letter ISO 3166-1 country code for the country in which the CA’s place of business is located.
-- organizationName (OID 2.5.4.10). This field MUST contain the name (or abbreviation thereof), trademark, or other meaningful identifier for the CA, provided that they accurately identify the CA. The field MUST NOT contain exclusively a generic designation such as “CA1”.
+- countryName (OID 2.5.4.6). This field MUST contain the two-letter ISO 3166-1 country code for the country in which the CA's place of business is located.
+- organizationName (OID 2.5.4.10). This field MUST contain the name (or abbreviation thereof), trademark, or other meaningful identifier for the CA, provided that they accurately identify the CA. The field MUST NOT contain exclusively a generic designation such as "CA1".
 
 #### 7.1.2.3 Subscriber Certificate
-a.   certificatePolicies
+a. certificatePolicies
 
     This extension MUST be present and SHOULD NOT be marked critical.
 
@@ -1232,27 +1233,27 @@ a.   certificatePolicies
 
             HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
 
-b.   cRLDistributionPoints
+b. cRLDistributionPoints
 
-    This extension MAY be present.  If present, it MUST NOT be marked critical, and it MUST contain the HTTP URL of the CA's CRL service.
+    This extension MAY be present. If present, it MUST NOT be marked critical, and it MUST contain the HTTP URL of the CA's CRL service.
 
-c.   authorityInformationAccess
+c. authorityInformationAccess
 
-    With the exception of stapling, which is noted below, this extension MUST be present.  It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1).  It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).  .
+    With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
 
     The HTTP URL of the Issuing CA's OCSP responder MAY be omitted provided that the Subscriber "staples" OCSP responses for the Certificate in its TLS handshakes [RFC4366].
 
-d.   basicConstraints (optional)
+d. basicConstraints (optional)
 
     If present, the cA field MUST be set false.
 
-e.   keyUsage (optional)
-    
+e. keyUsage (optional)
+
     If present, bit positions for keyCertSign and cRLSign MUST NOT be set.
 
-f.   extKeyUsage (required)
+f. extKeyUsage (required)
 
-    Either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present.  id-kp-emailProtection [RFC5280] MAY be present.  Other values SHOULD NOT be present.
+    Either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present. id-kp-emailProtection [RFC5280] MAY be present. Other values SHOULD NOT be present.
 
 #### 7.1.2.4 All Certificates
 All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in this Appendix B unless the CA is aware of a reason for including the data in the Certificate.
@@ -1285,58 +1286,58 @@ By issuing the Certificate, the CA represents that it followed the procedure set
 
 #### 7.1.4.2.1 Subject Alternative Name Extension
 Certificate Field: extensions:subjectAltName
-Required/Optional:  Required
-Contents:  This extension MUST contain at least one entry. Each entry MUST be either a dNSName containing the Fully-Qualified Domain Name or an iPAddress containing the IP address of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or IP address or has been granted the right to use it by the Domain Name Registrant or IP address assignee, as appropriate.
+Required/Optional: Required
+Contents: This extension MUST contain at least one entry. Each entry MUST be either a dNSName containing the Fully-Qualified Domain Name or an iPAddress containing the IP address of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or IP address or has been granted the right to use it by the Domain Name Registrant or IP address assignee, as appropriate.
 
 Wildcard FQDNs are permitted.
 
 As of the Effective Date of these Requirements, prior to the issuance of a Certificate with a subjectAlternativeName extension or Subject commonName field containing a Reserved IP Address or Internal Name, the CA SHALL notify the Applicant that the use of such Certificates has been deprecated by the CA / Browser Forum and that the practice will be eliminated by October 2016. Also as of the Effective Date, the CA SHALL NOT issue a certificate with an Expiry Date later than 1 November 2015 with a subjectAlternativeName extension or Subject commonName field containing a Reserved IP Address or Internal Name. Effective 1 October 2016, CAs SHALL revoke all unexpired Certificates whose subjectAlternativeName extension or Subject commonName field contains a Reserved IP Address or Internal Name.
 
-7.1.4.2.2.	Subject Distinguished Name Fields
-a.	Certificate Field: subject:commonName (OID 2.5.4.3)  
+#### 7.1.4.2.2. Subject Distinguished Name Fields
+a. Certificate Field: subject:commonName (OID 2.5.4.3)
 Required/Optional: Deprecated (Discouraged, but not prohibited)
-Contents: If present, this field MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate’s subjectAltName extension (see Section 7.1.4.2.1).
+Contents: If present, this field MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).
 
-b.	Certificate Field: subject:organizationName (OID 2.5.4.10)
+b. Certificate Field: subject:organizationName (OID 2.5.4.10)
 Optional.
-Contents: If present, the subject:organizationName field MUST contain either the Subject’s name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows “Company Name Incorporated”, the CA MAY use “Company Name Inc.” or “Company Name”.  Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly supported by application software, the CA MAY use the subject:organizationName field to convey a natural person Subject’s name or DBA.
+Contents: If present, the subject:organizationName field MUST contain either the Subject's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly supported by application software, the CA MAY use the subject:organizationName field to convey a natural person Subject's name or DBA.
 
-c.	Certificate Field: Number and street: subject:streetAddress (OID: 2.5.4.9) 
-Optional if the subject:organizationName field is present. 
-Prohibited if the subject:organizationName field is absent. 
-Contents: If present, the subject:streetAddress field MUST contain the Subject’s street address information as verified under Section 3.2.2.1.
+c. Certificate Field: Number and street: subject:streetAddress (OID: 2.5.4.9)
+Optional if the subject:organizationName field is present.
+Prohibited if the subject:organizationName field is absent.
+Contents: If present, the subject:streetAddress field MUST contain the Subject's street address information as verified under Section 3.2.2.1.
 
-d.	Certificate Field: subject:localityName (OID: 2.5.4.7) 
+d. Certificate Field: subject:localityName (OID: 2.5.4.7)
 Required if the subject:organizationName field is present and the subject:stateOrProvinceName field is absent.
-Optional if the subject:organizationName and subject:stateOrProvinceName fields are present. 
+Optional if the subject:organizationName and subject:stateOrProvinceName fields are present.
 Prohibited if the subject:organizationName field is absent.
-Contents: If present, the subject:localityName field MUST contain the Subject’s locality information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.2.4.2.5, the localityName field MAY contain the Subject’s locality and/or state or province information as verified under Section 3.2.2.1.
+Contents: If present, the subject:localityName field MUST contain the Subject's locality information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.2.4.2.5, the localityName field MAY contain the Subject's locality and/or state or province information as verified under Section 3.2.2.1.
 
-e.	Certificate Field: subject:stateOrProvinceName (OID: 2.5.4.8) 
+e. Certificate Field: subject:stateOrProvinceName (OID: 2.5.4.8)
 Required if the subject:organizationName field is present and subject:localityName field is absent.
-Optional if subject:organizationName and subject:localityName fields are present. 
+Optional if subject:organizationName and subject:localityName fields are present.
 Prohibited if the subject:organizationName field is absent.
-Contents: If present, the subject:stateOrProvinceName field MUST contain the Subject’s state or province information as verified under Section 3,2,2,1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.5, the subject:stateOrProvinceName field MAY contain the full name of the Subject’s country information as verified under Section 3.2.2.1.
+Contents: If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.5, the subject:stateOrProvinceName field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
 
-f.	Certificate Field: subject:postalCode (OID: 2.5.4.17) 
-Optional if the subject:organizationName field is present. 
+f. Certificate Field: subject:postalCode (OID: 2.5.4.17)
+Optional if the subject:organizationName field is present.
 Prohibited if the subject:organizationName field is absent.
-Contents: If present, the subject:postalCode field MUST contain the Subject’s zip or postal information as verified under Section 3.2.2.1.
+Contents: If present, the subject:postalCode field MUST contain the Subject's zip or postal information as verified under Section 3.2.2.1.
 
-g.	Certificate Field:  subject:countryName (OID: 2.5.4.6) ) 
+g. Certificate Field: subject:countryName (OID: 2.5.4.6)
 Required if the subject:organizationName field is present.
 Optional if the subject:organizationName field is absent.
-Contents:  If the subject:organizationName field is present, the subject:countryName MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the subject:organizationName field is absent, the subject:countryName field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned. 
+Contents: If the subject:organizationName field is present, the subject:countryName MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the subject:organizationName field is absent, the subject:countryName field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
-h.	Certificate Field: subject:organizationalUnitName  
+h. Certificate Field: subject:organizationalUnitName
 Optional.
 The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains subject:organizationName, subject:localityName, and subject:countryName attributes, also verified in accordance with Section 3.2.2.1.
 
-i.	Other Subject Attributes
-All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA.  Optional attributes MUST NOT contain metadata such as ‘.’, ‘-‘, and ‘ ‘ (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+i. Other Subject Attributes
+All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
-7.1.4.3.	Subject Information – Subordinate CA Certificates
-By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate’s issuance date, all of the Subject Information was accurate.
+#### 7.1.4.3. Subject Information - Subordinate CA Certificates
+By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
 ### 7.1.5 Name constraints
 For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
@@ -1541,14 +1542,14 @@ The CA represents and warrants to the Certificate Beneficiaries that, during the
 
 The Certificate Warranties specifically include, but are not limited to, the following:
 
-1. **Right to Use Domain Name or IP Address**:  That, at the time of issuance, the CA (i) implemented a procedure for verifying that the Applicant either had the right to use, or had control of, the Domain Name(s) and IP address(es) listed in the Certificate's subject field and subjectAltName extension (or, only in the case of Domain Names, was delegated such right or control by someone who had such right to use or control); (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-2. **Authorization for Certificate**:  That, at the time of issuance, the CA (i) implemented a procedure for verifying that the Subject authorized the issuance of the Certificate and that the Applicant Representative is authorized to request the Certificate on behalf of the Subject; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-3. **Accuracy of Information**:  That, at the time of issuance, the CA (i) implemented a procedure for verifying the accuracy of all of the information contained in the Certificate (with the exception of the subject:organizationalUnitName attribute); (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-4. **No Misleading Information**:  That, at the time of issuance, the CA (i) implemented a procedure for reducing the likelihood that the information contained in the Certificate's subject:organizationalUnitName attribute would be misleading; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-5. **Identity of Applicant**:  That, if the Certificate contains Subject Identity Information, the CA (i) implemented a procedure to verify the identity of the Applicant in accordance with Sections 3.2 and 11.2; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-6. **Subscriber Agreement**:  That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are Affiliated, the Applicant Representative acknowledged and accepted the Terms of Use;
-7. **Status**:  That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
-8. **Revocation**:  That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
+1. **Right to Use Domain Name or IP Address**: That, at the time of issuance, the CA (i) implemented a procedure for verifying that the Applicant either had the right to use, or had control of, the Domain Name(s) and IP address(es) listed in the Certificate's subject field and subjectAltName extension (or, only in the case of Domain Names, was delegated such right or control by someone who had such right to use or control); (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
+2. **Authorization for Certificate**: That, at the time of issuance, the CA (i) implemented a procedure for verifying that the Subject authorized the issuance of the Certificate and that the Applicant Representative is authorized to request the Certificate on behalf of the Subject; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
+3. **Accuracy of Information**: That, at the time of issuance, the CA (i) implemented a procedure for verifying the accuracy of all of the information contained in the Certificate (with the exception of the subject:organizationalUnitName attribute); (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
+4. **No Misleading Information**: That, at the time of issuance, the CA (i) implemented a procedure for reducing the likelihood that the information contained in the Certificate's subject:organizationalUnitName attribute would be misleading; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
+5. **Identity of Applicant**: That, if the Certificate contains Subject Identity Information, the CA (i) implemented a procedure to verify the identity of the Applicant in accordance with Sections 3.2 and 11.2; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
+6. **Subscriber Agreement**: That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are Affiliated, the Applicant Representative acknowledged and accepted the Terms of Use;
+7. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
+8. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
 
 The Root CA SHALL be responsible for the performance and warranties of the Subordinate CA, for the Subordinate CA's compliance with these Requirements, and for all liabilities and indemnification obligations of the Subordinate CA under these Requirements, as if the Root CA were the Subordinate CA issuing the Certificates
 
@@ -1564,18 +1565,18 @@ Prior to the issuance of a Certificate, the CA SHALL obtain, for the express ben
 1. The Applicant's agreement to the Subscriber Agreement with the CA, or
 2. The Applicant's agreement to the Terms of Use agreement.
 
-The CA SHALL implement a process to ensure that each Subscriber or Terms of Use Agreement is legally enforceable against the Applicant.  In either case, the Agreement MUST apply to the Certificate to be issued pursuant to the certificate request. The CA MAY use an electronic or "click-through" Agreement provided that the CA has determined that such agreements are legally enforceable.  A separate Agreement MAY be used for each certificate request, or a single Agreement MAY be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber or Terms of Use Agreement.
+The CA SHALL implement a process to ensure that each Subscriber or Terms of Use Agreement is legally enforceable against the Applicant. In either case, the Agreement MUST apply to the Certificate to be issued pursuant to the certificate request. The CA MAY use an electronic or "click-through" Agreement provided that the CA has determined that such agreements are legally enforceable. A separate Agreement MAY be used for each certificate request, or a single Agreement MAY be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber or Terms of Use Agreement.
 
 The Subscriber or Terms of Use Agreement MUST contain provisions imposing on the Applicant itself (or made by the Applicant on behalf of its principal or agent under a subcontractor or hosting service relationship) the following obligations and warranties:
 
-1. **Accuracy of Information**:  An obligation and warranty to provide accurate and complete information at all times to the CA, both in the certificate request and as otherwise requested by the CA in connection with the issuance of the Certificate(s) to be supplied by the CA;
-2. **Protection of Private Key**:  An obligation and warranty by the Applicant to take all reasonable measures to maintain sole control of, keep confidential, and properly protect at all times the Private Key that corresponds to the Public Key to be included in the requested Certificate(s) (and any associated activation data or device, e.g. password or token);
-3. **Acceptance of Certificate**:  An obligation and warranty that the Subscriber will review and verify the Certificate contents for accuracy;
-4. **Use of  Certificate**:  An obligation and warranty to install the Certificate only on servers that are accessible at the subjectAltName(s) listed in the Certificate, and to use the Certificate solely in compliance with all applicable laws and solely in accordance with the Subscriber or Terms of Use Agreement;
-5. **Reporting and Revocation**:  An obligation and warranty to promptly cease using a Certificate and its associated Private Key, and promptly request the CA to revoke the Certificate, in the event that: (a) any information in the Certificate is, or becomes, incorrect or inaccurate, or (b) there is any actual or suspected misuse or compromise of the Subscriber's Private Key associated with the Public Key included in the  Certificate;
-6. **Termination of Use of Certificate**:  An obligation and warranty to promptly cease all use of the Private Key corresponding to the Public Key included in the Certificate upon revocation of that Certificate for reasons of Key Compromise.
-7. **Responsiveness**:  An obligation to respond to the CA's instructions concerning Key Compromise or Certificate misuse within a specified time period.
-8. **Acknowledgment and Acceptance**:  An acknowledgment and acceptance that the CA is entitled to revoke the certificate immediately if the Applicant were to violate the terms of the Subscriber or Terms of Use Agreement or if the CA discovers that the Certificate is being used to enable criminal activities such as phishing attacks, fraud, or the distribution of malware.
+1. **Accuracy of Information**: An obligation and warranty to provide accurate and complete information at all times to the CA, both in the certificate request and as otherwise requested by the CA in connection with the issuance of the Certificate(s) to be supplied by the CA;
+2. **Protection of Private Key**: An obligation and warranty by the Applicant to take all reasonable measures to maintain sole control of, keep confidential, and properly protect at all times the Private Key that corresponds to the Public Key to be included in the requested Certificate(s) (and any associated activation data or device, e.g. password or token);
+3. **Acceptance of Certificate**: An obligation and warranty that the Subscriber will review and verify the Certificate contents for accuracy;
+4. **Use of Certificate**: An obligation and warranty to install the Certificate only on servers that are accessible at the subjectAltName(s) listed in the Certificate, and to use the Certificate solely in compliance with all applicable laws and solely in accordance with the Subscriber or Terms of Use Agreement;
+5. **Reporting and Revocation**: An obligation and warranty to promptly cease using a Certificate and its associated Private Key, and promptly request the CA to revoke the Certificate, in the event that: (a) any information in the Certificate is, or becomes, incorrect or inaccurate, or (b) there is any actual or suspected misuse or compromise of the Subscriber's Private Key associated with the Public Key included in the Certificate;
+6. **Termination of Use of Certificate**: An obligation and warranty to promptly cease all use of the Private Key corresponding to the Public Key included in the Certificate upon revocation of that Certificate for reasons of Key Compromise.
+7. **Responsiveness**: An obligation to respond to the CA's instructions concerning Key Compromise or Certificate misuse within a specified time period.
+8. **Acknowledgment and Acceptance**: An acknowledgment and acceptance that the CA is entitled to revoke the certificate immediately if the Applicant were to violate the terms of the Subscriber or Terms of Use Agreement or if the CA discovers that the Certificate is being used to enable criminal activities such as phishing attacks, fraud, or the distribution of malware.
 
 ### 9.6.4 Relying party representations and warranties
 
@@ -1623,7 +1624,7 @@ Notwithstanding any limitations on its liability to Subscribers and Relying Part
 ### 9.16.2 Assignment
 
 ### 9.16.3 Severability
-If a court or government body with jurisdiction over the activities covered by these Requirements determines that the performance of any mandatory requirement is illegal, then such requirement is considered reformed to the minimum extent necessary to make the requirement valid and legal.  This applies only to operations or certificate issuances that are subject to the laws of that jurisdiction.  The parties involved SHALL notify the CA / Browser Forum of the facts, circumstances, and law(s) involved, so that the CA/Browser Forum may revise these Requirements accordingly.
+If a court or government body with jurisdiction over the activities covered by these Requirements determines that the performance of any mandatory requirement is illegal, then such requirement is considered reformed to the minimum extent necessary to make the requirement valid and legal. This applies only to operations or certificate issuances that are subject to the laws of that jurisdiction. The parties involved SHALL notify the CA / Browser Forum of the facts, circumstances, and law(s) involved, so that the CA/Browser Forum may revise these Requirements accordingly.
 
 ### 9.16.4 Enforcement (attorneys' fees and waiver of rights)
 
