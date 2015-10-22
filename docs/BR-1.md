@@ -12,8 +12,8 @@
 
 
 **CA/Browser Forum**
-**Version 1.3.0**
-**April 16, 2015**
+**Version 1.3.1**
+**September 28, 2015**
 
 **www.cabforum.org**
 
@@ -44,7 +44,10 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1); and
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) subject-identity-validated(2)} (2.23.140.1.2.2).
+
+{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) subject-identity-validated(2)} (2.23.140.1.2.2); and
+
+{joint-êiso-êitu-t(2) international-êorganizations(23) ca-êbrowser-êforum(140) certificate-êpolicies(1) baseline-êrequirements(2) individual-validated(3)} (2.23.140.1.2.3).
 
 
 ### 1.2.1.Revisions
@@ -75,6 +78,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.2.4 | 144 | Validation Rules for .onion Names | 18-Feb-2015 | 18-Feb-2015 |
 | 1.2.5 | 148 | Issuer Field Correction | 2-April-2015 | 2-April-2015 |
 | 1.3.0 | 146 | Convert Baseline Requirements to RFC 3647 Framework | 16-Apr-2015 | 16-Apr-2015 |
+| 1.3.1 | 151 | Addition of Optional OIDs for Indicating Level of Validation | 28-Sep-2015 | 28-Sep-2015 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -636,7 +640,7 @@ The CA SHALL revoke a Certificate within 24 hours if one or more of the followin
 
 1. The Subscriber requests in writing that the CA revoke the Certificate;
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization;
-3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Appendix A;
+3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise  or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
 4. The CA obtains evidence that the Certificate was misused;
 5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
 6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);
@@ -656,7 +660,7 @@ The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days i
 
 1. The Subordinate CA requests revocation in writing;
 2. The Subordinate CA notifies the Issuing CA that the original certificate request was not authorized and does not retroactively grant authorization;
-3. The Issuing CA obtains evidence that the Subordinate CA's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Appendix A,
+3. The Issuing CA obtains evidence that the Subordinate CA's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
 4. The Issuing CA obtains evidence that the Certificate was misused;
 5. The Issuing CA is made aware that the Certificate was not issued in accordance with or that Subordinate CA has not complied with this CP or the applicable Certificate Policy or Certification Practice Statement;
 6. The Issuing CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
@@ -980,8 +984,10 @@ In all cases, the CA SHALL:
 4. log its CA key generation activities; and
 5. maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in its Certificate Policy and/or Certification Practice Statement and (if applicable) its Key Generation Script.
 
-#### 6.1.1.2 Subscriber Key Pair Generation
-The CA SHALL reject a certificate request if the requested Public Key does not meet the requirements set forth in Appendix A or if it has a known weak Private Key (such as a Debian weak key, see <http://wiki.debian.org/SSLkeys>).
+#### 6.1.1.2 RA Key Pair Generation
+
+#### 6.1.1.3 Subscriber Key Pair Generation
+The CA SHALL reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key (such as a Debian weak key, see <http://wiki.debian.org/SSLkeys>).
 
 ### 6.1.2 Private key delivery to subscriber
 Parties other than the Subscriber SHALL NOT archive the Subscriber Private Key.
