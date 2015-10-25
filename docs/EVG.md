@@ -1,6 +1,6 @@
 
 
-**Version 1.5.6**
+**Version 1.5.7**
 
 ##
 
@@ -30,7 +30,7 @@ A request to make a translated version of these Guidelines should be submitted t
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.5.6 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot147, passed by the Forum on 25 June 2015.
+This version 1.5.7 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 151, passed by the Forum on 28 September 2015.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -65,6 +65,7 @@ Document History
 | 1.5.4 | 146 | Convert Baseline Requirements to RFC 3647 Framework | 16 Apr. 2015 | 16 Apr. 2015 |
 | 1.5.5 | 145 | Operational Existence for Government Entities | 5 Mar. 2015 | 5 Mar. 2015 |
 | 1.5.6 | 147 | Attorney-Accountant Letter Changes | 25 June 2015 | 25 June 2015 |
+| 1.5.7 | 151 | Addition of Optional OIDs for Indicating Level of Validation | 28 Sept 2015 | 28 Sept 2015 |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -156,7 +157,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **EV Certificate Warranties:**   In conjunction with the CA issuing an EV Certificate, the CA and its Root CA, during the period when the EV Certificate is Valid, promise that the CA has followed the requirements of these Guidelines and the CA's EV Policies in issuing the EV Certificate and in verifying the accuracy of the information contained in the EV Certificate.
 
-**EV OID:**  An identifying number, in the form of an "object identifier," that is included in the _certificatePolicies_ field of a certificate that:  (i) indicates which CA policy statement relates to that certificate, and (ii) by pre-agreement with one or more Application Software Supplier, marks the certificate as being an EV Certificate.
+**EV OID:**  An identifying number, in the form of an "object identifier," that is included in the _certificatePolicies_ field of a certificate that:  (i) indicates which CA policy statement relates to that certificate, and (ii) is either the CA/Browser Forum EV policy identifier or a policy identifier that, by pre-agreement with one or more Application Software Supplier, marks the certificate as being an EV Certificate.
 
 **EV Policies:**  Auditable EV Certificate practices, policies and procedures, such as a certification practice statement  and certificate policy, that are developed, implemented, and enforced by the CA and its Root CA.
 
@@ -520,7 +521,10 @@ This section sets forth minimum requirements for the contents of EV Certificates
 
 ### 9.3.2.  EV Subscriber Certificates
 
-Each EV Certificate issued by the CA to a Subscriber MUST contain a policy identifier defined by the CA in the certificate's certificatePolicies extension that:  (i) indicates which CA policy statement relates to that Certificate, (ii) asserts the CA's adherence to and compliance with these Guidelines, and (iii), by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
+Each EV Certificate issued by the CA to a Subscriber MUST contain a policy identifier that is either defined by these Guidelines or the CA in the certificate's certificatePolicies extension that:  (i) indicates which CA policy statement relates to that Certificate, (ii) asserts the CA's adherence to and compliance with these Guidelines, and (iii) is either the CA/Browser Forum’s EV policy identifier or a policy identifier that, by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
+
+The following Certificate Policy identifier is the CA/Browser Forum’s EV policy identifier: 
+{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines (1) } (2.23.140.1.1), if the Certificate complies with these Guidelines.
 
 ### 9.3.3.  Root CA Certificates
 
