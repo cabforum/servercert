@@ -47,7 +47,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) subject-identity-validated(2)} (2.23.140.1.2.2); and
 
-{joint-릋so-릋tu-t(2) international-릓rganizations(23) ca-륿rowser-릃orum(140) certificate-릔olicies(1) baseline-릖equirements(2) individual-validated(3)} (2.23.140.1.2.3).
+{joint-혨iso-혨itu-t(2) international-혨organizations(23) ca-혨browser-혨forum(140) certificate-혨policies(1) baseline-혨requirements(2) individual-validated(3)} (2.23.140.1.2.3).
 
 
 ### 1.2.1.Revisions
