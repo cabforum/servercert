@@ -12,8 +12,8 @@
 
 
 **CA/Browser Forum**
-**Version 1.3.1**
-**September 28, 2015**
+**Version 1.3.2**
+**December 3, 2015**
 
 **www.cabforum.org**
 
@@ -26,7 +26,7 @@ This CP describes an integrated set of technologies, protocols, identity-proofin
 
 **Notice to Readers**
 
-The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
+The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. This document serves two purposes:  to specify Baseline Requirements and to provide guidance and requirements for what a CA should include in its CPS.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
 
 These Requirements do not address all of the issues relevant to the issuance and management of Publicly-Trusted Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this CP includes all sections of the RFC 3647 framework. However, rather than beginning with a "no stipulation" comment in all empty sections, the CA/Browser Forum is leaving such sections initially blank until a decision of "no stipulation" is made. The CA/Browser Forum may update these Requirements from time to time, in order to address both existing and emerging threats to online security. In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.
 
@@ -79,6 +79,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.2.5 | 148 | Issuer Field Correction | 2-April-2015 | 2-April-2015 |
 | 1.3.0 | 146 | Convert Baseline Requirements to RFC 3647 Framework | 16-Apr-2015 | 16-Apr-2015 |
 | 1.3.1 | 151 | Addition of Optional OIDs for Indicating Level of Validation | 28-Sep-2015 | 28-Sep-2015 |
+| 1.3.2 | 156 | Amend Sections 1 and 2 of Baseline Requirements | 3-Dec-2015 | 3-Dec-2016 | 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -98,6 +99,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2015-11-01 | 7.1.4.2.1 | Issuance of Certificates with Reserved IP Address or Internal Name prohibited. |
 | 2016-01-01 | 7.1.3 | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. |
 | 2016-10-01 | 7.1.4.2.1 | All Certificates with Reserved IP Address or Internal Name must be revoked. |
+| 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
 | 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
 
 
@@ -157,9 +159,10 @@ This Certificate Policy for Baseline Requirements for the Issuance and Managemen
 No stipulation.
 
 ### 1.5.2 Contact Person
-No stipulation.
+Contact information for the CA/Browser Forum is available here:  https://cabforum.org/leadership/.  In this section of a CA’s CPS, the CA shall provide a link to a web page or an email address for contacting the person or persons responsible for operation of the CA.
 
 ### 1.5.3 Person Determining CPS suitability for the policy
+No stipulation.
 
 ### 1.5.4 CPS approval procedures
 No stipulation.
@@ -397,8 +400,10 @@ The CA SHALL publicly give effect to these Requirements and represent that it wi
 The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
+The CA SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practices Statement that describes in detail how the CA implements the latest version of these Requirements.
 
 ## 2.4 Access controls on repositories
+The CA shall make its Repository publicly available in a read-only manner.
 
 # 3. IDENTIFICATION AND AUTHENTICATION
 
