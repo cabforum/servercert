@@ -12,8 +12,8 @@
 
 
 **CA/Browser Forum**
-**Version 1.3.2**
-**December 3, 2015**
+**Version 1.3.2 + Ballot 162**
+**February 23, 2016**
 
 **www.cabforum.org**
 
@@ -80,6 +80,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.3.0 | 146 | Convert Baseline Requirements to RFC 3647 Framework | 16-Apr-2015 | 16-Apr-2015 |
 | 1.3.1 | 151 | Addition of Optional OIDs for Indicating Level of Validation | 28-Sep-2015 | 28-Sep-2015 |
 | 1.3.2 | 156 | Amend Sections 1 and 2 of Baseline Requirements | 3-Dec-2015 | 3-Dec-2016 | 
+| ? | 162 | Sunset of Exceptions | ? | ? |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -94,10 +95,12 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2013-09-01 | 3.2.2.6 | CAs SHALL revoke any certificate where wildcard character occurs in the first label position immediately to the left of a "registry-controlled" label or "public suffix". |
 | 2013-12-31 | 6.1.5 | CAs SHALL confirm that the RSA Public Key is at least 2048 bits or that one of the following ECC curves is used: P-256, P-384, or P-521. A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor. |
 | 2015-01-16 | 7.1.3 | CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017. |
-| 2015-04-01 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 39 months. |
+| 2015-04-01 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 39 months, except under certain circumstances. |
 | 2015-04-15 | 2.2 | A CA's CPS must state whether it reviews CAA Records, and if so, its policy or practice on processing CAA records for Fully Qualified Domain Names. |
 | 2015-11-01 | 7.1.4.2.1 | Issuance of Certificates with Reserved IP Address or Internal Name prohibited. |
 | 2016-01-01 | 7.1.3 | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. |
+| 2016-06-30 | 6.1.7 | CAs MUST NOT issue Subscriber Certificates directly from Root CAs. |
+| 2016-06-30 | 6.3.2 | CAs MUST NOT issue Subscriber Certificates with validity periods longer than 39 months, regardless of circumstance. |
 | 2016-10-01 | 7.1.4.2.1 | All Certificates with Reserved IP Address or Internal Name must be revoked. |
 | 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
 | 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
@@ -1057,7 +1060,9 @@ Root CA Private Keys MUST NOT be used to sign Certificates except in the followi
     b. The Applicant's application was deployed prior to the Effective Date;
     c. The Applicant's application is in active use by the Applicant or the CA uses a documented process to establish that the Certificate's use is required by a substantial number of Relying Parties;
     d. The CA follows a documented process to determine that the Applicant's application poses no known security risks to Relying Parties; and
-    e. The CA documents that the Applicant's application cannot be patched or replaced without substantial economic outlay.
+    e. The CA documents that the Applicant's application cannot be patched or replaced without substantial economic outlay; and
+    f. The CA signs the Subscriber Certificate on or before June 30, 2016; and
+    g. The notBefore field in the Subscriber Certificate has a date on or before June 30, 2016.
 
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
@@ -1097,7 +1102,7 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 Subscriber Certificates issued after the Effective Date MUST have a Validity Period no greater than 60 months.
 Except as provided for below, Subscriber Certificates issued after 1 April 2015 MUST have a Validity Period no greater than 39 months.
 
-Beyond 1 April 2015, CAs MAY continue to issue Subscriber Certificates with a Validity Period greater than 39 months but not greater than 60 months provided that the CA documents that the Certificate is for a system or software that:
+Until 30 June 2016, CAs MAY continue to issue Subscriber Certificates with a Validity Period greater than 39 months but not greater than 60 months provided that the CA documents that the Certificate is for a system or software that:
 
 a. was in use prior to the Effective Date;
 b. is currently in use by either the Applicant or a substantial number of Relying Parties;
