@@ -1,6 +1,6 @@
 
 
-**Version 1.5.7**
+**Version 1.5.8**
 
 ##
 
@@ -16,13 +16,13 @@
 
 ## Extended Validation Certificates
 
-Copyright © 2007-2015, The CA / Browser Forum, all rights reserved.
+Copyright © 2007-2016, The CA / Browser Forum, all rights reserved.
 
 Verbatim copying and distribution of this entire document is permitted in any medium without royalty, provided this notice is preserved.
 
 Upon request, the CA / Browser Forum may grant permission to make a translation of these guidelines into a language other than English.  In such circumstance, copyright in the translation remains with the CA / Browser Forum.  In the event that a discrepancy arises between interpretations of a translated version and the original English version, the original English version shall govern.  A translated version of the guidelines must prominently display the following statement in the language of the translation:-
 
-'Copyright © 2007-2015 The CA / Browser Forum, all rights reserved.
+'Copyright © 2007-2016 The CA / Browser Forum, all rights reserved.
 
 This document is a translation of the original English version.  In the event that a discrepancy arises between interpretations of this version and the original English version, the original English version shall govern.'
 
