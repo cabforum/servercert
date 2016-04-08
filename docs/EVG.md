@@ -1669,9 +1669,11 @@ cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 
 4. Each Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
 
-5. CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a validity period longer than 15 months. Despite Section 7.1.4.2.1 of the Baseline Requirements deprecating the use of Internal Names, a CA MAY issue a Certificate containing an .onion name with an expiration date later than 1 November 2015 after (and only if) .onion is officially recognized by the IESG as a reserved TLD.
+5. CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a validity period longer than 15 months.
 
-6. On or before May 1, 2015, each CA MUST revoke all Certificates issued with the Subject Alternative Name extension or Common Name field that includes a Domain Name where .onion is in the right-most label of the Domain Name unless the Certificate was issued in compliance with this Appendix F.
+6. When a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this Appendix F.
+
+7. On or before May 1, 2015, each CA MUST revoke all Certificates issued with the Subject Alternative Name extension or Common Name field that includes a Domain Name where .onion is in the right-most label of the Domain Name unless the Certificate was issued in compliance with this Appendix F.
 
 
 
