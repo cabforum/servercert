@@ -5,18 +5,28 @@ rvm:
 addons:
   apt:
     packages:
-      - python-dev
-      - python-pip
-      - python-lxml
-      - libcairo2
-      - libpango1.0-0
-      - libgdk-pixbuf2.0-0
-      - libffi-dev
-      - shared-mime-info
-      - python-virtualenv
+    - python-dev
+    - python-pip
+    - python-lxml
+    - libcairo2
+    - libpango1.0-0
+    - libgdk-pixbuf2.0-0
+    - libffi-dev
+    - shared-mime-info
+    - python-virtualenv
 script:
 - virtualenv --system-site-packages ./venv
 - . ./venv/bin/activate
 - pip install WeasyPrint
 - make
 - make deploy
+deploy:
+  provider: s3
+  access_key_id: AKIAJWS554QGKBTMSBCA
+  secret_access_key:
+    secure: DvvRo4SBpjLMR1C02CzxK6Ah2y8jPA+44MjtbngF33D9V9GEzEhUNw29eGSJApitYQyWMjIDJcbkrFiQ7EDpNz+PbqJCrNBEXzPJ86hliEafOVs68XinvIl0T4b74HBxGFpyvCs/3ghhQST8eAT7eClfwlfsgNYEcEsNZqtAOP96S3UbCG1hKn2wuuAwN4XVVGB1qazx2vztpIAdTwio8L4i/YlEX08cP58m86X7EZY5w/edZbfAm6nbN/aX5hOg3unNisXu0DvurCi6kR5Sxdg5edRZuhfKujMu2hLqj56jBsQ79tVtkrvEXue9tlyum8LYJxogkhlya9TuQb3a02jGv4nS+6E+lSmxtyHiexFWx0xSVie03OOmHZnPmCVMnZuT+HviguRNFSb4WsLJv1wW7XRxug/m3Brz2kb1MOdo3DrRkZDyEXIOIMpunttQvDgS6RTnAlaqRFndWamPTwGQxRQKRwJ3c/ZRjqd2+pZ3eTvERBH7Lbue/rKkC6hhNgRsQJkaJkN57HT2JQgjlfzo/azKuYyiNuoj0aU8l1/Bj6ZjBgzetaJedKl0/maVld/MJkbUjyrOhxy45Jshv5fECJErtrmOG8Ui5ozmwM97z+whDgkox7lc07KW+8LkZShMzdxYLzZ1wElsTtE1d3vgFNmzarcoW9uveI3eryM=
+  bucket: travis-artifacts.cabforum.org
+  upload-dir: builds/
+  acl: public_read
+  on:
+    repo: cabforum/documents
