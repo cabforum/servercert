@@ -12,8 +12,8 @@
 
 
 **CA/Browser Forum**
-**Version 1.3.2 + Ballot 162**
-**February 23, 2016**
+**Version 1.3.4**
+**March 15, 2016**
 
 **www.cabforum.org**
 
