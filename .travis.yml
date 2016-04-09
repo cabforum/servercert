@@ -34,4 +34,5 @@ deploy:
   upload-dir: builds/$TRAVIS_BRANCH
   acl: public_read
   on:
+    all_branches: true
     repo: cabforum/documents
