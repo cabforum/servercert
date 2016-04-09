@@ -17,6 +17,8 @@ addons:
 script:
 - virtualenv --system-site-packages ./venv
 - . ./venv/bin/activate
+- mkdir ~/.fonts/
+- cp -a assets/*.otf ~/.fonts/
 - pip install WeasyPrint
 - make
 - make deploy
