@@ -1061,11 +1061,17 @@ Root CA Private Keys MUST NOT be used to sign Certificates except in the followi
 5. Subscriber Certificates, provided that:
 
     a. The Root CA uses a 1024-bit RSA signing key that was created prior to the Effective Date;
+    
     b. The Applicant's application was deployed prior to the Effective Date;
+    
     c. The Applicant's application is in active use by the Applicant or the CA uses a documented process to establish that the Certificate's use is required by a substantial number of Relying Parties;
+    
     d. The CA follows a documented process to determine that the Applicant's application poses no known security risks to Relying Parties;
+    
     e. The CA documents that the Applicant's application cannot be patched or replaced without substantial economic outlay;
+    
     f. The CA signs the Subscriber Certificate on or before June 30, 2016; and
+    
     g. The notBefore field in the Subscriber Certificate has a date on or before June 30, 2016.
 
 
