@@ -1022,7 +1022,7 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 |Digest algorithm|MD5 (NOT RECOMMENDED), SHA-1, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
 |Minimum RSA modulus size (bits)|2048\*\*|2048|
 |ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)|L= 2048 N= 224 or L= 2048 N= 256|L= 2048 N= 224 or L= 2048 N= 256|
+|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048 N= 224 or L= 2048 N= 256|L= 2048 N= 224 or L= 2048 N= 256|
 
 (2) Subordinate CA Certificates
 
@@ -1031,7 +1031,7 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 |Digest algorithm|SHA-1, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
 |Minimum RSA modulus size (bits)|1024|2048|
 |ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)|L= 2048, N= 224 or  L= 2048, N= 256|L= 2048 N= 224 or L= 2048 N= 256
+|Minimum DSA modulus and divisor size (bits)\*\*\*|L= 2048, N= 224 or  L= 2048, N= 256|L= 2048 N= 224 or L= 2048 N= 256
 
 (3) Subscriber Certificates
 
@@ -1046,7 +1046,7 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 
 \*\* A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor for Subscriber Certificates issued in accordance with these Requirements.
 
-For DSA keys, L and N (the bit lengths of modulus p and divisor q, respectively) are described in the Digital Signature Standard, FIPS 186-3 (<http://csrc.nist.gov/publications/fips/fips186-3/fips_186-3.pdf>).
+\*\*\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in the Digital Signature Standard, FIPS 186-4 (http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.186-4.pdf).
 
 ### 6.1.6 Public key parameters generation and quality checking
 RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2<sup>16</sup>+1 and 2<sup>256</sup>-1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89]
