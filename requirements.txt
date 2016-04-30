@@ -1,1 +1,2 @@
-weasyprint
+weasyprint==0.27
+CairoSVG==1.0.20
