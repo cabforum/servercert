@@ -1018,7 +1018,7 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 (1) Root CA Certificates
 
 ||Validity period beginning on or before 31 Dec 2010|Validity period beginning after 31 Dec 2010|
-|--|--|--|
+|---|---|---|
 |Digest algorithm|MD5 (NOT RECOMMENDED), SHA-1, SHA-256, SHA-384 or SHA-512|SHA-1\*, SHA-256, SHA-384 or SHA-512|
 |Minimum RSA modulus size (bits)|2048\*\*|2048|
 |ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
@@ -1026,6 +1026,8 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 
 (2) Subordinate CA Certificates
 
+||Validity period beginning on or before 31 Dec 2010 and ending on or before 31 Dec 2013|Validity period beginning after 31 Dec 2010 or ending after 31 Dec 2013|
+|---|---|---|
 |Digest algorithm|SHA-1*, SHA-256, SHA-384 or SHA-512|
 |Minimum RSA modulus size (bits)|2048|
 |ECC curve|NIST P-256, P-384, or P-521|
@@ -1033,6 +1035,8 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 
 (3) Subscriber Certificates
 
+||Validity period *ending* on or before 31 Dec 2013|Validity period *ending* after 31 Dec 2013|
+|---|---|---|
 |Digest algorithm|SHA-1*, SHA-256, SHA-384 or SHA-512|
 |Minimum RSA modulus size (bits)|2048|
 |ECC curve|NIST P-256, P-384, or P-521|
