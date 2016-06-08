@@ -15,7 +15,7 @@
 
 **Version 1.3.4**
 
-**March 15, 2016**
+**June  , 2016**
 
 **www.cabforum.org**
 
@@ -357,6 +357,13 @@ No stipulation.
 
 
 ### 1.6.3 References
+
+ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - Requirements for conformity assessment bodies assessing Trust Service Providers
+
+ETSI EN 319 411-1, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates;  Part 1: General requirements
+
+ETSI EN 319 411-2, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates;  Part 2: Requirements for trust service providers issuing EU qualified certificates
+
 ETSI TS 119 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - General Requirements and Guidance.
 
 ETSI TS 102 042, Electronic Signatures and Infrastructures (ESI); Policy requirements for certification authorities issuing public key certificates.
@@ -1516,7 +1523,7 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 1. Independence from the subject of the audit;
 2. The ability to conduct an audit that addresses the criteria specified in an Eligible Audit Scheme (see Section 8.1);
 3. Employs individuals who have proficiency in examining Public Key Infrastructure technology, information security tools and techniques, information technology and security auditing, and the third-party attestation function;
-4. (For audits conducted in accordance with any one of the ETSI standards) accredited in accordance with ETSI TS 119 403, or accredited to conduct such audits under an equivalent national scheme, or accredited by a national accreditation body in line with ISO 27006 to carry out ISO 27001 audits;
+4. (For audits conducted in accordance with any one of the ETSI standards) accredited in accordance with ETSI TS 119 403;
 5. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
 6. Bound by law, government regulation, or professional code of ethics; and
 7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors &
@@ -1529,7 +1536,7 @@ Omissions insurance with policy limits of at least one million US dollars in cov
 The CA SHALL undergo an audit in accordance with one of the following schemes:
 
 1. WebTrust for Certification Authorities v2.0;
-2. A national scheme that audits conformance to ETSI TS 102 042;
+2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1;
 3. A scheme that audits conformance to ISO 21188:2006; or
 4. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
 
