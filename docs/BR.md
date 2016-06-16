@@ -306,6 +306,8 @@ A Request Token that does not include a timestamp is valid for a single use and 
 
 The binding SHALL use a digital signature algorithm or a cryptographic hash algorithm at least as stro
 
+**Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
+
 **Requirements**: The Baseline Requirements found in this document.
 
 **Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
@@ -504,8 +506,8 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 
 2. The CA authenticates the Applicant's identity under EV Guidelines Section 11.2 and the agency of the Certificate Approver under EV Guidelines Section 11.8; OR
 
-3. The CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name and directly confirms that the Applicant is the Domain Contact.
-{:style="list-style: lower-alpha"}
+3. The CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
+
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
 
@@ -541,10 +543,15 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 ##### 3.2.2.4.5 Domain Authorization Document
 
-Confirming the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. The Domain Authorization Document MUST substantiate that the communication came from the Domain Contact.  The CA MUST verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space; or
+Confirming the Applicant's control over the requested FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. The Domain Authorization Document MUST substantiate that the communication came from the Domain Contact.  The CA MUST verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
 
 ##### 3.2.2.4.6 Agreed-Upon Change to Website
-Confirming the Applicant's control over the requested FQDN by confirming the presence of a Random Value or Request Token (contained in the content of a file or on a web page in the form of a meta tag) under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that can be validated over an Authorized Port.
+Confirming the Applicant's control over the requested FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:
+
+1. The presence of Required Website Content contained in the content of a file or on a web page in the form of a meta tag. The entire Required Website Content MUST NOT appear in the request used to retrieve the file or web page, or
+
+2. The presence of the Request Token or Request Value contained in the content of a file or on a webpage in the form of a meta tag where the Request Token or Random Value MUST NOT appear in the request.
+
 
 If a Random Value is used, the CA or Delegated Third Party SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 3.3.1 of these Guidelines or Section 11.14.3 of the EV Guidelines).
 
@@ -564,7 +571,7 @@ Confirming the Applicant's control over the requested FQDN by confirming the pre
 
 ##### 3.2.2.4.10. TLS Using a Random Number
 
-Confirming the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate which is accessible by the CA via TLS over an Authorized Port.
+Confirming the Applicant's control over the requested FQDN by confirming the presence on the Authorization Domain Name of a Random Value within a Certificate which is accessible by the CA via TLS over an Authorized Port.
 
 
 #### 3.2.2.5 Authentication for an IP Address
