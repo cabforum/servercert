@@ -214,6 +214,8 @@ No stipulation.
 
 **Cross Certificate**: A certificate that is used to establish a trust relationship between two Root CAs.
 
+**CSPRNG**: A random number generator intended for use in cryptographic system.
+
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
@@ -1199,7 +1201,8 @@ The CA SHALL enforce multi-factor authentication for all accounts capable of dir
 
 The CA SHALL meet the technical requirements set forth in Section 2.2, Section 6.1.5, and Section 6.1.6.
 
-CAs SHOULD generate non-sequential Certificate serial numbers that exhibit at least 20 bits of entropy.
+Effective September 30, 2016, CAs SHALL generate Certificate serial numbers greater than zero (0)
+containing at least 64 bits of output from a CSPRNG.
 
 ### 7.1.1 Version number(s)
 Certificates MUST be of type X.509 v3.
