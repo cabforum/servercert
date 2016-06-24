@@ -214,7 +214,7 @@ No stipulation.
 
 **Cross Certificate**: A certificate that is used to establish a trust relationship between two Root CAs.
 
-**CSPRNG**: A random number generator intended for use in cryptographic system.
+**CSPRNG**: A random number generator intended for use in a cryptographic system.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
