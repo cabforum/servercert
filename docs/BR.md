@@ -362,7 +362,7 @@ ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service 
 
 ETSI EN 319 411-1, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates;  Part 1: General requirements
 
-ETSI EN 319 411-2, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates;  Part 2: Requirements for trust service providers issuing EU qualified certificates
+ETSI TS 102 042, Electronic Signatures and Infrastructures (ESI); Policy requirements for certification authorities issuing public key certificates.
 
 FIPS 140-2, Federal Information Processing Standards Publication - Security Requirements For Cryptographic Modules, Information Technology Laboratory, National Institute of Standards and Technology, May 25, 2001.
 
@@ -1532,8 +1532,7 @@ Omissions insurance with policy limits of at least one million US dollars in cov
 The CA SHALL undergo an audit in accordance with one of the following schemes:
 
 1. WebTrust for Certification Authorities v2.0;
-2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1; Effective 1 July 2016, only the ETSI EN 319 411-1 criteria shall be accepted. Audit reports following the ETSI TS 102 042 criteria shall be accepted until 1 July 2017;
-3. A scheme that audits conformance to ISO 21188:2006; or
+2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1; or
 4. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
