@@ -552,8 +552,13 @@ Confirming the Applicant's control over the requested FQDN by confirming one of 
 
 2. The presence of the Request Token or Request Value contained in the content of a file or on a webpage in the form of a meta tag where the Request Token or Random Value MUST NOT appear in the request.
 
-
 If a Random Value is used, the CA or Delegated Third Party SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 3.3.1 of these Guidelines or Section 11.14.3 of the EV Guidelines).
+
+Note:  Examples of Request Tokens include, but are not limited to: (i)	a hash of the public key; (ii)	a hash of the Subject Public Key Info [X.509]; and (iii)	a hash of a PKCS#10 CSR.  A Request Token may also be concatenated with a timestamp or other data.
+If a CA wanted to always use a hash of a PKCS#10 CSR as a Request Token and did not want to incorporate a timestamp and did want to allow certificate key re-use then the applicant might use the challenge password in the creation of a CSR with OpenSSL to ensure uniqueness even if the subject and key are identical between subsequent requests.  This simplistic shell command produces a Request Token which has a timestamp and a hash of a CSR.  E.g. echo `date -u +%Y%m%d%H%M` `sha256sum <r2.csr` | sed "s/[ -]//g"
+The script outputs:  201602251811c9c863405fe7675a3988b97664ea6baf442019e4e52fa335f406f7c5f26cf14f
+The CA should define in its CPS (or in a document referenced from the CPS) the format of Request Tokens it accepts. 
+
 
 ##### 3.2.2.4.7 DNS Change
 
@@ -567,11 +572,11 @@ Confirming the Applicant's control over the requested FQDN by confirming that th
 
 ##### 3.2.2.4.9 Test Certificate
 
-Confirming the Applicant's control over the requested FQDN by confirming the presence on the Authorization Domain Name of a non-expired Test Certificate issue by the CA and which is accessible by the CA via TLS over an Authorized Port for the purpose of issuing a Certificate with the same Public Key as in the Test Certificate.
+Confirming the Applicant's control over the requested FQDN by confirming the presence of a non-expired Test Certificate issued by the CA on the Authorization Domain Name and which is accessible by the CA via TLS over an Authorized Port for the purpose of issuing a Certificate with the same Public Key as in the Test Certificate.
 
 ##### 3.2.2.4.10. TLS Using a Random Number
 
-Confirming the Applicant's control over the requested FQDN by confirming the presence on the Authorization Domain Name of a Random Value within a Certificate which is accessible by the CA via TLS over an Authorized Port.
+Confirming the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
 
 
 #### 3.2.2.5 Authentication for an IP Address
