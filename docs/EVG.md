@@ -316,13 +316,13 @@ Each CA must develop, implement, enforce, display prominently on its Web site, a
 
 (A)        Implement the requirements of these Guidelines as they are revised from time-to-time;
 
-(B)        Implement the requirements of (i) the then-current WebTrust Program for CAs, and (ii) the then-current WebTrust EV Program or ETSI EN 319 411-1 for EVCP policy; and
+(B)        Implement the requirements of (i) the then-current WebTrust Program for CAs, and (ii) the then-current WebTrust EV Program or ETSI TS 102 042 for EVCP or ETSI EN 319 411-1 for EVCP policy; and
 
 (C)        Specify the CA's and its Root CA's entire root certificate hierarchy including all roots that its EV Certificates depend on for proof of those EV Certificates' authenticity.
 
 ###  8.2.2.  Disclosure
 
-Each CA must publicly disclose their EV Policies through an appropriate and readily accessible online means that is available on a 24x7 basis.  The CA is also REQUIRED to publicly disclose its CA business practices as required by both WebTrust for CAs and ETSI EN 319 411-1.  The disclosures MUST be structured in accordance with either RFC 2527 or RFC 3647.
+Each CA must publicly disclose their EV Policies through an appropriate and readily accessible online means that is available on a 24x7 basis.  The CA is also REQUIRED to publicly disclose its CA business practices as required by WebTrust for CAs and ETSI TS 102 042 and ETSI EN 319 411-1.  The disclosures MUST be structured in accordance with either RFC 2527 or RFC 3647.
 
 ## 8.3.  Commitment to Comply with Recommendations
 
@@ -1342,8 +1342,9 @@ As specified in Section 5 of the Baseline Requirements. In addition, systems use
 
 A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following schemes:
 
- (i) WebTrust Program for CAs audit and WebTrust EV Program audit, or
- (ii) ETSI EN 319 411-1 audit for EVCP policy or ETSI EN 319 411-2 audit for QCP-w policy. 
+ (i) WebTrust Program for CAs audit and WebTrust EV Program audit, 
+ (ii) ETSI TS 102 042 audit for EVCP, or 
+ (iii) ETSI EN 319 411-1 audit for EVCP policy. 
 
 If the CA is a Government Entity, an audit of the CA by the appropriate internal government auditing agency is acceptable in lieu of the audits specified above, provided that such internal government auditing agency publicly certifies in writing that its audit addresses the criteria specified in one of the above audit schemes and certifies that the government CA has successfully passed the audit.
 
@@ -1361,9 +1362,11 @@ CAs SHOULD make its audit report publicly available no later than three months a
 
 (1)  If the CA has a currently valid WebTrust Seal of Assurance for CAs, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against the WebTrust EV Program.
 
-(2)  If the CA has a currently valid ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against these ETSI standards.
+(2)  If the CA has a currently valid ETSI 102 042 audit, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI TS 102 042.
 
-(3)  If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete either: (i) a point-in-time readiness assessment audit against the WebTrust for CA Program, or (ii) a point-in-time readiness assessment audit against the WebTrust EV Program or the ETSI EN 319 411-1 for EVCP policy.
+(3)  If the CA has a currently valid ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI EN 319 411-1 for EVCP.
+
+(4)  If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI TS 102 042 EVCP audit or an ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete either: (i) a point-in-time readiness assessment audit against the WebTrust for CA Program, or (ii) a point-in-time readiness assessment audit against the WebTrust EV Program, the ETSI TS 102 042 EVCP, or the ETSI EN 319 411-1 for EVCP policy.
 
 The CA MUST complete any required point-in-time readiness assessment no earlier than twelve (12) months prior to issuing an EV Certificate.  The CA MUST undergo a complete audit under such scheme within ninety (90) days of issuing the first EV Certificate.
 
