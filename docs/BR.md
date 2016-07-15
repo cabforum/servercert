@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.3.6**
+**Version 1.3.7**
 
-**July 1, 2016**
+**July 8, 2016**
 
 **www.cabforum.org**
 
@@ -87,6 +87,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.3.4 | 162 | Sunset of Exceptions | 15-Mar-2016 | 15-Mar-2016 |
 | 1.3.5 | 168 | Baseline Requirements Corrections (Revised) | 10-May-2016 | 10-May-2016 |
 | 1.3.6 | 171 | Updating ETSI Standards in CABF documents | 1-July-2016 | 1-July-2016 |
+| 1.3.7 | 164 | Certificate Serial Number Entropy | 8-July-2016 | 30-Sep-2016 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -107,6 +108,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2016-01-01 | 7.1.3 | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. |
 | 2016-06-30 | 6.1.7 | CAs MUST NOT issue Subscriber Certificates directly from Root CAs. |
 | 2016-06-30 | 6.3.2 | CAs MUST NOT issue Subscriber Certificates with validity periods longer than 39 months, regardless of circumstance. |
+| 2016‐09‐30 | 7.1 | CAs SHALL generate Certificate serial numbers greater than zero (0) containing at least 64 bits of output from a CSPRNG |
 | 2016-10-01 | 7.1.4.2.1 | All Certificates with Reserved IP Address or Internal Name must be revoked. |
 | 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
 | 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
@@ -215,6 +217,8 @@ No stipulation.
 **Country**: Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations.
 
 **Cross Certificate**: A certificate that is used to establish a trust relationship between two Root CAs.
+
+**CSPRNG**: A random number generator intended for use in cryptographic system.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
@@ -1202,9 +1206,9 @@ The CA SHALL enforce multi-factor authentication for all accounts capable of dir
 
 ## 7.1 Certificate profile
 
-The CA SHALL meet the technical requirements set forth in Section 2.2, Section 6.1.5, and Section 6.1.6.
+The CA SHALL meet the technical requirements set forth in Section 2.2 - Publication of Information, Section 6.1.5 - Key Sizes, and Section 6.1.6 - Public Key Parameters Generation and Quality Checking.
 
-CAs SHOULD generate non-sequential Certificate serial numbers that exhibit at least 20 bits of entropy.
+Effective September 30, 2016, CAs SHALL generate non-sequential Certificate serial numbers greater than zero (0) containing at least 64 bits of output from a CSPRNG.
 
 ### 7.1.1 Version number(s)
 Certificates MUST be of type X.509 v3.
