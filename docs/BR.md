@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.3.4**
+**Version 1.3.6**
 
-**June  , 2016**
+**July 1, 2016**
 
 **www.cabforum.org**
 
@@ -85,6 +85,8 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.3.2 | 156 | Amend Sections 1 and 2 of Baseline Requirements | 3-Dec-2015 | 3-Dec-2016 | 
 | 1.3.3 | 160 | Amend Section 4 of Baseline Requirements | 4-Feb-2016 | 4-Feb-2016 | 
 | 1.3.4 | 162 | Sunset of Exceptions | 15-Mar-2016 | 15-Mar-2016 |
+| 1.3.5 | 168| Baseline Requirements Corrections (Revised) | 10‐May‐2016 | 10‐May‐2016 |
+| 1.3.6 | 171 | Updating ETSI Standards in CABF documents | 1-July-2016 | 1-July-2016 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
