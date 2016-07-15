@@ -87,7 +87,7 @@ Ballots will be conducted in accordance with the following rules.
 
 (d)        The CA/Browser Forum shall provide seven calendar-days for voting, with the deadline clearly communicated via the members' electronic mailing list. All voting will take place online via the members' electronic mailing list.
 
-(e)        Only votes that indicate a clear 'yes' or 'no' response to the ballot question shall be considered (i.e. votes to abstain and votes that do not indicate a clear 'yes' or 'no' response will not figure in the calculation of item 6, below).
+(e)        Only votes that indicate a clear 'yes' or 'no' response to the ballot question shall be considered (i.e. votes to abstain and votes that do not indicate a clear 'yes' or 'no' response will not figure in the calculation of item (f), below).
 
 (f)        Members fall into two categories: CAs (comprising issuing CAs and root CAs, as defined in the membership criteria) and product suppliers (as defined in the membership criteria). In order for the motion to be adopted by the Forum, two-thirds or more of the votes cast by the Members in the CA category must be in favor of the motion, and at least 50% plus one of the votes cast by the members in the browser category must be in favor of the motion  At least one CA Member and one browser Member must vote in favor of a ballot for the ballot to be adopted.
 
