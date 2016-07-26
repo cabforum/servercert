@@ -1528,9 +1528,7 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 4. (For audits conducted in accordance with any one of the ETSI standards) accredited in accordance with ISO 17065 applying the requirements specified in ETSI EN 319 403;
 5. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
 6. Bound by law, government regulation, or professional code of ethics; and
-7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors &
-
-Omissions insurance with policy limits of at least one million US dollars in coverage
+7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage
 
 ## 8.3 Assessor's relationship to assessed entity
 
