@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.3.5**
+**Version 1.3.8**
 
-**July 1, 2016**
+**August 5, 2016**
 
 **www.cabforum.org**
 
@@ -86,6 +86,9 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.3.3 | 160 | Amend Section 4 of Baseline Requirements | 4-Feb-2016 | 4-Feb-2016 | 
 | 1.3.4 | 162 | Sunset of Exceptions | 15-Mar-2016 | 15-Mar-2016 |
 | 1.3.5 | 168 | Baseline Requirements Corrections (Revised) | 10-May-2016 | 10-May-2016 |
+| 1.3.6 | 171 | Updating ETSI Standards in CABF documents | 1-July-2016 | 1-July-2016 |
+| 1.3.7 | 164 | Certificate Serial Number Entropy | 8-July-2016 | 30-Sep-2016 |
+| 1.3.8 | 169 | Revised Validation Requirements | 5-Aug-2016 | 1-Mar-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -106,9 +109,11 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2016-01-01 | 7.1.3 | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. |
 | 2016-06-30 | 6.1.7 | CAs MUST NOT issue Subscriber Certificates directly from Root CAs. |
 | 2016-06-30 | 6.3.2 | CAs MUST NOT issue Subscriber Certificates with validity periods longer than 39 months, regardless of circumstance. |
+| 2016‐09‐30 | 7.1 | CAs SHALL generate Certificate serial numbers greater than zero (0) containing at least 64 bits of output from a CSPRNG |
 | 2016-10-01 | 7.1.4.2.1 | All Certificates with Reserved IP Address or Internal Name must be revoked. |
 | 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
 | 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
+| 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
 
 
 
@@ -191,6 +196,12 @@ No stipulation.
 
 **Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
 
+**Authorization Domain Name**: The Domain Name used to obtain authorization for certificate issuance for a given FQDN. The CA may use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. If the FQDN contains a wildcard character, then the CA MUST remove all wildcard labels from the left most portion of requested FQDN. The CA may prune zero or more labels from left to right until encountering a Base Domain Name and may use any one of the intermediate values for the purpose of domain validation.
+
+**Authorized Port**: One of the following ports: 80 (http), 443 (http), 115 (sftp), 25 (smtp), 22 (ssh).
+
+**Base Domain Name**: The portion of an applied-for FQDN that is the first domain name node left of a registry-controlled or public suffix plus the registry-controlled or public suffix (e.g. "example.co.uk" or "example.com"). For FQDNs where the right-most domain name node is a gTLD having ICANN Specification 13 in its registry agreement, the gTLD itself may be used as the Base Domain Name.
+
 **CAA**: From RFC 6844 ([http:tools.ietf.org/html/rfc6844](http://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
 
 **Certificate**: An electronic document that uses a digital signature to bind a public key and an identity.
@@ -215,9 +226,12 @@ No stipulation.
 
 **Cross Certificate**: A certificate that is used to establish a trust relationship between two Root CAs.
 
+**CSPRNG**: A random number generator intended for use in cryptographic system.
+
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
+
 
 **Domain Name**: The label assigned to a node in the Domain Name System.
 
@@ -1201,9 +1215,9 @@ The CA SHALL enforce multi-factor authentication for all accounts capable of dir
 
 ## 7.1 Certificate profile
 
-The CA SHALL meet the technical requirements set forth in Section 2.2, Section 6.1.5, and Section 6.1.6.
+The CA SHALL meet the technical requirements set forth in Section 2.2 - Publication of Information, Section 6.1.5 - Key Sizes, and Section 6.1.6 - Public Key Parameters Generation and Quality Checking.
 
-CAs SHOULD generate non-sequential Certificate serial numbers that exhibit at least 20 bits of entropy.
+Effective September 30, 2016, CAs SHALL generate non-sequential Certificate serial numbers greater than zero (0) containing at least 64 bits of output from a CSPRNG.
 
 ### 7.1.1 Version number(s)
 Certificates MUST be of type X.509 v3.
@@ -1523,9 +1537,7 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 4. (For audits conducted in accordance with any one of the ETSI standards) accredited in accordance with ISO 17065 applying the requirements specified in ETSI EN 319 403;
 5. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
 6. Bound by law, government regulation, or professional code of ethics; and
-7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors &
-
-Omissions insurance with policy limits of at least one million US dollars in coverage
+7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage
 
 ## 8.3 Assessor's relationship to assessed entity
 
