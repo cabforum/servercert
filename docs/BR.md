@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.4.0**
+**Version 1.4.1**
 
-**August 29, 2016**
+**September 7, 2016**
 
 **www.cabforum.org**
 
@@ -1473,38 +1473,42 @@ b. Certificate Field: subject:organizationName (OID 2.5.4.10)
 Optional.
 Contents: If present, the subject:organizationName field MUST contain either the Subject's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly supported by application software, the CA MAY use the subject:organizationName field to convey a natural person Subject's name or DBA.
 
-c. Certificate Field: Number and street: subject:streetAddress (OID: 2.5.4.9)
-Optional if the subject:organizationName field is present.
-Prohibited if the subject:organizationName field is absent.
+c. Certificate Field: subject:givenName (2.5.4.42) and subject:surname (2.5.4.4)
+Optional.
+Contents: If present, the subject:givenName field and subject:surname field MUST contain an natural person Subject’s name as verified under Section 3.2.3. A Certificate containing a subject:givenName field or subject:surname field MUST contain the (2.23.140.1.2.3) Certificate Policy OID.
+
+d. Certificate Field: Number and street: subject:streetAddress (OID: 2.5.4.9)
+Optional if the subject:organizationName field, subject: givenName field, or subject:surname field are present.
+Prohibited if the subject:organizationName field, subject:givenName, and subject:surname field are absent.
 Contents: If present, the subject:streetAddress field MUST contain the Subject's street address information as verified under Section 3.2.2.1.
 
-d. Certificate Field: subject:localityName (OID: 2.5.4.7)
-Required if the subject:organizationName field is present and the subject:stateOrProvinceName field is absent.
-Optional if the subject:organizationName and subject:stateOrProvinceName fields are present.
-Prohibited if the subject:organizationName field is absent.
+e. Certificate Field: subject:localityName (OID: 2.5.4.7)
+Required if the subject:organizationName field, subject:givenName field, or subject:surname field are present and the subject:stateOrProvinceName field is absent.
+Optional if the subject:stateOrProvinceName field and the subject:organizationName field, subject:givenName field, or subject:surname field are present.
+Prohibited if the subject:organizationName field, subject:givenName, and subject:surname field are absent.
 Contents: If present, the subject:localityName field MUST contain the Subject's locality information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the localityName field MAY contain the Subject's locality and/or state or province information as verified under Section 3.2.2.1.
 
-e. Certificate Field: subject:stateOrProvinceName (OID: 2.5.4.8)
-Required if the subject:organizationName field is present and subject:localityName field is absent.
-Optional if subject:organizationName and subject:localityName fields are present.
-Prohibited if the subject:organizationName field is absent.
+f. Certificate Field: subject:stateOrProvinceName (OID: 2.5.4.8)
+Required if the subject:organizationName field, subject:givenName field, or subject:surname field are present and subject:localityName field is absent.
+Optional if the subject:localityName field and the subject:organizationName field, the subject:givenName field, or the subject:surname field are present.
+Prohibited if the subject:organizationName field, the subject:givenName field, and subject:surname field are absent.
 Contents: If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the subject:stateOrProvinceName field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
 
-f. Certificate Field: subject:postalCode (OID: 2.5.4.17)
-Optional if the subject:organizationName field is present.
-Prohibited if the subject:organizationName field is absent.
+g. Certificate Field: subject:postalCode (OID: 2.5.4.17)
+Optional if the subject:organizationName field subject:givenName field, or subject:surname field are present.
+Prohibited if the subject:organizationName field, subject:givenName field, and subject:surname field are absent.
 Contents: If present, the subject:postalCode field MUST contain the Subject's zip or postal information as verified under Section 3.2.2.1.
 
-g. Certificate Field: subject:countryName (OID: 2.5.4.6)
-Required if the subject:organizationName field is present.
-Optional if the subject:organizationName field is absent.
+h. Certificate Field: subject:countryName (OID: 2.5.4.6)
+Required if the subject:organizationName field, subject:givenName, or subject:surname field are present.
+Optional if the subject:organizationName field, subject:givenName field, and subject:surname field are absent.
 Contents: If the subject:organizationName field is present, the subject:countryName MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the subject:organizationName field is absent, the subject:countryName field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
-h. Certificate Field: subject:organizationalUnitName
+i. Certificate Field: subject:organizationalUnitName
 Optional.
-The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains subject:organizationName, subject:localityName, and subject:countryName attributes, also verified in accordance with Section 3.2.2.1.
+The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains subject:organizationName, subject:givenName, subject:surname, subject:localityName, and subject:countryName attributes, also verified in accordance with Section 3.2.2.1.
 
-i. Other Subject Attributes
+j. Other Subject Attributes
 All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 #### 7.1.4.3. Subject Information - Subordinate CA Certificates
@@ -1542,7 +1546,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1), if the Certificate complies with these Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
 
-If the Certificate asserts the policy identifier of 2.23.140.1.2.1, then it MUST NOT include organizationName, streetAddress, localityName, stateOrProvinceName, or postalCode in the Subject field.
+If the Certificate asserts the policy identifier of 2.23.140.1.2.1, then it MUST NOT include organizationName, givenName, surname, streetAddress, localityName, stateOrProvinceName, or postalCode in the Subject field.
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2), if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
 
