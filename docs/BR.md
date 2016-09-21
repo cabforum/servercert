@@ -91,6 +91,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.3.8 | 169 | Revised Validation Requirements | 5-Aug-2016 | 1-Mar-2017 |
 | 1.3.9 | 174 | Reform of Requirements Relating to Conflicts with Local Law | 29-Aug-2016 | 27-Nov-2016 |
 | 1.4.0 | 173 | Removal of requirement to cease use of public key due to incorrect info | 28-July-2016 | 11-Sept-2016 |
+| 1.4.1 | 175 | Addition of givenName and surname | 7-Sept-2016 | 7-Sept-2016 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -1491,12 +1492,12 @@ Contents: If present, the subject:localityName field MUST contain the Subject's 
 f. Certificate Field: subject:stateOrProvinceName (OID: 2.5.4.8)
 Required if the subject:organizationName field, subject:givenName field, or subject:surname field are present and subject:localityName field is absent.
 Optional if the subject:localityName field and the subject:organizationName field, the subject:givenName field, or the subject:surname field are present.
-Prohibited if the subject:organizationName field, the subject:givenName field, and subject:surname field are absent.
+Prohibited if the subject:organizationName field, the subject:givenName field, or subject:surname field are absent.
 Contents: If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the subject:stateOrProvinceName field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
 
 g. Certificate Field: subject:postalCode (OID: 2.5.4.17)
-Optional if the subject:organizationName field subject:givenName field, or subject:surname field are present.
-Prohibited if the subject:organizationName field, subject:givenName field, and subject:surname field are absent.
+Optional if the subject:organizationName, subject:givenName field, or subject:surname fields are present.
+Prohibited if the subject:organizationName field, subject:givenName field, or subject:surname field are absent.
 Contents: If present, the subject:postalCode field MUST contain the Subject's zip or postal information as verified under Section 3.2.2.1.
 
 h. Certificate Field: subject:countryName (OID: 2.5.4.6)
