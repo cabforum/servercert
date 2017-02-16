@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.4.2**
+**Version 1.4.3**
 
-**January 7, 2017**
+**February 24, 2017**
 
 **www.cabforum.org**
 
@@ -93,6 +93,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.0 | 173 | Removal of requirement to cease use of public key due to incorrect info | 28-July-2016 | 11-Sept-2016 |
 | 1.4.1 | 175 | Addition of givenName and surname | 7-Sept-2016 | 7-Sept-2016 |
 | 1.4.2 | 181 | Removal of some validation methods listed in section 3.2.2.4 | 7-Jan-2017 | 7-Jan-2017 |
+| 1.4.3 | 185 | Limiting the Lifetime of Certificates | 24-Feb-2017 | 24-Aug-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -118,7 +119,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
 | 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
 | 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
-
+| 2017-08-24 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 398 days. |
 
 
 ## 1.3 PKI Participants
@@ -1229,16 +1230,10 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 ### 6.3.1 Public key archival
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
-Subscriber Certificates issued after the Effective Date MUST have a Validity Period no greater than 60 months.
-Except as provided for below, Subscriber Certificates issued after 1 April 2015 MUST have a Validity Period no greater than 39 months.
 
-Until 30 June 2016, CAs MAY continue to issue Subscriber Certificates with a Validity Period greater than 39 months but not greater than 60 months provided that the CA documents that the Certificate is for a system or software that:
+Subscriber Certificates issued on or after 24 August 2017 MUST NOT have a Validity Period greater than three hundred and ninety-eight (398) days.
 
-a. was in use prior to the Effective Date;
-b. is currently in use by either the Applicant or a substantial number of Relying Parties;
-c. fails to operate if the Validity Period is shorter than 60 months;
-d. does not contain known security risks to Relying Parties; and
-e. is difficult to patch or replace without substantial economic outlay.
+Subscriber Certificates issued prior to 24 August 2017 MUST NOT have a Validity Period greater than thirty-nine (39) months.
 
 ## 6.4 Activation data
 
