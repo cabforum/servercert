@@ -7,7 +7,6 @@ addons:
     packages:
     - python-dev
     - python-pip
-    - python-setuptools
     - python-lxml
     - libcairo2
     - libpango1.0-0
@@ -20,6 +19,7 @@ script:
 - . ./venv/bin/activate
 - mkdir ~/.fonts/
 - cp -a assets/*.otf ~/.fonts/
+- pip install --user --upgrade pip setuptools
 - pip install --user -r requirements.txt
 - make
 - make deploy
