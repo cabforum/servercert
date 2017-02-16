@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM** 
 
-**Version 1.3 - Adopted effective as of 10 July 2015**
+**Version 1.4 - Adopted effective as of 4 April 2016**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -69,8 +69,10 @@ The Chair will read an antitrust compliance statement at the start of all Forum 
 CA Applicants should supply the following additional information:
  
 (6) URL of the current qualifying performance audit report.
+
+(7) The URL of at least one third party website that includes a certificate issued by the Applicant in the certificate chain.
  
-(7) Links or references to issued certificates that demonstrate compliance with all applicable certificate, CRL, and OCSP requirements.
+(8) Links or references to issued certificates that demonstrate compliance with all applicable certificate, CRL, and OCSP requirements.
 
 
 (c)        An Applicant shall become a Member once the Forum has determined by consensus among the Members during a teleconference or meeting that the Applicant meets all of the requirements of subsection (a) or, upon the request of any Member, by a Ballot among the Members.  Acceptance by consensus shall be determined or a Ballot of Members shall be held as soon as the Applicant indicates that it has presented all information required under subsection (b) and has responded to all follow-up questions from the Forum and the Member has complied with the requirements of Section 5.5.
