@@ -21,7 +21,7 @@ script:
 - cp -a assets/*.otf ~/.fonts/
 - pip install -U pip
 - pip install -U setuptools
-- pip install --user -r requirements.txt
+- pip install -r requirements.txt
 - make
 - make deploy
 deploy:
