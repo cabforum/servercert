@@ -19,7 +19,7 @@ script:
 - . ./venv/bin/activate
 - mkdir ~/.fonts/
 - cp -a assets/*.otf ~/.fonts/
-- pip install --user --upgrade pip setuptools
+- pip install --user --upgrade pip six setuptools
 - pip install --user -r requirements.txt
 - make
 - make deploy
