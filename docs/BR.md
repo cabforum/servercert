@@ -119,7 +119,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
 | 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
 | 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
-| 2017-08-24 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 398 days. |
+| 2017-08-24 | 6.3.2 | CAs SHALL NOT issue Subscriber Certificates with validity periods longer than 398 days. |
 
 
 ## 1.3 PKI Participants
