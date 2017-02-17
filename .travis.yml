@@ -15,11 +15,12 @@ addons:
     - shared-mime-info
     - python-virtualenv
 script:
-- virtualenv --system-site-packages ./venv
+- virtualenv --system-site-packages --setuptools ./venv
 - . ./venv/bin/activate
 - mkdir ~/.fonts/
 - cp -a assets/*.otf ~/.fonts/
-- pip install --user --upgrade pip six setuptools
+- pip install -U pip
+- pip install -U setuptools
 - pip install --user -r requirements.txt
 - make
 - make deploy
