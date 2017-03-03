@@ -16,17 +16,13 @@
 
 ## Extended Validation Certificates
 
-Copyright © 2007-2017, The CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
+Copyright © 2007-2017, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
 
-Verbatim copying and distribution of this entire document is permitted in any medium without royalty, provided this notice is preserved.
+The CA/Browser Forum requests that translated versions of these guidelines prominently display the following statement in the language of the translation :-
 
-Upon request, the CA / Browser Forum may grant permission to make a translation of these guidelines into a language other than English.  In such circumstance, copyright in the translation remains with the CA / Browser Forum.  In the event that a discrepancy arises between interpretations of a translated version and the original English version, the original English version shall govern.  A translated version of the guidelines must prominently display the following statement in the language of the translation:-
+'Copyright © 2007-2017, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
 
-'Copyright © 2007-2017 The CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.'
-
-This document is a translation of the original English version.  In the event that a discrepancy arises between interpretations of this version and the original English version, the original English version shall govern.'
-
-A request to make a translated version of these Guidelines should be submitted to [questions@cabforum.org](mailto:questions@cabforum.org).
+This document is a translation of the original English version. In the event that there is a discrepancy between this version and the original English version, the original English version shall govern.'
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
