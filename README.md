@@ -16,11 +16,26 @@ The HTML format is usable either in a browser or in Microsoft Word.
 
 # Building
 
-The build process involves generating HTML documents from Kramdown, then
+The build process involves generating HTML documents from kramdown, then
 generating PDF documents from HTML using [Weasyprint](http://weasyprint.org/).
+These have a number of other dependencies that can be time-consuming to install.
+The fastest way to start is to use a Docker image, which works on Windows and
+macOS, and Linux:
 
-You'll need ruby, bundler, Python, pip, gcc, and several libraries installed.
-See .travis.yml for a list of packages installable on Ubuntu. Make sure that
+    git clone https://github.com/cabforum/documents/
+    cd documents
+    docker run --rm --volume $PWD:/documents j4cob/cabforum make
+
+This will automatically download a Docker image containing the necessary
+dependencies, and run `make` in a container based off that image.
+The output will be available in the output/ directory. This docker command
+mounts the current directory as a volume, so it will build from the version of
+the documents in the current directory. You can edit files on the Docker host,
+and use Docker just for building.
+
+If you want to install the dependencies without Docker, you'll need ruby,
+bundler, Python, pip, gcc, and several libraries installed.
+See Dockerfile for a list of packages installable on Debian. Make sure that
 ~/.local/bin/ is in your $PATH.
 
 Install kramdown and weasyprint via bundler and pip, respectively:
@@ -37,3 +52,12 @@ make
 ```
 
 The output is available in the output/ directory.
+
+# Building the Docker image locally
+
+If you'd like to build a copy of the Docker image locally, for instance, to use
+a different version of Weasyprint or kramdown, run:
+
+    docker build --tag my_cabforum_tag .
+    docker run --rm --volume $PWD:/documents my_cabforum_tag make
+

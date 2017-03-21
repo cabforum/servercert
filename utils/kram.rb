@@ -34,7 +34,7 @@ if ARGV.count == 2
 	options[:output] = ARGV[1]
 end
 
-s = File.read(options[:input])
+s = File.read(options[:input], :encoding => 'utf-8')
 
 kram_opts = {:entity_output => :symbolic}
 if options.has_key? :template
