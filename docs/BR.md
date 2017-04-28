@@ -13,7 +13,7 @@
 
 **CA/Browser Forum**
 
-**Version 1.4.6**
+**Version 1.4.7**
 
 **April 17, 2017**
 
@@ -97,6 +97,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.4 | 193 | 825-day Certificate Lifetimes | 17-Mar-2017	| 1-Mar-2018 |
 | 1.4.5 | 189 | Amend Section 6.1.7 of Baseline Requirements | 14-Apr-2017 | 14-May-2017 |
 | 1.4.6 | 195 | CAA Fixup | 17-Apr-2017 | 18-May-2017 |
+| 1.4.7 | 196 | Define “Audit Period” | 17-Apr-2017 | 18-May-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -203,6 +204,8 @@ No stipulation.
 **Application Software Supplier**: A supplier of Internet browser software or other relying-party application software that displays or uses Certificates and incorporates Root Certificates.
 
 **Attestation Letter**: A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
+
+**Audit Period**:  In a period-of-time audit, the period between the first day (start) and the last day of operations (end) covered by the auditors in their engagement. (This is not the same as the period of time when the auditors are on-site at the CA.) The coverage rules and maximum length of audit periods are defined in section 8.1.
 
 **Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
 
