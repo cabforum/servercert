@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.4.5**
+**Version 1.4.6**
 
-**April 14, 2017**
+**April 17, 2017**
 
 **www.cabforum.org**
 
@@ -96,6 +96,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.3 | 187 | Make CAA Checking Mandatory	| 8-Mar-2017 | 8-Sep-2017 | 
 | 1.4.4 | 193 | 825-day Certificate Lifetimes | 17-Mar-2017	| 1-Mar-2018 |
 | 1.4.5 | 189 | Amend Section 6.1.7 of Baseline Requirements | 14-Apr-2017 | 14-May-2017 |
+| 1.4.6 | 195 | CAA Fixup | 17-Apr-2017 | 18-May-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -596,7 +597,7 @@ As part of the issuance process, the CA MUST check for a CAA record for each dNS
 
 This stipulation does not prevent the CA from checking CAA records at any other time.
 
-When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 6844. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and reject any unrecognized properties with this flag set.
+When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set.
 
 RFC 6844 requires that CAs "MUST NOT issue a certificate unless either (1) the certificate request is consistent with the applicable CAA Resource Record set or (2) an exception specified in the relevant Certificate Policy or Certification Practices Statement applies." For issuances conforming to these Baseline Requirements, CAs MUST NOT rely on any exceptions specified in their CP or CPS unless they are one of the following:
 
