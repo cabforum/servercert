@@ -53,7 +53,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3).
 
 
-### 1.2.1.Revisions
+### 1.2.1 Revisions
 
 | **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
 | :---: | :---: | --- | :---: | :---: |
@@ -126,7 +126,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
 
 ### 1.3.1 Certification Authorities
-Certification Authority (CA) is defined in Section 1.6. Current CA Members of the CA/Browser Forum are listed here: https://cabforum.org/members.
+Certification Authority (CA) is defined in Section 1.6. Current CA Members of the CA/Browser Forum are listed here: [https://cabforum.org/members].
 
 ### 1.3.2 Registration Authorities
 The CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Section 3.2.
@@ -546,7 +546,7 @@ Note: Examples of Request Tokens include, but are not limited to: (i) a hash of 
 
 ##### 3.2.2.4.9 [Reserved]
 
-##### 3.2.2.4.10. TLS Using a Random Number
+##### 3.2.2.4.10 TLS Using a Random Number
 
 Confirming the Applicant's control over the requested FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
 
@@ -568,8 +568,7 @@ Note: IPAddresses may be listed in Subscriber Certificates using IPAddress in th
 #### 3.2.2.6 Wildcard Domain Validation
 Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName of type DNS-ID, the CA MUST establish and follow a documented procedure[^pubsuffix] that determines if the wildcard character occurs in the first label position to the left of a "registry-controlled" label or "public suffix" (e.g. "\*.com", "\*.co.uk", see RFC 6454 Section 8.2 for further explanation).
 
-If a wildcard would fall within the label immediately to the left of a registry-controlled[^pubsuffix] or public suffix, CAs MUST refuse issuance unless the applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.).
-<del>Prior to September 1, 2013, each CA MUST revoke any valid certificate that does not comply with this section of the Requirements.</del>
+If a wildcard would fall within the label immediately to the left of a registry-controlled[^pubsuffix] or public suffix, CAs MUST refuse issuance unless the applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.). Prior to September 1, 2013, each CA MUST revoke any valid certificate that does not comply with this section of the Requirements.
 
 [^pubsuffix]: Determination of what is "registry-controlled" versus the registerable portion of a Country Code Top-Level Domain Namespace is not standardized at the time of writing and is not a property of the DNS itself. Current best practice is to consult a "public suffix list" such as <http://publicsuffix.org/> (PSL), and to retrieve a fresh copy regularly. If using the PSL, a CA SHOULD consult the "ICANN DOMAINS" section only, not the "PRIVATE DOMAINS" section. The PSL is updated regularly to contain new gTLDs delegated by ICANN, which are listed in the "ICANN DOMAINS" section. A CA is not prohibited from issuing a Wildcard Certificate to the Registrant of an entire gTLD, provided that control of the entire namespace is demonstrated in an appropriate way.
 
@@ -1335,6 +1334,7 @@ The Certificate Subject MUST contain the following:
 - organizationName (OID 2.5.4.10): This field MUST be present and the contents MUST contain either the Subject CA’s name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows “Company Name Incorporated”, the CA MAY use “Company Name Inc.” or “Company Name".
 
 #### 7.1.2.2 Subordinate CA Certificate
+
 a. certificatePolicies
 
     This extension MUST be present and SHOULD NOT be marked critical.
@@ -1343,13 +1343,15 @@ a. certificatePolicies
 
     The following fields MAY be present if the Subordinate CA is not an Affiliate of the entity that controls the Root CA.
 
-      certificatePolicies:policyQualifiers:policyQualifierId (Optional)
+    certificatePolicies:policyQualifiers:policyQualifierId (Optional)
 
-            *   id-qt 1 [RFC 5280].
+    *   id-qt 1 [RFC 5280].
 
-        *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
+    certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
 
-            *   HTTP URL for the Root CA's Certificate Polic<ins>y</ins><del>ies</del>, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the CA.
+    *   HTTP URL for the Root CA's Certificate Policies, Certification
+        Practice Statement, Relying Party Agreement, or other pointer to
+        online policy information provided by the CA.
 
 b. cRLDistributionPoints
 
