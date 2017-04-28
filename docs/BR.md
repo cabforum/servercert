@@ -96,6 +96,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.3 | 187 | Make CAA Checking Mandatory	| 8-Mar-2017 | 8-Sep-2017 | 
 | 1.4.4 | 193 | 825-day Certificate Lifetimes | 17-Mar-2017	| 1-Mar-2018 |
 | 1.4.5 | 189 | Amend Section 6.1.7 of Baseline Requirements | 14-Apr-2017 | 14-May-2017 |
+| 1.4.6 | 195 | CAA Fixup | 17-Apr-2017 | 18-May-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
