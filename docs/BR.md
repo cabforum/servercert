@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.4.4**
+**Version 1.4.5**
 
-**March 17, 2017**
+**April 14, 2017**
 
 **www.cabforum.org**
 
@@ -95,6 +95,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.2 | 181 | Removal of some validation methods listed in section 3.2.2.4 | 7-Jan-2017 | 7-Jan-2017 |
 | 1.4.3 | 187 | Make CAA Checking Mandatory	| 8-Mar-2017 | 8-Sep-2017 | 
 | 1.4.4 | 193 | 825-day Certificate Lifetimes | 17-Mar-2017	| 1-Mar-2018 |
+| 1.4.5 | 189 | Amend Section 6.1.7 of Baseline Requirements | 14-Apr-2017 | 14-May-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -1205,28 +1206,12 @@ DSA: Although FIPS 800-57 says that domain parameters may be made available at s
 ECC: The CA SHOULD confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
-Root CA Private Keys MUST NOT be used to sign Certificates except in the following cases:
+Private Keys corresponding to Root Certificates MUST NOT be used to sign Certificates except in the following cases:
 
 1. Self-signed Certificates to represent the Root CA itself;
 2. Certificates for Subordinate CAs and Cross Certificates;
-3. Certificates for infrastructure purposes (e.g. administrative role certificates, internal CA operational device certificates, and OCSP Response verification Certificates);
-4. Certificates issued solely for the purpose of testing products with Certificates issued by a Root CA; and
-5. Subscriber Certificates, provided that:
-
-    a. The Root CA uses a 1024-bit RSA signing key that was created prior to the Effective Date;
-    
-    b. The Applicant's application was deployed prior to the Effective Date;
-    
-    c. The Applicant's application is in active use by the Applicant or the CA uses a documented process to establish that the Certificate's use is required by a substantial number of Relying Parties;
-    
-    d. The CA follows a documented process to determine that the Applicant's application poses no known security risks to Relying Parties;
-    
-    e. The CA documents that the Applicant's application cannot be patched or replaced without substantial economic outlay;
-    
-    f. The CA signs the Subscriber Certificate on or before June 30, 2016; and
-    
-    g. The notBefore field in the Subscriber Certificate has a date on or before June 30, 2016.
-
+3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates); and 
+4. Certificates for OCSP Response verification.
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
