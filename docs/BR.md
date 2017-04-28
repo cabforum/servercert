@@ -416,13 +416,13 @@ FIPS 140-2, Federal Information Processing Standards Publication - Security Requ
 
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
+Network and Certificate System Security Requirements, v.1.0, 1/1/2013.
+
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf.
 
 RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
 
 RFC2527, Request for Comments: 2527, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, March 1999.
-
-RFC6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. Santesson, Myers, Ankney, Malpani, Galperin, Adams, June 2013.
 
 RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.
 
@@ -434,6 +434,8 @@ RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: C
 
 RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, Stradling, January 2013.
 
+RFC6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. Santesson, Myers, Ankney, Malpani, Galperin, Adams, June 2013.
+
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
 X.509, Recommendation ITU-T X.509 (10/2012) \| ISO/IEC 9594-8:2014 (E), Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
@@ -443,7 +445,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-The CA SHALL develop, implement, enforce, and annually update a Certification Practice Statement that describes in detail how the CA implements the latest version of these Requirements.
+The CA SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practice Statement that describes in detail how the CA implements the latest version of these Requirements.
 
 ## 2.1 Repositories
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
@@ -461,7 +463,7 @@ The CA SHALL publicly give effect to these Requirements and represent that it wi
 The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
-The CA SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practices Statement that describes in detail how the CA implements the latest version of these Requirements.
+The CA SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practice Statement that describes in detail how the CA implements the latest version of these Requirements.
 
 ## 2.4 Access controls on repositories
 The CA shall make its Repository publicly available in a read-only manner.
@@ -615,7 +617,7 @@ CAs MUST document potential issuances that were prevented by a CAA record in suf
 
 
 ### 3.2.3 Authentication of individual identity
-If an Applicant subject to this Section is a natural person, then the CA SHALL verify the Applicant's name, Applicant's address, and the authenticity of the certificate request.
+If an Applicant subject to this Section 3.2.3 is a natural person, then the CA SHALL verify the Applicant's name, Applicant's address, and the authenticity of the certificate request.
 
 The CA SHALL verify the Applicant's name using a legible copy, which discernibly shows the Applicant's face, of at least one currently valid government-issued photo ID (passport, drivers license, military ID, national ID, or equivalent document type). The CA SHALL inspect the copy for any indication of alteration or falsification.
 
@@ -669,7 +671,7 @@ The certificate request MAY include all factual information about the Applicant 
 
 Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name or IP address to be included in the Certificate's SubjectAltName extension.
 
-Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provide that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.
+Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
@@ -1141,7 +1143,7 @@ For other CA Key Pairs created after the Effective Date that are for the operato
 
 In all cases, the CA SHALL:
 
-1. generate the keys in a physically secured environment as described in the CA's Certification Practice Statement;
+1. generate the keys in a physically secured environment as described in the CA's Certificate Policy and/or Certification Practice Statement;
 2. generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
 3. generate the CA keys within cryptographic modules meeting the applicable technical and business requirements as disclosed in the CA's Certificate Policy and/or Certification Practice Statement;
 4. log its CA key generation activities; and
@@ -1193,7 +1195,7 @@ Certificates MUST meet the following requirements for algorithm type and key siz
 |ECC curve|NIST P-256, P-384, or P-521|NIST P-256, P-384, or P-521|
 |Minimum DSA modulus and divisor size (bits)|L= 2048, N= 224  or  L= 2048, N= 256|L= 2048 N= 224 or L= 2048 N= 256
 
-\* SHA-1 MAY be used with RSA keys until SHA-256 is supported widely by browsers used by a substantial portion of relying-parties worldwide.
+\* SHA-1 MAY be used with RSA keys in accordance with the criteria defined in Section 7.1.3.
 
 \*\* A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor for Subscriber Certificates issued in accordance with these Requirements.
 
