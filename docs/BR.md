@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.4.3**
+**Version 1.4.4**
 
-**March 8, 2017**
+**March 17, 2017**
 
 **www.cabforum.org**
 
@@ -94,6 +94,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.1 | 175 | Addition of givenName and surname | 7-Sept-2016 | 7-Sept-2016 |
 | 1.4.2 | 181 | Removal of some validation methods listed in section 3.2.2.4 | 7-Jan-2017 | 7-Jan-2017 |
 | 1.4.3 | 187 | Make CAA Checking Mandatory	| 8-Mar-2017 | 8-Sep-2017 | 
+| 1.4.4 | 193 | 825-day Certificate Lifetimes | 17-Mar-2017	| 1-Mar-2018 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -119,7 +120,9 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
 | 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
 | 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
+| 2017-04-22 | 4.2.1 | Re-use of validation information limited to 825 days |
 | 2017-09-08 | 3.2.2.8  | CAs MUST check and process CAA records  |
+| 2018-03-01 | 6.3.2 | Certificates issued MUST have a Validity Period no greater than 825 days |
 
 
 ## 1.3 PKI Participants
@@ -664,7 +667,7 @@ The certificate request MAY include all factual information about the Applicant 
 
 Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name or IP address to be included in the Certificate's SubjectAltName extension.
 
-Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provide that the CA obtained the data or document from a source specified under Section 3.2 no more than thirty-nine (39) months prior to issuing the Certificate.
+Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provide that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
@@ -1259,16 +1262,8 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 ### 6.3.1 Public key archival
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
-Subscriber Certificates issued after the Effective Date MUST have a Validity Period no greater than 60 months.
-Except as provided for below, Subscriber Certificates issued after 1 April 2015 MUST have a Validity Period no greater than 39 months.
-
-Until 30 June 2016, CAs MAY continue to issue Subscriber Certificates with a Validity Period greater than 39 months but not greater than 60 months provided that the CA documents that the Certificate is for a system or software that:
-
-a. was in use prior to the Effective Date;
-b. is currently in use by either the Applicant or a substantial number of Relying Parties;
-c. fails to operate if the Validity Period is shorter than 60 months;
-d. does not contain known security risks to Relying Parties; and
-e. is difficult to patch or replace without substantial economic outlay.
+Subscriber Certificates issued after 1 March 2018 MUST have a Validity Period no greater than 825 days.
+Subscriber Certificates issued after 1 July 2016 but prior to 1 March 2018 MUST have a Validity Period no greater than 39 months.
 
 ## 6.4 Activation data
 
