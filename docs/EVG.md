@@ -1,6 +1,6 @@
 
 
-**Version 1.6.1 **
+**Version 1.6.2 **
 
 ##
 
@@ -26,7 +26,7 @@ This document is a translation of the original English version. In the event tha
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.6.1 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 180, passed by the Forum on 7 January 2017.
+This version 1.6.2 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 193, passed by the Forum on 17 March 2017.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -66,6 +66,7 @@ Document History
 | 1.5.9 | 163 | Fix Errata in EV Guidelines 11.2.1 | 18 Mar 2016 | 18 Mar 2016 |
 | 1.6.0 | 171 | Updating ETSI Standards | 1 July 2016  | 1 July 2016   |
 | 1.6.1 | 180 | In EV 11.7.1, removed outdated cross-reference to BR 3.2.2.4(7)  | 7 Jan. 2017  | 7 Jan. 2017   |
+| 1.6.2 | 103 | 825-day Certificate Lifetimes | 17 Mar. 2017 | 17 Mar. 2017 |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -542,7 +543,7 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 
 ## 9.4.  Maximum Validity Period For EV Certificate
 
-The validity period for an EV Certificate SHALL NOT exceed twenty seven months.  It is RECOMMENDED that EV Subscriber Certificates have a maximum validity period of twelve months.
+The validity period for an EV Certificate SHALL NOT exceed 825 days.  It is RECOMMENDED that EV Subscriber Certificates have a maximum validity period of twelve months.
 
 ## 9.5.  Subscriber Public Key
 
