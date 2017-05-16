@@ -13,9 +13,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.4.7**
+**Version 1.4.8**
 
-**April 17, 2017**
+**May 9, 2017**
 
 **www.cabforum.org**
 
@@ -98,6 +98,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.5 | 189 | Amend Section 6.1.7 of Baseline Requirements | 14-Apr-2017 | 14-May-2017 |
 | 1.4.6 | 195 | CAA Fixup | 17-Apr-2017 | 18-May-2017 |
 | 1.4.7 | 196 | Define “Audit Period” | 17-Apr-2017 | 18-May-2017 |
+| 1.4.8 | 199 | Require commonName in Root and Intermediate Certificates | 9-May-2017 | 8-June-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -1312,12 +1313,6 @@ This extension SHOULD NOT be present.
 d. extendedKeyUsage
 This extension MUST NOT be present.
 
-e. Subject Information
-
-The Certificate Subject MUST contain the following:
-- countryName (OID 2.5.4.6). This field MUST contain the two-letter ISO 3166-1 country code for the country in which the CA's place of business is located.
-
-- organizationName (OID 2.5.4.10): This field MUST be present and the contents MUST contain either the Subject CA’s name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows “Company Name Incorporated”, the CA MAY use “Company Name Inc.” or “Company Name".
 
 #### 7.1.2.2 Subordinate CA Certificate
 
@@ -1373,11 +1368,6 @@ g. extkeyUsage (optional)
 
     \*\* Generally Extended Key Usage will only appear within end entity certificates (as highlighted in RFC 5280 (4.2.1.12)), however, Subordinate CAs MAY include the extension to further protect relying parties until the use of the extension is consistent between Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
 
-h. Subject Information
-
-The Certificate Subject MUST contain the following:
-- countryName (OID 2.5.4.6). This field MUST contain the two-letter ISO 3166-1 country code for the country in which the CA's place of business is located.
-- organizationName (OID 2.5.4.10): This field MUST be present and the contents MUST contain either the Subject CA’s name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows “Company Name Incorporated”, the CA MAY use “Company Name Inc.” or “Company Name".
 
 #### 7.1.2.3 Subscriber Certificate
 a. certificatePolicies
@@ -1446,7 +1436,7 @@ Effective 16 January 2015, CAs SHOULD NOT issue Subscriber Certificates utilizin
 #### 7.1.4.1 Issuing CA Certificate Subject
 The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
 
-#### 7.1.4.2 Subject Information for Standard Server Authentication certificates
+#### 7.1.4.2 Subject Information - Subscriber Certificates
 By issuing the Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate. CAs SHALL NOT include a Domain Name or IP Address in a Subject attribute except as specified in Section 3.2.2.4 or Section 3.2.2.5.
 
 #### 7.1.4.2.1 Subject Alternative Name Extension
@@ -1505,8 +1495,23 @@ The CA SHALL implement a process that prevents an OU attribute from including a 
 j. Other Subject Attributes
 All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
-#### 7.1.4.3. Subject Information - Subordinate CA Certificates
+#### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
+
+##### 7.1.4.3.1.	Subject Distinguished Name Fields
+ 
+a.  Certificate Field: subject:commonName (OID 2.5.4.3)
+Required/Optional: Required
+Contents: This field MUST be present and the contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate.
+ 
+b. Certificate Field: subject:organizationName (OID 2.5.4.10)
+Required/Optional: Required
+Contents: This field MUST be present and the contents MUST contain either the Subject CA's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name".
+ 
+c. Certificate Field: subject:countryName (OID: 2.5.4.6)
+Required/Optional: Required
+Contents: This field MUST contain the two‐letter ISO 3166‐1 country code for the country in which the CA's place of business is located.
+
 
 ### 7.1.5 Name constraints
 For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
