@@ -1,6 +1,6 @@
 
 
-**Version 1.5.9**
+**Version 1.6.5 **
 
 ##
 
@@ -16,21 +16,17 @@
 
 ## Extended Validation Certificates
 
-Copyright © 2007-2016, The CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
+Copyright © 2007-2017, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
 
-Verbatim copying and distribution of this entire document is permitted in any medium without royalty, provided this notice is preserved.
+The CA/Browser Forum requests that translated versions of these guidelines prominently display the following statement in the language of the translation :-
 
-Upon request, the CA / Browser Forum may grant permission to make a translation of these guidelines into a language other than English.  In such circumstance, copyright in the translation remains with the CA / Browser Forum.  In the event that a discrepancy arises between interpretations of a translated version and the original English version, the original English version shall govern.  A translated version of the guidelines must prominently display the following statement in the language of the translation:-
+'Copyright © 2007-2017, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
 
-'Copyright © 2007-2016 The CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.'
-
-This document is a translation of the original English version.  In the event that a discrepancy arises between interpretations of this version and the original English version, the original English version shall govern.'
-
-A request to make a translated version of these Guidelines should be submitted to [questions@cabforum.org](mailto:questions@cabforum.org).
+This document is a translation of the original English version. In the event that there is a discrepancy between this version and the original English version, the original English version shall govern.'
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.5.9 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 163, passed by the Forum on 18 March 2016.
+This version 1.6.5 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 201, passed by the Forum on 8 June 2017.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -68,6 +64,12 @@ Document History
 | 1.5.7 | 151 | Addition of Optional OIDs for Indicating Level of Validation | 28 Sept 2015 | 28 Sept 2015 |
 | 1.5.8 | 162 | Sunset of Exceptions | 15 Mar 2016 | 15 Mar 2016 |
 | 1.5.9 | 163 | Fix Errata in EV Guidelines 11.2.1 | 18 Mar 2016 | 18 Mar 2016 |
+| 1.6.0 | 171 | Updating ETSI Standards | 1 July 2016  | 1 July 2016   |
+| 1.6.1 | 180 | In EV 11.7.1, removed outdated cross-reference to BR 3.2.2.4(7)  | 7 Jan. 2017  | 7 Jan. 2017   |
+| 1.6.2 | 103 | 825-day Certificate Lifetimes | 17 Mar. 2017 | 17 Mar. 2017 |
+| 1.6.3 | 198 | .Onion Revisions (declared invalid) | 7 May 2017	| 8 June 2017 |
+| 1.6.4 | 191 | Clarify Place of Business Information | 23 May 2017 | 23 June 2017 |
+| 1.6.5 | 201 | .onion Revisions | 8 June 2017 | 8 July 2017 |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -315,13 +317,13 @@ Each CA must develop, implement, enforce, display prominently on its Web site, a
 
 (A)        Implement the requirements of these Guidelines as they are revised from time-to-time;
 
-(B)        Implement the requirements of (i) the then-current WebTrust Program for CAs, and (ii) the then-current WebTrust EV Program or ETSI TS 102 042; and
+(B)        Implement the requirements of (i) the then-current WebTrust Program for CAs, and (ii) the then-current WebTrust EV Program or ETSI TS 102 042 for EVCP or ETSI EN 319 411-1 for EVCP policy; and
 
 (C)        Specify the CA's and its Root CA's entire root certificate hierarchy including all roots that its EV Certificates depend on for proof of those EV Certificates' authenticity.
 
 ###  8.2.2.  Disclosure
 
-Each CA must publicly disclose their EV Policies through an appropriate and readily accessible online means that is available on a 24x7 basis.  The CA is also REQUIRED to publicly disclose its CA business practices as required by both WebTrust for CAs and ETSI TS 102 042.  The disclosures MUST be structured in accordance with either RFC 2527 or RFC 3647.
+Each CA must publicly disclose their EV Policies through an appropriate and readily accessible online means that is available on a 24x7 basis.  The CA is also REQUIRED to publicly disclose its CA business practices as required by WebTrust for CAs and ETSI TS 102 042 and ETSI EN 319 411-1.  The disclosures MUST be structured in accordance with either RFC 2527 or RFC 3647.
 
 ## 8.3.  Commitment to Comply with Recommendations
 
@@ -507,7 +509,7 @@ Country: subject:countryName (OID:  2.5.4.6)
 
 Postal code: subject:postalCode (OID:  2.5.4.17)
 
-**Required/Optional:**   City, state, and country – Required; Street and postal code – Optional
+**Required/Optional:**   As stated in Section 7.1.4.2.2 d, e, f, g and h of the Baseline Requirements.
 
 **Contents:**   This field MUST contain the address of the physical location of the Subject's Place of Business.
 
@@ -544,7 +546,7 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 
 ## 9.4.  Maximum Validity Period For EV Certificate
 
-The validity period for an EV Certificate SHALL NOT exceed twenty seven months.  It is RECOMMENDED that EV Subscriber Certificates have a maximum validity period of twelve months.
+The validity period for an EV Certificate SHALL NOT exceed 825 days.  It is RECOMMENDED that EV Subscriber Certificates have a maximum validity period of twelve months.
 
 ## 9.5.  Subscriber Public Key
 
@@ -868,7 +870,7 @@ To verify the Applicant's ability to engage in business, the CA MUST verify the 
 
 ### 11.7.1.  Verification Requirements
 
-(1) For each Fully-Qualified Domain Name listed in a Certificate, other than a Domain Name with .onion in the right-most label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section)  either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements, except that a CA MAY NOT verify a domain using the procedure described subsection 3.2.2.4(7).  For a Certificate issued to a Domain Name with .onion in the right-most label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the .onion Domain Name in accordance with Appendix F.
+(1) For each Fully-Qualified Domain Name listed in a Certificate, other than a Domain Name with .onion in the right-most label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section)  either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements.  For a Certificate issued to a Domain Name with .onion in the right-most label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the .onion Domain Name in accordance with Appendix F.
 
  (2)  **Mixed Character Set Domain Names:**  EV Certificates MAY include Domain Names containing mixed character sets only in compliance with the rules set forth by the domain registrar.  The CA MUST visually compare any Domain Names with mixed character sets with known high risk domains.  If a similarity is found, then the EV Certificate Request MUST be flagged as High Risk.  The CA must perform reasonably appropriate additional authentication and verification to be certain beyond reasonable doubt that the Applicant and the target in question are the same organization.
 
@@ -1341,8 +1343,9 @@ As specified in Section 5 of the Baseline Requirements. In addition, systems use
 
 A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following schemes:
 
- (i) WebTrust Program for CAs audit and WebTrust EV Program audit, or
- (ii) ETSI TS 102 042 audit. 
+ (i) WebTrust Program for CAs audit and WebTrust EV Program audit, 
+ (ii) ETSI TS 102 042 audit for EVCP, or 
+ (iii) ETSI EN 319 411-1 audit for EVCP policy. 
 
 If the CA is a Government Entity, an audit of the CA by the appropriate internal government auditing agency is acceptable in lieu of the audits specified above, provided that such internal government auditing agency publicly certifies in writing that its audit addresses the criteria specified in one of the above audit schemes and certifies that the government CA has successfully passed the audit.
 
@@ -1362,7 +1365,9 @@ CAs SHOULD make its audit report publicly available no later than three months a
 
 (2)  If the CA has a currently valid ETSI 102 042 audit, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI TS 102 042.
 
-(3)  If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI 102 042 audit, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete either: (i) a point-in-time readiness assessment audit against the WebTrust for CA Program, or (ii) a point-in-time readiness assessment audit against the WebTrust EV Program, or an ETSI TS 102 042  audit.
+(3)  If the CA has a currently valid ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI EN 319 411-1 for EVCP.
+
+(4)  If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI TS 102 042 EVCP audit or an ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete either: (i) a point-in-time readiness assessment audit against the WebTrust for CA Program, or (ii) a point-in-time readiness assessment audit against the WebTrust EV Program, the ETSI TS 102 042 EVCP, or the ETSI EN 319 411-1 for EVCP policy.
 
 The CA MUST complete any required point-in-time readiness assessment no earlier than twelve (12) months prior to issuing an EV Certificate.  The CA MUST undergo a complete audit under such scheme within ninety (90) days of issuing the first EV Certificate.
 
@@ -1618,7 +1623,9 @@ A CA may rely on the Contract Signer's authority to enter into the Subscriber Ag
 
 A CA may issue an EV Certificate with .onion in the right-most label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix:
 
-1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31) The CAB Forum has created an extension of the TBSCertificate for use in conveying hashes of keys related to .onion addresses. The Tor Service Descriptor Hash extension has the following format:
+1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31)
+
+The CA MUST include the CAB Forum Tor Service Descriptor Hash extension in the TBSCertificate to convey hashes of keys related to .onion addresses. The CA MUST include the Tor Service Descriptor Hash extension using the following format: 
 
 cabf-TorServiceDescriptor OBJECT IDENTIFIER ::= { 2.23.140.1.31 }
 

@@ -1,3 +1,4 @@
+dist: trusty
 sudo: false
 language: ruby
 rvm:
@@ -15,11 +16,13 @@ addons:
     - shared-mime-info
     - python-virtualenv
 script:
-- virtualenv --system-site-packages ./venv
+- virtualenv --setuptools ./venv
 - . ./venv/bin/activate
 - mkdir ~/.fonts/
 - cp -a assets/*.otf ~/.fonts/
-- pip install --user -r requirements.txt
+- pip install -U --ignore-installed pip
+- pip install -U --ignore-installed setuptools
+- pip install -r requirements.txt
 - make
 - make deploy
 deploy:
