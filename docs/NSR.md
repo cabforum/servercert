@@ -21,7 +21,7 @@ c.	Maintain Root CA Systems in a High Security Zone and in an offline state or a
 
 d.	Maintain and protect Issuing Systems, Certificate Management Systems, and Security Support Systems in at least a Secure Zone;
 
-e.	Implement and configure Security Support Systems that protect systems and communications between systems inside Secure Zones and High Security Zones,  and communications with non-Certificate Systems outside those zones (including those with organizational business units that do not provide PKI-related services) and those on public networks;
+e.	Implement and configure Security Support Systems that protect systems and communications between systems inside Secure Zones and High Security Zones, and communications with non-Certificate Systems outside those zones (including those with organizational business units that do not provide PKI-related services) and those on public networks;
 
 f.	Configure each network boundary control (firewall, switch, router, gateway, or other network control device or system) with rules that support only the services, protocols, ports, and communications that the CA has identified as necessary to its operations;
 
@@ -70,11 +70,11 @@ k.	Lockout account access to Certificate Systems after no more than five (5) fai
 
 l.	Implement a process that disables all privileged access of an individual to Certificate Systems  within twenty four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
 
-m.	Enforce multi-factor authentication for administrator access to Issuing Systems and Certificate Management Systems;
+m.	Enforce multi-factor / multi-party authentication for administrator access to Issuing Systems and Certificate Management Systems;
 
 n.	For each Delegated Third Party, (i) require multi-factor authentication prior to the Delegated Third Party approving issuance of a Certificate or (ii) implement technical controls that restrict the Delegated Third Party’s ability to approve certificate issuance to a limited set of domain names; and
 
-o.	Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when:    (i) the remote connection originates from a device owned or controlled by the CA or Delegated Third Party and from a pre-approved external IP address, (ii) the remote connection is through a temporary, non-persistent encrypted channel that is  supported by multi-factor authentication, and (iii) the remote connection is made to a designated intermediary device (a) located within the CA’s network, (b) secured in accordance with these Requirements, and (c) that mediates the remote connection to the Issuing System.
+o.	Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when:    (i) the remote connection originates from a device owned or controlled by the CA or Delegated Third Party, (ii) the remote connection is through a temporary, non-persistent encrypted channel that is  supported by multi-factor authentication, and (iii) the remote connection is made to a designated intermediary device (a) located within the CA’s network, (b) secured in accordance with these Requirements, and (c) that mediates the remote connection to the Issuing System.
 
 # 3.	LOGGING, MONITORING AND ALERTING
  
