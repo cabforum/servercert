@@ -146,7 +146,7 @@ f.	Do one of the following within ninety six (96) hours of discovery of a Critic
 
 **Secure Zone:**  An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of Certificate Systems. 
 
-**Security Support System:**   A system used to provide security support functions, such as authentication, network boundary control, audit logging, audit log reduction and analysis, vulnerability scanning, and intrusion detection systems.
+**Security Support System:**   A system used to provide security support functions, which MAY include authentication, network boundary control, audit logging, audit log reduction and analysis, vulnerability scanning, and intrusion detection.
 
 **System:**  One or more pieces of equipment or software that stores, transforms, or communicates data. 
 
