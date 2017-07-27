@@ -13,9 +13,9 @@
 
 Each CA or Delegated Third Party SHALL:
 
-a.	Segment Certificate Systems into networks or zones based on their functional, logical, and physical (including location) relationship;
+a.	Segment Certificate Systems into networks based on their functional or logical relationship, for example separate physical networks or VLANs;
 
-b.	Apply the same security controls to all systems co-located in the same zone with a Certificate System;
+b.	Apply equivalent security controls to all systems co-located in the same network with a Certificate System;
 
 c.	Maintain Root CA Systems in a High Security Zone and in an offline state or air-gapped from all other networks;
 
