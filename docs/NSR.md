@@ -31,7 +31,7 @@ h.	Review configurations of Issuing Systems, Certificate Management Systems, Sec
 
 i.	Grant administration access to Certificate Systems only to persons acting in Trusted Roles and require their accountability for the Certificate System’s security;
 
-j.	Implement multi-factor  authentication to each component of the Certificate System that supports multi-factor authentication (but see subsection 2.n.(ii) below);
+j.	Implement multi-factor authentication to each component of the Certificate System that supports multi-factor authentication (but see subsection 2.n.(ii) below);
 
 k.	Change authentication keys and passwords for any privileged account or service account on a Certificate System whenever a person’s authorization to administratively access that account on the Certificate System is changed or revoked; and
 
@@ -70,7 +70,7 @@ k.	Lockout account access to Certificate Systems after no more than five (5) fai
 
 l.	Implement a process that disables all privileged access of an individual to Certificate Systems  within twenty four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
 
-m.	Enforce multi-factor / multi-party authentication for administrator access to Issuing Systems and Certificate Management Systems;
+m.	Enforce multi-factor OR multi-party authentication for administrator access to Issuing Systems and Certificate Management Systems;
 
 n.	For each Delegated Third Party, (i) require multi-factor authentication prior to the Delegated Third Party approving issuance of a Certificate or (ii) implement technical controls that restrict the Delegated Third Party’s ability to approve certificate issuance to a limited set of domain names; and
 
