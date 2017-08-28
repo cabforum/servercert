@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM** 
 
-**Version 1.5 - Adopted effective as of 31 January 2017**
+**Version 1.6 - Adopted effective as of 30 May 2017**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -77,7 +77,7 @@ CA Applicants should supply the following additional information:
 
 (c)        An Applicant shall become a Member once the Forum has determined by consensus among the Members during a teleconference or meeting that the Applicant meets all of the requirements of subsection (a) or, upon the request of any Member, by a Ballot among the Members.  Acceptance by consensus shall be determined or a Ballot of Members shall be held as soon as the Applicant indicates that it has presented all information required under subsection (b) and has responded to all follow-up questions from the Forum and the Member has complied with the requirements of Section 5.5.
 
-**2.2        General Provisions Applicable to all Ballots**
+**2.2        General Provisions Applicable to All Ballots**
 
 The following rules will apply to all ballots, including Draft Guideline Ballots (defined in Section 2.3).
 
@@ -121,7 +121,7 @@ This section applies to any ballot that proposes a Final Guideline or a Final Ma
 
 (i)        If Exclusion Notice(s) are filed during the Review Period (as described in Section 4.3 of the IPR Policy), then the results of the Initial Vote are automatically rescinded and deemed null and void, and;
 
-(i)        A Patent Advisory Group (PAG) will be formed, in accordance with Section 7 of the IPR Policy, to address the conflict.  The PAG will make a conclusion as described in Section 7.3.2 of the IPR Policy, and communicate such conclusion to the rest of the Forum, using the Member Mail List and the Public Mail List.; and
+(i)        A Patent Advisory Group (PAG) will be formed, in accordance with Section 7 of the IPR Policy, to address the conflict.  The PAG will make a conclusion as described in Section 7.3.2 of the IPR Policy, and communicate such conclusion to the rest of the Forum, using the Member Mail List and the Public Mail List; and
 
 (ii)        After the PAG provides its conclusion, if the proposer and endorsers decide to proceed with the Draft Guidelines Ballot, and:
 
@@ -279,6 +279,12 @@ The Forum procedure for dealing with questions and comments sent to the Question
 
 Nothing in these Bylaws is intended to supersede or replace anything in the IPR Policy. In the event of a conflict between these Bylaws and the IPR Policy, the IPR Policy shall govern.
 
+**6.4 Code of Conduct**
+
+All Members shall abide by the CAB Forum Code of Conduct, which is attached to these Bylaws as Exhibit C.
+
+
+
 **DEFINITIONS**
 
 **Forum Meetings:** Face-to-face meetings of Members as scheduled from time to time.
@@ -330,3 +336,45 @@ Title: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 Participant Organization Name (if entity)
 
 **Exhibit B - Project Lifecycle**
+
+**Exhibit C**
+**CAB Forum Code of Conduct (the "Code")**
+
+The CAB Forum (the "Forum") is comprised of a global group of professionals with differences in language, skills, expertise, experience, and backgrounds.  To maintain a professional and productive environment, it is necessary for Members of the Forum to follow the letter and spirit of this Code.  This Code applies to all official Forum activities, such as meetings, teleconferences, mailing lists, conferences, and other Forum functions.  The Forum is committed to maintaining a professional and respectful environment.
+
+All Member representatives are expected to behave in a collegial and professional manner in accordance with this Code.  Members will familiarize their representatives with this Code and require them to comply with the letter and spirit of this Code.
+
+**I.  Conduct.**  The Forum is committed to providing a friendly, safe, and welcoming environment for all, regardless of gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, nationality, or other similar characteristic.  The Forum recognizes and appreciates that its participants have diverse languages, backgrounds, experience, and expertise, and expects that all participants will be treated with respect by all other participants.
+
+(a)  In connection with official Forum activities, all Forum participants shall:
+•	Be polite, kind, and courteous to other participants, refraining from insulting remarks on the perceived intelligence or ability of others.
+•	Treat fellow Forum participants with respect, professionalism, courtesy, and reasonableness.  
+•	Respect that people have differences of opinion, and that there is seldom unanimous agreement on a single "correct" answer.  Be willing to compromise and agree to disagree.  
+
+(b)  In connection with official Forum activities, all Forum participants shall refrain from conduct such as:  
+•	Threatening violence towards anyone.  
+•	Discriminating against anyone on the basis of personal characteristics or group membership.
+•	Harassing or bullying anyone verbally, physically, or sexually.
+•	Launching barbs at others.  [Note:  a "barb" is an obviously or openly unpleasant or carping remark.]
+•	Touching another person in a physically inappropriate way. 
+•	Deliberately intimidating or stalking another person (in-person, online, or by other means).
+•	Inappropriately disrupting or impeding official Forum events, including meetings, talks, and presentations.  For purposes of this Code, "inappropriate disruption" would include aggressive, violent, and abusive conduct that prevents an official Forum event from occurring or proceeding.
+•	Spamming, trolling, flaming, baiting, and other similar behavior inappropriately directed towards an individual.
+•	Advocating for, or encouraging, any of the above behavior.
+
+(c)  All Forum participants should promote the rules of this Code and take action to bring discussions back into compliance with the Code whenever violations are observed.
+
+(d)  Forum participants should stick to ideological, conceptual discussions and avoid engaging in offensive or sensitive personal discussions, particularly if they're off-topic; such personal discussions can lead to unnecessary arguments, hurt feelings, and damaged trust. 
+
+**II.  Moderation.**  These are the policies for upholding the Code.
+
+(a) Resist the urge to be defensive.  Remember that it's your responsibility to clearly communicate your message to your fellow participants. Everyone wants to get along and we are all in the Forum first and foremost because we want to talk about standards and everything that involves. Other participants will be eager to assume good intent and forgive as long as you have earned their trust.
+
+(b)  Participants should inform the Chair, Vice Chair, and/or a Working Group Chair immediately if they feel they have been, or are being, harassed or made uncomfortable by a Forum member. Intimidation, personal attacks, and retaliation of any kind will not be tolerated. 
+
+(c)  Any Forum participant may report, in good faith, a perceived violation of the Code to the Forum Chair or Vice Chair, or to a Working Group Chair (each, a "Code Liaison").  One or more Code Liaison(s) will work with the reported Forum participant to determine whether a violation of the Code has occurred and, if so, how to resolve it.  Resolution may also include appropriate executives from the Forum participant's Member company, as appropriate.  If the reported Forum participant, Member executives, and the Code Liaison(s) are unable to resolve the issue, any of the foregoing may request the assistance of a reasonably acceptable independent third party (such as an Interested Party or WebTrust) to assist with the resolution. 
+
+(d)  Members agree to take appropriate action in the event any of their Member representatives violate the Code.  Such action could include warning, reprimanding, suspending, removing or replacing the Member representative who has violated the Code, depending on the severity of the violation.  Depending on the number and severity of violations, the Forum may impose consequences such as excluding a Member representative from certain meetings, removing a Member representative from a mailing list, and suspending a Member representative from certain Forum activities.  
+
+Adapted from the WHATWG Code of Conduct [https://wiki.whatwg.org/wiki/Code_of_Conduct], the W3C Code of Ethics and Professional Conduct [https://www.w3c.org/Consortium/cepc/], and the Citizen Code of Conduct [citizencodeofconduct.org].
+
