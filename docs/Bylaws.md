@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM** 
 
-**Version 1.6 - Adopted effective as of 30 May 2017**
+**Version 1.7 - Adopted effective as of 6 July 2017**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -48,9 +48,9 @@ The Chair will read an antitrust compliance statement at the start of all Forum 
 
 (a)        CA/Browser Forum members shall meet at least one of the following criteria.
 
-(1)        __Issuing CA__: The member organization operates a certification authority that has a current and successful WebTrust for CAs audit, or ETSI 102042 or ETSI 101456 audit report prepared by a properly-qualified auditor, and that actively issues certificates to Web servers that are openly accessible from the Internet using a browser created by a Browser member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
+(1)        __Issuing CA__: The member organization operates a certification authority that has a current and successful WebTrust for CAs audit, or ETSI 102042 or ETSI 101456 audit report prepared by a properly-qualified auditor, and that actively issues certificates to Web servers that are openly accessible from the Internet, such certificates being treated as valid when using a browser created by a Browser member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
 
-(2)        __Root CA__: The member organization operates a certification authority that has a current and successful WebTrust for CAs, or ETSI 102042 or ETSI 101456 audit report prepared by a properly-qualified auditor, and that actively issues certificates to subordinate CAs that, in turn, actively issue certificates to Web servers that are openly accessible from the Internet using a browser created by a Browser member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
+(2)        __Root CA__: The member organization operates a certification authority that has a current and successful WebTrust for CAs, or ETSI 102042 or ETSI 101456 audit report prepared by a properly-qualified auditor, and that actively issues certificates to subordinate CAs that, in turn, actively issue certificates to Web servers that are openly accessible from the Internet, such certificates being treated as valid when using a browser created by a Browser member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
 
 (3)        __Browser__: The member organization produces a software product intended for use by the general public for browsing the Web securely.
 
@@ -77,13 +77,34 @@ CA Applicants should supply the following additional information:
 
 (c)        An Applicant shall become a Member once the Forum has determined by consensus among the Members during a teleconference or meeting that the Applicant meets all of the requirements of subsection (a) or, upon the request of any Member, by a Ballot among the Members.  Acceptance by consensus shall be determined or a Ballot of Members shall be held as soon as the Applicant indicates that it has presented all information required under subsection (b) and has responded to all follow-up questions from the Forum and the Member has complied with the requirements of Section 5.5.
 
-**2.2        General Provisions Applicable to All Ballots**
+**2.2  Ending Forum Membership**
 
-The following rules will apply to all ballots, including Draft Guideline Ballots (defined in Section 2.3).
+Forum Members may resign from the Forum at any time. Resignation does not prevent a member potentially having continuing obligations, under the Forum's IPR Policy or any other document.
+
+(a) Browser: A Browser member's membership will automatically cease if any of the following become true:
+1.	it stops providing updates for its membership-qualifying software product; or 
+2.	six months have elapsed since the last such published update.
+
+(b) Issuing CA or Root CA: A CA member's membership may be suspended if any of the following become true:
+1.	it fails to pass its membership-qualifying audit;
+2.	its membership-qualifying audit is revoked, rescinded or withdrawn;
+3.	fifteen months have elapsed since the end of the Audit Period of its last successful membership-qualifying audit;
+4.	it stops issuing certificates to Web servers that are openly accessible from the Internet; or
+5.	it is no longer the case that its currently-issued certificates are treated as valid by at least one Browser member. 
+
+Any Forum Member who believes one of the above circumstances is true of a CA Forum Member may report it on the Public Mail List. The Chair will then investigate, including asking the CA for an explanation or appropriate documentation. If evidence of continued qualification for membership is not forthcoming within five working days, the Chair will announce that the member is suspended, such announcement to include the clause(s) from the above list under which the suspension has been made.
+
+A suspended CA Forum Member who believes it has now re-met the membership criteria under the relevant clauses shall post evidence to the Public Mail List. The Chair will examine the evidence and unsuspend the member, or not, by public announcement. A CA Forum Member's membership will automatically cease six months after it becomes suspended if it has not re-met the membership criteria by that time.
+
+While suspended, CAs may participate in meetings and on the Forum's discussion lists, but not propose or second ballots or take part in any form of voting. Votes cast before a member's suspension is announced will stand.
+
+**2.3        General Provisions Applicable to All Ballots**
+
+The following rules will apply to all ballots, including Draft Guideline Ballots (defined in Section 2.4).
 
 (a)        Only votes by Members shall be accepted.
 
-(b)        Only one vote per Member company shall be accepted; representatives of corporate affiliates shall not vote.
+(b)        Only one vote per Member company shall be accepted; representatives of Affiliates shall not vote.
 
 (c)        A representative of any Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Members in order to proceed. The discussion period then shall take place for at least seven but no more than 14 calendar days before votes are cast.  The proposer of the ballot will designate the length of the discussion period, and each ballot shall clearly state the start and end dates and times (including time zone) for both the discussion period and the voting period.
 
@@ -97,17 +118,17 @@ The following rules will apply to all ballots, including Draft Guideline Ballots
 
 (h)        The Chair will tabulate and announce the results within 3 business days of the close of the voting period.
 
-(i)        The Chair may delegate any of his/her duties under this Section 2.2 and Section 2.3 to the Vice Chair as necessary, or the Vice Chair may otherwise execute the duties and obligations of the Chair as provided in Section 4.1(a) of these Bylaws.
+(i)        The Chair may delegate any of his/her duties under this Section 2.3 and Section 2.4 to the Vice Chair as necessary, or the Vice Chair may otherwise execute the duties and obligations of the Chair as provided in Section 4.1(a) of these Bylaws.
 
-**2.2        Requirements for Draft Guideline Ballots**
+**2.4        Requirements for Draft Guideline Ballots**
 
-This section applies to any ballot that proposes a Final Guideline or a Final Maintenance Guideline (a “Draft Guideline Ballot”), all as defined under the Forum’s IPR Policy.  Draft Guideline Ballots must comply with the following rules in addition to the requirements set forth in Section 2.2 above.
+This section applies to any ballot that proposes a Final Guideline or a Final Maintenance Guideline (a “Draft Guideline Ballot”), all as defined under the Forum’s IPR Policy.  Draft Guideline Ballots must comply with the following rules in addition to the requirements set forth in Section 2.3 above.
 
-(a)        A Draft Guideline Ballot will clearly indicate whether it is proposing a Final Guideline or a Final Maintenance Guideline.  If the Draft Guideline Ballot is proposing a Final Guideline, such ballot will include the full text of the Draft Guideline intended to become a Final Guideline.  If the Draft Guideline Ballot is proposing a Final Maintenance Guideline, such ballot will include a redline or comparison showing the set of changes from the Final Guideline section(s) intended to become a Final Maintenance Guideline, and need not include a copy of the full set of guidelines.  Such redline or comparison shall be made against the Final Guideline section(s) as they exist at the time a ballot is proposed, and need not take into consideration other ballots that may be proposed subsequently, except as provided in Section 2.3(j) below.
+(a)        A Draft Guideline Ballot will clearly indicate whether it is proposing a Final Guideline or a Final Maintenance Guideline.  If the Draft Guideline Ballot is proposing a Final Guideline, such ballot will include the full text of the Draft Guideline intended to become a Final Guideline.  If the Draft Guideline Ballot is proposing a Final Maintenance Guideline, such ballot will include a redline or comparison showing the set of changes from the Final Guideline section(s) intended to become a Final Maintenance Guideline, and need not include a copy of the full set of guidelines.  Such redline or comparison shall be made against the Final Guideline section(s) as they exist at the time a ballot is proposed, and need not take into consideration other ballots that may be proposed subsequently, except as provided in Section 2.4(j) below.
 
-(b)        As described in Section 2.2(c), there will be a discussion period of at least seven but no more than 14 calendar days before votes are cast on a Draft Guideline Ballot, with the start and end dates of such discussion period clearly specified in the ballot.
+(b)        As described in Section 2.3(c), there will be a discussion period of at least seven but no more than 14 calendar days before votes are cast on a Draft Guideline Ballot, with the start and end dates of such discussion period clearly specified in the ballot.
 
-(c)        As described in Section 2.2(d), upon completion of such discussion period, Members shall have exactly seven calendar days to vote on a Draft Guideline Ballot, with the deadline clearly communicated in the ballot sent via the Public Mail List. All voting will take place via the Public Mail List.  Votes not submitted to the Public Mail List will not be considered valid, and will not be counted for any purpose.  The Chair may send an email to the Public Mail List reminding Members of when the voting period opens and closes.
+(c)        As described in Section 2.3(d), upon completion of such discussion period, Members shall have exactly seven calendar days to vote on a Draft Guideline Ballot, with the deadline clearly communicated in the ballot sent via the Public Mail List. All voting will take place via the Public Mail List.  Votes not submitted to the Public Mail List will not be considered valid, and will not be counted for any purpose.  The Chair may send an email to the Public Mail List reminding Members of when the voting period opens and closes.
 
 (d)        The Forum (via the Chair) will tabulate and announce the results within 3 business days of the close of the initial voting period (the “Initial Vote”).  If the Draft Guidelines Ballot does not pass the Initial Vote, the ballot will stop.
 
@@ -125,9 +146,9 @@ This section applies to any ballot that proposes a Final Guideline or a Final Ma
 
 (ii)        After the PAG provides its conclusion, if the proposer and endorsers decide to proceed with the Draft Guidelines Ballot, and:
 
-(A)        The proposer and endorsers do not make any changes to the Draft Guidelines Ballot, such ballot must go through the steps described in Sections 2.3(b) through (d) above, replacing the “Initial Vote” with a “Second Vote.”  If a Draft Guidelines Ballot passes the Second Vote, then the results of the Second Vote are deemed to be final and approved.  Draft Guidelines then become either Final Guidelines or Final Maintenance Guidelines, as designated in the Draft Guidelines Ballot.  The Chair will notify both the Member Mail List and the Public Mail List of the approval, as well as update the public website of Final Guidelines and Final Maintenance Guidelines; or
+(A)        The proposer and endorsers do not make any changes to the Draft Guidelines Ballot, such ballot must go through the steps described in Sections 2.4(b) through (d) above, replacing the “Initial Vote” with a “Second Vote.”  If a Draft Guidelines Ballot passes the Second Vote, then the results of the Second Vote are deemed to be final and approved.  Draft Guidelines then become either Final Guidelines or Final Maintenance Guidelines, as designated in the Draft Guidelines Ballot.  The Chair will notify both the Member Mail List and the Public Mail List of the approval, as well as update the public website of Final Guidelines and Final Maintenance Guidelines; or
 
-(B)        The proposer and endorsers make changes to the Draft Guidelines Ballot, a new Draft Guidelines Ballot must be proposed, and must go through the steps described in Sections 2.3(a) through (i) above.
+(B)        The proposer and endorsers make changes to the Draft Guidelines Ballot, a new Draft Guidelines Ballot must be proposed, and must go through the steps described in Sections 2.4(a) through (i) above.
 
 (j)        If a ballot is proposed to amend the same section of the Final Guidelines or the Final Maintenance Guidelines as one or more previous ballot(s) that has/have not yet been finally approved, the newly proposed ballot must include information about, and a link to, any such previous ballot(s), and may include provisions to avoid any conflicts relating to such previous ballots.
 
@@ -286,6 +307,8 @@ All Members shall abide by the CAB Forum Code of Conduct, which is attached to t
 
 
 **DEFINITIONS**
+
+**Affiliate:** An entity that directly or indirectly controls, is controlled by or is under common control with, a Member. Control for the purposes of this Agreement shall mean direct or indirect beneficial ownership of more than fifty percent of the voting stock, or decision-making authority in the event that there is no voting stock, in an entity.
 
 **Forum Meetings:** Face-to-face meetings of Members as scheduled from time to time.
 
