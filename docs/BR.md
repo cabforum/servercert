@@ -98,7 +98,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.6 | 195 | CAA Fixup | 17-Apr-2017 | 18-May-2017 |
 | 1.4.7 | 196 | Define “Audit Period” | 17-Apr-2017 | 18-May-2017 |
 | 1.4.8 | 199 | Require commonName in Root and Intermediate Certificates | 9-May-2017 | 8-June-2017 |
-| 1.4.9 | 204 | Forbid DTPs from doing Domain/IP Ownership | 11-July-2017 | 811-Aug-2017 |
+| 1.4.9 | 204 | Forbid DTPs from doing Domain/IP Ownership | 11-July-2017 | 11-Aug-2017 |
 | 1.5.0 | 212 | Canonicalise formal name of the Baseline Requirements | 1-Sept-2017 | 1-Oct-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
