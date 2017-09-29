@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.5.0**
+**Version 1.5.1**
 
-**September 1, 2017**
+**September 20, 2017**
 
 **www.cabforum.org**
 
@@ -100,6 +100,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.4.8 | 199 | Require commonName in Root and Intermediate Certificates | 9-May-2017 | 8-June-2017 |
 | 1.4.9 | 204 | Forbid DTPs from doing Domain/IP Ownership | 11-July-2017 | 11-Aug-2017 |
 | 1.5.0 | 212 | Canonicalise formal name of the Baseline Requirements | 1-Sept-2017 | 1-Oct-2017 |
+| 1.5.1 | 197 | Effective Date of Ballot 193 Provisions | 1-May-2017 | 2-June-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -676,7 +677,11 @@ The certificate request MAY include all factual information about the Applicant 
 
 Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name or IP address to be included in the Certificate's SubjectAltName extension.
 
-Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provided that the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.
+Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, provided that:
+
+    (1)	Prior to March 1, 2018, the CA obtained the data or document from a source specified under Section 3.2 no more than 39 months prior to issuing the Certificate; and 
+
+    (2)	On or after March 1, 2018, the CA obtained the data or document from a source specified under Section 3.2 no more than 825 days prior to issuing the Certificate.
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
