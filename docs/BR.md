@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.5.2**
+**Version 1.5.3**
 
-**September 20, 2017**
+**September 27, 2017**
 
 **www.cabforum.org**
 
@@ -102,7 +102,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.5.0 | 212 | Canonicalise formal name of the Baseline Requirements | 1-Sept-2017 | 1-Oct-2017 |
 | 1.5.1 | 197 | Effective Date of Ballot 193 Provisions | 1-May-2017 | 2-June-2017 |
 | 1.5.2 | 190 | Add Validation Methods with Minor Corrections | 19-Sept-2017 | 19-Oct-2017 |
-
+| 1.5.3 | 214 | CAA Discovery CNAME Errata | 27-Sept-2017 | 27-Oct-2017 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -651,11 +651,11 @@ Prior to using any data source as a Reliable Data Source, the CA SHALL evaluate 
 Databases maintained by the CA, its owner, or its affiliated companies do not qualify as a Reliable Data Source if the primary purpose of the database is to collect information for the purpose of fulfilling the validation requirements under this Section 3.2.
 
 
-3.2.2.8.	CAA Records
+#### 3.2.2.8.	CAA Records
 
 This section is effective as of 8 September 2017.
 
-As part of the issuance process, the CA MUST check for a CAA record for each dNSName in the subjectAltName extension of the certificate to be issued, according to the procedure in RFC 6844, following the processing instructions set down in RFC 6844 for any records found. If the CA issues, they MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
+As part of the issuance process, the CA MUST check for CAA records and follow the processing instructions found, for each dNSName in the subjectAltName extension of the certificate to be issued, as specififed in RFC 6844 as amended by Errata 5065 (Appendix A). If the CA issues, they MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 
 This stipulation does not prevent the CA from checking CAA records at any other time.
 
@@ -1872,3 +1872,46 @@ Any modification to CA practice enabled under this section MUST be discontinued 
 ### 9.16.5 Force Majeure
 
 ## 9.17 Other provisions
+
+# APPENDIX A – RFC 6844 Errata 5065
+
+The following errata report has been held for document update for RFC6844, "DNS Certification Authority Authorization (CAA) Resource Record".
+
+--------------------------------------
+You may review the report below and at:   http://www.rfc-editor.org/errata/eid5065
+
+--------------------------------------
+Status: Held for Document Update
+Type: Technical
+
+Reported by: Phillip Hallam-Baker <philliph@comodo.com> Date Reported: 2017-07-10 Held by: EKR (IESG)
+
+Section: 4
+
+Original Text
+-------------
+   Let CAA(X) be the record set returned in response to performing a CAA record query on the label X, P(X) be the DNS label immediately above X in the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record specified at the label X.
+
+   o  If CAA(X) is not empty, R(X) = CAA (X), otherwise
+   o  If A(X) is not null, and R(A(X)) is not empty, then R(X) =  R(A(X)), otherwise
+   o  If X is not a top-level domain, then R(X) = R(P(X)), otherwise
+   o  R(X) is empty.
+
+Corrected Text
+--------------
+   Let CAA(X) be the record set returned in response to performing a CAA record query on the label X, P(X) be the DNS label immediately above X in the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record chain specified at the label X.
+
+   o  If CAA(X) is not empty, R(X) = CAA (X), otherwise
+   o  If A(X) is not null, and CAA(A(X)) is not empty, then R(X) =  CAA(A(X)), otherwise
+   o  If X is not a top-level domain, then R(X) = R(P(X)), otherwise
+   o  R(X) is empty.
+
+  Thus, when a search at node X returns a CNAME record, the CA will follow the CNAME record chain to its target. If the target label contains a CAA record, it is returned.
+
+  Otherwise, the CA continues the search at the parent of node X.
+
+  Note that the search does not include the parent of a target of a CNAME record (except when the CNAME points back to its own path).
+
+  To prevent resource exhaustion attacks, CAs SHOULD limit the length of CNAME chains that are accepted. However CAs MUST process CNAME chains that contain 8 or fewer CNAME records.
+
+
