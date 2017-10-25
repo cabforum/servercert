@@ -1,6 +1,6 @@
 
 
-**Version 1.6.6 **
+**Version 1.6.7 **
 
 ##
 
@@ -26,7 +26,7 @@ This document is a translation of the original English version. In the event tha
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.6.6 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 192, passed by the Forum on 28 June 2017.
+This version 1.6.7 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 207, passed by the Forum on 23 October 2017.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -71,6 +71,7 @@ Document History
 | 1.6.4 | 191 | Clarify Place of Business Information | 23 May 2017 | 23 June 2017 |
 | 1.6.5 | 201 | .onion Revisions | 8 June 2017 | 8 July 2017 |
 | 1.6.6 | 192 | Notary revision | 28 June 2017 | 28 July 2017 |
+| 1.6.7 | 207 | ASN.1 Jurisdiction | 23 October 2017 | 23 November 2017 |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -466,19 +467,13 @@ Locality (if required):
 
 _subject:jurisdictionLocalityName_ (OID:  1.3.6.1.4.1.311.60.2.1.1)
 
-ASN.1 - X520LocalityName as specified in RFC 5280
-
 State or province (if required):
 
  _subject:jurisdictionStateOrProvinceName_ (OID:  1.3.6.1.4.1.311.60.2.1.2)
 
-ASN.1 - X520StateOrProvinceName as specified in RFC 5280
-
 Country:
 
  _subject:jurisdictionCountryName_ (OID:  1.3.6.1.4.1.311.60.2.1.3)
-
-ASN.1 – _X520countryName_ as specified in RFC 5280
 
 **Required/Optional:**  Required
 
@@ -1687,5 +1682,52 @@ cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 
 7. On or before May 1, 2015, each CA MUST revoke all Certificates issued with the Subject Alternative Name extension or Common Name field that includes a Domain Name where .onion is in the right-most label of the Domain Name unless the Certificate was issued in compliance with this Appendix F.
 
+#  Appendix G – Abstract Syntax Notation One module for EV certificates
+
+CABFSelectedAttributeTypes {joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) module(4) cabfSelectedAttributeTypes(1) 1}
+DEFINITIONS ::=
+BEGIN
+-- EXPORTS All
+IMPORTS
+  -- from Rec. ITU-T X.501 | ISO/IEC 9594-2
+  selectedAttributeTypes, ID, ldap-enterprise
+    FROM UsefulDefinitions {joint-iso-itu-t ds(5) module(1) usefulDefinitions(0) 7}
+
+  -- from the X.500 series
+  ub-locality-name, ub-state-name
+    FROM UpperBounds {joint-iso-itu-t ds(5) module(1) upperBounds(10) 7}
+
+  -- from Rec. ITU-T X.520 | ISO/IEC 9594-6
+  DirectoryString{}, CountryName
+    FROM SelectedAttributeTypes selectedAttributeTypes;
+
+id-evat-jurisdiction ID ::= {ldap-enterprise 311 ev(60) 2 1}
+id-evat-jurisdiction-localityName ID ::= {id-evat-jurisdiction 1}
+id-evat-jurisdiction-stateOrProvinceName ID ::= {id-evat-jurisdiction 2}
+id-evat-jurisdiction-countryName ID ::= {id-evat-jurisdiction 3}
+
+jurisdictionLocalityName ATTRIBUTE ::= {
+  SUBTYPE OF               name
+  WITH SYNTAX              DirectoryString{ub-locality-name}
+  LDAP-SYNTAX              directoryString.&id
+  LDAP-NAME                {"jurisdictionL"}
+  ID                       id-evat-jurisdiction-localityName }
+
+
+jurisdictionStateOrProvinceName ATTRIBUTE ::= {
+  SUBTYPE OF               name
+  WITH SYNTAX              DirectoryString{ub-state-name}
+  LDAP-SYNTAX              directoryString.&id
+  LDAP-NAME                {"jurisdictionST"}
+  ID                       id-evat-jurisdiction-stateOrProvinceName }
+jurisdictionCountryName ATTRIBUTE ::= {
+  SUBTYPE OF               name
+  WITH SYNTAX              CountryName
+  SINGLE VALUE             TRUE
+  LDAP-SYNTAX              countryString.&id
+  LDAP-NAME                {"jurisdictionC"}
+  ID                       id-evat-jurisdiction-countryName }
+
+END
 
 
