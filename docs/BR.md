@@ -24,11 +24,11 @@ This work is licensed under the Creative Commons Attribution 4.0 International l
 # 1. INTRODUCTION
 
 ## 1.1 Overview
-This document describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software. The requirements are not mandatory for Certification Authorities unless and until they become adopted and enforced by relying-party Application Software Suppliers.
+This document describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software. The requirements are not mandatory for Trust Service Providers (TSP) that provide PKI certificate services unless and until they become adopted and enforced by relying-party Application Software Suppliers.
 
 **Notice to Readers**
 
-The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. This document serves two purposes:  to specify Baseline Requirements and to provide guidance and requirements for what a CA should include in its CPS.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
+The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. This document serves two purposes:  to specify Baseline Requirements and to provide guidance and requirements for what a TSP SHOULD include in its CPS.  Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after the Effective Date.
 
 These Requirements do not address all of the issues relevant to the issuance and management of Publicly-Trusted Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this document includes all sections of the RFC 3647 framework. However, rather than beginning with a "no stipulation" comment in all empty sections, the CA/Browser Forum is leaving such sections initially blank until a decision of "no stipulation" is made. The CA/Browser Forum may update these Requirements from time to time, in order to address both existing and emerging threats to online security. In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.
 
@@ -36,7 +36,7 @@ These Requirements only address Certificates intended to be used for authenticat
 
 These Requirements do not address the issuance, or management of Certificates by enterprises that operate their own Public Key Infrastructure for internal purposes only, and for which the Root Certificate is not distributed by any Application Software Supplier.
 
-These Requirements are applicable to all Certification Authorities within a chain of trust. They are to be flowed down from the Root Certification Authority through successive Subordinate Certification Authorities.
+These Requirements are applicable to all TSPs that can issue a Certificate that appears in a particular chain from a Root Certificate that is publicly trusted.  The Requirements flow down from the Root Certificate through successive Subordinate CA Certificates to all CAs that can issue Certificates that are publicly trusted for server authentication.
 
 ## 1.2 Document name and identification
 This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum.
@@ -139,23 +139,24 @@ The CA/Browser Forum is a voluntary organization of Certification Authorities an
 Certification Authority (CA) is defined in Section 1.6. Current CA Members of the CA/Browser Forum are listed here: [https://cabforum.org/members].
 
 ### 1.3.2 Registration Authorities
-With the exception of sections 3.2.2.4 and 3.2.2.5, the CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Section 3.2.
+With the exception of sections 3.2.2.4 and 3.2.2.5, the TSP MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Section 3.2.
 
-Before the CA authorizes a Delegated Third Party to perform a delegated function, the CA SHALL contractually require the Delegated Third Party to:
+Before the TSP authorizes a Delegated Third Party to perform a delegated function, the TSP SHALL contractually require the Delegated Third Party to:
 
 1. Meet the qualification requirements of Section 5.3.1, when applicable to the delegated function;
 2. Retain documentation in accordance with Section 5.5.2;
 3. Abide by the other provisions of these Requirements that are applicable to the delegated function; and
-4. Comply with (a) the CA's Certificate Policy/Certification Practice Statement or (b) the Delegated Third Party's practice statement that the CA has verified complies with these Requirements.
+4. Comply with (a) the TSP's Certificate Policy/Certification Practice Statement or (b) the Delegated Third Party's practice statement that the TSP has verified complies with these Requirements.
 
-The CA MAY designate an Enterprise RA to verify certificate requests from the Enterprise RA's own organization.
+The TSP MAY designate an Enterprise RA to verify certificate requests from the Enterprise RA's own organization.
+
 The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
-1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise
-RA's verified Domain Namespace.
+1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise RA's verified Domain Namespace.
+
 2. If the certificate request includes a Subject name of a type other than a Fully-Qualified Domain Name, the CA SHALL confirm that the name is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject. For example, the CA SHALL NOT issue a Certificate containing the Subject name "XYZ Co." on the authority of Enterprise RA "ABC Co.", unless the two companies are affiliated (see Section 3.2) or "ABC Co." is the agent of "XYZ Co". This requirement applies regardless of whether the accompanying requested Subject FQDN falls within the Domain Namespace of ABC Co.'s Registered Domain Name.
 
-The CA SHALL impose these limitations as a contractual requirement on the Enterprise RA and monitor compliance by the Enterprise RA.
+The TSP SHALL impose these limitations as a contractual requirement on the Enterprise RA and monitor compliance by the Enterprise RA.
 
 
 ### 1.3.3 Subscribers
@@ -233,7 +234,7 @@ No stipulation.
 
 **Certificate Revocation List**: A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
-**Certification Authority**: An organization that is responsible for the creation, issuance, revocation, and management of Certificates. The term applies equally to both Roots CAs and Subordinate CAs.
+**Certification Authority**: A certificate generation service (people, procedures, systems and technology) that is trusted by one or more entities to create, sign, revoke, and provide status information for public key certificates and is operated by a Trust Service Provider.
 
 **Certification Practice Statement**: One of several documents forming the governance framework in which Certificates are created, issued, managed, and used.
 
@@ -364,6 +365,8 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
 
 **Test Certificate**: A Certificate with a maximum validity period of 30 days and which: (i) includes a critical extension with the specified Test Certificate CABF OID  (2.23.140.2.1), or (ii) is issued under a CA where there are no certificate paths/chains to a root certificate subject to these Requirements.
+
+**Trust Service Provider**: An organization providing trust services, through a number of Certification Authorities, to their customers who may act as Subscribers or Relying Parties.  
 
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
 
