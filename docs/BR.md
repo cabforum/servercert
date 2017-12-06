@@ -341,7 +341,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 **Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
 
-[http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/iA pv4-address-space.xml)
+[http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
 
 [http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml](http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
 
