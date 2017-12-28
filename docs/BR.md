@@ -747,7 +747,7 @@ In no case may a prior validation be reused if any data or document used in the 
 
 After the change to any validation method specified in the Baseline Requirements or EV Guidelines, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in this BR 4.2.1 unless otherwise specifically provided in a ballot.
 
-Information from validations done using methods that are no longer allowed to be used (e.g. 3.2.2.4.1 and 3.2.2.4.5 on or after March 1, 2018) MUST NOT be re-used for validations.
+Validations completed using methods specified in Section 3.2.2.4.1 or Section 3.2.2.4.5 SHALL NOT be re-used on or after March 1, 2018.
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
