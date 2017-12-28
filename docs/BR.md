@@ -546,6 +546,8 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 3.	The CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
+For certificates issued on or after March 1, 2018, this method SHALL NOT be used for validation, and completed validations using this method SHALL NOT be used for the issuance of certificates
+
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
 
 Confirming the Applicant's control over the FQDN by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as a Domain Contact.
@@ -585,6 +587,8 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 ##### 3.2.2.4.5 Domain Authorization Document
 
 Confirming the Applicant's control over the FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. The Domain Authorization Document MUST substantiate that the communication came from the Domain Contact. The CA MUST verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
+
+For certificates issued on or after March 1, 2018, this method SHALL NOT be used for validation, and completed validations using this method SHALL NOT be used for the issuance of certificates.
 
 ##### 3.2.2.4.6 Agreed-Upon Change to Website
 
@@ -742,6 +746,8 @@ Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
 After the change to any validation method specified in the Baseline Requirements or EV Guidelines, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in this BR 4.2.1 unless otherwise specifically provided in a ballot.
+
+Information from validations done using methods that are no longer allowed to be used (e.g. 3.2.2.4.1 and 3.2.2.4.5 after March 1, 2018) MUST NOT be re-used for validations.
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
