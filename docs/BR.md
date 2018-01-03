@@ -546,7 +546,7 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 3.	The CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
-For certificates issued on or after March 1, 2018, this method SHALL NOT be used for validation, and completed validations using this method SHALL NOT be used for the issuance of certificates
+For certificates issued on or after March 1, 2018, this method SHALL NOT be used for validation, and completed validations using this method SHALL NOT be used for the issuance of certificates.
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
 
