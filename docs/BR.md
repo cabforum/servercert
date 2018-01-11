@@ -274,8 +274,6 @@ No stipulation.
 
 **Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
 
-**Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
-
 **Key Compromise**: A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, an unauthorized person has had access to it, or there exists a practical technique by which an unauthorized person may discover its value. A Private Key is also considered compromised if methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys) or if there is clear evidence that the specific method used to generate the Private Key was flawed.
 
 **Key Generation Script**: A documented plan of procedures for the generation of a CA Key Pair **.**
@@ -289,6 +287,8 @@ No stipulation.
 **OCSP Responder**: An online server operated under the authority of the CA and connected to its Repository for processing Certificate status requests. See also, Online Certificate Status Protocol.
 
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. See also OCSP Responder.
+
+**Parent CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
 
 **Parent Company**: A company that Controls a Subsidiary Company.
 
@@ -411,6 +411,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | SSL | Secure Sockets Layer |
 | TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
+| TSP | Trust Service Provider |
 | VOIP | Voice Over Internet Protocol |
 
 
@@ -470,7 +471,6 @@ Effective as of 8 September 2017, section 4.2 of a CA's Certificate Policy and/o
 The CA SHALL publicly give effect to these Requirements and represent that it will adhere to the latest published version. The CA MAY fulfill this requirement by incorporating these Requirements directly into its Certificate Policy and/or Certification Practice Statements or by incorporating them by reference using a clause such as the following (which MUST include a link to the official version of these Requirements):
 
 > [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
-
 
 The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
@@ -544,7 +544,7 @@ Note: FQDNs may be listed in Subscriber Certificates using dNSNames in the subje
 Confirming the Applicant's control over the FQDN by validating the Applicant is the Domain Contact directly with the Domain Name Registrar. This method may only be used if:
 1.	The CA authenticates the Applicant's identity under BR Section 3.2.2.1 and the authority of the Applicant Representative under BR Section 3.2.5, OR
 2.	The CA authenticates the Applicant's identity under EV Guidelines Section 11.2 and the agency of the Certificate Approver under EV Guidelines Section 11.8; OR
-3.	The CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
+3.	The TSP also operates the Domain Name Registrar, or is an Affiliate of the Registrar, of the Base Domain Name.
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
@@ -651,7 +651,7 @@ Prior to using any data source as a Reliable Data Source, the CA SHALL evaluate 
 4. The public accessibility of the data availability, and
 5. The relative difficulty in falsifying or altering the data.
 
-Databases maintained by the CA, its owner, or its affiliated companies do not qualify as a Reliable Data Source if the primary purpose of the database is to collect information for the purpose of fulfilling the validation requirements under this Section 3.2.
+Databases maintained by the CA, its owner (i.e. the TSP), or its affiliated companies do not qualify as a Reliable Data Source if the primary purpose of the database is to collect information for the purpose of fulfilling the validation requirements under this Section 3.2.
 
 
 #### 3.2.2.8.	CAA Records
@@ -879,21 +879,21 @@ CA's Certificate Policy or Certification Practice Statement;
 15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
-The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
+The Parent CA SHALL revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
 
 1. The Subordinate CA requests revocation in writing;
-2. The Subordinate CA notifies the Issuing CA that the original certificate request was not authorized and does not retroactively grant authorization;
-3. The Issuing CA obtains evidence that the Subordinate CA's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
-4. The Issuing CA obtains evidence that the Certificate was misused;
-5. The Issuing CA is made aware that the Certificate was not issued in accordance with or that Subordinate CA has not complied with this document or the applicable Certificate Policy or Certification Practice Statement;
-6. The Issuing CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
-7. The Issuing CA or Subordinate CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
-8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository;
-9. Revocation is required by the Issuing CA's Certificate Policy and/or Certification Practice Statement; or
+2. The Subordinate CA notifies the Parent CA that the original certificate request was not authorized and does not retroactively grant authorization;
+3. The Parent CA obtains evidence that the Subordinate CA's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
+4. The Parent CA obtains evidence that the Certificate was misused;
+5. The Parent CA is made aware that the Certificate was not issued in accordance with or that Subordinate CA has not complied with this document or the applicable Certificate Policy or Certification Practice Statement;
+6. The Parent CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
+7. The Parent CA or Subordinate CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
+8. The Parent CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Parent CA has made arrangements to continue maintaining the CRL/OCSP Repository;
+9. Revocation is required by the Parent CA's Certificate Policy and/or Certification Practice Statement; or
 10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
 
 ### 4.9.2 Who can request revocation
-The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
+The Subscriber, RA, or CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the CA of reasonable cause to revoke the certificate.
 
 ### 4.9.3 Procedure for revocation request
 The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
@@ -977,7 +977,7 @@ Not applicable.
 
 ### 4.10.1 Operational characteristics
 Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked
-Certificate
+Certificate.
 
 ### 4.10.2 Service availability
 The CA SHALL operate and maintain its CRL and OCSP capability with resources sufficient to provide a response time of ten seconds or less under normal operating conditions.
@@ -1027,7 +1027,6 @@ The CA's security program MUST include an annual Risk Assessment that:
 3. Assesses the sufficiency of the policies, procedures, information systems, technology, and other arrangements that the CA has in place to counter such threats.
 
 Based on the Risk Assessment, the CA SHALL develop, implement, and maintain a security plan consisting of security procedures, measures, and products designed to achieve the objectives set forth above and to manage and control the risks identified during the Risk Assessment, commensurate with the sensitivity of the Certificate Data and Certificate Management Processes. The security plan MUST include administrative, organizational, technical, and physical safeguards appropriate to the sensitivity of the Certificate Data and Certificate Management Processes. The security plan MUST also take into account then-available technology and the cost of implementing the specific measures, and SHALL implement a reasonable level of security appropriate to the harm that might result from a breach of security and the nature of the data to be protected.
-{:.br data-sect="16.3"}
 
 ## 5.1 PHYSICAL SECURITY CONTROLS
 
@@ -1052,7 +1051,7 @@ Based on the Risk Assessment, the CA SHALL develop, implement, and maintain a se
 ### 5.2.1 Trusted roles
 
 ### 5.2.2 Number of Individuals Required per Task
-The CA Private Key SHALL be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in a physically secured environment.
+The CA Private Key SHALL be backed up, stored, and recovered only by personnel in trusted roles using, at least, dual control in a physically secured environment.[Note: Potentially replace with "The Private Key associated with the CA Certificate"]
 
 ### 5.2.3 Identification and authentication for each role
 
@@ -1061,28 +1060,28 @@ The CA Private Key SHALL be backed up, stored, and recovered only by personnel i
 ## 5.3 Personnel controls
 
 ### 5.3.1 Qualifications, experience, and clearance requirements
-Prior to the engagement of any person in the Certificate Management Process, whether as an employee, agent, or an independent contractor of the CA, the CA SHALL verify the identity and trustworthiness of such person.
+Prior to the engagement of any person in the Certificate Management Process, whether as an employee, agent, or an independent contractor of the TSP, the TSP SHALL verify the identity and trustworthiness of such person.
 
 ### 5.3.2 Background check procedures
 
 ### 5.3.3 Training Requirements and Procedures
-The CA SHALL provide all personnel performing information verification duties with skills-training that covers basic Public Key Infrastructure knowledge, authentication and vetting policies and procedures (including the CA's Certificate Policy and/or Certification Practice Statement), common threats to the information verification process (including phishing and other social engineering tactics), and these Requirements.
+The TSP SHALL provide all personnel performing information verification duties with skills-training that covers basic Public Key Infrastructure knowledge, authentication and vetting policies and procedures (including the CA's Certificate Policy and/or Certification Practice Statement), common threats to the information verification process (including phishing and other social engineering tactics), and these Requirements.
 
-The CA SHALL maintain records of such training and ensure that personnel entrusted with Validation Specialist duties maintain a skill level that enables them to perform such duties satisfactorily.
+The TSP SHALL maintain records of such training and ensure that personnel entrusted with Validation Specialist duties maintain a skill level that enables them to perform such duties satisfactorily.
 
-The CA SHALL document that each Validation Specialist possesses the skills required by a task before allowing the Validation Specialist to perform that task.
+The TSP SHALL document that each Validation Specialist possesses the skills required by a task before allowing the Validation Specialist to perform that task.
 
-The CA SHALL require all Validation Specialists to pass an examination provided by the CA on the information verification requirements outlined in these Requirements.
+The TSP SHALL require all Validation Specialists to pass an examination provided by the TSP on the information verification requirements outlined in these Requirements.
 
 ### 5.3.4 Retraining frequency and requirements
-All personnel in Trusted roles SHALL maintain skill levels consistent with the CA's training and performance programs.
+All personnel in Trusted Roles SHALL maintain skill levels consistent with the CA's training and performance programs.
 
 ### 5.3.5 Job rotation frequency and sequence
 
 ### 5.3.6 Sanctions for unauthorized actions
 
 ### 5.3.7 Independent Contractor Controls
-The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of Section 5.3.3 and the document retention and event logging requirements of Section 5.4.1.
+The TSP SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of Section 5.3.3 and the document retention and event logging requirements of Section 5.4.1.
 
 ### 5.3.8 Documentation supplied to personnel
 
@@ -1164,7 +1163,7 @@ The CA SHALL retain all documentation relating to certificate requests and the v
 ## 5.7 Compromise and disaster recovery
 
 ### 5.7.1 Incident and compromise handling procedures
-CA organizations shall have an Incident Response Plan and a Disaster Recovery Plan.
+The CA SHALL have an Incident Response Plan and a Disaster Recovery Plan.
 
 The CA SHALL document a business continuity and disaster recovery procedures designed to notify and reasonably protect Application Software Suppliers, Subscribers, and Relying Parties in the event of a disaster, security compromise, or business failure. The CA is not required to publicly disclose its business continuity plans but SHALL make its business continuity plan and security plans available to the CA's auditors upon request. The CA SHALL annually test, review, and update these procedures.
 
@@ -1199,7 +1198,7 @@ The business continuity plan MUST include:
 ## 6.1 Key pair generation and installation
 
 ### 6.1.1 Key pair generation
-
+[We stopped here on 11-Jan-2018]
 #### 6.1.1.1 CA Key Pair Generation
 For Root CA Key Pairs created after the Effective Date that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, the CA SHALL:
 
