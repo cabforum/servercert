@@ -629,7 +629,7 @@ Confirming the Applicant's control over the FQDN by confirming the presence of a
 
 ##### 3.2.2.4.11 Any Other Method
 
-CAs SHALL NOT use domain validation methods that are not explicitly allowed by these requirements in section 3.2.2.4.
+This method has been retired and MUST NOT be used.
 
 ##### 3.2.2.4.12 Validating Applicant as a Domain Contact
 
