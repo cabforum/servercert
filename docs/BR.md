@@ -1198,24 +1198,24 @@ The business continuity plan MUST include:
 ## 6.1 Key pair generation and installation
 
 ### 6.1.1 Key pair generation
-[We stopped here on 11-Jan-2018]
+
 #### 6.1.1.1 CA Key Pair Generation
-For Root CA Key Pairs created after the Effective Date that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not the operator of the Root CA or an Affiliate of the Root CA, the CA SHALL:
+For Root CA Key Pairs created that are either (i) used as Root CA Key Pairs or (ii) Key Pairs generated for a subordinate CA that is not part of the same TSP as the Root CA or an Affiliate of the same TSP, the CA SHALL:
 
 1. prepare and follow a Key Generation Script,
 2. have a Qualified Auditor witness the Root CA Key Pair generation process or record a video of the entire Root CA Key Pair generation process, and
 3. have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair.
 
-For other CA Key Pairs created after the Effective Date that are for the operator of the Root CA or an Affiliate of the Root CA, the CA SHOULD:
+For other CA Key Pairs created that are for the TSP that operates the Root CA or an Affiliate of that TSP, the CA SHOULD:
 
 1. prepare and follow a Key Generation Script and
-2. have a Qualified Auditor witness the Root CA Key Pair generation process or record a video of the entire Root CA Key Pair generation process.
+2. have a Qualified Auditor witness the Root CA Key Pair generation process or record a video of the entire CA Key Pair generation process.
 
 In all cases, the CA SHALL:
 
-1. generate the keys in a physically secured environment as described in the CA's Certificate Policy and/or Certification Practice Statement;
-2. generate the CA keys using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
-3. generate the CA keys within cryptographic modules meeting the applicable technical and business requirements as disclosed in the CA's Certificate Policy and/or Certification Practice Statement;
+1. generate the CA Key Pairs in a physically secured environment as described in the CA's Certificate Policy and/or Certification Practice Statement;
+2. generate the CA Key Pairs using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
+3. generate the CA Key Pairs within cryptographic modules meeting the applicable technical and business requirements as disclosed in the CA's Certificate Policy and/or Certification Practice Statement;
 4. log its CA key generation activities; and
 5. maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in its Certificate Policy and/or Certification Practice Statement and (if applicable) its Key Generation Script.
 
@@ -1302,7 +1302,7 @@ See Section 5.2.2.
 Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Private Keys without authorization by the Subordinate CA.
 
 ### 6.2.6 Private key transfer into or from a cryptographic module
-If the Issuing CA generated the Private Key on behalf of the Subordinate CA, then the Issuing CA SHALL encrypt the Private Key for transport to the Subordinate CA. If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
+If the TSP generates a Private Key on behalf of another TSP for export to that TSP, then the TSP SHALL encrypt the Private Key for transport to that TSP. If the Parent CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Parent CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
 ### 6.2.7 Private key storage on cryptographic module
 The CA SHALL protect its Private Key in a system or device that has been validated as meeting at least FIPS 140 level 3 or an appropriate Common Criteria Protection Profile or Security Target, EAL 4 (or higher), which includes requirements to protect the Private Key and other assets against known threats.
@@ -1406,9 +1406,9 @@ b. cRLDistributionPoints
 
 c. authorityInformationAccess
 
-    With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
+    With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Parent CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Parent CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
 
-    The HTTP URL of the Issuing CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
+    The HTTP URL of the Parent CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
 
 d. basicConstraints
 
@@ -1442,7 +1442,7 @@ a. certificatePolicies
 
     *   certificatePolicies:policyIdentifier (Required)
 
-        A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
+        A Policy Identifier, defined by the CA, that indicates a Certificate Policy asserting the CA's adherence to and compliance with these Requirements.
 
         The following extensions MAY be present:
 
@@ -1452,7 +1452,7 @@ a. certificatePolicies
 
         *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
 
-            HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
+            HTTP URL for the CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
 
 b. cRLDistributionPoints
 
@@ -1460,9 +1460,9 @@ b. cRLDistributionPoints
 
 c. authorityInformationAccess
 
-    With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
+    With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
 
-    The HTTP URL of the Issuing CA's OCSP responder MAY be omitted provided that the Subscriber "staples" OCSP responses for the Certificate in its TLS handshakes [RFC4366].
+    The HTTP URL of the CA's OCSP responder MAY be omitted provided that the Subscriber "staples" OCSP responses for the Certificate in its TLS handshakes [RFC4366].
 
 d. basicConstraints (optional)
 
@@ -1493,14 +1493,14 @@ b. semantics that, if included, will mislead a Relying Party about the certifica
 For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under these Baseline Requirements.
 
 ### 7.1.3 Algorithm object identifiers
-Effective 1 January 2016, CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. CAs MAY continue to sign certificates to verify OCSP responses using SHA1 until 1 January 2017. This Section 7.1.3 does not apply to Root CA or CA cross certificates. CAs MAY continue to use their existing SHA-1 Root Certificates. SHA-2 Subscriber certificates SHOULD NOT chain up to a SHA-1Subordinate CA Certificate.
+Effective 1 January 2016, CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. CAs MAY continue to sign certificates to verify OCSP responses using SHA1 until 1 January 2017. This Section 7.1.3 does not apply to Root CA or CA cross certificates. CAs MAY continue to use their existing SHA-1 Root Certificates. SHA-2 Subscriber certificates SHOULD NOT chain up to a SHA-1 Subordinate CA Certificate.
 
 Effective 16 January 2015, CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017 because Application Software Providers are in the process of deprecating and/or removing the SHA-1 algorithm from their software, and they have communicated that CAs and Subscribers using such certificates do so at their own risk.
 
 ### 7.1.4 Name forms
 
 #### 7.1.4.1 Issuing CA Certificate Subject
-The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
+The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Parent CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
 
 #### 7.1.4.2 Subject Information - Subscriber Certificates
 By issuing the Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate. CAs SHALL NOT include a Domain Name or IP Address in a Subject attribute except as specified in Section 3.2.2.4 or Section 3.2.2.5.
@@ -1572,7 +1572,7 @@ Contents: This field MUST be present and the contents SHOULD be an identifier fo
  
 b. Certificate Field: subject:organizationName (OID 2.5.4.10)
 Required/Optional: Required
-Contents: This field MUST be present and the contents MUST contain either the Subject CA's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name".
+Contents: This field MUST be present and the contents MUST contain either the CA's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name".
  
 c. Certificate Field: subject:countryName (OID: 2.5.4.6)
 Required/Optional: Required
@@ -1584,11 +1584,11 @@ For a Subordinate CA Certificate to be considered Technically Constrained, the c
 
 If the Subordinate CA Certificate includes the id-kp-serverAuth extended key usage, then the Subordinate CA Certificate MUST include the Name Constraints X.509v3 extension with constraints on dNSName, iPAddress and DirectoryName as follows:
 
-a. For each dNSName in permittedSubtrees, the CA MUST confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of section 3.2.2.4.
-b. For each iPAddress range in permittedSubtrees, the CA MUST confirm that the Applicant has been assigned the iPAddress range or has been authorized by the assigner to act on the assignee's behalf.
-c. For each DirectoryName in permittedSubtrees the CA MUST confirm the Applicants and/or Subsidiary's Organizational name and location such that end entity certificates issued from the subordinate CA Certificate will be in compliancy with section 7.1.2.4 and 7.1.2.5.
+a. For each dNSName in permittedSubtrees, the Parent CA MUST confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of section 3.2.2.4.
+b. For each iPAddress range in permittedSubtrees, the Parent CA MUST confirm that the Applicant has been assigned the iPAddress range or has been authorized by the assigner to act on the assignee's behalf.
+c. For each DirectoryName in permittedSubtrees the Parent CA MUST confirm the Applicants and/or Subsidiary's Organizational name and location such that end entity certificates issued from the Subordinate CA Certificate will be in compliancy with section 7.1.2.4 and 7.1.2.5.
 
-If the Subordinate CA Certificate is not allowed to issue certificates with an iPAddress, then the Subordinate CA Certificate MUST specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate MUST include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate MUST also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). Otherwise, the Subordinate CA Certificate MUST include at least one iPAddress in permittedSubtrees.
+If the Subordinate CA is not allowed to issue certificates with an iPAddress, then the Subordinate CA Certificate MUST specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate MUST include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate MUST also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). Otherwise, the Subordinate CA Certificate MUST include at least one iPAddress in permittedSubtrees.
 
 A decoded example for issuance to the domain and sub domains of example.com by organization :- Example LLC, Boston, Massachusetts, US would be:-
 
@@ -1623,12 +1623,12 @@ If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it MUST
 A Root CA Certificate SHOULD NOT contain the certificatePolicies extension.
 
 #### 7.1.6.3 Subordinate CA Certificates
-A Certificate issued after the Effective Date to a Subordinate CA that is not an Affiliate of the Issuing CA:
+A Certificate issued after the Effective Date to a Subordinate CA that is not an Affiliate of the TSP:
 
 1. MUST include one or more explicit policy identifiers that indicates the Subordinate CA's adherence to and compliance with these Requirements (i.e. either the CA/Browser Forum reserved identifiers or identifiers defined by the CA in its Certificate Policy and/or Certification Practice Statement) and
 2. MUST NOT contain the "anyPolicy" identifier (2.5.29.32.0).
 
-A Certificate issued after the Effective Date to a Subordinate CA that is an affiliate of the Issuing CA:
+A Certificate issued after the Effective Date to a Subordinate CA that is an Affiliate of the TSP:
 
 1. MAY include the CA/Browser Forum reserved identifiers or an identifier defined by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Subordinate CA's compliance with these Requirements and
 2. MAY contain the "anyPolicy" identifier (2.5.29.32.0) in place of an explicit policy identifier.
@@ -1636,9 +1636,9 @@ A Certificate issued after the Effective Date to a Subordinate CA that is an aff
 A Subordinate CA SHALL represent, in its Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
-A Certificate issued to a Subscriber MUST contain one or more policy identifier(s), defined by the Issuing CA, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with these Requirements. CAs complying with these Requirements MAY also assert one of the reserved policy OIDs in such Certificates.
+A Certificate issued to a Subscriber MUST contain one or more policy identifier(s), defined by the CA, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with these Requirements. CAs complying with these Requirements MAY also assert one of the reserved policy OIDs in such Certificates.
 
-The issuing CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Requirements.
+The CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Requirements.
 
 ### 7.1.7 Usage of Policy Constraints extension
 
@@ -1664,7 +1664,7 @@ The CA SHALL at all times:
 1. Issue Certificates and operate its PKI in accordance with all law applicable to its business and the Certificates it issues in every jurisdiction in which it operates;
 2. Comply with these Requirements;
 3. Comply with the audit requirements set forth in this section; and
-4. Be licensed as a CA in each jurisdiction where it operates, if licensing is required by the law of such jurisdiction for the issuance of Certificates.
+4. Be licensed as a TSP in each jurisdiction where it operates, if licensing is required by the law of such jurisdiction for the issuance of Certificates.
 
 **Implementers' Note**: Version 1.1.6 of the SSL Baseline Requirements was published on July 29, 2013. Version 2.0 of WebTrust's Principles and Criteria for Certifiation Authorities - SSL Baseline with Network Security and ETSI's Electronic Signatures and Infrastructures (ESI) 102 042 incorporate version 1.1.6 of these Baseline Requirements and version 1.0 of the Network and Certificate System Security Requirements. The CA/Browser Forum continues to improve the Baseline Requirements while WebTrust and ETSI also continue to update their audit criteria. We encourage all CAs to conform to each revision herein on the date specified without awaiting a corresponding update to an applicable audit criterion. In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty, and we will respond to implementation questions directed to questions@cabforum.org. Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -1707,6 +1707,7 @@ The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.3.
 For Delegated Third Parties which are not Enterprise RAs, then the CA SHALL obtain an audit report, issued under the auditing standards that underlie the accepted audit schemes found in Section 8.1, that provides an opinion whether the Delegated Third Party's performance complies with either the Delegated Third Party's practice statement or the CA's Certificate Policy and/or Certification Practice Statement. If the opinion is that the Delegated Third Party does not comply, then the CA SHALL not allow the Delegated Third Party to continue performing delegated functions.
 
 The audit period for the Delegated Third Party SHALL NOT exceed one year (ideally aligned with the CA's audit). However, if the CA or Delegated Third Party is under the operation, control, or supervision of a Government Entity and the audit scheme is completed over multiple years, then the annual audit MUST cover at least the core controls that are required to be audited annually by such scheme plus that portion of all non-core controls that are allowed to be conducted less frequently, but in no case may any non-core control be audited less often than once every three years.
+[we stopped here on 25-Jan-2018]
 
 ## 8.5 Actions taken as a result of deficiency
 
