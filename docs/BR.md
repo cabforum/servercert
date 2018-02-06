@@ -1701,7 +1701,7 @@ The CA SHALL undergo an audit in accordance with one of the following schemes:
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
-The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.3.
+The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.2.
 
 
 For Delegated Third Parties which are not Enterprise RAs, then the CA SHALL obtain an audit report, issued under the auditing standards that underlie the accepted audit schemes found in Section 8.1, that provides an opinion whether the Delegated Third Party's performance complies with either the Delegated Third Party's practice statement or the CA's Certificate Policy and/or Certification Practice Statement. If the opinion is that the Delegated Third Party does not comply, then the CA SHALL not allow the Delegated Third Party to continue performing delegated functions.
