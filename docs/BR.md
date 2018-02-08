@@ -132,6 +132,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
 | 2017-09-08 | 3.2.2.8  | CAs MUST check and process CAA records  |
 | 2018-03-01 | 4.2.1 and 6.3.2 | Certificates issued MUST have a Validity Period no greater than 825 days and re-use of validation information limited to 825 days |
+| 2018-08-01 | 3.2.2.4 and 4.2.1 | Validation methods #1 and #5 MUST NOT be used, and information from those methods MUST NOT be re-used.
 
 
 ## 1.3 PKI Participants
