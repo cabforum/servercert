@@ -302,7 +302,7 @@ No stipulation.
 
 **Publicly-Trusted Certificate**: A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
 
-**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.3.
+**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.2.
 
 **Random Value**: A value specified by a CA to the Applicant that exhibits at least 112 bits of entropy.
 
