@@ -163,7 +163,7 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 | Ver. | Ballot | Description | Adopted | Effective\* |
 | :---: | :---: | :---: | :---: | :---: | 
 | 1.0 | 83 | Original Version Adopted | 3‐Aug‐12 | 01‐Jan‐13 |
-| 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | 01‐Oct‐17 |
+| 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | <s>01‐Oct‐17</s> 09-Mar-18 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
