@@ -132,6 +132,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
 | 2017-09-08 | 3.2.2.8  | CAs MUST check and process CAA records  |
 | 2018-03-01 | 4.2.1 and 6.3.2 | Certificates issued MUST have a Validity Period no greater than 825 days and re-use of validation information limited to 825 days |
+| 2018-08-01 | 3.2.2.4 and 4.2.1 | Validation methods #1 and #5 MUST NOT be used, and information from those methods MUST NOT be re-used.
 
 
 ## 1.3 PKI Participants
@@ -301,7 +302,7 @@ No stipulation.
 
 **Publicly-Trusted Certificate**: A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
 
-**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.3.
+**Qualified Auditor**: A natural person or Legal Entity that meets the requirements of Section 8.2.
 
 **Random Value**: A value specified by a CA to the Applicant that exhibits at least 112 bits of entropy.
 
@@ -591,7 +592,7 @@ Confirming the Applicant's control over the FQDN by relying upon the attestation
 Confirming the Applicant's control over the FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:
 
 1.	The presence of Required Website Content contained in the content of a file. The entire Required Website Content MUST NOT appear in the request used to retrieve the file or web page, or
-2.	The presence of the Request Token or Request Value contained in the content of a file where the Request Token or Random Value MUST NOT appear in the request.
+2.	The presence of the Request Token or Random Value contained in the content of a file where the Request Token or Random Value MUST NOT appear in the request.
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 4.2.1 of these Guidelines or Section 11.14.3 of the EV Guidelines).
 
@@ -1701,7 +1702,7 @@ The CA SHALL undergo an audit in accordance with one of the following schemes:
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
-The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.3.
+The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.2.
 
 
 For Delegated Third Parties which are not Enterprise RAs, then the CA SHALL obtain an audit report, issued under the auditing standards that underlie the accepted audit schemes found in Section 8.1, that provides an opinion whether the Delegated Third Party's performance complies with either the Delegated Third Party's practice statement or the CA's Certificate Policy and/or Certification Practice Statement. If the opinion is that the Delegated Third Party does not comply, then the CA SHALL not allow the Delegated Third Party to continue performing delegated functions.
