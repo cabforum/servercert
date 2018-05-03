@@ -12,12 +12,13 @@
 
 **CA/Browser Forum**
 
-**Version 1.5.5**
+**Version 1.5.6**
 
-**December 21, 2017**
+**February 5, 2018**
 
 **www.cabforum.org**
 
+Copyright 2018 CA/Browser Forum
 This work is licensed under the Creative Commons Attribution 4.0 International license.
 
 
@@ -105,7 +106,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.5.3 | 214 | CAA Discovery CNAME Errata | 27-Sept-2017 | 27-Oct-2017 |
 | 1.5.4 | 215 | Fix	Ballot	190	Errata | 4‐Oct‐2017	 | 5‐Nov‐2017 |
 | 1.5.5 | 217 | Sunset RFC 2527 | 21‐Dec‐2017	 | 9‐Mar‐2018 |
-
+| 1.5.6 | 218 | Remove validation methods #1 and #5 | 5‐Feb‐2018	 | 9‐Mar‐2018 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -134,6 +135,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2017-09-08 | 3.2.2.8  | CAs MUST check and process CAA records  |
 | 2018-03-01 | 4.2.1 and 6.3.2 | Certificates issued MUST have a Validity Period no greater than 825 days and re-use of validation information limited to 825 days |
 | 2018-05-31 | 2.2 | CP and CPS must follow RFC 3647 format |
+| 2018-08-01 | 3.2.2.4.1 and .5 | CAs must stop using domain validation methods BR 3.2.2.4.1 and 3.2.2.4.5, stop reusing validation data from those methods |
 
 ## 1.3 PKI Participants
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
@@ -252,7 +254,7 @@ No stipulation.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
-**Domain Contact**: The Domain Name Registrant, technical contact, or administrative contract (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record.
+**Domain Contact**: The Domain Name Registrant, technical contact, or administrative contract (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record, or as obtained through direct contact with the Domain Name Registrar.
 
 **Domain Name**: The label assigned to a node in the Domain Name System.
 
@@ -547,7 +549,7 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 1.	The CA authenticates the Applicant's identity under BR Section 3.2.2.1 and the authority of the Applicant Representative under BR Section 3.2.5, OR
 2.	The CA authenticates the Applicant's identity under EV Guidelines Section 11.2 and the agency of the Certificate Approver under EV Guidelines Section 11.8; OR
 3.	The CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
-Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names. For certificates issued on or after August 1, 2018, this method SHALL NOT be used for validation, and completed validations using this method SHALL NOT be used for the issuance of certificates.
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
 
@@ -587,7 +589,7 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 
 ##### 3.2.2.4.5 Domain Authorization Document
 
-Confirming the Applicant's control over the FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. The Domain Authorization Document MUST substantiate that the communication came from the Domain Contact. The CA MUST verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space.
+Confirming the Applicant's control over the FQDN by relying upon the attestation to the authority of the Applicant to request a Certificate contained in a Domain Authorization Document. The Domain Authorization Document MUST substantiate that the communication came from the Domain Contact. The CA MUST verify that the Domain Authorization Document was either (i) dated on or after the date of the domain validation request or (ii) that the WHOIS data has not materially changed since a previously provided Domain Authorization Document for the Domain Name Space. For certificates issued on or after August 1, 2018, this method SHALL NOT be used for validation, and completed validations using this method SHALL NOT be used for the issuance of certificates.
 
 ##### 3.2.2.4.6 Agreed-Upon Change to Website
 
@@ -625,6 +627,15 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 ##### 3.2.2.4.10 TLS Using a Random Number
 
 Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+
+##### 3.2.2.4.11 Any Other Method
+
+This method has been retired and MUST NOT be used.
+
+##### 3.2.2.4.12 Validating Applicant as a Domain Contact
+
+Confirming the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 For each IP Address listed in a Certificate, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant has control over the IP Address by:
@@ -745,6 +756,8 @@ Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
 After the change to any validation method specified in the Baseline Requirements or EV Guidelines, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in this BR 4.2.1 unless otherwise specifically provided in a ballot.
+
+Validations completed using methods specified in Section 3.2.2.4.1 or Section 3.2.2.4.5 SHALL NOT be re-used on or after August 1, 2018.
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
