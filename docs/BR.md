@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.5.4**
+**Version 1.5.5**
 
-**October 4, 2017**
+**December 21, 2017**
 
 **www.cabforum.org**
 
@@ -104,6 +104,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.5.2 | 190 | Add Validation Methods with Minor Corrections | 19-Sept-2017 | 19-Oct-2017 |
 | 1.5.3 | 214 | CAA Discovery CNAME Errata | 27-Sept-2017 | 27-Oct-2017 |
 | 1.5.4 | 215 | Fix	Ballot	190	Errata | 4‐Oct‐2017	 | 5‐Nov‐2017 |
+| 1.5.5 | 217 | Sunset RFC 2527 | 21‐Dec‐2017	 | 9‐Mar‐2018 |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
@@ -132,7 +133,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
 | 2017-09-08 | 3.2.2.8  | CAs MUST check and process CAA records  |
 | 2018-03-01 | 4.2.1 and 6.3.2 | Certificates issued MUST have a Validity Period no greater than 825 days and re-use of validation information limited to 825 days |
-
+| 2018-05-31 | 2.2 | CP and CPS must follow RFC 3647 format |
 
 ## 1.3 PKI Participants
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
@@ -462,7 +463,9 @@ The CA SHALL develop, implement, enforce, and annually update a Certificate Poli
 The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
 
 ## 2.2 Publication of information
-The CA SHALL publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1). The disclosures MUST include all the material required by RFC 2527 or RFC 3647, and MUST be structured in accordance with either RFC 2527 or RFC 3647. 
+The CA SHALL publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 8.1).
+
+Effective as of 31 May 2018, the Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with RFC 3647. Prior to 31 May 2018, the Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with either RFC 2527 or RFC 3647. The Certificate Policy and/or Certification Practice Statement MUST include all material required by RFC 3647 or, if structured as such, RFC 2527.
 
 Effective as of 8 September 2017, section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement (section 4.1 for CAs still conforming to RFC 2527) SHALL state the CA's policy or practice on processing CAA Records for Fully Qualified Domain Names; that policy shall be consistent with these Requirements. It shall clearly specify the set of Issuer Domain Names that the CA recognises in CAA "issue" or "issuewild" records as permitting it to issue. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
