@@ -1,6 +1,6 @@
 
 
-**Version 1.6.7 **
+**Version 1.6.8 **
 
 ##
 
@@ -16,17 +16,17 @@
 
 ## Extended Validation Certificates
 
-Copyright © 2007-2017, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
+Copyright © 2007-2018, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
 
 The CA/Browser Forum requests that translated versions of these guidelines prominently display the following statement in the language of the translation :-
 
-'Copyright © 2007-2017, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
+'Copyright © 2007-2018, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
 
 This document is a translation of the original English version. In the event that there is a discrepancy between this version and the original English version, the original English version shall govern.'
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.6.7 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 207, passed by the Forum on 23 October 2017.
+This version 1.6.8 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 217, passed by the Forum on 21 December 2017 and effective as of 9 March 2018.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -72,6 +72,7 @@ Document History
 | 1.6.5 | 201 | .onion Revisions | 8 June 2017 | 8 July 2017 |
 | 1.6.6 | 192 | Notary revision | 28 June 2017 | 28 July 2017 |
 | 1.6.7 | 207 | ASN.1 Jurisdiction | 23 October 2017 | 23 November 2017 |
+| 1.6.8 | 217 | Sunset RFC 2527 | 21 Dec 2017 | 9 Mar 2018 |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -325,7 +326,9 @@ Each CA must develop, implement, enforce, display prominently on its Web site, a
 
 ###  8.2.2.  Disclosure
 
-Each CA must publicly disclose their EV Policies through an appropriate and readily accessible online means that is available on a 24x7 basis.  The CA is also REQUIRED to publicly disclose its CA business practices as required by WebTrust for CAs and ETSI TS 102 042 and ETSI EN 319 411-1.  The disclosures MUST be structured in accordance with either RFC 2527 or RFC 3647.
+Each CA MUST publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see Section 17.1).
+
+Effective as of 31 May 2018, the CA's Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with RFC 3647. Prior to 31 May 2018, the CA's Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with either RFC 2527 or RFC 3647. The Certificate Policy and/or Certification Practice Statement MUST include all material required by RFC 3647 or, if structured as such, RFC 2527.
 
 ## 8.3.  Commitment to Comply with Recommendations
 
