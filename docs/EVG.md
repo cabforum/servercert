@@ -511,7 +511,7 @@ Postal code: subject:postalCode (OID:  2.5.4.17)
 
 ### 9.2.8.  Other Subject Attributes
 
-All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. CAs SHALL NOT include Fully-Qualified Domain Names in Subject attributes except as specified in Sections 9.2.1 and SHALL NOT include any Subject Organization Information except as specified in Section 9.2. Optional subfields within the Subject field MUST either contain information verified by the CA or MUST be left empty.  Metadata such as '.', '-', and ' ' characters, and/or any other indication that the field is empty, absent or incomplete, MUST not be used.
+All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. CAs SHALL NOT include Fully-Qualified Domain Names in Subject attributes except as specified in Sections 9.2.2 and 9.2.3 and SHALL NOT include any Subject Organization Information except as specified in Section 9.2. Optional subfields within the Subject field MUST either contain information verified by the CA or MUST be left empty.  Metadata such as '.', '-', and ' ' characters, and/or any other indication that the field is empty, absent or incomplete, MUST not be used.
 
 ## 9.3.  Certificate Policy Identification
 
