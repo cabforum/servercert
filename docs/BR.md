@@ -1981,7 +1981,7 @@ mailto: An SMTP email address where the domain holder or other authorized party 
  
 tel: A telephone number where the domain holder or other authorized party can be contacted.
 
-Schemes other than "mailto:" or "tel:" MUST NOT be used.  Telephone numbers MUST be globally unique and include the country code.
+Schemes other than "mailto:" or "tel:" MUST NOT be used.  Telephone numbers MUST include the country code and be global phone numbers as defined by RFC 3966.
  
 The following is an example where the holder of the domain specified the contact property using both an email address and a phone number.
  
@@ -1994,4 +1994,4 @@ $ORIGIN example.com
 
 Some systems still do not have sufficient support for CAA records.  To allow users of those systems to specify contact information, a legacy format using text records is allowed.  The CAA contact property SHOULD be used instead of TXT records, where feasible.
 
-The DNS TXT record MUST be placed on the "\_caa_contact" subdomain of the domain being validated.  The DNS record MUST be named "domain-authorization-email" or "domain-authorization-phone".  The value of "domain-authorization-email" MUST contain a valid email address, or it cannot be used.  The value of "domain-authorization-phone" must be a valid, globally unique phone number, including country code, or it cannot be used.
+The DNS TXT record MUST be placed on the "\_caa_contact" subdomain of the domain being validated.  The DNS record MUST be named "domain-authorization-email" or "domain-authorization-phone".  The value of "domain-authorization-email" MUST contain a valid email address, or it cannot be used.  The value of "domain-authorization-phone" must be a global phone number, including country code, as defined in RFC 3966 or it cannot be used.
