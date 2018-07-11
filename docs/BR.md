@@ -1988,7 +1988,7 @@ The following is an example where the holder of the domain specified the contact
 $ORIGIN example.com
 .              CAA 0 issue “ca.example.net”
 .              CAA 0 contact “mailto:domainowner@example.com”
-.              CAA 0 contact “tel:+1 310 555 1212”
+.              CAA 0 contact “tel:+1-310-555-1212”
  
 ## Support for Legacy Systems
 
