@@ -56,7 +56,7 @@ g.	If an authentication control used by a Trusted Role is a username and passwor
   i.	For accounts that are accessible only within Secure Zones or High Security Zones, require that passwords have at least twelve (12) characters; 
   ii.	For authentications which cross a zone boundary into a Secure Zone or High Security Zone, require Multi-Factor Authentication.  For accounts accessible from outside a Secure Zone or High Security Zone require passwords that have at least eight (8) characters and are not be one of the user's previous four (4) passwords; and implement account lockout for failed access attempts in accordance with subsection k;
   iii.	When developing password policies, CAs SHOULD take into account the password guidance in NIST 800-63B Appendix A.
-  iv.	Frequent password changes have been shown to cause users to select less secure passwords.  If passwords are required to be changed periodically, that period SHOULD NOT be less than two years.  Effective April 1, 2020, if passwords are required to be changed periodically, that period SHALL NOT be less than two years. 
+  iv.	Frequent password changes have been shown to cause users to select less secure passwords.  If the CA has any policy that specifies routine periodic password changes, that period SHOULD NOT be less than two years.  Effective April 1, 2020, if the CA has any policy that requires routine periodic password changes, that period SHALL NOT be less than two years. 
     
 h.	Have a policy that requires Trusted Roles to log out of or lock workstations when no longer in use;
 
