@@ -381,6 +381,8 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 **Validity Period**: The period of time measured from the date when the Certificate is issued until the Expiry Date.
 
+**WHOIS**: information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website. 
+
 **Wildcard Certificate**: A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
 
 **Wildcard Domain Name**:  A Domain Name consisting of a single asterisk character followed by a single full stop character ("\*.") followed by a Fully-Qualified Domain Name.
@@ -441,6 +443,8 @@ RFC2527, Request for Comments: 2527, Internet X.509 Public Key Infrastructure: C
 
 RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.
 
+RFC3912, Request for Comments: 3912, WHOIS Protocol Specification, Daigle, September 2004. 
+
 RFC4366, Request for Comments: 4366, Transport Layer Security (TLS) Extensions, Blake-Wilson, et al, April 2006.
 
 RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments, A. Deacon, et al, September 2007.
@@ -450,6 +454,8 @@ RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: C
 RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, Stradling, January 2013.
 
 RFC6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. Santesson, Myers, Ankney, Malpani, Galperin, Adams, June 2013.
+
+RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015. 
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
