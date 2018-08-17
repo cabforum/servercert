@@ -640,7 +640,7 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 
 ##### 3.2.2.4.13: Domain Owner Email published in DNS
  
-Confirm the Applicant's control over the FQDN by (i) sending an email to a DNS domain name holder, (ii) including a Random Value in the email, and (iii) receiving a confirming response utilizing the Random Value. The CA MUST send the email to an email address found in the CAA Contact property record of the Authorization Domain Name as defined in Appendix B.
+Confirm the Applicant's control over the FQDN by (i) sending an email to a DNS domain name holder, (ii) including a Random Value in the email, and (iii) receiving a confirming response utilizing the Random Value. The CA MUST send the email to an email address found in the CAA ContactEmail property record of the Authorization Domain Name as defined in Appendix B.
 
 Each email MAY confirm control of multiple FQDNs, provided the email address used is a DNS contact email address for each ADN being validated.
 
@@ -1955,26 +1955,22 @@ Corrected Text
 
 # APPENDIX B – CAA Contact Tag
 
-CAA contact Property
-
-contact <URL> :  The contact property entry specifies the authorized means of contacting the holder of the domain or another party who is authorized to approve issuance of certificates for the domain.
-
-The contact property specifies a means of contacting the domain holder, or another party that is authorized to approve issuance of certificates for the domain in question.
+The syntax for the contactemail property is similar to the iodef property.  It allows domain owners to publish contact information in DNS in addition to WHOIS for the purpose of validating domain control.
  
-The contact property takes a URL as its parameter.  The following URL scheme type SHOULD be implemented:
- 
-mailto: An SMTP email address where the domain holder or other authorized party can be contacted.
+CAA contactemail Property
 
-Schemes other than "mailto:" MUST NOT be used.
+contactemail <rfc6532emailaddress> :  The contactemail property specifies a means of contacting the domain holder, or another party that is authorized to approve issuance of certificates for the domain in question.
+ 
+The contactemail property takes an email address as its parameter.  The entire parameter value of the MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
 
 The following is an example where the holder of the domain specified the contact property using an email address.
 
 $ORIGIN example.com
 .              CAA 0 issue “ca.example.net”
-.              CAA 0 contact “mailto:domainowner@example.com”
+.              CAA 0 contactemail domainowner@example.com
 
-Support for Legacy Systems
+_caa_contact_email DNS TXT record
 
 Some systems still do not have sufficient support for CAA records.  To allow users of those systems to specify contact information, a legacy format using text records is allowed.
  	 
-The DNS TXT record MUST be placed on the "\_caa_contact" subdomain of the domain being validated.  The DNS record MUST be named "domain-authorization-email".  The value of "domain-authorization-email" MUST contain a valid email address, or it cannot be used.
+The DNS TXT record MUST be placed on the "\_caa_contact_email" subdomain of the domain being validated.  The entire RDATA value of the "\_caa_contact_email" record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
