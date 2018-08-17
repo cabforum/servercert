@@ -1969,7 +1969,7 @@ $ORIGIN example.com
 .              CAA 0 issue “ca.example.net”
 .              CAA 0 contactemail domainowner@example.com
 
-_caa_contact_email DNS TXT record
+\_caa_contact_email DNS TXT record
 
 Some systems still do not have sufficient support for CAA records.  To allow users of those systems to specify contact information, a legacy format using text records is allowed.
  	 
