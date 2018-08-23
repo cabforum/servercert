@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.5.8**
+**Version 1.5.9**
 
-**May 10, 2018**
+**June 14, 2018**
 
 **www.cabforum.org**
 
@@ -109,6 +109,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.5.6 | 218 | Remove validation methods #1 and #5 | 5‐Feb‐2018	 | 9‐Mar‐2018 |
 | 1.5.7 | 220 | Minor Cleanups (Spring 2018) | 30‐Mar‐2018	 | 29‐Apr‐2018 |
 | 1.5.8 | 219 | Clarify handling of CAA Record Sets with no "issue"/"issuewild" property tag | 10-Apr-2018	 | 10-May-2018 |
+| 1.5.9 | 223 | Update BR Section 8.4 for CA audit criteria | 15-May-2018	 | 14-June-2018 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -1713,14 +1714,13 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 ## 8.4 Topics covered by assessment
 The CA SHALL undergo an audit in accordance with one of the following schemes:
 
-1. WebTrust for Certification Authorities v2.0;
-2. A national scheme that audits conformance to ETSI TS 102 042 / ETSI EN 319 411-1; or
-4. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
+1. “WebTrust for CAs v2.0 or newer” AND “WebTrust for CAs SSL Baseline with Network Security v2.2 or newer”; or 
+2. ETSI EN 319 411-1, which includes normative references to ETSI EN 319 401 (the latest version of the referenced ETSI documents should be applied); or
+3. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
 The audit MUST be conducted by a Qualified Auditor, as specified in Section 8.2.
-
 
 For Delegated Third Parties which are not Enterprise RAs, then the CA SHALL obtain an audit report, issued under the auditing standards that underlie the accepted audit schemes found in Section 8.1, that provides an opinion whether the Delegated Third Party's performance complies with either the Delegated Third Party's practice statement or the CA's Certificate Policy and/or Certification Practice Statement. If the opinion is that the Delegated Third Party does not comply, then the CA SHALL not allow the Delegated Third Party to continue performing delegated functions.
 
