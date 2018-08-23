@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.5.9**
+**Version 1.6.0**
 
-**June 14, 2018**
+**June 22, 2018**
 
 **www.cabforum.org**
 
@@ -110,6 +110,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.5.7 | 220 | Minor Cleanups (Spring 2018) | 30‐Mar‐2018	 | 29‐Apr‐2018 |
 | 1.5.8 | 219 | Clarify handling of CAA Record Sets with no "issue"/"issuewild" property tag | 10-Apr-2018	 | 10-May-2018 |
 | 1.5.9 | 223 | Update BR Section 8.4 for CA audit criteria | 15-May-2018	 | 14-June-2018 |
+| 1.6.0 | 224 | WhoIs and RDAP | 22-May-2018	 | 22-June-2018 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -383,6 +384,8 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 **Validity Period**: The period of time measured from the date when the Certificate is issued until the Expiry Date.
 
+**WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
+
 **Wildcard Certificate**: A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
 
 **Wildcard Domain Name**:  A Domain Name consisting of a single asterisk character followed by a single full stop character ("\*.") followed by a Fully-Qualified Domain Name.
@@ -443,6 +446,8 @@ RFC2527, Request for Comments: 2527, Internet X.509 Public Key Infrastructure: C
 
 RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.
 
+RFC3912, Request for Comments: 3912, WHOIS Protocol Specification, Daigle, September 2004.
+
 RFC4366, Request for Comments: 4366, Transport Layer Security (TLS) Extensions, Blake-Wilson, et al, April 2006.
 
 RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments, A. Deacon, et al, September 2007.
@@ -452,6 +457,8 @@ RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: C
 RFC6844, Request for Comments: 6844, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, Stradling, January 2013.
 
 RFC6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. Santesson, Myers, Ankney, Malpani, Galperin, Adams, June 2013.
+
+RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.0, available at http://www.webtrust.org/homepage-documents/item79806.pdf.
 
