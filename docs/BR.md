@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.5.7**
+**Version 1.5.8**
 
-**April 29, 2018**
+**May 10, 2018**
 
 **www.cabforum.org**
 
@@ -108,6 +108,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.5.5 | 217 | Sunset RFC 2527 | 21‐Dec‐2017	 | 9‐Mar‐2018 |
 | 1.5.6 | 218 | Remove validation methods #1 and #5 | 5‐Feb‐2018	 | 9‐Mar‐2018 |
 | 1.5.7 | 220 | Minor Cleanups (Spring 2018) | 30‐Mar‐2018	 | 29‐Apr‐2018 |
+| 1.5.8 | 219 | Clarify handling of CAA Record Sets with no "issue"/"issuewild" property tag | 10-Apr-2018	 | 10-May-2018 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -676,7 +677,7 @@ As part of the issuance process, the CA MUST check for CAA records and follow th
 
 This stipulation does not prevent the CA from checking CAA records at any other time.
 
-When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set.
+When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 6844, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property with this flag set. CAs MAY treat a non-empty CAA Resource Record Set that does not contain any issue property tags (and also does not contain any issuewild property tags when performing CAA processing for a Wildcard Domain Name) as permission to issue, provided that no records in the CAA Resource Record Set otherwise prohibit issuance.
 
 RFC 6844 requires that CAs "MUST NOT issue a certificate unless either (1) the certificate request is consistent with the applicable CAA Resource Record set or (2) an exception specified in the relevant Certificate Policy or Certification Practices Statement applies." For issuances conforming to these Baseline Requirements, CAs MUST NOT rely on any exceptions specified in their CP or CPS unless they are one of the following:
 
