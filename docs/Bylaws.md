@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM** 
 
-**Version 1.7 - Adopted effective as of 6 July 2017**
+**Version 1.8 - Adopted effective as of 21 December 2017**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -106,9 +106,9 @@ The following rules will apply to all ballots, including Draft Guideline Ballots
 
 (b)        Only one vote per Member company shall be accepted; representatives of Affiliates shall not vote.
 
-(c)        A representative of any Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Members in order to proceed. The discussion period then shall take place for at least seven but no more than 14 calendar days before votes are cast.  The proposer of the ballot will designate the length of the discussion period, and each ballot shall clearly state the start and end dates and times (including time zone) for both the discussion period and the voting period.
+(c)        A representative of any Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Members in order to proceed. The discussion period then shall take place for at least seven calendar days before votes are cast. At any time, a new version of the ballot (marked with a distinguishing version number) may be posted by the proposer in the same manner as the original. Once no new version of the ballot has been posted for seven calendar days, the proposer may end the discussion period and start the voting period by reposting the final version of the ballot and clearly indicating that voting is to begin, along with the start and end dates and times (including time zone) for the voting period. The ballot automatically fails if 21 calendar days elapse since the proposer last posted a version of the ballot and the voting period has not been started.
 
-(d)        Upon completion of the discussion period, Members shall have exactly seven calendar days for voting, with the deadline clearly communicated in the ballot and sent via the Public Mail List. All voting will take place via the Public Mail List.   Votes not submitted to the Public Mail List will not be considered valid, and will not be counted for any purpose.
+(d)        Upon commencement of the voting period, Members shall have exactly seven calendar days for voting, with the deadline clearly communicated in the ballot and sent via the Public Mail List. All voting will take place via the Public Mail List.   Votes not submitted to the Public Mail List will not be considered valid, and will not be counted for any purpose.
 
 (e)        Members may vote yes, no, or abstain on a ballot.  Only votes that indicate a clear ‘yes’ or ‘no’ response to the ballot question shall be considered (i.e. votes to abstain and votes that do not indicate a clear ‘yes’ or ‘no’ response will not figure in the calculation of item (f), below).
 
@@ -126,9 +126,9 @@ This section applies to any ballot that proposes a Final Guideline or a Final Ma
 
 (a)        A Draft Guideline Ballot will clearly indicate whether it is proposing a Final Guideline or a Final Maintenance Guideline.  If the Draft Guideline Ballot is proposing a Final Guideline, such ballot will include the full text of the Draft Guideline intended to become a Final Guideline.  If the Draft Guideline Ballot is proposing a Final Maintenance Guideline, such ballot will include a redline or comparison showing the set of changes from the Final Guideline section(s) intended to become a Final Maintenance Guideline, and need not include a copy of the full set of guidelines.  Such redline or comparison shall be made against the Final Guideline section(s) as they exist at the time a ballot is proposed, and need not take into consideration other ballots that may be proposed subsequently, except as provided in Section 2.4(j) below.
 
-(b)        As described in Section 2.3(c), there will be a discussion period of at least seven but no more than 14 calendar days before votes are cast on a Draft Guideline Ballot, with the start and end dates of such discussion period clearly specified in the ballot.
+(b)        As described in Section 2.3(c), there will be a discussion period of at least seven days before votes are cast on a Draft Guideline Ballot, with the start date of such discussion period clearly specified in the ballot. The discussion period shall end and the voting period shall commence also according to the procedure specified in Section 2.3(c).
 
-(c)        As described in Section 2.3(d), upon completion of such discussion period, Members shall have exactly seven calendar days to vote on a Draft Guideline Ballot, with the deadline clearly communicated in the ballot sent via the Public Mail List. All voting will take place via the Public Mail List.  Votes not submitted to the Public Mail List will not be considered valid, and will not be counted for any purpose.  The Chair may send an email to the Public Mail List reminding Members of when the voting period opens and closes.
+(c)        As described in Section 2.3(d), upon commencement of the voting period, Members shall have exactly seven calendar days to vote on a Draft Guideline Ballot, with the deadline clearly communicated in the ballot sent via the Public Mail List. All voting will take place via the Public Mail List.  Votes not submitted to the Public Mail List will not be considered valid, and will not be counted for any purpose.  The Chair may send an email to the Public Mail List reminding Members of when the voting period opens and closes.
 
 (d)        The Forum (via the Chair) will tabulate and announce the results within 3 business days of the close of the initial voting period (the “Initial Vote”).  If the Draft Guidelines Ballot does not pass the Initial Vote, the ballot will stop.
 
