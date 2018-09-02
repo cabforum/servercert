@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM** 
 
-**Version 1.8 - Adopted effective as of 21 December 2017**
+**Version 1.9 - Adopted effective as of 3 July 2018**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -513,7 +513,7 @@ This Working Group will seek to make decisions when there is consensus and with 
 
 7.  IPR Policy  
 
-This Working Group is subject to the CAB Forum Intellectual Rights Policy [v.1.3 Effective [date] 2018] (the “IPR Policy”).
+This Working Group is subject to the CAB Forum Intellectual Rights Policy [v.1.3 Effective July 3, 2018] (the “IPR Policy”).
 To promote the widest adoption of the CAB Forum Guidelines, CAB Forum seeks to issue Final Guidelines and Final Maintenance Guidelines that can be implemented, according to the IPR Policy, on a CAB Forum Royalty-Free License basis.  For information about exclusion of Essential Claims, see Section 4 of the IPR Policy.
 
 8.  About this Charter
