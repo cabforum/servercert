@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM** 
 
-**Version 1.9 - Adopted effective as of 3 July 2018**
+**Version 2.0 - Effective as of September 28, 2018**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -12,7 +12,7 @@
 
 **1.1        Purpose of the Forum:**
 
-The Certification Authority Browser Forum (CA/Browser Forum) is a voluntary gathering of leading Certificate Issuers (as defined in Section 2.1(a)(1) and (2) below and vendors of Internet browser software and other applications that use certificates (Certificate Consumers, as defined in Section 2.1(c) below).
+The Certification Authority Browser Forum (CA/Browser Forum) is a voluntary gathering of leading Certificate Issuers (as defined in Section 2.1(a)(1) and (2) below and vendors of Internet browser software and other applications that use certificates (Certificate Consumers, as defined in Section 2.1(a)(3) below).
 
 Members of the CA/Browser Forum have worked closely together in defining the guidelines and means of implementation for best practices as a way of providing a heightened security for Internet transactions and creating a more intuitive method of displaying secure sites to Internet users.
 
@@ -46,13 +46,13 @@ The Chair will read an antitrust compliance statement at the start of all Forum 
 
 **2.1        Qualifying for Forum Membership**
 
-(a)        All Forum members must participate in at least one Working Group, and meet at least one of the following criteria.
+(a)        All Forum members must participate in at least one CWG (as defined in Section 5.3.1 below), and meet at least one of the following criteria:
 
-(1)        __Certificate Issuer__: The member organization operates a certification authority that has a current and successful WebTrust for CAs audit, or ETSI EN 319 411-1 or ETSI TS 102 042 or ETSI TS 101 456 audit report prepared by a properly-qualified auditor, is a member of a Working Group, and that actively issues certificates to end entities, such certificates being treated as valid by a Certificate Consumer Member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
+(1)        __Certificate Issuer__: The member organization operates a certification authority that has a current and successful WebTrust for CAs audit or ETSI EN 319 411-1 or ETSI TS 102 042 or ETSI TS 101 456 audit report prepared by a properly-qualified auditor, is a member of a CWG, and that actively issues certificates to end entities, such certificates being treated as valid by a Certificate Consumer Member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
 
-(2)        __Root Certificate Issuer__: The member organization operates a certification authority that has a current and successful WebTrust for CAs, or ETSI EN 319 411-1 or ETSI TS 102 042 or ETSI TS 101 456 audit report prepared by a properly-qualified auditor, is a member of a Working Group, and that actively issues certificates to subordinate CAs that, in turn, actively issue certificates to end entities, such certificates being treated as valid by a Certificate Consumer Member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
+(2)        __Root Certificate Issuer__: The member organization operates a certification authority that has a current and successful WebTrust for CAs, or ETSI EN 319 411-1 or ETSI TS 102 042 or ETSI TS 101 456 audit report prepared by a properly-qualified auditor, is a member of a CWG, and that issues certificates to subordinate CAs that, in turn, actively issue certificates to end entities, such certificates being treated as valid by a Certificate Consumer Member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Section 3.1 for a period of time to be designated by the Forum.
 
-(3)        __Cerftificate Consumer__: The member organization produces a software product, such as a browser, intended for use by the general public for relying upon certificates and is a member of a Working Group.
+(3)        __Certificate Consumer__: The member organization produces a software product, such as a browser, intended for use by the general public for relying upon certificates and is a member of a CWG.
 
 (b)        Applicants should supply the following information:
 
@@ -82,12 +82,12 @@ Applicants that qualify as Certificate Issuers or Root Certificate Issuers shoul
 Members may resign from the Forum at any time. Resignation does not prevent a Member from potentially having continuing obligations, under the Forum's IPR Policy or any other document.
 
 (a) Certificate Consumer: A Certificate Consumer Member's membership will automatically cease if any of the following become true:
-1.	it is not a member of any Working Group;
+1.	it is not a member of any CWG;
 2. it stops providing updates for its membership-qualifying software product; or 
 3.	six months have elapsed since the last such published update.
 
 (b) Certificate Issuer or Root Certificate Issuer: A Certificate or Root Certificate Issuer Member's membership may be suspended if any of the following become true:
-1.	it is not a member of any Working Group;
+1.	it is not a member of any CWG;
 2. it fails to pass its membership-qualifying audit;
 3.	its membership-qualifying audit is revoked, rescinded or withdrawn;
 4.	fifteen months have elapsed since the end of the audit period of its last successful membership-qualifying audit; or
@@ -109,11 +109,11 @@ The following rules will apply to all ballots, including Draft Guideline Ballots
 
 (c)        A representative of any Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Members in order to proceed. The discussion period then shall take place for at least seven calendar days before votes are cast. At any time, a new version of the ballot (marked with a distinguishing version number) may be posted by the proposer in the same manner as the original. Once no new version of the ballot has been posted for seven calendar days, the proposer may end the discussion period and start the voting period by reposting the final version of the ballot and clearly indicating that voting is to begin, along with the start and end dates and times (including time zone) for the voting period. The ballot automatically fails if 21 calendar days elapse since the proposer last posted a version of the ballot and the voting period has not been started.
 
-(d)        Upon completion of the discussion period, Members shall have exactly seven calendar days for voting on the proposed ballot, with the deadline clearly communicated in the ballot and sent via the Public Mail List. All voting will take place via the Public Mail List.   Votes not submitted to the Public Mail List by the end of the voting period (as specified in the ballot) will not be considered valid, and will not be counted for any purpose. Each Member, and not the Forum, will be responsible for taking precautions to make sure such Member’s vote is submitted properly and counted.  In the event that a Member’s vote on a ballot is not submitted properly, such vote shall not be valid and shall not be counted for any purpose, and there shall be no appeal, revote (except in the case of a new ballot submitted to all Members) or other recourse.
+(d)        Upon commencement of the voting period, Members shall have exactly seven calendar days for voting on the proposed ballot, with the deadline clearly communicated in the ballot and sent via the Public Mail List. All voting will take place via the Public Mail List.   Votes not submitted to the Public Mail List by the end of the voting period (as specified in the ballot) will not be considered valid, and will not be counted for any purpose. Each Member, and not the Forum, will be responsible for taking precautions to make sure such Member’s vote is submitted properly and counted.  In the event that a Member’s vote on a ballot is not submitted properly, such vote shall not be valid and shall not be counted for any purpose, and there shall be no appeal, revote (except in the case of a new ballot submitted to all Members) or other recourse.
 
 (e)        Members may vote yes, no, or abstain on a ballot.  Only votes that indicate a clear ‘yes’ or ‘no’ response to the ballot question shall be considered (i.e. votes to abstain and votes that do not indicate a clear ‘yes’ or ‘no’ response will not figure in the calculation of item (f), below).
 
-(f)        Members fall into two categories: Certificate Issuers (including Certificate Issuers and Root Certificate Issuers, as defined in Section 2.1(a)(1) and (2) and Certificate Consumers (as defined in Section 2.1(a)(3)). In order for the ballot to be adopted by the Forum, two-thirds or more of the votes cast by the Members in the Certificate Issuer category must be in favor of the ballot, and at least 50% plus one of the votes cast by the Members in the Certificate Consumer category must be in favor of the ballot. At least one Member in each category must vote in favor of a ballot for the ballot to be adopted.
+(f)        Members fall into two categories: Certificate Issuers (including Certificate Issuers and Root Certificate Issuers, as defined in Section 2.1(a)(1) and (2) and Certificate Consumers (as defined in Section 2.1(a)(3)). In order for a ballot to be adopted by the Forum, two-thirds or more of the votes cast by the Members in the Certificate Issuer category must be in favor of the ballot, and at least 50% plus one of the votes cast by the Members in the Certificate Consumer category must be in favor of the ballot. At least one Member in each category must vote in favor of a ballot for the ballot to be adopted.
 
 (g)        A ballot result will be considered valid only when more than half of the number of currently active Members has participated. The number of currently active Members is the average number of Member organizations that have participated in the previous three Forum Meetings and Forum Teleconferences.
 
@@ -125,7 +125,7 @@ The following rules will apply to all ballots, including Draft Guideline Ballots
 
 This section applies to any ballot that proposes a Final Guideline or a Final Maintenance Guideline (a “Draft Guideline Ballot”), all as defined under the Forum’s IPR Policy. Draft Guideline Ballots must comply with the following rules in addition to the requirements set forth in Section 2.3 above.
 
-(a)        A Draft Guideline Ballot will clearly indicate whether it is proposing a Final Guideline or a Final Maintenance Guideline.  If the Draft Guideline Ballot is proposing a Final Guideline, such ballot will include the full text of the Draft Guideline intended to become a Final Guideline. If the Draft Guideline Ballot is proposing a Final Maintenance Guideline, such ballot will include a redline or comparison showing the set of changes from the Final Guideline section(s) intended to become a Final Maintenance Guideline, and need not include a copy of the full set of guidelines. Such redline or comparison shall be made against the Final Guideline section(s) as they exist at the time a ballot is proposed, and need not take into consideration other ballots that may be proposed subsequently, except as provided in Section 2.3(j) below. In the event there is a conflict between the text of a Final Guideline or Final Maintenance Guideline included in a Draft Guideline Ballot (the “Ballot Version”), and the text in the redline/comparison copy of the Final Guideline or Final Maintenance Guideline attached to the Draft Guideline Ballot (the “Redline Version”), the Ballot Version shall in all cases take precedence over the Redline Version. In addition, the Ballot Version shall be the official text used for implementation should the Draft Guideline Ballot pass. If a discrepancy between the Redline Version and the Ballot Version is discovered during the Draft Guideline Ballot discussion or voting periods, a corrected copy of the Redline Version shall be submitted to the Public Mail List for reference; this corrected Redline Version shall not affect the Draft Guideline Ballot text, the discussion period, or the voting period. 
+(a)        A Draft Guideline Ballot will clearly indicate whether it is proposing a Final Guideline or a Final Maintenance Guideline.  If the Draft Guideline Ballot is proposing a Final Guideline, such ballot will include the full text of the Draft Guideline intended to become a Final Guideline. If the Draft Guideline Ballot is proposing a Final Maintenance Guideline, such ballot will include a redline or comparison showing the set of changes from the Final Guideline section(s) intended to become a Final Maintenance Guideline, and need not include a copy of the full set of guidelines. Such redline or comparison shall be made against the Final Guideline section(s) as they exist at the time a ballot is proposed, and need not take into consideration other ballots that may be proposed subsequently, except as provided in Section 2.4(j) below. In the event there is a conflict between the text of a Final Guideline or Final Maintenance Guideline included in a Draft Guideline Ballot (the “Ballot Version”), and the text in the redline/comparison copy of the Final Guideline or Final Maintenance Guideline attached to the Draft Guideline Ballot (the “Redline Version”), the Ballot Version shall in all cases take precedence over the Redline Version. In addition, the Ballot Version shall be the official text used for implementation should the Draft Guideline Ballot pass. If a discrepancy between the Redline Version and the Ballot Version is discovered during the Draft Guideline Ballot discussion or voting periods, a corrected copy of the Redline Version shall be submitted to the Public Mail List for reference; this corrected Redline Version shall not affect the Draft Guideline Ballot text, the discussion period, or the voting period. 
 
 (b)        As described in Section 2.3(c), there will be a discussion period of at least seven days before votes are cast on a Draft Guideline Ballot, with the start date of such discussion period clearly specified in the ballot. The discussion period shall end and the voting period shall commence also according to the procedure specified in Section 2.3(c).
 
@@ -165,11 +165,11 @@ Any person or entity that wishes to participate in the Forum as an Interested Pa
 
 Interested Parties may participate in Forum activities in the following ways:
 
-(a)        By becoming involved in Working Groups,
+(a)        By becoming involved in CWGs,
 
 (b)        By posting to the Public Mail List, and
 
-(c)        By participating in those portions of Forum Teleconferences and Forum Meetings to which they are invited by the Forum Chair relating to their areas of special expertise or the subject of their Working Group participation.
+(c)        By participating in those portions of Forum Teleconferences and Forum Meetings to which they are invited by the Forum Chair relating to their areas of special expertise or the subject of their CWG participation.
 
 Interested Parties are required to comply with the provisions of the IPR Agreement and these Bylaws.  Interested Parties may lose their status as Interested Parties by vote of the Members, in the Members' sole discretion.
 
@@ -193,11 +193,9 @@ No person may serve as Chair for more than a two-year period or be elected to Vi
 
 (c) Manner of holding officer elections:   If a single individual is nominated for a position, the Forum will hold a ballot to confirm appointment of the nominee. For the confirmation ballot, each Member is entitled to a single vote regardless of the number of participating Member representatives or whether the Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. If multiple votes are received from a Member's representatives, the last vote submitted during the voting period is considered the Member's vote.  The single nominee is considered confirmed if a majority of the Members who vote are in favor of the appointment, regardless of the number of votes cast and irrespective of whether 2/3 of the Certificate (or Root Certiticate) Issuers or 1/2 of the Certificate Consumers approve appointment of the nominee.
 
-If more than one candidate is nominated for Chair or Vice Chair, the Forum will announce an election ballot to determine which candidate will fill the position.  Within two weeks after the close of the nomination period, the Chair or Vice Chair will establish an election committee and announce the election ballot on the management mailing list along with the ballot start date, ballot end date, and a description of the voting process.  The Chair or Vice Chair will appoint the election committee by selecting at least two volunteers who have a reputation for independence, preferably individuals without voting rights in the Forum and that participate as Interested Parties.  The election committee is responsible solely for tallying Member votes in connection with the election ballot. The description must include the email address(es) where Members will send their vote, which should be the email addresses of the election committee.
+If more than one candidate is nominated for Chair or Vice Chair, the Forum will announce an election ballot to determine which candidate will fill the position.  Within two weeks after the close of the nomination period, the Chair or Vice Chair will establish an election committee and announce the election ballot on the management mailing list along with the ballot start date, ballot end date, and a description of the voting process.  The Chair or Vice Chair will appoint the election committee by selecting at least two volunteers who have a reputation for independence, preferably individuals without voting rights in the Forum and that participate as Associate Members.  The election committee is responsible solely for tallying Member votes in connection with the election ballot. The description must include the email address(es) where Members will send their vote, which should be the email addresses of the election committee.
 
-For election ballots, each Member is entitled to a single vote regardless of the number of participating Member representatives or whether the Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. If multiple votes are received from a Member's representatives, the last vote submitted during the voting period is considered the Member's vote. Within two weeks after the election ballot closes, the election committee will compile the votes, ensure that only one vote is counted per Member, confirm the results with other members of the election committee, and publish the ballot results by sending an email to the Public Mail List.  The election committee will not include any votes submitted before or after the voting period when compiling the votes. The ballot results email will contain only the following information:
-
-a short description of the ballot purpose, the total number of votes submitted during the ballot period, and the name of the nominee receiving the most votes. The election committee may include other language as necessary to accurately describe the ballot and any concerns the election committee had with the ballot, provided that such language does not disclose how individual Members voted.  The election committee will treat the votes of individual Members as confidential information.  The nominee receiving the most votes is appointed to the applicable position, regardless of the number of votes cast and irrespective of whether 2/3 of the Certificate (or Root Certificate) Issuers CAs or ½ of the Certificate Consumers voted for the nominee. If the election ballot results in a tie among the candidates receiving the most votes, the Chair or Vice Chair will call for another election ballot that includes only the two tying candidates.
+For election ballots, each Member is entitled to a single vote regardless of the number of participating Member representatives or whether the Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. If multiple votes are received from a Member's representatives, the last vote submitted during the voting period is considered the Member's vote. Within two weeks after the election ballot closes, the election committee will compile the votes, ensure that only one vote is counted per Member, confirm the results with other members of the election committee, and publish the ballot results by sending an email to the Public Mail List.  The election committee will not include any votes submitted before or after the voting period when compiling the votes. The ballot results email will contain only the following information: a short description of the ballot purpose, the total number of votes submitted during the ballot period, and the name of the nominee receiving the most votes. The election committee may include other language as necessary to accurately describe the ballot and any concerns the election committee had with the ballot, provided that such language does not disclose how individual Members voted.  The election committee will treat the votes of individual Members as confidential information.  The nominee receiving the most votes is appointed to the applicable position, regardless of the number of votes cast and irrespective of whether 2/3 of the Certificate (or Root Certificate) Issuers or ½ of the Certificate Consumers voted for the nominee. If the election ballot results in a tie among the candidates receiving the most votes, the Chair or Vice Chair will call for another election ballot that includes only the two tying candidates.
 
 (d) Duties:  The Chair and Vice Chair shall exercise their functions in a fair and neutral manner, allowing all Members equal treatment for their comments and proposals, and shall not favor one side over another in any matter (except that the Chair and Vice Chair may indicate their own position during discussion and voting on the matter).  The Chair and Vice Chair shall have no personal liability for any activities of the Forum or its Members or Interested Parties.
 
@@ -209,7 +207,7 @@ Because the Forum has no corporate status, it will not maintain funds or banking
 
 Forum Meetings may be held from time to time upon the voluntary sponsorship of one or more Members.  The sponsor of a Forum Meeting may suggest a fixed cost per meeting participant as reimbursement to the sponsor to cover (a) the cost of meeting rooms and refreshments, and (b) the cost of any meeting dinner or other group activity.  Sponsors will be encouraged to announce any suggested per-participant fixed cost reimbursement amount in advance of the Forum Meeting for participant planning purposes, and will provide a statement or invoice to each participant upon request after the Forum Meeting for submission to the participant's accounting department.  All per-participant reimbursements shall be paid directly to the sponsor.
 
-Interested Parties will not be required to pay anything for their participation in Forum activities, but must cover their own expenses for participation in any Working Group meetings.
+Interested Parties will not be required to pay anything for their participation in Forum activities, but must cover their own expenses for participation in any CWG meetings.
 
 **5.  FORUM ACTIVITIES**
 
@@ -241,25 +239,25 @@ The Chair shall appoint a Webmaster. The Webmaster shall post instructions on th
 
 The following materials shall be posted to the Public Mail List or Public Web Site:
 
-(a)        Draft and final agendas for Working Group meetings, Forum Meetings and Forum Teleconferences (including any sub-groups or committees).
+(a)        Draft and final agendas for LWG and CWG meetings, Forum Meetings and Forum Teleconferences (including any sub-groups or committees).
 
-(b)        Final minutes of Forum Meetings and Forum Teleconferences (including minutes of any sub-groups or committees), and minutes of all Working Group teleconferences and meetings.
+(b)        Final minutes of Forum Meetings and Forum Teleconferences (including minutes of any sub-groups or committees), and minutes of all LWG and CWG teleconferences and meetings.
 
-(c)        Messages formally proposing a Forum ballot (including ballots to establish, extend, modify, or terminate Working Groups), individual votes, vote and quorum counts, and messages announcing ballot outcomes and voting breakdowns.
+(c)        Messages formally proposing a Forum ballot (including ballots to establish, extend, modify, or terminate LWGs (as applicable) abd CWGs), individual votes, vote and quorum counts, and messages announcing ballot outcomes and voting breakdowns.
 
 (d)        Initial and final drafts of Forum requirements, guidelines, and recommendations after the drafter has had an opportunity to receive and respond to initial Member comments.
 
-(e) Initial and final drafts of Working Group charter documents, guidelines, and recommendations after the drafter has had an opportunity to receive and respond to initial Working Group member comments.
+(e) Initial and final drafts of CWG charter documents, guidelines, and recommendations after the drafter has had an opportunity to receive and respond to initial Working Group member comments.
 
 **5.3        Working Groups**
 
-***5.3.1 Formation of Working Groups***
+***5.3.1 Formation of Chartered Working Groups***
 
-(a) Members who desire to form a new Working Group shall propose a charter by ballot pursuant to Section 2.1 above. A Working Group typically consists of Certificate (or Root Certificate) Issuer participants and Certificate Consumer participants, but is not required to include both. A Working Group shall allow for the participation of Interested Parties and Associate Members. 
+(a) Members who desire to form a new "Chartered" Working Group (CWG) shall propose a charter by ballot pursuant to Section 2.3 above. A CWG typically consists of Certificate (or Root Certificate) Issuer participants and Certificate Consumer participants, but is not required to include both. A CWG shall allow for the participation of Interested Parties and Associate Members. 
 
-(b) The charter shall outline the scope of the Working Group’s activities and other important information. A template for Working Group charters is attached to these Bylaws as Exhibit C. A Working Group may deviate from the template, provided that the charter must include at least the following information: 
+(b) The charter shall outline the scope of the CWG's activities and other important information. A template for Working Group charters is attached to these Bylaws as Exhibit C. A Working Group may deviate from the template, provided that the charter must include at least the following information: 
 1)	Scope of the Working Group
-2)	Anticipated Working Group end date
+2)	Anticipated Working Group end date, if any
 3)	Initial chairs and contacts for the Working Group
 4)	Type(s) of Members eligible to participate in the Working Group (e.g., Members, Interested Parties, and Associate Members)
 5)	Voting structure for the WG 
@@ -268,45 +266,47 @@ The following materials shall be posted to the Public Mail List or Public Web Si
 8)	Primary means of communication to be used by the Working Group (see subsection (d) below) 
 9)	Mandatory applicability of the IPR Policy
  
-(c)  After the charter is approved, the Working Group MAY elect a new Working Group Chair by majority vote of the Working Group’s members, or as otherwise specified in the charter. The Working Group Chair will send an invitation to the Public Mail List for an initial Working Group meeting and will solicit eligible Members, Associate Members and Interested Parties (as specified in the charter) with expertise and interest in the Working Group’s subject matter to participate in the Working Group. In order to participate in a Working Group, a party must have agreed to the IPR Policy Agreement and formally declared participation. Each WG Chair shall be responsible for ensuring that all parties attending the respective Working Group meetings have signed the IPR Policy Agreement and have formally declared their participation in the Working Group via the mechanism designated by the Forum prior to attending.
+(c)  After the charter is approved, the CWG MAY elect a new Chair by majority vote of the CWG's members, or as otherwise specified in the charter. The CWG Chair will send an invitation to the Public Mail List for an initial CWG meeting and will solicit eligible Members, Associate Members and Interested Parties (as specified in the charter) with expertise and interest in the CWG’s subject matter to participate in the CWG. In order to participate in a CWG, a party must have agreed to the IPR Policy Agreement and formally declared participation. Each CWG Chair shall be responsible for ensuring that all parties attending the respective CWG meetings have signed the IPR Policy Agreement and have formally declared their participation in the CWG via the mechanism designated by the Forum prior to attending.
 
-(d)  Working Groups may establish their own means for their communications, as provided in the charter, but such means should be managed in the same fashion as the Public Mail List and employed by the Working Group with a similar level of transparency as appropriate to their nature with public archives for written methods of communication.  Working Groups may meet by teleconference or have face-to-face meetings as provided in the charter, but the Forum shall not be responsible for the expenses of any such teleconferences or meetings.
+(d)  Each CWG may establish its own means for their communications, as provided in the charter, but such means should be managed in the same fashion as the Public Mail List and employed by the CWG with a similar level of transparency as appropriate to their nature with public archives for written methods of communication.  CWGs may meet by teleconference or have face-to-face meetings as provided in the charter, but the Forum shall not be responsible for the expenses of any such teleconferences or meetings.
+
+(e)	CWGs may establish any number of subcommittees within its own Working Group to address any of such CWG's business (each, a "Subcommittee"). A CWG-created Subcommittee needs to be approved by the CWG itself according to the approval process set forth in the CWG charter, but approval of the Forum is not necessary.	Subcommittees must exist under an approved CWG.
 
 ***5.3.2 Rechartering, Extending and Dissolving Working Groups***
 
-(a)  Rechartering. Working Groups may only amend their charters via the ballot procedure described in Section 2.3 above. After Forum approval of an amended Working Group charter, the new charter takes effect immediately, or as specified in the amending ballot. This amendment process does not itself require an Interim WG Chair to be appointed, unless specified in the amending ballot.
+(a)  Rechartering. CWGs may only amend their charters via the ballot procedure described in Section 2.3 above. After Forum approval of an amended CWG charter, the new charter takes effect immediately, or as specified in the amending ballot. This amendment process does not itself require an Interim WG Chair to be appointed, unless specified in the amending ballot.
 
-(b)  Extending. Unless extended, a Working Group will expire on the date specified in the charter. To extend a Working Group charter, the Forum Chair may, at the Forum Chair’s discretion, conduct a 14-day poll (yes/no) of the Forum, initiated through the Public List. If no objection is made to the extension during the poll, the extension is deemed approved. If an objection (“no” vote) is made during the poll, an extension shall be determined using the ballot procedure described in Section 2.3 above. This provision may only be used to continue the work of the Working Group under the existing charter and scope.
+(b)  Extending. Unless extended, a CWG will expire on the date specified in its charter, if any. To extend a CWG charter, the Forum Chair may, at the Forum Chair’s discretion, conduct a 14-day poll (yes/no regarding the extension) of the Forum, initiated through the Public List. If no objection is made to the extension during the poll, the extension is deemed approved. If an objection (“no” vote) is made during the poll, an extension shall be determined using the ballot procedure described in Section 2.3 above. This provision may only be used to continue the work of the CWG under the existing charter and scope.
 
 (c) Dissolving. 
-The Forum can dissolve a Working Group via a ballot following the Forum’s regular voting rules in Section 2.3 above. No Working Group may be dissolved prior to its end date without a formal ballot. 
+The Forum can dissolve a CWG via a ballot following the Forum’s regular voting rules in Section 2.3 above. The Forum may not dissolve a CWG prior to the end date specified in its charter, if any, without such a ballot. 
 
 ***5.3.3 Output of Working Groups***
 
-(a)  Working Groups may adopt Final Guidelines and Final Maintenance Guidelines within the scope of their charters and according to the provisions (including voting processes) of the Working Group charter. All Final Guidelines and Final Maintenance Guidelines must be posted on the Public Mail List.
+(a)  CWGs may adopt Final Guidelines and Final Maintenance Guidelines within the scope of their charters and according to the provisions (including voting processes) of the CWG's charter. All Final Guidelines and Final Maintenance Guidelines must be posted on the Public Mail List.
 
-(b)  Final Guidelines and Final Maintenance Guidelines developed by a Working Group do not need to be approved by the Forum at large.  
+(b)  Final Guidelines and Final Maintenance Guidelines developed by a CWG do not need to be approved by the Forum at large.  
 
 ***5.3.4 Legacy Working Groups***
 
-Any legacy Working Groups in existence when this Bylaws v.1.8 is approved by the Forum shall have the option of immediately terminating or continuing in effect without change for 6 months following such approval.  For a legacy a Working Group to continue beyond such 6 months, it must have a charter approved as described in Section 5.3.1 above, as if it was a new Working Group.
+Any "Legacy" Working Groups ("LWG") in existence when this Bylaws v.1.9 was approved by the Forum shall have the option of (a) converting to a Subcommittee under a CWG pursuant to Section 5.3.1(e), (b) immediately terminating, or (c) continuing in effect without change until 3-October-2018. For a LWG to continue beyond such date, it must have a charter approved as described in Section 5.3.1 above, as if it was a new Working Group.
 
 
 **5.4 Forum Teleconferences and Forum Meetings**
 
-From time to time the Forum will hold Forum Teleconferences and Forum Meetings among the Members and Associate Members, who may participate in person or (where feasible) by teleconference.  Interested Parties and others may be invited by the Chair, in the Chair's discretion, to participate in those portions of Forum Teleconferences and Forum Meetings that are relevant to their expertise or their participation in Working Groups.
+From time to time the Forum will hold Forum Teleconferences and Forum Meetings among the Members and Associate Members, who may participate in person or (where feasible) by teleconference.  Interested Parties and others may be invited by the Chair, in the Chair's discretion, to participate in those portions of Forum Teleconferences and Forum Meetings that are relevant to their expertise or their participation in a CWG.
 
 **5.5        IPR policies**
 
-As a requirement for membership, Members must execute and return to the Chair the IPR Agreement attached as Exhibit A before participating in any Working Group.
+As a requirement for membership, Members must execute and return to the Chair the IPR Agreement attached as Exhibit A before participating in any CWG. As the IPR Policy is amended from time to time, Members will be required to execute and return a new IPR Agreement within 90 days of the Forum’s written request; if a Member fails to execute and return the new IPR Agreement within such 90-day period, then the Member's Forum membership shall default to an Associate Membership until the agreement is signed and returned.
 
-As a requirement for participation in any Working Group as an Associate Member or Interested Party, Associate Members and Interested Parties must execute and return to the Chair  the IPR Agreement attached as Exhibit A.
+As a requirement for participation in any CWG as an Associate Member or Interested Party, Associate Members and Interested Parties must execute and return to the Chair  the IPR Agreement attached as Exhibit A before participating in any CWG. As the IPR Policy is amended from time to time, Associate Members and Interested Parties will be required to execute and return a new IPR Agreement within 90 days of the Forum's written request; if an Associated Member or Interested Party fails to execute and return the new IPR Agreement within such 90-day period, its participation in Forum calls, meetings, activities, and events shall be suspended until the agreement is signed and returned.
 
 **6.  MISCELLANEOUS**
 
 **6.1  Posting and Amendment of the Bylaws**
 
-The current Bylaws shall be posted to the Public Web Site.  These Bylaws may be amended by subsequent ballot of the Members.
+The current version of the Bylaws shall be posted to the Public Web Site.  These Bylaws may be amended by subsequent ballot(s) of the Members.
 
 **6.2        Procedure for Dealing with Questions and Comments**
 
@@ -334,7 +334,7 @@ All Members shall abide by the CAB Forum Code of Conduct, which is attached to t
 
 **DEFINITIONS**
 
-**Affiliate:** An entity that directly or indirectly controls, is controlled by or is under common control with, another entity. Control for the purposes of these Bylaws shall mean direct or indirect beneficial ownership of more than fifty percent of the voting stock, or decision-making authority in the event that there is no voting stock, in an entity.
+**Affiliate:** An entity that directly or indirectly controls, is controlled by, or is under common control with, another entity. Control for the purposes of these Bylaws shall mean direct or indirect beneficial ownership of more than fifty percent of the voting stock, or decision-making authority in the event that there is no voting stock, in an entity.
 
 **Forum Meetings:** Face-to-face plenary meetings of Members as scheduled from time to time, and does not include meetings such as Working Group, subgroup, committee, or PAG meetings.
 
@@ -346,9 +346,9 @@ All Members shall abide by the CAB Forum Code of Conduct, which is attached to t
 
 **Member Web Site:** The password-protected web site available only to Members (currently called the CA/Browser Forum Wiki).
 
-**Public Mail List:** The public email list-serv currently located at public@cabforum.org maintained by the Forum for communications by and among Members and Interested Parties.  The Public Mail List may be read by Other Parties, but Other Parties may not post to the Public Mail List.
+**Public Mail List:** The public email list-serv currently located at public@cabforum.org and maintained by the Forum for communications by and among Members and Interested Parties.  The Public Mail List may be read by Other Parties, but Other Parties may not post to the Public Mail List.
 
-**Public Web Site:** The web site available only to Members, Interested Parties, and Other Parties (currently located at [cabforum.org](http://www.cabforum.org/)).  A Forum Member will be appointed as Webmaster and will control all postings to the Public Web Site.
+**Public Web Site:** The web site available only to Members, Interested Parties, and Other Parties (currently located at [cabforum.org](https://www.cabforum.org/)). A Forum Member will be appointed as Webmaster and will control all postings to the Public Web Site.
 
 **Questions Mail List** : The email list-serv currently located at questions@cabforum.org maintained by the Forum for communications from the public to the Forum.
 
@@ -383,6 +383,8 @@ Title: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Participant Organization Name (if entity)
+
+Date: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Exhibit B**
 **CAB Forum Code of Conduct (the "Code")**
@@ -431,7 +433,7 @@ CAB Forum Charter Template
 
 The mission of the [insert name] Working Group is to:
 [Insert short summary of what WG will do.]
-End date: (e.g., December 31, 2017)
+End date: (e.g., December 31, 2019)
 
 Initial Chair(s):
 
@@ -461,7 +463,7 @@ Each WG must meet the following minimum requirements:
 •	[Any other requirements applicable to this specific WG?]
 
 1.4 Out of Scope
-[What is out of for this WG, what are items that this WG will not work on?  For example, solving world hunger, fixing global warming, boiling the ocean]
+[What is out of scope for this WG, what are items that this WG will not work on?  For example, solving world hunger, fixing global warming, boiling the ocean]
 
 2.  Summary of Work
 
