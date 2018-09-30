@@ -12,7 +12,7 @@
 
 **1.1        Purpose of the Forum:**
 
-The Certification Authority Browser Forum (CA/Browser Forum) is a voluntary gathering of leading Certificate Issuers (as defined in Section 2.1(a)(1) and (2) below and vendors of Internet browser software and other applications that use certificates (Certificate Consumers, as defined in Section 2.1(a)(3) below).
+The Certification Authority Browser Forum (CA/Browser Forum) is a voluntary gathering of leading Certificate Issuers (as defined in Section 2.1(a)(1) and (2) below) and vendors of Internet browser software and other applications that use certificates (Certificate Consumers, as defined in Section 2.1(a)(3) below).
 
 Members of the CA/Browser Forum have worked closely together in defining the guidelines and means of implementation for best practices as a way of providing a heightened security for Internet transactions and creating a more intuitive method of displaying secure sites to Internet users.
 
@@ -191,7 +191,7 @@ No person may serve as Chair for more than a two-year period or be elected to Vi
 
 (b) Manner of conducting nominations:   At least sixty (60) days prior to the expiration of the current Chair's term or upon his/her early termination as Chair, the Chair or Vice Chair will announce through the management mailing list that nominations are open for the office of Chair and the Vice Chair will automatically be nominated as the next Chair, but Forum Members may nominate themselves or others to be additional candidates as Chair.  A Vice Chair may decline the nomination to the office of Chair and/or indicate an intent to seek nomination for re-election to the office of Vice Chair.  The nomination period for Chair will last for at least one week but no longer than four weeks.  Upon the close of the nominations for Chair, the nomination period for the office of Vice Chair shall immediately open. The nomination period for Vice Chair will last for at least one week but no longer than four weeks.
 
-(c) Manner of holding officer elections:   If a single individual is nominated for a position, the Forum will hold a ballot to confirm appointment of the nominee. For the confirmation ballot, each Member is entitled to a single vote regardless of the number of participating Member representatives or whether the Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. If multiple votes are received from a Member's representatives, the last vote submitted during the voting period is considered the Member's vote.  The single nominee is considered confirmed if a majority of the Members who vote are in favor of the appointment, regardless of the number of votes cast and irrespective of whether 2/3 of the Certificate (or Root Certiticate) Issuers or 1/2 of the Certificate Consumers approve appointment of the nominee.
+(c) Manner of holding officer elections:   If a single individual is nominated for a position, the Forum will hold a ballot to confirm appointment of the nominee. For the confirmation ballot, each Member is entitled to a single vote regardless of the number of participating Member representatives or whether the Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. If multiple votes are received from a Member's representatives, the last vote submitted during the voting period is considered the Member's vote.  The single nominee is considered confirmed if a majority of the Members who vote are in favor of the appointment, regardless of the number of votes cast and irrespective of whether 2/3 of the Certificate (or Root Certificate) Issuers or 1/2 of the Certificate Consumers approve appointment of the nominee.
 
 If more than one candidate is nominated for Chair or Vice Chair, the Forum will announce an election ballot to determine which candidate will fill the position.  Within two weeks after the close of the nomination period, the Chair or Vice Chair will establish an election committee and announce the election ballot on the management mailing list along with the ballot start date, ballot end date, and a description of the voting process.  The Chair or Vice Chair will appoint the election committee by selecting at least two volunteers who have a reputation for independence, preferably individuals without voting rights in the Forum and that participate as Associate Members.  The election committee is responsible solely for tallying Member votes in connection with the election ballot. The description must include the email address(es) where Members will send their vote, which should be the email addresses of the election committee.
 
@@ -243,7 +243,7 @@ The following materials shall be posted to the Public Mail List or Public Web Si
 
 (b)        Final minutes of Forum Meetings and Forum Teleconferences (including minutes of any sub-groups or committees), and minutes of all LWG and CWG teleconferences and meetings.
 
-(c)        Messages formally proposing a Forum ballot (including ballots to establish, extend, modify, or terminate LWGs (as applicable) abd CWGs), individual votes, vote and quorum counts, and messages announcing ballot outcomes and voting breakdowns.
+(c)        Messages formally proposing a Forum ballot (including ballots to establish, extend, modify, or terminate LWGs (as applicable) and CWGs), individual votes, vote and quorum counts, and messages announcing ballot outcomes and voting breakdowns.
 
 (d)        Initial and final drafts of Forum requirements, guidelines, and recommendations after the drafter has had an opportunity to receive and respond to initial Member comments.
 
@@ -266,7 +266,7 @@ The following materials shall be posted to the Public Mail List or Public Web Si
 8)	Primary means of communication to be used by the Working Group (see subsection (d) below) 
 9)	Mandatory applicability of the IPR Policy
  
-(c)  After the charter is approved, the CWG MAY elect a new Chair by majority vote of the CWG's members, or as otherwise specified in the charter. The CWG Chair will send an invitation to the Public Mail List for an initial CWG meeting and will solicit eligible Members, Associate Members and Interested Parties (as specified in the charter) with expertise and interest in the CWG’s subject matter to participate in the CWG. In order to participate in a CWG, a party must have agreed to the IPR Policy Agreement and formally declared participation. Each CWG Chair shall be responsible for ensuring that all parties attending the respective CWG meetings have signed the IPR Policy Agreement and have formally declared their participation in the CWG via the mechanism designated by the Forum prior to attending.
+(c)  After the charter is approved, the CWG MAY elect a new Chair by majority vote of the CWG's members, or as otherwise specified in the charter. The CWG Chair will send an invitation to the Public Mail List for an initial CWG meeting and will solicit eligible Members, Associate Members and Interested Parties (as specified in the charter) with expertise and interest in the CWG’s subject matter to participate in the CWG. In order to participate in a Working Group, a party must have agreed to the IPR Policy Agreement and formally declared participation. Each CWG Chair shall be responsible for ensuring that all parties attending the respective CWG meetings have signed the IPR Policy Agreement and have formally declared their participation in the CWG via the mechanism designated by the Forum prior to attending.
 
 (d)  Each CWG may establish its own means for their communications, as provided in the charter, but such means should be managed in the same fashion as the Public Mail List and employed by the CWG with a similar level of transparency as appropriate to their nature with public archives for written methods of communication.  CWGs may meet by teleconference or have face-to-face meetings as provided in the charter, but the Forum shall not be responsible for the expenses of any such teleconferences or meetings.
 
@@ -289,7 +289,7 @@ The Forum can dissolve a CWG via a ballot following the Forum’s regular voting
 
 ***5.3.4 Legacy Working Groups***
 
-Any "Legacy" Working Groups ("LWG") in existence when this Bylaws v.1.9 was approved by the Forum shall have the option of (a) converting to a Subcommittee under a CWG pursuant to Section 5.3.1(e), (b) immediately terminating, or (c) continuing in effect without change until 3-October-2018. For a LWG to continue beyond such date, it must have a charter approved as described in Section 5.3.1 above, as if it was a new Working Group.
+Any "Legacy" Working Groups ("LWG") in existence when Bylaws v.1.9 was approved by the Forum shall have the option of (a) converting to a Subcommittee under a CWG pursuant to Section 5.3.1(e), (b) immediately terminating, or (c) continuing in effect without change until 3-October-2018. For an LWG to continue beyond such date, it must have a charter approved as described in Section 5.3.1 above, as if it was a new Working Group.
 
 
 **5.4 Forum Teleconferences and Forum Meetings**
@@ -387,6 +387,7 @@ Participant Organization Name (if entity)
 Date: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Exhibit B**
+
 **CAB Forum Code of Conduct (the "Code")**
 
 The CAB Forum (the "Forum") is comprised of a global group of professionals with differences in language, skills, expertise, experience, and backgrounds.  To maintain a professional and productive environment, it is necessary for Members of the Forum to follow the letter and spirit of this Code.  This Code applies to all official Forum activities, such as meetings, teleconferences, mailing lists, conferences, and other Forum functions.  The Forum is committed to maintaining a professional and respectful environment.
