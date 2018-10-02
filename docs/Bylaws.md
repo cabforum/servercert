@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM** 
 
-**Version 2.0 - Effective as of September 28, 2018**
+**Version 2.1 - Effective as of October 1, 2018**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -48,9 +48,9 @@ The Chair will read an antitrust compliance statement at the start of all Forum 
 
 (a)        All Forum members must participate in at least one CWG (as defined in Section 5.3.1 below), and meet at least one of the following criteria:
 
-(1)        __Certificate Issuer__: The member organization operates a certification authority that has a current and successful WebTrust for CAs audit or ETSI EN 319 411-1 or ETSI TS 102 042 or ETSI TS 101 456 audit report prepared by a properly-qualified auditor, is a member of a CWG, and that actively issues certificates to end entities, such certificates being treated as valid by a Certificate Consumer Member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
+(1)        __Certificate Issuer__: The member organization operates a certification authority that has a current and successful WebTrust for CAs audit or ETSI EN 319 411-1 audit report prepared by a properly-qualified auditor, is a member of a CWG, and that actively issues certificates to end entities, such certificates being treated as valid by a Certificate Consumer Member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Sec. 3.1 for a period of time to be designated by the Forum.
 
-(2)        __Root Certificate Issuer__: The member organization operates a certification authority that has a current and successful WebTrust for CAs, or ETSI EN 319 411-1 or ETSI TS 102 042 or ETSI TS 101 456 audit report prepared by a properly-qualified auditor, is a member of a CWG, and that issues certificates to subordinate CAs that, in turn, actively issue certificates to end entities, such certificates being treated as valid by a Certificate Consumer Member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Section 3.1 for a period of time to be designated by the Forum.
+(2)        __Root Certificate Issuer__: The member organization operates a certification authority that has a current and successful WebTrust for CAs or ETSI EN 319 411-1 audit report prepared by a properly-qualified auditor, is a member of a CWG, and that issues certificates to subordinate CAs that, in turn, actively issue certificates to end entities, such certificates being treated as valid by a Certificate Consumer Member.  Applicants that are not actively issuing certificates but otherwise meet membership criteria may be granted Associate Member status under Bylaw Section 3.1 for a period of time to be designated by the Forum.
 
 (3)        __Certificate Consumer__: The member organization produces a software product, such as a browser, intended for use by the general public for relying upon certificates and is a member of a CWG.
 
