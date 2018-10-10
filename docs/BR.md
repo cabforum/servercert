@@ -648,16 +648,6 @@ The Random Value SHALL be unique in each email. The email MAY be re-sent in its 
 
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
  
-##### 3.2.2.4.14: Domain Owner Email published in TXT record
-
-Confirm the Applicant's control over the FQDN by (i) sending an email to a DNS domain name holder, (ii) including a Random Value in the email, and (iii) receiving a confirming response utilizing the Random Value. The CA MUST send the email to an email address found in the DNS TXT record of the Authorization Domain Name in the format defined in Appendix B.
-
-Each email MAY confirm control of multiple FQDNs, provided the email address used is a DNS contact email address for each ADN being validated.
- 
-The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
-
-Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
 #### 3.2.2.5 Authentication for an IP Address
 For each IP Address listed in a Certificate, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant has control over the IP Address by:
 
@@ -1968,9 +1958,3 @@ The following is an example where the holder of the domain specified the contact
 $ORIGIN example.com
 .              CAA 0 issue “ca.example.net”
 .              CAA 0 contactemail domainowner@example.com
-
-\_caa_contact_email DNS TXT record
-
-Some systems still do not have sufficient support for CAA records.  To allow users of those systems to specify contact information, a legacy format using text records is allowed.
- 	 
-The DNS TXT record MUST be placed on the "\_caa_contact_email" subdomain of the domain being validated.  The entire RDATA value of the "\_caa_contact_email" record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
