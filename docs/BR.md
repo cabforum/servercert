@@ -50,7 +50,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2); and
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3), and
+{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3).
 
 
 ### 1.2.1 Revisions
@@ -1460,7 +1460,7 @@ a. certificatePolicies
     *   certificatePolicies:policyIdentifier (Required)
 
         A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
-        
+
         The following extensions MAY be present:
 
         *   certificatePolicies:policyQualifiers:policyQualifierId (Recommended)
