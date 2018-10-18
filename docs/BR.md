@@ -52,10 +52,6 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3), and
 
-{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) baseline‐ requirements(2) domain-validation-methods(4)} (2.23.140.1.2.4); and
-
-{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) baseline‐ requirements(2) IP-address-validation-methods(5)} (2.23.140.1.2.5). 
-
 
 ### 1.2.1 Revisions
 
@@ -1465,10 +1461,6 @@ a. certificatePolicies
 
         A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
         
-        Required on or after 1-April, 2019: One or more Policy Identifiers that assert every distinct method performed by the CA to validate domain control or ownership of each FQDN contained in the subjectAlternativeName, in the following format:
-    *   2.23.140.1.2.4. concatenated with the subsection number of section 3.2.2.4 corresponding to the domain validation method that was used to validate one or more subjectAlternativeNames in this certificate (e.g. 2.23.140.1.2.4.2'); or,
-    *   2.23.140.1.2.5 concatenated with the subsection number of section 3.2.2.5 corresponding to the IP address validation method that was used to validate one or more subjectAlternativeNames in the certificate (e.g. '2.23.140.1.2.5.1').
-
         The following extensions MAY be present:
 
         *   certificatePolicies:policyQualifiers:policyQualifierId (Recommended)
