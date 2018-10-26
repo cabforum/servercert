@@ -1540,6 +1540,13 @@ Wildcard FQDNs are permitted.
 
 As of the Effective Date of these Requirements, prior to the issuance of a Certificate with a subjectAlternativeName extension or Subject commonName field containing a Reserved IP Address or Internal Name, the CA SHALL notify the Applicant that the use of such Certificates has been deprecated by the CA / Browser Forum and that the practice will be eliminated by October 2016. Also as of the Effective Date, the CA SHALL NOT issue a certificate with an Expiry Date later than 1 November 2015 with a subjectAlternativeName extension or Subject commonName field containing a Reserved IP Address or Internal Name. Effective 1 October 2016, CAs SHALL revoke all unexpired Certificates whose subjectAlternativeName extension or Subject commonName field contains a Reserved IP Address or Internal Name.
 
+Prior to April 1, 2019, certificates containing underscore characters (“_”) in domain labels in DNSName entries MAY be issued as follows:
+* DNSName entries MAY include underscore characters such that replacing all underscore characters with hyphen characters (“-“) would result in a valid domain label, and;
+* Underscore characters MUST NOT be placed in the left most domain label, and;
+* Such certificates MUST NOT be valid for longer than 30 days.
+
+All certificates containing an underscore character in any DNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019.
+
 #### 7.1.4.2.2. Subject Distinguished Name Fields
 a. Certificate Field: subject:commonName (OID 2.5.4.3)
 Required/Optional: Deprecated (Discouraged, but not prohibited)
