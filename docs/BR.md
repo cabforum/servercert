@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.0**
+**Version 1.6.1**
 
-**June 22, 2018**
+**October 14, 2018**
 
 **www.cabforum.org**
 
@@ -111,6 +111,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.5.8 | 219 | Clarify handling of CAA Record Sets with no "issue"/"issuewild" property tag | 10-Apr-2018	 | 10-May-2018 |
 | 1.5.9 | 223 | Update BR Section 8.4 for CA audit criteria | 15-May-2018	 | 14-June-2018 |
 | 1.6.0 | 224 | WhoIs and RDAP | 22-May-2018	 | 22-June-2018 |
+| 1.6.1 | SC6 | Revocation Timeline Extension | 14-Sep-2018	 | 14-Oct-2018 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -284,7 +285,7 @@ No stipulation.
 
 **Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
 
-**Key Compromise**: A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, an unauthorized person has had access to it, or there exists a practical technique by which an unauthorized person may discover its value. A Private Key is also considered compromised if methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys) or if there is clear evidence that the specific method used to generate the Private Key was flawed.
+**Key Compromise**: A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, or an unauthorized person has had access to it.
 
 **Key Generation Script**: A documented plan of procedures for the generation of a CA Key Pair **.**
 
@@ -888,20 +889,24 @@ The CA SHALL revoke a Certificate within 24 hours if one or more of the followin
 
 1. The Subscriber requests in writing that the CA revoke the Certificate;
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization;
-3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise  or no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
-4. The CA obtains evidence that the Certificate was misused;
-5. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
-6. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);
-7. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
-8. The CA is made aware of a material change in the information contained in the Certificate;
-9. The CA is made aware that the Certificate was not issued in accordance with these Requirements or the
-CA's Certificate Policy or Certification Practice Statement;
-10. The CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
-11. The CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
-12. The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
-13. The CA is made aware of a possible compromise of the Private Key of the Subordinate CA used for issuing the Certificate;
-14. Revocation is required by the CA's Certificate Policy and/or Certification Practice Statement; or
-15. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
+3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise;
+4. The CA obtains evidence that the validation of domain authorization or control for any Fully-Qualified Domain Name or IP address in the Certificate should not be relied upon.
+
+The CA SHOULD revoke a certificate within 24 hours and MUST revoke a Certificate within 5 days if one or more of the following occurs:
+
+1. The Certificate no longer complies with the requirements of Sections 6.1.5 and 6.1.6;
+The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
+2. The CA obtains evidence that the Certificate was misused;
+3. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use;
+4. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name, a relevant licensing or services agreement between the Domain Name Registrant and the Applicant has terminated, or the Domain Name Registrant has failed to renew the Domain Name);
+5. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name;
+6. The CA is made aware of a material change in the information contained in the Certificate;
+7. The CA is made aware that the Certificate was not issued in accordance with these Requirements or the CA's Certificate Policy or Certification Practice Statement;
+8. The CA determines or is made aware that any of the information appearing in the Certificate is inaccurate;
+9. The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository;
+10. Revocation is required by the CA's Certificate Policy and/or Certification Practice Statement; or
+11. The CA is made aware of a demonstrated or proven method that exposes the Subscriber's Private Key to compromise, methods have been developed that can easily calculate it based on the Public Key (such as a Debian weak key, see http://wiki.debian.org/SSLkeys), or if there is clear evidence that the specific method used to generate the Private Key was flawed.
+
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
 The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days if one or more of the following occurs:
@@ -913,28 +918,29 @@ The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days i
 5. The Issuing CA is made aware that the Certificate was not issued in accordance with or that Subordinate CA has not complied with this document or the applicable Certificate Policy or Certification Practice Statement;
 6. The Issuing CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
 7. The Issuing CA or Subordinate CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
-8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository;
-9. Revocation is required by the Issuing CA's Certificate Policy and/or Certification Practice Statement; or
-10. The technical content or format of the Certificate presents an unacceptable risk to Application Software Suppliers or Relying Parties (e.g. the CA/Browser Forum might determine that a deprecated cryptographic/signature algorithm or key size presents an unacceptable risk and that such Certificates should be revoked and replaced by CAs within a given period of time).
+8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository; or
+9. Revocation is required by the Issuing CA's Certificate Policy and/or Certification Practice Statement.
 
 ### 4.9.2 Who can request revocation
 The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
 
 ### 4.9.3 Procedure for revocation request
-The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and related inquiries.
+The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and Certificate Problem Reports.
 
-The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means.
+The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in section 1.5.2 of their CPS.
 
 ### 4.9.4 Revocation request grace period
 No stipulation.
 
 ### 4.9.5 Time within which CA must process the revocation request
-The CA SHALL begin investigation of a Certificate Problem Report within twenty-four hours of receipt, and decide whether revocation or other appropriate action is warranted based on at least the following criteria:
+Within 24 hours after receiving a Certificate Problem Report, the CA SHALL investigate the facts and circumstances related to a Certificate Problem Report and provide a preliminary report on its findings to both the Subscriber and the entity who filed the Certificate Problem Report.
+After reviewing the facts and circumstances, the CA SHALL work with the Subscriber and any entity reporting the Certificate Problem Report or other revocation-related notice to establish whether or not the certificate will be revoked, and if so, a date which the CA will revoke the certificate. The period from receipt of the Certificate Problem Report or revocation-related notice to published revocation MUST NOT exceed the time frame set forth in Section 4.9.1.1. The date selected by the CA SHOULD consider the following criteria:
 
-1. The nature of the alleged problem;
-2. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
-3. The entity making the complaint (for example, a complaint from a law enforcement official that a Web site is engaged in illegal activities should carry more weight than a complaint from a consumer alleging that she didn't receive the goods she ordered); and
-4. Relevant legislation.
+1. The nature of the alleged problem (scope, context, severity, magnitude, risk of harm);
+2. The consequences of revocation (direct and collateral impacts to Subscribers and Relying Parties);
+3. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
+4. The entity making the complaint (for example, a complaint from a law enforcement official that a Web site is engaged in illegal activities should carry more weight than a complaint from a consumer alleging that she didn't receive the goods she ordered); and
+5. Relevant legislation.
 
 ### 4.9.6 Revocation checking requirement for relying parties
 No stipulation. 
