@@ -37,7 +37,7 @@ k.	Change authentication keys and passwords for any privileged account or servic
 
 l.	Apply recommended security patches to Certificate Systems within six (6) months of the security patch's availability, unless the CA documents that the security patch would introduce additional vulnerabilities or instabilities that outweigh the benefits of applying the security patch.
 
-# 2.	TRUSTED ROLES, DELEGATED THIRD PARTIES, AND SYSTEM ACCOUNTS 
+# 2. TRUSTED ROLES, DELEGATED THIRD PARTIES, AND SYSTEM ACCOUNTS 
 Each CA or Delegated Third Party SHALL:
 
 a.	Follow a documented procedure for appointing individuals to Trusted Roles and assigning responsibilities to them;
@@ -84,7 +84,7 @@ n.	Enforce Multi-Factor Authentication for all Trusted Role accounts on Certific
 
 o.	Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when: (i) the remote connection originates from a device owned or controlled by the CA or Delegated Third Party, (ii) the remote connection is through a temporary, non-persistent encrypted channel that is  supported by Multi-Factor Authentication, and (iii) the remote connection is made to a designated intermediary device (a) located within the CA’s network, (b) secured in accordance with these Requirements, and (c) that mediates the remote connection to the Issuing System.
 
-# 3.	LOGGING, MONITORING AND ALERTING
+# 3. LOGGING, MONITORING AND ALERTING
  
 Certification Authorities and Delegated Third Parties SHALL:
 
@@ -100,7 +100,7 @@ e.	Conduct a human review of application and system logs at least once a month t
 
 f.	Maintain, archive, and retain logs in accordance with disclosed business practices and applicable legislation.
 
-# 4.	VULNERABILITY DETECTION AND PATCH MANAGEMENT
+# 4. VULNERABILITY DETECTION AND PATCH MANAGEMENT
 
 Certification Authorities and Delegated Third Parties SHALL:
 
