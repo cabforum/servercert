@@ -115,7 +115,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
-### 1.2.2.Relevant Dates
+### 1.2.2. Relevant Dates
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |
@@ -678,7 +678,7 @@ Prior to using any data source as a Reliable Data Source, the CA SHALL evaluate 
 Databases maintained by the CA, its owner, or its affiliated companies do not qualify as a Reliable Data Source if the primary purpose of the database is to collect information for the purpose of fulfilling the validation requirements under this Section 3.2.
 
 
-#### 3.2.2.8.	CAA Records
+#### 3.2.2.8. CAA Records
 
 This section is effective as of 8 September 2017.
 
@@ -1595,7 +1595,7 @@ All other optional attributes, when present within the subject field, MUST conta
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
 
-##### 7.1.4.3.1.	Subject Distinguished Name Fields
+##### 7.1.4.3.1. Subject Distinguished Name Fields
  
 a.  Certificate Field: subject:commonName (OID 2.5.4.3)
 Required/Optional: Required
