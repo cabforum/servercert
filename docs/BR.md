@@ -651,9 +651,9 @@ Note: Once the FQDN has been validated using this method, the CA MAY also issue 
 ##### 3.2.2.4.14: Email to DNS TXT Contact
 
 Confirming the Applicant's control over the FQDN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address identified as a DNS TXT record email contact for
-an Authorization Domain Name.  See Appendix B for the format of the DNS TXT record email contact.
+the Authorization Domain Name selected to validate the FQDN.  See Appendix B for the format of the DNS TXT record email contact.
 
-Each email MAY confirm control of multiple FQDNs, provided that the DNS contactemail email address is the same for each Authorized Domain Name being validated.
+Each email MAY confirm control of multiple FQDNs, provided that the email address from the DNS TXT record is the same for each Authorized Domain Name being validated.
  
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
@@ -1968,13 +1968,13 @@ The CAA contactemail property takes an email address as its parameter.  The enti
 
 The following is an example where the holder of the domain specified the contact property using an email address.
 
-$ORIGIN example.com
-.              CAA 0 contactemail "domainowner@example.com"
+$ORIGIN example.com.
+               CAA 0 contactemail "domainowner@example.com"
 
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
 B.2. DNS TXT Methods
 
-B.2.1. DNS TXT Email Contact
+B.2.1. DNS TXT Record Email Contact
 
 The DNS TXT record MUST be placed on the "_validation-contactemail" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
