@@ -143,7 +143,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2018-05-31 | 2.2 | CP and CPS must follow RFC 3647 format |
 | 2018-08-01 | 3.2.2.4.1 and .5 | CAs must stop using domain validation methods BR 3.2.2.4.1 and 3.2.2.4.5, stop reusing validation data from those methods |
 | 2019-01-15 | 7.1.4.2.1 | All certificates containing an underscore character in any dNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019 |
-| 2019-04-30 | 7.1.4.2.1 | underscore characters (“_”) MUST NOT be present in dNSName entries |
+| 2019-05-01 | 7.1.4.2.1 | underscore characters (“_”) MUST NOT be present in dNSName entries |
 
 ## 1.3 PKI Participants
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
