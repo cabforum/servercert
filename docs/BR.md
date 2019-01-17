@@ -637,10 +637,7 @@ Note: Note: Once the FQDN has been validated using this method, the CA MAY NOT a
 
 ##### 3.2.2.4.9 Test Certificate
 
-Confirming the Applicant's control over the FQDN by confirming the presence of a non-expired Test Certificate issued by the CA on the Authorization Domain Name and which is accessible by the CA via TLS over an Authorized Port for the purpose of issuing a Certificate with the same Public Key as in the Test Certificate.
-
-Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
-
+This method has been retired and MUST NOT be used.
 
 ##### 3.2.2.4.10 TLS Using a Random Number
 
