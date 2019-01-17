@@ -637,7 +637,7 @@ Note: Note: Once the FQDN has been validated using this method, the CA MAY NOT a
 
 ##### 3.2.2.4.9 Test Certificate
 
-This method has been retired and MUST NOT be used.
+This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method may not be used to issue certificates.
 
 ##### 3.2.2.4.10 TLS Using a Random Number
 
