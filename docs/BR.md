@@ -12,13 +12,13 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.2**
+**Version 1.6.3**
 
-**December 10, 2018**
+**February 1, 2019**
 
 **www.cabforum.org**
 
-Copyright 2018 CA/Browser Forum
+Copyright 2019 CA/Browser Forum
 This work is licensed under the Creative Commons Attribution 4.0 International license.
 
 
@@ -113,6 +113,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.6.0 | 224 | WhoIs and RDAP | 22-May-2018	 | 22-June-2018 |
 | 1.6.1 | SC6 | Revocation Timeline Extension | 14-Sep-2018	| 14-Oct-2018 |
 | 1.6.2 | SC12 | Sunset of Underscores in dNSNames | 9-Nov-2018	| 10-Dec-2018 |
+| 1.6.3 | SC13 | CAA Contact Property and Associated E-mail Validation Methods | 25-Dec-2018	| 1-Feb-2019 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -259,6 +260,10 @@ No stipulation.
 **CSPRNG**: A random number generator intended for use in cryptographic system.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA, and whose activities are not within the scope of the appropriate CA audits, to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
+
+**DNS CAA Email Contact**: The email address defined in section B.1.1.
+
+**DNS TXT Record Email Contact**: The email address defined in section B.2.1.
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
@@ -649,6 +654,27 @@ This method has been retired and MUST NOT be used.
 ##### 3.2.2.4.12 Validating Applicant as a Domain Contact
 
 Confirming the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.13: Email to DNS CAA Contact
+
+Confirming the Applicant's control over the FQDN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS CAA Email Contact.  The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 6844 Section 4, as amended by Errata 5065 (Appendix A).
+
+Each email MAY confirm control of multiple FQDNs, provided that each email address is a DNS CAA Email Contact for each Authorization Domain Name being validated.  The same email MAY be sent to multiple recipients as long as all recipients are DNS CAA Email Contacts for each Authorization Domain Name being validated.
+
+The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.14: Email to DNS TXT Contact
+
+Confirming the Applicant's control over the FQDN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address identified as a DNS TXT record email contact for
+the Authorization Domain Name selected to validate the FQDN.  See Appendix B for the format of the DNS TXT record email contact.
+
+Each email MAY confirm control of multiple FQDNs, provided that the email address from the DNS TXT record is the same for each Authorized Domain Name being validated.
+
+The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+
 Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
@@ -1957,4 +1983,27 @@ Corrected Text
 
   To prevent resource exhaustion attacks, CAs SHOULD limit the length of CNAME chains that are accepted. However CAs MUST process CNAME chains that contain 8 or fewer CNAME records.
 
+# APPENDIX B – CAA Contact Tag
 
+These methods allow domain owners to publish contact information in DNS for the purpose of validating domain control.
+
+B.1. CAA Methods
+
+B.1.1. CAA contactemail Property
+
+SYNTAX: contactemail <rfc6532emailaddress> 
+
+The CAA contactemail property takes an email address as its parameter.  The entire parameter value MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
+
+The following is an example where the holder of the domain specified the contact property using an email address.
+
+$ORIGIN example.com.
+               CAA 0 contactemail "domainowner@example.com"
+
+The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
+
+B.2. DNS TXT Methods
+
+B.2.1. DNS TXT Record Email Contact
+
+The DNS TXT record MUST be placed on the "_validation-contactemail" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.

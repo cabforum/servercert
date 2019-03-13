@@ -2,7 +2,7 @@
 
 **NETWORK AND CERTIFICATE SYSTEM SECURITY REQUIREMENTS** 
 
-**Version 1.1 - Adopted on 31 August 2017**
+**Version 1.2 - Effective 15 September 2018**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
