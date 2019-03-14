@@ -1948,6 +1948,7 @@ Any modification to CA practice enabled under this section MUST be discontinued 
 ## 9.17 Other provisions
 
 # APPENDIX A – RFC 6844 Errata 5065
+
 ```
 The following errata report has been held for document update for RFC6844, "DNS Certification Authority Authorization (CAA) Resource Record".
 
