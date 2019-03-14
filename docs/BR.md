@@ -21,6 +21,11 @@
 Copyright 2019 CA/Browser Forum
 This work is licensed under the Creative Commons Attribution 4.0 International license.
 
+# Table of Contents
+{:.no_toc}
+
+{:toc}
+
 
 # 1. INTRODUCTION
 
