@@ -1948,7 +1948,7 @@ Any modification to CA practice enabled under this section MUST be discontinued 
 ## 9.17 Other provisions
 
 # APPENDIX A – RFC 6844 Errata 5065
-
+```
 The following errata report has been held for document update for RFC6844, "DNS Certification Authority Authorization (CAA) Resource Record".
 
 --------------------------------------
@@ -1987,6 +1987,7 @@ Corrected Text
   Note that the search does not include the parent of a target of a CNAME record (except when the CNAME points back to its own path).
 
   To prevent resource exhaustion attacks, CAs SHOULD limit the length of CNAME chains that are accepted. However CAs MUST process CNAME chains that contain 8 or fewer CNAME records.
+```
 
 # APPENDIX B – CAA Contact Tag
 
@@ -2002,8 +2003,10 @@ The CAA contactemail property takes an email address as its parameter.  The enti
 
 The following is an example where the holder of the domain specified the contact property using an email address.
 
+```
 $ORIGIN example.com.
                CAA 0 contactemail "domainowner@example.com"
+```
 
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
