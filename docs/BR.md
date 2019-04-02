@@ -263,6 +263,8 @@ No stipulation.
 
 **DNS CAA Email Contact**: The email address defined in section B.1.1.
 
+**DNS CAA Phone Contact**: The phone number defined in section B.1.2.
+
 **DNS TXT Record Email Contact**: The email address defined in section B.2.1.
 
 **DNS TXT Record Phone Contact**: The phone number defined in section B.2.2.
@@ -675,6 +677,45 @@ Confirming the Applicant's control over the FQDN by sending a Random Value via e
 Each email MAY confirm control of multiple FQDNs, provided that each email address is DNS TXT Record Email Contact for each Authorization Domain Name being validated.  The same email MAY be sent to multiple recipients as long as all recipients are DNS TXT Record Email Contacts for each Authorization Domain Name being validated.
 
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+
+#### 3.2.2.4.15 Phone Contact with Domain Contact
+
+Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+
+In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact. 
+
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated. The Random Value MUST be returned to the CA to approve the request.
+
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
+
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+
+#### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact 
+
+Confirm the Applicant's control over the FQDN by calling the DNS TXT Record Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS TXT Record Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+
+The CA MAY NOT knowingly be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
+
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The Random Value MUST be returned to the CA to approve the request.
+
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
+
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact 
+
+Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+
+The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 6844 Section 4, as amended by Errata 5065 (Appendix A).
+
+The CA MAY NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
+
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The DNS CAA Phone Contact may return the Random Number to the CA via Phone, Email, Fax, or SMS to approve the request. 
+
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
+
+Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+
 
 #### 3.2.2.5 Authentication for an IP Address
 For each IP Address listed in a Certificate, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant has control over the IP Address by:
@@ -2000,6 +2041,19 @@ $ORIGIN example.com.
                CAA 0 contactemail "domainowner@example.com"
 
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
+
+B.1.2. CAA contactphone Property
+
+SYNTAX: contactemail <rfc3966 Global Number> 
+  
+The CAA contactphone property takes a phone number as its parameter.  The entire parameter value of the MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.  Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
+
+The following is an example where the holder of the domain specified the contact property using a phone number.
+
+$ORIGIN example.com.
+    CAA 0 contactphone "+1 (555) 123-4567"
+
+The contactphone property MAY be critical if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
 B.2. DNS TXT Methods
 
