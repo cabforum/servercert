@@ -38,6 +38,11 @@ $if(fontfamily)$
 $else$
 \usepackage{lmodern}
 $endif$
+
+% ----
+\usepackage{graphicx}
+% ----
+
 $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
@@ -291,7 +296,29 @@ $if(has-frontmatter)$
 \frontmatter
 $endif$
 $if(title)$
-\maketitle
+% \maketitle
+
+%-----------------------------------------------------------------
+
+\begin{titlepage}
+	\begin{center}
+	 {\huge\bfseries $title$}
+	 % ----------------------------------------------------------------
+	 \vspace{1cm}
+	 {\Large\bfseries $subtitle$}\\[14pt]
+	 \vspace{2cm}
+	 % {\Large\bfseries $author$}\\[5pt]
+	  % ----------------------------------------------------------------
+	 %\vspace{2cm}
+	\includegraphics[width=0.5\textwidth]{assets/cabforum.png}\\[5pt]
+	{$date$}
+	 \vfill
+	{\small $copyright$}
+	\end{center}
+\end{titlepage}
+
+% ----------------------------------------------------------------
+
 $if(abstract)$
 \begin{abstract}
 	$abstract$
