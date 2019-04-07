@@ -1,14 +1,11 @@
+# Verso
+
 **CA/Browser Forum**
-
-
 
 **Baseline Requirements**
 **for the**
 **Issuance and Management of**
 **Publicly-Trusted Certificates**
-
-
-
 
 **CA/Browser Forum**
 
@@ -20,13 +17,6 @@
 
 Copyright 2019 CA/Browser Forum
 This work is licensed under the Creative Commons Attribution 4.0 International license.
-
-# Table of Contents
-{:.no_toc}
-
-* TOC
-{:toc}
-
 
 # 1. INTRODUCTION
 
