@@ -1,0 +1,13 @@
+---
+title:  Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
+subtitle:  version 1.6.3
+author:
+- CA/Browser Forum
+date: 1 February 2019
+documentclass: scrreprt
+fontfamily: Crimson Pro
+fontsize: 11pt
+monofont: Fira Sans Mono
+geometry:
+  - margin=1in
+---
