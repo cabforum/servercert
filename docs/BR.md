@@ -1949,45 +1949,64 @@ Any modification to CA practice enabled under this section MUST be discontinued 
 
 # APPENDIX A – RFC 6844 Errata 5065
 
-```
 The following errata report has been held for document update for RFC6844, "DNS Certification Authority Authorization (CAA) Resource Record".
 
---------------------------------------
+-----
+
 You may review the report below and at:   http://www.rfc-editor.org/errata/eid5065
 
---------------------------------------
+-----
+
 Status: Held for Document Update
 Type: Technical
 
-Reported by: Phillip Hallam-Baker <philliph@comodo.com> Date Reported: 2017-07-10 Held by: EKR (IESG)
+Reported by: Phillip Hallam-Baker <philliph@comodo.com> 
+Date Reported: 2017-07-10 
+Held by: EKR (IESG)
 
 Section: 4
 
 Original Text
 -------------
-   Let CAA(X) be the record set returned in response to performing a CAA record query on the label X, P(X) be the DNS label immediately above X in the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record specified at the label X.
+```
+   Let CAA(X) be the record set returned in response to performing a CAA 
+   record query on the label X, P(X) be the DNS label immediately above X in 
+   the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record 
+   specified at the label X.
 
    o  If CAA(X) is not empty, R(X) = CAA (X), otherwise
-   o  If A(X) is not null, and R(A(X)) is not empty, then R(X) =  R(A(X)), otherwise
+   o  If A(X) is not null, and R(A(X)) is not empty, then R(X) =  R(A(X)), 
+   otherwise
    o  If X is not a top-level domain, then R(X) = R(P(X)), otherwise
    o  R(X) is empty.
+```
 
 Corrected Text
 --------------
-   Let CAA(X) be the record set returned in response to performing a CAA record query on the label X, P(X) be the DNS label immediately above X in the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record chain specified at the label X.
+```
+   Let CAA(X) be the record set returned in response to performing a CAA 
+   record query on the label X, P(X) be the DNS label immediately above X in 
+   the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record 
+   chain specified at the label X.
 
    o  If CAA(X) is not empty, R(X) = CAA (X), otherwise
-   o  If A(X) is not null, and CAA(A(X)) is not empty, then R(X) =  CAA(A(X)), otherwise
+   o  If A(X) is not null, and CAA(A(X)) is not empty, then R(X) =  CAA(A(X)), 
+   otherwise
    o  If X is not a top-level domain, then R(X) = R(P(X)), otherwise
    o  R(X) is empty.
 
-  Thus, when a search at node X returns a CNAME record, the CA will follow the CNAME record chain to its target. If the target label contains a CAA record, it is returned.
+  Thus, when a search at node X returns a CNAME record, the CA will follow the 
+  CNAME record chain to its target. If the target label contains a CAA record, 
+  it is returned.
 
   Otherwise, the CA continues the search at the parent of node X.
 
-  Note that the search does not include the parent of a target of a CNAME record (except when the CNAME points back to its own path).
+  Note that the search does not include the parent of a target of a CNAME 
+  record (except when the CNAME points back to its own path).
 
-  To prevent resource exhaustion attacks, CAs SHOULD limit the length of CNAME chains that are accepted. However CAs MUST process CNAME chains that contain 8 or fewer CNAME records.
+  To prevent resource exhaustion attacks, CAs SHOULD limit the length of CNAME 
+  chains that are accepted. However CAs MUST process CNAME chains that contain 
+  8 or fewer CNAME records.
 ```
 
 # APPENDIX B – CAA Contact Tag
