@@ -1667,11 +1667,11 @@ A decoded example for issuance to the domain and sub domains of example.com by o
 
 > X509v3 Name Constraints:
 >   Permitted:
-> ​      DNS:example.com
-> ​      DirName: C=US, ST=MA, L=Boston, O=Example LLC
+>     DNS:example.com
+>     DirName: C=US, ST=MA, L=Boston, O=Example LLC
 >   Excluded:
-> ​      IP:0.0.0.0/0.0.0.0
-> ​      IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0
+>     IP:0.0.0.0/0.0.0.0
+>     IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0
 
 If the Subordinate CA is not allowed to issue certificates with dNSNames, then the Subordinate CA Certificate MUST include a zero-length dNSName in excludedSubtrees. Otherwise, the Subordinate CA Certificate MUST include at least one dNSName in permittedSubtrees.
 
