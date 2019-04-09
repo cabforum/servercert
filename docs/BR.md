@@ -445,7 +445,7 @@ ISO 21188:2006, Public key infrastructure for financial services -- Practices an
 
 Network and Certificate System Security Requirements, v.1.0, 1/1/2013.
 
-NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf.
+NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, <http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf>.
 
 RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
 
