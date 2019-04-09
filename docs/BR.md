@@ -1429,16 +1429,20 @@ Certificates MUST be of type X.509 v3.
 This section specifies the additional requirements for Certificate content and extensions for Certificates generated after the Effective Date.
 
 #### 7.1.2.1 Root CA Certificate
-a. basicConstraints
+a. `basicConstraints`
+
 This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field SHOULD NOT be present.
 
-b. keyUsage
+b. `keyUsage`
+
 This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
 
-c. certificatePolicies
+c. `certificatePolicies`
+
 This extension SHOULD NOT be present.
 
-d. extendedKeyUsage
+d. `extendedKeyUsage`
+
 This extension MUST NOT be present.
 
 
