@@ -14,6 +14,8 @@ fontfamily: Crimson Pro
 fontsize: 11pt
 mainfont: Source Serif Pro
 monofont: Source Code Pro
+monofontoptions:
+  - Scale=0.9
 geometry:
   - margin=1in
 linkcolor: NavyBlue
