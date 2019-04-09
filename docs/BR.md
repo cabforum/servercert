@@ -1641,8 +1641,8 @@ b. __Certificate Field:__ `subject:organizationName` (OID 2.5.4.10)
    __Contents:__ This field MUST be present and the contents MUST contain either the Subject CA's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name".
 
 c. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)  
-   `Required/Optional:` Required  
-   `Contents:` This field MUST contain the two‐letter ISO 3166‐1 country code for the country in which the CA's place of business is located.
+   __Required/Optional:__ Required  
+   __Contents:__ This field MUST contain the two‐letter ISO 3166‐1 country code for the country in which the CA's place of business is located.
 
 ### 7.1.5 Name constraints
 For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
