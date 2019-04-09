@@ -1498,56 +1498,55 @@ g. `extkeyUsage` (optional)
 [^**]: Generally Extended Key Usage will only appear within end entity certificates (as highlighted in RFC 5280 (4.2.1.12)), however, Subordinate CAs MAY include the extension to further protect relying parties until the use of the extension is consistent between Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
 
 #### 7.1.2.3 Subscriber Certificate
-a. certificatePolicies
+a. `certificatePolicies`
 
-> This extension MUST be present and SHOULD NOT be marked critical.
->
-> *   certificatePolicies:policyIdentifier (Required)
->
->     A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
->
->     The following extensions MAY be present:
->
->     *   certificatePolicies:policyQualifiers:policyQualifierId (Recommended)
->
->         *   id-qt 1 [RFC 5280].
->
->     *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
->
->         HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
+   This extension MUST be present and SHOULD NOT be marked critical.
 
-b. cRLDistributionPoints
+   *  `certificatePolicies:policyIdentifier` (Required)
 
-> This extension MAY be present. If present, it MUST NOT be marked critical, and it MUST contain the HTTP URL of the CA's CRL service.
+      A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
 
-c. authorityInformationAccess
+   The following extensions MAY be present:
 
-> With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
->
-> The HTTP URL of the Issuing CA's OCSP responder MAY be omitted provided that the Subscriber "staples" OCSP responses for the Certificate in its TLS handshakes [RFC4366].
+   *  `certificatePolicies:policyQualifiers:policyQualifierId` (Recommended)
 
-d. basicConstraints (optional)
+      id-qt 1 [RFC 5280].
 
-> The cA field MUST NOT be true.
+   *  `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Optional)
 
-e. keyUsage (optional)
+      HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
 
-> If present, bit positions for keyCertSign and cRLSign MUST NOT be set.
+b. `cRLDistributionPoints`
 
-f. extKeyUsage (required)
+   This extension MAY be present. If present, it MUST NOT be marked critical, and it MUST contain the HTTP URL of the CA's CRL service.
 
-> Either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present. id-kp-emailProtection [RFC5280] MAY be present. Other values SHOULD NOT be present.
+c. `authorityInformationAccess`
+
+   With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
+
+   The HTTP URL of the Issuing CA's OCSP responder MAY be omitted provided that the Subscriber "staples" OCSP responses for the Certificate in its TLS handshakes [RFC4366].
+
+d. `basicConstraints` (optional)
+
+   The cA field MUST NOT be true.
+
+e. `keyUsage` (optional)
+
+   If present, bit positions for keyCertSign and cRLSign MUST NOT be set.
+
+f. `extKeyUsage` (required)
+
+   Either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present. `id-kp-emailProtection` [RFC5280] MAY be present. Other values SHOULD NOT be present.
 
 #### 7.1.2.4 All Certificates
-All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate.
+All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a `keyUsage` flag, `extendedKeyUsage` value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate.
 
 CAs SHALL NOT issue a Certificate with:
 
 a. Extensions that do not apply in the context of the public Internet (such as an extendedKeyUsage value for a service that is only valid in the context of a privately managed network), unless:
-
-> i. such value falls within an OID arc for which the Applicant demonstrates ownership, or
-> ii. the Applicant can otherwise demonstrate the right to assert the data in a public context; or
-
+   
+   i. such value falls within an OID arc for which the Applicant demonstrates ownership, or
+   ii. the Applicant can otherwise demonstrate the right to assert the data in a public context; or
 
 b. semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA (such as including extendedKeyUsage value for a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
 
