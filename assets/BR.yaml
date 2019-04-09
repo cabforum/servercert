@@ -16,4 +16,5 @@ mainfont: Source Serif Pro
 monofont: Source Code Pro
 geometry:
   - margin=1in
+linkcolor: NavyBlue
 ---
