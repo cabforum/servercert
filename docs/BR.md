@@ -1156,26 +1156,26 @@ The CA SHALL record at least the following events:
 
 1. CA key lifecycle management events, including:
 
-  a. Key generation, backup, storage, recovery, archival, and destruction; and
-  b. Cryptographic device lifecycle management events.
+   a. Key generation, backup, storage, recovery, archival, and destruction; and
+   b. Cryptographic device lifecycle management events.
 
 2. CA and Subscriber Certificate lifecycle management events, including:
 
-  a. Certificate requests, renewal, and re-key requests, and revocation;
-  b. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-  c. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
-  d. Acceptance and rejection of certificate requests; Frequency of Processing Log
-  e. Issuance of Certificates; and
-  f. Generation of Certificate Revocation Lists and OCSP entries.
+   a. Certificate requests, renewal, and re-key requests, and revocation;
+   b. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
+   c. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
+   d. Acceptance and rejection of certificate requests; Frequency of Processing Log
+   e. Issuance of Certificates; and
+   f. Generation of Certificate Revocation Lists and OCSP entries.
 
 3. Security events, including:
 
-  a. Successful and unsuccessful PKI system access attempts;
-  b. PKI and security system actions performed;
-  c. Security profile changes;
-  d. System crashes, hardware failures, and other anomalies;
-  e. Firewall and router activities; and
-  f. Entries to and exits from the CA facility.
+   a. Successful and unsuccessful PKI system access attempts;
+   b. PKI and security system actions performed;
+   c. Security profile changes;
+   d. System crashes, hardware failures, and other anomalies;
+   e. Firewall and router activities; and
+   f. Entries to and exits from the CA facility.
 
 Log entries MUST include the following elements:
 
