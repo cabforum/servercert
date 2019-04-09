@@ -1431,75 +1431,71 @@ This section specifies the additional requirements for Certificate content and e
 #### 7.1.2.1 Root CA Certificate
 a. `basicConstraints`
 
-This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field SHOULD NOT be present.
+   This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field SHOULD NOT be present.
 
 b. `keyUsage`
 
-This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+   This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
 
 c. `certificatePolicies`
 
-This extension SHOULD NOT be present.
+   This extension SHOULD NOT be present.
 
 d. `extendedKeyUsage`
 
-This extension MUST NOT be present.
-
+   This extension MUST NOT be present.
 
 #### 7.1.2.2 Subordinate CA Certificate
 
-a. certificatePolicies
+a. `certificatePolicies`
 
-> This extension MUST be present and SHOULD NOT be marked critical.
->
-> certificatePolicies:policyIdentifier (Required)
->
-> The following fields MAY be present if the Subordinate CA is not an Affiliate of the entity that controls the Root CA.
->
-> certificatePolicies:policyQualifiers:policyQualifierId (Optional)
->
-> *   id-qt 1 [RFC 5280].
->
-> certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
->
-> *   HTTP URL for the Root CA's Certificate Policies, Certification
->     Practice Statement, Relying Party Agreement, or other pointer to
->     online policy information provided by the CA.
+   This extension MUST be present and SHOULD NOT be marked critical.
 
-b. cRLDistributionPoints
+   `certificatePolicies:policyIdentifier` (Required)
 
-This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.
+   The following fields MAY be present if the Subordinate CA is not an Affiliate of the entity that controls the Root CA.
 
-c. authorityInformationAccess
+   * `certificatePolicies:policyQualifiers:policyQualifierId` (Optional)
 
-> With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
->
-> The HTTP URL of the Issuing CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
+     id-qt 1 [RFC 5280].
 
-d. basicConstraints
+   * `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Optional)
 
-> This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MAY be present.
+     HTTP URL for the Root CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the CA.
 
-e. keyUsage
+b. `cRLDistributionPoints`
 
-This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+   This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.
 
-f. nameConstraints (optional)
+c. `authorityInformationAccess`
 
-> If present, this extension SHOULD be marked critical\*.
->
-> \* Non-critical Name Constraints are an exception to RFC 5280 (4.2.1.10), however, they MAY be used until the Name Constraints extension is supported by Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
+   With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (`accessMethod` = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (`accessMethod` = 1.3.6.1.5.5.7.48.2).
 
-g. extkeyUsage (optional)
+   The HTTP URL of the Issuing CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
 
-> For Subordinate CA Certificates to be Technically constrained in line with section 7.1.5, then either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present\*\*.
->
-> Other values MAY be present.
->
-> If present, this extension SHOULD be marked non-critical.
->
-> \*\* Generally Extended Key Usage will only appear within end entity certificates (as highlighted in RFC 5280 (4.2.1.12)), however, Subordinate CAs MAY include the extension to further protect relying parties until the use of the extension is consistent between Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
+d. `basicConstraints`
 
+   This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MAY be present.
+
+e. `keyUsage`
+
+   This extension MUST be present and MUST be marked critical. Bit positions for `keyCertSign` and `cRLSign` MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the `digitalSignature` bit MUST be set.
+
+f. `nameConstraints` (optional)
+
+   If present, this extension SHOULD be marked critical[^*].
+
+[^*]: Non-critical Name Constraints are an exception to RFC 5280 (4.2.1.10), however, they MAY be used until the Name Constraints extension is supported by Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
+
+g. `extkeyUsage` (optional)
+
+   For Subordinate CA Certificates to be Technically constrained in line with section 7.1.5, then either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present[^**].
+
+   Other values MAY be present.
+
+   If present, this extension SHOULD be marked non-critical.
+
+[^**]: Generally Extended Key Usage will only appear within end entity certificates (as highlighted in RFC 5280 (4.2.1.12)), however, Subordinate CAs MAY include the extension to further protect relying parties until the use of the extension is consistent between Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
 
 #### 7.1.2.3 Subscriber Certificate
 a. certificatePolicies
