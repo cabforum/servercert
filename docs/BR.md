@@ -412,7 +412,6 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | **Acronym** | **Meaning** |
 | --- | --- |
 | AICPA | American Institute of Certified Public Accountants |
-| ADN | Authorization Doman Name |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
