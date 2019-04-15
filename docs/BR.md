@@ -143,9 +143,9 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2018-08-01 | 3.2.2.4.1 and .5 | CAs must stop using domain validation methods BR 3.2.2.4.1 and 3.2.2.4.5, stop reusing validation data from those methods |
 | 2019-01-15 | 7.1.4.2.1 | All certificates containing an underscore character in any dNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019 |
 | 2019-05-01 | 7.1.4.2.1 | underscore characters (“_”) MUST NOT be present in dNSName entries |
-|2019-06-01	| 3.2.2.4.3	| CAs SHALL NOT perform validations using this method after May 31, 2019.  Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.
-|2019-08-01	| 3.2.2.5	| CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address |
-|2019-08-01	| 3.2.2.5.4	| CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
+| 2019-06-01	| 3.2.2.4.3	| CAs SHALL NOT perform validations using this method after May 31, 2019.  Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.
+| 2019-08-01	| 3.2.2.5	| CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address |
+| 2019-08-01	| 3.2.2.5.4	| CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
 
 ## 1.3 PKI Participants
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
@@ -621,9 +621,17 @@ Confirming the Applicant's control over the FQDN by confirming one of the follow
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 4.2.1 of these Guidelines or Section 11.14.3 of the EV Guidelines).
 
-**Note:** Examples of Request Tokens include, but are not limited to: (i) a hash of the public key; (ii) a hash of the Subject Public Key Info [X.509]; and (iii) a hash of a PKCS#10 CSR. A Request Token may also be concatenated with a timestamp or other data. If a CA wanted to always use a hash of a PKCS#10 CSR as a Request Token and did not want to incorporate a timestamp and did want to allow certificate key re-use then the applicant might use the challenge password in the creation of a CSR with OpenSSL to ensure uniqueness even if the subject and key are identical between subsequent requests. This simplistic shell command produces a Request Token which has a timestamp and a hash of a CSR. E.g. echo date -u +%Y%m%d%H%M sha256sum <r2.csr \| sed "s/[ -]//g" The script outputs: 201602251811c9c863405fe7675a3988b97664ea6baf442019e4e52fa335f406f7c5f26cf14f The CA should define in its CPS (or in a document referenced from the CPS) the format of Request Tokens it accepts.
+**Note:** Examples of Request Tokens include, but are not limited to: (i) a hash of the public key; (ii) a hash of the Subject Public Key Info [X.509]; and (iii) a hash of a PKCS#10 CSR. A Request Token may also be concatenated with a timestamp or other data. If a CA wanted to always use a hash of a PKCS#10 CSR as a Request Token and did not want to incorporate a timestamp and did want to allow certificate key re-use then the applicant might use the challenge password in the creation of a CSR with OpenSSL to ensure uniqueness even if the subject and key are identical between subsequent requests. This simplistic shell command produces a Request Token which includes a timestamp and the hash of a CSR file called `r2.csr`:
 
-Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+`echo date -u +%Y%m%d%H%M sha256sum < r2.csr \| sed "s/[ -]//g"`
+
+The script outputs:
+
+`201602251811c9c863405fe7675a3988b97664ea6baf442019e4e52fa335f406f7c5f26cf14f`
+
+The CA should define in its CPS (or in a document referenced from the CPS) the format of Request Tokens it accepts.
+
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.7 DNS Change
 
@@ -636,7 +644,8 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the Cer
 ##### 3.2.2.4.8 IP Address
 
 Confirming the Applicant's control over the FQDN by confirming that the Applicant controls an IP address returned from a DNS lookup for A or AAAA records for the FQDN in accordance with section 3.2.2.5.
-Note: Once the FQDN has been validated using this method, the CA MAY NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method.  This method is NOT suitable for validating Wildcard Domain Names.
+
+**Note:** Once the FQDN has been validated using this method, the CA MAY NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method.  This method is NOT suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.9 Test Certificate
 
@@ -653,7 +662,8 @@ This method has been retired and MUST NOT be used.
 ##### 3.2.2.4.12 Validating Applicant as a Domain Contact
 
 Confirming the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
-Note: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.13: Email to DNS CAA Contact
 
@@ -853,9 +863,8 @@ Applicant information MUST include, but not be limited to, at least one Fully-Qu
 
 Section 6.3.2 limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in Section 3.2 to verify certificate information, or may reuse previous validations themselves, provided that:
 
-> (1)	Prior to March 1, 2018, the CA obtained the data or document from a source specified under Section 3.2 or completed the validation itself no more than 39 months prior to issuing the Certificate; and
->
-> (2)	On or after March 1, 2018, the CA obtained the data or document from a source specified under Section 3.2 or completed the validation itself no more than 825 days prior to issuing the Certificate.
+1. Prior to March 1, 2018, the CA obtained the data or document from a source specified under Section 3.2 or completed the validation itself no more than 39 months prior to issuing the Certificate; and
+2. On or after March 1, 2018, the CA obtained the data or document from a source specified under Section 3.2 or completed the validation itself no more than 825 days prior to issuing the Certificate.
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
@@ -2085,7 +2094,7 @@ B.2. DNS TXT Methods
 
 B.2.1. DNS TXT Record Email Contact
 
-The DNS TXT record MUST be placed on the "_validation-contactemail" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
+The DNS TXT record MUST be placed on the "`_validation-contactemail`" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
 
 B.2.2. DNS TXT Record Phone Contact
-The DNS TXT record MUST be placed on the "_validation-contactphone" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
+The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
