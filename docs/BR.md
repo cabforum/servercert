@@ -1622,7 +1622,7 @@ Effective 1 January 2016, CAs MUST NOT issue any new Subscriber certificates or 
 
 Effective 16 January 2015, CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017 because Application Software Providers are in the process of deprecating and/or removing the SHA-1 algorithm from their software, and they have communicated that CAs and Subscribers using such certificates do so at their own risk.
 
-### 7.1.4 Name forms
+### 7.1.4 Name Forms
 
 #### 7.1.4.1 Issuing CA Certificate Subject
 The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
