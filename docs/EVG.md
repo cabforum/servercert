@@ -439,7 +439,7 @@ Subject to the requirements of these Guidelines, the EV Certificate and certific
 
 ### 9.2.1.  Subject Organization Name Field
 
-**Certificate field:** subject:organizationName (OID 2.5.4.10 )
+**Certificate field:** _subject:organizationName_ (OID 2.5.4.10)
 
 **Required/Optional:** Required
 
@@ -453,7 +453,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 ### 9.2.2.  Subject Common Name Field
 
-**Certificate field:**  subject:commonName (OID:  2.5.4.3)
+**Certificate field:**  _subject:commonName_ (OID:  2.5.4.3)
 
 **Required/Optional:**  Deprecated (Discouraged, but not prohibited)
 
@@ -489,7 +489,7 @@ Country:
 
 ### 9.2.5.  Subject Registration Number Field
 
-**Certificate field:**    Subject:serialNumber (OID:  2.5.4.5)
+**Certificate field:**    _subject:serialNumber_ (OID:  2.5.4.5)
 
 **Required/Optional:**    Required
 
@@ -503,15 +503,15 @@ For Business Entities, the Registration Number that was received by the Business
 
 **Certificate fields:**
 
-Number and street: subject:streetAddress (OID:  2.5.4.9)
+Number and street: _subject:streetAddress_ (OID:  2.5.4.9)
 
-City or town: subject:localityName (OID:  2.5.4.7)
+City or town: _subject:localityName_ (OID:  2.5.4.7)
 
-State or province (where applicable): subject:stateOrProvinceName (OID:  2.5.4.8)
+State or province (where applicable): _subject:stateOrProvinceName_ (OID:  2.5.4.8)
 
-Country: subject:countryName (OID:  2.5.4.6)
+Country: _subject:countryName_ (OID:  2.5.4.6)
 
-Postal code: subject:postalCode (OID:  2.5.4.17)
+Postal code: _subject:postalCode_ (OID:  2.5.4.17)
 
 **Required/Optional:**   As stated in Section 7.1.4.2.2 d, e, f, g and h of the Baseline Requirements.
 
@@ -519,7 +519,7 @@ Postal code: subject:postalCode (OID:  2.5.4.17)
 
 ### 9.2.7. Subject Organizational Unit Name Field
 
-**Certificate field:** subject:organizationalUnitName (OID 2.5.4.11)
+**Certificate field:** _subject:organizationalUnitName_ (OID 2.5.4.11)
 
 **Required/Optional:** Optional
 
@@ -527,7 +527,7 @@ Postal code: subject:postalCode (OID:  2.5.4.17)
 
 ### 9.2.8. Subject Organization Identifier Field
 
-**Certificate field:** subject:organizationIdentifier (OID: 2.5.4.97)
+**Certificate field:** _subject:organizationIdentifier_ (OID: 2.5.4.97)
 
 **Required/Optional:** Optional
 
@@ -543,6 +543,8 @@ The Registration Scheme MUST be identified using the using the following structu
 * a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8));
 * (optional) 2-8 character Registration Reference provider without country code (A-Z uppercase only, no separator) as registrationReferenceProvider, followed by a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)); 
 * Registration Reference allocated in accordance with the identified Registration Scheme
+
+To avoid parsing ambiguities, the Registration Reference MUST NOT contain a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)).
 
 As in section 9.2.4, the specified location information MUST match the scope of the registration being referenced.
 
@@ -641,11 +643,15 @@ Otherwise, it MAY contain the anyPolicy identifier.
 
 (4)  The cRLDistribution Point extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an authorityInformationAccess extension.
 
-## 9.8 Certificate Extensions
+## 9.8. Certificate Extensions
+
+The extensions listed in the Section 9.8 are recommended for maximum interoperability between certificates and browsers / applications, but are not mandatory on the CAs except where indicated as “Required”.  CAs may use other extensions that are not listed in this Section 9.8, but are encouraged to add them to this section by ballot from time to time to help increase externsion standardization across the industry.  
+
+If a CA includes an extension in a certificate that has a Certificate field which is named in this Section 9.8, the CA must follow the format specified in that subjection.  However, no extension or extension format shall be mandatory on a CA unless specifically stated as “Required” in the subsection that describes the extension.
 
 ### 9.8.1.  Subject Alternative Name Extension
 
-**Certificate field:**  subjectAltName:dNSName
+**Certificate field:**  _subjectAltName:dNSName_
 
 **Required/Optional:**  Required
 
@@ -653,7 +659,7 @@ Otherwise, it MAY contain the anyPolicy identifier.
 
 ### 9.8.2 CA/Browser Form Organization Identifier Extension
 
-**Extension Name:** cabfOrganizationIdentifier (OID: 2.23.140.3.1)
+**Extension Name:** _cabfOrganizationIdentifier_ (OID: 2.23.140.3.1)
 
 **Verbose OID:** {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }
               
@@ -678,7 +684,7 @@ The Registration Scheme MUST be encoded as described by the following ASN.1 gram
 >            registrationReference UTF8String
 >        }
 
-where the subfields have the same meanings and restrictions described in Section 9.2.9. The CA SHALL validate the contents using the requirements in Section 9.2.9.
+where the subfields have the same meanings and restrictions described in Section 9.2.8. The CA SHALL validate the contents using the requirements in Section 9.2.8.
 
 # 10. EV Certificate Request Requirements
 
