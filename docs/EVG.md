@@ -541,10 +541,9 @@ The Registration Scheme MUST be identified using the using the following structu
 * 2 character ISO 3166 country code for the nation in which the Registration Scheme is operated, or if the scheme is operated globally ISO 3166 code "XG" shall be used;
 * For the NTR Registration Scheme identifier, if required under Section 9.2.4, a 2 character ISO 3166-2 identifier for the subdivision (state or province) of the nation in which the Registration Scheme is operated, preceded by plus "+" (0x2B (ASCII), U+002B (UTF-8));
 * a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8));
-* (optional) 2-8 character Registration Reference provider without country code (A-Z uppercase only, no separator) as registrationReferenceProvider, followed by a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)); 
 * Registration Reference allocated in accordance with the identified Registration Scheme
 
-To avoid parsing ambiguities, the Registration Reference MUST NOT contain a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)).
+Note: Registration References MAY contain hyphens, but Registration Schemes, ISO 3166 country codes, and ISO 3166-2 identifiers do not.  Therefore if more than one hyphen appears in the structure, the leftmost hyphen is a separator, and the remaining hyphens are part of the Registration Reference.
 
 As in section 9.2.4, the specified location information MUST match the scope of the registration being referenced.
 
@@ -552,7 +551,6 @@ Examples:
 
 * NTRGB-12345678 (NTR scheme, Great Britain, Unique Identifier at Country level is 12345678)
 * NTRUS+CA-12345678 (NTR Scheme, United States - California, Unique identifier at State level is 12345678)
-* NTRJP-ABCDEF-12345678 (NTR Scheme, Japan, Registration Reference provider is ABCDEF, Unique Identifier at Country level is 12345678)
 * VATDE-123456789 (VAT Scheme, Germany, Unique Identifier at Country Level is 12345678)
 * PSDBE-NBB-1234.567.890 (PSD Scheme, Belgium, NCA's identifier is NBB, Subject Unique Identifier assigned by the NCA is 1234.567.890)
 
@@ -680,7 +678,6 @@ The Registration Scheme MUST be encoded as described by the following ASN.1 gram
 >            registrationSchemeIdentifier PrintableString (SIZE(3)),
 >            registrationCountry PrintableString (SIZE(2)),
 >            registrationStateOrProvince [0] IMPLICIT PrintableString OPTIONAL (SIZE(0..128)),
->            registrationReferenceProvider PrintableString (SIZE(0..8)),
 >            registrationReference UTF8String
 >        }
 
@@ -1840,19 +1837,19 @@ The following Registration Schemes are currently recognised as valid under these
 guidelines:
 
 **NTR**: The information carried in this field shall be the same as held in Subject 
-   Registration Number Field as specified in 9.2.6 and the country code used in 
+   Registration Number Field as specified in 9.2.5 and the country code used in 
    the Registration Scheme identifier shall match that of the subject’s jurisdiction 
-   as specified in Section 9.2.5.
+   as specified in Section 9.2.4.
 
-   Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.5 
+   Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 
    includes more than the country code, the additional locality information shall
    be included as specified in sections 9.2.8 and/or 9.8.1.
 
 **VAT**: Reference allocated by the national tax authorities to a Legal Entity. This 
    information shall be validated using information provided by the national tax 
    authority against the organisation as identified by the Subject Organization 
-   Name Field (see 9.2.1) and Subject Registration Number Field (see 9.2.6) within 
-   the context of the subject’s jurisdiction as specified in Section 9.2.5.
+   Name Field (see 9.2.1) and Subject Registration Number Field (see 9.2.5) within 
+   the context of the subject’s jurisdiction as specified in Section 9.2.4.
    
 **PSD**: Authorization number as specified in ETSI TS 119 495 clause 4.4 allocated to a 
    payment service provider and containing the information as specified in 
@@ -1862,7 +1859,7 @@ guidelines:
    purpose.  This information SHALL be validated by being matched directly or indirectly 
    (for example, by matching a globally unique registration number) against the 
    organisation as identified by the Subject Organization Name Field (see 9.2.1) and 
-   Subject Registration Number Field (see 9.2.6) within the context of the subject’s 
-   jurisdiction as specified in Section 9.2.5.  The stated address of the organisation 
+   Subject Registration Number Field (see 9.2.5) within the context of the subject’s 
+   jurisdiction as specified in Section 9.2.4.  The stated address of the organisation 
    combined with the organization name SHALL NOT be the only information used to 
    disambiguate the organisation.
