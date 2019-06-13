@@ -2,3 +2,4 @@ docs/*.pdf
 docs/*.html
 output/*
 !output/Makefile
+.DS_Store
