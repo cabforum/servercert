@@ -1517,7 +1517,7 @@ a. certificatePolicies
 >
 > certificatePolicies:policyQualifiers:policyQualifierId (Optional)
 >
-> *   id-qt 1 [RFC 5280].
+> *   id-qt-cps [RFC 5280].
 >
 > certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
 >
@@ -1567,15 +1567,15 @@ a. certificatePolicies
 >
 > *   certificatePolicies:policyIdentifier (Required)
 >
->     A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
+>     A Policy Identifier that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
 >
->     The following extensions MAY be present:
+>     The following fields MAY be present:
 >
 >     *   certificatePolicies:policyQualifiers:policyQualifierId (Recommended)
 >
->         *   id-qt 1 [RFC 5280].
+>         *   id-qt-cps [RFC 5280].
 >
->     *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
+>     *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Recommended)
 >
 >         HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
 
@@ -1739,8 +1739,9 @@ If the Subordinate CA is not allowed to issue certificates with dNSNames, then t
 
 ### 7.1.6 Certificate policy object identifier
 
-#### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
+
+#### 7.1.6.1. Reserved Certificate Policy Identifiers
 
 The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with these Requirements as follows:
 
@@ -1765,13 +1766,13 @@ A Certificate issued after the Effective Date to a Subordinate CA that is not an
 
 A Certificate issued after the Effective Date to a Subordinate CA that is an affiliate of the Issuing CA:
 
-1. MAY include the CA/Browser Forum reserved identifiers or an identifier defined by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Subordinate CA's compliance with these Requirements and
+1. MAY include one or more explicit policy identifiers that indicates the Subordinate CA's adherence to and compliance with these Requirements (i.e. either the CA/Browser Forum reserved identifiers or identifiers defined by the CA in its Certificate Policy and/or Certification Practice Statement) and
 2. MAY contain the "anyPolicy" identifier (2.5.29.32.0) in place of an explicit policy identifier.
 
 A Subordinate CA SHALL represent, in its Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
-A Certificate issued to a Subscriber MUST contain one or more policy identifier(s), defined by the Issuing CA, in the Certificate's certificatePolicies extension that indicates adherence to and compliance with these Requirements. CAs complying with these Requirements MAY also assert one of the reserved policy OIDs in such Certificates.
+A Certificate issued to a Subscriber MUST include one or more explicit policy identifiers that indicates the subscriber certificate's adherence to and compliance with these Requirements (i.e. either the CA/Browser Forum reserved identifiers or identifiers defined by the CA in its Certificate Policy and/or Certification Practice Statement).
 
 The issuing CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Requirements.
 
