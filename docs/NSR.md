@@ -2,7 +2,7 @@
 
 **NETWORK AND CERTIFICATE SYSTEM SECURITY REQUIREMENTS** 
 
-**Version 1.1 - Adopted on 31 August 2017**
+**Version 1.2 - Effective 15 September 2018**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -31,13 +31,13 @@ h.	Review configurations of Issuing Systems, Certificate Management Systems, Sec
 
 i.	Grant administration access to Certificate Systems only to persons acting in Trusted Roles and require their accountability for the Certificate System’s security;
 
-j.	Implement multi-factor authentication to each component of the Certificate System that supports multi-factor authentication (but see subsection 2.n.(ii) below);
+j.	Implement Multi-Factor Authentication to each component of the Certificate System that supports Multi-Factor Authentication;
 
 k.	Change authentication keys and passwords for any privileged account or service account on a Certificate System whenever a person’s authorization to administratively access that account on the Certificate System is changed or revoked; and
 
 l.	Apply recommended security patches to Certificate Systems within six (6) months of the security patch's availability, unless the CA documents that the security patch would introduce additional vulnerabilities or instabilities that outweigh the benefits of applying the security patch.
 
-# 2.	TRUSTED ROLES, DELEGATED THIRD PARTIES, AND SYSTEM ACCOUNTS 
+# 2. TRUSTED ROLES, DELEGATED THIRD PARTIES, AND SYSTEM ACCOUNTS 
 Each CA or Delegated Third Party SHALL:
 
 a.	Follow a documented procedure for appointing individuals to Trusted Roles and assigning responsibilities to them;
@@ -50,33 +50,41 @@ d.	Ensure that an individual in a Trusted Role acts only within the scope of suc
 
 e.	Require employees and contractors to observe the principle of “least privilege” when accessing, or when configuring access privileges on, Certificate Systems;
 
-f.	Require that each individual in a Trusted Role use a unique credential created by or assigned to that person in order to authenticate to Certificate Systems; 
+f.	Require that each individual in a Trusted Role use a unique credential created by or assigned to that person in order to authenticate to Certificate Systems (for accountability purposes, group accounts or shared role credentials SHALL NOT be used);
 
 g.	If an authentication control used by a Trusted Role is a username and password, then, where technically feasible, implement the following controls:
 
-    i.	For accounts that are not publicly accessible (accessible only within Secure Zones or High Security Zones), require that passwords have at least twelve (12) characters;
+    i.	For accounts that are accessible only within Secure Zones or High Security Zones, require that passwords have at least twelve (12) characters;
      
-    ii.	For accounts that are accessible from outside a Secure Zone or High Security Zone, require that passwords have at least eight (8) characters, be changed at least every three (3) months, use a combination of at least numeric and alphabetic characters, that are not a dictionary word or on a list of previously disclosed human-generated passwords, and not be one of the user's previous four (4) passwords; and implement account lockout for failed access attempts in accordance with subsection k; OR
+    ii.	For authentications which cross a zone boundary into a Secure Zone or High Security Zone, require Multi-Factor Authentication. For accounts accessible from outside a Secure Zone or High Security Zone require passwords that have at least eight (8) characters and are not be one of the user's previous four (4) passwords; and implement account lockout for failed access attempts in accordance with subsection k;
     
-    iii.	Implement a documented password management and account lockout policy that the CA has determined provide at least the same amount of protection against password guessing as the foregoing controls. 
+    iii. When developing password policies, CAs SHOULD take into account the password guidance in NIST 800-63B Appendix A. 
     
-h.	Require Trusted Roles to log out of or lock workstations when no longer in use;
+    iv. Frequent password changes have been shown to cause users to select less secure passwords. If the CA has any policy that specifies routine periodic password changes, that period SHOULD NOT be less than two years. Effective April 1, 2020, if the CA has any policy that requires routine periodic password changes, that period SHALL NOT be less than two years.
+    
+h.	Have a policy that requires Trusted Roles to log out of or lock workstations when no longer in use;
 
-i.	Configure workstations with inactivity time-outs that log the user off or lock the workstation after a set time of inactivity without input from the user  (the CA or Delegated Third Party MAY allow a workstation to remain active and unattended if the workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time-out or system lock);
+i.	Have a procedure to configure workstations with inactivity time-outs that log the user off or lock the workstation after a set time of inactivity without input from the user  (the CA or Delegated Third Party MAY allow a workstation to remain active and unattended if the workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time-out or system lock);
 
 j.	Review all system accounts at least every three (3) months and deactivate any accounts that are no longer necessary for operations; 
 
-k.	Lockout account access to Certificate Systems after no more than five (5) failed access attempts, provided that this security measure is supported by the Certificate System and does not weaken the security of this authentication control;
+k.	Lockout account access to Certificate Systems after no more than five (5) failed access attempts, provided that this security measure;
+
+    i. Is supported by the Certificate System,
+
+    ii. Cannot be leveraged for a denial of service attack, and
+    
+    iii. Does not weaken the security of this authentication control;
 
 l.	Implement a process that disables all privileged access of an individual to Certificate Systems  within twenty four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
 
-m.	Enforce multi-factor OR multi-party authentication for administrator access to Issuing Systems and Certificate Management Systems;
+m.	Enforce Multi-Factor Authentication OR multi-party authentication for administrator access to Issuing Systems and Certificate Management Systems;
 
-n.	For each Delegated Third Party, (i) require multi-factor authentication prior to the Delegated Third Party approving issuance of a Certificate or (ii) implement technical controls that restrict the Delegated Third Party’s ability to approve certificate issuance to a limited set of domain names; and
+n.	Enforce Multi-Factor Authentication for all Trusted Role accounts on Certificate Systems (including those approving the issuance of a Certificate, which equally applies to Delegated Third Parties) that are accessible from outside a Secure Zone or High Security Zone; and
 
-o.	Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when: (i) the remote connection originates from a device owned or controlled by the CA or Delegated Third Party, (ii) the remote connection is through a temporary, non-persistent encrypted channel that is  supported by multi-factor authentication, and (iii) the remote connection is made to a designated intermediary device (a) located within the CA’s network, (b) secured in accordance with these Requirements, and (c) that mediates the remote connection to the Issuing System.
+o.	Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when: (i) the remote connection originates from a device owned or controlled by the CA or Delegated Third Party, (ii) the remote connection is through a temporary, non-persistent encrypted channel that is  supported by Multi-Factor Authentication, and (iii) the remote connection is made to a designated intermediary device (a) located within the CA’s network, (b) secured in accordance with these Requirements, and (c) that mediates the remote connection to the Issuing System.
 
-# 3.	LOGGING, MONITORING AND ALERTING
+# 3. LOGGING, MONITORING AND ALERTING
  
 Certification Authorities and Delegated Third Parties SHALL:
 
@@ -92,7 +100,7 @@ e.	Conduct a human review of application and system logs at least once a month t
 
 f.	Maintain, archive, and retain logs in accordance with disclosed business practices and applicable legislation.
 
-# 4.	VULNERABILITY DETECTION AND PATCH MANAGEMENT
+# 4. VULNERABILITY DETECTION AND PATCH MANAGEMENT
 
 Certification Authorities and Delegated Third Parties SHALL:
 
@@ -134,6 +142,8 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 
 **Issuing System:**  A system used to sign certificates or validity status information. 
 
+**Multi-Factor Authentication:** An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction: something you know (knowledge factor), something you have (possession factor), and something you are (inherence factor). Each factor must be independent. Certificate-based authentication can be used as part of Multifactor Authentication only if the private key is stored in a Secure Key Storage Device.
+
 **National Vulnerability Database (NVD):**   A database that includes the Common Vulnerability Scoring System (CVSS) scores of security-related software flaws, misconfigurations, and vulnerabilities associated with systems (see http://nvd.nist.gov/home.cfm). 
 
 **OWASP Top Ten:**  A list of application vulnerabilities published by the Open Web Application Security Project (see https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project).
@@ -143,6 +153,8 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 **Root CA System:**  A system used to create a Root Certificate or to generate, store, or sign with the Private Key associated with a Root Certificate.
 
 **SANS Top 25:**  A list created with input from the SANS Institute and the Common Weakness Enumeration (CWE) that identifies the Top 25 Most Dangerous Software Errors that lead to exploitable vulnerabilities (see http://www.sans.org/top25-software-errors/).
+
+**Secure Key Storage Device:** A device certified as meeting at least FIPS 140-2 level 2 overall, level 3 physical, or Common Criteria (EAL 4+).
 
 **Secure Zone:**  An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of Certificate Systems. 
 
@@ -163,7 +175,8 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 | Ver. | Ballot | Description | Adopted | Effective\* |
 | :---: | :---: | :---: | :---: | :---: | 
 | 1.0 | 83 | Original Version Adopted | 3‐Aug‐12 | 01‐Jan‐13 |
-| 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | 01‐Oct‐17 |
+| 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | <s>01‐Oct‐17</s> 09-Mar-18 |
+| 1.2 | SC3 | Two-Factor Authentication and Password Improvements | 16‐Aug‐18 | 15-Sep-18 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
