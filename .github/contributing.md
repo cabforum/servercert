@@ -1,4 +1,4 @@
-= How to Contribute =
+# How to Contribute
 
 In order to contribute to the CA/Browser Forum repository, all contributors
 must have an active membership in the CA/Browser Forum and have executed the
