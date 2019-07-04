@@ -1,6 +1,6 @@
 
 
-**Version 1.6.9**
+**Version 1.7.0**
 
 ##
 
@@ -74,6 +74,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.6.7 | 207 | ASN.1 Jurisdiction | 23 October 2017 | 23 November 2017 |
 | 1.6.8 | 217 | Sunset RFC 2527 | 21 Dec 2017 | 9 Mar 2018 |
 | 1.6.9 | SC16 | Other Subject Attributes | 15 Mar 2019 | 16 Apr 2019 |
+| 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
 
 ### Relevant Dates
 
