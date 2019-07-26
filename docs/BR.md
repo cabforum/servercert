@@ -365,7 +365,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 A Request Token may also be concatenated with a timestamp or other data. If a CA wanted to always use a hash of a PKCS#10 CSR as a Request Token and did not want to incorporate a timestamp and did want to allow certificate key re-use then the applicant might use the challenge password in the creation of a CSR with OpenSSL to ensure uniqueness even if the subject and key are identical between subsequent requests.
 
 **Note**: This simplistic shell command produces a Request Token which has a timestamp and a hash of a CSR. 
-  `echo \`date -u +%Y%m%d%H%M\` \`sha256sum <r2.csr\` \| sed "s/[ -]//g"`
+  ``echo `date -u +%Y%m%d%H%M` `sha256sum <r2.csr` \| sed "s/[ -]//g"``
 The script outputs:
   201602251811c9c863405fe7675a3988b97664ea6baf442019e4e52fa335f406f7c5f26cf14f
 
