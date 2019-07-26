@@ -180,6 +180,10 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Extended Validation Certificate:**  See EV Certificate.
 
+**Global Legal Entity Identifier Foundation:** Established by the Financial Stability Board in June 2014, the Global Legal Entity Identifier Foundation (GLEIF) is tasked to support the implementation and use of the Legal Entity Identifier (LEI). The foundation is backed and overseen by the LEI Regulatory Oversight Committee, representing public authorities from around the globe that have come together to jointly drive forward transparency within the global financial markets. GLEIF is a supra-national not-for-profit organization headquartered in Basel, Switzerland.
+
+**Global Legal Entity Identifier Index:** The Global Legal Entity Identifier (LEI) Index contains historical and current LEI records including related reference data in one authoritative, central repository. The reference data provides the information on a legal entity identifiable with an LEI. The Global LEI Index is the only global online source that provides open, standardized and high quality legal entity reference data.
+
 **Government Agency:**  In the context of a Private Organization, the government agency in the Jurisdiction of Incorporation under whose authority the legal existence of Private Organizations is established (e.g., the government agency that issued the Certificate of Incorporation).  In the context of Business Entities, the government agency in the jurisdiction of operation that registers business entities.  In the case of a Government Entity, the entity that enacts law, regulations, or decrees establishing the legal existence of Government Entities.
 
 **Guidelines:**  This document.
@@ -199,6 +203,8 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 **Latin Notary:**  A person with legal training whose commission under applicable law not only includes authority to authenticate the execution of a signature on a document but also responsibility for the correctness and content of the document. A Latin Notary is sometimes referred to as a Civil Law Notary.
 
 **Legal Entity**: A Private Organization, Government Entity, Business Entity, or Non-Commercial Entity.
+
+**Legal Entity Identifier**: The Legal Entity Identifier (LEI) is a 20-character, alpha-numeric code based on the ISO 17442 standard developed by the International Organization for Standardization (ISO). It connects to key reference information that enables clear and unique identification of legal entities participating in financial transactions. Each LEI contains information about an entity’s ownership structure and thus answers the questions of 'who is who’ and ‘who owns whom’. Simply put, the publicly available LEI data pool can be regarded as a global directory, which greatly enhances transparency in the global marketplace.
 
 **Legal Existence:**  A Private Organization, Government Entity, or Business Entity has Legal Existence if it has been validly formed and not otherwise terminated, dissolved, or abandoned.
 
@@ -276,10 +282,12 @@ Abbreviations and Acronyms are defined in the Baseline Requirements except as ot
 |CPA |Chartered Professional Accountant|
 |CSO |Chief Security Officer|
 |EV |Extended Validation|
+|GLEIF |Global Legal Entity Identifier Foundation|
 |gTLD |Generic Top-Level Domain|
 |IFAC |International Federation of Accountants|
 |IRS |Internal Revenue Service|
 |ISP |Internet Service Provider|
+|LEI |Legal Entity Identifier|
 |QGIS |Qualified Government Information Source|
 |QTIS |Qualified Government Tax Information Source|
 |QIIS |Qualified Independent Information Source|
@@ -1864,3 +1872,13 @@ guidelines:
    jurisdiction as specified in Section 9.2.4.  The stated address of the organisation 
    combined with the organization name SHALL NOT be the only information used to 
    disambiguate the organisation.
+   
+**LEI**: The Legal Entity Identifier (LEI) as specified in the ISO 17442 and registered
+   in the Global LEI Index.  This information SHALL be validated by matching the
+   organization name and registration number found in the Global LEI Index against the
+   Subject Organization Name Field (see 9.2.1) and Subject Registration Number Field
+   (see 9.2.5) within the context of the subject’s jurisdiction as specified in 
+   Section 9.2.4.  The address information SHALL also be compared in order to detect
+   potential matching errors or errors in the registration information.  If errors are
+   found, they SHALL be reported to the GLEIF Foundation and/or relevant registration 
+   authority.
