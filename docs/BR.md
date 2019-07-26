@@ -793,7 +793,7 @@ RFC 6844 requires that CAs "MUST NOT issue a certificate unless either (1) the c
 
 CAs are permitted to treat a record lookup failure as permission to issue if:
 
-pol*	the failure is outside the CA's infrastructure; 
+*	the failure is outside the CA's infrastructure; and
 *	the lookup has been retried at least once; and 
 *	the domain's zone does not have a DNSSEC validation chain to the ICANN root.
 
