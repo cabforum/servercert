@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.5**
+**Version 1.8.0**
 
-**April 16, 2019**
+**Xxxx XX, 2019**
 
 **www.cabforum.org**
 
