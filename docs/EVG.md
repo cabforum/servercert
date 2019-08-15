@@ -75,14 +75,14 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.6.8 | 217 | Sunset RFC 2527 | 21 Dec 2017 | 9 Mar 2018 |
 | 1.6.9 | SC16 | Other Subject Attributes | 15 Mar 2019 | 16 Apr 2019 |
 | 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
-| 1.8.0 | SCXX | Improved Certificate Lifetimes | XX-Xxx-2019 | 1-Mar-2020 |
+| 1.8.0 | SCXX | Reduced Certificate Lifetimes | XX-Xxx-2019 | 1-Mar-2020 |
 
 ### Relevant Dates
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |
 | 2020-01-31 | 9.2.8 | If subject:organizationIdentifier is present, the Subject Organization Identifier Extension MUST be present |
-| 2020-03-01 | 6.3.2 | Certificates issued MUST NOT have a Validity Period greater than 397 days |
+| 2020-03-01 | 6.3.2 | Certificates issued MUST NOT have a Validity Period greater than 398 days |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -1324,23 +1324,23 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 
 ### 11.14.3.  Age of Validated Data
 
-(1) Except for reissuance of an EV Certificate under Section 11.14.2 and except when permitted otherwise in Section 11.14.1, the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL NOT exceed the following limits:
+(1) Except for reissuance of an EV Certificate under Section 11.14.2 and except when permitted otherwise in Section 11.14.1, the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL comply with all limits specified the Baseline Requirements, and MUST NOT exceed the following limits:
 
-(A) Legal existence and identity – 397 days;
+(A) Legal existence and identity – 398 days;
 
-(B) Assumed name – 397 days;
+(B) Assumed name – 398 days;
 
-(C) Address of Place of Business – 397 days;
+(C) Address of Place of Business – 398 days;
 
-(D) Verified Method of Communication – 397 days;
+(D) Verified Method of Communication – 398 days;
 
-(E) Operational existence – 397 days;
+(E) Operational existence – 398 days;
 
-(F) Domain Name – 397 days;
+(F) Domain Name – 398 days;
 
-(G) Name, Title, Agency, and Authority – 397 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
+(G) Name, Title, Agency, and Authority – 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
-(2) The 397 day period set forth above SHALL begin to run on the date the information was collected by the CA.
+(2) The 398 day period set forth above SHALL begin to run on the date the information was collected by the CA.
 
 (3)  The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under Sections 11.9 and 11.10.
 
