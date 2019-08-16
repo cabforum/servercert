@@ -402,7 +402,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 
 **Validation Specialists**: Someone who performs the information verification duties specified by these Requirements.
 
-**Validity Period**: The period of time measured from the date when the Certificate is issued until the Expiry Date.
+**Validity Period**: Prior to 2020-03-01, the period of time measured from the date when the Certificate is issued until the Expiry Date. For Certificates issued on or after 2020-03-01, the validity period is as defined within RFC 5280, Section 4.1.2.5: the period of time from notBefore through notAfter, inclusive.
 
 **WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
 
