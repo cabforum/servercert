@@ -82,7 +82,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |
 | 2020-01-31 | 9.2.8 | If subject:organizationIdentifier is present, the Subject Organization Identifier Extension MUST be present |
-| 2020-03-01 | 6.3.2 | Certificates issued MUST NOT have a Validity Period greater than 398 days |
+| 2020-04-01 | 6.3.2 | Certificates issued MUST NOT have a Validity Period greater than 398 days |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -602,7 +602,7 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 
 The Requirements of Section 6.3.2 of the Baseline Requirements apply equally to EV Certificates.
 
-It is RECOMMENDED that EV Subscriber Certificates issued prior to 1 March 2020 have a maximum Validity Period of twelve months.
+It is RECOMMENDED that EV Subscriber Certificates issued prior to 1 April 2020 have a maximum Validity Period of twelve months.
 
 ## 9.5.  Subscriber Public Key
 
@@ -1324,7 +1324,7 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 
 ### 11.14.3.  Age of Validated Data
 
-(1) Except for reissuance of an EV Certificate under Section 11.14.2 and except when permitted otherwise in Section 11.14.1, the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL comply with all limits specified the Baseline Requirements, and MUST NOT exceed the following limits:
+(1) In addition to the requirements on the reuse of data set forth within the Baseline Requirements, the age of all data used to support the issuance of an EV Certificate MUST NOT exceed the following limits, except in the re-issuance of an EV Certificate under Section 11.14.2:
 
 (A) Legal existence and identity – 398 days;
 
@@ -1342,9 +1342,9 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 
 (2) The 398 day period set forth above SHALL begin to run on the date the information was collected by the CA.
 
-(3)  The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under Sections 11.9 and 11.10.
+(3) The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under Sections 11.9 and 11.10.
 
-(4) The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under section 11.14.1.
+(4) The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above.
 
 # 12.  Certificate Issuance by a Root CA
 
@@ -1780,7 +1780,7 @@ cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 
 4. Each Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
 
-5. For Certificates issued prior to 1 March 2020, CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 15 months.
+5. For Certificates issued prior to 1 April 2020, CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 15 months.
 
 6. When a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this Appendix F.
 
