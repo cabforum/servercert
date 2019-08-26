@@ -1,6 +1,6 @@
 
 
-**Version 1.8.0**
+**Version X.X.X**
 
 ##
 
@@ -26,7 +26,7 @@ This document is a translation of the original English version. In the event tha
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.8.0 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SCXX, passed by the Forum on XX-Xxx-2019 and effective as of Xxxx XX 2019.
+This version X.X.X represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SCXX, passed by the Forum on XX-Xxx-2019 and effective as of Xxxx XX 2019.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -75,7 +75,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.6.8 | 217 | Sunset RFC 2527 | 21 Dec 2017 | 9 Mar 2018 |
 | 1.6.9 | SC16 | Other Subject Attributes | 15 Mar 2019 | 16 Apr 2019 |
 | 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
-| 1.8.0 | SCXX | Reduced Certificate Lifetimes | XX-Xxx-2019 | 1-Mar-2020 |
+| X.X.X | SCXX | Reduced Certificate Lifetimes | XX-Xxx-2019 | 1-Apr-2020 |
 
 ### Relevant Dates
 

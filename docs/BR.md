@@ -12,7 +12,7 @@
 
 **CA/Browser Forum**
 
-**Version 1.8.0**
+**Version X.X.X**
 
 **Xxxx XX, 2019**
 
@@ -118,7 +118,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.6.4 | SC15 | Remove Validation Method Number 9 | 5-Feb-2019	| 16-Mar-2019 |
 | 1.6.4 | SC7 | Update IP Address Validation Methods | 8-Feb-2019	| 16-Mar-2019 |
 | 1.6.5 | SC16 | Other Subject Attributes | 15-Mar-2019	| 16-Apr-2019 |
-| 1.8.0 | SCXX | Reduce Certificate Lifetimes | XX-Xxx-2019 | 1-Mar-2020 |
+| X.X.X | SCXX | Reduce Certificate Lifetimes | XX-Xxx-2019 | 1-Apr-2020 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
