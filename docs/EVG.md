@@ -1,6 +1,6 @@
 
 
-**Version 1.6.8 **
+**Version 1.7.0**
 
 ##
 
@@ -16,31 +16,31 @@
 
 ## Extended Validation Certificates
 
-Copyright © 2007-2018, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
+Copyright © 2007-2019, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
 
 The CA/Browser Forum requests that translated versions of these guidelines prominently display the following statement in the language of the translation :-
 
-'Copyright © 2007-2018, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
+'Copyright © 2007-2019, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
 
 This document is a translation of the original English version. In the event that there is a discrepancy between this version and the original English version, the original English version shall govern.'
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.6.8 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot 217, passed by the Forum on 21 December 2017 and effective as of 9 March 2018.
+This version 1.6.9 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC16, passed by the Forum on 15 March 2019 and effective as of 16 April 2019.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
 The primary purposes of Extended Validation Certificates are to:  1) identify the legal entity that controls a Web or service site, and 2) enable encrypted communications with that site.  The secondary purposes include significantly enhancing cybersecurity by helping establish the legitimacy of an organization claiming to operate a Web site, and providing a vehicle that can be used to assist in addressing problems related to distributing malware, phishing, identity theft, and diverse forms of online fraud.
 
-Notice to Readers
+### Notice to Readers
 
 The Guidelines for the Issuance and Management of Extended Validation Certificates present criteria established by the CA/Browser Forum for use by certification authorities when issuing, maintaining, and revoking certain digital certificates for use in Internet Web site commerce.  These Guidelines may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum.  Questions or suggestions concerning these guidelines may be directed to the CA/Browser Forum at questions@cabforum.org.
 
-The CA/Browser Forum
+### The CA/Browser Forum
 
 The CA/Browser Forum is a voluntary open organization of certification authorities and suppliers of Internet browsers and other relying-party software applications.  Membership is listed at https://cabforum.org/members/.
 
-Document History
+### Document History
 
 | Ver. | Ballot | Description | Adopted | Effective\* |
 | --- | --- | --- | --- | --- |
@@ -73,6 +73,14 @@ Document History
 | 1.6.6 | 192 | Notary revision | 28 June 2017 | 28 July 2017 |
 | 1.6.7 | 207 | ASN.1 Jurisdiction | 23 October 2017 | 23 November 2017 |
 | 1.6.8 | 217 | Sunset RFC 2527 | 21 Dec 2017 | 9 Mar 2018 |
+| 1.6.9 | SC16 | Other Subject Attributes | 15 Mar 2019 | 16 Apr 2019 |
+| 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
+
+### Relevant Dates
+
+| **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
+| --- | --- | --- |
+| 2020-01-31 | 9.2.8 | If subject:organizationIdentifier is present, the Subject Organization Identifier Extension MUST be present |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -190,6 +198,8 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Latin Notary:**  A person with legal training whose commission under applicable law not only includes authority to authenticate the execution of a signature on a document but also responsibility for the correctness and content of the document. A Latin Notary is sometimes referred to as a Civil Law Notary.
 
+**Legal Entity**: A Private Organization, Government Entity, Business Entity, or Non-Commercial Entity.
+
 **Legal Existence:**  A Private Organization, Government Entity, or Business Entity has Legal Existence if it has been validly formed and not otherwise terminated, dissolved, or abandoned.
 
 **Legal Practitioner:**  A person who is either a lawyer or a Latin Notary as described in these Guidelines and competent to render an opinion on factual claims of the Applicant.
@@ -213,6 +223,10 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 **Qualified Independent Information Source:**  A regularly-updated and current, publicly available, database designed for the purpose of accurately providing the information for which it is consulted, and which is generally recognized as a dependable source of such information.
 
 **Registration Agency:**  A Governmental Agency that registers business information in connection with an entity's business formation or authorization to conduct business under a license, charter or other certification.  A Registration Agency MAY include, but is not limited to (i) a State Department of Corporations or a Secretary of State; (ii) a licensing agency, such as a State Department of Insurance; or (iii) a chartering agency, such as a state office or department of financial regulation, banking or finance, or a federal agency such as the Office of the Comptroller of the Currency or Office of Thrift Supervision.
+
+**Registration Reference:** A unique identifier assigned to a Legal Entity.
+
+**Registration Scheme:** A scheme for assigning a Registration Reference meeting the requirements identified in Appendix H.
 
 **Registered Agent:**  An individual or entity that is:  (i) authorized by the Applicant to receive service of process and business communications on behalf of the Applicant; and (ii) listed in the official records of the Applicant's Jurisdiction of Incorporation as acting in the role specified in (i) above.
 
@@ -420,13 +434,13 @@ This section sets forth minimum requirements for the content of the EV Certifica
 
 Issuer Information listed in an EV Certificate MUST comply with Section 7.1.4.1 of the Baseline Requirements.
 
-## 9.2.  Subject Information
+## 9.2.  Subject Distinguished Name Fields
 
 Subject to the requirements of these Guidelines, the EV Certificate and certificates issued to Subordinate CAs that are not controlled by the same entity as the CA MUST include the following information about the Subject organization in the fields listed:
 
 ### 9.2.1.  Subject Organization Name Field
 
-**Certificate field:** subject:organizationName (OID 2.5.4.10 )
+**Certificate field:** _subject:organizationName_ (OID 2.5.4.10)
 
 **Required/Optional:** Required
 
@@ -438,23 +452,15 @@ In addition, an assumed name or DBA name used by the Subject MAY be included at 
 
 If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with section 11.12.1 and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the EV Certificate.
 
-### 9.2.2.  Subject Alternative Name Extension
+### 9.2.2.  Subject Common Name Field
 
-**Certificate field:**  subjectAltName:dNSName
-
-**Required/Optional:**  Required
-
-**Contents:**   This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
-
-### 9.2.3.  Subject Common Name Field
-
-**Certificate field:**  subject:commonName (OID:  2.5.4.3)
+**Certificate field:**  _subject:commonName_ (OID:  2.5.4.3)
 
 **Required/Optional:**  Deprecated (Discouraged, but not prohibited)
 
 **Contents:**   If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates except as permitted under Appendix F.
 
-### 9.2.4.  Subject Business Category Field
+### 9.2.3.  Subject Business Category Field
 
 **Certificate field:**    _subject:businessCategory_ (OID:  2.5.4.15)
 
@@ -462,7 +468,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 **Contents:** This field MUST contain one of the following strings: "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity" depending upon whether the Subject qualifies under the terms of Section 8.5.2, 8.5.3, 8.5.4 or 8.5.5 of these Guidelines, respectively.
 
-### 9.2.5.  Subject Jurisdiction of Incorporation or Registration Field
+### 9.2.4.  Subject Jurisdiction of Incorporation or Registration Field
 
 **Certificate fields:**
 
@@ -482,9 +488,9 @@ Country:
 
 **Contents:**    These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency.  For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information.  Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information.  And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information.  Country information MUST be specified using the applicable ISO country code.  State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
-### 9.2.6.  Subject Registration Number Field
+### 9.2.5.  Subject Registration Number Field
 
-**Certificate field:**    Subject:serialNumber (OID:  2.5.4.5)
+**Certificate field:**    _subject:serialNumber_ (OID:  2.5.4.5)
 
 **Required/Optional:**    Required
 
@@ -494,27 +500,74 @@ For Government Entities that do not have a Registration Number or readily verifi
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field.  For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
 
-### 9.2.7.  Subject Physical Address of Place of Business Field
+### 9.2.6.  Subject Physical Address of Place of Business Field
 
 **Certificate fields:**
 
-Number and street: subject:streetAddress (OID:  2.5.4.9)
+Number and street: _subject:streetAddress_ (OID:  2.5.4.9)
 
-City or town: subject:localityName (OID:  2.5.4.7)
+City or town: _subject:localityName_ (OID:  2.5.4.7)
 
-State or province (where applicable): subject:stateOrProvinceName (OID:  2.5.4.8)
+State or province (where applicable): _subject:stateOrProvinceName_ (OID:  2.5.4.8)
 
-Country: subject:countryName (OID:  2.5.4.6)
+Country: _subject:countryName_ (OID:  2.5.4.6)
 
-Postal code: subject:postalCode (OID:  2.5.4.17)
+Postal code: _subject:postalCode_ (OID:  2.5.4.17)
 
 **Required/Optional:**   As stated in Section 7.1.4.2.2 d, e, f, g and h of the Baseline Requirements.
 
 **Contents:**   This field MUST contain the address of the physical location of the Subject's Place of Business.
 
-### 9.2.8.  Other Subject Attributes
+### 9.2.7. Subject Organizational Unit Name Field
 
-All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. CAs SHALL NOT include Fully-Qualified Domain Names in Subject attributes except as specified in Sections 9.2.1 and SHALL NOT include any Subject Organization Information except as specified in Section 9.2. Optional subfields within the Subject field MUST either contain information verified by the CA or MUST be left empty.  Metadata such as '.', '-', and ' ' characters, and/or any other indication that the field is empty, absent or incomplete, MUST not be used.
+**Certificate field:** _subject:organizationalUnitName_ (OID 2.5.4.11)
+
+**Required/Optional:** Optional
+
+**Contents:** The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 11. This field MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+
+### 9.2.8. Subject Organization Identifier Field
+
+**Certificate field:** _subject:organizationIdentifier_ (OID: 2.5.4.97)
+
+**Required/Optional:** Optional
+
+**Contents:** If present, this field MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
+
+The organizationIdentifier MUST be encoded as a PrintableString or UTF8String.
+
+The Registration Scheme MUST be identified using the using the following structure in the presented order:
+
+* 3 character Registration Scheme identifier;
+* 2 character ISO 3166 country code for the nation in which the Registration Scheme is operated, or if the scheme is operated globally ISO 3166 code "XG" shall be used;
+* For the NTR Registration Scheme identifier, if required under Section 9.2.4, a 2 character ISO 3166-2 identifier for the subdivision (state or province) of the nation in which the Registration Scheme is operated, preceded by plus "+" (0x2B (ASCII), U+002B (UTF-8));
+* a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8));
+* Registration Reference allocated in accordance with the identified Registration Scheme
+
+Note: Registration References MAY contain hyphens, but Registration Schemes, ISO 3166 country codes, and ISO 3166-2 identifiers do not.  Therefore if more than one hyphen appears in the structure, the leftmost hyphen is a separator, and the remaining hyphens are part of the Registration Reference.
+
+As in section 9.2.4, the specified location information MUST match the scope of the registration being referenced.
+
+Examples:
+
+* NTRGB-12345678 (NTR scheme, Great Britain, Unique Identifier at Country level is 12345678)
+* NTRUS+CA-12345678 (NTR Scheme, United States - California, Unique identifier at State level is 12345678)
+* VATDE-123456789 (VAT Scheme, Germany, Unique Identifier at Country Level is 12345678)
+* PSDBE-NBB-1234.567.890 (PSD Scheme, Belgium, NCA's identifier is NBB, Subject Unique Identifier assigned by the NCA is 1234.567.890)
+
+Registration Schemes listed in Appendix H are currently recognized as valid under these guidelines.
+
+The CA SHALL:
+
+1. confirm that the organization represented by the Registration Reference is the same as the organization named in the organizationName field as specified in Section 9.2.1 within the context of the subject’s jurisdiction as specified in 
+   Section 9.2.4;
+2. further verify the Registration Reference matches other information verified in accordance with section 11; 
+3. take appropriate measures to disambiguate between different organizations as described in Appendix H for each Registration Scheme;
+4. Apply the validation rules relevant to the Registration Scheme as specified in Appendix H.
+
+### 9.2.9.  Other Subject Attributes
+
+CAs SHALL NOT include any Subject Distinguished Name attributes except as specified in Section 9.2.
 
 ## 9.3.  Certificate Policy Identification
 
@@ -573,7 +626,7 @@ Otherwise, it MAY contain the anyPolicy identifier.
 
     - HTTP URL for the Root CA's Certification Practice Statement
 
-(3) The certificatePolicies extension in EV Certificates issued to Subscribers MUST include the following:ÃÂ
+(3) The certificatePolicies extension in EV Certificates issued to Subscribers MUST include the following:
 
    certificatePolicies:policyIdentifier (Required)
 
@@ -588,6 +641,48 @@ Otherwise, it MAY contain the anyPolicy identifier.
     - HTTP URL for the Subordinate CA's Certification Practice Statement
 
 (4)  The cRLDistribution Point extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an authorityInformationAccess extension.
+
+## 9.8. Certificate Extensions
+
+The extensions listed in the Section 9.8 are recommended for maximum interoperability between certificates and browsers / applications, but are not mandatory on the CAs except where indicated as “Required”.  CAs may use other extensions that are not listed in this Section 9.8, but are encouraged to add them to this section by ballot from time to time to help increase externsion standardization across the industry.  
+
+If a CA includes an extension in a certificate that has a Certificate field which is named in this Section 9.8, the CA must follow the format specified in that subjection.  However, no extension or extension format shall be mandatory on a CA unless specifically stated as “Required” in the subsection that describes the extension.
+
+### 9.8.1.  Subject Alternative Name Extension
+
+**Certificate field:**  _subjectAltName:dNSName_
+
+**Required/Optional:**  Required
+
+**Contents:** This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
+
+### 9.8.2 CA/Browser Form Organization Identifier Extension
+
+**Extension Name:** _cabfOrganizationIdentifier_ (OID: 2.23.140.3.1)
+
+**Verbose OID:** {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }
+              
+**Required/Optional:** Optional (but see below)
+
+**Contents:** If the subject:organizationIdentifier is present, this field SHOULD be present. Effective January 31, 2020, if the subject:organizationIdentifier field is present, this field MUST be present.
+
+If present, this extension MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
+
+The Registration Scheme MUST be encoded as described by the following ASN.1 grammar:
+
+>        id-CABFOrganizationIdentifier OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140)
+>             certificate-extensions(3) cabf-organizationIdentifier(1) }
+>
+>        ext-CABFOrganizationIdentifier EXTENSION ::= { SYNTAX CABFOrganizationIdentifier IDENTIFIED BY id-CABFOrganizationIdentifier }
+>
+>        CABFOrganizationIdentifier ::= SEQUENCE {
+>            registrationSchemeIdentifier PrintableString (SIZE(3)),
+>            registrationCountry PrintableString (SIZE(2)),
+>            registrationStateOrProvince [0] IMPLICIT PrintableString OPTIONAL (SIZE(0..128)),
+>            registrationReference UTF8String
+>        }
+
+where the subfields have the same meanings and restrictions described in Section 9.2.8. The CA SHALL validate the contents using the requirements in Section 9.2.8.
 
 # 10. EV Certificate Request Requirements
 
@@ -1626,6 +1721,7 @@ A CA may issue an EV Certificate with .onion in the right-most label of the Doma
 
 The CA MUST include the CAB Forum Tor Service Descriptor Hash extension in the TBSCertificate to convey hashes of keys related to .onion addresses. The CA MUST include the Tor Service Descriptor Hash extension using the following format: 
 
+```
 cabf-TorServiceDescriptor OBJECT IDENTIFIER ::= { 2.23.140.1.31 }
 
 TorServiceDescriptorSyntax ::=
@@ -1640,7 +1736,7 @@ TorServiceDescriptorHash:: = SEQUENCE {
 | subjectPublicKeyHash | BIT STRING |
 
 }
-
+```
 Where the AlgorithmIdentifier is a hashing algorithm (defined in RFC 6234) performed over the DER-encoding of an ASN.1 SubjectPublicKey of the .onion service and SubjectPublicKeyHash is the hash output.
 
 2. The CA MUST verify the Applicant's control over the .onion Domain Name using one of the following:
@@ -1652,7 +1748,7 @@ b. The CA MAY verify the Applicant's control over the .onion service by having t
 (i) A caSigningNonce attribute that (1) contains a single value with at least 64-bits of entropy, (2) is generated by the CA, and (3) delivered to the Applicant through a Verified Method of Communication and (ii) An applicantSigningNonce attribute that (1) contains a single value with at least 64-bits of entropy and (2) is generated by the Applicant.
 
 The signing nonce attributes have the following format:
-
+```
 caSigningNonce ATTRIBUTE ::= {
 
 | WITH SYNTAX | OCTET STRING |
@@ -1676,6 +1772,7 @@ applicantSigningNonce ATTRIBUTE ::= {
 }
 
 cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
+```
 
 4. Each Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
 
@@ -1687,6 +1784,7 @@ cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 
 #  Appendix G – Abstract Syntax Notation One module for EV certificates
 
+``` 
 CABFSelectedAttributeTypes {joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) module(4) cabfSelectedAttributeTypes(1) 1}
 DEFINITIONS ::=
 BEGIN
@@ -1716,13 +1814,13 @@ jurisdictionLocalityName ATTRIBUTE ::= {
   LDAP-NAME                {"jurisdictionL"}
   ID                       id-evat-jurisdiction-localityName }
 
-
 jurisdictionStateOrProvinceName ATTRIBUTE ::= {
   SUBTYPE OF               name
   WITH SYNTAX              DirectoryString{ub-state-name}
   LDAP-SYNTAX              directoryString.&id
   LDAP-NAME                {"jurisdictionST"}
   ID                       id-evat-jurisdiction-stateOrProvinceName }
+  
 jurisdictionCountryName ATTRIBUTE ::= {
   SUBTYPE OF               name
   WITH SYNTAX              CountryName
@@ -1732,5 +1830,37 @@ jurisdictionCountryName ATTRIBUTE ::= {
   ID                       id-evat-jurisdiction-countryName }
 
 END
+```
 
+#  Appendix H – Registration Schemes
 
+The following Registration Schemes are currently recognised as valid under these 
+guidelines:
+
+**NTR**: The information carried in this field shall be the same as held in Subject 
+   Registration Number Field as specified in 9.2.5 and the country code used in 
+   the Registration Scheme identifier shall match that of the subject’s jurisdiction 
+   as specified in Section 9.2.4.
+
+   Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 
+   includes more than the country code, the additional locality information shall
+   be included as specified in sections 9.2.8 and/or 9.8.1.
+
+**VAT**: Reference allocated by the national tax authorities to a Legal Entity. This 
+   information shall be validated using information provided by the national tax 
+   authority against the organisation as identified by the Subject Organization 
+   Name Field (see 9.2.1) and Subject Registration Number Field (see 9.2.5) within 
+   the context of the subject’s jurisdiction as specified in Section 9.2.4.
+   
+**PSD**: Authorization number as specified in ETSI TS 119 495 clause 4.4 allocated to a 
+   payment service provider and containing the information as specified in 
+   ETSI TS 119 495 clause 5.2.1.  This information SHALL be obtained directly from the 
+   national competent authority register for payment services or from an information 
+   source approved by a government agency, regulatory body, or legislation for this 
+   purpose.  This information SHALL be validated by being matched directly or indirectly 
+   (for example, by matching a globally unique registration number) against the 
+   organisation as identified by the Subject Organization Name Field (see 9.2.1) and 
+   Subject Registration Number Field (see 9.2.5) within the context of the subject’s 
+   jurisdiction as specified in Section 9.2.4.  The stated address of the organisation 
+   combined with the organization name SHALL NOT be the only information used to 
+   disambiguate the organisation.
