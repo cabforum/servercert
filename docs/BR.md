@@ -446,9 +446,8 @@ The script outputs:
 | RA | Registration Authority |
 | S/MIME | Secure MIME (Multipurpose Internet Mail Extensions) |
 | SSL | Secure Sockets Layer |
-| TLD | Top-Level Domain |
 | TLS | Transport Layer Security |
-| VOIP | Voice Over Internet Protocol |
+| VoIP | Voice Over Internet Protocol |
 
 ### 1.6.3 References
 
