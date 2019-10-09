@@ -1040,7 +1040,7 @@ After reviewing the facts and circumstances, the CA SHALL work with the Subscrib
 1. The nature of the alleged problem (scope, context, severity, magnitude, risk of harm);
 2. The consequences of revocation (direct and collateral impacts to Subscribers and Relying Parties);
 3. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
-4. The entity making the complaint (for example, a complaint from a law enforcement official that a Web site is engaged in illegal activities should carry more weight than a complaint from a consumer alleging that she didn't receive the goods she ordered); and
+4. The entity making the complaint (for example, a complaint from a law enforcement official that a Web site is engaged in illegal activities should carry more weight than a complaint from a consumer alleging that they didn't receive the goods they ordered); and
 5. Relevant legislation.
 
 ### 4.9.6 Revocation checking requirement for relying parties
