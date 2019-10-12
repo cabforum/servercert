@@ -1471,8 +1471,6 @@ _\* L and N (the bit lengths of modulus p and divisor q, respectively) are descr
 ### 6.1.6 Public key parameters generation and quality checking
 RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2<sup>16</sup>+1 and 2<sup>256</sup>-1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89]
 
-DSA: Although FIPS 800-57 says that domain parameters may be made available at some accessible site, compliant DSA certificates MUST include all domain parameters. This is to insure maximum interoperability among relying party software. The CA MUST confirm that the value of the public key has the unique correct representation and range in the field, and that the key has the correct order in the subgroup. [Source: Section 5.3.1, NIST SP 800-89]
-
 ECC: The CA SHOULD confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
@@ -1694,6 +1692,10 @@ CAs MAY issue Root CA Certificates or Subordinate CA Certificates that are Cross
 CAs MAY continue to use their existing SHA-1 Root Certificates.
 
 Subscriber certificates SHOULD NOT chain up to a SHA-1 Subordinate CA Certificate.
+
+For CA Certificates that contain ECC keys, CAs MUST sign data using a hash function with an output length equal to the bit length of the key.
+* For keys using NIST P-256, CAs MUST sign data using the ecdsa-with-SHA256 (OID: 1.2.840.10045.4.3.2) signature algorithm, thus using SHA-256 as the hash function.
+* For keys using NIST P-384, CAs MUST sign data using the ecdsa-with-SHA384 (OID: 1.2.840.10045.4.3.3) signature algorithm, thus using SHA-384 as the hash function.
 
 ### 7.1.4 Name Forms
 
