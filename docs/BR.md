@@ -1134,9 +1134,14 @@ defined by RFC6960.
 ### 4.9.10 On-line revocation checking requirements
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
 
+The validity interval of an OCSP response is the difference in time between the thisUpdate and nextUpdate field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
+
 For the status of Subscriber Certificates:
 
-* The CA SHALL update information provided via an Online Certificate Status Protocol at least every four days. OCSP responses from this service MUST have a maximum expiration time of ten days.
+1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
+2. OCSP responses MUST have a validity interval less than seven days;
+3. For OCSP responses whose validity interval is less than or equal to sixteen hours, the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate;
+4. For OCSP responses whose validity interval is greater than sixteen hours, the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period remaining before the nextUpdate.
 
 For the status of Subordinate CA Certificates:
 * The CA SHALL update information provided via an Online Certificate Status Protocol (i) at least every twelve months; and (ii) within 24 hours after revoking a Subordinate CA Certificate.
@@ -1616,15 +1621,19 @@ f. `nameConstraints` (optional)
 
 [^*]: Non-critical Name Constraints are an exception to RFC 5280 (4.2.1.10), however, they MAY be used until the Name Constraints extension is supported by Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
 
-g. `extkeyUsage` (optional)
+g. `extkeyUsage` (optional/required)
 
-   For Subordinate CA Certificates to be Technically constrained in line with section 7.1.5, then either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present[^**].
+   For Cross Certificates that share a Subject Distinguished Name and Subject Public Key with a Root Certificate operated in accordance with these Requirements, this extension MAY be present. If present, this extension SHOULD NOT be marked critical. This extension MUST only contain usages for which the issuing CA has verified the Cross Certificate is authorized to assert. This extension MAY contain the anyExtendedKeyUsage [RFC5280] usage, if the Root Certificate(s) associated with this Cross Certificate are operated by the same organization as the issuing Root Certificate.
 
-   Other values MAY be present.
+   For all other Subordinate CA Certificates, including Technically Constrained Subordinate CA Certificates:
 
-   If present, this extension SHOULD be marked non-critical.
+   This extension MUST be present and SHOULD NOT be marked critical[^**].
 
-[^**]: Generally Extended Key Usage will only appear within end entity certificates (as highlighted in RFC 5280 (4.2.1.12)), however, Subordinate CAs MAY include the extension to further protect relying parties until the use of the extension is consistent between Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
+   For Subordinate CA Certificates that will be used to issue TLS certificates, then either, or both, of the values id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] MUST be present. The values id-kp-emailProtection [RFC5280], id-kp-codeSigning [RFC5280], id-kp-timeStamping [RFC5280], id-kp-OCSPSigning [RFC5280], and anyExtendedKeyUsage [RFC5280] MUST NOT be present. Other values SHOULD NOT be present.
+
+   For Subordinate CA Certificates that are not used to issue TLS certificates, then the values id-kp-serverAuth [RFC5280] and/or id-kp-clientAuth [RFC 5280] MUST NOT be present. Other values MAY be present, but SHOULD NOT combine multiple independent usages (e.g. including id-kp-timeStamping [RFC5280] with id-kp-OCSPSigning [RFC5280] or id-kp-codeSigning [RFC5280]).
+
+[^**]: While RFC 5280, Section 4.2.1.12, notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of subordinate certificates, as implemented by a number of Application Software Suppliers.
 
 #### 7.1.2.3 Subscriber Certificate
 a. `certificatePolicies`
@@ -1811,7 +1820,7 @@ If the Subordinate CA is not allowed to issue certificates with dNSNames, then t
 #### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
 
-The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with these Requirements as follows:
+The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with these Requirements as follows:
 
 `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1)`, if the Certificate complies with these Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
 
@@ -1840,11 +1849,9 @@ A Certificate issued to a Subordinate CA that is an affiliate of the Issuing CA:
 A Subordinate CA SHALL represent, in its Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
-A Certificate issued to a Subscriber MUST contain a certificatePolicies extension.
+A Certificate issued to a Subscriber MUST contain, within the Certificate's certificatePolicies extension, one or more policy identifier(s) that are specified beneath the CA/Browser Forum's reserved policy OID arc of {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1)} (2.23.140.1).
 
-The extension MUST contain one or more policy identifiers that indicate adherence to and compliance with these Requirements. CAs MUST either use a CA/Browser Forum identifier reserved for this purpose or MUST use a policy identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Certificate's compliance with these Requirements.
-
-The issuing CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Requirements.
+The certificate MAY also contain additional policy identifier(s) defined by the Issuing CA. The issuing CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these requirements.
 
 ### 7.1.7 Usage of Policy Constraints extension
 
@@ -1914,7 +1921,23 @@ The audit period for the Delegated Third Party SHALL NOT exceed one year (ideall
 ## 8.5 Actions taken as a result of deficiency
 
 ## 8.6 Communication of results
-The Audit Report SHALL state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The CA SHALL make the Audit Report publicly available. The CA is not required to make publicly available any general audit findings that do not impact the overall audit opinion. For both government and commercial CAs, the CA SHOULD make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, and if so requested by an Application Software Supplier, the CA SHALL provide an explanatory letter signed by the Qualified Auditor.
+The Audit Report SHALL state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The CA SHALL make the Audit Report publicly available.
+
+The Audit Report MUST contain at least the following clearly-labelled information:
+1. name of the organization being audited;
+2. name and address of the organization performing the audit;
+3. the full PKI hierarchy of all certificates that are capable of being used to issue new certificates, identified by Distinguished Name and the SHA-256 fingerprint of each and every certificate, and including all Roots, Subordinate CA Certificates, and Cross Certificates, clearly identifying which were certificates (and associated keys) were in-scope and out-of-scope of the audit;
+4. audit criteria, with version number(s), that were used to audit each of the certificates (and associated keys);
+5. a list of the CA policy documents, with version numbers, referenced during the audit;
+6. whether the audit assessed a period of time or a point in time;
+7. the start date and end date of the period, for those that cover a period of time;
+8. the point in time date, for those that are for a point in time;
+9. the date the report was issued, which will necessarily be after the end date or point in time date; and
+10. (for audits conducted in accordance with any of the ETSI standards) a statement to indicate if the audit was a full audit or a surveillance audit, and which portions of the criteria were applied and evaluated, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP, EVCP+, QCP-w, Part 1 (General Requirements), and/or Part 2 (Requirements for Trust Service Providers).
+
+An authoritative English language version of the publicly-available audit information MUST be provided by the Qualified Auditor and the CA SHALL ensure it is publicly-available.
+
+The CA MUST make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, the CA SHALL provide an explanatory letter signed by the Qualified Auditor.
 
 ## 8.7 Self-Audits
 During the period in which the CA issues Certificates, the CA SHALL monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken. Except for Delegated Third Parties that undergo an annual audit that meets the criteria specified in Section 8.1, the CA SHALL strictly control the service quality of Certificates issued or containing information verified by a Delegated Third Party by having a Validation Specialist employed by the CA perform ongoing quarterly audits against a randomly selected sample of at least the greater of one certificate or three percent of the Certificates verified by the Delegated Third Party in the period beginning immediately after the last sample was taken. The CA SHALL review each Delegated Third Party's practices and procedures to ensure that the Delegated Third Party is in compliance with these Requirements and the relevant Certificate Policy and/or Certification Practice Statement.
