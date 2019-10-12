@@ -1365,34 +1365,35 @@ If the CA or any of its designated RAs become aware that a Subscriber's Private 
 
 ### 6.1.4 CA public key delivery to relying parties
 
-### 6.1.5 Key sizes
+### 6.1.5 Algorithm type and key sizes
 Certificates MUST meet the following requirements for algorithm type and key size.
 
-(1) Root CA Certificates
+#### 6.1.5.1 Root CA Certificates
 
-|---|---|---|
-|Digest algorithm|SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|2048|
-|ECC curve|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)\*|L= 2048 N= 224 or L= 2048 N= 256|
+* **Digest algorithm:** SHA-256, SHA-384 or SHA-512
+* **Minimum RSA modulus size (bits):** 2048
+* **ECC curve:** NIST P-256, P-384, or P-521
+* **Minimum DSA modulus and divisor size (bits)\*:** L= 2048 N= 224 or L= 2048 N= 256
 
-(2) Subordinate CA Certificates
+_\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in FIPS 186-4._
 
-|---|---|---|
-|Digest algorithm|SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|2048|
-|ECC curve|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)\*|L= 2048 N= 224 or L= 2048 N= 256|
+#### 6.1.5.2 Subordinate CA Certificates
 
-(3) Subscriber Certificates
+* **Digest algorithm:** SHA-256, SHA-384 or SHA-512
+* **Minimum RSA modulus size (bits):** 2048
+* **ECC curve:** NIST P-256, P-384, or P-521
+* **Minimum DSA modulus and divisor size (bits)\*:** L= 2048 N= 224 or L= 2048 N= 256
 
-|---|---|---|
-|Digest algorithm|SHA-256, SHA-384 or SHA-512|
-|Minimum RSA modulus size (bits)|2048|
-|ECC curve|NIST P-256, P-384, or P-521|
-|Minimum DSA modulus and divisor size (bits)|L= 2048 N= 224 or L= 2048 N= 256|
+_\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in FIPS 186-4._
 
-\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in FIPS 186-4.
+#### 6.1.5.3 Subscriber Certificates
+
+* **Digest algorithm:** SHA-256, SHA-384 or SHA-512|
+* **Minimum RSA modulus size (bits):** 2048
+* **ECC curve:** NIST P-256, P-384, or P-521
+* **Minimum DSA modulus and divisor size (bits)\*:** L= 2048 N= 224 or L= 2048 N= 256
+
+_\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in FIPS 186-4._
 
 ### 6.1.6 Public key parameters generation and quality checking
 RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2<sup>16</sup>+1 and 2<sup>256</sup>-1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89]
