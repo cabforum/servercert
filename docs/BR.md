@@ -1627,9 +1627,13 @@ g. `extkeyUsage` (optional/required)
 
    For Subordinate CA Certificates that will be used to issue TLS certificates, then either, or both, of the values id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] MUST be present. The values id-kp-emailProtection [RFC5280], id-kp-codeSigning [RFC5280], id-kp-timeStamping [RFC5280], id-kp-OCSPSigning [RFC5280], and anyExtendedKeyUsage [RFC5280] MUST NOT be present. Other values SHOULD NOT be present.
 
-   For Subordinate CA Certificates that are not used to issue TLS certificates, then the values id-kp-serverAuth [RFC5280] and/or id-kp-clientAuth [RFC 5280] MUST NOT be present. Other values MAY be present, but SHOULD NOT combine multiple independent usages (e.g. including id-kp-timeStamping [RFC5280] with id-kp-OCSPSigning [RFC5280] or id-kp-codeSigning [RFC5280]).
+   For Subordinate CA Certificates that are not used to issue TLS certificates, then the values id-kp-serverAuth [RFC5280] and/or id-kp-clientAuth [RFC5280] MUST NOT be present. Other values MAY be present, but SHOULD NOT combine multiple independent usages (e.g. including id-kp-timeStamping [RFC5280] with id-kp-OCSPSigning [RFC5280] or id-kp-codeSigning [RFC5280]).
 
 [^**]: While RFC 5280, Section 4.2.1.12, notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of subordinate certificates, as implemented by a number of Application Software Suppliers.
+
+h. `authorityKeyIdentifier` (required)
+
+   This extension MUST be present and MUST NOT be marked critical. It MUST contain a keyIdentifier field and it MUST NOT contain a authorityCertIssuer or authorityCertSerialNumber field.
 
 #### 7.1.2.3 Subscriber Certificate
 a. `certificatePolicies`
@@ -1669,6 +1673,10 @@ e. `keyUsage` (optional)
 f. `extKeyUsage` (required)
 
    Either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present. `id-kp-emailProtection` [RFC5280] MAY be present. Other values SHOULD NOT be present.
+
+g. `authorityKeyIdentifier` (required)
+
+   This extension MUST be present and MUST NOT be marked critical. It MUST contain a keyIdentifier field and it MUST NOT contain a authorityCertIssuer or authorityCertSerialNumber field.
 
 #### 7.1.2.4 All Certificates
 All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a `keyUsage` flag, `extendedKeyUsage` value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate.
