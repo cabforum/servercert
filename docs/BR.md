@@ -1514,7 +1514,7 @@ a. certificatePolicies
 >
 > certificatePolicies:policyQualifiers:policyQualifierId (Optional)
 >
-> *   id-qt 1 [RFC 5280].
+> *   id-qt 1 [RFC5280].
 >
 > certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
 >
@@ -1570,7 +1570,7 @@ a. certificatePolicies
 >
 >     *   certificatePolicies:policyQualifiers:policyQualifierId (Recommended)
 >
->         *   id-qt 1 [RFC 5280].
+>         *   id-qt 1 [RFC5280].
 >
 >     *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
 >
