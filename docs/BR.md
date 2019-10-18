@@ -342,7 +342,7 @@ No stipulation.
 
 **Repository**: An online database containing publicly-disclosed PKI governance documents (such as Certificate Policies and Certification Practice Statements) and Certificate status information, either in the form of a CRL or an OCSP response.
 
-**Request Token**: A value, derived in a method specified by the CA within its CPS (or a document clearly referenced by the CPS), which binds this demonstration of control to the certificate request.
+**Request Token**: A value, derived in a method specified by the CA which binds this demonstration of control to the certificate request. The CA SHOULD define within its CPS (or a document clearly referenced by the CPS) the format and method of Request Tokens it accepts.
 
 The Request Token SHALL incorporate the key used in the certificate request.
 
