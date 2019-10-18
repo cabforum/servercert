@@ -401,6 +401,8 @@ The script outputs:
 
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
 
+**Test Certificate**: A Certificate which is issued under a CA where there are no certificate paths/chains to a root certificate subject to these Requirements.
+
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
 
 **Unregistered Domain Name**: A Domain Name that is not a Registered Domain Name.
