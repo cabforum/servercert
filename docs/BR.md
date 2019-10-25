@@ -399,7 +399,7 @@ The script outputs:
 
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
 
-**Test Certificate**: A Certificate which is issued under a CA where there are no certificate paths/chains to a root certificate subject to these Requirements.
+**Test Certificate**: This term is no longer used in these Baseline Requirements.
 
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
 
@@ -1611,9 +1611,12 @@ b. semantics that, if included, will mislead a Relying Party about the certifica
 For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under these Baseline Requirements.
 
 ### 7.1.3 Algorithm object identifiers
-CAs MUST NOT issue any certificates using the SHA-1 hash algorithm.
+CAs MUST NOT issue any Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm.
+CAs MAY issue Root CA Certificates or Subordinate CA Certificates that are Cross Certificates using the SHA-1 hash algorithm.
 
-CAs MAY continue to use their existing SHA-1 Root Certificates. SHA-2 Subscriber certificates SHOULD NOT chain up to a SHA-1 Subordinate CA Certificate.
+CAs MAY continue to use their existing SHA-1 Root Certificates.
+
+Subscriber certificates SHOULD NOT chain up to a SHA-1 Subordinate CA Certificate.
 
 ### 7.1.4 Name Forms
 
