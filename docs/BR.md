@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.4**
+**Version 1.6.6**
 
-**March 16, 2019**
+**September 9, 2019**
 
 **www.cabforum.org**
 
@@ -117,6 +117,8 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.6.4 | SC14 | Updated Phone Validation Methods | 31-Jan-2019	| 16-Mar-2019 |
 | 1.6.4 | SC15 | Remove Validation Method Number 9 | 5-Feb-2019	| 16-Mar-2019 |
 | 1.6.4 | SC7 | Update IP Address Validation Methods | 8-Feb-2019	| 16-Mar-2019 |
+| 1.6.5 | SC16 | Other Subject Attributes | 15-Mar-2019	| 16-Apr-2019 |
+| 1.6.6 | SC19 | Phone Contact with DNS CAA Phone Contact v2 | 20-May-2019	| 9-Sep-2019 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -262,6 +264,8 @@ No stipulation.
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA, and whose activities are not within the scope of the appropriate CA audits, to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
 **DNS CAA Email Contact**: The email address defined in section B.1.1.
+
+**DNS CAA Phone Contact**: The phone number defined in section B.1.2.
 
 **DNS TXT Record Email Contact**: The email address defined in section B.2.1.
 
@@ -412,6 +416,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 | **Acronym** | **Meaning** |
 | --- | --- |
 | AICPA | American Institute of Certified Public Accountants |
+| ADN	| Authorization Domain Name |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
@@ -702,6 +707,17 @@ In the event of reaching voicemail, the CA may leave the Random Value and the AD
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.  
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
+Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 6844 Section 4, as amended by Errata 5065 (Appendix A).
+
+The CA MUST NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation.
+
+In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated. The Random Value MUST be returned to the CA to approve the request.
+
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 
@@ -1621,13 +1637,15 @@ Effective 1 January 2016, CAs MUST NOT issue any new Subscriber certificates or 
 
 Effective 16 January 2015, CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017 because Application Software Providers are in the process of deprecating and/or removing the SHA-1 algorithm from their software, and they have communicated that CAs and Subscribers using such certificates do so at their own risk.
 
-### 7.1.4 Name forms
+### 7.1.4 Name Forms
 
 #### 7.1.4.1 Issuing CA Certificate Subject
 The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
 
 #### 7.1.4.2 Subject Information - Subscriber Certificates
 By issuing the Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate. CAs SHALL NOT include a Domain Name or IP Address in a Subject attribute except as specified in Section 3.2.2.4 or Section 3.2.2.5.
+
+Subject attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 #### 7.1.4.2.1 Subject Alternative Name Extension
 Certificate Field: extensions:subjectAltName
@@ -1692,7 +1710,7 @@ Optional.
 The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains subject:organizationName, subject:givenName, subject:surname, subject:localityName, and subject:countryName attributes, also verified in accordance with Section 3.2.2.1.
 
 j. Other Subject Attributes
-All other optional attributes, when present within the subject field, MUST contain information that has been verified by the CA. Optional attributes MUST NOT contain metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+Other attributes MAY be present within the subject field. If present, other attributes MUST contain information that has been verified by the CA.
 
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
@@ -2051,9 +2069,9 @@ Corrected Text
 
 These methods allow domain owners to publish contact information in DNS for the purpose of validating domain control.
 
-B.1. CAA Methods
+## B.1. CAA Methods
 
-B.1.1. CAA contactemail Property
+### B.1.1. CAA contactemail Property
 
 SYNTAX: contactemail <rfc6532emailaddress> 
 
@@ -2066,11 +2084,24 @@ $ORIGIN example.com.
 
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
-B.2. DNS TXT Methods
+### B.1.2. CAA contactphone Property
 
-B.2.1. DNS TXT Record Email Contact
+SYNTAX: contactphone <rfc3966 Global Number>
+
+The CAA contactphone property takes a phone number as its parameter. The entire parameter value MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used. Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
+
+The following is an example where the holder of the domain specified the contact property using a phone number.
+
+$ORIGIN example.com.
+               CAA 0 contactphone "+1 (555) 123-4567"
+
+The contactphone property MAY be critical if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
+
+## B.2. DNS TXT Methods
+
+### B.2.1. DNS TXT Record Email Contact
 
 The DNS TXT record MUST be placed on the "_validation-contactemail" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
 
-B.2.2. DNS TXT Record Phone Contact
+### B.2.2. DNS TXT Record Phone Contact
 The DNS TXT record MUST be placed on the "_validation-contactphone" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
