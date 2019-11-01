@@ -1569,17 +1569,17 @@ a. `certificatePolicies`
 
    This extension MUST be present and SHOULD NOT be marked critical.
 
-   *  `certificatePolicies:policyIdentifier` (Required)
+   * `certificatePolicies:policyIdentifier` (Required)
 
       A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
 
    The following extensions MAY be present:
 
-   *  `certificatePolicies:policyQualifiers:policyQualifierId` (Recommended)
+   * `certificatePolicies:policyQualifiers:policyQualifierId` (Recommended)
 
       id-qt 1 [RFC 5280].
 
-   *  `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Optional)
+   * `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Optional)
 
       HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
 
@@ -1647,9 +1647,9 @@ As of the Effective Date of these Requirements, prior to the issuance of a Certi
 
 Prior to April 1, 2019, certificates containing underscore characters (“_”) in domain labels in dNSName entries MAY be issued as follows:
 
-*  dNSName entries MAY include underscore characters such that replacing all underscore characters with hyphen characters (“-“) would result in a valid domain label, and;
-*  Underscore characters MUST NOT be placed in the left most domain label, and;
-*  Such certificates MUST NOT be valid for longer than 30 days.
+* dNSName entries MAY include underscore characters such that replacing all underscore characters with hyphen characters (“-“) would result in a valid domain label, and;
+* Underscore characters MUST NOT be placed in the left most domain label, and;
+* Such certificates MUST NOT be valid for longer than 30 days.
 
 All certificates containing an underscore character in any dNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019.
 
