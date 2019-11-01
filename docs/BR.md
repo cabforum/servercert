@@ -1,5 +1,3 @@
-# Verso
-
 **CA/Browser Forum**
 
 **Baseline Requirements**
