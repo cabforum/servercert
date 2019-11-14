@@ -2,7 +2,7 @@
 
 **NETWORK AND CERTIFICATE SYSTEM SECURITY REQUIREMENTS** 
 
-**Version 1.2 - Effective 15 September 2018**
+**Version 1.3 - Effective 4 November 2019**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -96,9 +96,11 @@ c.	Implement automated mechanisms under the control of CA or Delegated Third Par
 
 d.	Require Trusted Role personnel to follow up on alerts of possible Critical Security Events;
 
-e.	Conduct a human review of application and system logs at least once a month to validate the integrity of logging processes and ensure that monitoring, logging, alerting, and log-integrity-verification functions are operating properly (the CA or Delegated Third Party MAY use an in-house or third-party audit log reduction and analysis tool);  and
+e. Monitor the integrity of the logging processes for application and system logs through continuous automated monitoring and alerting or through a human review to ensure that logging and log-integrity  functions are effective. Alternatively, if a human review is utilized and the system is online, the process must be performed at least once every 31 days.
 
-f.	Maintain, archive, and retain logs in accordance with disclosed business practices and applicable legislation.
+f. Monitor the archival and retention of logs to ensure that logs are retained for the appropriate amount of time in accordance with the disclosed business practices and applicable legislation.
+
+g.	If continuous automated monitoring and alerting is utilized to satisfy sections 1.h. or 3.e. of these Requirements, respond to the alert and initiate a plan of action within at most twenty-four (24) hours.
 
 # 4. VULNERABILITY DETECTION AND PATCH MANAGEMENT
 
@@ -175,8 +177,9 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 | Ver. | Ballot | Description | Adopted | Effective\* |
 | :---: | :---: | :---: | :---: | :---: | 
 | 1.0 | 83 | Original Version Adopted | 3‐Aug‐12 | 01‐Jan‐13 |
-| 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | <s>01‐Oct‐17</s> 09-Mar-18 |
+| 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | 09-Mar-18 |
 | 1.2 | SC3 | Two-Factor Authentication and Password Improvements | 16‐Aug‐18 | 15-Sep-18 |
+| 1.3 | SC21 | The Network and Certificate Systems Security Requirements section 3 (Log Integrity Controls) | 26‐Sep‐19 | 4-Nov-2019 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
