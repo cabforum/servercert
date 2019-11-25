@@ -1639,7 +1639,7 @@ Effective 16 January 2015, CAs SHOULD NOT issue Subscriber Certificates utilizin
 
 ### 7.1.4 Name Forms
 
-#### 7.1.4.1 Issuing CA Certificate Subject
+#### 7.1.4.1 Issuer Information
 The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
 
 #### 7.1.4.2 Subject Information - Subscriber Certificates
