@@ -565,6 +565,8 @@ This section defines the permitted processes and procedures for validating the A
 
 The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed below.
 
+When issuing a Certificate that includes an FQDN with "onion" as the rightmost label, the CA SHALL confirm that prior to issuance, the CA has validated each FQDN listed in the Certificate in accordance with Appendix C. 
+
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as Section 4.2.1 of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
@@ -2105,3 +2107,17 @@ The DNS TXT record MUST be placed on the "_validation-contactemail" subdomain of
 
 ### B.2.2. DNS TXT Record Phone Contact
 The DNS TXT record MUST be placed on the "_validation-contactphone" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
+
+# APPENDIX C – Issuance of Certificates for .onion Domain Names
+This appendix defines permissible verification procedures for including one or more RFC 7686 ".onion" special-use Domain Names in a Certificate.
+
+1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address.  A valid version 3 onion address must consist of exactly 56 characters, each of which is an alphanumeric ASCII character.  This address is encoded using base32 with a lowercase alphabet, which MUST be converted to uppercase before decoding, per section 3.4 of RFC 4648.  The address must also specify onion address version 3 and pass a SHA-256 integrity checksum.
+
+2. The CA MUST verify the Applicant’s control over the .onion Domain Name using at least one of the methods listed below:
+
+	a. The CA MAY verify the Applicant’s control over the .onion service by using method 3.2.2.4.6, Agreed‐Upon Change to Website.
+
+The CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of these Requirements.
+
+5. When a Certificate includes an FQDN where "onion" is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this Appendix C.
+
