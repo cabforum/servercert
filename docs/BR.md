@@ -2109,9 +2109,10 @@ The DNS TXT record MUST be placed on the "_validation-contactemail" subdomain of
 The DNS TXT record MUST be placed on the "_validation-contactphone" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
 
 # APPENDIX C – Issuance of Certificates for .onion Domain Names
+
 This appendix defines permissible verification procedures for including one or more RFC 7686 ".onion" special-use Domain Names in a Certificate.
 
-1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address.  A valid version 3 onion address must consist of exactly 56 characters, each of which is an alphanumeric ASCII character.  This address is encoded using base32 with a lowercase alphabet, which MUST be converted to uppercase before decoding, per section 3.4 of RFC 4648.  The address must also specify onion address version 3 and pass a SHA-256 integrity checksum.
+1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address, as defined in section 6 of the Tor Rendezvous Specification - Version 3 located at https://github.com/torproject/torspec/blob/master/rend-spec-v3.txt.
 
 2. The CA MUST verify the Applicant’s control over the .onion Domain Name using at least one of the methods listed below:
 
@@ -2119,5 +2120,5 @@ This appendix defines permissible verification procedures for including one or m
 
 The CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of these Requirements.
 
-5. When a Certificate includes an FQDN where "onion" is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this Appendix C.
+3. When a Certificate includes an FQDN where "onion" is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this Appendix C.
 
