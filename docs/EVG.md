@@ -602,11 +602,11 @@ The validity period for an EV Certificate SHALL NOT exceed 825 days.  It is RECO
 
 ## 9.5.  Subscriber Public Key
 
-The requirements in Section 6.1.1.3 of the Baseline requirements apply equally to EV Certificates.
+The requirements in Section 6.1.1.3 of the Baseline Requirements apply equally to EV Certificates.
 
 ## 9.6. Certificate Serial Number
 
-The requirements in Section 7.1 of the Baseline requirements apply equally to EV Certificates.
+The requirements in Section 7.1 of the Baseline Requirements apply equally to EV Certificates.
 
 ## 9.7.  Additional Technical Requirements for EV Certificates
 
@@ -690,7 +690,7 @@ where the subfields have the same meanings and restrictions described in Section
 
 ### 10.1.1.  Documentation Requirements
 
-The documentation requirements in Section 4.1.2 of the Baseline requirements apply equally to EV Certificates.
+The documentation requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates.
 
 ### 10.1.2.  Role Requirements
 
