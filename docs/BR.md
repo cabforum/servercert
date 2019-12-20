@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.6**
+**Version 1.6.7**
 
-**September 9, 2019**
+**December 19, 2019**
 
 **www.cabforum.org**
 
@@ -119,6 +119,8 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.6.4 | SC7 | Update IP Address Validation Methods | 8-Feb-2019	| 16-Mar-2019 |
 | 1.6.5 | SC16 | Other Subject Attributes | 15-Mar-2019	| 16-Apr-2019 |
 | 1.6.6 | SC19 | Phone Contact with DNS CAA Phone Contact v2 | 20-May-2019	| 9-Sep-2019 |
+| 1.6.7 | SC23 | Precertificates | 14-Nov-2019	| 19-Dec-2019 |
+| 1.6.7 | SC24 | Fall Cleanup v2 | 12-Nov-2019	| 19-Dec-2019 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
