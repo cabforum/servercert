@@ -12,9 +12,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.6**
+**Version 1.6.7**
 
-**September 9, 2019**
+**December 19, 2019**
 
 **www.cabforum.org**
 
@@ -119,6 +119,8 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.6.4 | SC7 | Update IP Address Validation Methods | 8-Feb-2019	| 16-Mar-2019 |
 | 1.6.5 | SC16 | Other Subject Attributes | 15-Mar-2019	| 16-Apr-2019 |
 | 1.6.6 | SC19 | Phone Contact with DNS CAA Phone Contact v2 | 20-May-2019	| 9-Sep-2019 |
+| 1.6.7 | SC23 | Precertificates | 14-Nov-2019	| 19-Dec-2019 |
+| 1.6.7 | SC24 | Fall Cleanup v2 | 12-Nov-2019	| 19-Dec-2019 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -1087,10 +1089,11 @@ defined by RFC6960.
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
 
 For the status of Subscriber Certificates:
-  * The CA SHALL update information provided via an Online Certificate Status Protocol at least every four days. OCSP responses from this service MUST have a maximum expiration time of ten days.
+
+* The CA SHALL update information provided via an Online Certificate Status Protocol at least every four days. OCSP responses from this service MUST have a maximum expiration time of ten days.
 
 For the status of Subordinate CA Certificates:
-  * The CA SHALL update information provided via an Online Certificate Status Protocol (i) at least every twelve months; and  (ii) within 24 hours after revoking a Subordinate CA Certificate.
+* The CA SHALL update information provided via an Online Certificate Status Protocol (i) at least every twelve months; and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with Section 7.1.5, the responder MUST NOT respond with a "good" status for such requests.
 
@@ -1099,9 +1102,10 @@ The CA SHOULD monitor the OCSP responder for requests for "unused" serial number
 The OCSP responder MAY provide definitive responses about "reserved" certificate serial numbers, as if there was a corresponding Certificate that matches the Precertificate [RFC6962].
 
 A certificate serial number within an OCSP request is one of the following three options:
-  1. "assigned" if a Certificate with that serial number has been issued by the Issuing CA, using any current or previous key associated with that CA subject; or
-  2. "reserved" if a Precertificate [RFC6962] with that serial number has been issued by (a) the Issuing CA; or (b) a Precertificate Signing Certificate [RFC6962] associated with the Issuing CA; or
-  3. "unused" if neither of the previous conditions are met.
+
+1.	"assigned" if a Certificate with that serial number has been issued by the Issuing CA, using any current or previous key associated with that CA subject; or
+2.	"reserved" if a Precertificate [RFC6962] with that serial number has been issued by (a) the Issuing CA; or (b) a Precertificate Signing Certificate [RFC6962] associated with the Issuing CA; or
+3.	"unused" if neither of the previous conditions are met.
 
 ### 4.9.11 Other forms of revocation advertisements available
 If the Subscriber Certificate is for a high-traffic FQDN, the CA MAY rely on stapling, in accordance with [RFC4366], to distribute its OCSP responses. In this case, the CA SHALL ensure that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshake. The CA SHALL enforce this requirement on the Subscriber either contractually, through the Subscriber Agreement or Terms of Use, or by technical review measures implemented by the CA.
