@@ -1716,7 +1716,7 @@ A CA may rely on the Contract Signer's authority to enter into the Subscriber Ag
 
 # Appendix F – Issuance of Certificates for .onion Domain Names
 
-A CA may issue an EV Certificate with .onion in the right-most label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix:
+A CA may issue an EV Certificate with .onion in the right-most label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix or Appendix C of the Baseline Requirements.
 
 1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31)
 
