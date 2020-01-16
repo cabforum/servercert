@@ -645,6 +645,8 @@ Confirming the Applicant's control over the FQDN by confirming one of the follow
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 4.2.1 of these Guidelines or Section 11.14.3 of the EV Guidelines).
 
+CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25.  CAs MAY continue to re-use information and validations for domains validated under this method per the applicable certificate data reuse periods.
+
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.7 DNS Change
@@ -733,6 +735,46 @@ In the event of reaching voicemail, the CA may leave the Random Value and the AD
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+#### 3.2.2.4.18 Agreed-Upon Change to Website v2
+
+Confirming the Applicant's control over the FQDN by verifying that the Request Token or Random Value is contained in the contents of a file. 
+1.	The entire Request Token or Random Value MUST NOT appear in the request used to retrieve the file, and
+2.	the CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
+
+The file containing the Request Token or Random Number: 
+1.	MUST be located on the Authorization Domain Name, and
+2.	MUST be located under the "/.well-known/pki-validation" directory, and
+3.	MUST be retrieved via either the "http" or "https" scheme, and
+4.	MUST be accessed over an Authorized Port.
+
+If the CA follows redirects the following apply:
+1.	Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
+2.	Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
+3.	Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
+4.	Redirects MUST be to resource URLs accessed via Authorized Ports.
+
+If a Random Value is used, then:
+1.	The CA MUST provide a Random Value unique to the certificate request.
+2.	The Random Value MUST remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
+
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+
+#### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
+
+Confirming the Applicant's control over a FQDN by validating domain control of the FQDN using the ACME HTTP Challenge method defined in section 8.3 of RFC 8555. The following are additive requirements to RFC 8555.
+
+The CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
+
+The token (as defined in RFC 8555, section 8.3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
+
+If the CA follows redirects:
+1.	Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
+2.	Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
+3.	Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
+4.	Redirects MUST be to resource URLs accessed via Authorized Ports.
+
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 
