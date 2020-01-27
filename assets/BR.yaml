@@ -1,10 +1,10 @@
 ---
 title:  Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle:  Version 1.6.3
-version: "1.6.3"
+subtitle:  Version 1.6.7
+version: "1.6.7"
 author:
 - CA/Browser Forum
-date: 1 February 2019
+date: 19 December 2019
 documentclass: report
 titlegraphic: /Users/jopurvis/src/cabforum-docs/assets/cabforum.png
 copyright: |
