@@ -577,10 +577,8 @@ If the subject:countryName field is present, then the CA SHALL verify the countr
 
 This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
 
-The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed below.
-
-When issuing a Certificate that includes an FQDN with "onion" as the rightmost label, the CA SHALL confirm that prior to issuance, the CA has validated each FQDN listed in the Certificate in accordance with Appendix C. 
-
+The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qualified Domain Name (FQDN), other than a Domain Name with "onion" in the right-most label of the FQDN, listed in the Certificate using at least one of the methods listed below. In addition, when issuing a Certificate that includes an FQDN with "onion" as the rightmost label, the CA SHALL confirm that prior to issuance, the CA has validated each FQDN listed in the Certificate with "onion" as the rightmost label in accordance with Appendix C.
+ 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as Section 4.2.1 of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
