@@ -1,14 +1,9 @@
 **CA/Browser Forum**
 
-
-
 **Baseline Requirements**
 **for the**
 **Issuance and Management of**
 **Publicly-Trusted Certificates**
-
-
-
 
 **CA/Browser Forum**
 
@@ -20,7 +15,6 @@
 
 Copyright 2019 CA/Browser Forum
 This work is licensed under the Creative Commons Attribution 4.0 International license.
-
 
 # 1. INTRODUCTION
 
@@ -45,18 +39,17 @@ This certificate policy (CP) contains the requirements for the issuance and mana
 
 The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with this document (OID arc 2.23.140.1.2) as follows:
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1); and
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1);` and
 
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2);` and
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2); and
-
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3).
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)`.
 
 
 ### 1.2.1 Revisions
 
 | **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
-| :---: | :---: | --- | :---: | :---: |
+|-|-|-----|--|--|
 | 1.0.0 | 62 | Version 1.0 of the Baseline Requirements Adopted | 22-Nov-11 | 01-Jul-12 |
 | 1.0.1 | 71 | Revised Auditor Qualifications | 08-May-12 | 01-Jan-13 |
 | 1.0.2 | 75 | Non-critical Name Constraints allowed as exception to RFC 5280 | 08-Jun-12 | 08-Jun-12 |
@@ -127,7 +120,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 ### 1.2.2. Relevant Dates
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
-| --- | --- | --- |
+|--|--|----------|
 | 2013-01-01 | 6.1.6 | For RSA public keys, CAs SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. |
 | 2013-01-01 | 4.9.10 | CAs SHALL support an OCSP capability using the GET method. |
 | 2013-01-01 | 5 | CAs SHALL comply with the Network and Certificate System Security Requirements. |
@@ -152,15 +145,15 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2018-08-01 | 3.2.2.4.1 and .5 | CAs must stop using domain validation methods BR 3.2.2.4.1 and 3.2.2.4.5, stop reusing validation data from those methods |
 | 2019-01-15 | 7.1.4.2.1 | All certificates containing an underscore character in any dNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019 |
 | 2019-05-01 | 7.1.4.2.1 | underscore characters (“_”) MUST NOT be present in dNSName entries |
-|2019-06-01	| 3.2.2.4.3	| CAs SHALL NOT perform validations using this method after May 31, 2019.  Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.
-|2019-08-01	| 3.2.2.5	| CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address |
-|2019-08-01	| 3.2.2.5.4	| CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
+| 2019-06-01	| 3.2.2.4.3	| CAs SHALL NOT perform validations using this method after May 31, 2019.  Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.
+| 2019-08-01	| 3.2.2.5	| CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address |
+| 2019-08-01	| 3.2.2.5.4	| CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
 
 ## 1.3 PKI Participants
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
 
 ### 1.3.1 Certification Authorities
-Certification Authority (CA) is defined in Section 1.6. Current CA Members of the CA/Browser Forum are listed here: [https://cabforum.org/members].
+Certification Authority (CA) is defined in Section 1.6. Current CA Members of the CA/Browser Forum are listed here: <https://cabforum.org/members>.
 
 ### 1.3.2 Registration Authorities
 With the exception of sections 3.2.2.4 and 3.2.2.5, the CA MAY delegate the performance of all, or any part, of Section 3.2 requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of Section 3.2.
@@ -185,7 +178,8 @@ The CA SHALL impose these limitations as a contractual requirement on the Enterp
 As defined in Section 1.6.1.
 
 ### 1.3.4 Relying Parties
-"Relying Party" and "Application Software Supplier" are defined in Section 1.6.1. Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here: https://cabforum.org/members.
+"Relying Party" and "Application Software Supplier" are defined in Section 1.6.1. Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here:  
+<https://cabforum.org/members>.
 
 ### 1.3.5 Other Participants
 Other groups that have participated in the development of these Requirements include the AICPA/CICA WebTrust for Certification Authorities task force and ETSI ESI. Participation by such groups does not imply their endorsement, recommendation, or approval of the final product.
@@ -237,7 +231,7 @@ No stipulation.
 
 **Base Domain Name**: The portion of an applied-for FQDN that is the first domain name node left of a registry-controlled or public suffix plus the registry-controlled or public suffix (e.g. "example.co.uk" or "example.com"). For FQDNs where the right-most domain name node is a gTLD having ICANN Specification 13 in its registry agreement, the gTLD itself may be used as the Base Domain Name.
 
-**CAA**: From RFC 6844 ([http:tools.ietf.org/html/rfc6844](http://tools.ietf.org/html/rfc6844)): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
+**CAA**: From RFC 6844 (<http://tools.ietf.org/html/rfc6844>): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify the Certification Authorities (CAs) authorized to issue certificates for that domain. Publication of CAA Resource Records allows a public Certification Authority to implement additional controls to reduce the risk of unintended certificate mis-issue."
 
 **Certificate**: An electronic document that uses a digital signature to bind a public key and an identity.
 
@@ -469,7 +463,7 @@ ISO 21188:2006, Public key infrastructure for financial services -- Practices an
 
 Network and Certificate System Security Requirements, v.1.0, 1/1/2013.
 
-NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf.
+NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, <http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf>.
 
 RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels, Bradner, March 1997.
 
@@ -571,7 +565,7 @@ If the Subject Identity Information is to include a DBA or tradename, the CA SHA
 5. A utility bill, bank statement, credit card statement, government-issued tax document, or other form of identification that the CA determines to be reliable.
 
 #### 3.2.2.3 Verification of Country
-If the subject:countryName field is present, then the CA SHALL verify the country associated with the Subject using one of the following: (a) the IP Address range assignment by country for either (i) the web site's IP address, as indicated by the DNS record for the web site or (ii) the Applicant's IP address; (b) the ccTLD of the requested Domain Name; (c) information provided by the Domain Name Registrar; or (d) a method identified in Section 3.2.2.1. The CA SHOULD implement a process to screen proxy servers in order to prevent reliance upon IP addresses assigned in countries other than where the Applicant is actually located.
+If the `subject:countryName` field is present, then the CA SHALL verify the country associated with the Subject using one of the following: (a) the IP Address range assignment by country for either (i) the web site's IP address, as indicated by the DNS record for the web site or (ii) the Applicant's IP address; (b) the ccTLD of the requested Domain Name; (c) information provided by the Domain Name Registrar; or (d) a method identified in Section 3.2.2.1. The CA SHOULD implement a process to screen proxy servers in order to prevent reliance upon IP addresses assigned in countries other than where the Applicant is actually located.
 
 #### 3.2.2.4 Validation of Domain Authorization or Control
 
@@ -613,7 +607,7 @@ Each phone call SHALL be made to a single number and MAY confirm control of mult
 
 CAs SHALL NOT perform validations using this method after May 31, 2019.  Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.
 
-**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names. 
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.4 Constructed Email to Domain Contact
 
@@ -630,7 +624,7 @@ The email MAY be re-sent in its entirety, including the re-use of the Random Val
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
-**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names. 
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.5 Domain Authorization Document
 
@@ -703,7 +697,7 @@ The Random Value SHALL be unique in each email. The email MAY be re-sent in its 
 
 Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
-In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact. 
+In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact.
 
 In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated. The Random Value MUST be returned to the CA to approve the request.
 
@@ -711,11 +705,11 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact 
+##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 
 Confirm the Applicant's control over the FQDN by calling the DNS TXT Record Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS TXT Record Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
-The CA MAY NOT knowingly be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation. 
+The CA MAY NOT knowingly be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation.
 
 In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated.  The Random Value MUST be returned to the CA to approve the request.
 
@@ -740,7 +734,7 @@ This section defines the permitted processes and procedures for validating the A
 
 The CA SHALL confirm that prior to issuance, the CA has validated each IP Address listed in the Certificate using at least one of the methods specified in this section.
 
-Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as Section 4.2.1 of this document) prior to Certificate issuance. For purposes of IP Address validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate. 
+Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as Section 4.2.1 of this document) prior to Certificate issuance. For purposes of IP Address validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
 After July 31, 2019, CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address.
 
@@ -749,7 +743,7 @@ After July 31, 2019, CAs SHALL maintain a record of which IP validation method, 
 ##### 3.2.2.5.1. Agreed-Upon Change to Website
 Confirming the Applicant's control over the requested IP Address by confirming the presence of a Request Token or Random Value contained in the content of a file or webpage in the form of a meta tag under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of validating control of IP Addresses, on the IP Address that is accessible by the CA via HTTP/HTTPS over an Authorized Port. The Request Token or Random Value MUST NOT appear in the request.
 
-If a Random Value is used, the CA SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 4.2.1 of this document). 
+If a Random Value is used, the CA SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 4.2.1 of this document).
 
 ##### 3.2.2.5.2. Email, Fax, SMS, or Postal Mail to IP Address Contact
 Confirming the Applicant's control over the IP Address  by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as an IP Address Contact.
@@ -779,7 +773,7 @@ In the event that someone other than an IP Address Contact is reached, the CA MA
 
 In the event of reaching voicemail, the CA may leave the Random Value and the IP Address(es) being validated.  The Random Value MUST be returned to the CA to approve the request.
 
-The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values. 
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 ##### 3.2.2.5.6 ACME “http-01” method for IP Addresses
 
@@ -790,11 +784,13 @@ Confirming the Applicant's control over the IP Address by performing the procedu
 Confirming the Applicant's control over the IP Address by performing the procedure documented for a “tls-alpn-01” challenge in draft 04 of “ACME IP Identifier Validation Extension,” available at https://tools.ietf.org/html/draft-ietf-acme-ip-04#section-4.
 
 #### 3.2.2.6 Wildcard Domain Validation
-Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName of type DNS-ID, the CA MUST establish and follow a documented procedure /1 that determines if the wildcard character occurs in the first label position to the left of a "registry-controlled" label or "public suffix" (e.g. "\*.com", "\*.co.uk", see RFC 6454 Section 8.2 for further explanation).
+Before issuing a certificate with a wildcard character (\*) in a CN or subjectAltName of type DNS-ID, the CA MUST establish and follow a documented procedure that determines if the wildcard character occurs in the first label position to the left of a "registry-controlled" label or "public suffix" (e.g. "\*.com", "\*.co.uk", see RFC 6454 Section 8.2 for further explanation).
 
 If a wildcard would fall within the label immediately to the left of a registry-controlled /1 or public suffix, CAs MUST refuse issuance unless the applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.).
 
-/1 Determination of what is "registry-controlled" versus the registerable portion of a Country Code Top-Level Domain Namespace is not standardized at the time of writing and is not a property of the DNS itself. Current best practice is to consult a "public suffix list" such as <http://publicsuffix.org/> (PSL), and to retrieve a fresh copy regularly. If using the PSL, a CA SHOULD consult the "ICANN DOMAINS" section only, not the "PRIVATE DOMAINS" section. The PSL is updated regularly to contain new gTLDs delegated by ICANN, which are listed in the "ICANN DOMAINS" section. A CA is not prohibited from issuing a Wildcard Certificate to the Registrant of an entire gTLD, provided that control of the entire namespace is demonstrated in an appropriate way.
+Determination of what is "registry-controlled" versus the registerable portion of a Country Code Top-Level Domain Namespace is not standardized at the time of writing and is not a property of the DNS itself. Current best practice is to consult a "public suffix list" such as the [Public Suffix List (PSL)](<http://publicsuffix.org/>), and to retrieve a fresh copy regularly.
+
+If using the PSL, a CA SHOULD consult the "ICANN DOMAINS" section only, not the "PRIVATE DOMAINS" section. The PSL is updated regularly to contain new gTLDs delegated by ICANN, which are listed in the "ICANN DOMAINS" section. A CA is not prohibited from issuing a Wildcard Certificate to the Registrant of an entire gTLD, provided that control of the entire namespace is demonstrated in an appropriate way.
 
 #### 3.2.2.7 Data Source Accuracy
 Prior to using any data source as a Reliable Data Source, the CA SHALL evaluate the source for its reliability, accuracy, and resistance to alteration or falsification. The CA SHOULD consider the following during its evaluation:
@@ -923,7 +919,7 @@ No stipulation.
 ## 4.5 Key pair and certificate usage
 
 ### 4.5.1 Subscriber private key and certificate usage
-See Section 9.6.3, provisions 2. and 4. 
+See Section 9.6.3, provisions 2. and 4.
 
 ### 4.5.2 Relying party public key and certificate usage
 No stipulation.
@@ -1058,7 +1054,7 @@ After reviewing the facts and circumstances, the CA SHALL work with the Subscrib
 5. Relevant legislation.
 
 ### 4.9.6 Revocation checking requirement for relying parties
-No stipulation. 
+No stipulation.
 
 **Note:** Following certificate issuance, a certificate may be revoked for reasons stated in Section 4.9.1. Therefore, relying parties should check the revocation status of all certificates that contain a CDP or OCSP pointer.
 
@@ -1066,11 +1062,11 @@ No stipulation.
 
 For the status of Subscriber Certificates:
 
-If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the value of the nextUpdate field MUST NOT be more than ten days beyond the value of the thisUpdate field
+If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the value of the nextUpdate field MUST NOT be more than ten days beyond the value of the thisUpdate field.
 
 For the status of Subordinate CA Certificates:
 
-The CA SHALL update and reissue CRLs at least (i) once every twelve months and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field MUST NOT be more than twelve months beyond the value of the thisUpdate field
+The CA SHALL update and reissue CRLs at least (i) once every twelve months and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field MUST NOT be more than twelve months beyond the value of the thisUpdate field.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 No stipulation.
@@ -1108,7 +1104,7 @@ A certificate serial number within an OCSP request is one of the following three
 3.	"unused" if neither of the previous conditions are met.
 
 ### 4.9.11 Other forms of revocation advertisements available
-If the Subscriber Certificate is for a high-traffic FQDN, the CA MAY rely on stapling, in accordance with [RFC4366], to distribute its OCSP responses. In this case, the CA SHALL ensure that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshake. The CA SHALL enforce this requirement on the Subscriber either contractually, through the Subscriber Agreement or Terms of Use, or by technical review measures implemented by the CA.
+If the Subscriber Certificate is for a high-traffic FQDN, the CA MAY rely on stapling, in accordance with [RFC4366](https://www.ietf.org/rfc/rfc4366.txt), to distribute its OCSP responses. In this case, the CA SHALL ensure that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshake. The CA SHALL enforce this requirement on the Subscriber either contractually, through the Subscriber Agreement or Terms of Use, or by technical review measures implemented by the CA.
 
 ### 4.9.12 Special requirements re key compromise
 See Section 4.9.1.
@@ -1246,26 +1242,26 @@ The CA SHALL record at least the following events:
 
 1. CA key lifecycle management events, including:
 
-  a. Key generation, backup, storage, recovery, archival, and destruction; and
-  b. Cryptographic device lifecycle management events.
+   a. Key generation, backup, storage, recovery, archival, and destruction; and
+   b. Cryptographic device lifecycle management events.
 
 2. CA and Subscriber Certificate lifecycle management events, including:
 
-  a. Certificate requests, renewal, and re-key requests, and revocation;
-  b. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-  c. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
-  d. Acceptance and rejection of certificate requests; Frequency of Processing Log
-  e. Issuance of Certificates; and
-  f. Generation of Certificate Revocation Lists and OCSP entries.
+   a. Certificate requests, renewal, and re-key requests, and revocation;
+   b. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
+   c. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
+   d. Acceptance and rejection of certificate requests; Frequency of Processing Log
+   e. Issuance of Certificates; and
+   f. Generation of Certificate Revocation Lists and OCSP entries.
 
 3. Security events, including:
 
-  a. Successful and unsuccessful PKI system access attempts;
-  b. PKI and security system actions performed;
-  c. Security profile changes;
-  d. System crashes, hardware failures, and other anomalies;
-  e. Firewall and router activities; and
-  f. Entries to and exits from the CA facility.
+   a. Successful and unsuccessful PKI system access attempts;
+   b. PKI and security system actions performed;
+   c. Security profile changes;
+   d. System crashes, hardware failures, and other anomalies;
+   e. Firewall and router activities; and
+   f. Entries to and exits from the CA facility.
 
 Log entries MUST include the following elements:
 
@@ -1429,7 +1425,7 @@ Private Keys corresponding to Root Certificates MUST NOT be used to sign Certifi
 
 1. Self-signed Certificates to represent the Root CA itself;
 2. Certificates for Subordinate CAs and Cross Certificates;
-3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates); and 
+3. Certificates for infrastructure purposes (administrative role certificates, internal CA operational device certificates); and
 4. Certificates for OCSP Response verification.
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
@@ -1512,124 +1508,124 @@ Certificates MUST be of type X.509 v3.
 This section specifies the additional requirements for Certificate content and extensions for Certificates.
 
 #### 7.1.2.1 Root CA Certificate
-a. basicConstraints
-This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field SHOULD NOT be present.
+a. `basicConstraints`
 
-b. keyUsage
-This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+   This extension MUST appear as a critical extension. The cA field MUST be set true. The pathLenConstraint field SHOULD NOT be present.
 
-c. certificatePolicies
-This extension SHOULD NOT be present.
+b. `keyUsage`
 
-d. extendedKeyUsage
-This extension MUST NOT be present.
+   This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Root CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+
+c. `certificatePolicies`
+
+   This extension SHOULD NOT be present.
+
+d. `extendedKeyUsage`
+
+   This extension MUST NOT be present.
 
 #### 7.1.2.2 Subordinate CA Certificate
 
-a. certificatePolicies
+a. `certificatePolicies`
 
-> This extension MUST be present and SHOULD NOT be marked critical.
->
-> certificatePolicies:policyIdentifier (Required)
->
-> The following fields MAY be present if the Subordinate CA is not an Affiliate of the entity that controls the Root CA.
->
-> certificatePolicies:policyQualifiers:policyQualifierId (Optional)
->
-> *   id-qt 1 [RFC5280].
->
-> certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
->
-> *   HTTP URL for the Root CA's Certificate Policies, Certification
->     Practice Statement, Relying Party Agreement, or other pointer to
->     online policy information provided by the CA.
+   This extension MUST be present and SHOULD NOT be marked critical.
 
-b. cRLDistributionPoints
+   `certificatePolicies:policyIdentifier` (Required)
 
-This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.
+   The following fields MAY be present if the Subordinate CA is not an Affiliate of the entity that controls the Root CA.
 
-c. authorityInformationAccess
+   * `certificatePolicies:policyQualifiers:policyQualifierId` (Optional)
 
-> With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
->
-> The HTTP URL of the Issuing CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
+     id-qt 1 [RFC5280].
 
-d. basicConstraints
+   * `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Optional)
 
-> This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MAY be present.
+   HTTP URL for the Root CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the CA.
 
-e. keyUsage
+b. `cRLDistributionPoints`
 
-This extension MUST be present and MUST be marked critical. Bit positions for keyCertSign and cRLSign MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the digitalSignature bit MUST be set.
+   This extension MUST be present and MUST NOT be marked critical. It MUST contain the HTTP URL of the CA's CRL service.
 
-f. nameConstraints (optional)
+c. `authorityInformationAccess`
 
-> If present, this extension SHOULD be marked critical\*.
->
-> \* Non-critical Name Constraints are an exception to RFC 5280 (4.2.1.10), however, they MAY be used until the Name Constraints extension is supported by Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
+   With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (`accessMethod` = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (`accessMethod` = 1.3.6.1.5.5.7.48.2).
 
-g. extkeyUsage (optional)
+   The HTTP URL of the Issuing CA's OCSP responder MAY be omitted, provided that the Subscriber "staples" the OCSP response for the Certificate in its TLS handshakes [RFC4366].
 
-> For Subordinate CA Certificates to be Technically constrained in line with section 7.1.5, then either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present\*\*.
->
-> Other values MAY be present.
->
-> If present, this extension SHOULD be marked non-critical.
->
-> \*\* Generally Extended Key Usage will only appear within end entity certificates (as highlighted in RFC 5280 (4.2.1.12)), however, Subordinate CAs MAY include the extension to further protect relying parties until the use of the extension is consistent between Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
+d. `basicConstraints`
 
+   This extension MUST be present and MUST be marked critical. The cA field MUST be set true. The pathLenConstraint field MAY be present.
+
+e. `keyUsage`
+
+   This extension MUST be present and MUST be marked critical. Bit positions for `keyCertSign` and `cRLSign` MUST be set. If the Subordinate CA Private Key is used for signing OCSP responses, then the `digitalSignature` bit MUST be set.
+
+f. `nameConstraints` (optional)
+
+   If present, this extension SHOULD be marked critical[^*].
+
+[^*]: Non-critical Name Constraints are an exception to RFC 5280 (4.2.1.10), however, they MAY be used until the Name Constraints extension is supported by Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
+
+g. `extkeyUsage` (optional)
+
+   For Subordinate CA Certificates to be Technically constrained in line with section 7.1.5, then either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present[^**].
+
+   Other values MAY be present.
+
+   If present, this extension SHOULD be marked non-critical.
+
+[^**]: Generally Extended Key Usage will only appear within end entity certificates (as highlighted in RFC 5280 (4.2.1.12)), however, Subordinate CAs MAY include the extension to further protect relying parties until the use of the extension is consistent between Application Software Suppliers whose software is used by a substantial portion of Relying Parties worldwide.
 
 #### 7.1.2.3 Subscriber Certificate
-a. certificatePolicies
+a. `certificatePolicies`
 
-> This extension MUST be present and SHOULD NOT be marked critical.
->
-> *   certificatePolicies:policyIdentifier (Required)
->
->     A Policy Identifier, documented by the issuing CA in its Certificate Policy and/or Certification Practice Statement, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
->
->     The following extensions MAY be present:
->
->     *   certificatePolicies:policyQualifiers:policyQualifierId (Recommended)
->
->         *   id-qt 1 [RFC5280].
->
->     *   certificatePolicies:policyQualifiers:qualifier:cPSuri (Optional)
->
->         HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
+   This extension MUST be present and SHOULD NOT be marked critical.
 
-b. cRLDistributionPoints
+   * `certificatePolicies:policyIdentifier` (Required)
 
-> This extension MAY be present. If present, it MUST NOT be marked critical, and it MUST contain the HTTP URL of the CA's CRL service.
+      A Policy Identifier, defined by the issuing CA, that indicates a Certificate Policy asserting the issuing CA's adherence to and compliance with these Requirements.
 
-c. authorityInformationAccess
+   The following extensions MAY be present:
 
-> With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
->
-> The HTTP URL of the Issuing CA's OCSP responder MAY be omitted provided that the Subscriber "staples" OCSP responses for the Certificate in its TLS handshakes [RFC4366].
+   * `certificatePolicies:policyQualifiers:policyQualifierId` (Recommended)
 
-d. basicConstraints (optional)
+      id-qt 1 [RFC 5280].
 
-> The cA field MUST NOT be true.
+   * `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Optional)
 
-e. keyUsage (optional)
+      HTTP URL for the Subordinate CA's Certification Practice Statement, Relying Party Agreement or other pointer to online information provided by the CA.
 
-> If present, bit positions for keyCertSign and cRLSign MUST NOT be set.
+b. `cRLDistributionPoints`
 
-f. extKeyUsage (required)
+   This extension MAY be present. If present, it MUST NOT be marked critical, and it MUST contain the HTTP URL of the CA's CRL service.
 
-> Either the value id-kp-serverAuth [RFC5280] or id-kp-clientAuth [RFC5280] or both values MUST be present. id-kp-emailProtection [RFC5280] MAY be present. Other values SHOULD NOT be present.
+c. `authorityInformationAccess`
+
+   With the exception of stapling, which is noted below, this extension MUST be present. It MUST NOT be marked critical, and it MUST contain the HTTP URL of the Issuing CA's OCSP responder (accessMethod = 1.3.6.1.5.5.7.48.1). It SHOULD also contain the HTTP URL of the Issuing CA's certificate (accessMethod = 1.3.6.1.5.5.7.48.2).
+
+   The HTTP URL of the Issuing CA's OCSP responder MAY be omitted provided that the Subscriber "staples" OCSP responses for the Certificate in its TLS handshakes [RFC4366].
+
+d. `basicConstraints` (optional)
+
+   The cA field MUST NOT be true.
+
+e. `keyUsage` (optional)
+
+   If present, bit positions for keyCertSign and cRLSign MUST NOT be set.
+
+f. `extKeyUsage` (required)
+
+   Either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present. `id-kp-emailProtection` [RFC5280] MAY be present. Other values SHOULD NOT be present.
 
 #### 7.1.2.4 All Certificates
-All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a keyUsage flag, extendedKeyUsage value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate.
+All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a `keyUsage` flag, `extendedKeyUsage` value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate.
 
 CAs SHALL NOT issue a Certificate with:
 
 a. Extensions that do not apply in the context of the public Internet (such as an extendedKeyUsage value for a service that is only valid in the context of a privately managed network), unless:
 
-> i. such value falls within an OID arc for which the Applicant demonstrates ownership, or
-> ii. the Applicant can otherwise demonstrate the right to assert the data in a public context; or
-
+   i. such value falls within an OID arc for which the Applicant demonstrates ownership, or
+   ii. the Applicant can otherwise demonstrate the right to assert the data in a public context; or
 
 b. semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA (such as including extendedKeyUsage value for a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
 
@@ -1655,59 +1651,61 @@ By issuing the Certificate, the CA represents that it followed the procedure set
 Subject attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 #### 7.1.4.2.1 Subject Alternative Name Extension
-Certificate Field: extensions:subjectAltName
-Required/Optional: Required
-Contents: This extension MUST contain at least one entry. Each entry MUST be either a dNSName containing the Fully-Qualified Domain Name or an iPAddress containing the IP address of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or IP address or has been granted the right to use it by the Domain Name Registrant or IP address assignee, as appropriate.
+
+__Certificate Field:__ `extensions:subjectAltName`  
+__Required/Optional:__ Required  
+__Contents:__ This extension MUST contain at least one entry. Each entry MUST be either a dNSName containing the Fully-Qualified Domain Name or an iPAddress containing the IP address of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or IP address or has been granted the right to use it by the Domain Name Registrant or IP address assignee, as appropriate.
 
 Wildcard FQDNs are permitted.
 
 CAs SHALL NOT issue certificates with a subjectAlternativeName extension or Subject commonName field containing a Reserved IP Address or Internal Name.
 
-Entries in the dNSName MUST be in the "preferred name syntax", as specified in RFC 5280, and thus MUST NOT contain underscore characters ("_").
+Prior to April 1, 2019, certificates containing underscore characters (“`_`”) in domain labels in dNSName entries MAY be issued as follows:
+
+* dNSName entries MAY include underscore characters such that replacing all underscore characters with hyphen characters (“-“) would result in a valid domain label, and;
+* Underscore characters MUST NOT be placed in the left most domain label, and;
+* Such certificates MUST NOT be valid for longer than 30 days.
+
+All certificates containing an underscore character in any dNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019.
+
+After April 30, 2019, underscore characters (“_”) MUST NOT be present in dNSName entries.
 
 #### 7.1.4.2.2. Subject Distinguished Name Fields
-a. Certificate Field: subject:commonName (OID 2.5.4.3)
-Required/Optional: Deprecated (Discouraged, but not prohibited)
-Contents: If present, this field MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).
+a. __Certificate Field:__ `subject:commonName` (OID 2.5.4.3)  
+   __Required/Optional:__ Deprecated (Discouraged, but not prohibited)  
+   __Contents:__ If present, this field MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).
 
-b. Certificate Field: subject:organizationName (OID 2.5.4.10)
-Optional.
-Contents: If present, the subject:organizationName field MUST contain either the Subject's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly supported by application software, the CA MAY use the subject:organizationName field to convey a natural person Subject's name or DBA.
+b. __Certificate Field:__ `subject:organizationName` (OID 2.5.4.10)  
+   __Required/Optional:__ Optional.  
+   __Contents:__ If present, the `subject:organizationName` field MUST contain either the Subject's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly supported by application software, the CA MAY use the `subject:organizationName` field to convey a natural person Subject's name or DBA.
 
-c. Certificate Field: subject:givenName (2.5.4.42) and subject:surname (2.5.4.4)
-Optional.
-Contents: If present, the subject:givenName field and subject:surname field MUST contain an natural person Subject’s name as verified under Section 3.2.3. A Certificate containing a subject:givenName field or subject:surname field MUST contain the (2.23.140.1.2.3) Certificate Policy OID.
+c. __Certificate Field:__ `subject:givenName` (2.5.4.42) and `subject:surname` (2.5.4.4)  
+   __Required/Optional:__ Optional.  
+   __Contents:__ If present, the `subject:givenName` field and `subject:surname` field MUST contain an natural person Subject’s name as verified under Section 3.2.3. A Certificate containing a `subject:givenName` field or `subject:surname` field MUST contain the (2.23.140.1.2.3) Certificate Policy OID.
 
-d. Certificate Field: Number and street: subject:streetAddress (OID: 2.5.4.9)
-Optional if the subject:organizationName field, subject: givenName field, or subject:surname field are present.
-Prohibited if the subject:organizationName field, subject:givenName, and subject:surname field are absent.
-Contents: If present, the subject:streetAddress field MUST contain the Subject's street address information as verified under Section 3.2.2.1.
+d. __Certificate Field:__ Number and street: `subject:streetAddress` (OID: 2.5.4.9)  
+   __Required/Optional:__ Optional if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present. Prohibited if the `subject:organizationName` field, `subject:givenName`, and `subject:surname` field are absent.  
+   __Contents:__ If present, the `subject:streetAddress` field MUST contain the Subject's street address information as verified under Section 3.2.2.1.
 
-e. Certificate Field: subject:localityName (OID: 2.5.4.7)
-Required if the subject:organizationName field, subject:givenName field, or subject:surname field are present and the subject:stateOrProvinceName field is absent.
-Optional if the subject:stateOrProvinceName field and the subject:organizationName field, subject:givenName field, or subject:surname field are present.
-Prohibited if the subject:organizationName field, subject:givenName, and subject:surname field are absent.
-Contents: If present, the subject:localityName field MUST contain the Subject's locality information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the localityName field MAY contain the Subject's locality and/or state or province information as verified under Section 3.2.2.1.
+e. __Certificate Field:__ subject:localityName (OID: 2.5.4.7)  
+   __Required/Optional:__ Required if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present and the `subject:stateOrProvinceName` field is absent. Optional if the `subject:stateOrProvinceName` field and the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present. Prohibited if the `subject:organizationName` field, `subject:givenName`, and `subject:surname` field are absent.  
+   __Contents:__ If present, the `subject:localityName` field MUST contain the Subject's locality information as verified under Section 3.2.2.1. If the `subject:countryName` field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the `localityName` field MAY contain the Subject's locality and/or state or province information as verified under Section 3.2.2.1.
 
-f. Certificate Field: subject:stateOrProvinceName (OID: 2.5.4.8)
-Required if the subject:organizationName field, subject:givenName field, or subject:surname field are present and subject:localityName field is absent.
-Optional if the subject:localityName field and the subject:organizationName field, the subject:givenName field, or the subject:surname field are present.
-Prohibited if the subject:organizationName field, the subject:givenName field, or subject:surname field are absent.
-Contents: If present, the subject:stateOrProvinceName field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the subject:countryName field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the subject:stateOrProvinceName field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
+f. __Certificate Field:__ `subject:stateOrProvinceName` (OID: 2.5.4.8)  
+   __Required/Optional:__ Required if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present and `subject:localityName` field is absent. Optional if the `subject:localityName` field and the `subject:organizationName` field, the `subject:givenName` field, or the `subject:surname` field are present. Prohibited if the `subject:organizationName` field, the `subject:givenName` field, or `subject:surname` field are absent.  
+   __Contents:__ If present, the `subject:stateOrProvinceName` field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the `subject:countryName` field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the `subject:stateOrProvinceName` field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
 
-g. Certificate Field: subject:postalCode (OID: 2.5.4.17)
-Optional if the subject:organizationName, subject:givenName field, or subject:surname fields are present.
-Prohibited if the subject:organizationName field, subject:givenName field, or subject:surname field are absent.
-Contents: If present, the subject:postalCode field MUST contain the Subject's zip or postal information as verified under Section 3.2.2.1.
+g. __Certificate Field:__ `subject:postalCode` (OID: 2.5.4.17)  
+   __Required/Optional:__ Optional if the `subject:organizationName`, `subject:givenName` field, or `subject:surname` fields are present. Prohibited if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are absent.  
+   __Contents:__ If present, the `subject:postalCode` field MUST contain the Subject's zip or postal information as verified under Section 3.2.2.1.
 
-h. Certificate Field: subject:countryName (OID: 2.5.4.6)
-Required if the subject:organizationName field, subject:givenName, or subject:surname field are present.
-Optional if the subject:organizationName field, subject:givenName field, and subject:surname field are absent.
-Contents: If the subject:organizationName field is present, the subject:countryName MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the subject:organizationName field is absent, the subject:countryName field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
+h. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)  
+   __Required/Optional:__ Required if the `subject:organizationName` field, `subject:givenName`, or `subject:surname` field are present. Optional if the `subject:organizationName` field, `subject:givenName` field, and `subject:surname` field are absent.  
+   __Contents:__ If the `subject:organizationName` field is present, the `subject:countryName` MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the `subject:organizationName` field is absent, the `subject:countryName` field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
-i. Certificate Field: subject:organizationalUnitName (OID: 2.5.4.11)
-Optional.
-The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains subject:organizationName, subject:givenName, subject:surname, subject:localityName, and subject:countryName attributes, also verified in accordance with Section 3.2.2.1.
+i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)
+   __Required/Optional:__ Optional.  
+   Contents: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains `subject:organizationName`, `subject:givenName`, `subject:surname`, `subject:localityName`, and `subject:countryName` attributes, also verified in accordance with Section 3.2.2.1.
 
 j. Other Subject Attributes
 Other attributes MAY be present within the subject field. If present, other attributes MUST contain information that has been verified by the CA.
@@ -1717,17 +1715,17 @@ By issuing a Subordinate CA Certificate, the CA represents that it followed the 
 
 ##### 7.1.4.3.1. Subject Distinguished Name Fields
 
-a.  Certificate Field: subject:commonName (OID 2.5.4.3)
-Required/Optional: Required
-Contents: This field MUST be present and the contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate.
+a.  __Certificate Field:__ `subject:commonName` (OID 2.5.4.3)  
+    __Required/Optional:__ Required  
+    __Contents:__ This field MUST be present and the contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate.
 
-b. Certificate Field: subject:organizationName (OID 2.5.4.10)
-Required/Optional: Required
-Contents: This field MUST be present and the contents MUST contain either the Subject CA's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name".
+b. __Certificate Field:__ `subject:organizationName` (OID 2.5.4.10)  
+   __Required/Optional:__ Required  
+   __Contents:__ This field MUST be present and the contents MUST contain either the Subject CA's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name".
 
-c. Certificate Field: subject:countryName (OID: 2.5.4.6)
-Required/Optional: Required
-Contents: This field MUST contain the two‐letter ISO 3166‐1 country code for the country in which the CA's place of business is located.
+c. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)  
+   __Required/Optional:__ Required  
+   __Contents:__ This field MUST contain the two‐letter ISO 3166‐1 country code for the country in which the CA's place of business is located.
 
 ### 7.1.5 Name constraints
 For a Subordinate CA Certificate to be considered Technically Constrained, the certificate MUST include an Extended Key Usage (EKU) extension specifying all extended key usages that the Subordinate CA Certificate is authorized to issue certificates for. The anyExtendedKeyUsage KeyPurposeId MUST NOT appear within this extension.
@@ -1740,15 +1738,17 @@ c. For each DirectoryName in permittedSubtrees the CA MUST confirm the Applicant
 
 If the Subordinate CA Certificate is not allowed to issue certificates with an iPAddress, then the Subordinate CA Certificate MUST specify the entire IPv4 and IPv6 address ranges in excludedSubtrees. The Subordinate CA Certificate MUST include within excludedSubtrees an iPAddress GeneralName of 8 zero octets (covering the IPv4 address range of 0.0.0.0/0). The Subordinate CA Certificate MUST also include within excludedSubtrees an iPAddress GeneralName of 32 zero octets (covering the IPv6 address range of ::0/0). Otherwise, the Subordinate CA Certificate MUST include at least one iPAddress in permittedSubtrees.
 
-A decoded example for issuance to the domain and sub domains of example.com by organization :- Example LLC, Boston, Massachusetts, US would be:-
+A decoded example for issuance to the domain and sub domains of `example.com` by organization `Example LLC, Boston, Massachusetts, US` would be:
 
-> X509v3 Name Constraints:
->   Permitted:
-> ​      DNS:example.com
-> ​      DirName: C=US, ST=MA, L=Boston, O=Example LLC
->   Excluded:
-> ​      IP:0.0.0.0/0.0.0.0
-> ​      IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0
+```
+ X509v3 Name Constraints:
+   Permitted:
+     DNS:example.com
+     DirName: C=US, ST=MA, L=Boston, O=Example LLC
+   Excluded:
+     IP:0.0.0.0/0.0.0.0
+     IP:0:0:0:0:0:0:0:0/0:0:0:0:0:0:0:0
+```
 
 If the Subordinate CA is not allowed to issue certificates with dNSNames, then the Subordinate CA Certificate MUST include a zero-length dNSName in excludedSubtrees. Otherwise, the Subordinate CA Certificate MUST include at least one dNSName in permittedSubtrees.
 
@@ -1759,29 +1759,29 @@ This section describes the content requirements for the Root CA, Subordinate CA,
 
 The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting compliance with these Requirements as follows:
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1), if the Certificate complies with these Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1)`, if the Certificate complies with these Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
 
 If the Certificate asserts the policy identifier of 2.23.140.1.2.1, then it MUST NOT include organizationName, givenName, surname, streetAddress, localityName, stateOrProvinceName, or postalCode in the Subject field.
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2), if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2)`, if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
 
-{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3), if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.3.
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)`, if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.3.
 
-If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it MUST also include organizationName, localityName (to the extent such field is required under Section 7.1.4.2.2), stateOrProvinceName (to the extent such field is required under Section 7.1.4.2.2), and countryName in the Subject field.  If the Certificate asserts the policy identifier of 2.23.140.1.2.3, then it MUST also include (i) either organizationName or givenName and surname, (ii) localityName (to the extent such field is required under Section 7.1.4.2.2), (iii) stateOrProvinceName (to the extent required under Section 7.1.4.2.2), and (iv) countryName in the Subject field.
+If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it MUST also include `organizationName`, `localityName` (to the extent such field is required under Section 7.1.4.2.2), `stateOrProvinceName` (to the extent such field is required under Section 7.1.4.2.2), and `countryName` in the Subject field.  If the Certificate asserts the policy identifier of 2.23.140.1.2.3, then it MUST also include (i) either `organizationName` or `givenName` and `surname`, (ii) `localityName` (to the extent such field is required under Section 7.1.4.2.2), (iii) `stateOrProvinceName` (to the extent required under Section 7.1.4.2.2), and (iv) `countryName` in the Subject field.
 
 #### 7.1.6.2. Root CA Certificates
-A Root CA Certificate SHOULD NOT contain the certificatePolicies extension.
+A Root CA Certificate SHOULD NOT contain the `certificatePolicies` extension.
 
 #### 7.1.6.3 Subordinate CA Certificates
 A Certificate issued to a Subordinate CA that is not an Affiliate of the Issuing CA:
 
 1. MUST include one or more explicit policy identifiers that indicates the Subordinate CA's adherence to and compliance with these Requirements (i.e. either the CA/Browser Forum reserved identifiers or identifiers documented by the CA in its Certificate Policy and/or Certification Practice Statement) and
-2. MUST NOT contain the "anyPolicy" identifier (2.5.29.32.0).
+2. MUST NOT contain the `anyPolicy` identifier (2.5.29.32.0).
 
 A Certificate issued to a Subordinate CA that is an affiliate of the Issuing CA:
 
 1. MAY include the CA/Browser Forum reserved identifiers or an identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Subordinate CA's compliance with these Requirements and
-2. MAY contain the "anyPolicy" identifier (2.5.29.32.0) in place of an explicit policy identifier.
+2. MAY contain the `anyPolicy` identifier (2.5.29.32.0) in place of an explicit policy identifier.
 
 A Subordinate CA SHALL represent, in its Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
@@ -1821,15 +1821,13 @@ The CA SHALL at all times:
 **Implementers' Note**: Version 1.1.6 of the SSL Baseline Requirements was published on July 29, 2013. Version 2.0 of WebTrust's Principles and Criteria for Certifiation Authorities - SSL Baseline with Network Security and ETSI's Electronic Signatures and Infrastructures (ESI) 102 042 incorporate version 1.1.6 of these Baseline Requirements and version 1.0 of the Network and Certificate System Security Requirements. The CA/Browser Forum continues to improve the Baseline Requirements while WebTrust and ETSI also continue to update their audit criteria. We encourage all CAs to conform to each revision herein on the date specified without awaiting a corresponding update to an applicable audit criterion. In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty, and we will respond to implementation questions directed to questions@cabforum.org. Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
 ## 8.1 Frequency or circumstances of assessment
-Certificates that are capable of being used to issue new certificates MUST either be Technically Constrained in line with section 7.1.5 and audited in line with section 8.7 only, or Unconstrained and fully audited in line with all remaining requirements from this section. A Certificate is deemed as capable of being used to issue new certificates if it contains an X.509v3 basicConstraints extension, with the cA boolean set to true and is therefore by definition a Root CA Certificate or a Subordinate CA Certificate.
+Certificates that are capable of being used to issue new certificates MUST either be Technically Constrained in line with section 7.1.5 and audited in line with section 8.7 only, or Unconstrained and fully audited in line with all remaining requirements from this section. A Certificate is deemed as capable of being used to issue new certificates if it contains an X.509v3 basicConstraints extension, with the `cA` boolean set to true and is therefore by definition a Root CA Certificate or a Subordinate CA Certificate.
 
-The period during which the CA issues Certificates SHALL be divided into an unbroken sequence of audit periods.
-An audit period MUST NOT exceed one year in duration.
+The period during which the CA issues Certificates SHALL be divided into an unbroken sequence of audit periods. An audit period MUST NOT exceed one year in duration.
 
 If the CA has a currently valid Audit Report indicating compliance with an audit scheme listed in Section 8.1, then no pre-issuance readiness assessment is necessary.
 
-If the CA does not have a currently valid Audit Report indicating compliance with one of the audit schemes listed in
-Section 8.1, then, before issuing Publicly-Trusted Certificates, the CA SHALL successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.1. The point-in-time readiness assessment SHALL be completed no earlier than twelve (12) months prior to issuing Publicly-Trusted Certificates and SHALL be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate.
+If the CA does not have a currently valid Audit Report indicating compliance with one of the audit schemes listed in Section 8.1, then, before issuing Publicly-Trusted Certificates, the CA SHALL successfully complete a point-in-time readiness assessment performed in accordance with applicable standards under one of the audit schemes listed in Section 8.1. The point-in-time readiness assessment SHALL be completed no earlier than twelve (12) months prior to issuing Publicly-Trusted Certificates and SHALL be followed by a complete audit under such scheme within ninety (90) days of issuing the first Publicly-Trusted Certificate.
 
 ## 8.2 Identity/qualifications of assessor
 The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor means a natural person, Legal Entity, or group of natural persons or Legal Entities that collectively possess the following qualifications and skills:
@@ -1847,7 +1845,7 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 ## 8.4 Topics covered by assessment
 The CA SHALL undergo an audit in accordance with one of the following schemes:
 
-1. “WebTrust for CAs v2.0 or newer” AND “WebTrust for CAs SSL Baseline with Network Security v2.2 or newer”; or 
+1. “WebTrust for CAs v2.0 or newer” AND “WebTrust for CAs SSL Baseline with Network Security v2.2 or newer”; or
 2. ETSI EN 319 411-1, which includes normative references to ETSI EN 319 401 (the latest version of the referenced ETSI documents should be applied); or
 3. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
 
@@ -2030,42 +2028,63 @@ Any modification to CA practice enabled under this section MUST be discontinued 
 
 The following errata report has been held for document update for RFC6844, "DNS Certification Authority Authorization (CAA) Resource Record".
 
---------------------------------------
+-----
+
 You may review the report below and at:   http://www.rfc-editor.org/errata/eid5065
 
---------------------------------------
+-----
+
 Status: Held for Document Update
 Type: Technical
 
-Reported by: Phillip Hallam-Baker <philliph@comodo.com> Date Reported: 2017-07-10 Held by: EKR (IESG)
+Reported by: Phillip Hallam-Baker <philliph@comodo.com>
+Date Reported: 2017-07-10
+Held by: EKR (IESG)
 
 Section: 4
 
 Original Text
 -------------
-   Let CAA(X) be the record set returned in response to performing a CAA record query on the label X, P(X) be the DNS label immediately above X in the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record specified at the label X.
+```
+   Let CAA(X) be the record set returned in response to performing a CAA
+   record query on the label X, P(X) be the DNS label immediately above X in
+   the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record
+   specified at the label X.
 
    o  If CAA(X) is not empty, R(X) = CAA (X), otherwise
-   o  If A(X) is not null, and R(A(X)) is not empty, then R(X) =  R(A(X)), otherwise
+   o  If A(X) is not null, and R(A(X)) is not empty, then R(X) =  R(A(X)),
+   otherwise
    o  If X is not a top-level domain, then R(X) = R(P(X)), otherwise
    o  R(X) is empty.
+```
 
 Corrected Text
 --------------
-   Let CAA(X) be the record set returned in response to performing a CAA record query on the label X, P(X) be the DNS label immediately above X in the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record chain specified at the label X.
+```
+   Let CAA(X) be the record set returned in response to performing a CAA
+   record query on the label X, P(X) be the DNS label immediately above X in
+   the DNS hierarchy, and A(X) be the target of a CNAME or DNAME alias record
+   chain specified at the label X.
 
    o  If CAA(X) is not empty, R(X) = CAA (X), otherwise
-   o  If A(X) is not null, and CAA(A(X)) is not empty, then R(X) =  CAA(A(X)), otherwise
+   o  If A(X) is not null, and CAA(A(X)) is not empty, then R(X) =  CAA(A(X)),
+   otherwise
    o  If X is not a top-level domain, then R(X) = R(P(X)), otherwise
    o  R(X) is empty.
 
-  Thus, when a search at node X returns a CNAME record, the CA will follow the CNAME record chain to its target. If the target label contains a CAA record, it is returned.
+  Thus, when a search at node X returns a CNAME record, the CA will follow the
+  CNAME record chain to its target. If the target label contains a CAA record,
+  it is returned.
 
   Otherwise, the CA continues the search at the parent of node X.
 
-  Note that the search does not include the parent of a target of a CNAME record (except when the CNAME points back to its own path).
+  Note that the search does not include the parent of a target of a CNAME
+  record (except when the CNAME points back to its own path).
 
-  To prevent resource exhaustion attacks, CAs SHOULD limit the length of CNAME chains that are accepted. However CAs MUST process CNAME chains that contain 8 or fewer CNAME records.
+  To prevent resource exhaustion attacks, CAs SHOULD limit the length of CNAME
+  chains that are accepted. However CAs MUST process CNAME chains that contain
+  8 or fewer CNAME records.
+```
 
 # APPENDIX B – CAA Contact Tag
 
@@ -2075,14 +2094,16 @@ These methods allow domain owners to publish contact information in DNS for the 
 
 ### B.1.1. CAA contactemail Property
 
-SYNTAX: contactemail <rfc6532emailaddress> 
+SYNTAX: contactemail <rfc6532emailaddress>
 
 The CAA contactemail property takes an email address as its parameter.  The entire parameter value MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
 
 The following is an example where the holder of the domain specified the contact property using an email address.
 
+```
 $ORIGIN example.com.
                CAA 0 contactemail "domainowner@example.com"
+```
 
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
@@ -2103,7 +2124,7 @@ The contactphone property MAY be critical if the domain owner does not want CAs 
 
 ### B.2.1. DNS TXT Record Email Contact
 
-The DNS TXT record MUST be placed on the "_validation-contactemail" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
+The DNS TXT record MUST be placed on the "`_validation-contactemail`" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
 
 ### B.2.2. DNS TXT Record Phone Contact
-The DNS TXT record MUST be placed on the "_validation-contactphone" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
+The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
