@@ -1707,8 +1707,10 @@ For CA Certificates that contain ECC keys, CAs MUST sign data using a hash funct
 
 ### 7.1.4 Name Forms
 
-#### 7.1.4.1 Issuer Information
-The content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
+#### 7.1.4.1 Name Encoding
+The encoded content of the Issuer Distinguished Name field of a Certificate SHALL be byte-for-byte identical with the encoded form of the Subject Distinguished Name field of the Issuing CA certificate.
+
+The encoded content of the Subject Distinguished Name field of a Certificate SHALL be byte-for-byte identical among all Certificates whose Subject Distinguished Name can be compared as equal according to RFC 5280, Section 7.1.
 
 #### 7.1.4.2 Subject Information - Subscriber Certificates
 By issuing the Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate. CAs SHALL NOT include a Domain Name or IP Address in a Subject attribute except as specified in Section 3.2.2.4 or Section 3.2.2.5.
