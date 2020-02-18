@@ -1276,7 +1276,7 @@ Log entries MUST include the following elements:
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
 
 ### 5.4.3 Retention Period for Audit Logs
-The CA SHALL retain any audit logs generated for at least seven years. The CA SHALL make these audit logs available to its Qualified Auditor upon request.
+The CA SHALL retain evidence and logs of CA key lifecycle management events (as set forth in Section 5.4.1.1)  and Subscriber Certificate lifecycle management event audit logs (as set forth in Section 5.4.1.2) for at least seven years. The CA SHALL retain any security event audit logs (as set forth in Section 5.4.1.3) for at least two years.
 
 ### 5.4.4 Protection of Audit Log
 
