@@ -1949,11 +1949,23 @@ The certificate MAY also contain additional policy identifier(s) defined by the 
 
 ### 7.2.2 CRL and CRL entry extensions
 
+a. `reasonCode` (OID 2.5.29.21)
+
+  If a CRL entry is for a Root CA or Subordinate CA Certificate, including Cross Certificates, this CRL entry extension MUST be present.
+  If a CRL entry is for a Certificate not technically capable of causing issuance, this CRL entry extension SHOULD be present.
+  If present, this extension MUST NOT be marked critical.
+
+  The `CRLReason` indicated MUST NOT be unspecified (0), MUST NOT be certificateHold (6), and MUST indicate the most appropriate reason for revocation of the certificate.
+
 ## 7.3 OCSP profile
+
+If an OCSP response is for a Root CA or Subordinate CA Certificate, including Cross Certificates, and that certificate has been revoked, then the `revocationReason` field within the `RevokedInfo` of the `CertStatus` MUST be present. The `CRLReason` used SHALL contain a value permitted for CRLs, as specified in Section 7.2.2.
 
 ### 7.3.1 Version number(s)
 
 ### 7.3.2 OCSP extensions
+
+The `singleExtensions` of an OCSP response MUST NOT contain the `reasonCode` (OID 2.5.29.21) CRL entry extension.
 
 # 8. COMPLIANCE AUDIT AND OTHER ASSESSMENTS
 The CA SHALL at all times:
