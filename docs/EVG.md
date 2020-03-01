@@ -346,6 +346,12 @@ Each CA MUST publicly disclose its Certificate Policy and/or Certification Pract
 
 Effective as of 31 May 2018, the CA's Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with RFC 3647. Prior to 31 May 2018, the CA's Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with either RFC 2527 or RFC 3647. The Certificate Policy and/or Certification Practice Statement MUST include all material required by RFC 3647 or, if structured as such, RFC 2527.
 
+Effective as of 1 September 2020, the CA MUST publicly disclose through an appropriate and readily accessible online means that is available on a 24x7 basis every Incorporating Agency and Registration Agency it has determined satisfies the requirements in these Guidelines. The CA SHALL document where to obtain this information within Section 3.2 of the CA's Certificate Policy and/or Certification Practice Statement. This Agency Information SHALL include the following:
+* Sufficient information to unambiguously identify the Incorporating Agency or Registration Agency (such as a name, jurisdiction, and website); and,
+* The accepted values for the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jursidictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisidction(s) that the Agency is appropriate for; and,
+* The accepted or allowed form or syntax of the Registration Number used by the Incorporating Agency or Registration Agency, if known; and,
+* A revision history that includes a unique version number and date of publication for any additions, modifications, or removals from this list.
+
 ## 8.3.  Commitment to Comply with Recommendations
 
 Each CA SHALL publicly give effect to these Guidelines and represent that they will adhere to the latest published version by incorporating them into their respective EV Policies, using a clause such as the following (which must include a link to the official version of these Guidelines):
@@ -490,6 +496,8 @@ Country:
 
 **Contents:**    These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency.  For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information.  Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information.  And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information.  Country information MUST be specified using the applicable ISO country code.  State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
+Effective as of 1 September 2020, the CA SHALL ensure that the information to be included is consistent with its publicly-available disclosure, as described in Section 8.2.2.
+
 ### 9.2.5.  Subject Registration Number Field
 
 **Certificate field:**    _subject:serialNumber_ (OID:  2.5.4.5)
@@ -501,6 +509,8 @@ Country:
 For Government Entities that do not have a Registration Number or readily verifiable date of creation, the CA SHALL enter appropriate language to indicate that the Subject is a Government Entity.
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field.  For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
+
+Effective as of 1 Setember 2020, the CA SHALL ensure that the format of any Registration Number that is included is consistent with the publicly-available disclosure for that Registration Agency or Incorporating Agency, as described in Section 8.2.2.
 
 ### 9.2.6.  Subject Physical Address of Place of Business Field
 
