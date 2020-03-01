@@ -1678,7 +1678,7 @@ The following requirements apply to the `subjectPublicKeyInfo` field within a Ce
 
 ##### 7.1.3.1.1 RSA
 The CA SHALL indicate an RSA key using the rsaEncryption (OID: 1.2.840.113549.1.1.1) algorithm identifier. The parameters MUST be present, and MUST be an explicit NULL.
-The CA SHALL NOT use a different algorithm, suvh as the id-RSASSA-PSS (OID: 1.2.840.113549.1.1.10) algorithm identifier, to indicate an RSA key.
+The CA SHALL NOT use a different algorithm, such as the id-RSASSA-PSS (OID: 1.2.840.113549.1.1.10) algorithm identifier, to indicate an RSA key.
 
 When encoded, the `AlgorithmIdentifier` for RSA keys MUST be byte-for-byte identical with the following hex-encoded bytes: `300d06092a864886f70d0101010500`
 
@@ -1750,7 +1750,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
   ```
 
 
-In addition, the CA MAY the following signature algorithm and encoding if all of the following conditions are met:
+In addition, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
 
 * If used within a Certificate, such as the `signatureAlgorithm` field of a Certificate or the `signature` field of a TBSCertificate:
   * The new Certificate is a Root CA Certificate or Subordinate CA Certificate that is a Cross-Certificate; and,
