@@ -516,11 +516,10 @@ The CA SHALL publicly give effect to these Requirements and represent that it wi
 
 > [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
 
-
 The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
 
 ## 2.3 Time or frequency of publication
-The CA SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practice Statement that describes in detail how the CA implements the latest version of these Requirements.
+The CA SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practice Statement that describes in detail how the CA implements the latest version of these Requirements. The CA SHALL indicate conformance with this requirement by incrementing the version number and adding a dated changelog entry, even if no other changes are made to the document.
 
 ## 2.4 Access controls on repositories
 The CA shall make its Repository publicly available in a read-only manner.
@@ -1934,7 +1933,7 @@ The Audit Report SHALL state explicitly that it covers the relevant systems and 
 The Audit Report MUST contain at least the following clearly-labelled information:
 1. name of the organization being audited;
 2. name and address of the organization performing the audit;
-3. the full PKI hierarchy of all certificates that are capable of being used to issue new certificates, identified by Distinguished Name and the SHA-256 fingerprint of each and every certificate, and including all Roots, Subordinate CA Certificates, and Cross Certificates, clearly identifying which were certificates (and associated keys) were in-scope and out-of-scope of the audit;
+3. the SHA-256 fingerprint of all Roots and Subordinate CA Certificates, including Cross Certificates, that were in-scope of the audit;
 4. audit criteria, with version number(s), that were used to audit each of the certificates (and associated keys);
 5. a list of the CA policy documents, with version numbers, referenced during the audit;
 6. whether the audit assessed a period of time or a point in time;
@@ -1943,9 +1942,11 @@ The Audit Report MUST contain at least the following clearly-labelled informatio
 9. the date the report was issued, which will necessarily be after the end date or point in time date; and
 10. (for audits conducted in accordance with any of the ETSI standards) a statement to indicate if the audit was a full audit or a surveillance audit, and which portions of the criteria were applied and evaluated, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP, EVCP+, QCP-w, Part 1 (General Requirements), and/or Part 2 (Requirements for Trust Service Providers).
 
-An authoritative English language version of the publicly-available audit information MUST be provided by the Qualified Auditor and the CA SHALL ensure it is publicly-available.
+An authoritative English language version of the publicly available audit information MUST be provided by the Qualified Auditor and the CA SHALL ensure it is publicly available.
 
 The CA MUST make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, the CA SHALL provide an explanatory letter signed by the Qualified Auditor.
+
+The Audit Report MUST be available as a PDF, and SHALL be text searchable for all information required.
 
 ## 8.7 Self-Audits
 During the period in which the CA issues Certificates, the CA SHALL monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken. Except for Delegated Third Parties that undergo an annual audit that meets the criteria specified in Section 8.1, the CA SHALL strictly control the service quality of Certificates issued or containing information verified by a Delegated Third Party by having a Validation Specialist employed by the CA perform ongoing quarterly audits against a randomly selected sample of at least the greater of one certificate or three percent of the Certificates verified by the Delegated Third Party in the period beginning immediately after the last sample was taken. The CA SHALL review each Delegated Third Party's practices and procedures to ensure that the Delegated Third Party is in compliance with these Requirements and the relevant Certificate Policy and/or Certification Practice Statement.
