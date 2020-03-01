@@ -1437,40 +1437,20 @@ If the CA or any of its designated RAs become aware that a Subscriber's Private 
 
 ### 6.1.4 CA public key delivery to relying parties
 
-### 6.1.5 Algorithm type and key sizes
-Certificates MUST meet the following requirements for algorithm type and key size.
+### 6.1.5 Key sizes
+For RSA key pairs the CA SHALL:
+* Ensure that the modulus size, when encoded, is at least 2048 bits, and;
+* Ensure that the modulus size, in bits, is evenly divisible by 8.
 
-#### 6.1.5.1 Root CA Certificates
+For ECDSA key pairs, the CA SHALL:
+* Ensure that the key represents a valid point on the NIST P-256 or NIST P-384 elliptic curve.
 
-* **Digest algorithm:** SHA-256, SHA-384 or SHA-512
-* **Minimum RSA modulus size (bits):** 2048
-* **ECC curve:** NIST P-256, P-384, or P-521
-* **Minimum DSA modulus and divisor size (bits)\*:** L= 2048 N= 224 or L= 2048 N= 256
-
-_\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in FIPS 186-4._
-
-#### 6.1.5.2 Subordinate CA Certificates
-
-* **Digest algorithm:** SHA-256, SHA-384 or SHA-512
-* **Minimum RSA modulus size (bits):** 2048
-* **ECC curve:** NIST P-256, P-384, or P-521
-* **Minimum DSA modulus and divisor size (bits)\*:** L= 2048 N= 224 or L= 2048 N= 256
-
-_\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in FIPS 186-4._
-
-#### 6.1.5.3 Subscriber Certificates
-
-* **Digest algorithm:** SHA-256, SHA-384 or SHA-512|
-* **Minimum RSA modulus size (bits):** 2048
-* **ECC curve:** NIST P-256, P-384, or P-521
-* **Minimum DSA modulus and divisor size (bits)\*:** L= 2048 N= 224 or L= 2048 N= 256
-
-_\* L and N (the bit lengths of modulus p and divisor q, respectively) are described in FIPS 186-4._
+No other algorithms or key sizes are permitted.
 
 ### 6.1.6 Public key parameters generation and quality checking
 RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2<sup>16</sup>+1 and 2<sup>256</sup>-1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89]
 
-ECC: The CA SHOULD confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
+ECDSA: The CA SHOULD confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
 Private Keys corresponding to Root Certificates MUST NOT be used to sign Certificates except in the following cases:
@@ -1693,16 +1673,113 @@ b. semantics that, if included, will mislead a Relying Party about the certifica
 For purposes of clarification, a Precertificate, as described in RFC 6962 - Certificate Transparency, shall not be considered to be a "certificate" subject to the requirements of RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile under these Baseline Requirements.
 
 ### 7.1.3 Algorithm object identifiers
-CAs MUST NOT issue any Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm.
-CAs MAY issue Root CA Certificates or Subordinate CA Certificates that are Cross Certificates using the SHA-1 hash algorithm.
+#### 7.1.3.1 SubjectPublicKeyInfo
+The following requirements apply to the `subjectPublicKeyInfo` field within a Certificate or Precertificate. No other encodings are permitted.
 
-CAs MAY continue to use their existing SHA-1 Root Certificates.
+##### 7.1.3.1.1 RSA
+The CA SHALL indicate an RSA key using the rsaEncryption (OID: 1.2.840.113549.1.1.1) algorithm identifier. The parameters MUST be present, and MUST be an explicit NULL.
+The CA SHALL NOT use a different algorithm, suvh as the id-RSASSA-PSS (OID: 1.2.840.113549.1.1.10) algorithm identifier, to indicate an RSA key.
 
-Subscriber certificates SHOULD NOT chain up to a SHA-1 Subordinate CA Certificate.
+When encoded, the `AlgorithmIdentifier` for RSA keys MUST be byte-for-byte identical with the following hex-encoded bytes: `300d06092a864886f70d0101010500`
 
-For CA Certificates that contain ECC keys, CAs MUST sign data using a hash function with an output length equal to the bit length of the key.
-* For keys using NIST P-256, CAs MUST sign data using the ecdsa-with-SHA256 (OID: 1.2.840.10045.4.3.2) signature algorithm, thus using SHA-256 as the hash function.
-* For keys using NIST P-384, CAs MUST sign data using the ecdsa-with-SHA384 (OID: 1.2.840.10045.4.3.3) signature algorithm, thus using SHA-384 as the hash function.
+##### 7.1.3.1.2 ECDSA
+The CA SHALL indicate an ECDSA key using the id-ecPublicKey (OID: 1.2.840.10045.2.1) algorithm identifier. The parameters MUST use the `namedCurve` encoding.
+
+For P-256 keys, the `namedCurve` MUST be secp256r1 (OID: 1.2.840.10045.3.1.7).
+For P-384 keys, the `namedCurve` MUST be secp384r1 (OID: 1.3.132.0.34).
+
+When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte identical with the following hex-encoded bytes:
+* For P-256 keys, `301306072a8648ce3d020106082a8648ce3d030107`.
+* For P-384 keys, `301006072a8648ce3d020106052b81040022`.
+
+#### 7.1.3.2 Signature AlgorithmIdentifier
+All objects signed by a CA Private Key MUST conform to these requirements on the use of the `AlgorithmIdentifier` or `AlgorithmIdentifier`-derived type in the context of signatures.
+
+In particular, it applies to all of the following objects and fields:
+* The `signatureAlgorithm` field of a Certificate or Precertificate.
+* The `signature` field of a TBSCertificate (for example, as used by either a Certificate or Precertificate).
+* The `signatureAlgorithm` field of a CertificateList
+* The `signature` field of a TBSCertList
+* The `signatureAlgorithm` field of a BasicOCSPResponse.
+
+No other encodings are permitted for these fields.
+
+##### 7.1.3.2.1 RSA
+The CA SHALL use one of the following signature algorithms and encodings. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the specified hex-encoded bytes.
+
+* RSASSA-PKCS1-v1_5 with SHA-256:
+
+  Encoding:
+  `300d06092a864886f70d01010b0500`.
+
+* RSASSA-PKCS1-v1_5 with SHA-384:
+
+  Encoding:
+  `300d06092a864886f70d01010c0500`.
+
+* RSASSA-PKCS1-v1_5 with SHA-512:
+
+  Encoding:
+  `300d06092a864886f70d01010d0500`.
+
+* RSASSA-PSS with SHA-256, MGF-1 with SHA-256, and a salt length of 32 bytes:
+
+  Encoding:
+  ```
+  304106092a864886f70d01010a3034a00f300d0609608648016503040201
+  0500a11c301a06092a864886f70d010108300d0609608648016503040201
+  0500a203020120
+  ```
+
+* RSASSA-PSS with SHA-384, MGF-1 with SHA-384, and a salt length of 48 bytes:
+
+  Encoding:
+  ```
+  304106092a864886f70d01010a3034a00f300d0609608648016503040202
+  0500a11c301a06092a864886f70d010108300d0609608648016503040202
+  0500a203020130
+  ```
+
+* RSASSA-PSS with SHA-512, MGF-1 with SHA-512, and a salt length of 64 bytes:
+
+  Encoding:
+  ```
+  304106092a864886f70d01010a3034a00f300d0609608648016503040203
+  0500a11c301a06092a864886f70d010108300d0609608648016503040203
+  0500a203020140
+  ```
+
+
+In addition, the CA MAY the following signature algorithm and encoding if all of the following conditions are met:
+
+* If used within a Certificate, such as the `signatureAlgorithm` field of a Certificate or the `signature` field of a TBSCertificate:
+  * The new Certificate is a Root CA Certificate or Subordinate CA Certificate that is a Cross-Certificate; and,
+  * There is an existing Certificate, issued by the same issuing CA Certificate, using the following encoding for the signature algorithm; and,
+  * The existing Certificate has a `serialNumber` that is at least 64-bits long; and,
+  * The only differences between the new Certificate and existing Certificate are one of the following:
+    * A new `subjectPublicKey` within the `subjectPublicKeyInfo`, using the same algorithm and key size; and/or,
+    * A new `serialNumber`, of the same encoded length as the existing Certificate; and/or
+    * The new Certificate's `extendedKeyUsage` extension is present, has at least one key usage specified, and none of the key usages specified are the id-kp-serverAuth (OID: 1.3.6.1.5.5.7.3.1) or the anyExtendedKeyUsage (OID: 2.5.2937.0) key usages; and/or
+    * The new Certificate's `basicConstraints` extension has a pathLenConstraint that is zero.
+* If used within an OCSP response, such as the `signatureAlgorithm` of a BasicOCSPResponse:
+  * All unexpired, un-revoked Certificates that contain the Public Key of the CA Key Pair and that have the same Subject Name MUST also contain an `extendedKeyUsage` extension with the only key usage present being the id-kp-ocspSigning (OID: 1.3.6.1.5.5.7.3.9) key usage.
+* If used within a CRL, such as the `signatureAlgorithm` field of a CertificateList or the `signature` field of a TBSCertList:
+  * The CRL is referenced by one or more Root CA or Subordinate CA Certificates; and,
+  * The Root CA or Subordinate CA Certificate has issued one or more Certificates using the following encoding for the signature algorithm.
+
+**Note:** The above requirements do not permit a CA to sign a Precertificate with this encoding.
+
+* RSASSA-PKCS1-v1_5 with SHA-1:
+
+  Encoding:
+  `300d06092a864886f70d0101050500`
+
+##### 7.1.3.2.2 ECDSA
+The CA SHALL use the appropriate signature algorithm and encoding based upon the signing key used.
+
+If the signing key is P-256, the signature MUST use ECDSA with SHA-256. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the following hex-encoded bytes: `300a06082a8648ce3d040302`.
+
+If the signing key is P-384, the signature MUST use ECDSA with SHA-384. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the following hex-encoded bytes: `300a06082a8648ce3d040303`.
 
 ### 7.1.4 Name Forms
 
