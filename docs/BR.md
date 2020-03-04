@@ -12,13 +12,13 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.7**
+**Version 1.6.8**
 
-**December 19, 2019**
+**March 3, 2020**
 
 **www.cabforum.org**
 
-Copyright 2019 CA/Browser Forum
+Copyright 2020 CA/Browser Forum
 This work is licensed under the Creative Commons Attribution 4.0 International license.
 
 
@@ -121,6 +121,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.6.6 | SC19 | Phone Contact with DNS CAA Phone Contact v2 | 20-May-2019	| 9-Sep-2019 |
 | 1.6.7 | SC23 | Precertificates | 14-Nov-2019	| 19-Dec-2019 |
 | 1.6.7 | SC24 | Fall Cleanup v2 | 12-Nov-2019	| 19-Dec-2019 |
+| 1.6.8 | SC25 | Define New HTTP Domain Validation Methods v2 | 31-Jan-2020	| 3-Mar-2020 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -155,6 +156,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 |2019-06-01	| 3.2.2.4.3	| CAs SHALL NOT perform validations using this method after May 31, 2019.  Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.
 |2019-08-01	| 3.2.2.5	| CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address |
 |2019-08-01	| 3.2.2.5.4	| CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
+|2020-06-03	| 3.2.2.4.6	| CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25 |
 
 ## 1.3 PKI Participants
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
@@ -645,7 +647,7 @@ Confirming the Applicant's control over the FQDN by confirming one of the follow
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 4.2.1 of these Guidelines or Section 11.14.3 of the EV Guidelines).
 
-CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25.  CAs MAY continue to re-use information and validations for domains validated under this method per the applicable certificate data reuse periods.
+CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25. CAs MAY continue to re-use information and validations for domains validated under this method per the applicable certificate data reuse periods.
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
@@ -758,7 +760,7 @@ If a Random Value is used, then:
 1.	The CA MUST provide a Random Value unique to the certificate request.
 2.	The Random Value MUST remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
-**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
 
@@ -774,7 +776,7 @@ If the CA follows redirects:
 3.	Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
 4.	Redirects MUST be to resource URLs accessed via Authorized Ports.
 
-**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
+**Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 
