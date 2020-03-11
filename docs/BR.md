@@ -1744,7 +1744,7 @@ h. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)
 
 i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)
    __Required/Optional:__ Optional.  
-   Contents: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains `subject:organizationName`, `subject:givenName`, `subject:surname`, `subject:localityName`, and `subject:countryName` attributes, also verified in accordance with Section 3.2.2.1.
+   __Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains `subject:organizationName`, `subject:givenName`, `subject:surname`, `subject:localityName`, and `subject:countryName` attributes, also verified in accordance with Section 3.2.2.1.
 
 j. Other Subject Attributes
 Other attributes MAY be present within the subject field. If present, other attributes MUST contain information that has been verified by the CA.
@@ -2171,7 +2171,7 @@ The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain 
 # APPENDIX C – Issuance of Certificates for .onion Domain Names
 This appendix defines permissible verification procedures for including one or more RFC 7686 ".onion" special-use Domain Names in a Certificate.
 
-1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address, as defined in section 6 of the Tor Rendezvous Specification - Version 3 located at https://spec.torproject.org/rend-spec-v3.
+1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address, as defined in section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
 2. The CA MUST verify the Applicant’s control over the .onion Domain Name using at least one of the methods listed below:
     a. The CA MAY verify the Applicant’s control over the .onion service by using method 3.2.2.4.6, Agreed‐Upon Change to Website. If this method is replaced by a newer version(s) of Agreed-Upon Change to Website, the timelines for use of new and existing version of this method that are defined in section 3.2.2.4 SHALL apply.	
     b. The CA MAY verify the Applicant's control over the .onion service by having the Applicant provide a Certificate Request signed using the .onion public key if the Attributes section of the certificationRequestInfo contains:
@@ -2180,20 +2180,21 @@ This appendix defines permissible verification procedures for including one or m
 	The signing nonce attributes have the following format:
 ```
 caSigningNonce ATTRIBUTE ::= {
-| WITH SYNTAX | OCTET STRING |
-| --- | --- |
-| EQUALITY MATCHING RULE | octetStringMatch |
-| SINGLE VALUE | TRUE |
-| ID | { cabf-caSigningNonce } |
+    WITH SYNTAX              OCTET STRING
+    EQUALITY MATCHING RULE   octetStringMatch
+    SINGLE VALUE             TRUE
+    ID                       { cabf-caSigningNonce }
 }
+
 cabf-caSigningNonce OBJECT IDENTIFIER ::= { cabf 41 }
+
 applicantSigningNonce ATTRIBUTE ::= {
-| WITH SYNTAX | OCTET STRING |
-| --- | --- |
-| EQUALITY MATCHING RULE | octetStringMatch |
-| SINGLE VALUE | TRUE |
-| ID | { cabf-applicantSigningNonce } |
+    WITH SYNTAX              OCTET STRING
+    EQUALITY MATCHING RULE   octetStringMatch
+    SINGLE VALUE             TRUE
+    ID                       { cabf-applicantSigningNonce }
 }
+
 cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 ```
   The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
