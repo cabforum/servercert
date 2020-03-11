@@ -1728,7 +1728,7 @@ d. __Certificate Field:__ Number and street: `subject:streetAddress` (OID: 2.5.4
    __Prohibited__ if the `subject:organizationName` field, `subject:givenName`, and `subject:surname` field are absent.  
    __Contents:__ If present, the `subject:streetAddress` field MUST contain the Subject's street address information as verified under Section 3.2.2.1.
 
-e. __Certificate Field:__ subject:localityName (OID: 2.5.4.7)  
+e. __Certificate Field:__ `subject:localityName` (OID: 2.5.4.7)  
    __Required/Optional:__  
    __Required__ if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present and the `subject:stateOrProvinceName` field is absent.  
    __Optional__ if the `subject:stateOrProvinceName` field and the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present.  
