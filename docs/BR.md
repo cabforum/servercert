@@ -1711,35 +1711,47 @@ Entries in the dNSName MUST be in the "preferred name syntax", as specified in R
 
 #### 7.1.4.2.2. Subject Distinguished Name Fields
 a. __Certificate Field:__ `subject:commonName` (OID 2.5.4.3)  
-   __Required/Optional:__ Deprecated (Discouraged, but not prohibited)  
+   __Required/Optional:__ __Deprecated__ (Discouraged, but not prohibited)  
    __Contents:__ If present, this field MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's subjectAltName extension (see Section 7.1.4.2.1).
 
 b. __Certificate Field:__ `subject:organizationName` (OID 2.5.4.10)  
-   __Required/Optional:__ Optional.  
+   __Required/Optional:__ __Optional__.  
    __Contents:__ If present, the `subject:organizationName` field MUST contain either the Subject's name or DBA as verified under Section 3.2.2.2. The CA may include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g., if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". Because Subject name attributes for individuals (e.g. givenName (2.5.4.42) and surname (2.5.4.4)) are not broadly supported by application software, the CA MAY use the `subject:organizationName` field to convey a natural person Subject's name or DBA.
 
 c. __Certificate Field:__ `subject:givenName` (2.5.4.42) and `subject:surname` (2.5.4.4)  
-   __Required/Optional:__ Optional.  
+   __Required/Optional:__ __Optional__.  
    __Contents:__ If present, the `subject:givenName` field and `subject:surname` field MUST contain an natural person Subject’s name as verified under Section 3.2.3. A Certificate containing a `subject:givenName` field or `subject:surname` field MUST contain the (2.23.140.1.2.3) Certificate Policy OID.
 
 d. __Certificate Field:__ Number and street: `subject:streetAddress` (OID: 2.5.4.9)  
-   __Required/Optional:__ Optional if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present. Prohibited if the `subject:organizationName` field, `subject:givenName`, and `subject:surname` field are absent.  
+   __Required/Optional:__  
+   __Optional__ if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present.  
+   __Prohibited__ if the `subject:organizationName` field, `subject:givenName`, and `subject:surname` field are absent.  
    __Contents:__ If present, the `subject:streetAddress` field MUST contain the Subject's street address information as verified under Section 3.2.2.1.
 
 e. __Certificate Field:__ subject:localityName (OID: 2.5.4.7)  
-   __Required/Optional:__ Required if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present and the `subject:stateOrProvinceName` field is absent. Optional if the `subject:stateOrProvinceName` field and the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present. Prohibited if the `subject:organizationName` field, `subject:givenName`, and `subject:surname` field are absent.  
+   __Required/Optional:__  
+   __Required__ if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present and the `subject:stateOrProvinceName` field is absent.  
+   __Optional__ if the `subject:stateOrProvinceName` field and the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present.  
+   __Prohibited__ if the `subject:organizationName` field, `subject:givenName`, and `subject:surname` field are absent.  
    __Contents:__ If present, the `subject:localityName` field MUST contain the Subject's locality information as verified under Section 3.2.2.1. If the `subject:countryName` field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the `localityName` field MAY contain the Subject's locality and/or state or province information as verified under Section 3.2.2.1.
 
 f. __Certificate Field:__ `subject:stateOrProvinceName` (OID: 2.5.4.8)  
-   __Required/Optional:__ Required if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present and `subject:localityName` field is absent. Optional if the `subject:localityName` field and the `subject:organizationName` field, the `subject:givenName` field, or the `subject:surname` field are present. Prohibited if the `subject:organizationName` field, the `subject:givenName` field, or `subject:surname` field are absent.  
+   __Required/Optional:__  
+   __Required__ if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are present and `subject:localityName` field is absent.  
+   __Optional__ if the `subject:localityName` field and the `subject:organizationName` field, the `subject:givenName` field, or the `subject:surname` field are present.  
+   __Prohibited__ if the `subject:organizationName` field, the `subject:givenName` field, or `subject:surname` field are absent.  
    __Contents:__ If present, the `subject:stateOrProvinceName` field MUST contain the Subject's state or province information as verified under Section 3.2.2.1. If the `subject:countryName` field specifies the ISO 3166-1 user-assigned code of XX in accordance with Section 7.1.4.2.2(g), the `subject:stateOrProvinceName` field MAY contain the full name of the Subject's country information as verified under Section 3.2.2.1.
 
 g. __Certificate Field:__ `subject:postalCode` (OID: 2.5.4.17)  
-   __Required/Optional:__ Optional if the `subject:organizationName`, `subject:givenName` field, or `subject:surname` fields are present. Prohibited if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are absent.  
+   __Required/Optional:__  
+   __Optional__ if the `subject:organizationName`, `subject:givenName` field, or `subject:surname` fields are present.  
+   __Prohibited__ if the `subject:organizationName` field, `subject:givenName` field, or `subject:surname` field are absent.  
    __Contents:__ If present, the `subject:postalCode` field MUST contain the Subject's zip or postal information as verified under Section 3.2.2.1.
 
 h. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)  
-   __Required/Optional:__ Required if the `subject:organizationName` field, `subject:givenName`, or `subject:surname` field are present. Optional if the `subject:organizationName` field, `subject:givenName` field, and `subject:surname` field are absent.  
+   __Required/Optional:__  
+   __Required__ if the `subject:organizationName` field, `subject:givenName`, or `subject:surname` field are present.  
+   __Optional__ if the `subject:organizationName` field, `subject:givenName` field, and `subject:surname` field are absent.  
    __Contents:__ If the `subject:organizationName` field is present, the `subject:countryName` MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the `subject:organizationName` field is absent, the `subject:countryName` field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
 i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)
@@ -2177,7 +2189,8 @@ This appendix defines permissible verification procedures for including one or m
     b. The CA MAY verify the Applicant's control over the .onion service by having the Applicant provide a Certificate Request signed using the .onion public key if the Attributes section of the certificationRequestInfo contains:
         (i) A caSigningNonce attribute that contains a Random Value that is generated by the CA; and
         (ii) An applicantSigningNonce attribute that contains a single value with at least 64-bits of entropy that is generated by the Applicant.
-	The signing nonce attributes have the following format:
+
+The signing nonce attributes have the following format:
 ```
 caSigningNonce ATTRIBUTE ::= {
     WITH SYNTAX              OCTET STRING
@@ -2197,6 +2210,7 @@ applicantSigningNonce ATTRIBUTE ::= {
 
 cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 ```
-  The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 The CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of these Requirements.
+
 3. When a Certificate includes an FQDN where "onion" is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this Appendix C.
