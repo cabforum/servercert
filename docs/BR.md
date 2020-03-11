@@ -1707,15 +1707,7 @@ Wildcard FQDNs are permitted.
 
 CAs SHALL NOT issue certificates with a subjectAlternativeName extension or Subject commonName field containing a Reserved IP Address or Internal Name.
 
-Prior to April 1, 2019, certificates containing underscore characters (“`_`”) in domain labels in dNSName entries MAY be issued as follows:
-
-* dNSName entries MAY include underscore characters such that replacing all underscore characters with hyphen characters (“-“) would result in a valid domain label, and;
-* Underscore characters MUST NOT be placed in the left most domain label, and;
-* Such certificates MUST NOT be valid for longer than 30 days.
-
-All certificates containing an underscore character in any dNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019.
-
-After April 30, 2019, underscore characters (“_”) MUST NOT be present in dNSName entries.
+Entries in the dNSName MUST be in the "preferred name syntax", as specified in RFC 5280, and thus MUST NOT contain underscore characters ("_").
 
 #### 7.1.4.2.2. Subject Distinguished Name Fields
 a. __Certificate Field:__ `subject:commonName` (OID 2.5.4.3)  
