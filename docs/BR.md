@@ -2188,20 +2188,21 @@ This appendix defines permissible verification procedures for including one or m
 	The signing nonce attributes have the following format:
 ```
 caSigningNonce ATTRIBUTE ::= {
-| WITH SYNTAX | OCTET STRING |
-| --- | --- |
-| EQUALITY MATCHING RULE | octetStringMatch |
-| SINGLE VALUE | TRUE |
-| ID | { cabf-caSigningNonce } |
+    WITH SYNTAX              OCTET STRING
+    EQUALITY MATCHING RULE   octetStringMatch
+    SINGLE VALUE             TRUE
+    ID                       { cabf-caSigningNonce }
 }
+
 cabf-caSigningNonce OBJECT IDENTIFIER ::= { cabf 41 }
+
 applicantSigningNonce ATTRIBUTE ::= {
-| WITH SYNTAX | OCTET STRING |
-| --- | --- |
-| EQUALITY MATCHING RULE | octetStringMatch |
-| SINGLE VALUE | TRUE |
-| ID | { cabf-applicantSigningNonce } |
+    WITH SYNTAX              OCTET STRING
+    EQUALITY MATCHING RULE   octetStringMatch
+    SINGLE VALUE             TRUE
+    ID                       { cabf-applicantSigningNonce }
 }
+
 cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 ```
   The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
