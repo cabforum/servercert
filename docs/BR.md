@@ -2179,7 +2179,7 @@ The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain 
 # APPENDIX C – Issuance of Certificates for .onion Domain Names
 This appendix defines permissible verification procedures for including one or more RFC 7686 ".onion" special-use Domain Names in a Certificate.
 
-1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address, as defined in section 6 of the Tor Rendezvous Specification - Version 3 located at https://spec.torproject.org/rend-spec-v3.
+1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address, as defined in section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
 2. The CA MUST verify the Applicant’s control over the .onion Domain Name using at least one of the methods listed below:
     a. The CA MAY verify the Applicant’s control over the .onion service by using method 3.2.2.4.6, Agreed‐Upon Change to Website. If this method is replaced by a newer version(s) of Agreed-Upon Change to Website, the timelines for use of new and existing version of this method that are defined in section 3.2.2.4 SHALL apply.	
     b. The CA MAY verify the Applicant's control over the .onion service by having the Applicant provide a Certificate Request signed using the .onion public key if the Attributes section of the certificationRequestInfo contains:
