@@ -62,16 +62,17 @@ the SMCWG.
 ## Chartering of the S/MIME Certificate Working Group
 
 A Chartered Working Group (“SMCWG”) is created to perform the activities as
-specified in this Charter, subject to the terms and conditions of the CA/Browser
-Forum Bylaws and Intellectual Property Rights (IPR) Policy, as such documents
-may change from time to time. This charter for the S/MIME Certificate Working
-Group has been created according to CAB Forum Bylaw 5.3.1. In the event of a
-conflict between this Charter and any provision in either the Bylaws or the IPR
-Policy, the provision in the Bylaws or IPR Policy SHALL take precedence. The
-definitions found in the Forum’s Bylaws SHALL apply to capitalized terms in this
-Charter.
+specified in this Charter, subject to the terms and conditions of the
+[CA/Browser Forum Bylaws](https://cabforum.org/bylaws/) and [Intellectual
+Property Rights (IPR) Policy](https://cabforum.org/ipr-policy/), as such
+documents may change from time to time. This charter for the S/MIME Certificate
+Working Group has been created according to CAB Forum Bylaw 5.3.1. In the event
+of a conflict between this Charter and any provision in either the Bylaws or
+the IPR Policy, the provision in the Bylaws or IPR Policy SHALL take
+precedence. The definitions found in the Forum’s Bylaws SHALL apply to
+capitalized terms in this Charter.
 
-### Scope
+### 1. Scope
 
 The authorized scope of the SMCWG SHALL be to discuss, adopt, and maintain
 policies, frameworks, and sets of standards related to the issuance and
@@ -92,19 +93,19 @@ root, limited as follows:
 The SMCWG SHALL exercise caution to ensure that its work product does not impede
 the issuance of certificates with other EKU types.
 
-### Out of Scope
+### 2. Out of Scope
 
 Certificates issued under a root certificate that is not publicly trusted SHALL
 be out of scope.
 
-### Charter Expiration
+### 3. Charter Expiration
 
 The SMCWG is chartered indefinitely until it is dissolved as specified in Bylaw
 5.3.2(c).
 
-### Personnel and Participation
+### 4. Personnel and Participation
 
-#### Selection of Officers
+#### 4.1. Selection of Officers
 
 Stephen Davidson will act as chair of the SMCWG until the first Working Group
 Teleconference, at which time the group will elect a chair and vice-chair. The
@@ -114,9 +115,9 @@ held for chair and vice chair every two years in coordination with the Forum’s
 election process and in conjunction with its election cycle. Voting SHALL occur
 in accordance with Bylaw 4.1(c).
 
-#### Participation
+#### 4.2. Participation
 
-##### Eligibility to Participate
+##### 4.2.1. Eligibility to Participate
 
 The SMCWG SHALL consist of two classes of voting members, Certificate Issuers
 and Certificate Consumers meeting the eligibility criteria below.
@@ -150,7 +151,7 @@ and Certificate Consumers meeting the eligibility criteria below.
 The SMCWG SHALL allow participation by Interested Parties, as set
 forth in the Bylaws.
 
-##### Membership Application/Declaration Process
+##### 4.2.2. Membership Application/Declaration Process
 
 1. An Applicant not already a member of the Forum SHALL provide the following
    information:
@@ -203,7 +204,7 @@ forth in the Bylaws.
    Chair’s list of proposed, qualifying Members SHALL vote to determine the
    initial set of SMCWG Members.
 
-##### Suspension and Cessation of Working Group Membership
+##### 4.2.3. Suspension and Cessation of Working Group Membership
 
 Members may resign from the SMCWG at any time. Resignation, suspension, or
 other termination of membership in the SMCWG does not prevent a Member from
@@ -253,7 +254,7 @@ endorse ballots or take part in any form of voting.
 
 Votes cast before the announcement of a Member’s suspension will stand.
 
-###  Membership Declaration
+### 5. Membership Declaration
 
 In accordance with the IPR Policy, Members that choose to participate in the
 SMCWG MUST declare their participation and SHALL do so prior to participating.
@@ -261,9 +262,9 @@ The Chair of the SMCWG SHALL establish a list for declarations of participation
 and manage it in accordance with the Bylaws, the IPR Policy, and the IPR
 Agreement.
 
-### Voting and Other Organizational Matters
+### 6. Voting and Other Organizational Matters
 
-#### Voting Structure
+#### 6.1. Voting Structure
 
 The rules described in Bylaw 2.3 and 2.4 SHALL apply to all ballots, including
 Draft Guideline Ballots.
@@ -278,7 +279,7 @@ Meetings or Teleconferences (not counting subcommittee meetings thereof). For
 transition purposes, if three (3) meetings have not yet occurred, quorum is
 three (3).
 
-#### Other Organizational Matters
+#### 6.2. Other Organizational Matters
 
 - The Chair MAY delegate any of their duties to the Vice Chair as necessary.
   The Vice Chair has the authority of the Chair in the event of any absence or
@@ -288,18 +289,18 @@ three (3).
   absence.
 - SMCWG-created Subcommittees MAY be approved either:
 
-  1. by formal ballot as described in 65.1, or
+  1. by formal ballot as described in [6.1](#6.1-voting-structure), or
   2. by simple majority vote of those members present at a regularly
      scheduled SMCWG Meeting or Teleconference provided that the proposal is
      mentioned in an agenda circulated on the SMCWG Mail List at least
      forty-eight (48) hours prior to the SMCWG Meeting or Teleconference.
 
-###  7. Summary of Major Deliverables
+### 7. Summary of Major Deliverables
 
 The deliverables of the SMCWG are defined in the Scope section above and shall
 be named the "Baseline Requirements for S/MIME Certificates" proposed standard.
 
-### Primary Means of Communication
+### 8. Primary Means of Communication
 
 1. The SMCWG SHALL appoint a webmaster to maintain the SMCWG’s pages on the
    wiki and the Forum’s Public Web Site.
@@ -312,14 +313,15 @@ be named the "Baseline Requirements for S/MIME Certificates" proposed standard.
    Minutes SHALL be kept, and such minutes SHALL be made public in accordance
    with Bylaw 5.2.
 
-### IPR Policy
+### 9. IPR Policy
 
-As with all Forum Working Group activity, the IPR Policy, v1.3 or later, SHALL
-apply to all activities and work of the SMCWG. All Participants in the SMCWG
-SHALL have on file with the Forum a valid, signed IPR Policy Agreement (v.1.3).
-A previously submitted IPR Policy Agreement (v1.3) by an existing Member of the
-Forum shall suffice as meeting the obligation under section 4.5 of the IPR
-Policy that a Participant in the SMCWG commit to CAB Forum License requirements.
+As with all Forum Working Group activity, the [IPR
+Policy](https://cabforum.org/ipr-policy/), v1.3 or later, SHALL apply to all
+activities and work of the SMCWG. All Participants in the SMCWG SHALL have on
+file with the Forum a valid, signed IPR Policy Agreement (v.1.3).  A previously
+submitted IPR Policy Agreement (v1.3) by an existing Member of the Forum shall
+suffice as meeting the obligation under section 4.5 of the IPR Policy that a
+Participant in the SMCWG commit to CAB Forum License requirements.
 
 In accordance with the Forum’s antitrust policy, an antitrust compliance
 statement SHALL be read at the start of all Working Group Meetings, in
