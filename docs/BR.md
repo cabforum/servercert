@@ -1240,32 +1240,29 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 ## 5.4 Audit logging procedures
 
 ### 5.4.1 Types of events recorded
-The CA and each Delegated Third Party SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA's compliance with these Requirements.
+The CA and each Delegated Third Party SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA’s compliance with these Requirements.
 
 The CA SHALL record at least the following events:
 
-1. CA key lifecycle management events, including:
-
-  a. Key generation, backup, storage, recovery, archival, and destruction; and
-  b. Cryptographic device lifecycle management events.
-
-2. CA and Subscriber Certificate lifecycle management events, including:
-
-  a. Certificate requests, renewal, and re-key requests, and revocation;
-  b. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-  c. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
-  d. Acceptance and rejection of certificate requests; Frequency of Processing Log
-  e. Issuance of Certificates; and
-  f. Generation of Certificate Revocation Lists and OCSP entries.
-
+1. CA key lifecycle and certificate management events, including:
+   1. Key generation, backup, storage, recovery, archival, and destruction; 
+   2. Cryptographic device lifecycle management events;
+   3. Certificate requests, renewal, and re-key requests; and
+   4. Issuance and revocation of CA Certificates.
+2. Subscriber Certificate lifecycle management events, including:
+   1. Certificate requests, renewal, and re-key requests, and revocation;
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
+   3. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
+   4. Acceptance and rejection of certificate requests; 
+   5. Issuance of Certificates; and
+   6. Generation of Certificate Revocation Lists and OCSP entries.
 3. Security events, including:
-
-  a. Successful and unsuccessful PKI system access attempts;
-  b. PKI and security system actions performed;
-  c. Security profile changes;
-  d. System crashes, hardware failures, and other anomalies;
-  e. Firewall and router activities; and
-  f. Entries to and exits from the CA facility.
+   1. Successful and unsuccessful PKI system access attempts;
+   2. PKI and security system actions performed;
+   3. Security profile changes; 
+   4. System crashes, hardware failures, and other anomalies;
+   5. Firewall and router activities; and
+   6. Entries to and exits from the CA facility.
 
 Log entries MUST include the following elements:
 
@@ -1276,7 +1273,7 @@ Log entries MUST include the following elements:
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
 
 ### 5.4.3 Retention Period for Audit Logs
-The CA SHALL retain evidence and logs of CA key lifecycle management events (as set forth in Section 5.4.1.1)  and Subscriber Certificate lifecycle management event audit logs (as set forth in Section 5.4.1.2) for at least seven years. The CA SHALL retain any security event audit logs (as set forth in Section 5.4.1.3) for at least two years.
+The CA SHALL retain CA key and certificate lifecycle management event records (as set forth in Section 5.4.1.1) for at least two years after destruction of the CA key (5.4.1.1.1 and 5.4.1.1.2) and for at least two years after the revocation or expiration of the CA certificate (5.4.1.1.3 and 5.4.1.1.4). The CA SHALL retain Subscriber Certificate lifecycle management event records (as set forth in Section 5.4.1.2) for at least two years after the revocation or expiration of the Subscriber Certificate. The CA SHALL retain any security event records (as set forth in Section 5.4.1.3) for at least two years.
 
 ### 5.4.4 Protection of Audit Log
 
