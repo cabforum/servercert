@@ -12,13 +12,13 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.7**
+**Version 1.6.9**
 
-**December 19, 2019**
+**March 27, 2020**
 
 **www.cabforum.org**
 
-Copyright 2019 CA/Browser Forum
+Copyright 2020 CA/Browser Forum
 This work is licensed under the Creative Commons Attribution 4.0 International license.
 
 
@@ -121,6 +121,8 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.6.6 | SC19 | Phone Contact with DNS CAA Phone Contact v2 | 20-May-2019	| 9-Sep-2019 |
 | 1.6.7 | SC23 | Precertificates | 14-Nov-2019	| 19-Dec-2019 |
 | 1.6.7 | SC24 | Fall Cleanup v2 | 12-Nov-2019	| 19-Dec-2019 |
+| 1.6.8 | SC25 | Define New HTTP Domain Validation Methods v2 | 31-Jan-2020	| 3-Mar-2020 |
+| 1.6.9 | SC27 | Version 3 Onion Certificates v3 | 19-Feb-2020	| 27-Mar-2020 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -2152,7 +2154,7 @@ applicantSigningNonce ATTRIBUTE ::= {
 cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 ```
 
-	The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+   The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 The CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of these Requirements.
 
