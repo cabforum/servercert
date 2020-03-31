@@ -2154,7 +2154,7 @@ applicantSigningNonce ATTRIBUTE ::= {
 cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 ```
 
-   The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 The CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of these Requirements.
 
