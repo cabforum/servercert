@@ -76,7 +76,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.6.9 | SC16 | Other Subject Attributes | 15 Mar 2019 | 16 Apr 2019 |
 | 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
 | 1.7.1 | SC24 | Fall cleanup v2 | 12 Nov 2019 | 19 Dec 2019 |
-| 1.7.2 | SC27 | Version 3 Onion Certificates v3 | 19-Feb-2020	| 27-Mar-2020 |
+| 1.7.2 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
 
 ### Relevant Dates
 
