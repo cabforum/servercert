@@ -656,7 +656,7 @@ Confirming the Applicant's control over the FQDN by confirming one of the follow
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the Certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in Section 4.2.1 of these Guidelines or Section 11.14.3 of the EV Guidelines).
 
-CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25. CAs MAY continue to re-use information and validations for domains validated under this method per the applicable certificate data reuse periods.
+CAs SHALL NOT perform validations using this method after June 3, 2020. CAs MAY continue to re-use information and validations for domains validated under this method per the applicable certificate data reuse periods.
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN.  This method is suitable for validating Wildcard Domain Names.
 
