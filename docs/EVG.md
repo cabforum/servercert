@@ -1273,11 +1273,11 @@ The CA MUST NOT issue any EV Certificate to the Applicant if either the Applican
 
 (A) If the CA has operations in the U.S., the CA MUST take reasonable steps to verify with the following US Government denied lists and regulations:
 
-(i) BIS Denied Persons List - http://www.bis.doc.gov/dpl/thedeniallist.asp
+(i) BIS Denied Persons List - https://www.bis.doc.gov/index.php/the-denied-persons-list
 
-(ii) BIS Denied Entities List - http://www.bis.doc.gov/Entities/Default.htm
+(ii) BIS Denied Entities List - https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list
 
-(iii) US Treasury Department List of Specially Designated Nationals and Blocked Persons - http://www.treas.gov/ofac/t11sdn.pdf
+(iii) US Treasury Department List of Specially Designated Nationals and Blocked Persons - https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx
 
 (iv) US Government export regulations
 
