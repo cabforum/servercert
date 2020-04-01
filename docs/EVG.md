@@ -82,7 +82,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |
-| 2020-01-31 | 9.2.8 | If subject:organizationIdentifier is present, the Subject Organization Identifier Extension MUST be present |
+| 2020-01-31 | 9.2.8 | If subject:organizationIdentifier is present, the CA/Browser Forum Organization Identifier Extension MUST be present |
 | 2020-09-01 | 9.4 & Appendix F | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
 | 2020-10-1 | 11.1.3 | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
 
@@ -669,7 +669,7 @@ If a CA includes an extension in a certificate that has a Certificate field whic
 
 **Contents:** This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
 
-### 9.8.2 CA/Browser Form Organization Identifier Extension
+### 9.8.2 CA/Browser Forum Organization Identifier Extension
 
 **Extension Name:** _cabfOrganizationIdentifier_ (OID: 2.23.140.3.1)
 
@@ -677,7 +677,7 @@ If a CA includes an extension in a certificate that has a Certificate field whic
               
 **Required/Optional:** Optional (but see below)
 
-**Contents:** If the subject:organizationIdentifier is present, this field SHOULD be present. Effective January 31, 2020, if the subject:organizationIdentifier field is present, this field MUST be present.
+**Contents:** If the subject:organizationIdentifier is present, this field MUST be present.
 
 If present, this extension MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
 
@@ -1869,7 +1869,7 @@ guidelines:
 
    Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 
    includes more than the country code, the additional locality information shall
-   be included as specified in sections 9.2.8 and/or 9.8.1.
+   be included as specified in sections 9.2.8 and/or 9.8.2.
 
 **VAT**: Reference allocated by the national tax authorities to a Legal Entity. This 
    information shall be validated using information provided by the national tax 
