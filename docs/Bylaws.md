@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM**
 
-**Version 2.2 - Effective as of May 21, 2019**
+**Version 2.3 - Effective as of XXXX XX, 2020**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -22,7 +22,7 @@ The Forum has no corporate or association status, but is simply a group of Certi
 
 ## 1.3 Intellectual Property Rights Policy; Antitrust Laws and Regulations; Goal; Conduct
 
-Forum Members, Associate Members, and Interested Parties must comply with the then-current IPR Policy and all applicable antitrust laws and regulations during their Forum activities.
+Forum Full Members, Associate Members, and Interested Parties must comply with the then-current IPR Policy and all applicable antitrust laws and regulations during their Forum activities.
 
 The historic goal of Forum activities (including development of proposed requirements and guidelines and voting on all matters) has been to seek substantial consensus among Forum Members before proceeding or adopting final work product, and this goal will remain for the future. Members shall not use their participation in the Forum either to promote their own products and offerings or to restrict or impede the products and offerings of other Members.
 
@@ -48,17 +48,14 @@ Chartered Working Group (CWG) Members are automatically granted Forum Membership
 
 Categories of Forum Membership are defined as follows:
 
-* Certificate Issuer: The member organization operates a certification authority that meets the requirements for membership as a Certificate Issuer in one or more CWGs.
-
-* Root Certificate Issuer: The member organization operates a certification authority that meets the requirements for membership as a Root Certificate Issuer in one or more CWGs.
-
-* Certificate Consumer: The member organization meets the requirements for membership as a Certificate Consumer in one or more CWGs.
-
+* Full Member, which contains the following sub-categories:
+   * Certificate Issuer: The member organization operates a certification authority that meets the requirements for membership as a Certificate Issuer in one or more CWGs.
+   * Root Certificate Issuer: The member organization operates a certification authority that meets the requirements for membership as a Root Certificate Issuer in one or more CWGs.
+   * Certificate Consumer: The member organization meets the requirements for membership as a Certificate Consumer in one or more CWGs.
 * Associate Member: As defined in Section 3.1
-
 * Interested Party: As defined in Section 3.2
 
-Members that qualify under more than one category of Forum Membership MAY choose their membership category.
+Full Members that qualify under more than one category of Forum Membership SHALL choose their membership category.
 
 ## 2.2 Ending Forum Membership
 
@@ -68,19 +65,20 @@ When a Forum Member ceases to be a Member of at least one CWG, their Forum Membe
 
 The following rules will apply to all ballots, including Draft Guideline Ballots (defined in 2.4).
 
- 1. Only votes by Members shall be accepted.
+ 1. Only votes by Full Members shall be accepted.
   
- 2. Only one vote per Member company shall be accepted; Affiliates of Members shall not vote.
+ 2. Only one vote per Full Member company shall be accepted; Affiliates of Members shall not vote. Only votes from Voting Representatives shall be accepted.
   
- 3. A representative of any Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Members in order to proceed. The discussion period then shall take place for at least seven (7) calendar days before votes are cast. At any time, a new version of the ballot (marked with a distinguishing version number) may be posted by the proposer in the same manner as the original. Once no new version of the ballot has been posted for seven (7) calendar days, the proposer may end the discussion period and start the voting period by reposting the final version of the ballot and clearly indicating that voting is to begin, along with the start and end dates and times (including time zone) for the voting period. The ballot automatically fails if twenty one (21) calendar days elapse since the proposer last posted a version of the ballot and the voting period has not been started.
+ 3. A representative of any Full Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Full Members in order to proceed. The discussion period then shall take place for at least seven (7) calendar days before votes are cast. At any time, a new version of the ballot (marked with a distinguishing version number) may be posted by the proposer in the same manner as the original. Once no new version of the ballot has been posted for seven (7) calendar days, the proposer may end the discussion period and start the voting period by reposting the final version of the ballot and clearly indicating that voting is to begin, along with the start and end dates and times (including time zone) for the voting period. The ballot automatically fails if twenty one (21) calendar days elapse since the proposer last posted a version of the ballot and the voting period has not been started.
   
- 4. Upon commencement of the voting period, Members shall have exactly seven (7) calendar days for voting on the proposed ballot, with the deadline clearly communicated in the ballot and sent via a Public Mail List. For ballots related to the Forum level, votes must be sent to the Public Mail List of the Forum. For ballots related to a CWG, votes must be sent to the Public Mail List of the CWG. All voting will take place via a Public Mail List. Votes not submitted to the proper Public Mail List by the end of the voting period (as specified in the ballot) will not be considered valid, and will not be counted for any purpose. Each Member, and not the Forum or CWG, will be responsible for taking precautions to make sure such Member’s vote is submitted properly and counted. In the event that a Member’s vote on a ballot is not submitted properly, such vote shall not be valid and shall not be counted for any purpose, and there shall be no appeal, revote (except in the case of a new ballot submitted to all Members) or other recourse.
+ 4. Upon commencement of the voting period, Full Members shall have exactly seven (7) calendar days for voting on the proposed ballot, with the deadline clearly communicated in the ballot and sent via a Public Mail List. For ballots related to the Forum level, votes must be sent to the Public Mail List of the Forum. For ballots related to a CWG, votes must be sent to the Public Mail List of the CWG. All voting will take place via a Public Mail List. Votes not submitted to the proper Public Mail List, or not submitted by a designated Voting Representative, by the end of the voting period (as specified in the ballot) will be considered invalid, and will not be counted for any purpose. Each Full Member, and not the Forum or CWG, will be responsible for taking precautions to make sure such Member’s vote is submitted properly and counted. In the event that a Member’s vote on a ballot is not submitted properly, such vote shall not be valid and shall not be counted for any purpose, and there shall be no appeal, revote (except in the case of a new ballot submitted to all Members) or other recourse.
 
- 5. Members may vote “yes”, “no”, or “abstain” on a ballot. Only votes that indicate a clear “yes” or “no” response to the ballot question shall be considered (i.e. votes to “abstain” and votes that do not indicate a clear “yes” or “no” response will not figure in the calculation of item (f), below).
+ 5. Full Members may vote “yes”, “no”, or “abstain” on a ballot. Only votes that indicate a clear “yes” or “no” response to the ballot question shall be considered (i.e. votes to “abstain” and votes that do not indicate a clear “yes” or “no” response will not figure in the calculation of item (6), below).
 
- 6. Members fall into two categories: Certificate Issuers (including Certificate Issuers and Root Certificate Issuers), and (2) and Certificate Consumers. In order for a ballot to be adopted by the Forum, two-thirds (2/3) or more of the votes cast by the Members in the Certificate Issuer category must be in favor of the ballot, and at least fifty percent (50%) plus one (1) of the votes cast by the Members in the Certificate Consumer category must be in favor of the ballot. At least one (1) Member in each category must vote in favor of a ballot for the ballot to be adopted.
+ 6. Full Members fall into two categories: Certificate Issuers (including Certificate Issuers and Root Certificate Issuers), and  Certificate Consumers. In order for a ballot to be adopted by the Forum, two-thirds (2/3) or more of the votes cast by the Members in the Certificate Issuer category must be in favor of the ballot, and at least fifty percent (50%) plus one (1) of the votes cast by the Members in the Certificate Consumer category must be in favor of the ballot. At least one (1) Member in each category must vote in favor of a ballot for the ballot to be adopted.
 
- 7. A ballot result will be considered valid only when more than half of the number of currently active Members has participated. The number of currently active Members is the average number of Member organizations that have participated in the previous three (3) Forum Meetings and Forum Teleconferences.
+ 7. A ballot result will be considered valid only when more than half of the number of currently active Full Members has participated. The number of currently active Full Members is the average number of Full Member organizations that have participated in the previous three (3) Forum Meetings and Forum Teleconferences.
+
  8. The Chair will tabulate and announce the results within three (3) business days of the close of the voting period.
 
  9. The Chair may delegate any of his/her duties under this Section 2.3 and Section 2.4 to the Vice Chair as necessary, or the Vice Chair may otherwise execute the duties and obligations of the Chair as provided in Section 4.1(1) of these Bylaws.
@@ -93,7 +91,7 @@ This section applies to any ballot that proposes a Final Guideline or a Final Ma
 
  2. As described in Section 2.3(3), there will be a discussion period of at least seven (7) days before votes are cast on a Draft Guideline Ballot, with the start date of such discussion period clearly specified in the ballot. The discussion period shall end and the voting period shall commence also according to the procedure specified in Section 2.3(3).
 
- 3. As described in Section 2.3(4), upon commencement of the voting period, Members shall have exactly seven (7) calendar days to vote on a Draft Guideline Ballot, with the deadline clearly communicated in the ballot sent via a Public Mail List. For ballots related to the Forum level, votes must be sent to the Public Mail List of the Forum. For ballots related to a CWG, votes must be sent to the Public Mail List of the CWG. All voting will take place via the proper Public Mail List. Votes not submitted to the Public Mail List will not be considered valid, and will not be counted for any purpose. The Chair may send an email to a Public Mail List reminding Members of when the voting period opens and closes.
+ 3. As described in Section 2.3(4), upon commencement of the voting period, Full Members shall have exactly seven (7) calendar days to vote on a Draft Guideline Ballot, with the deadline clearly communicated in the ballot sent via a Public Mail List. For ballots related to the Forum level, votes must be sent to the Public Mail List of the Forum. For ballots related to a CWG, votes must be sent to the Public Mail List of the CWG. All voting will take place via the proper Public Mail List. Votes not submitted to the Public Mail List or not submitted by a designated Voting Representative, will not be considered valid, and will not be counted for any purpose. The Chair may send an email to a Public Mail List reminding Members of when the voting period opens and closes.
 
  4. The Forum (via the Chair) will tabulate and announce the results within three (3) business days of the close of the initial voting period (the “Initial Vote”). If the Draft Guidelines Ballot does not pass the Initial Vote, the ballot fails.
 
@@ -102,7 +100,18 @@ This section applies to any ballot that proposes a Final Guideline or a Final Ma
 
  7. In addition to following the process for submitting Exclusion Notices set forth in Section 4 of the IPR Policy, Members shall also send Exclusion Notices to the Public Mail List as a safeguard.
 
- 8. If no Exclusion Notices are filed during the Review Period with respect to a Draft Guideline Ballot, then the results of the Initial Vote are automatically deemed to be final and approved,  and Draft Guidelines then become either Final Guidelines or Final Maintenance Guidelines, as designated in the Draft Guidelines Ballot. The Chair will notify both the Member Mail List and the Public Mail List of the final approval within three (3) business days, as well as update the Public Website of Final Guidelines and Final Maintenance Guidelines within ten (10) business days of the close of the Review Period.
+ 8. If no Exclusion Notices are filed during the Review Period with respect to a Draft Guideline Ballot, then the results of the Initial Vote are automatically deemed to be final and approved,  and Draft Guidelines then become either Final Guidelines or Final Maintenance Guidelines, as designated in the Draft Guidelines Ballot. The Chair will notify both the Member Mail List and the Public Mail List of the final approval within three (3) business days, as well as update the Public Website of Final Guidelines and Final Maintenance Guidelines within ten (10) business days of the close of the Review Period. The Chair or Vice-Chair of a CWG is allowed to perform changes to informative (non-normative) parts of a Final Guideline or Final Maintenance Guideline before it is published to the public web site and without requiring a ballot procedure. The set of changes are limited to:
+    * The cover page,
+    * The Table of Contents,
+    * The year in the “Copyright” information,
+    * Footers with page numbers
+
+     The Chair or Vice-Chair of a CWG is also allowed to perform the following changes, unless the ballot explicitly updates this information:
+   
+    * The Guideline version number,
+    * Headers/Footers with version numbers,
+    * The table with document revisions or Document History,
+    * The table with Relevant Dates.
 
  9. If Exclusion Notice(s) are filed during the Review Period (as described in Section 4.3 of the IPR Policy), then the results of the Initial Vote are automatically rescinded and deemed null and void, and;
 
