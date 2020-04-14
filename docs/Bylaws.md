@@ -67,7 +67,7 @@ The following rules will apply to all ballots, including Draft Guideline Ballots
 
  1. Only votes by Full Members shall be accepted.
   
- 2. Only one vote per Full Member company shall be accepted; Affiliates of Members shall not vote. Only votes from Voting Representatives shall be accepted.
+ 2. Only one vote per Full Member company shall be accepted; Affiliates of Full Members shall not vote. Only votes from Voting Representatives shall be accepted.
   
  3. A representative of any Full Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Full Members in order to proceed. The discussion period then shall take place for at least seven (7) calendar days before votes are cast. At any time, a new version of the ballot (marked with a distinguishing version number) may be posted by the proposer in the same manner as the original. Once no new version of the ballot has been posted for seven (7) calendar days, the proposer may end the discussion period and start the voting period by reposting the final version of the ballot and clearly indicating that voting is to begin, along with the start and end dates and times (including time zone) for the voting period. The ballot automatically fails if twenty one (21) calendar days elapse since the proposer last posted a version of the ballot and the voting period has not been started.
   
