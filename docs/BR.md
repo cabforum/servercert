@@ -1612,7 +1612,7 @@ g. `extkeyUsage` (optional/required)
 
    For Subordinate CA Certificates that will be used to issue TLS certificates, the value id-kp-serverAuth [RFC5280] MUST be present. The values id-kp-emailProtection [RFC5280], id-kp-codeSigning [RFC5280], id-kp-timeStamping [RFC5280], id-kp-OCSPSigning [RFC5280], and anyExtendedKeyUsage [RFC5280] MUST NOT be present. Other values SHOULD NOT be present.
 
-   For Subordinate CA Certificates that are not used to issue TLS certificates, then the values id-kp-serverAuth [RFC5280] and/or id-kp-clientAuth [RFC5280] MUST NOT be present. Other values MAY be present, but SHOULD NOT combine multiple independent usages (e.g. including id-kp-timeStamping [RFC5280] with id-kp-OCSPSigning [RFC5280] or id-kp-codeSigning [RFC5280]).
+   For Subordinate CA Certificates that are not used to issue TLS certificates, then the value id-kp-serverAuth [RFC5280] MUST NOT be present. Other values MAY be present, but SHOULD NOT combine multiple independent usages (e.g. including id-kp-timeStamping [RFC5280] with id-kp-OCSPSigning [RFC5280] or id-kp-codeSigning [RFC5280]).
 
 [^**]: While RFC 5280, Section 4.2.1.12, notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of subordinate certificates, as implemented by a number of Application Software Suppliers.
 
