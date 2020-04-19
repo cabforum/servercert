@@ -7,9 +7,9 @@ assist the interpretation of this Charter.
 
 An S/MIME certificate contains a public key bound to an email address; and may
 also contain the identity of a natural person or legal entity that controls such
-email address. The key pair can then be used to sign, encrypt, and decrypt
-email. An S/MIME certificate can be identified by the existence of an Extended
-Key Usage (EKU) Object Identifier (OID) of `1.3.6.1.5.5.7.3.4` for
+email address. The key pair can then be used to sign, verify, encrypt, and
+decrypt email. An S/MIME certificate can be identified by the existence of an
+Extended Key Usage (EKU) Object Identifier (OID) of `1.3.6.1.5.5.7.3.4` for
 emailProtection.
 
 The objective of an S/MIME certificate is to provide cryptographic security
@@ -77,12 +77,11 @@ capitalized terms in this Charter.
 The authorized scope of the SMCWG SHALL be to discuss, adopt, and maintain
 policies, frameworks, and sets of standards related to the issuance and
 management of S/MIME certificates by third-party CAs under a publicly trusted
-root, limited as follows:
+root.
 
-- Baseline verification of control over email addresses, including those used
-  by a natural person or a legal entity, or used by automated systems such as
-  for mailing lists
-- Identity validation for natural persons and legal entities
+The primary deliverable shall be scoped as follows:
+
+- Verification of control over email addresses
 - Key management and certificate lifecycle (subject to coordination with other
   Forum CWGs to ensure consistency and avoid redundancy)
 - Certificate profiles for S/MIME certificates and Issuing CA certificates
@@ -90,8 +89,13 @@ root, limited as follows:
   be present)
 - CA operational practices, physical/logical security, etc.
 
-The SMCWG SHALL exercise caution to ensure that its work product does not impede
-the issuance of certificates with other EKU types.
+In addition to the primary deliverable, the SMCWG MAY also address:
+- Identity validation for natural persons and legal entities, in the context of
+  S/MIME certificates
+
+Deliverables of the SMCWG SHALL be constrained to those certificates
+that contain the emailProtection (OID: 1.3.6.1.5.5.7.3.4) or that are technically
+capable of such issuance.
 
 ### 2. Out of Scope
 
@@ -162,8 +166,8 @@ forth in the Bylaws.
    * The organization name, as they wish it to appear on the Forum Web site and
      in official Forum documents.
    * URL of the applicant’s main Web site.
-   * Names and email addresses of employees who will participate in the Working
-     Group and Forum as Member representatives.
+   * Names and email addresses of designated representatives who will
+     participate in the Working Group and Forum on behalf of the Member.
    * Emergency contact information for security issues related to certificate
      trust.
 
@@ -196,13 +200,13 @@ forth in the Bylaws.
    Teleconference, or upon the request of any Member of the SMCWG, by a Ballot
    among Members of the SMCWG.
 
-   In order to determine the composition of the initial set of SMCWG Members,
-   at least twenty-four (24) hours prior to the initial meeting of the SMCWG,
-   the SMCWG Chair SHALL publish a list of Members seeking to participate who
-   they determine meet the criteria set forth above. As the first order of
-   business at the first meeting of the SMCWG, those organizations on the
-   Chair’s list of proposed, qualifying Members SHALL vote to determine the
-   initial set of SMCWG Members.
+To confirm the list of initial Members, at least two-thirds of the organizations
+on the Chair's list of proposed, qualifying Members SHALL publicly vote in favor
+of adopting the list of Members. If the initial list fails to be adopted, the
+Chair SHALL consider the feedback and MAY update the initial list of proposed,
+qualifying Members as a result, and a second vote using these same rules shall
+be performed. If an initial list of Members cannot be agreed upon, the SMCWG
+shall be dissolved.
 
 ##### 4.2.3. Suspension and Cessation of Working Group Membership
 
@@ -217,9 +221,7 @@ following become true:
 1. it stops providing support for its membership-qualifying software
    product;
 1. its membership-qualifying software product ceases to consume
-   S/MIME certificates;
-1. it announces an end of life for its membership-qualifying software product
-   and said end of life occurs.
+   S/MIME certificates.
 
 A Certificate Issuer’s membership in the SMCWG may be suspended if any of the
 following become true:
@@ -275,9 +277,9 @@ than 50% of the votes cast by the Certificate Consumers must be in favor of the
 ballot. At least one member of each class must vote in favor of a ballot for it
 to be adopted. Quorum is the average number of Member organizations (cumulative,
 regardless of Class) that have participated in the previous three (3) SMCWG
-Meetings or Teleconferences (not counting subcommittee meetings thereof). For
-transition purposes, if three (3) meetings have not yet occurred, quorum is
-three (3).
+Meetings or Teleconferences (not counting subcommittee meetings thereof). No
+Ballots shall be adopted until at least (3) meetings have occurred and quorum
+determined.
 
 #### 6.2. Other Organizational Matters
 
@@ -287,18 +289,18 @@ three (3).
   to the Chair herein MAY be performed by the Vice Chair. For example, the Vice
   Chair MAY preside at SMCWG Meetings and Teleconferences in the Chair’s
   absence.
-- SMCWG-created Subcommittees MAY be approved either:
-
-  1. by formal ballot as described in [6.1](#6.1-voting-structure), or
-  2. by simple majority vote of those members present at a regularly
-     scheduled SMCWG Meeting or Teleconference provided that the proposal is
-     mentioned in an agenda circulated on the SMCWG Mail List at least
-     forty-eight (48) hours prior to the SMCWG Meeting or Teleconference.
+- The SMCWG may establish subcommittees, by formal ballot, to address any of the
+  SMCWG’s business as specified in the ballot (each, a “SMCWG Subcommittee”).
+  SMCWG Subcommittees are open to all SMCWG Members. A SMCWG Subcommittee may
+  work on and recommend ballots, complete delegated functions, or issue reports
+  to the SMCWG that are within the scope of this charter. SMCWG Subcommittees
+  must post all agendas and minutes on a public mail list.
 
 ### 7. Summary of Major Deliverables
 
-The deliverables of the SMCWG are defined in the Scope section above and shall
-be named the "Baseline Requirements for S/MIME Certificates" proposed standard.
+The primary deliverable of the SMCWG is set forth in the Scope section, and
+shall include a Draft Guideline be named the "Baseline Requirements for S/MIME
+Certificates".
 
 ### 8. Primary Means of Communication
 
