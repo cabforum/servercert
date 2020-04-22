@@ -127,8 +127,10 @@ The SMCWG SHALL consist of two classes of voting members, Certificate Issuers
 and Certificate Consumers meeting the eligibility criteria below.
 
 1. A Certificate Issuer eligible for voting membership in the SMCWG MUST have
-   a publicly-available audit report or attestation statement in accordance
-   with one of the following schemes:
+   a publicly-available audit report or attestation statement based upon a
+   publicly-available audit criteria or attestation scheme relevant to the
+   issuance of S/MIME certificates. This includes, but is not limited to,
+   the following schemes and criteria:
 
     * WebTrust for CAs v.2.0 or newer; or
     * ETSI EN 319 411-1, which includes normative references to ETSI EN 319 401
@@ -141,7 +143,9 @@ and Certificate Consumers meeting the eligibility criteria below.
     * No more than 27 months have elapsed since the beginning of the
       reported-on period and no more than 15 months since the end of the
       reported-on period; and
-    * The audit report was prepared by a Qualified Auditor.
+    * The audit report was prepared by a natural or legal person that is
+      duly authorized or licensed to conduct audits according to the relevant
+      audit criteria or attestation scheme used.
 
    In addition, the Certificate Issuer MUST actively issue S/MIME certificates
    that are treated as valid by at least one Certificate Consumer that produces
