@@ -55,7 +55,7 @@ Categories of Forum Membership are defined as follows:
 * Associate Member: As defined in Section 3.1
 * Interested Party: As defined in Section 3.2
 
-Voting Members that qualify under more than one category of Forum Membership SHALL choose their membership category.
+Voting Members that qualify under more than one category of Forum Membership MAY choose their membership category.
 
 ## 2.2 Ending Forum Membership
 
