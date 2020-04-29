@@ -318,7 +318,6 @@ All Members shall abide by the CAB Forum Code of Conduct, which is attached to t
 
 All Members shall abide by the CAB Forum Photography Policy, which is attached to these Bylaws as Exhibit D.
 
-
 # DEFINITIONS
 
 **Affiliate:** An entity that directly or indirectly controls, is controlled by, or is under common control with, another entity. Control for the purposes of these Bylaws shall mean direct or indirect beneficial ownership of more than fifty percent of the voting stock, or decision-making authority in the event that there is no voting stock, in an entity.
@@ -344,9 +343,7 @@ All Members shall abide by the CAB Forum Photography Policy, which is attached t
 **Questions Mail List:** The email list-serv currently located at questions@cabforum.org maintained by the Forum for communications from the public to the Forum.
 
 
-# Exhibit A
-
-## CAB Forum IPR Policy Agreement
+# Exhibit A: CAB Forum IPR Policy Agreement
 
 This CAB Forum IPR Policy Agreement (the "Agreement") constitutes a binding contract amongst all participants who make Contributions during the process of developing a Draft Guideline for the purpose of incorporating such material into a Draft Guideline or a Final Guideline of the CA / Browser Forum.
 
@@ -376,9 +373,7 @@ Participant Organization Name (if entity)
 
 Date: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-# Exhibit B
-
-## CAB Forum Code of Conduct (the "Code")
+# Exhibit B: CAB Forum Code of Conduct (the "Code")
 
 The CAB Forum (the "Forum") is comprised of a global group of professionals with differences in language, skills, expertise, experience, and backgrounds.  To maintain a professional and productive environment, it is necessary for Members of the Forum to follow the letter and spirit of this Code.  This Code applies to all official Forum activities, such as meetings, teleconferences, mailing lists, conferences, and other Forum functions.  The Forum is committed to maintaining a professional and respectful environment.
 
@@ -415,9 +410,7 @@ All Member representatives are expected to behave in a collegial and professiona
 
 Adapted from the WHATWG Code of Conduct [https://wiki.whatwg.org/wiki/Code_of_Conduct], the W3C Code of Ethics and Professional Conduct [https://www.w3c.org/Consortium/cepc/], and the Citizen Code of Conduct [citizencodeofconduct.org].
 
-# Exhibit C
-
-## CAB Forum Charter Template
+# Exhibit C: CAB Forum Charter Template
 [insert name] Working Group Charter
 
 The **mission** of the [insert name] Working Group is to:
@@ -562,8 +555,7 @@ To promote the widest adoption of the CAB Forum Guidelines, CAB Forum seeks to i
 
 This charter for the [insert name] Working Group has been created according to Section 5.3.1 of the Bylaws of the CAB Forum. In the event of a conflict between this charter and any provision in either the Bylaws or the IPR Policy, the provision in the Bylaws or IPR Policy shall take precedence.
 
-# Exhibit D:
-## CAB Forum Photography Policy
+# Exhibit D: CAB Forum Photography Policy
 
 This policy is based on the IETF meetings photography policy published at https://www.ietf.org/about/groups/iesg/statements/meeting-photography-policy/.
 
@@ -571,7 +563,7 @@ The intent behind this policy is to balance people's legitimate desire not to be
 
 ### Labelling
 
-F2F meeting participants will have the opportunity to label themselves as desiring not to be photographed by indicating “Photograph Privacy Requested” when they register or joinat  a F2F meeting. The list of participants will include a “Photograph Privacy Requested” next to the participant’s name and will be available to all F2F meeting participants.
+F2F meeting participants will have the opportunity to label themselves as desiring not to be photographed by indicating “Photograph Privacy Requested” when they register at a F2F meeting. The list of participants will include a “Photograph Privacy Requested” next to the participant’s name and will be available to all F2F meeting participants.
 
 ### Official Photography
 
@@ -591,8 +583,8 @@ Many CA/B Forum F2F participants also engage in photography. We ask that those p
 
 ### Voluntary Photo directory
 
-F2F meetings usually have such a large number of participants that it is hard for representatives to remember faces and names. Having a picture next to a name for reference, is helpful in that respect. A voluntary photo directory is allowed but not required for F2F meetings. This voluntary photo directory will be stored in the Forum’s Member Web Site. Photos ofincluded in this directory shall be used and added next to the name of the attendee’s list in F2F meetings. Once a member is removed from the Forum or a member representative is asked to be removed from the Member Web Site, the photos shall be removed.
+F2F meetings usually have such a large number of participants that it is hard for representatives to remember faces and names. Having a picture next to a name for reference, is helpful in that respect. A voluntary photo directory is allowed but not required for F2F meetings. This voluntary photo directory will be stored in the Forum’s Member Web Site. Photos included in this directory shall be used and added next to the name of the attendee’s list in F2F meetings. Once a member is removed from the Forum or a member representative is asked to be removed from the Member Web Site, the photos shall be removed.
 
-Representatives that voluntarily provide their photo for the photo directory are deemed to, consent to this photo being added into the attendee’s list for F2F meetings. Representatives may withdraw their consent and remove their photo from the directory and future attendee lists at any time.
+Representatives that voluntarily provide their photo for the photo directory are deemed to, consent to this photo being added to the attendee’s list for F2F meetings. Representatives may withdraw their consent and remove their photo from the directory and future attendee lists at any time.
 
-Representatives that have their photo in the voluntary photo directory shall not indicate the “Photograph Privacy Requested” at F2F meetings. They must first withdraw their consent and remove their photo from the directory
+Representatives that have their photo in the voluntary photo directory shall not indicate the “Photograph Privacy Requested” at F2F meetings. They must first withdraw their consent and remove their photo from the directory.
