@@ -525,7 +525,7 @@ While suspended, a Voting Member may participate in this Working Group and Forum
 Votes cast before a Voting Member's suspension is announced will stand.
 
    3.3 **Application Process**
-Applicants shall supply information and follow a process to become members and assign Voting Representatives.
+Applicants shall supply information and follow a process to become members.
 [specify]
 
 4. **Dependencies and Liaisons**
