@@ -200,7 +200,7 @@ These activities should be followed by any Chartered Working Group. Working Grou
 
 ## 5.2 Public Mail List and Public Web Site
 
-The Forum Chair shall appoint a List Manager who shall maintain a Public Mail List. All Members, including Interested Parties may post messages to the Public Mail List in compliance with these Bylaws. Anyone else is allowed to subscribe to and receive messages posted to the Public Mail List, which may be crawled and indexed by Internet search engines.
+The Forum Chair shall appoint a List Manager who shall maintain a Public Mail List. All Members may post messages to the Public Mail List in compliance with these Bylaws. Anyone else is allowed to subscribe to and receive messages posted to the Public Mail List, which may be crawled and indexed by Internet search engines.
 
 The Forum Chair shall appoint a webmaster. The webmaster shall post instructions on the Public Web Site for subscribing to the Public Mail List.
 
