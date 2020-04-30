@@ -241,7 +241,6 @@ These activities should be followed by any Chartered Working Group. Working Grou
     * Initial chairs and contacts for the Working Group
     * Type(s) of Members eligible to participate in the Working Group (e.g., Voting Members, Interested Parties, and Associate Members)
     * Membership criteria as described in section 5.3.1
-    * The process to designate Voting Representatives for voting members
     * Criteria for ending membership for each category of participant
     * Voting structure for the WG
     * Summary of the work that the WG plans to accomplish
