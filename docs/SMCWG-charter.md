@@ -31,7 +31,7 @@ establish its authenticity and source of origin.
 
 Therefore, in order to provide reasonable assurance, it is crucial to establish
 a standard method to validate an email address and the subject’s identity (if
-present) prior to binding it them to the public key. “Reasonable
+present) prior to binding them to the public key. “Reasonable
 assurance” is to be determined and defined by this SMCWG through studying the
 existing methods that exist in the industry, as well as identity management
 frameworks and any applicable legislation.
