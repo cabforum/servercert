@@ -334,9 +334,9 @@ All Members shall abide by the CAB Forum Photography Policy, which is attached t
 
 **Member Web Site:** The password-protected web site available only to Voting Members and Associate Members (currently called the CA/Browser Forum Wiki).
 
-**Public Mail List:** A public email list-serv maintained by the Forum or CWG for communications by and among Voting Members, Associate Members and Interested Parties. The Public Mail List may be read by other parties, but other parties may not post to the Public Mail List.
+**Public Mail List:** A public email list-serv maintained by the Forum or CWG for communications by and among Members. The Public Mail List may be read by other parties, but other parties may not post to the Public Mail List.
 
-**Public Web Site:** A public web site available to Voting Members, Associate Members, Interested Parties, and other parties.
+**Public Web Site:** A public web site available to Members, and other parties.
 
 **Voting Representative:** A natural person designated by the Voting Member organization allowed to cast votes on behalf of the Voting Member organization. Each Voting Representative can extend the set of Voting Representatives. Voting Representatives can also be introduced or removed by a Voting Member's legal (or properly delegated) representative.
 
