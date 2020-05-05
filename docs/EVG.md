@@ -1,6 +1,6 @@
 
 
-**Version 1.7.1**
+**Version 1.7.2**
 
 ##
 
@@ -16,17 +16,17 @@
 
 ## Extended Validation Certificates
 
-Copyright © 2007-2019, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
+Copyright © 2007-2020, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
 
 The CA/Browser Forum requests that translated versions of these guidelines prominently display the following statement in the language of the translation :-
 
-'Copyright © 2007-2019, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
+'Copyright © 2007-2020, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
 
 This document is a translation of the original English version. In the event that there is a discrepancy between this version and the original English version, the original English version shall govern.'
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.7.1 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC24, passed by the Forum on 12 November 2019 and effective as of 19 December 2019.
+This version 1.7.2 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC27, passed by the Forum on 19 February 2020 and effective as of 27 March 2020.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -76,6 +76,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.6.9 | SC16 | Other Subject Attributes | 15 Mar 2019 | 16 Apr 2019 |
 | 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
 | 1.7.1 | SC24 | Fall cleanup v2 | 12 Nov 2019 | 19 Dec 2019 |
+| 1.7.2 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
 
 ### Relevant Dates
 
@@ -1716,7 +1717,7 @@ A CA may rely on the Contract Signer's authority to enter into the Subscriber Ag
 
 # Appendix F – Issuance of Certificates for .onion Domain Names
 
-A CA may issue an EV Certificate with .onion in the right-most label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix:
+A CA may issue an EV Certificate with .onion in the right-most label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix or Appendix C of the Baseline Requirements.
 
 1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31)
 
