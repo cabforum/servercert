@@ -303,8 +303,8 @@ determined.
 ### 7. Summary of Major Deliverables
 
 The primary deliverable of the SMCWG is set forth in the Scope section, and
-shall include a Draft Guideline be named the "Baseline Requirements for S/MIME
-Certificates".
+shall include a Draft Guideline be named the "Baseline Requirements for the
+Issuance and Management of Publicly-Trusted S/MIME Certificates".
 
 ### 8. Primary Means of Communication
 
