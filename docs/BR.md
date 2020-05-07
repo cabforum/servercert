@@ -7,9 +7,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.6.9**
+**Version 1.7.0**
 
-**March 27, 2020**
+**May 4, 2020**
 
 **www.cabforum.org**
 
@@ -116,6 +116,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.6.7 | SC24 | Fall Cleanup v2 | 12-Nov-2019	| 19-Dec-2019 |
 | 1.6.8 | SC25 | Define New HTTP Domain Validation Methods v2 | 31-Jan-2020	| 3-Mar-2020 |
 | 1.6.9 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
+| 1.7.0 | SC29 | Pandoc-Friendly Markdown Formatting Changes | 20-Mar-2020	| 4-May-2020 |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
