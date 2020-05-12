@@ -1141,9 +1141,10 @@ The validity interval of an OCSP response is the difference in time between the 
 For the status of Subscriber Certificates:
 
 1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
-2. OCSP responses MUST have a validity interval less than seven days;
-3. For OCSP responses whose validity interval is less than or equal to sixteen hours, the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate;
-4. For OCSP responses whose validity interval is greater than sixteen hours, the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period remaining before the nextUpdate.
+2. OCSP responses MUST have a validity interval less than or equal to ten days;
+3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
+4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
+
 
 For the status of Subordinate CA Certificates:
 * The CA SHALL update information provided via an Online Certificate Status Protocol (i) at least every twelve months; and (ii) within 24 hours after revoking a Subordinate CA Certificate.
@@ -1446,7 +1447,7 @@ For RSA key pairs the CA SHALL:
 * Ensure that the modulus size, in bits, is evenly divisible by 8.
 
 For ECDSA key pairs, the CA SHALL:
-* Ensure that the key represents a valid point on the NIST P-256 or NIST P-384 elliptic curve.
+* Ensure that the key represents a valid point on the NIST P-256, NIST P-384 or NIST P-521 elliptic curve.
 
 No other algorithms or key sizes are permitted.
 
@@ -1610,7 +1611,7 @@ g. `extkeyUsage` (optional/required)
 
    This extension MUST be present and SHOULD NOT be marked critical[^**].
 
-   For Subordinate CA Certificates that will be used to issue TLS certificates, the value id-kp-serverAuth [RFC5280] MUST be present. The values id-kp-emailProtection [RFC5280], id-kp-codeSigning [RFC5280], id-kp-timeStamping [RFC5280], id-kp-OCSPSigning [RFC5280], and anyExtendedKeyUsage [RFC5280] MUST NOT be present. Other values SHOULD NOT be present.
+   For Subordinate CA Certificates that will be used to issue TLS certificates, the value id-kp-serverAuth [RFC5280] MUST be present. The value id-kp-clientAuth [RFC5280] MAY be present. The values id-kp-emailProtection [RFC5280], id-kp-codeSigning [RFC5280], id-kp-timeStamping [RFC5280], id-kp-OCSPSigning [RFC5280], and anyExtendedKeyUsage [RFC5280] MUST NOT be present. Other values SHOULD NOT be present.
 
    For Subordinate CA Certificates that are not used to issue TLS certificates, then the value id-kp-serverAuth [RFC5280] MUST NOT be present. Other values MAY be present, but SHOULD NOT combine multiple independent usages (e.g. including id-kp-timeStamping [RFC5280] with id-kp-OCSPSigning [RFC5280] or id-kp-codeSigning [RFC5280]).
 
@@ -1693,10 +1694,12 @@ The CA SHALL indicate an ECDSA key using the id-ecPublicKey (OID: 1.2.840.10045.
 
 For P-256 keys, the `namedCurve` MUST be secp256r1 (OID: 1.2.840.10045.3.1.7).
 For P-384 keys, the `namedCurve` MUST be secp384r1 (OID: 1.3.132.0.34).
+For P-521 keys, the `namedCurve` MUST be secp521r1 (OID: 1.3.132.0.35).
 
 When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte identical with the following hex-encoded bytes:
 * For P-256 keys, `301306072a8648ce3d020106082a8648ce3d030107`.
 * For P-384 keys, `301006072a8648ce3d020106052b81040022`.
+* For P-521 keys, `301006072a8648ce3d020106052b81040023`.
 
 #### 7.1.3.2 Signature AlgorithmIdentifier
 All objects signed by a CA Private Key MUST conform to these requirements on the use of the `AlgorithmIdentifier` or `AlgorithmIdentifier`-derived type in the context of signatures.
@@ -1786,6 +1789,8 @@ The CA SHALL use the appropriate signature algorithm and encoding based upon the
 If the signing key is P-256, the signature MUST use ECDSA with SHA-256. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the following hex-encoded bytes: `300a06082a8648ce3d040302`.
 
 If the signing key is P-384, the signature MUST use ECDSA with SHA-384. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the following hex-encoded bytes: `300a06082a8648ce3d040303`.
+
+If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the following hex-encoded bytes: `300a06082a8648ce3d040304`.
 
 ### 7.1.4 Name Forms
 
@@ -2032,10 +2037,11 @@ The Audit Report MUST contain at least the following clearly-labelled informatio
 4. audit criteria, with version number(s), that were used to audit each of the certificates (and associated keys);
 5. a list of the CA policy documents, with version numbers, referenced during the audit;
 6. whether the audit assessed a period of time or a point in time;
-7. the start date and end date of the period, for those that cover a period of time;
+7. the start date and end date of the Audit Period, for those that cover a period of time;
 8. the point in time date, for those that are for a point in time;
 9. the date the report was issued, which will necessarily be after the end date or point in time date; and
-10. (for audits conducted in accordance with any of the ETSI standards) a statement to indicate if the audit was a full audit or a surveillance audit, and which portions of the criteria were applied and evaluated, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP, EVCP+, QCP-w, Part 1 (General Requirements), and/or Part 2 (Requirements for Trust Service Providers).
+10. (for audits conducted in accordance with any of the ETSI standards) a statement to indicate if the audit was a full audit or a surveillance audit, and which portions of the criteria were applied and evaluated, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP, EVCP+, QCP-w, Part 1 (General Requirements), and/or Part 2 (Requirements for Trust Service Providers). 
+11. (for audits conducted in accordance with any of the ETSI standards) a statement to indicate that the auditor referenced the applicable CA/Browser Forum criteria, such as this document, and the version used.
 
 An authoritative English language version of the publicly available audit information MUST be provided by the Qualified Auditor and the CA SHALL ensure it is publicly available.
 
