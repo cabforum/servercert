@@ -761,7 +761,7 @@ Effective as of 1 October 2020, prior to the use of an Incorporating Agency or R
 
 This Agency Information SHALL include at least the following:
 * Sufficient information to unambiguously identify the Incorporating Agency or Registration Agency (such as a name, jurisdiction, and website); and,
-* The accepted values for the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jursidictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisidction(s) that the Agency is appropriate for; and,
+* The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jursidictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisidction(s) that the Agency is appropriate for; and,
 * If the CA restricts the form or syntax of the Registration Number used by the Incorporating Agency or Registration Agency, then the acceptable forms or syntax of such Numbers; and,
 * A revision history that includes a unique version number and date of publication for any additions, modifications, or removals from this list.
 
