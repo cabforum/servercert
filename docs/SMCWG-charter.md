@@ -59,6 +59,15 @@ developing a consistent profile for S/MIME certificates in order to facilitate
 technical interoperability across the Internet are also to be addressed by
 the SMCWG.
 
+The objective of the SMCWG is to provide documents that describe an integrated
+set of technologies, protocols, identity-proofing, lifecycle management, and
+auditing requirements that are necessary (but not sufficient) for the issuance
+and management of Publicly-Trusted S/MIME Certificates; Certificates that are
+trusted by virtue of the fact that their corresponding Root Certificate is
+distributed in widely-available application software. Such requirements are not
+mandatory for Certification Authorities unless and until they become adopted and
+enforced by relying–party Application Software Suppliers. 
+
 ## Chartering of the S/MIME Certificate Working Group
 
 A Chartered Working Group (“SMCWG”) is created to perform the activities as
