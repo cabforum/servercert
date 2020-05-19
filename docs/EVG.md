@@ -491,7 +491,7 @@ Country:
 
 **Contents:**    These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency.  For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information.  Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information.  And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information.  Country information MUST be specified using the applicable ISO country code.  State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
-Effective as of 1 October 2020, the CA SHALL ensure that the information to be included is consistent with its publicly-available disclosure, as described in Section 11.1.3.
+Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, the values within these fields have been disclosed within the latest publicly-available disclosure, as described in Section 11.1.3, as acceptable values for the applicable Incorporating Agency or Registration Agency.
 
 ### 9.2.5.  Subject Registration Number Field
 
@@ -505,7 +505,7 @@ For Government Entities that do not have a Registration Number or readily verifi
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field.  For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
 
-Effective as of 1 October 2020, the CA SHALL ensure that the format of any Registration Number that is included is consistent with the publicly-available disclosure for that Registration Agency or Incorporating Agency, as described in Section 11.1.3.
+Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, if the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in Section 11.1.3, that the Registration Number is valid according to at least one disclosed format for that applicable Registration Agency or Incorporating agency. 
 
 ### 9.2.6.  Subject Physical Address of Place of Business Field
 
