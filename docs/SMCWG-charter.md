@@ -106,19 +106,14 @@ Deliverables of the SMCWG SHALL be constrained to those certificates
 that contain the emailProtection (OID: 1.3.6.1.5.5.7.3.4) or that are technically
 capable of such issuance.
 
-### 2. Out of Scope
-
-Certificates issued under a root certificate that is not publicly trusted SHALL
-be out of scope.
-
-### 3. Charter Expiration
+### 2. Charter Expiration
 
 The SMCWG is chartered indefinitely until it is dissolved as specified in Bylaw
 5.3.2(c).
 
-### 4. Personnel and Participation
+### 3. Personnel and Participation
 
-#### 4.1. Selection of Officers
+#### 3.1. Selection of Officers
 
 Stephen Davidson will act as chair of the SMCWG until the first Working Group
 Teleconference, at which time the group will elect a chair and vice-chair. The
@@ -128,9 +123,9 @@ held for chair and vice chair every two years in coordination with the Forum’s
 election process and in conjunction with its election cycle. Voting SHALL occur
 in accordance with Bylaw 4.1(c).
 
-#### 4.2. Participation
+#### 3.2. Participation
 
-##### 4.2.1. Eligibility to Participate
+##### 3.2.1. Eligibility to Participate
 
 The SMCWG SHALL consist of two classes of voting members, Certificate Issuers
 and Certificate Consumers meeting the eligibility criteria below.
@@ -168,7 +163,7 @@ and Certificate Consumers meeting the eligibility criteria below.
 The SMCWG SHALL allow participation by Interested Parties, as set
 forth in the Bylaws.
 
-##### 4.2.2. Membership Application/Declaration Process
+##### 3.2.2. Membership Application/Declaration Process
 
 1. An Applicant not already a member of the Forum SHALL provide the following
    information:
@@ -221,7 +216,7 @@ qualifying Members as a result, and a second vote using these same rules shall
 be performed. If an initial list of Members cannot be agreed upon, the SMCWG
 shall be dissolved.
 
-##### 4.2.3. Suspension and Cessation of Working Group Membership
+##### 3.2.3. Suspension and Cessation of Working Group Membership
 
 Members may resign from the SMCWG at any time. Resignation, suspension, or
 other termination of membership in the SMCWG does not prevent a Member from
@@ -269,7 +264,7 @@ endorse ballots or take part in any form of voting.
 
 Votes cast before the announcement of a Member’s suspension will stand.
 
-### 5. Membership Declaration
+### 4. Membership Declaration
 
 In accordance with the IPR Policy, Members that choose to participate in the
 SMCWG MUST declare their participation and SHALL do so prior to participating.
@@ -277,9 +272,9 @@ The Chair of the SMCWG SHALL establish a list for declarations of participation
 and manage it in accordance with the Bylaws, the IPR Policy, and the IPR
 Agreement.
 
-### 6. Voting and Other Organizational Matters
+### 5. Voting and Other Organizational Matters
 
-#### 6.1. Voting Structure
+#### 5.1. Voting Structure
 
 The rules described in Bylaw 2.3 and 2.4 SHALL apply to all ballots, including
 Draft Guideline Ballots.
@@ -294,7 +289,7 @@ Meetings or Teleconferences (not counting subcommittee meetings thereof). No
 Ballots shall be adopted until at least (3) meetings have occurred and quorum
 determined.
 
-#### 6.2. Other Organizational Matters
+#### 5.2. Other Organizational Matters
 
 - The Chair MAY delegate any of their duties to the Vice Chair as necessary.
   The Vice Chair has the authority of the Chair in the event of any absence or
@@ -309,13 +304,13 @@ determined.
   to the SMCWG that are within the scope of this charter. SMCWG Subcommittees
   must post all agendas and minutes on a public mail list.
 
-### 7. Summary of Major Deliverables
+### 6. Summary of Major Deliverables
 
 The primary deliverable of the SMCWG is set forth in the Scope section, and
 shall include a Draft Guideline be named the "Baseline Requirements for the
 Issuance and Management of Publicly-Trusted S/MIME Certificates".
 
-### 8. Primary Means of Communication
+### 7. Primary Means of Communication
 
 1. The SMCWG SHALL appoint a webmaster to maintain the SMCWG’s pages on the
    wiki and the Forum’s Public Web Site.
@@ -328,7 +323,7 @@ Issuance and Management of Publicly-Trusted S/MIME Certificates".
    Minutes SHALL be kept, and such minutes SHALL be made public in accordance
    with Bylaw 5.2.
 
-### 9. IPR Policy
+### 8. IPR Policy
 
 As with all Forum Working Group activity, the [IPR
 Policy](https://cabforum.org/ipr-policy/), v1.3 or later, SHALL apply to all
