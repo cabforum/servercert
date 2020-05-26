@@ -325,14 +325,5 @@ Issuance and Management of Publicly-Trusted S/MIME Certificates".
 
 ### 8. IPR Policy
 
-As with all Forum Working Group activity, the [IPR
-Policy](https://cabforum.org/ipr-policy/), v1.3 or later, SHALL apply to all
-activities and work of the SMCWG. All Participants in the SMCWG SHALL have on
-file with the Forum a valid, signed IPR Policy Agreement (v.1.3).  A previously
-submitted IPR Policy Agreement (v1.3) by an existing Member of the Forum shall
-suffice as meeting the obligation under section 4.5 of the IPR Policy that a
-Participant in the SMCWG commit to CAB Forum License requirements.
-
-In accordance with the Forum’s antitrust policy, an antitrust compliance
-statement SHALL be read at the start of all Working Group Meetings, in
-substantially the form written in Bylaw 1.3.
+The CA/Browser Forum Intellectual Rights Policy, v. 1.3 or later, SHALL apply
+to all Working Group activity.
