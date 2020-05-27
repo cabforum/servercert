@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM**
 
-**Version 2.3 - Effective as of XXXX XX, 2020**
+**Version 2.3 - Effective as of May 26, 2020**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
