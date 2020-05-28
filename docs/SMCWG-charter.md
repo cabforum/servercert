@@ -326,4 +326,4 @@ Issuance and Management of Publicly-Trusted S/MIME Certificates".
 ### 8. IPR Policy
 
 The CA/Browser Forum Intellectual Rights Policy, v. 1.3 or later, SHALL apply
-to all Working Group activity.
+to all Working Group activity and Members.
