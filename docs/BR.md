@@ -1430,10 +1430,10 @@ In all cases, the CA SHALL:
 #### 6.1.1.3 Subscriber Key Pair Generation
 The CA SHALL reject a certificate request if the requested Public Key does not meet the requirements set forth in Sections 6.1.5 and 6.1.6 or if it has a known weak Private Key (such as a Debian weak key, see <http://wiki.debian.org/SSLkeys>).
 
+The CA SHALL reject a certificate request if the CA generated the Key Pair for the Subscriber and the Subscriber Certificate will contain an extendedKeyUsage extension containing either the values id-kp-serverAuth [RFC5280] or anyExtendedKeyUsage [RFC5280].
+
 ### 6.1.2 Private key delivery to subscriber
 Parties other than the Subscriber SHALL NOT archive the Subscriber Private Key without authorization by the Subscriber.
-
-If the CA or any of its designated RAs generated the Private Key on behalf of the Subscriber, then the CA SHALL encrypt the Private Key for transport to the Subscriber.
 
 If the CA or any of its designated RAs become aware that a Subscriber's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subscriber, then the CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
@@ -1658,7 +1658,7 @@ e. `keyUsage` (optional)
 
 f. `extKeyUsage` (required)
 
-   Either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present. `id-kp-emailProtection` [RFC5280] MAY be present. Other values SHOULD NOT be present.
+   Either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present. id-kp-emailProtection [RFC5280] MAY be present. Other values SHOULD NOT be present. Effective 2020-07-01, the value `anyExtendedKeyUsage` MUST NOT be present.
 
 g. `authorityKeyIdentifier` (required)
 
