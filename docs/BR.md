@@ -1240,6 +1240,7 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 ## 5.4 Audit logging procedures
 
 ### 5.4.1 Types of events recorded
+
 The CA and each Delegated Third Party SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA’s compliance with these Requirements.
 
 The CA SHALL record at least the following events:
@@ -1266,11 +1267,11 @@ The CA SHALL record at least the following events:
   5. Firewall and router activities; and
   6. Entries to and exits from the CA facility.
 
-Log entries MUST include the following elements:
+Log records MUST include the following elements:
 
-1. Date and time of entry;
-2. Identity of the person making the journal entry; and
-3. Description of the entry.
+1. Date and time of record;
+2. Identity of the person making the journal record; and
+3. Description of the record.
 
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
 
@@ -1278,9 +1279,9 @@ Log entries MUST include the following elements:
 
 The CA SHALL retain, for at least two years:
 
-  1. CA certificate and key lifecycle management event records (as set forth in Section 5.4.1.1) after either: the destruction of the CA key, or the revocation or expiration of the CA certificate, whichever occurs later;
-  2. Subscriber Certificate lifecycle management event records (as set forth in Section 5.4.1.2) after the revocation or expiration of the Subscriber Certificate;
-  3. Any security event records (as set forth in Section 5.4.1.3) after the event occured.
+  1. CA certificate and key lifecycle management event record (as set forth in Section 5.4.1 (1)) after either: the destruction of the CA Private Key, or the revocation or expiration of the CA Certificate, whichever occurs later;
+  2. Subscriber Certificate lifecycle management event records (as set forth in Section 5.4.1 (2)) after the revocation or expiration of the Subscriber Certificate;
+  3. Any security event records (as set forth in Section 5.4.1 (3)) after the event occured.
 
 ### 5.4.4 Protection of Audit Log
 
