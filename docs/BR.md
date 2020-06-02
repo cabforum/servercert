@@ -1244,10 +1244,6 @@ The CA and each Delegated Third Party SHALL record details of the actions taken 
 
 The CA SHALL record at least the following events:
 
-The CA and each Delegated Third Party SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA’s compliance with these Requirements.
-
-The CA SHALL record at least the following events:
-
 1. CA certificate and key lifecycle events, including:
   1. Key generation, backup, storage, recovery, archival, and destruction; 
   2. Certificate requests, renewal, and re-key requests, and revocation;
