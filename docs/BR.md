@@ -2030,6 +2030,10 @@ The audit period for the Delegated Third Party SHALL NOT exceed one year (ideall
 ## 8.6 Communication of results
 The Audit Report SHALL state explicitly that it covers the relevant systems and processes used in the issuance of all Certificates that assert one or more of the policy identifiers listed in Section 7.1.6.1. The CA SHALL make the Audit Report publicly available.
 
+The CA MUST make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, the CA SHALL provide an explanatory letter signed by the Qualified Auditor.
+
+For Audit Reports in which the Audit Period includes a date later than 2020-08-01, then the requirements set forth in the remainder of this Section 8.6 SHALL be met. Audit Reports for Audit Periods that conclude prior to 2020-08-01 SHOULD meet these requirements.
+
 The Audit Report MUST contain at least the following clearly-labelled information:
 1. name of the organization being audited;
 2. name and address of the organization performing the audit;
@@ -2044,8 +2048,6 @@ The Audit Report MUST contain at least the following clearly-labelled informatio
 11. (for audits conducted in accordance with any of the ETSI standards) a statement to indicate that the auditor referenced the applicable CA/Browser Forum criteria, such as this document, and the version used.
 
 An authoritative English language version of the publicly available audit information MUST be provided by the Qualified Auditor and the CA SHALL ensure it is publicly available.
-
-The CA MUST make its Audit Report publicly available no later than three months after the end of the audit period. In the event of a delay greater than three months, the CA SHALL provide an explanatory letter signed by the Qualified Auditor.
 
 The Audit Report MUST be available as a PDF, and SHALL be text searchable for all information required. Each SHA-256 fingerprint within the Audit Report MUST be uppercase letters and MUST NOT contain colons, spaces, or line feeds.
 
