@@ -1140,6 +1140,10 @@ The validity interval of an OCSP response is the difference in time between the 
 
 For the status of Subscriber Certificates:
 
+Prior to 2020-09-30:
+The CA SHALL update information provided via an Online Certificate Status Protocol at least every four days. OCSP responses from this service MUST have a maximum expiration time of ten days.
+
+Effective 2020-09-30:
 1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
 2. OCSP responses MUST have a validity interval less than or equal to ten days;
 3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
@@ -1960,7 +1964,9 @@ The certificate MAY also contain additional policy identifier(s) defined by the 
 
 ### 7.2.2 CRL and CRL entry extensions
 
-a. `reasonCode` (OID 2.5.29.21)
+1. `reasonCode` (OID 2.5.29.21)
+
+  Effective 2020-09-30, the following requirements MUST be met:
 
   If a CRL entry is for a Root CA or Subordinate CA Certificate, including Cross Certificates, this CRL entry extension MUST be present.
   If a CRL entry is for a Certificate not technically capable of causing issuance, this CRL entry extension SHOULD be present.
@@ -1970,7 +1976,7 @@ a. `reasonCode` (OID 2.5.29.21)
 
 ## 7.3 OCSP profile
 
-If an OCSP response is for a Root CA or Subordinate CA Certificate, including Cross Certificates, and that certificate has been revoked, then the `revocationReason` field within the `RevokedInfo` of the `CertStatus` MUST be present. The `CRLReason` used SHALL contain a value permitted for CRLs, as specified in Section 7.2.2.
+Effective 2020-09-30, if an OCSP response is for a Root CA or Subordinate CA Certificate, including Cross Certificates, and that certificate has been revoked, then the `revocationReason` field within the `RevokedInfo` of the `CertStatus` MUST be present. The `CRLReason` used SHALL contain a value permitted for CRLs, as specified in Section 7.2.2.
 
 ### 7.3.1 Version number(s)
 
