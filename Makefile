@@ -9,6 +9,12 @@ docs:
 	$(MAKE) -C docs
 	$(MAKE) -C assets
 
+pandoc:
+  $(MAKE) -C docs br-pandoc
+
+pandoc-deploy:
+  $(MAKE) -C docs br-pandoc-deploy
+
 deploy: docs
 	$(MAKE) -C docs deploy
 	$(MAKE) -C assets deploy
