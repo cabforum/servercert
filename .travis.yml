@@ -2,7 +2,7 @@ services:
   - docker
 
 before_install:
-  - docker pull pandoc/latex:latest
+  - docker pull pandoc/latex:2.9.2
   - docker run --volume "`pwd`:/data" --entrypoint '/data/docker.sh' pandoc/latex:latest
 script:
   - make pandoc-deploy
