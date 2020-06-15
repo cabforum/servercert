@@ -671,7 +671,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.10 TLS Using a Random Number
 
-Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
 ##### 3.2.2.4.11 Any Other Method
 
@@ -777,6 +777,14 @@ If the CA follows redirects:
 4.	Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.20 TLS Using ALPN
+
+Confirming the Applicant's control over a FQDN by validating domain control of the FQDN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC7301] as defined in RFC 8737. The following are additive requirements to RFC 8737.
+
+The token (as defined in RFC 8737, section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
+
+**Note:** Once the FQDN has been validated using this method, the CA MAY NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 
