@@ -2,7 +2,7 @@
 
 **NETWORK AND CERTIFICATE SYSTEM SECURITY REQUIREMENTS** 
 
-**Version 1.3 - Effective 4 November 2019**
+**Version 1.4 - Effective 8 June 2020**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -27,7 +27,7 @@ f.	Configure each network boundary control (firewall, switch, router, gateway, o
 
 g.	Configure Issuing Systems, Certificate Management Systems, Security Support Systems, and Front-End / Internal-Support Systems by removing or disabling all accounts, applications, services, protocols, and ports that are not used in the CA’s or Delegated Third Party’s operations and allowing only those that are approved by the CA or Delegated Third Party;
 
-h.	Review configurations of Issuing Systems, Certificate Management Systems, Security Support Systems, and Front-End / Internal-Support Systems on at least a weekly basis to determine whether any changes violated the CA’s security policies;
+h.	Ensure that the CA’s security policies encompass a change management process, following the principles of documentation, approval and review, and to ensure that all changes to Certificate Systems, Issuing Systems, Certificate Management Systems, Security Support Systems, and Front-End / Internal-Support Systems follow said change management process;
 
 i.	Grant administration access to Certificate Systems only to persons acting in Trusted Roles and require their accountability for the Certificate System’s security;
 
@@ -61,7 +61,7 @@ g.	If an authentication control used by a Trusted Role is a username and passwor
     iii. When developing password policies, CAs SHOULD take into account the password guidance in NIST 800-63B Appendix A. 
     
     iv. Frequent password changes have been shown to cause users to select less secure passwords. If the CA has any policy that specifies routine periodic password changes, that period SHOULD NOT be less than two years. Effective April 1, 2020, if the CA has any policy that requires routine periodic password changes, that period SHALL NOT be less than two years.
-    
+
 h.	Have a policy that requires Trusted Roles to log out of or lock workstations when no longer in use;
 
 i.	Have a procedure to configure workstations with inactivity time-outs that log the user off or lock the workstation after a set time of inactivity without input from the user  (the CA or Delegated Third Party MAY allow a workstation to remain active and unattended if the workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time-out or system lock);
@@ -71,7 +71,7 @@ j.	Review all system accounts at least every three (3) months and deactivate any
 k.	Lockout account access to Certificate Systems after no more than five (5) failed access attempts, provided that this security measure;
 
     i. Is supported by the Certificate System,
-
+    
     ii. Cannot be leveraged for a denial of service attack, and
     
     iii. Does not weaken the security of this authentication control;
@@ -85,10 +85,10 @@ n.	Enforce Multi-Factor Authentication for all Trusted Role accounts on Certific
 o.	Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when: (i) the remote connection originates from a device owned or controlled by the CA or Delegated Third Party, (ii) the remote connection is through a temporary, non-persistent encrypted channel that is  supported by Multi-Factor Authentication, and (iii) the remote connection is made to a designated intermediary device (a) located within the CA’s network, (b) secured in accordance with these Requirements, and (c) that mediates the remote connection to the Issuing System.
 
 # 3. LOGGING, MONITORING AND ALERTING
- 
+
 Certification Authorities and Delegated Third Parties SHALL:
 
-a.	Implement a Security Support System under the control of CA or Delegated Third Party Trusted Roles that monitors, detects, and reports any security-related configuration change to Certificate Systems;
+a.	Implement a System under the control of CA or Delegated Third Party Trusted Roles that continuously monitors, detects, and alerts personnel to any modification to Certificate Systems, Issuing Systems, Certificate Management Systems, Security Support Systems, and Front-End / Internal-Support Systems unless the modification has been authorized through a change management process. The CA or Delegated Third Party shall respond to the alert and initiate a plan of action within at most twenty-four (24) hours;
 
 b.	Identify those Certificate Systems under the control of CA or Delegated Third Party Trusted Roles capable of monitoring and logging system activity and enable those systems to continuously monitor and log system activity;
 
@@ -175,11 +175,13 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 **Revision History**
 
 | Ver. | Ballot | Description | Adopted | Effective\* |
-| :---: | :---: | :---: | :---: | :---: | 
+| :---: | :---: | :---: | :---: | :---: |
 | 1.0 | 83 | Original Version Adopted | 3‐Aug‐12 | 01‐Jan‐13 |
 | 1.1 | 210 | Misc. Changes to NCSSRs | 31‐Aug‐17 | 09-Mar-18 |
 | 1.2 | SC3 | Two-Factor Authentication and Password Improvements | 16‐Aug‐18 | 15-Sep-18 |
 | 1.3 | SC21 | The Network and Certificate Systems Security Requirements section 3 (Log Integrity Controls) | 26‐Sep‐19 | 4-Nov-2019 |
+| 1.4 | SC29 | System Configuration Management | 7-May-20 | 8-Jun-2020 |
+
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
