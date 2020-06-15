@@ -3,7 +3,7 @@
 
 **BYLAWS OF THE CA/BROWSER FORUM**
 
-**Version 2.2 - Effective as of May 21, 2019**
+**Version 2.3 - Effective as of May 26, 2020**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -22,7 +22,7 @@ The Forum has no corporate or association status, but is simply a group of Certi
 
 ## 1.3 Intellectual Property Rights Policy; Antitrust Laws and Regulations; Goal; Conduct
 
-Forum Members, Associate Members, and Interested Parties must comply with the then-current IPR Policy and all applicable antitrust laws and regulations during their Forum activities.
+Forum Voting Members, Associate Members, and Interested Parties must comply with the then-current IPR Policy and all applicable antitrust laws and regulations during their Forum activities.
 
 The historic goal of Forum activities (including development of proposed requirements and guidelines and voting on all matters) has been to seek substantial consensus among Forum Members before proceeding or adopting final work product, and this goal will remain for the future. Members shall not use their participation in the Forum either to promote their own products and offerings or to restrict or impede the products and offerings of other Members.
 
@@ -48,17 +48,14 @@ Chartered Working Group (CWG) Members are automatically granted Forum Membership
 
 Categories of Forum Membership are defined as follows:
 
-* Certificate Issuer: The member organization operates a certification authority that meets the requirements for membership as a Certificate Issuer in one or more CWGs.
-
-* Root Certificate Issuer: The member organization operates a certification authority that meets the requirements for membership as a Root Certificate Issuer in one or more CWGs.
-
-* Certificate Consumer: The member organization meets the requirements for membership as a Certificate Consumer in one or more CWGs.
-
+* Voting Member, which contains the following sub-categories:
+   * Certificate Issuer: The member organization operates a certification authority that meets the requirements for membership as a Certificate Issuer in one or more CWGs.
+   * Root Certificate Issuer: The member organization operates a certification authority that meets the requirements for membership as a Root Certificate Issuer in one or more CWGs.
+   * Certificate Consumer: The member organization meets the requirements for membership as a Certificate Consumer in one or more CWGs.
 * Associate Member: As defined in Section 3.1
-
 * Interested Party: As defined in Section 3.2
 
-Members that qualify under more than one category of Forum Membership MAY choose their membership category.
+Voting Members that qualify under more than one category of Forum Membership MAY choose their membership category.
 
 ## 2.2 Ending Forum Membership
 
@@ -68,19 +65,20 @@ When a Forum Member ceases to be a Member of at least one CWG, their Forum Membe
 
 The following rules will apply to all ballots, including Draft Guideline Ballots (defined in 2.4).
 
- 1. Only votes by Members shall be accepted.
+ 1. Only votes by Voting Members shall be accepted.
   
- 2. Only one vote per Member company shall be accepted; Affiliates of Members shall not vote.
+ 2. Only one vote per Voting Member company shall be accepted; Affiliates of Voting Members shall not vote. Only votes from Voting Representatives shall be accepted.
   
- 3. A representative of any Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Members in order to proceed. The discussion period then shall take place for at least seven (7) calendar days before votes are cast. At any time, a new version of the ballot (marked with a distinguishing version number) may be posted by the proposer in the same manner as the original. Once no new version of the ballot has been posted for seven (7) calendar days, the proposer may end the discussion period and start the voting period by reposting the final version of the ballot and clearly indicating that voting is to begin, along with the start and end dates and times (including time zone) for the voting period. The ballot automatically fails if twenty one (21) calendar days elapse since the proposer last posted a version of the ballot and the voting period has not been started.
+ 3. A representative of any Voting Member can call for a proposed ballot to be published for discussion and comment by the membership. Any proposed ballot needs two endorsements by other Voting Members in order to proceed. The discussion period then shall take place for at least seven (7) calendar days before votes are cast. At any time, a new version of the ballot (marked with a distinguishing version number) may be posted by the proposer in the same manner as the original. Once no new version of the ballot has been posted for seven (7) calendar days, the proposer may end the discussion period and start the voting period by reposting the final version of the ballot and clearly indicating that voting is to begin, along with the start and end dates and times (including time zone) for the voting period. The ballot automatically fails if twenty one (21) calendar days elapse since the proposer last posted a version of the ballot and the voting period has not been started.
   
- 4. Upon commencement of the voting period, Members shall have exactly seven (7) calendar days for voting on the proposed ballot, with the deadline clearly communicated in the ballot and sent via a Public Mail List. For ballots related to the Forum level, votes must be sent to the Public Mail List of the Forum. For ballots related to a CWG, votes must be sent to the Public Mail List of the CWG. All voting will take place via a Public Mail List. Votes not submitted to the proper Public Mail List by the end of the voting period (as specified in the ballot) will not be considered valid, and will not be counted for any purpose. Each Member, and not the Forum or CWG, will be responsible for taking precautions to make sure such Member’s vote is submitted properly and counted. In the event that a Member’s vote on a ballot is not submitted properly, such vote shall not be valid and shall not be counted for any purpose, and there shall be no appeal, revote (except in the case of a new ballot submitted to all Members) or other recourse.
+ 4. Upon commencement of the voting period, Voting Members shall have exactly seven (7) calendar days for voting on the proposed ballot, with the deadline clearly communicated in the ballot and sent via a Public Mail List. For ballots related to the Forum level, votes must be sent to the Public Mail List of the Forum. For ballots related to a CWG, votes must be sent to the Public Mail List of the CWG. All voting will take place via a Public Mail List. Votes not submitted to the proper Public Mail List, or not submitted by a designated Voting Representative, by the end of the voting period (as specified in the ballot) will be considered invalid, and will not be counted for any purpose. Each Voting Member, and not the Forum or CWG, will be responsible for taking precautions to make sure such Member’s vote is submitted properly and counted. In the event that a Voting Member’s vote on a ballot is not submitted properly, such vote shall not be valid and shall not be counted for any purpose, and there shall be no appeal, revote (except in the case of a new ballot submitted to all Voting Members) or other recourse.
 
- 5. Members may vote “yes”, “no”, or “abstain” on a ballot. Only votes that indicate a clear “yes” or “no” response to the ballot question shall be considered (i.e. votes to “abstain” and votes that do not indicate a clear “yes” or “no” response will not figure in the calculation of item (f), below).
+ 5. Voting Members may vote “yes”, “no”, or “abstain” on a ballot. Only votes that indicate a clear “yes” or “no” response to the ballot question shall be considered (i.e. votes to “abstain” and votes that do not indicate a clear “yes” or “no” response will not figure in the calculation of item (6), below).
 
- 6. Members fall into two categories: Certificate Issuers (including Certificate Issuers and Root Certificate Issuers), and (2) and Certificate Consumers. In order for a ballot to be adopted by the Forum, two-thirds (2/3) or more of the votes cast by the Members in the Certificate Issuer category must be in favor of the ballot, and at least fifty percent (50%) plus one (1) of the votes cast by the Members in the Certificate Consumer category must be in favor of the ballot. At least one (1) Member in each category must vote in favor of a ballot for the ballot to be adopted.
+ 6. Voting Members fall into two categories: Certificate Issuers (including Certificate Issuers and Root Certificate Issuers), and  Certificate Consumers. In order for a ballot to be adopted by the Forum, two-thirds (2/3) or more of the votes cast by the Voting Members in the Certificate Issuer category must be in favor of the ballot, and at least fifty percent (50%) plus one (1) of the votes cast by the Voting Members in the Certificate Consumer category must be in favor of the ballot. At least one (1) Voting Member in each category must vote in favor of a ballot for the ballot to be adopted.
 
- 7. A ballot result will be considered valid only when more than half of the number of currently active Members has participated. The number of currently active Members is the average number of Member organizations that have participated in the previous three (3) Forum Meetings and Forum Teleconferences.
+ 7. A ballot result will be considered valid only when more than half of the number of currently active Voting Members has participated. The number of currently active Voting Members is the average number of Voting Member organizations that have participated in the previous three (3) Forum Meetings and Forum Teleconferences.
+
  8. The Chair will tabulate and announce the results within three (3) business days of the close of the voting period.
 
  9. The Chair may delegate any of his/her duties under this Section 2.3 and Section 2.4 to the Vice Chair as necessary, or the Vice Chair may otherwise execute the duties and obligations of the Chair as provided in Section 4.1(1) of these Bylaws.
@@ -93,7 +91,7 @@ This section applies to any ballot that proposes a Final Guideline or a Final Ma
 
  2. As described in Section 2.3(3), there will be a discussion period of at least seven (7) days before votes are cast on a Draft Guideline Ballot, with the start date of such discussion period clearly specified in the ballot. The discussion period shall end and the voting period shall commence also according to the procedure specified in Section 2.3(3).
 
- 3. As described in Section 2.3(4), upon commencement of the voting period, Members shall have exactly seven (7) calendar days to vote on a Draft Guideline Ballot, with the deadline clearly communicated in the ballot sent via a Public Mail List. For ballots related to the Forum level, votes must be sent to the Public Mail List of the Forum. For ballots related to a CWG, votes must be sent to the Public Mail List of the CWG. All voting will take place via the proper Public Mail List. Votes not submitted to the Public Mail List will not be considered valid, and will not be counted for any purpose. The Chair may send an email to a Public Mail List reminding Members of when the voting period opens and closes.
+ 3. As described in Section 2.3(4), upon commencement of the voting period, Voting Members shall have exactly seven (7) calendar days to vote on a Draft Guideline Ballot, with the deadline clearly communicated in the ballot sent via a Public Mail List. For ballots related to the Forum level, votes must be sent to the Public Mail List of the Forum. For ballots related to a CWG, votes must be sent to the Public Mail List of the CWG. All voting will take place via the proper Public Mail List. Votes not submitted to the Public Mail List or not submitted by a designated Voting Representative, will not be considered valid, and will not be counted for any purpose. The Chair may send an email to a Public Mail List reminding Voting Members of when the voting period opens and closes.
 
  4. The Forum (via the Chair) will tabulate and announce the results within three (3) business days of the close of the initial voting period (the “Initial Vote”). If the Draft Guidelines Ballot does not pass the Initial Vote, the ballot fails.
 
@@ -102,7 +100,18 @@ This section applies to any ballot that proposes a Final Guideline or a Final Ma
 
  7. In addition to following the process for submitting Exclusion Notices set forth in Section 4 of the IPR Policy, Members shall also send Exclusion Notices to the Public Mail List as a safeguard.
 
- 8. If no Exclusion Notices are filed during the Review Period with respect to a Draft Guideline Ballot, then the results of the Initial Vote are automatically deemed to be final and approved,  and Draft Guidelines then become either Final Guidelines or Final Maintenance Guidelines, as designated in the Draft Guidelines Ballot. The Chair will notify both the Member Mail List and the Public Mail List of the final approval within three (3) business days, as well as update the Public Website of Final Guidelines and Final Maintenance Guidelines within ten (10) business days of the close of the Review Period.
+ 8. If no Exclusion Notices are filed during the Review Period with respect to a Draft Guideline Ballot, then the results of the Initial Vote are automatically deemed to be final and approved, and Draft Guidelines then become either Final Guidelines or Final Maintenance Guidelines, as designated in the Draft Guidelines Ballot. The Chair will notify both the Member Mail List and the Public Mail List of the final approval within three (3) business days, as well as update the Public Website of Final Guidelines and Final Maintenance Guidelines within ten (10) business days of the close of the Review Period. The Chair or Vice-Chair of a CWG is allowed to perform changes to informative (non-normative) parts of a Final Guideline or Final Maintenance Guideline before it is published to the public web site and without requiring a ballot procedure. The set of changes are limited to:
+    * The cover page,
+    * The Table of Contents,
+    * The year in the “Copyright” information,
+    * Footers with page numbers
+    
+    The Chair or Vice-Chair of a CWG is also allowed to perform the following changes, unless the ballot explicitly updates this information:
+   
+    * The Guideline version number,
+    * Headers/Footers with version numbers,
+    * The table with document revisions or Document History,
+    * The table with Relevant Dates.
 
  9. If Exclusion Notice(s) are filed during the Review Period (as described in Section 4.3 of the IPR Policy), then the results of the Initial Vote are automatically rescinded and deemed null and void, and;
 
@@ -118,7 +127,7 @@ This section applies to any ballot that proposes a Final Guideline or a Final Ma
 
 ## 3.1 Associate Members
 
-The Forum may enter into associate member relationships with other organizations when the CA/Browser Forum determines that maintaining such a relationship will be of benefit to the work of the Forum. In the past, entities qualifying as Associate Members have included the ACAB’c, AICPA/CICA WebTrust Task Force, the European Telecommunications Standards Institute (ETSI), Paypal, the Internet Corporation for Assigned Names and Numbers, tScheme, the U.S. Federal PKI, and Certificate Issuers applying for membership but awaiting full qualification under Section 2.1. Participation as an Associate Member is by invitation only. In order to become an Associate Member, an organization must sign a mutual letter of intent, understanding, or other agreement and the Forum’s IPR Policy Agreement, unless this latter requirement is waived in writing by the Forum based on overriding policies of the Associate Member’s own organization IPR rules. Associate Members may attend face-to-face meetings, communicate with Forum Members on member lists, and access Forum wiki content. Associate Members are not entitled to vote except on special straw polls of the Forum (e.g. when selecting meeting dates, locations, etc.)
+The Forum may enter into associate member relationships with other organizations when the CA/Browser Forum determines that maintaining such a relationship will be of benefit to the work of the Forum. In the past, entities qualifying as Associate Members have included the ACAB’c, AICPA/CICA WebTrust Task Force, the European Telecommunications Standards Institute (ETSI), Paypal, the Internet Corporation for Assigned Names and Numbers, tScheme, the U.S. Federal PKI, and Certificate Issuers applying for membership but awaiting full qualification under Section 2.1. Participation as an Associate Member is by invitation only. In order to become an Associate Member, an organization must sign a mutual letter of intent, understanding, or other agreement and the Forum’s IPR Policy Agreement, unless this latter requirement is waived in writing by the Forum based on overriding policies of the Associate Member’s own organization IPR rules. Associate Members may attend face-to-face meetings, communicate with Voting Members on Member Mail List, and access Member Web Site. Associate Members are not entitled to vote except on special straw polls of the Forum (e.g. when selecting meeting dates, locations, etc.)
 
 ## 3.2 Interested Parties
 
@@ -131,7 +140,7 @@ Interested Parties may participate in Forum activities in the following ways:
  2. By posting to the Public Mail List, and
  3. By participating in those portions of Forum Teleconferences and Forum Meetings to which they are invited by the Forum or CWG Chair relating to their areas of special expertise or the subject of their CWG participation.
 
-Interested Parties are required to comply with the provisions of the IPR Policy Agreement and these Bylaws. Interested Parties may lose their status as Interested Parties by vote of the Members, in the Members’ sole discretion.
+Interested Parties are required to comply with the provisions of the IPR Policy Agreement and these Bylaws. Interested Parties may lose their status as Interested Parties by vote of the Voting Members, in the Voting Members’ sole discretion.
 
 Interested Parties apply by sending an e-mail to the Questions List, which includes:
 * The signed IPR Policy Agreement
@@ -145,22 +154,24 @@ The public may follow the Forum’s activities by reading all postings on the Pu
 
 ## 4.1 Officers
 
- 1. Term of office: The Forum will elect a Chair and Vice Chair, each to serve for a term of two (2) years. The Vice Chair has the authority of the Chair in the event of any absence or unavailability of the Chair, and in such circumstances, any duty delegated to the Chair herein may be performed by the Vice Chair. For example, the Vice Chair will preside at Forum Meetings and Forum Teleconferences in the Chair’s absence. The offices of Chair and Vice Chair may only be filled by Forum Member representatives.
-    No person may serve as Chair for more than a two-year period or be elected to Vice Chair upon expiration or termination of the person’s service as Chair, but a person is eligible to be elected as Chair again after having vacated the position as Chair for at least two (2) years.
- 2. Manner of conducting nominations: At least sixty (60) days prior to the expiration of the current Chair’s term or upon his/her early termination as Chair, the Chair or Vice Chair will announce through the management mailing list that nominations are open for the office of Chair and the Vice Chair will automatically be nominated as the next Chair, but Forum Members may nominate themselves or others to be additional candidates as Chair. A Vice Chair may decline the nomination to the office of Chair and/or indicate an intent to seek nomination for re-election to the office of Vice Chair. The nomination period for Chair will last for at least one (1) week but no longer than four (4) weeks. Upon the close of the nominations for Chair, the nomination period for the office of Vice Chair shall immediately open. The nomination period for Vice Chair will last for at least one (1) week but no longer than four (4) weeks.
+ 1. Term of office: The Forum will elect a Chair and Vice Chair, each to serve for a term of two (2) years. The Vice Chair has the authority of the Chair in the event of any absence or unavailability of the Chair, and in such circumstances, any duty delegated to the Chair herein may be performed by the Vice Chair. For example, the Vice Chair will preside at Forum Meetings and Forum Teleconferences in the Chair’s absence. The offices of Chair and Vice Chair may only be filled by Forum Voting Member representatives. No person may serve as Chair for more than a two-year period or be elected to Vice Chair upon expiration or termination of the person’s service as Chair, but a person is eligible to be elected as Chair again after having vacated the position as Chair for at least one (1) term.
+ 2. Manner of conducting nominations: At least sixty (60) days prior to the expiration of the current Chair’s term or upon his/her early termination as Chair, the Chair or Vice Chair will announce through the management mailing list that nominations are open for the office of Chair and the Vice Chair will automatically be nominated as the next Chair, but Forum Voting Members may nominate their own representatives or representatives of other Voting Members to be additional candidates as Chair. A Vice Chair may decline the nomination to the office of Chair and/or indicate an intent to seek nomination for re-election to the office of Vice Chair. The nomination period for Chair will last for at least one (1) week but no longer than four (4) weeks. Upon the close of the nominations for Chair, the nomination period for the office of Vice Chair shall immediately open. The nomination period for Vice Chair will last for at least one (1) week but no longer than four (4) weeks.
 
- 3. Manner of holding officer elections: If a single individual is nominated for a position, the Forum will hold a ballot prepared and submitted by the Chair, with the exception of not requiring endorsers, to confirm appointment of the nominee. For the confirmation ballot, each Member is entitled to a single vote regardless of the number of participating Member representatives or whether the Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. If multiple votes are received from a Member’s representatives, the last vote submitted during the voting period is considered the Member’s vote. The single nominee is considered confirmed if a majority of the Members who vote are in favor of the appointment, regardless of the number of votes cast and irrespective of whether 2/3 of the Certificate (or Root Certificate) Issuers or 1/2 of the Certificate Consumers approve appointment of the nominee.
-    If more than one candidate is nominated for Chair or Vice Chair, the Chair will submit an election ballot, with the exception of not requiring endorsers, to determine which candidate will fill the position. Within two (2) weeks after the close of the nomination period, the Chair or Vice Chair will establish an election committee and announce the election ballot on the management mailing list along with the ballot start date, ballot end date, and a description of the voting process. The Chair or Vice Chair will appoint the election committee by selecting at least two (2) volunteers who have a reputation for independence, preferably individuals without voting rights in the Forum and that participate as Associate Members. The election committee is responsible solely for tallying Member votes in connection with the election ballot. The description must include the email address(es) where Members will send their vote, which should be the email addresses of the election committee.
-    For election ballots, each Member is entitled to a single vote regardless of the number of participating Member representatives or whether the Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. If multiple votes are received from a Member’s representatives, the last vote submitted during the voting period is considered the Member’s vote. Within two (2) weeks after the election ballot closes, the election committee will compile the votes, ensure that only one (1) vote is counted per Member, confirm the results with other members of the election committee, and publish the ballot results by sending an email to the Public Mail List. The election committee will not include any votes submitted before or after the voting period when compiling the votes. The ballot results email will contain only the following information: a short description of the ballot purpose, the total number of votes submitted during the ballot period, and the name of the nominee receiving the most votes. The election committee may include other language as necessary to accurately describe the ballot and any concerns the election committee had with the ballot, provided that such language does not disclose how individual Members voted. The election committee will treat the votes of individual Members as confidential information. The nominee receiving the most votes is appointed to the applicable position, regardless of the number of votes cast and irrespective of whether two thirds (2/3) of the Certificate (or Root Certificate) Issuers or fifty percent (50%) of the Certificate Consumers voted for the nominee. If the election ballot results in a tie among the candidates receiving the most votes, the Chair or Vice Chair will call for another election ballot that includes only the two tying candidates.
+ 3. Manner of holding officer elections: If a single individual is nominated for a position, the Forum will hold a ballot prepared and submitted by the Chair, with the exception of not requiring endorsers, to confirm appointment of the nominee. For the confirmation ballot, each Voting Member is entitled to a single vote regardless of the number of participating Voting Member representatives or whether the Voting Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. Only designated Voting Representatives are allowed to cast votes on behalf of Voting Members. If multiple votes are received from a Voting Member’s representatives, the last vote submitted during the voting period is considered the Voting Member’s vote. The single nominee is considered confirmed if a majority of the Voting Members who vote are in favor of the appointment, regardless of the number of votes cast and irrespective of whether 2/3 of the Certificate (or Root Certificate) Issuers or 1/2 of the Certificate Consumers approve appointment of the nominee.
+      
+    If more than one candidate is nominated for Chair or Vice Chair, the Chair will submit an election ballot, with the exception of not requiring endorsers, to determine which candidate will fill the position. Within two (2) weeks after the close of the nomination period, the Chair or Vice Chair will establish an election committee and announce the election ballot on the management mailing list along with the ballot start date, ballot end date, and a description of the voting process. The Chair or Vice Chair will appoint the election committee by selecting at least two (2) volunteers who have a reputation for independence, preferably individuals without voting rights in the Forum and that participate as Associate Members. The election committee is responsible solely for tallying Voting Member votes from their Voting Representatives in connection with the election ballot. The description must include the email address(es) where Voting Member Voting Representatives will send their vote, which should be the email addresses of the election committee.
+    
+    For election ballots, each Voting Member is entitled to a single vote regardless of the number of participating Voting Member representatives or whether the Voting Member is categorized as a Certificate (or Root Certificate) Issuer or a Certificate Consumer. Only designated Voting Representatives are allowed to cast votes on behalf of Voting Members. If multiple votes are received from a Voting Member’s representatives, the last vote submitted during the voting period is considered the Voting Member’s vote. Within two (2) weeks after the election ballot closes, the election committee will compile the votes, ensure that only one (1) vote is counted per Voting Member, confirm the results with other members of the election committee, and publish the ballot results by sending an email to the Public Mail List. The election committee will not include any votes submitted before or after the voting period when compiling the votes. The ballot results email will contain only the following information: a short description of the ballot purpose, the total number of votes submitted during the ballot period, and the name of the nominee receiving the most votes. The election committee may include other language as necessary to accurately describe the ballot and any concerns the election committee had with the ballot, provided that such language does not disclose how individual Voting Members voted. The election committee will treat the votes of individual Voting Members as confidential information. The nominee receiving the most votes is appointed to the applicable position, regardless of the number of votes cast and irrespective of whether two thirds (2/3) of the Certificate (or Root Certificate) Issuers or fifty percent (50%) of the Certificate Consumers voted for the nominee. If the election ballot results in a tie among the candidates receiving the most votes, the Chair or Vice Chair will call for another election ballot that includes only the two tying candidates.
 
- 4. Duties: The Chair and Vice Chair shall exercise their functions in a fair and neutral manner, allowing all Members equal treatment for their comments and proposals, and shall not favor one side over another in any matter (except that the Chair and Vice Chair may indicate their own position during discussion and voting on the matter). The Chair and Vice Chair shall have no personal liability for any activities of the Forum or its Members or Interested Parties.<br>
+ 4. Duties: The Chair and Vice Chair shall exercise their functions in a fair and neutral manner, allowing all Members equal treatment for their comments and proposals, and shall not favor one side over another in any matter (except that the Chair and Vice Chair may indicate their own position during discussion and voting on the matter). The Chair and Vice Chair shall have no personal liability for any activities of the Forum or its Members.
+ 
     The Chair or the Vice Chair may sign correspondence, applications, forms, Letters of Intent, and Memoranda of Understanding relating to projects with standards bodies, industry groups, and other third parties, but shall have no personal liability therefor.
 
 ## 4.2 Finances
 
 Because the Forum has no corporate status, it will not maintain funds or banking accounts. The costs of operating Forum websites or mailing lists will be covered by voluntary contributions from Members (who may seek voluntary contributions from other Members to help defray such costs). Members may propose other group activities which they propose to sponsor (e.g., research projects, etc.) which require funding and may seek voluntary contributions from other Members for such activities.
 
-Forum Meetings may be held from time to time upon the voluntary sponsorship of one or more Members. The sponsor of a Forum Meeting may suggest a fixed cost per meeting participant as reimbursement to the sponsor to cover (a) the cost of meeting rooms and refreshments, and (b) the cost of any meeting dinner or other group activity. Sponsors will be encouraged to announce any suggested per-participant fixed cost reimbursement amount in advance of the Forum Meeting for participant planning purposes, and will provide a statement or invoice to each participant upon request after the Forum Meeting for submission to the participant’s accounting department. All per-participant reimbursements shall be paid directly to the sponsor.
+Forum Meetings may be held from time to time upon the voluntary sponsorship of one or more Voting Members. The sponsor of a Forum Meeting may suggest a fixed cost per meeting participant as reimbursement to the sponsor to cover (a) the cost of meeting rooms and refreshments, and (b) the cost of any meeting dinner or other group activity. Sponsors will be encouraged to announce any suggested per-participant fixed cost reimbursement amount in advance of the Forum Meeting for participant planning purposes, and will provide a statement or invoice to each participant upon request after the Forum Meeting for submission to the participant’s accounting department. All per-participant reimbursements shall be paid directly to the sponsor.
 
 Interested Parties will not be required to pay anything for their participation in Forum activities, but must cover their own expenses for participation in any CWG meetings.
 
@@ -170,7 +181,7 @@ Interested Parties will not be required to pay anything for their participation 
 
 The Forum shall maintain a Member Mail List and Member Web Site that are not accessible by the public. The following matters may be posted to the Member Mail List and Member Web Site:
 
- 1. Draft minutes of Forum meetings (both virtual and in-person, and including any sub-groups or committees) will be posted to the Member Mail List to allow Members to make sure they are being correctly reported.
+ 1. Draft minutes of Forum meetings (both virtual and in-person, and including any sub-groups or committees) will be posted to the Member Mail List to allow Members and Associate Members to make sure they are being correctly reported.
     Minutes will be considered final when approved at a subsequent Forum Meeting or Forum Teleconference; provided, however, that if there is no Forum Meeting or Forum Teleconference scheduled within three (3) weeks of the publication of the draft minutes. Final minutes will then be posted to the Public Mail List and Public Web Site. The Chair will, upon request, make redactions of any part of the public copy of the minutes identified as private or sensitive by either the information discloser or a member mentioned or affiliated with the subject of the information.
 
  2. Nominations for officer positions, Forum Meeting and Forum Teleconference scheduling issues, and discussion of Forum financial issues.
@@ -183,15 +194,15 @@ The Forum shall maintain a Member Mail List and Member Web Site that are not acc
 
 Members have discretion about which mailing list they use, but are strongly encouraged to use the Public Mail List for matters other than those listed above.
 
-Members are strongly discouraged from posting the text of Forum Member Mail List messages to the Forum Public Mail List without the permission of the author or commenter.
+Members are strongly discouraged from posting the text of Member Mail List messages to the Forum Public Mail List without the permission of the author or commenter.
 
 These activities should be followed by any Chartered Working Group. Working Groups may use the Forum Member List but they are encouraged to maintain a separate Member Mail List. Working Groups may use the Forum Member Web Site but they must maintain a separate section designated for material related to the specific Working Group.
 
 ## 5.2 Public Mail List and Public Web Site
 
-The Forum Chair shall appoint a List Manager who shall maintain a Public Mail List. Members and Interested Parties may post to the Public Mail List in compliance with these Bylaws. Anyone else is allowed to subscribe to and receive messages posted to the Public Mail List, which may be crawled and indexed by Internet search engines.
+The Forum Chair shall appoint a List Manager who shall maintain a Public Mail List. All Members may post messages to the Public Mail List in compliance with these Bylaws. Anyone else is allowed to subscribe to and receive messages posted to the Public Mail List, which may be crawled and indexed by Internet search engines.
 
-The Forum Chair shall appoint a Webmaster. The Webmaster shall post instructions on the Public Web Site for subscribing to the Public Mail List.
+The Forum Chair shall appoint a webmaster. The webmaster shall post instructions on the Public Web Site for subscribing to the Public Mail List.
 
 The following materials shall be posted to the Forum Public Mail List or Public Web Site:
 
@@ -211,7 +222,7 @@ These activities should be followed by any Chartered Working Group. Working Grou
 
 ### 5.3.1 Formation of Chartered Working Groups
 
- 1. (Referred to as Section 5.3.1(a) in the IPR Policy) Members who desire to form a new “Chartered” Working Group (CWG) shall propose a charter by ballot pursuant to Section 2.3 above. A CWG shall:
+ 1. (Referred to as Section 5.3.1(a) in the IPR Policy) Voting Members who desire to form a new “Chartered” Working Group (CWG) shall propose a charter by ballot pursuant to Section 2.3 above. A CWG shall:
     * Include Certificate (or Root Certificate) Issuer participants or Certificate Consumer participants, and should typically include both.
     * Allow for the participation of Interested Parties and Associate Members.
    
@@ -221,14 +232,14 @@ These activities should be followed by any Chartered Working Group. Working Grou
     
     * Requirements for the Applicant to be actively issuing certificates or creating a software product that relies upon certificates.
     
-    * Requirements that certificates are treated as valid by a CWG Certificate Consumer, or for the software produced by the Certificate Consumer to be intended for use by the general public.
+    * Requirements that certificates are treated as valid by a CWG Certificate Consumer, or for the latest software produced by the Certificate Consumer to be intended for use by the general public.
     
  2. The charter shall outline the scope of the CWG’s activities and other important information. A template for Working Group charters is attached to these Bylaws as Exhibit C. A Working Group may deviate from the template, provided that the charter must include at least the following information:
 
     * Scope of the Working Group
     * Anticipated Working Group end date, if any
     * Initial chairs and contacts for the Working Group
-    * Type(s) of Members eligible to participate in the Working Group (e.g., Members, Interested Parties, and Associate Members)
+    * Type(s) of Members eligible to participate in the Working Group (e.g., Voting Members, Interested Parties, and Associate Members)
     * Membership criteria as described in section 5.3.1
     * Criteria for ending membership for each category of participant
     * Voting structure for the WG
@@ -237,7 +248,7 @@ These activities should be followed by any Chartered Working Group. Working Grou
     * Means of communication to be used by the Working Group (see subsection (4) below)
     * Applicability of the IPR Policy
 
- 3. After the charter is approved, the CWG MAY elect a new Chair and Vice Chair elected by CWG members following the procedures of Bylaws Section 4.1 as closely as possible. The initial term for CWG officers shall expire on November 30 of the next even-numbered year after the CWG is established in order to be synchronized with the terms of Forum officers. Proposing and voting on all CWG Ballots by CWG members shall follow the procedures stated in Bylaws Sec. 2.3 and 2.4 with the exception of not requiring a proposer and endorsers. The CWG Chair will send an invitation to the Public Mail List for an initial CWG meeting and will solicit eligible Members, Associate Members and Interested Parties (as specified in the charter) with expertise and interest in the CWG’s subject matter to participate in the CWG. In order to participate in a Working Group, a party must have agreed to the IPR Policy Agreement and formally declared participation. Each CWG Chair shall be responsible for ensuring that all parties attending the respective CWG meetings have signed the IPR Policy Agreement and have formally declared their participation in the CWG via the mechanism designated by the Forum prior to attending.
+ 3. After the charter is approved, the CWG MAY elect a new Chair and Vice Chair elected by CWG members following the procedures of Bylaws Section 4.1 as closely as possible. The initial term for CWG officers shall expire on November 30 of the next even-numbered year after the CWG is established in order to be synchronized with the terms of Forum officers. Proposing and voting on all CWG Ballots by CWG members shall follow the procedures stated in Bylaws Sec. 2.3 and 2.4 with the exception of not requiring a proposer and endorsers. The CWG Chair will send an invitation to the Public Mail List for an initial CWG meeting and will solicit eligible Voting Members, Associate Members and Interested Parties (as specified in the charter) with expertise and interest in the CWG’s subject matter to participate in the CWG. In order to participate in a Working Group, a party must have agreed to the IPR Policy Agreement and formally declared participation. Each CWG Chair shall be responsible for ensuring that all parties attending the respective CWG meetings have signed the IPR Policy Agreement and have formally declared their participation in the CWG via the mechanism designated by the Forum prior to attending.
 
  4. Each CWG may establish its own means for their communications, as provided in the charter, but such means should be managed in the same fashion as the Public Mail List and employed by the CWG with a similar level of transparency as appropriate to their nature with public archives for written methods of communication. CWGs may meet by teleconference or have face-to-face meetings as provided in the charter, but the Forum shall not be responsible for the expenses of any such teleconferences or meetings.
 
@@ -264,11 +275,11 @@ No stipulation.
 
 ## 5.4 Forum Teleconferences and Forum Meetings
 
-From time to time the Forum and CWGs will hold Teleconferences and Meetings among the Members and Associate Members, who may participate in person or (where feasible) by teleconference. Interested Parties and others may be invited by the Forum or CWG Chair, in the Chair’s discretion, to participate in those portions of Teleconferences and CWG Meetings that are relevant to their expertise or their participation.
+From time to time the Forum and CWGs will hold Teleconferences and Meetings among the Voting Members and Associate Members, who may participate in person or (where feasible) by teleconference. Interested Parties and others may be invited by the Forum or CWG Chair, in the Chair’s discretion, to participate in those portions of Teleconferences and CWG Meetings that are relevant to their expertise or their participation.
 
 ## 5.5 IPR policies
 
-As a requirement for membership, Members must execute and return to the CWG Chair the IPR Policy Agreement attached as Exhibit A before participating in any CWG. As the IPR Policy is amended from time to time, Members will be required to execute and return a new IPR Agreement within ninety (90) days of the CWG Chair’s written request. If a Member fails to execute and return the new IPR Policy Agreement within such 90-day period, then the Member’s CWG and Forum membership shall default to an Associate Membership until the agreement is signed and returned.
+As a requirement for membership, Voting Members must execute and return to the CWG Chair the IPR Policy Agreement attached as Exhibit A before participating in any CWG. As the IPR Policy is amended from time to time, Members will be required to execute and return a new IPR Agreement within ninety (90) days of the CWG Chair’s written request. If a Voting Member fails to execute and return the new IPR Policy Agreement within such 90-day period, then the Member’s CWG and Forum membership shall default to an Associate Membership until the agreement is signed and returned.
 
 As a requirement for participation in any CWG as an Associate Member or Interested Party, Associate Members and Interested Parties must execute and return to the CWG Chair the IPR Policy Agreement attached as Exhibit A before participating in any CWG. As the IPR Policy is amended from time to time, Associate Members and Interested Parties will be required to execute and return a new IPR Policy Agreement within ninety (90) days of the CWG Chair’s written request. If an Associate Member or Interested Party fails to execute and return the new IPR Policy Agreement within such 90-day period, its participation in Forum calls, meetings, activities, and events shall be suspended until the agreement is signed and returned.
 
@@ -281,7 +292,7 @@ No actions taken by a Forum Subcommittee will implicate obligations under the IP
 
 ## 6.1 Posting and Amendment of the Bylaws
 
-The current version of the Bylaws shall be posted to the Public Web Site. These Bylaws may be amended by subsequent ballot(s) of the Members.
+The current version of the Bylaws shall be posted to the Public Web Site. These Bylaws may be amended by subsequent ballot(s) of the Voting Members.
 
 # 6.2 Procedure for Dealing with Questions and Comments
 
@@ -303,32 +314,36 @@ Nothing in these Bylaws is intended to supersede or replace anything in the IPR 
 
 All Members shall abide by the CAB Forum Code of Conduct, which is attached to these Bylaws as Exhibit B.
 
+## 6.5 Photography Policy
+
+All Members shall abide by the CAB Forum Photography Policy, which is attached to these Bylaws as Exhibit D.
+
 # DEFINITIONS
 
 **Affiliate:** An entity that directly or indirectly controls, is controlled by, or is under common control with, another entity. Control for the purposes of these Bylaws shall mean direct or indirect beneficial ownership of more than fifty percent of the voting stock, or decision-making authority in the event that there is no voting stock, in an entity.
 
-**Forum Meetings:** Face-to-face plenary meetings of Members as scheduled from time to time, and does not include meetings such as Subcommittee, subgroup, committee, or PAG meetings.
+**Forum Meetings:** Face-to-face plenary meetings of Voting Members and Associate Members as scheduled from time to time, and does not include meetings such as Subcommittee, subgroup, committee, or PAG meetings.
 
-**Forum Teleconferences:** Teleconference plenary meetings of Members as scheduled from time to time, and does not include meetings such as Subcommittee, subgroup, committee, or PAG meetings.
+ **Forum Member:** See "Member".
+ 
+**Forum Teleconferences:** Teleconference plenary meetings of Voting Members and Associate Members as scheduled from time to time, and does not include meetings such as Subcommittee, subgroup, committee, or PAG meetings.
 
-**Qualified Auditor:** A natural person or Legal Entity that meets the requirements of Section 8.2 of the Baseline Requirements (https://cabforum.org/baseline-requirements-documents/).
+**Member:** The total of "Voting Members", "Associate Members" and "Interested Parties".
 
-**Member:** A Member of the Forum or a representative of the Member (depending on context).
+**Member Mail List:** The email list-serv maintained by the Forum or CWG for communications by and among Forum or CWG Voting Members and Associate Members. The Member Mail List is not available to Interested Parties or Other Parties.
 
-**Member Mail List:** The email list-serv maintained by the Forum or CWG for communications by and among Forum or CWG Members and Associate Members. The Member Mail List is not available to Interested Parties or Other Parties.
+**Member Web Site:** The password-protected web site available only to Voting Members and Associate Members (currently called the CA/Browser Forum Wiki).
 
-**Member Web Site:** The password-protected web site available only to Members and Associate Members (currently called the CA/Browser Forum Wiki).
+**Public Mail List:** A public email list-serv maintained by the Forum or CWG for communications by and among Members. The Public Mail List may be read by other parties, but other parties may not post to the Public Mail List.
 
-**Public Mail List:** A public email list-serv maintained by the Forum or CWG for communications by and among Members, Associate Members and Interested Parties. The Public Mail List may be read by other parties, but other parties may not post to the Public Mail List.
+**Public Web Site:** A public web site available to Members, and other parties.
 
-**Public Web Site:** A public web site available to Members, Associate Members, Interested Parties, and other parties. A Forum Member will be appointed as Webmaster and will control all postings to the Public Web Site.
+**Voting Representative:** A natural person designated by the Voting Member organization allowed to cast votes on behalf of the Voting Member organization. Each Voting Representative can extend the set of Voting Representatives. Voting Representatives can also be introduced or removed by a Voting Member's legal (or properly delegated) representative.
 
 **Questions Mail List:** The email list-serv currently located at questions@cabforum.org maintained by the Forum for communications from the public to the Forum.
 
 
-# Exhibit A
-
-## CAB Forum IPR Policy Agreement
+# Exhibit A: CAB Forum IPR Policy Agreement
 
 This CAB Forum IPR Policy Agreement (the "Agreement") constitutes a binding contract amongst all participants who make Contributions during the process of developing a Draft Guideline for the purpose of incorporating such material into a Draft Guideline or a Final Guideline of the CA / Browser Forum.
 
@@ -358,9 +373,7 @@ Participant Organization Name (if entity)
 
 Date: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-# Exhibit B
-
-## CAB Forum Code of Conduct (the "Code")
+# Exhibit B: CAB Forum Code of Conduct (the "Code")
 
 The CAB Forum (the "Forum") is comprised of a global group of professionals with differences in language, skills, expertise, experience, and backgrounds.  To maintain a professional and productive environment, it is necessary for Members of the Forum to follow the letter and spirit of this Code.  This Code applies to all official Forum activities, such as meetings, teleconferences, mailing lists, conferences, and other Forum functions.  The Forum is committed to maintaining a professional and respectful environment.
 
@@ -397,9 +410,7 @@ All Member representatives are expected to behave in a collegial and professiona
 
 Adapted from the WHATWG Code of Conduct [https://wiki.whatwg.org/wiki/Code_of_Conduct], the W3C Code of Ethics and Professional Conduct [https://www.w3c.org/Consortium/cepc/], and the Citizen Code of Conduct [citizencodeofconduct.org].
 
-# Exhibit C
-
-## CAB Forum Charter Template
+# Exhibit C: CAB Forum Charter Template
 [insert name] Working Group Charter
 
 The **mission** of the [insert name] Working Group is to:
@@ -412,7 +423,7 @@ The **mission** of the [insert name] Working Group is to:
 
 **Meeting Schedule**: (e.g., conference call 1st Thursday of the month, F2F once per year)
 
-**Type(s) of Members Eligible to Participate**: (e.g., CAs and Browsers)
+**Type(s) of Voting Members Eligible to Participate**: (e.g., CAs and Browsers)
 
 **Voting Structure for WG**: (e.g., 2/3 of CAs, ½ of Browsers)
 
@@ -498,13 +509,13 @@ Members may resign from the Working Group at any time. Resignation does not prev
 (b) Certificate Issuer or Root Certificate Issuer:
 [specify]
 
-Any Member who believes any of the above circumstances is true of any other Member, that Member may report it on the Working Group Public Mail List. The Chair will then investigate, including asking the reported Member for an explanation or appropriate documentation. If evidence of continued qualification for membership is not forthcoming from the reported Member within five (5) working days, the Chair will announce that such Member is suspended, such announcement to include the clause(s) from the above list under which the suspension has been made.
+Any Voting Member who believes any of the above circumstances is true of any other Voting Member, that Voting Member may report it on the Working Group Public Mail List. The Chair will then investigate, including asking the reported Voting Member for an explanation or appropriate documentation. If evidence of continued qualification for membership is not forthcoming from the reported Voting Member within five (5) working days, the Chair will announce that such Voting Member is suspended, such announcement to include the clause(s) from the above list under which the suspension has been made.
 
-A suspended Member who believes it has now re-met the membership criteria under the relevant clauses shall post evidence to the Working Group Public Mail List. The Chair will examine the evidence and unsuspend the member, or not, by public announcement. A Member's membership will automatically cease six (6) months after it becomes suspended if the Member has not re-met the membership criteria by that time.
+A suspended Voting Member who believes it has now re-met the membership criteria under the relevant clauses shall post evidence to the Working Group Public Mail List. The Chair will examine the evidence and unsuspend the member, or not, by public announcement. A Voting Member's membership will automatically cease six (6) months after it becomes suspended if the Voting Member has not re-met the membership criteria by that time.
 
-While suspended, a Member may participate in this Working Group and Forum Meetings, Teleconferences, and on  this Working Group and the Forum's discussion lists, but may not propose or endorse ballots or take part in any form of voting.
+While suspended, a Voting Member may participate in this Working Group and Forum Meetings, Teleconferences, and on this Working Group and the Forum's discussion lists, but may not propose or endorse ballots or take part in any form of voting.
 
-Votes cast before a Member's suspension is announced will stand.
+Votes cast before a Voting Member's suspension is announced will stand.
 
    3.3 **Application Process**
 Applicants shall supply information and follow a process to become members.
@@ -543,3 +554,37 @@ To promote the widest adoption of the CAB Forum Guidelines, CAB Forum seeks to i
 9. **About this Charter**
 
 This charter for the [insert name] Working Group has been created according to Section 5.3.1 of the Bylaws of the CAB Forum. In the event of a conflict between this charter and any provision in either the Bylaws or the IPR Policy, the provision in the Bylaws or IPR Policy shall take precedence.
+
+# Exhibit D: CAB Forum Photography Policy
+
+This policy is based on the IETF meetings photography policy published at https://www.ietf.org/about/groups/iesg/statements/meeting-photography-policy/.
+
+The intent behind this policy is to balance people's legitimate desire not to be photographed at Face-to-Face meetings with the CA/B Forum’s ability to document activities, enable remote participation and to promote active collaboration. The following policy applies to all CA/B and its Working Group face-to-face (F2F) meetings, events, plenaries and hackathons.
+
+### Labelling
+
+F2F meeting participants will have the opportunity to label themselves as desiring not to be photographed by indicating “Photograph Privacy Requested” when they register at a F2F meeting. The list of participants will include a “Photograph Privacy Requested” next to the participant’s name and will be available to all F2F meeting participants.
+
+### Official Photography
+
+Any photographer engaged on behalf of the CA/B Forum should not photograph individuals wearing the currently-designated RED lanyard that is provided to those that requested “Photograph Privacy”, should make reasonable efforts to avoid photographing small groups with one or more members wearing that lanyard, and should not publish small group photographs with such individuals in them. There are two important exceptions to this policy:
+ * CA/B Forum, Working Group and Subcommittee officers (Chairs, Vice-Chairs) performing their official responsibilities may be photographed.
+ * Photographs of large groups may contain incidental images of such individuals and we will not attempt to redact those. Specifically, photographs of panels and the like (e.g., plenaries) are expected to contain all individuals regardless of labelling.
+
+F2F meetings are generally video recorded and streamed through video-conference, for remote participation and minute-taking purposes, and no attempt will be made to avoid recording individuals. However, if the CA/B Forum publishes still frames of these videos, individuals that indicated “Photograph Privacy” should not be shown.
+
+Note: the use of "should" above is intended to reflect that although this is a CA/B Forum policy, it is a best effort service and some mistakes will likely be made, perhaps because someone's lanyard color is not noticed or visible. Individuals can contact the CA/B Forum or Working Group Chair to arrange for redaction of their images or to report abuse.
+
+In all cases and at every F2F meeting, if the host's imagery (photos or videos) policy is more restrictive, it shall supersede this CA/B Forum photography policy and everyone attending will need to adapt to the host's more restrictive policy.
+
+### Unofficial Photography
+
+Many CA/B Forum F2F participants also engage in photography. We ask that those participants avoid photographing individuals who have asked not to be photographed or are wearing the "Photograph Privacy Requested" designated lanyard, except under the conditions listed above.
+
+### Voluntary Photo directory
+
+F2F meetings usually have such a large number of participants that it is hard for representatives to remember faces and names. Having a picture next to a name for reference, is helpful in that respect. A voluntary photo directory is allowed but not required for F2F meetings. This voluntary photo directory will be stored in the Forum’s Member Web Site. Photos included in this directory shall be used and added next to the name of the attendee’s list in F2F meetings. Once a member is removed from the Forum or a member representative is asked to be removed from the Member Web Site, the photos shall be removed.
+
+Representatives that voluntarily provide their photo for the photo directory are deemed to, consent to this photo being added to the attendee’s list for F2F meetings. Representatives may withdraw their consent and remove their photo from the directory and future attendee lists at any time.
+
+Representatives that have their photo in the voluntary photo directory shall not indicate the “Photograph Privacy Requested” at F2F meetings. They must first withdraw their consent and remove their photo from the directory.
