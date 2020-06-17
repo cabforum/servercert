@@ -4,9 +4,9 @@ services:
 before_install:
   - docker pull pandoc/latex:2.9.2.1
   - docker run -dit --name pandoc -v "$(pwd):/data" pandoc/latex:latest bash
-  - docker exec -it --name pandoc ./data/docker.sh
+  - docker exec -it pandoc ./data/docker.sh
 script:
-  - docker exec -it --name pandoc make -C data docs
+  - docker exec -it pandoc make -C data docs
   - make deploy
 deploy:
   skip_cleanup: true
