@@ -309,7 +309,7 @@ $if(title)$
 	 % {\Large\bfseries $author$}\\[5pt]
 	  % ----------------------------------------------------------------
 	 %\vspace{2cm}
-	\includegraphics[width=0.5\textwidth]{assets/cabforum.png}\\[5pt]
+	\includegraphics[width=0.5\textwidth]{../assets/cabforum.png}\\[5pt]
 	{$date$}
 	 \vfill
 	{\small $copyright$}
