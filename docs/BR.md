@@ -1248,28 +1248,28 @@ The CA and each Delegated Third Party SHALL record details of the actions taken 
 The CA SHALL record at least the following events:
 
 1. CA certificate and key lifecycle events, including:
-  1. Key generation, backup, storage, recovery, archival, and destruction; 
-  2. Certificate requests, renewal, and re-key requests, and revocation;
-  3. Approval and rejection of certificate requests; 
-  4. Cryptographic device lifecycle management events;
-  5. Generation of Certificate Revocation Lists and OCSP entries;
-  6. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
+   1. Key generation, backup, storage, recovery, archival, and destruction; 
+   2. Certificate requests, renewal, and re-key requests, and revocation;
+   3. Approval and rejection of certificate requests; 
+   4. Cryptographic device lifecycle management events;
+   5. Generation of Certificate Revocation Lists and OCSP entries;
+   6. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
 
 2. Subscriber Certificate lifecycle management events, including:
-  1. Certificate requests, renewal, and re-key requests, and revocation;
-  2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-  3. Approval and rejection of certificate requests; 
-  4. Issuance of Certificates; and
-  5. Generation of Certificate Revocation Lists and OCSP entries.
+   1. Certificate requests, renewal, and re-key requests, and revocation;
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
+   3. Approval and rejection of certificate requests; 
+   4. Issuance of Certificates; and
+   5. Generation of Certificate Revocation Lists and OCSP entries.
 
 3. Security events, including:
-  1. Successful and unsuccessful PKI system access attempts;
-  2. PKI and security system actions performed;
-  3. Security profile changes;
-  4. Installation, update and removal of software on a Certificate System; 
-  5. System crashes, hardware failures, and other anomalies;
-  6. Firewall and router activities; and
-  7. Entries to and exits from the CA facility.
+   1. Successful and unsuccessful PKI system access attempts;
+   2. PKI and security system actions performed;
+   3. Security profile changes;
+   4. Installation, update and removal of software on a Certificate System; 
+   5. System crashes, hardware failures, and other anomalies;
+   6. Firewall and router activities; and
+   7. Entries to and exits from the CA facility.
 
 Log records MUST include the following elements:
 
