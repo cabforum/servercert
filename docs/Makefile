@@ -16,7 +16,7 @@ all: $(MD:.md=.pdf) $(MD:.md=.html) $(MD:.md=.docx)
 %.docx: %.md $(ASSET_DIR)/%.yaml $(TEMPLATE_DIR)/%.docx
 	pandoc -f markdown -t docx $< --table-of-contents -s --metadata-file $(word 2,$^) --reference-doc=$(word 3,$^) -o $@
 
-deploy:
+deploy: all
 	cp -va *.pdf *.docx *.html $(OUTPUT_DIR)
 
 clean:
