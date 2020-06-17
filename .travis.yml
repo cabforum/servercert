@@ -8,7 +8,7 @@ addons:
     packages:
     - pandoc
     - texlive-xetex
-    - texlive-fonts-extras
+    - texlive-fonts-extra
 script:
 - make
 - make deploy
