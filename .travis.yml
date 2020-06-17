@@ -3,7 +3,7 @@ services:
 
 before_install:
   - docker pull pandoc/latex:2.9.2.1
-  - docker run -dit --name pandoc -v $(pwd):/data pandoc/latex:latest bash
+  - docker run -dit --name pandoc -v $(pwd):/data --entrypoint "/bin/bash" pandoc/latex:2.9.2.1
   - docker ps -a
   - docker exec -it pandoc -w data docker.sh
   - docker ps -a
