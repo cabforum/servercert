@@ -5,10 +5,10 @@ OUTPUT_DIR=../output
 .PHONY: all deploy clean
 
 MD = BR.md
-all: $(MD:.md=.pdf) $(MD:.md=.html)
+all: $(MD:.md=.pdf) $(MD:.md=.html) $(MD:.md=.docx)
 
 %.pdf: %.md $(ASSET_DIR)/%.yaml $(TEMPLATE_DIR)/%.latex
-	pandoc -f markdown -t latex $^ --table-of-contents -s --metadata-file $(word 2,$^) --pdf-engine=xelatex --template=$(word 3,$^) -o $@
+	pandoc -f markdown -t latex $< --table-of-contents -s --metadata-file $(word 2,$^) --pdf-engine=xelatex --template=$(word 3,$^) -o $@
 
 %.html: %.md $(ASSET_DIR)/%.yaml
 	pandoc -f markdown -t html $< --table-of-contents -s --metadata-file $(word 2,$^) -o $@
