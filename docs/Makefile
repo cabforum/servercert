@@ -2,20 +2,19 @@ TEMPLATE_DIR=../templates
 ASSET_DIR=../assets
 OUTPUT_DIR=../output
 
-.PHONY: all br-pandoc deploy clean
+.PHONY: all deploy clean
 
+MD = BR.md
 all: $(MD:.md=.pdf) $(MD:.md=.html)
 
-br-pandoc: 
-	pandoc -f markdown -t latex BR.md --table-of-contents -s --metadata-file $(ASSET_DIR)/BR.yaml --pdf-engine=xelatex --template=$(TEMPLATE_DIR)/BR.latex -o BR.pdf
-	pandoc -f markdown -t html BR.md --table-of-contents -s --metadata-file $(ASSET_DIR)/BR.yaml -o BR.html
-	pandoc -f markdown -t docx BR.md --table-of-contents -s --metadata-file $(ASSET_DIR)/BR.yaml --reference-doc=$(TEMPLATE_DIR)/BR.docx -o BR.docx
+%.pdf: %.md $(ASSET_DIR)/%.yaml $(TEMPLATE_DIR)/%.latex
+	pandoc -f markdown -t latex $^ --table-of-contents -s --metadata-file $(word 2,$^) --pdf-engine=xelatex --template=$(word 3,$^) -o $@
 
-%.pdf: %.html
-	weasyprint --base-url $(HTMLBASE) $< $@
+%.html: %.md $(ASSET_DIR)/%.yaml
+	pandoc -f markdown -t html $< --table-of-contents -s --metadata-file $(word 2,$^) -o $@
 
-%.html: %.md
-	../utils/kram.rb -t $(TEMPLATE_DIR)/main -o $@ $^
+%.docx: %.md $(ASSET_DIR)/%.yaml $(TEMPLATE_DIR)/%.docx
+	pandoc -f markdown -t docx $< --table-of-contents -s --metadata-file $(word 2,$^) --reference-doc=$(word 3,$^) -o $@
 
 deploy:
 	cp -va *.pdf *.docx *.html $(OUTPUT_DIR)

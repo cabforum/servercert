@@ -5,7 +5,7 @@ before_install:
   - docker pull pandoc/latex:2.9.2.1
   - docker run --volume "`pwd`:/data" --entrypoint '/data/docker.sh' pandoc/latex:latest
 script:
-  - make pandoc-deploy
+  - make deploy
 deploy:
   skip_cleanup: true
   local_dir: output
