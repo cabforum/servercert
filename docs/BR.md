@@ -1284,8 +1284,8 @@ Log records MUST include the following elements:
 The CA SHALL retain, for at least two years:
 
   1. CA certificate and key lifecycle management event records (as set forth in Section 5.4.1 (1)) after either:
-     a. the destruction of the CA Private Key; or
-     b. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key, whichever event occurs later;
+     1. the destruction of the CA Private Key; or
+     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key, whichever event occurs later;
   2. Subscriber Certificate lifecycle management event records (as set forth in Section 5.4.1 (2)) after the revocation or expiration of the Subscriber Certificate;
   3. Any security event records (as set forth in Section 5.4.1 (3)) after the event occurred.
 
