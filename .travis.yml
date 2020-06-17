@@ -1,17 +1,13 @@
-dist: xenial
-sudo: false
-language: ruby
-rvm:
-- 2.2.2
-addons:
-  apt:
-    packages:
-    - pandoc
-    - texlive-xetex
-    - texlive-fonts-extra
+services:
+  - docker
+
+before_install:
+  - docker pull pandoc/latex:2.9.2.1
+  - docker run -dit --name pandoc -v $(pwd):/data --entrypoint "/bin/sh" pandoc/latex:2.9.2.1
+  - docker exec -it pandoc sh -c "/data/docker.sh"
 script:
-- make
-- make deploy
+  - docker exec -it -w /data pandoc sh -c "make docs"
+  - make deploy
 deploy:
   skip_cleanup: true
   local_dir: output
