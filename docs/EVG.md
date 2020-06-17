@@ -603,7 +603,10 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 
 ## 9.4.  Maximum Validity Period For EV Certificate
 
-The Validity Period for an EV Certificate SHALL NOT exceed 398 days.  It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
+The Validity Period for an EV Certificate SHALL NOT exceed 825 days. 
+Effective 2020-09-01, the Validity Period for an EV Certificate SHALL NOT exceed 398 days.
+
+It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
 
 ## 9.5.  Subscriber Public Key
 
@@ -1781,7 +1784,7 @@ cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 
 4. Each Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
 
-5. CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 398 days.
+5. CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 825 days. Effective 2020-09-01, CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 398 days.
 
 6. When a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this Appendix F.
 
