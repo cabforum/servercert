@@ -8,7 +8,7 @@ addons:
       - python-dev
       - python-pip
       - python-lxml
-      - libcairo
+      - libcairo2
       - libpango1.0-0
       - libgdk-pixbuf2.0-0
       - libffi-dev
