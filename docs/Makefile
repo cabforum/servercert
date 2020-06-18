@@ -2,6 +2,7 @@ LANG=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 TEMPLATE_DIR=../templates
 ASSET_DIR=../assets
+CSS_URI=assets
 OUTPUT_DIR=../output
 HTMLBASE=../
 
@@ -21,7 +22,7 @@ all: pandoc weasy
 	weasyprint --base-url $(HTMLBASE) $< $@
 
 %.html: %.md $(ASSET_DIR)/%.yaml
-	pandoc -f markdown -t html $< --table-of-contents -c ${ASSET_DIR}/main.css -c ${ASSET_DIR}/advanced.css -c ${ASSET_DIR}/normalize.css -s --metadata-file $(word 2,$^) -o $@
+	pandoc -f markdown -t html $< --table-of-contents -c ${CSS_URI}/main.css -c ${CSS_URI}/advanced.css -c ${CSS_URI}/normalize.css -s --metadata-file $(word 2,$^) -o $@
 
 %.html: %.md
 	../utils/kram.rb -t $(TEMPLATE_DIR)/main -o $@ $^
