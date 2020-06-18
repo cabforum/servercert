@@ -21,7 +21,7 @@ all: pandoc weasy
 	weasyprint --base-url $(HTMLBASE) $< $@
 
 %.html: %.md $(ASSET_DIR)/%.yaml
-	pandoc -f markdown -t html $< --table-of-contents -s --metadata-file $(word 2,$^) -o $@
+	pandoc -f markdown -t html $< --table-of-contents -c ${ASSET_DIR}/main.css -c ${ASSET_DIR}/advanced.css -c ${ASSET_DIR}/normalize.css -s --metadata-file $(word 2,$^) -o $@
 
 %.html: %.md
 	../utils/kram.rb -t $(TEMPLATE_DIR)/main -o $@ $^
