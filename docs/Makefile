@@ -22,7 +22,7 @@ all: pandoc weasy
 	weasyprint --base-url $(HTMLBASE) $< $@
 
 %.html: %.md $(ASSET_DIR)/%.yaml
-	pandoc -f markdown -t html $< --table-of-contents -c ${CSS_URI}/main.css -c ${CSS_URI}/advanced.css -c ${CSS_URI}/normalize.css -s --metadata-file $(word 2,$^) -o $@
+	pandoc -f markdown -t html $< --table-of-contents -c ${CSS_URI}/normalize.css -c ${CSS_URI}/main.css -c ${CSS_URI}/advanced.css -s --metadata-file $(word 2,$^) -o $@
 
 %.html: %.md
 	../utils/kram.rb -t $(TEMPLATE_DIR)/main -o $@ $^
