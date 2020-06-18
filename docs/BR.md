@@ -1943,36 +1943,37 @@ If the Subordinate CA is not allowed to issue certificates with dNSNames, then t
 
 ### 7.1.6 Certificate policy object identifier
 
-#### 7.1.6.1. Reserved Certificate Policy Identifiers
 This section describes the content requirements for the Root CA, Subordinate CA, and Subscriber Certificates, as they relate to the identification of Certificate Policy.
 
-The following Certificate Policy identifiers are reserved for use by CAs as a means of asserting compliance with these Requirements as follows:
+#### 7.1.6.1. Reserved Certificate Policy Identifiers
 
-`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1)`, if the Certificate complies with these Requirements but lacks Subject Identity Information that is verified in accordance with Section 3.2.2.1 or Section 3.2.3.
+The following Certificate Policy identifiers are reserved for use by CAs as an optional means of asserting that a Certificate complies with these Requirements.
 
-If the Certificate asserts the policy identifier of 2.23.140.1.2.1, then it MUST NOT include organizationName, givenName, surname, streetAddress, localityName, stateOrProvinceName, or postalCode in the Subject field.
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) domain-validated(1)} (2.23.140.1.2.1)`
 
-`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2)`, if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) organization-validated(2)} (2.23.140.1.2.2)`
 
-`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)`, if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.3.
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)`
 
-If the Certificate asserts the policy identifier of 2.23.140.1.2.2, then it MUST also include `organizationName`, `localityName` (to the extent such field is required under Section 7.1.4.2.2), `stateOrProvinceName` (to the extent such field is required under Section 7.1.4.2.2), and `countryName` in the Subject field.  If the Certificate asserts the policy identifier of 2.23.140.1.2.3, then it MUST also include (i) either `organizationName` or `givenName` and `surname`, (ii) `localityName` (to the extent such field is required under Section 7.1.4.2.2), (iii) `stateOrProvinceName` (to the extent required under Section 7.1.4.2.2), and (iv) `countryName` in the Subject field.
+`{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines (1) } (2.23.140.1.1)`
 
 #### 7.1.6.2. Root CA Certificates
-A Root CA Certificate SHOULD NOT contain the `certificatePolicies` extension.
+A Root CA Certificate SHOULD NOT contain the certificatePolicies extension. If present, the extension MUST conform to the requirements set forth for Certificates issued to Subordinate CAs in Section 7.1.6.3.
 
 #### 7.1.6.3 Subordinate CA Certificates
 A Certificate issued to a Subordinate CA that is not an Affiliate of the Issuing CA:
 
-1. MUST include one or more explicit policy identifiers that indicates the Subordinate CA's adherence to and compliance with these Requirements (i.e. either the CA/Browser Forum reserved identifiers or identifiers documented by the CA in its Certificate Policy and/or Certification Practice Statement) and
-2. MUST NOT contain the `anyPolicy` identifier (2.5.29.32.0).
+1. MUST include one or more explicit policy identifiers that indicate the Subordinate CA's adherence to and compliance with these Requirements (i.e. either the CA/Browser Forum Reserved Certificate Policy Identifiers or identifiers documented by the Subordinate CA in its Certificate Policy and/or Certification Practice Statement) and
+2. MAY contain one or more identifiers documented by the Subordinate CA in its Certificate Policy and/or Certification Practice Statement and
+3. MUST NOT contain the `anyPolicy` identifier (2.5.29.32.0).
 
 A Certificate issued to a Subordinate CA that is an affiliate of the Issuing CA:
 
-1. MAY include the CA/Browser Forum reserved identifiers or an identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Subordinate CA's compliance with these Requirements and
-2. MAY contain the `anyPolicy` identifier (2.5.29.32.0) in place of an explicit policy identifier.
+1. MAY include one or more explicit policy identifiers that indicate the Subordinate CA's adherence to and compliance with these Requirements (i.e. either the CA/Browser Forum Reserved Certificate Policy Identifiers or identifiers documented by the  Subordinate CA in its Certificate Policy and/or Certification Practice Statement) and
+2. MAY contain one or more identifiers documented by the Subordinate CA in its Certificate Policy and/or Certification Practice Statement and
+3. MAY contain the `anyPolicy` identifier (2.5.29.32.0) in place of an explicit policy identifier.
 
-A Subordinate CA SHALL represent, in its Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
+The Subordinate CA and the Issuing CA SHALL represent, in their Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
 Effective 2020-09-30, a Certificate issued to a Subscriber MUST contain, within the Certificate's certificatePolicies extension, one or more policy identifier(s) that are specified beneath the CA/Browser Forum's reserved policy OID arc of {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1)} (2.23.140.1).
@@ -1980,6 +1981,14 @@ Effective 2020-09-30, a Certificate issued to a Subscriber MUST contain, within 
 The certificate MAY also contain additional policy identifier(s) defined by the Issuing CA. The issuing CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these requirements.
 
 For certificates issued prior to 2020-09-30, a Certificate issued to a Subscriber MUST contain a certificatePolicies extension. The extension MUST contain one or more policy identifiers that indicate adherence to and compliance with these Requirements. CAs MUST either use a CA/Browser Forum identifier reserved for this purpose or MUST use a policy identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Certificate's compliance with these Requirements.
+
+The extension MAY include the policy identifier `2.23.140.1.2.1` if the Certificate complies with these Requirements and lacks Subject Identity Information that has been verified in accordance with Section 3.2.2.1 or Section 3.2.3. Such Certificates MUST NOT include `organizationName`, `givenName`, `surname`, `streetAddress`, `localityName`, `stateOrProvinceName`, or `postalCode` in the Subject field.
+
+The extension MAY include the policy identifier `2.23.140.1.2.2`, if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1. Such Certificates MUST also include `organizationName`, `localityName` (to the extent such field is required under Section 7.1.4.2.2), `stateOrProvinceName` (to the extent such field is required under Section 7.1.4.2.2), and `countryName` in the Subject field. 
+
+The extension MAY include the policy identifier `2.23.140.1.2.3`, if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.3. Such Certificates MUST also include either `organizationName` or both `givenName` and `surname`, `localityName` (to the extent such field is required under Section 7.1.4.2.2), `stateOrProvinceName` (to the extent required under Section 7.1.4.2.2), and `countryName` in the Subject field.
+
+The extension MAY include the policy identifier `2.23.140.1.1`, if the Certificate complies with these Requirements and has been issued and operated in accordance with the CA/Browser Forum Guidelines for the Issuance and Management of Extended Validation Certificates ("EV Guidelines"). Such Certificates MUST also include Subject Identity Information as required and verified according to the EV Guidelines.
 
 ### 7.1.7 Usage of Policy Constraints extension
 
