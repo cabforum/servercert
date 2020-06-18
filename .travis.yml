@@ -20,8 +20,9 @@ before_install:
   - docker pull pandoc/latex:2.9.2.1
 script:
   - docker run -v $(pwd):/data --entrypoint "/data/docker.sh" pandoc/latex:2.9.2.1
-  - virtualenv --setuptools ./env
+  - virtualenv --setuptools ./venv
   - . ./venv/bin/activate
+  - mkdir ~/.fonts/
   - cp -a assets/*.otf ~/.fonts/
   - pip install -U --ignore-installed pip
   - pip install -U --ignore-installed setuptools
