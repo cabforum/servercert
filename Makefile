@@ -1,8 +1,13 @@
 
 all: deploy
 
-docs:
-	$(MAKE) -C docs 
+pandoc:
+	$(MAKE) -C docs pandoc
+
+weasy:
+	$(MAKE) -C docs weasy
+
+docs: pandoc weasy
 
 deploy: docs
 	$(MAKE) -C docs deploy
