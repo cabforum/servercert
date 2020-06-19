@@ -671,7 +671,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.10 TLS Using a Random Number
 
-This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
+This method has been retired and MUST NOT be used. CAs MAY continue to re-use information and validations for domains validated under this method for up to 3 months from the IPR review date of Ballot that inserted this sentence.
 
 ##### 3.2.2.4.11 Any Other Method
 
