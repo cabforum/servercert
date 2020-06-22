@@ -153,7 +153,12 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2019-08-01 | 3.2.2.5 | CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address |
 | 2019-08-01 | 3.2.2.5.4 | CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
 | 2020-06-03 | 3.2.2.4.6 | CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25 |
+| 2020-08-01 | 8.6 | Audit Reports for periods on-or-after 2020-08-01 MUST be structured as defined. |
 | 2020-09-01 | 6.3.2 | Certificates issued SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. |
+| 2020-09-30 | 4.9.10 | OCSP responses MUST conform to the validity period requirements specified. |
+| 2020-09-30 | 7.1.4.1 | Subject and Issuer Names for all possible certification paths MUST be byte-for-byte identical. |
+| 2020-09-30 | 7.1.6.4 | Subscriber Certificates MUST include a CA/Browser Form Reserved Policy Identifier in the Certificate Policies extension. |
+| 2020-09-30 | 7.2 and 7.3 | All OCSP and CRL responses for Subordinate CA Certificates MUST include a meaningful reason code. |
 
 ## 1.3 PKI Participants
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
@@ -1144,6 +1149,7 @@ Prior to 2020-09-30:
 The CA SHALL update information provided via an Online Certificate Status Protocol at least every four days. OCSP responses from this service MUST have a maximum expiration time of ten days.
 
 Effective 2020-09-30:
+
 1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
 2. OCSP responses MUST have a validity interval less than or equal to ten days;
 3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
@@ -1151,6 +1157,7 @@ Effective 2020-09-30:
 
 
 For the status of Subordinate CA Certificates:
+
 * The CA SHALL update information provided via an Online Certificate Status Protocol (i) at least every twelve months; and (ii) within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with Section 7.1.5, the responder MUST NOT respond with a "good" status for such requests.
@@ -1166,7 +1173,7 @@ A certificate serial number within an OCSP request is one of the following three
 3.	"unused" if neither of the previous conditions are met.
 
 ### 4.9.11 Other forms of revocation advertisements available
-Not applicable.
+No Stipulation.
 
 ### 4.9.12 Special requirements re key compromise
 See Section 4.9.1.
@@ -1447,10 +1454,12 @@ If the CA or any of its designated RAs become aware that a Subscriber's Private 
 
 ### 6.1.5 Key sizes
 For RSA key pairs the CA SHALL:
+
 * Ensure that the modulus size, when encoded, is at least 2048 bits, and;
 * Ensure that the modulus size, in bits, is evenly divisible by 8.
 
 For ECDSA key pairs, the CA SHALL:
+
 * Ensure that the key represents a valid point on the NIST P-256, NIST P-384 or NIST P-521 elliptic curve.
 
 No other algorithms or key sizes are permitted.
@@ -1612,15 +1621,15 @@ f. `nameConstraints` (optional)
 
 g. `extkeyUsage` (optional/required)
 
-   For Cross Certificates that share a Subject Distinguished Name and Subject Public Key with a Root Certificate operated in accordance with these Requirements, this extension MAY be present. If present, this extension SHOULD NOT be marked critical. This extension MUST only contain usages for which the issuing CA has verified the Cross Certificate is authorized to assert. This extension MAY contain the anyExtendedKeyUsage [RFC5280] usage, if the Root Certificate(s) associated with this Cross Certificate are operated by the same organization as the issuing Root Certificate.
+   For Cross Certificates that share a Subject Distinguished Name and Subject Public Key with a Root Certificate operated in accordance with these Requirements, this extension MAY be present. If present, this extension SHOULD NOT be marked critical. This extension MUST only contain usages for which the issuing CA has verified the Cross Certificate is authorized to assert. This extension MAY contain the `anyExtendedKeyUsage` [RFC5280] usage, if the Root Certificate(s) associated with this Cross Certificate are operated by the same organization as the issuing Root Certificate.
 
    For all other Subordinate CA Certificates, including Technically Constrained Subordinate CA Certificates:
 
    This extension MUST be present and SHOULD NOT be marked critical[^**].
 
-   For Subordinate CA Certificates that will be used to issue TLS certificates, the value id-kp-serverAuth [RFC5280] MUST be present. The value id-kp-clientAuth [RFC5280] MAY be present. The values id-kp-emailProtection [RFC5280], id-kp-codeSigning [RFC5280], id-kp-timeStamping [RFC5280], id-kp-OCSPSigning [RFC5280], and anyExtendedKeyUsage [RFC5280] MUST NOT be present. Other values SHOULD NOT be present.
+   For Subordinate CA Certificates that will be used to issue TLS certificates, the value `id-kp-serverAuth` [RFC5280] MUST be present. The value `id-kp-clientAuth` [RFC5280] MAY be present. The values `id-kp-emailProtection` [RFC5280], `id-kp-codeSigning` [RFC5280], `id-kp-timeStamping` [RFC5280], `id-kp-OCSPSigning` [RFC5280], and `anyExtendedKeyUsage` [RFC5280] MUST NOT be present. Other values SHOULD NOT be present.
 
-   For Subordinate CA Certificates that are not used to issue TLS certificates, then the value id-kp-serverAuth [RFC5280] MUST NOT be present. Other values MAY be present, but SHOULD NOT combine multiple independent usages (e.g. including id-kp-timeStamping [RFC5280] with id-kp-OCSPSigning [RFC5280] or id-kp-codeSigning [RFC5280]).
+   For Subordinate CA Certificates that are not used to issue TLS certificates, then the value `id-kp-serverAuth` [RFC5280] MUST NOT be present. Other values MAY be present, but SHOULD NOT combine multiple independent usages (e.g. including `id-kp-timeStamping` [RFC5280] with `id-kp-OCSPSigning` [RFC5280] or `id-kp-codeSigning` [RFC5280]).
 
 [^**]: While RFC 5280, Section 4.2.1.12, notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of subordinate certificates, as implemented by a number of Application Software Suppliers.
 
@@ -1665,11 +1674,11 @@ e. `keyUsage` (optional)
 
 f. `extKeyUsage` (required)
 
-   Either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present. id-kp-emailProtection [RFC5280] MAY be present. Other values SHOULD NOT be present. The value `anyExtendedKeyUsage` MUST NOT be present.
+   Either the value `id-kp-serverAuth` [RFC5280] or `id-kp-clientAuth` [RFC5280] or both values MUST be present. `id-kp-emailProtection` [RFC5280] MAY be present. Other values SHOULD NOT be present. The value `anyExtendedKeyUsage` MUST NOT be present.
 
 g. `authorityKeyIdentifier` (required)
 
-   This extension MUST be present and MUST NOT be marked critical. It MUST contain a keyIdentifier field and it MUST NOT contain a authorityCertIssuer or authorityCertSerialNumber field.
+   This extension MUST be present and MUST NOT be marked critical. It MUST contain a `keyIdentifier` field and it MUST NOT contain a `authorityCertIssuer` or `authorityCertSerialNumber` field.
 
 #### 7.1.2.4 All Certificates
 All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a `keyUsage` flag, `extendedKeyUsage` value, Certificate extension, or other data not specified in section 7.1.2.1, 7.1.2.2, or 7.1.2.3  unless the CA is aware of a reason for including the data in the Certificate.
@@ -1699,11 +1708,12 @@ When encoded, the `AlgorithmIdentifier` for RSA keys MUST be byte-for-byte ident
 ##### 7.1.3.1.2 ECDSA
 The CA SHALL indicate an ECDSA key using the id-ecPublicKey (OID: 1.2.840.10045.2.1) algorithm identifier. The parameters MUST use the `namedCurve` encoding.
 
-For P-256 keys, the `namedCurve` MUST be secp256r1 (OID: 1.2.840.10045.3.1.7).
-For P-384 keys, the `namedCurve` MUST be secp384r1 (OID: 1.3.132.0.34).
-For P-521 keys, the `namedCurve` MUST be secp521r1 (OID: 1.3.132.0.35).
+* For P-256 keys, the `namedCurve` MUST be secp256r1 (OID: 1.2.840.10045.3.1.7).
+* For P-384 keys, the `namedCurve` MUST be secp384r1 (OID: 1.3.132.0.34).
+* For P-521 keys, the `namedCurve` MUST be secp521r1 (OID: 1.3.132.0.35).
 
 When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte identical with the following hex-encoded bytes:
+
 * For P-256 keys, `301306072a8648ce3d020106082a8648ce3d030107`.
 * For P-384 keys, `301006072a8648ce3d020106052b81040022`.
 * For P-521 keys, `301006072a8648ce3d020106052b81040023`.
@@ -1712,6 +1722,7 @@ When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte ide
 All objects signed by a CA Private Key MUST conform to these requirements on the use of the `AlgorithmIdentifier` or `AlgorithmIdentifier`-derived type in the context of signatures.
 
 In particular, it applies to all of the following objects and fields:
+
 * The `signatureAlgorithm` field of a Certificate or Precertificate.
 * The `signature` field of a TBSCertificate (for example, as used by either a Certificate or Precertificate).
 * The `signatureAlgorithm` field of a CertificateList
@@ -1807,6 +1818,7 @@ Prior to 2020-09-30, the content of the Certificate Issuer Distinguished Name fi
 Effective 2020-09-30, the following requirements SHOULD be met by all newly-issued Subordinate CA Certificates that are not used to issue TLS certificates, as defined in Section 7.1.2.2, and MUST be met for all other Certificates, regardless of whether the Certificate is a CA Certificate or a Subscriber Certificate.
 
 For every valid Certification Path (as defined by RFC 5280, Section 6):
+
 * For each Certificate in the Certification Path, the encoded content of the Issuer Distinguished Name field of a Certificate SHALL be byte-for-byte identical with the encoded form of the Subject Distinguished Name field of the Issuing CA certificate.
 * For each CA Certificate in the Certification Path, the encoded content of the Subject Distinguished Name field of a Certificate SHALL be byte-for-byte identical among all Certificates whose Subject Distinguished Names can be compared as equal according to RFC 5280, Section 7.1, and including expired and revoked Certificates.
 
@@ -2050,6 +2062,7 @@ The CA MUST make its Audit Report publicly available no later than three months 
 For Audit Reports in which the Audit Period includes a date later than 2020-08-01, then the requirements set forth in the remainder of this Section 8.6 SHALL be met. Audit Reports for Audit Periods that conclude prior to 2020-08-01 SHOULD meet these requirements.
 
 The Audit Report MUST contain at least the following clearly-labelled information:
+
 1. name of the organization being audited;
 2. name and address of the organization performing the audit;
 3. the SHA-256 fingerprint of all Roots and Subordinate CA Certificates, including Cross Certificates, that were in-scope of the audit;
