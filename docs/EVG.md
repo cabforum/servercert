@@ -505,7 +505,7 @@ For Government Entities that do not have a Registration Number or readily verifi
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field.  For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
 
-Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, if the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in Section 11.1.3, that the Registration Number is valid according to at least one disclosed format for that applicable Registration Agency or Incorporating agency. 
+Effective as of 1 October 2020, if the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in Section 11.1.3, the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating agency. 
 
 ### 9.2.6.  Subject Physical Address of Place of Business Field
 
@@ -757,15 +757,15 @@ As a general rule, the CA is responsible for taking all verification steps reaso
 
 ### 11.1.3.  Disclosure of Verification Sources
 
-Effective as of 1 October 2020, prior to the use of an Incorporating Agency or Registration Agency to fulfill these verification requirements, the CA MUST publicly disclose, through an appropriate and readily accessible online means, Agency Information about the Incorporating Agency or Registration Agency.
+Effective as of 1 October 2020, prior to the use of an Incorporating Agency or Registration Agency to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency or Registration Agency. This disclosure SHALL be through an appropriate and readily accessible online means.
 
 This Agency Information SHALL include at least the following:
 * Sufficient information to unambiguously identify the Incorporating Agency or Registration Agency (such as a name, jurisdiction, and website); and,
 * The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jursidictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisdiction(s) that the Agency is appropriate for; and,
-* If the CA restricts the form or syntax of the Registration Number used by the Incorporating Agency or Registration Agency, then the acceptable forms or syntax of such Numbers; and,
+* The acceptable form or syntax of Registration Numbers used by the Incorporating Agency or Registration Agency, if the CA restricts such Numbers to an acceptable form or syntax; and,
 * A revision history that includes a unique version number and date of publication for any additions, modifications, and/or removals from this list.
 
-The CA SHALL document where to obtain this information within Section 3.2 of the CA's Certificate Policy and/or Certification Practice Statement.
+The CA MUST document where to obtain this information within Section 3.2 of the CA's Certificate Policy and/or Certification Practice Statement.
 
 ## 11.2.  Verification of Applicant's Legal Existence and Identity
 
