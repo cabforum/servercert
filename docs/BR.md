@@ -1987,17 +1987,24 @@ For certificates issued prior to 2020-09-30, a Certificate issued to a Subscribe
 
 1. `reasonCode` (OID 2.5.29.21)
 
-  Effective 2020-09-30, the following requirements MUST be met:
+  Effective 2020-09-30, all of the following requirements MUST be met:
 
-  If a CRL entry is for a Root CA or Subordinate CA Certificate, including Cross Certificates, this CRL entry extension MUST be present.
-  If a CRL entry is for a Certificate not technically capable of causing issuance, this CRL entry extension SHOULD be present.
   If present, this extension MUST NOT be marked critical.
 
-  The `CRLReason` indicated MUST NOT be unspecified (0), MUST NOT be certificateHold (6), and MUST indicate the most appropriate reason for revocation of the certificate.
+  If a CRL entry is for a Root CA or Subordinate CA Certificate, including Cross Certificates, this CRL entry extension MUST be present.
+  If a CRL entry is for a Certificate not technically capable of causing issuance, this CRL entry extension SHOULD be present, but MAY be omitted, subject to the following requirements.
+
+  The `CRLReason` indicated MUST NOT be unspecified (0). If the reason for revocation is unspecified, CAs MUST omit `reasonCode` entry extension, if allowed by the previous requirements.
+  If a CRL entry is for a Certificate not subject to these Requirements and was either issued on-or-after 2020-09-30 or has a `notBefore` on-or-after 2020-09-30, the `CRLReason` MUST NOT be certificateHold (6).
+  If a CRL entry is for a Certificate subject to these Requirements, the `CRLReason` MUST NOT be certificateHold (6).
+  
+  If a `reasonCode` CRL entry extension is present, the `CRLReason` MUST indicate the most appropriate reason for revocation of the certificate, as defined by the CA within its CP/CPS.
 
 ## 7.3 OCSP profile
 
-Effective 2020-09-30, if an OCSP response is for a Root CA or Subordinate CA Certificate, including Cross Certificates, and that certificate has been revoked, then the `revocationReason` field within the `RevokedInfo` of the `CertStatus` MUST be present. The `CRLReason` used SHALL contain a value permitted for CRLs, as specified in Section 7.2.2.
+Effective 2020-09-30, if an OCSP response is for a Root CA or Subordinate CA Certificate, including Cross Certificates, and that certificate has been revoked, then the `revocationReason` field within the `RevokedInfo` of the `CertStatus` MUST be present.
+
+Effective 2020-09-30, the `CRLReason` indicated MUST contain a value permitted for CRLs, as specified in Section 7.2.2.
 
 ### 7.3.1 Version number(s)
 
