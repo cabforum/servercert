@@ -1,17 +1,16 @@
-LANG=en_US.UTF-8
-LC_ALL=en_US.UTF-8
-
-.PHONY: docs deploy all clean
 
 all: deploy
 
-docs:
-	$(MAKE) -C docs
-	$(MAKE) -C assets
+pandoc:
+	$(MAKE) -C docs pandoc
+
+weasy:
+	$(MAKE) -C docs weasy
+
+docs: pandoc weasy
 
 deploy: docs
 	$(MAKE) -C docs deploy
-	$(MAKE) -C assets deploy
 
 clean:
 	$(MAKE) -C docs clean 
