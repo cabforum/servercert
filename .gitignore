@@ -1,4 +1,5 @@
 docs/*.pdf
 docs/*.html
+docs/*.docx
 output/*
 !output/Makefile
