@@ -2,15 +2,15 @@
 
 This repository contains a copy, in [Kramdown](https://kramdown.gettalong.org/)
 format, of three documents produced by the [CA/Browser Forum](https://cabforum.org/):
-Baseline Requirements, Bylaws, and EV SSL Certificate Guidelines. The master
+Baseline Requirements, Bylaws, and EV SSL Certificate Guidelines. The main
 branch is intended to always match the current adopted version of all documents.
 
-As updates are made to the master branch, they are automatically made available
+As updates are made to the main branch, they are automatically made available
 at these URLs:
 
- - Baseline Requirements: [PDF](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/master/BR.pdf) [HTML](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/master/BR.html)
- - Bylaws: [PDF](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/master/Bylaws.pdf) [HTML](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/master/Bylaws.html)
- - EV SSL Certificate Guidelines: [PDF](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/master/EVG.pdf) [HTML](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/master/EVG.html)
+ - Baseline Requirements: [PDF](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/main/BR.pdf) [HTML](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/main/BR.html)
+ - Bylaws: [PDF](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/main/Bylaws.pdf) [HTML](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/main/Bylaws.html)
+ - EV SSL Certificate Guidelines: [PDF](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/main/EVG.pdf) [HTML](https://cabforum-travis-artifacts.s3-us-west-2.amazonaws.com/builds/main/EVG.html)
 
 The HTML format is usable either in a browser or in Microsoft Word.
 
