@@ -1445,6 +1445,7 @@ In all cases, the CA SHALL:
 
 #### 6.1.1.3 Subscriber Key Pair Generation
 The CA SHALL reject a certificate request if one or more of the following conditions are met:
+
 1. The Key Pair does not meet the requirements set forth in Section 6.1.5 and/or Section 6.1.6;
 2. There is clear evidence that the specific method used to generate the Private Key was flawed;
 3. The CA is aware of a demonstrated or proven method that exposes the Subscriber's Private Key to compromise;
@@ -1894,12 +1895,12 @@ h. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)
    __Optional__ if the `subject:organizationName` field, `subject:givenName` field, and `subject:surname` field are absent.  
    __Contents:__ If the `subject:organizationName` field is present, the `subject:countryName` MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the `subject:organizationName` field is absent, the `subject:countryName` field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
-i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)
+i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)  
    __Required/Optional:__ __Optional__.  
    __Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains `subject:organizationName`, `subject:givenName`, `subject:surname`, `subject:localityName`, and `subject:countryName` attributes, also verified in accordance with Section 3.2.2.1.
 
-j. Other Subject Attributes
-Other attributes MAY be present within the subject field. If present, other attributes MUST contain information that has been verified by the CA.
+j. Other Subject Attributes  
+   Other attributes MAY be present within the subject field. If present, other attributes MUST contain information that has been verified by the CA.
 
 #### 7.1.4.3. Subject Information - Root Certificates and Subordinate CA Certificates
 By issuing a Subordinate CA Certificate, the CA represents that it followed the procedure set forth in its Certificate Policy and/or Certification Practice Statement to verify that, as of the Certificate's issuance date, all of the Subject Information was accurate.
@@ -1957,7 +1958,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)`
 
-`{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines (1) } (2.23.140.1.1)`
+`{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines(1)} (2.23.140.1.1)`
 
 #### 7.1.6.2. Root CA Certificates
 A Root CA Certificate SHOULD NOT contain the certificatePolicies extension. If present, the extension MUST conform to the requirements set forth for Certificates issued to Subordinate CAs in Section 7.1.6.3.
@@ -1978,19 +1979,26 @@ A Certificate issued to a Subordinate CA that is an affiliate of the Issuing CA:
 The Subordinate CA and the Issuing CA SHALL represent, in their Certificate Policy and/or Certification Practice Statement, that all Certificates containing a policy identifier indicating compliance with these Requirements are issued and managed in accordance with these Requirements.
 
 #### 7.1.6.4 Subscriber Certificates
-Effective 2020-09-30, a Certificate issued to a Subscriber MUST contain, within the Certificate's certificatePolicies extension, one or more policy identifier(s) that are specified beneath the CA/Browser Forum's reserved policy OID arc of {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1)} (2.23.140.1).
+Effective 2020-09-30, a Certificate issued to a Subscriber MUST contain, within the Certificate's certificatePolicies extension, one or more policy identifier(s) that are specified beneath the CA/Browser Forum's reserved policy OID arc of `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1)} (2.23.140.1)`.
 
 The certificate MAY also contain additional policy identifier(s) defined by the Issuing CA. The issuing CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these requirements.
 
 For certificates issued prior to 2020-09-30, a Certificate issued to a Subscriber MUST contain a certificatePolicies extension. The extension MUST contain one or more policy identifiers that indicate adherence to and compliance with these Requirements. CAs MUST either use a CA/Browser Forum identifier reserved for this purpose or MUST use a policy identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement to indicate the Certificate's compliance with these Requirements.
 
-The extension MAY include the policy identifier `2.23.140.1.2.1` if the Certificate complies with these Requirements and lacks Subject Identity Information that has been verified in accordance with Section 3.2.2.1 or Section 3.2.3. Such Certificates MUST NOT include `organizationName`, `givenName`, `surname`, `streetAddress`, `localityName`, `stateOrProvinceName`, or `postalCode` in the Subject field.
+Prior to including a Reserved Certificate Policy Identifier, the CA MUST ensure the following requirements are met:
 
-The extension MAY include the policy identifier `2.23.140.1.2.2`, if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1. Such Certificates MUST also include `organizationName`, `localityName` (to the extent such field is required under Section 7.1.4.2.2), `stateOrProvinceName` (to the extent such field is required under Section 7.1.4.2.2), and `countryName` in the Subject field. 
-
-The extension MAY include the policy identifier `2.23.140.1.2.3`, if the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.3. Such Certificates MUST also include either `organizationName` or both `givenName` and `surname`, `localityName` (to the extent such field is required under Section 7.1.4.2.2), `stateOrProvinceName` (to the extent required under Section 7.1.4.2.2), and `countryName` in the Subject field.
-
-The extension MAY include the policy identifier `2.23.140.1.1`, if the Certificate complies with these Requirements and has been issued and operated in accordance with the CA/Browser Forum Guidelines for the Issuance and Management of Extended Validation Certificates ("EV Guidelines"). Such Certificates MUST also include Subject Identity Information as required and verified according to the EV Guidelines.
+* __Certificate Policy Identifier:__ `2.23.140.1.2.1`  
+  If the Certificate complies with these requirements and lacks Subject identity information that has been verified in accordance with Section 3.2.2.1 or Section 3.2.3.  
+  Such Certificates MUST NOT include `organizationName`, `givenName`, `surname`, `streetAddress`, `localityName`, `stateOrProvinceName`, or `postalCode` in the Subject field.  
+* __Certificate Policy Identifier:__ `2.23.140.1.2.2`  
+  If the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.2.1.  
+  Such Certificates MUST also include `organizationName`, `localityName` (to the extent such field is required under Section 7.1.4.2.2), `stateOrProvinceName` (to the extent such field is required under Section 7.1.4.2.2), and `countryName` in the Subject field.  
+* __Certificate Policy Identifier:__ `2.23.140.1.2.3`  
+  If the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with Section 3.2.3.  
+  Such Certificates MUST also include either `organizationName` or both `givenName` and `surname`, `localityName` (to the extent such field is required under Section 7.1.4.2.2), `stateOrProvinceName` (to the extent required under Section 7.1.4.2.2), and `countryName` in the Subject field.  
+* __Certificate Policy Identifier:__ `2.23.140.1.1`  
+  If the Certificate complies with these Requirements and has been issued and operated in accordance with the CA/Browser Forum Guidelines for the Issuance and Management of Extended Validation Certificates ("EV Guidelines").  
+  Such Certificates MUST also include Subject Identity Information as required and verified according to the EV Guidelines.  
 
 ### 7.1.7 Usage of Policy Constraints extension
 
