@@ -1259,7 +1259,7 @@ A Qualified Government Tax Information Source is a Qualified Government Informat
 
 The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirements apply equally to EV Certificates.
 
-### 11.12.2.  Denied Lists and Other Legal Black Lists
+### 11.12.2.  Denied Lists and Other Legal Block Lists
 
 (1)  **Verification Requirements:**  The CA MUST verify whether the Applicant, the Contract Signer, the Certificate Approver, the Applicant's Jurisdiction of Incorporation, Registration, or Place of Business:
 
