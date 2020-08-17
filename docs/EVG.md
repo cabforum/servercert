@@ -695,7 +695,7 @@ The Registration Scheme MUST be encoded as described by the following ASN.1 gram
 >            registrationReference UTF8String
 >        }
 
-where the subfields have the same meanings and restrictions described in Section 9.2.8. The CA SHALL validate the contents using the requirements in Section 9.2.8.
+where the subfields have the same values, meanings, and restrictions described in Section 9.2.8. The CA SHALL validate the contents using the requirements in Section 9.2.8.
 
 # 10. EV Certificate Request Requirements
 
