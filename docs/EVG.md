@@ -1,6 +1,6 @@
 
 
-**Version 1.7.2**
+**Version 1.7.3**
 
 ##
 
@@ -26,7 +26,7 @@ This document is a translation of the original English version. In the event tha
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.7.2 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC27, passed by the Forum on 19 February 2020 and effective as of 27 March 2020.
+This version 1.7.3 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballots SC30 and SC31, passed by the Server Certificate Working Group on 13 and 16 July 2020 respectively, and effective as of 20 August 2020.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -77,6 +77,8 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
 | 1.7.1 | SC24 | Fall cleanup v2 | 12 Nov 2019 | 19 Dec 2019 |
 | 1.7.2 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
+| 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
+| 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
 
 ### Relevant Dates
 
@@ -84,7 +86,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | --- | --- | --- |
 | 2020-01-31 | 9.2.8 | If subject:organizationIdentifier is present, the Subject Organization Identifier Extension MUST be present |
 | 2020-09-01 | 9.4 & Appendix F | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
-| 2020-10-1 | 11.1.3 | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
+| 2020-10-01 | 11.1.3 | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
