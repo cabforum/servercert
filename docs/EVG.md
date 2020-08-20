@@ -1,6 +1,6 @@
 
 
-**Version 1.7.2**
+**Version 1.7.3**
 
 ##
 
@@ -26,7 +26,7 @@ This document is a translation of the original English version. In the event tha
 
 Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.7.2 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC27, passed by the Forum on 19 February 2020 and effective as of 27 March 2020.
+This version 1.7.3 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballots SC30 and SC31, passed by the Server Certificate Working Group on 13 and 16 July 2020 respectively, and effective as of 20 August 2020.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -77,12 +77,16 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
 | 1.7.1 | SC24 | Fall cleanup v2 | 12 Nov 2019 | 19 Dec 2019 |
 | 1.7.2 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
+| 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
+| 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
 
 ### Relevant Dates
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |
 | 2020-01-31 | 9.2.8 | If subject:organizationIdentifier is present, the Subject Organization Identifier Extension MUST be present |
+| 2020-09-01 | 9.4 & Appendix F | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
+| 2020-10-01 | 11.1.3 | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
 
 **Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -294,6 +298,8 @@ Terms not otherwise defined in these Guidelines shall be as defined in applicabl
 
 The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Guidelines shall be interpreted in accordance with RFC 2119.
 
+By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
+
 # 7.  Certificate Warranties and Representations
 
 ## 7.1. EV Certificate Warranties
@@ -490,6 +496,8 @@ Country:
 
 **Contents:**    These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency.  For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information.  Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information.  And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information.  Country information MUST be specified using the applicable ISO country code.  State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
+Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, the values within these fields have been disclosed within the latest publicly-available disclosure, as described in Section 11.1.3, as acceptable values for the applicable Incorporating Agency or Registration Agency.
+
 ### 9.2.5.  Subject Registration Number Field
 
 **Certificate field:**    _subject:serialNumber_ (OID:  2.5.4.5)
@@ -501,6 +509,8 @@ Country:
 For Government Entities that do not have a Registration Number or readily verifiable date of creation, the CA SHALL enter appropriate language to indicate that the Subject is a Government Entity.
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field.  For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
+
+Effective as of 1 October 2020, if the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in Section 11.1.3, the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating agency. 
 
 ### 9.2.6.  Subject Physical Address of Place of Business Field
 
@@ -600,7 +610,10 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 
 ## 9.4.  Maximum Validity Period For EV Certificate
 
-The validity period for an EV Certificate SHALL NOT exceed 825 days.  It is RECOMMENDED that EV Subscriber Certificates have a maximum validity period of twelve months.
+The Validity Period for an EV Certificate SHALL NOT exceed 825 days. 
+Effective 2020-09-01, the Validity Period for an EV Certificate SHALL NOT exceed 398 days.
+
+It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
 
 ## 9.5.  Subscriber Public Key
 
@@ -749,6 +762,18 @@ Before issuing an EV Certificate, the CA MUST ensure that all Subject organizati
 ###  11.1.2.  Acceptable Methods of Verification – Overview
 
 As a general rule, the CA is responsible for taking all verification steps reasonably necessary to satisfy each of the Verification Requirements set forth in the subsections below.  The Acceptable Methods of Verification set forth in each of Sections 11.2 through 11.14 (which usually include alternatives) are considered to be the minimum acceptable level of verification required of the CA.  In all cases, however, the CA is responsible for taking any additional verification steps that may be reasonably necessary under the circumstances to satisfy the applicable Verification Requirement.
+
+### 11.1.3.  Disclosure of Verification Sources
+
+Effective as of 1 October 2020, prior to the use of an Incorporating Agency or Registration Agency to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency or Registration Agency. This disclosure SHALL be through an appropriate and readily accessible online means.
+
+This Agency Information SHALL include at least the following:
+* Sufficient information to unambiguously identify the Incorporating Agency or Registration Agency (such as a name, jurisdiction, and website); and,
+* The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jursidictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisdiction(s) that the Agency is appropriate for; and,
+* The acceptable form or syntax of Registration Numbers used by the Incorporating Agency or Registration Agency, if the CA restricts such Numbers to an acceptable form or syntax; and,
+* A revision history that includes a unique version number and date of publication for any additions, modifications, and/or removals from this list.
+
+The CA MUST document where to obtain this information within Section 3.2 of the CA's Certificate Policy and/or Certification Practice Statement.
 
 ## 11.2.  Verification of Applicant's Legal Existence and Identity
 
@@ -1778,7 +1803,7 @@ cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 
 4. Each Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
 
-5. CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a validity period longer than 15 months.
+5. CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 15 months. Effective 2020-09-01, CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 398 days.
 
 6. When a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this Appendix F.
 
