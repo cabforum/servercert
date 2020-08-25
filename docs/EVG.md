@@ -20,7 +20,7 @@ Copyright © 2007-2020, members of the CA/Browser Forum. This work is licensed u
 
 The CA/Browser Forum requests that translated versions of these guidelines prominently display the following statement in the language of the translation :-
 
-'Copyright © 2007-2020, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license. 
+'Copyright © 2007-2020, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
 
 This document is a translation of the original English version. In the event that there is a discrepancy between this version and the original English version, the original English version shall govern.'
 
@@ -112,7 +112,7 @@ The primary purposes of an EV Certificate are to:
 
  (2) **Enable encrypted communications with a Web site:**  Facilitate the exchange of encryption keys in order to enable the encrypted communication of information over the Internet between the user of an Internet browser and a Web site.
 
-### 2.1.2  Secondary Purposes
+### 2.1.2.  Secondary Purposes
 
 The secondary purposes of an EV Certificate are to help establish the legitimacy of a business claiming to operate a Web site or distribute executable code, and to provide a vehicle that can be used to assist in addressing problems related to phishing, malware, and other forms of online identity fraud.  By providing more reliable third-party verified identity and address information regarding the business, EV Certificates may help to:
 
@@ -510,7 +510,7 @@ For Government Entities that do not have a Registration Number or readily verifi
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field.  For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
 
-Effective as of 1 October 2020, if the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in Section 11.1.3, the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating agency. 
+Effective as of 1 October 2020, if the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in Section 11.1.3, the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating agency.
 
 ### 9.2.6.  Subject Physical Address of Place of Business Field
 
@@ -571,9 +571,8 @@ Registration Schemes listed in Appendix H are currently recognized as valid unde
 
 The CA SHALL:
 
-1. confirm that the organization represented by the Registration Reference is the same as the organization named in the organizationName field as specified in Section 9.2.1 within the context of the subject’s jurisdiction as specified in 
-   Section 9.2.4;
-2. further verify the Registration Reference matches other information verified in accordance with section 11; 
+1. confirm that the organization represented by the Registration Reference is the same as the organization named in the organizationName field as specified in Section 9.2.1 within the context of the subject’s jurisdiction as specified in Section 9.2.4;
+2. further verify the Registration Reference matches other information verified in accordance with section 11;
 3. take appropriate measures to disambiguate between different organizations as described in Appendix H for each Registration Scheme;
 4. Apply the validation rules relevant to the Registration Scheme as specified in Appendix H.
 
@@ -591,7 +590,7 @@ This section sets forth minimum requirements for the contents of EV Certificates
 
 Each EV Certificate issued by the CA to a Subscriber MUST contain a policy identifier that is either defined by these Guidelines or the CA in the certificate's certificatePolicies extension that:  (i) indicates which CA policy statement relates to that Certificate, (ii) asserts the CA's adherence to and compliance with these Guidelines, and (iii) is either the CA/Browser Forum’s EV policy identifier or a policy identifier that, by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
 
-The following Certificate Policy identifier is the CA/Browser Forum’s EV policy identifier: 
+The following Certificate Policy identifier is the CA/Browser Forum’s EV policy identifier:
 {joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines (1) } (2.23.140.1.1), if the Certificate complies with these Guidelines.
 
 ### 9.3.3.  Root CA Certificates
@@ -610,7 +609,7 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 
 ## 9.4.  Maximum Validity Period For EV Certificate
 
-The Validity Period for an EV Certificate SHALL NOT exceed 825 days. 
+The Validity Period for an EV Certificate SHALL NOT exceed 825 days.
 Effective 2020-09-01, the Validity Period for an EV Certificate SHALL NOT exceed 398 days.
 
 It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
@@ -627,7 +626,7 @@ The requirements in Section 7.1 of the Baseline Requirements apply equally to EV
 
 All provisions of the Baseline Requirements concerning Minimum Cryptographic Algorithms, Key Sizes, and Certificate Extensions apply to EV Certificates with the following exceptions:
 
-(1)  If a Subordinate CA Certificates is issued to a Subordinate CA not controlled by the entity that controls the Root CA, the policy identifiers in the certificatePolicies extension MUST include the CA's Extended Validation policy identifier. 
+(1)  If a Subordinate CA Certificates is issued to a Subordinate CA not controlled by the entity that controls the Root CA, the policy identifiers in the certificatePolicies extension MUST include the CA's Extended Validation policy identifier.
 
 Otherwise, it MAY contain the anyPolicy identifier.
 
@@ -655,11 +654,11 @@ Otherwise, it MAY contain the anyPolicy identifier.
 
     - HTTP URL for the Subordinate CA's Certification Practice Statement
 
-(4)  The cRLDistribution Point extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an authorityInformationAccess extension.
+(4)  The cRLDistributionPoints extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an authorityInformationAccess extension.
 
 ## 9.8. Certificate Extensions
 
-The extensions listed in the Section 9.8 are recommended for maximum interoperability between certificates and browsers / applications, but are not mandatory on the CAs except where indicated as “Required”.  CAs may use other extensions that are not listed in this Section 9.8, but are encouraged to add them to this section by ballot from time to time to help increase externsion standardization across the industry.  
+The extensions listed in the Section 9.8 are recommended for maximum interoperability between certificates and browsers / applications, but are not mandatory on the CAs except where indicated as “Required”.  CAs may use other extensions that are not listed in this Section 9.8, but are encouraged to add them to this section by ballot from time to time to help increase extension standardization across the industry.  
 
 If a CA includes an extension in a certificate that has a Certificate field which is named in this Section 9.8, the CA must follow the format specified in that subjection.  However, no extension or extension format shall be mandatory on a CA unless specifically stated as “Required” in the subsection that describes the extension.
 
@@ -671,12 +670,12 @@ If a CA includes an extension in a certificate that has a Certificate field whic
 
 **Contents:** This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
 
-### 9.8.2 CA/Browser Forum Organization Identifier Extension
+### 9.8.2. CA/Browser Forum Organization Identifier Extension
 
 **Extension Name:** _cabfOrganizationIdentifier_ (OID: 2.23.140.3.1)
 
 **Verbose OID:** {joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }
-              
+
 **Required/Optional:** Optional (but see below)
 
 **Contents:** If the subject:organizationIdentifier is present, this field MUST be present.
@@ -715,7 +714,7 @@ The following Applicant roles are required for the issuance of an EV Certificate
 
 (2)  **Certificate Approver:**  The EV Certificate Request MUST be approved by an authorized Certificate Approver.  A Certificate Approver is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to (i) act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and (ii) to approve EV Certificate Requests submitted by other Certificate Requesters.
 
-(3)  **Contract Signer:**  Subcriber Agreement applicable to the requested EV Certificate MUST be signed by an authorized Contract Signer.  A Contract Signer is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
+(3)  **Contract Signer:**  A Subscriber Agreement applicable to the requested EV Certificate MUST be signed by an authorized Contract Signer.  A Contract Signer is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
 
 (4)   **Applicant Representative:**   In the case where the CA and the Subscriber are affiliated, Terms of Use applicable to the requested EV Certificate MUST be acknowledged and agreed to by an authorized Applicant Representative.  An Applicant Representative is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to acknowledge and agree to the Terms of Use.
 
@@ -769,7 +768,7 @@ Effective as of 1 October 2020, prior to the use of an Incorporating Agency or R
 
 This Agency Information SHALL include at least the following:
 * Sufficient information to unambiguously identify the Incorporating Agency or Registration Agency (such as a name, jurisdiction, and website); and,
-* The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jursidictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisdiction(s) that the Agency is appropriate for; and,
+* The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisdiction(s) that the Agency is appropriate for; and,
 * The acceptable form or syntax of Registration Numbers used by the Incorporating Agency or Registration Agency, if the CA restricts such Numbers to an acceptable form or syntax; and,
 * A revision history that includes a unique version number and date of publication for any additions, modifications, and/or removals from this list.
 
@@ -907,7 +906,7 @@ The Third-Party Validator performing the face-to-face validation MUST:
 
 ## 11.3.  Verification of Applicant's Legal Existence and Identity – Assumed Name
 
-### 11.3.1  Verification Requirements
+### 11.3.1.  Verification Requirements
 
 If, in addition to the Applicant's formal legal name, as recorded with the applicable Incorporating Agency or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, the Applicant's identity, as asserted in the EV Certificate, is to contain any assumed name (also known as "doing business as", "DBA", or "d/b/a" in the US, and "trading as" in the UK) under which the Applicant conducts business, the CA MUST verify that:  (i) the Applicant has registered its use of the assumed name with the appropriate government agency for such filings in the jurisdiction of its Place of Business (as verified in accordance with these Guidelines), and (ii) that such filing continues to be valid.
 
@@ -953,7 +952,7 @@ To verify any assumed name under which the Applicant conducts business:
 
 (iv) For Applicants whose Place of Business is in the same country as the Applicant's Jurisdiction of Incorporation or Registration and where the QGIS used in Section 11.2 to verify legal existence contains a business address for the Applicant, the CA MAY rely on the address in the QGIS to confirm the Applicant's or a Parent/Subsidiary Company's address as listed in the EV Certificate Request, and MAY rely on the Applicant's representation that such address is its Place of Business.
 
-(B) **Place of Business not in the Country of Incorporation or Registration:  ** The CA MUST rely on a Verified Professional Letter that indicates the address of the Applicant's Place of Business and that business operations are conducted there.
+(B) **Place of Business not in the Country of Incorporation or Registration:** The CA MUST rely on a Verified Professional Letter that indicates the address of the Applicant's Place of Business and that business operations are conducted there.
 
 ## 11.5. Verified Method of Communication
 
@@ -1041,7 +1040,7 @@ Acceptable methods of verification of the Signing Authority of the Contract Sign
 
 (4) **Contract between CA and Applicant:**  The EV Authority of the Certificate Approver MAY be verified by reliance on a contract between the CA and the Applicant that designates the Certificate Approver with such EV Authority, provided that the contract is signed by the Contract Signer and provided that the agency and Signing Authority of the Contract Signer have been verified;
 
-(5) **Prior Equivalent Authority:**  The signing authority of the Contract Signer,and/or the EV authority of the Certificate Approver, MAY be verified by relying on a demonstration of Prior Equivalent Authority.
+(5) **Prior Equivalent Authority:**  The signing authority of the Contract Signer, and/or the EV authority of the Certificate Approver, MAY be verified by relying on a demonstration of Prior Equivalent Authority.
 
 (A) Prior Equivalent Authority of a Contract Signer MAY be relied upon for confirmation or verification of the signing authority of the Contract Signer when the Contract Signer has executed a binding contract between the CA and the Applicant with a legally valid and enforceable seal or handwritten signature and only when the contract was executed more than 90 days prior to the EV Certificate application.  The CA MUST record sufficient details of the previous agreement to correctly identify it and associate it with the EV application.  Such details MAY include any of the following:
 
@@ -1153,7 +1152,7 @@ In circumstances where the opinion is digitally signed, in a manner that confirm
 
 ### 11.11.2.  Verified Accountant Letter
 
-(1)  **Verification Requirements:  ** Before relying on an accountant letter submitted to the CA, the CA MUST verify that such accountant letter meets the following requirements:
+(1)  **Verification Requirements:** Before relying on an accountant letter submitted to the CA, the CA MUST verify that such accountant letter meets the following requirements:
 
  (A) **Status of Author:**  The CA MUST verify that the accountant letter is authored by an Accounting Practitioner retained or employed by the Applicant and licensed within the country of the Applicant's Jurisdiction of Incorporation, Jurisdiction of Registration, or country where the Applicant maintains an office or physical facility.  Verification of license MUST be  through the member organization or regulatory organization in the Accounting Practitioner's country or jurisdiction that is appropriate to contact when verifying an accountant's license to practice in that country or jurisdiction.  Such country or jurisdiction must have an accounting standards body that maintains full membership status with the International Federation of Accountants.
 
@@ -1265,7 +1264,7 @@ The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirem
 
 (A)  Is identified on any government denied list, list of prohibited persons, or other list that prohibits doing business with such organization or person under the laws of the country of the CA's jurisdiction(s) of operation; or
 
-(B)  Has its Jurisdiction of Incorporation, Registration, orPlace of Business in any country with which the laws of the CA's jurisdiction prohibit doing business.
+(B)  Has its Jurisdiction of Incorporation, Registration, or Place of Business in any country with which the laws of the CA's jurisdiction prohibit doing business.
 
 The CA MUST NOT issue any EV Certificate to the Applicant if either the Applicant, the Contract Signer, or Certificate Approver or if the Applicant's Jurisdiction of Incorporation or Registration or Place of Business is on any such list.
 
@@ -1423,7 +1422,7 @@ The requirements in Section 5.3.3 of the Baseline Requirements apply equally to 
 
 ### 14.2.1.  General
 
-The CA MAY delegate the performance of all or any part of a requirement of these Guidelines to an Affiliate or a Registration Authority (RA) or subcontractor, provided that the process employed by the CA fulfills all of the requirements of Section 11.13. 
+The CA MAY delegate the performance of all or any part of a requirement of these Guidelines to an Affiliate or a Registration Authority (RA) or subcontractor, provided that the process employed by the CA fulfills all of the requirements of Section 11.13.
 Affiliates and/or RAs must comply with the qualification requirements of Section 14.1 of these Guidelines.
 
 The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of Section 14 and the document retention and event logging requirements of Section 15.
@@ -1464,9 +1463,9 @@ As specified in Section 5 of the Baseline Requirements. In addition, systems use
 
 A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following schemes:
 
- (i) WebTrust Program for CAs audit and WebTrust EV Program audit, 
- (ii) ETSI TS 102 042 audit for EVCP, or 
- (iii) ETSI EN 319 411-1 audit for EVCP policy. 
+ (i) WebTrust Program for CAs audit and WebTrust EV Program audit,
+ (ii) ETSI TS 102 042 audit for EVCP, or
+ (iii) ETSI EN 319 411-1 audit for EVCP policy.
 
 If the CA is a Government Entity, an audit of the CA by the appropriate internal government auditing agency is acceptable in lieu of the audits specified above, provided that such internal government auditing agency publicly certifies in writing that its audit addresses the criteria specified in one of the above audit schemes and certifies that the government CA has successfully passed the audit.
 
@@ -1549,7 +1548,7 @@ On this basis, we hereby offer the following opinion:
 
 3. That _[name of Client's Representative]_ /#2 has authority to act on behalf of Company to:  [_select as appropriate_] (a) provide the information about Company required for issuance of the EV Certificates as contained in the attached Application, (b) request one or more EV Certificates and to designate other persons to request EV Certificates, and (c) agree to the relevant contractual obligations contained in the Subscriber Agreement on behalf of Company.
 
-4. That Company has a physical presence and its place of business is at the following location: 
+4. That Company has a physical presence and its place of business is at the following location:
 
 5. That Company can be contacted at its stated place of business at the following telephone number:
 
@@ -1576,8 +1575,8 @@ Footnote /#1:  This must be the Client's exact corporate name, as registered wit
 Footnote /#2:  If necessary to establish the Client Representative's actual authority, you may rely on a Power of Attorney from an officer of Client who has authority to delegate the authority to the Client Representative.
 
 Footnote /#3:  This letter may be issued by in-house counsel for the Client so long as permitted by the rules of your jurisdiction.
- 
- 
+
+
 # Appendix C - Sample Accountant Letters Confirming Specified Information
 
 **(Informative)**
@@ -1658,7 +1657,7 @@ NOTE:  This appendix provides alternative interpretations of the EV Guidelines f
 
 (1) Non-Latin Organization Name
 
-Where an EV Applicant's organization name is not registered with a QGIS in _Latin _characters and the Applicant's foreign character organization name and registration have been verified with a QGIS in accordance with these Guidelines, a CA MAY include a Latin character organization name in the EV Certificate.  In such a case, the CA MUST follow the procedures laid down in this section.
+Where an EV Applicant's organization name is not registered with a QGIS in _Latin_ characters and the Applicant's foreign character organization name and registration have been verified with a QGIS in accordance with these Guidelines, a CA MAY include a Latin character organization name in the EV Certificate.  In such a case, the CA MUST follow the procedures laid down in this section.
 
 (2) Romanized Names
 
@@ -1684,7 +1683,7 @@ In order to include a Latin character name in the EV certificate that is not a d
 
 (D) Confirmed by a Verified Legal Opinion or Accountant's Letter to be a translated trading name associated with the registered organization.
 
-# Country-Specific Procedures
+## D.1. Country-Specific Procedures
 
 **D-1. Japan**
 
@@ -1746,7 +1745,7 @@ A CA may issue an EV Certificate with .onion in the right-most label of the Doma
 
 1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31)
 
-The CA MUST include the CAB Forum Tor Service Descriptor Hash extension in the TBSCertificate to convey hashes of keys related to .onion addresses. The CA MUST include the Tor Service Descriptor Hash extension using the following format: 
+The CA MUST include the CAB Forum Tor Service Descriptor Hash extension in the TBSCertificate to convey hashes of keys related to .onion addresses. The CA MUST include the Tor Service Descriptor Hash extension using the following format:
 
 ```
 cabf-TorServiceDescriptor OBJECT IDENTIFIER ::= { 2.23.140.1.31 }
@@ -1764,7 +1763,7 @@ TorServiceDescriptorHash:: = SEQUENCE {
 
 }
 ```
-Where the AlgorithmIdentifier is a hashing algorithm (defined in RFC 6234) performed over the DER-encoding of an ASN.1 SubjectPublicKey of the .onion service and SubjectPublicKeyHash is the hash output.
+Where the AlgorithmIdentifier is a hashing algorithm (defined in RFC 6234) performed over the DER-encoding of an ASN.1 subjectPublicKey of the .onion service and subjectPublicKeyHash is the hash output.
 
 2. The CA MUST verify the Applicant's control over the .onion Domain Name using one of the following:
 
@@ -1811,7 +1810,7 @@ cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
 
 #  Appendix G – Abstract Syntax Notation One module for EV certificates
 
-``` 
+```
 CABFSelectedAttributeTypes {joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) module(4) cabfSelectedAttributeTypes(1) 1}
 DEFINITIONS ::=
 BEGIN
@@ -1847,7 +1846,7 @@ jurisdictionStateOrProvinceName ATTRIBUTE ::= {
   LDAP-SYNTAX              directoryString.&id
   LDAP-NAME                {"jurisdictionST"}
   ID                       id-evat-jurisdiction-stateOrProvinceName }
-  
+
 jurisdictionCountryName ATTRIBUTE ::= {
   SUBTYPE OF               name
   WITH SYNTAX              CountryName
@@ -1861,33 +1860,33 @@ END
 
 #  Appendix H – Registration Schemes
 
-The following Registration Schemes are currently recognised as valid under these 
+The following Registration Schemes are currently recognized as valid under these
 guidelines:
 
-**NTR**: The information carried in this field shall be the same as held in Subject 
-   Registration Number Field as specified in 9.2.5 and the country code used in 
-   the Registration Scheme identifier shall match that of the subject’s jurisdiction 
+**NTR**: The information carried in this field shall be the same as held in Subject
+   Registration Number Field as specified in 9.2.5 and the country code used in
+   the Registration Scheme identifier shall match that of the subject’s jurisdiction
    as specified in Section 9.2.4.
 
-   Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 
+   Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4
    includes more than the country code, the additional locality information shall
    be included as specified in sections 9.2.8 and/or 9.8.2.
 
-**VAT**: Reference allocated by the national tax authorities to a Legal Entity. This 
-   information shall be validated using information provided by the national tax 
-   authority against the organisation as identified by the Subject Organization 
-   Name Field (see 9.2.1) and Subject Registration Number Field (see 9.2.5) within 
+**VAT**: Reference allocated by the national tax authorities to a Legal Entity. This
+   information shall be validated using information provided by the national tax
+   authority against the organization as identified by the Subject Organization
+   Name Field (see 9.2.1) and Subject Registration Number Field (see 9.2.5) within
    the context of the subject’s jurisdiction as specified in Section 9.2.4.
-   
-**PSD**: Authorization number as specified in ETSI TS 119 495 clause 4.4 allocated to a 
-   payment service provider and containing the information as specified in 
-   ETSI TS 119 495 clause 5.2.1.  This information SHALL be obtained directly from the 
-   national competent authority register for payment services or from an information 
-   source approved by a government agency, regulatory body, or legislation for this 
-   purpose.  This information SHALL be validated by being matched directly or indirectly 
-   (for example, by matching a globally unique registration number) against the 
-   organisation as identified by the Subject Organization Name Field (see 9.2.1) and 
-   Subject Registration Number Field (see 9.2.5) within the context of the subject’s 
-   jurisdiction as specified in Section 9.2.4.  The stated address of the organisation 
-   combined with the organization name SHALL NOT be the only information used to 
-   disambiguate the organisation.
+
+**PSD**: Authorization number as specified in ETSI TS 119 495 clause 4.4 allocated to a
+   payment service provider and containing the information as specified in
+   ETSI TS 119 495 clause 5.2.1.  This information SHALL be obtained directly from the
+   national competent authority register for payment services or from an information
+   source approved by a government agency, regulatory body, or legislation for this
+   purpose.  This information SHALL be validated by being matched directly or indirectly
+   (for example, by matching a globally unique registration number) against the
+   organization as identified by the Subject Organization Name Field (see 9.2.1) and
+   Subject Registration Number Field (see 9.2.5) within the context of the subject’s
+   jurisdiction as specified in Section 9.2.4.  The stated address of the organization
+   combined with the organization name SHALL NOT be the only information used to
+   disambiguate the organization.
