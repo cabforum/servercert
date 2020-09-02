@@ -142,17 +142,11 @@ h. Have a policy that requires Trusted Roles to log out of or lock workstations 
 
 i. Have a procedure to configure workstations with inactivity time-outs that log the user off or lock the workstation after a set time of inactivity without input from the user (the CA or Delegated Third Party MAY allow a workstation to remain active and unattended if the workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time-out or system lock);
 
-j. Review accounts and access permissions at least every three (3) months or continuously monitor them for access that is no longer necessary for operation. Access that is identified to be no longer necessary for operation shall be removed.
-
-   If continuous monitoring is used, the approved access permission configurations shall be reviewed every six (6) months.
-
 k. Lockout account access to Certificate Systems after no more than five (5) failed access attempts, provided that this security measure;
 
    1. Is supported by the Certificate System,
    2. Cannot be leveraged for a denial of service attack, and
    3. Does not weaken the security of this authentication control;
-
-l. Implement a process that disables all privileged access of an individual to Certificate Systems within twenty four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
 
 m. Enforce Multi-Factor Authentication OR multi-party authentication for administrator access to Issuing Systems and Certificate Management Systems;
 
@@ -167,6 +161,13 @@ o. Restrict remote administration or access to an Issuing System, Certificate Ma
       i. located within the CA’s network,
       ii. secured in accordance with these Requirements, and
       iii. that mediates the remote connection to the Issuing System.
+
+p. Implement a process that disables all privileged access of an individual to Certificate Systems within twenty four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
+
+q. Review accounts and access permissions at least every three (3) months or continuously monitor them for access that is no longer necessary for operation. Access that is identified to be no longer necessary for operation shall be removed.
+
+   If continuous monitoring is used, the approved access permission configurations shall be reviewed every six (6) months.
+
 
 # 3. Logging, Monitoring, and Alerting
 
