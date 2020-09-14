@@ -262,6 +262,8 @@ No stipulation.
 
 **Certification Practice Statement**: One of several documents forming the governance framework in which Certificates are created, issued, managed, and used.
 
+**Certificate Profile**: A set of documents or files that defines requirements for Certificate content and Certificate extensions in accordance with Section 7 of the Baseline Requirements. e.g. a Section in a CA’s CPS or a certificate template file used by CA software.
+
 **Control**: "Control" (and its correlative meanings, "controlled by" and "under common control with") means possession, directly or indirectly, of the power to: (1) direct the management, personnel, finances, or plans of such entity; (2) control the election of a majority of the directors ; or (3) vote that portion of voting shares required for "control" under the law of the entity's Jurisdiction of Incorporation or Registration but in no case less than 10%.
 
 **Country**: Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations.
@@ -1307,43 +1309,52 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 ## 5.4 Audit logging procedures
 
 ### 5.4.1 Types of events recorded
-The CA and each Delegated Third Party SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA's compliance with these Requirements.
+
+The CA and each Delegated Third Party SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA’s compliance with these Requirements.
 
 The CA SHALL record at least the following events:
 
-1. CA key lifecycle management events, including:
+1. CA certificate and key lifecycle events, including:
+   1. Key generation, backup, storage, recovery, archival, and destruction;
+   2. Certificate requests, renewal, and re-key requests, and revocation;
+   3. Approval and rejection of certificate requests;
+   4. Cryptographic device lifecycle management events;
+   5. Generation of Certificate Revocation Lists and OCSP entries;
+   6. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
 
-   a. Key generation, backup, storage, recovery, archival, and destruction; and
-   b. Cryptographic device lifecycle management events.
-
-2. CA and Subscriber Certificate lifecycle management events, including:
-
-   a. Certificate requests, renewal, and re-key requests, and revocation;
-   b. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-   c. Date, time, phone number used, persons spoken to, and end results of verification telephone calls;
-   d. Acceptance and rejection of certificate requests; Frequency of Processing Log
-   e. Issuance of Certificates; and
-   f. Generation of Certificate Revocation Lists and OCSP entries.
+2. Subscriber Certificate lifecycle management events, including:
+   1. Certificate requests, renewal, and re-key requests, and revocation;
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
+   3. Approval and rejection of certificate requests;
+   4. Issuance of Certificates; and
+   5. Generation of Certificate Revocation Lists and OCSP entries.
 
 3. Security events, including:
+   1. Successful and unsuccessful PKI system access attempts;
+   2. PKI and security system actions performed;
+   3. Security profile changes;
+   4. Installation, update and removal of software on a Certificate System;
+   5. System crashes, hardware failures, and other anomalies;
+   6. Firewall and router activities; and
+   7. Entries to and exits from the CA facility.
 
-   a. Successful and unsuccessful PKI system access attempts;
-   b. PKI and security system actions performed;
-   c. Security profile changes;
-   d. System crashes, hardware failures, and other anomalies;
-   e. Firewall and router activities; and
-   f. Entries to and exits from the CA facility.
+Log records MUST include the following elements:
 
-Log entries MUST include the following elements:
-
-1. Date and time of entry;
-2. Identity of the person making the journal entry; and
-3. Description of the entry.
+1. Date and time of record;
+2. Identity of the person making the journal record; and
+3. Description of the record.
 
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
 
 ### 5.4.3 Retention Period for Audit Logs
-The CA SHALL retain any audit logs generated for at least seven years. The CA SHALL make these audit logs available to its Qualified Auditor upon request.
+
+The CA SHALL retain, for at least two years:
+
+  1. CA certificate and key lifecycle management event records (as set forth in Section 5.4.1 (1)) after the later occurrence of:
+     1. the destruction of the CA Private Key; or
+     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
+  2. Subscriber Certificate lifecycle management event records (as set forth in Section 5.4.1 (2)) after the revocation or expiration of the Subscriber Certificate;
+  3. Any security event records (as set forth in Section 5.4.1 (3)) after the event occurred.
 
 ### 5.4.4 Protection of Audit Log
 
