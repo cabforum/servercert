@@ -7,9 +7,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.7.1**
+**Version 1.7.2**
 
-**August 20, 2020**
+**September 22, 2020**
 
 **www.cabforum.org**
 
@@ -119,6 +119,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.0 | SC29 | Pandoc-Friendly Markdown Formatting Changes | 20-Mar-2020	| 4-May-2020 |
 | 1.7.1 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
 | 1.7.1 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
+| 1.7.2 | SC33 | TLS Using ALPN Method | 14-Aug-2020	| 22-Sept-2020 |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
