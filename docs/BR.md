@@ -7,9 +7,9 @@
 
 **CA/Browser Forum**
 
-**Version 1.7.1**
+**Version 1.7.2**
 
-**August 20, 2020**
+**September 22, 2020**
 
 **www.cabforum.org**
 
@@ -119,6 +119,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.0 | SC29 | Pandoc-Friendly Markdown Formatting Changes | 20-Mar-2020	| 4-May-2020 |
 | 1.7.1 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
 | 1.7.1 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
+| 1.7.2 | SC33 | TLS Using ALPN Method | 14-Aug-2020	| 22-Sept-2020 |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
@@ -680,7 +681,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.10 TLS Using a Random Number
 
-Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value within a Certificate on the Authorization Domain Name which is accessible by the CA via TLS over an Authorized Port.
+This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
 ##### 3.2.2.4.11 Any Other Method
 
@@ -786,6 +787,14 @@ If the CA follows redirects:
 4.	Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.20 TLS Using ALPN
+
+Confirming the Applicant's control over a FQDN by validating domain control of the FQDN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC7301] as defined in RFC 8737. The following are additive requirements to RFC 8737.
+
+The token (as defined in RFC 8737, section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
+
+**Note:** Once the FQDN has been validated using this method, the CA MAY NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 
