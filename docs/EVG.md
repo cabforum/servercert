@@ -1,46 +1,36 @@
 
 
-**Version 1.7.3**
+**Version 1.7.4**
 
-##
-
-## CA/Browser Forum
-
-
-
-
-
-
-
-## Guidelines For The Issuance And Management Of
-
-## Extended Validation Certificates
+**CA/Browser Forum**
+ 
+**Guidelines For The Issuance And Management Of Extended Validation Certificates**
 
 Copyright © 2007-2020, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
 
-The CA/Browser Forum requests that translated versions of these guidelines prominently display the following statement in the language of the translation :-
+The CA/Browser Forum requests that translated versions of these guidelines prominently display the following statement in the language of the translation.
 
-'Copyright © 2007-2020, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
+    Copyright © 2007-2020, members of the CA/Browser Forum. This work is licensed under a Creative Commons Attribution 4.0 International license.
 
-This document is a translation of the original English version. In the event that there is a discrepancy between this version and the original English version, the original English version shall govern.'
+    This document is a translation of the original English version. In the event that there is a discrepancy between this version and the original English version, the original English version shall govern.
 
-Guidelines for the Issuance and Management of Extended Validation Certificates
+# Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.7.3 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballots SC30 and SC31, passed by the Server Certificate Working Group on 13 and 16 July 2020 respectively, and effective as of 20 August 2020.
+This version 1.7.4 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC35, passed by the Server Certificate Working Group on 9 September 2020, and effective as of 16 October 2020.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
 The primary purposes of Extended Validation Certificates are to:  1) identify the legal entity that controls a Web or service site, and 2) enable encrypted communications with that site.  The secondary purposes include significantly enhancing cybersecurity by helping establish the legitimacy of an organization claiming to operate a Web site, and providing a vehicle that can be used to assist in addressing problems related to distributing malware, phishing, identity theft, and diverse forms of online fraud.
 
-### Notice to Readers
+## Notice to Readers
 
 The Guidelines for the Issuance and Management of Extended Validation Certificates present criteria established by the CA/Browser Forum for use by certification authorities when issuing, maintaining, and revoking certain digital certificates for use in Internet Web site commerce.  These Guidelines may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum.  Questions or suggestions concerning these guidelines may be directed to the CA/Browser Forum at questions@cabforum.org.
 
-### The CA/Browser Forum
+## The CA/Browser Forum
 
 The CA/Browser Forum is a voluntary open organization of certification authorities and suppliers of Internet browsers and other relying-party software applications.  Membership is listed at https://cabforum.org/members/.
 
-### Document History
+## Document History
 
 | Ver. | Ballot | Description | Adopted | Effective\* |
 | --- | --- | --- | --- | --- |
@@ -79,8 +69,9 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.2 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
 | 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
 | 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
+| 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020	| 16-Oct-2020 |
 
-### Relevant Dates
+## Relevant Dates
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | --- | --- | --- |

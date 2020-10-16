@@ -2,7 +2,7 @@
 
 **NETWORK AND CERTIFICATE SYSTEM SECURITY REQUIREMENTS** 
 
-**Version 1.4 - Effective 8 June 2020**
+**Version 1.5 - Effective 16 October 2020**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
