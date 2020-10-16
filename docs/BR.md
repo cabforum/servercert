@@ -570,6 +570,31 @@ The CA MAY use the same documentation or communication described in 1 through 4 
 
 Alternatively, the CA MAY verify the address of the Applicant (but not the identity of the Applicant) using a utility bill, bank statement, credit card statement, government-issued tax document, or other form of identification that the CA determines to be reliable.
 
+#### 3.2.2.1.1 Organizational Unit
+If the Subject Identity Information is to include an organizational unit, then it SHALL NOT include a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2.
+
+The usage of commonly recognized organizational unit names is permitted and the CA is not required to verify the existence of and affiliation with the Applicant as long the value is included on a publicly disclosed list of CA has pre-approved values (disclosure of this list SHALL be through an appropriate and readily accessible online means).
+
+Self reported values SHALL be preceded or followed by a whitespace and the word “department”, “division”, “unit” or the equivalent in a language other than English. The CA may extend these options using a publicly disclosed list containing the preceded or followed values which the CA has approved; as log it's disclosed through an appropriate and readily accessible online means. 
+
+The CA SHALL verify the existence of and affiliation of the organizational unit with the Applicant using at least one of the following:
+
+1. A government agency in the jurisdiction of the Applicant’s legal creation, existence, or recognition;
+2. A government agency responsible for the management of such organizational units, DBAs or tradenames;
+3. A third party database that is periodically updated and considered a Reliable Data Source;
+4. A site visit by the CA or a third party who is acting as an agent for the CA;
+5. An Attestation Letter;
+6. A utility bill, bank statement, credit card statement, government-issued tax document, or other form of identification that the CA determines to be reliable;
+7. A connection with the Applicant's directory system;
+8. An Organizational Chart or public directory of the Applicant; or
+9. Communication with an authoritative source within the Applicant's organization, such as the Applicant's main business offices, corporate offices, human resource offices, information technology offices, or other department that the CA deems appropriate.
+
+The value SHALL not be abbreviated unless this would exceed the maximum length of the `subject:organizationalUnitName` field, in which case it SHALL only use locally accepted abbreviation.
+
+Alternatively, the CA MAY allow values or series as defined by a Government, standard, or regulatory body; or a series of at least five numerals, optionally preceded or followed by two alphabetical characters. The CA is not required to verify the accuracy of these non descriptive identifiers.
+
+Until June 30, 2023, CA's are permitted to include other types of data in the OU field on a case by case basis to allow legacy applications to adjust to the above rules.
+
 #### 3.2.2.2 DBA/Tradename
 If the Subject Identity Information is to include a DBA or tradename, the CA SHALL verify the Applicant's right to use the DBA/tradename using at least one of the following:
 
@@ -1896,8 +1921,10 @@ h. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)
    __Contents:__ If the `subject:organizationName` field is present, the `subject:countryName` MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under Section 3.2.2.1. If the `subject:organizationName` field is absent, the `subject:countryName` field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with Section 3.2.2.3. If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
 i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)
-   __Required/Optional:__ __Optional__.  
-   __Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with Section 3.2 and the Certificate also contains `subject:organizationName`, `subject:givenName`, `subject:surname`, `subject:localityName`, and `subject:countryName` attributes, also verified in accordance with Section 3.2.2.1.
+   __Required/Optional:__  
+   __Optional__ if the `subject:organizationName` field is present.  
+   __Prohibited__ if the `subject:organizationName` is absent.
+   __Contents:__ If present, the `subject:organizationalUnitName` field MUST contain the Subject's organizational unit name as verified under Section 3.2.2.1.1.
 
 j. Other Subject Attributes
 Other attributes MAY be present within the subject field. If present, other attributes MUST contain information that has been verified by the CA.
@@ -2167,11 +2194,10 @@ The Certificate Warranties specifically include, but are not limited to, the fol
 1. **Right to Use Domain Name or IP Address**: That, at the time of issuance, the CA (i) implemented a procedure for verifying that the Applicant either had the right to use, or had control of, the Domain Name(s) and IP address(es) listed in the Certificate's subject field and subjectAltName extension (or, only in the case of Domain Names, was delegated such right or control by someone who had such right to use or control); (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
 2. **Authorization for Certificate**: That, at the time of issuance, the CA (i) implemented a procedure for verifying that the Subject authorized the issuance of the Certificate and that the Applicant Representative is authorized to request the Certificate on behalf of the Subject; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
 3. **Accuracy of Information**: That, at the time of issuance, the CA (i) implemented a procedure for verifying the accuracy of all of the information contained in the Certificate (with the exception of the subject:organizationalUnitName attribute); (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-4. **No Misleading Information**: That, at the time of issuance, the CA (i) implemented a procedure for reducing the likelihood that the information contained in the Certificate's subject:organizationalUnitName attribute would be misleading; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-5. **Identity of Applicant**: That, if the Certificate contains Subject Identity Information, the CA (i) implemented a procedure to verify the identity of the Applicant in accordance with Sections 3.2 and 11.2; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-6. **Subscriber Agreement**: That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative acknowledged the Terms of Use;
-7. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
-8. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
+4. **Identity of Applicant**: That, if the Certificate contains Subject Identity Information, the CA (i) implemented a procedure to verify the identity of the Applicant in accordance with Sections 3.2 and 11.2; (ii) followed the procedure when issuing the Certificate; and (iii) accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
+5. **Subscriber Agreement**: That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative acknowledged the Terms of Use;
+6. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
+7. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
 
 The Root CA SHALL be responsible for the performance and warranties of the Subordinate CA, for the Subordinate CA's compliance with these Requirements, and for all liabilities and indemnification obligations of the Subordinate CA under these Requirements, as if the Root CA were the Subordinate CA issuing the Certificates
 
