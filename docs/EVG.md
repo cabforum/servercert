@@ -16,7 +16,7 @@ The CA/Browser Forum requests that translated versions of these guidelines promi
 
 # Guidelines for the Issuance and Management of Extended Validation Certificates
 
-This version 1.7.4 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC35, passed by the Server Certificate Working Group on 9 September 2020, and effective as of 16 October 2020.
+This version 1.7.4 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC35, passed by the Server Certificate Working Group on 9 September 2020, and effective as of 19 October 2020.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -69,7 +69,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.2 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
 | 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
 | 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
-| 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020	| 16-Oct-2020 |
+| 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020	| 19-Oct-2020 |
 
 ## Relevant Dates
 
