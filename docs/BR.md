@@ -120,7 +120,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.1 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
 | 1.7.1 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
 | 1.7.2 | SC33 | TLS Using ALPN Method | 14-Aug-2020	| 22-Sept-2020 |
-| 1.7.3 | SC28 | Logging and Log Retention | 10-Sep-2020	| 16-Oct-2020 |
+| 1.7.3 | SC28 | Logging and Log Retention | 10-Sep-2020	| 19-Oct-2020 |
 | 1.7.3 | SC35 | Cleanups and Clarifications | 9-Sep-2020	| 19-Oct-2020 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
