@@ -9,7 +9,7 @@ HTMLBASE=../
 .PHONY: all clean deploy
 
 PANDOC_MD = BR.md
-WEASY_MD = Bylaws.md EVG.md NSR.md SCWG-charter.md
+WEASY_MD = EVG.md NSR.md
 
 pandoc: $(PANDOC_MD:.md=.pdf) $(PANDOC_MD:.md=.html) $(PANDOC_MD:.md=.docx)
 weasy: $(WEASY_MD:.md=.pdf) $(WEASY_MD:.md=.html)
