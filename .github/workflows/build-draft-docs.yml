@@ -6,7 +6,7 @@ jobs:
       - name: Checkout the documents
         uses: actions/checkout@v2
       - name: Build the Baseline Requirements
-        uses: cabforum/build-guidelines-action@v1.0.0-rc3
+        uses: cabforum/build-guidelines-action@sleevi_scratch
         with:
           markdown-file: docs/BR.md
           pdf: true
@@ -22,7 +22,7 @@ jobs:
           if-no-files-found: 'error'
           retention-days: 21
       - name: Build the EV Guidelines
-        uses: cabforum/build-guidelines-action@v1.0.0-rc3
+        uses: cabforum/build-guidelines-action@sleevi_scratch
         with:
           markdown-file: docs/EVG.md
           pdf: true
@@ -38,7 +38,7 @@ jobs:
           if-no-files-found: 'error'
           retention-days: 21
       - name: Build the NCSSRs
-        uses: cabforum/build-guidelines-action@v1.0.0-rc3
+        uses: cabforum/build-guidelines-action@sleevi_scratch
         with:
           markdown-file: docs/NSR.md
           pdf: true
