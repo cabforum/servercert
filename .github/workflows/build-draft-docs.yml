@@ -1,0 +1,55 @@
+on: [push, pull_request]
+jobs:
+  build_pandoc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the documents
+        uses: actions/checkout@v2
+      - name: Build the Baseline Requirements
+        uses: cabforum/build-guidelines-action@v1.0.0-rc2
+        with:
+          markdown-file: docs/BR.md
+          pdf: true
+          docx: true
+          lint: true
+          draft: true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: BRs
+          path: |
+            docs/BR.pdf
+            docs/BR.docx
+          if-no-files-found: 'error'
+          retention-days: 21
+      - name: Build the EV Guidelines
+        uses: cabforum/build-guidelines-action@v1.0.0-rc2
+        with:
+          markdown-file: docs/EVG.md
+          pdf: true
+          docx: true
+          lint: true
+          draft: true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: EVGs
+          path: |
+            docs/EVG.pdf
+            docs/EVG.docx
+          if-no-files-found: 'error'
+          retention-days: 21
+      - name: Build the NCSSRs
+        uses: cabforum/build-guidelines-action@v1.0.0-rc2
+        with:
+          markdown-file: docs/NSR.md
+          pdf: true
+          docx: true
+          lint: true
+          draft: true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: NSRs
+          path: |
+            docs/NSR.pdf
+            docs/NSR.docx
+          if-no-files-found: 'error'
+          retention-days: 21
