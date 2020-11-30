@@ -1,20 +1,14 @@
-**CA/Browser Forum**
+---
+title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
+subtitle: Version 1.7.3
+author:
+  - CA/Browser Forum
+date: 19 October, 2020
+copyright: |
+  Copyright 2020 CA/Browser Forum
 
-**Baseline Requirements**
-**for the**
-**Issuance and Management of**
-**Publicly-Trusted Certificates**
-
-**CA/Browser Forum**
-
-**Version 1.7.3**
-
-**October 19, 2020**
-
-**www.cabforum.org**
-
-Copyright 2020 CA/Browser Forum
-This work is licensed under the Creative Commons Attribution 4.0 International license.
+  This work is licensed under the Creative Commons Attribution 4.0 International license.
+---
 
 # 1. INTRODUCTION
 
@@ -208,7 +202,7 @@ The primary goal of these Requirements is to enable efficient and secure electro
 No stipulation.
 
 ## 1.5 Policy administration
-The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates present criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This document may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum. Because one of the primary beneficiaries of this document is the end user, the Forum openly invites anyone to make recommendations and suggestions by email to the CA/Browser Forum at questions@cabforum.org. The Forum members value all input, regardless of source, and will seriously consider all such input.
+The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates present criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This document may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum. Because one of the primary beneficiaries of this document is the end user, the Forum openly invites anyone to make recommendations and suggestions by email to the CA/Browser Forum at <questions@cabforum.org>. The Forum members value all input, regardless of source, and will seriously consider all such input.
 
 ### 1.5.1 Organization Administering the Document
 No stipulation.
@@ -756,22 +750,26 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 ##### 3.2.2.4.18 Agreed-Upon Change to Website v2
 
 Confirming the Applicant's control over the FQDN by verifying that the Request Token or Random Value is contained in the contents of a file.
+
 1.	The entire Request Token or Random Value MUST NOT appear in the request used to retrieve the file, and
 2.	the CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
 
 The file containing the Request Token or Random Number:
+
 1.	MUST be located on the Authorization Domain Name, and
 2.	MUST be located under the "/.well-known/pki-validation" directory, and
 3.	MUST be retrieved via either the "http" or "https" scheme, and
 4.	MUST be accessed over an Authorized Port.
 
 If the CA follows redirects the following apply:
+
 1.	Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
 2.	Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
 3.	Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
 4.	Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 If a Random Value is used, then:
+
 1.	The CA MUST provide a Random Value unique to the certificate request.
 2.	The Random Value MUST remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
@@ -786,6 +784,7 @@ The CA MUST receive a successful HTTP response from the request (meaning a 2xx H
 The token (as defined in RFC 8555, section 8.3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
 If the CA follows redirects:
+
 1.	Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
 2.	Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
 3.	Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
@@ -1172,7 +1171,6 @@ Effective 2020-09-30:
 3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
 4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
-
 For the status of Subordinate CA Certificates:
 
 * The CA SHALL update information provided via an Online Certificate Status Protocol (i) at least every twelve months; and (ii) within 24 hours after revoking a Subordinate CA Certificate.
@@ -1210,8 +1208,7 @@ Not applicable.
 ## 4.10 Certificate status services
 
 ### 4.10.1 Operational characteristics
-Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked
-Certificate
+Revocation entries on a CRL or OCSP Response MUST NOT be removed until after the Expiry Date of the revoked Certificate.
 
 ### 4.10.2 Service availability
 The CA SHALL operate and maintain its CRL and OCSP capability with resources sufficient to provide a response time of ten seconds or less under normal operating conditions.
@@ -1497,7 +1494,7 @@ For ECDSA key pairs, the CA SHALL:
 No other algorithms or key sizes are permitted.
 
 ### 6.1.6 Public key parameters generation and quality checking
-RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2<sup>16</sup>+1 and 2<sup>256</sup>-1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89]
+RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2^16 + 1 and 2^256 - 1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89]
 
 ECDSA: The CA SHOULD confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
 
@@ -2068,7 +2065,7 @@ The CA SHALL at all times:
 3. Comply with the audit requirements set forth in this section; and
 4. Be licensed as a CA in each jurisdiction where it operates, if licensing is required by the law of such jurisdiction for the issuance of Certificates.
 
-**Implementers' Note**: Version 1.1.6 of the SSL Baseline Requirements was published on July 29, 2013. Version 2.0 of WebTrust's Principles and Criteria for Certification Authorities - SSL Baseline with Network Security and ETSI's Electronic Signatures and Infrastructures (ESI) 102 042 incorporate version 1.1.6 of these Baseline Requirements and version 1.0 of the Network and Certificate System Security Requirements. The CA/Browser Forum continues to improve the Baseline Requirements while WebTrust and ETSI also continue to update their audit criteria. We encourage all CAs to conform to each revision herein on the date specified without awaiting a corresponding update to an applicable audit criterion. In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty, and we will respond to implementation questions directed to questions@cabforum.org. Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
+**Implementers' Note**: Version 1.1.6 of the SSL Baseline Requirements was published on July 29, 2013. Version 2.0 of WebTrust's Principles and Criteria for Certification Authorities - SSL Baseline with Network Security and ETSI's Electronic Signatures and Infrastructures (ESI) 102 042 incorporate version 1.1.6 of these Baseline Requirements and version 1.0 of the Network and Certificate System Security Requirements. The CA/Browser Forum continues to improve the Baseline Requirements while WebTrust and ETSI also continue to update their audit criteria. We encourage all CAs to conform to each revision herein on the date specified without awaiting a corresponding update to an applicable audit criterion. In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty, and we will respond to implementation questions directed to <questions@cabforum.org>. Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
 ## 8.1 Frequency or circumstances of assessment
 Certificates that are capable of being used to issue new certificates MUST either be Technically Constrained in line with section 7.1.5 and audited in line with section 8.7 only, or Unconstrained and fully audited in line with all remaining requirements from this section. A Certificate is deemed as capable of being used to issue new certificates if it contains an X.509v3 basicConstraints extension, with the `cA` boolean set to true and is therefore by definition a Root CA Certificate or a Subordinate CA Certificate.
@@ -2286,7 +2283,7 @@ Notwithstanding any limitations on its liability to Subscribers and Relying Part
 
 In the event of a conflict between these Requirements and a law, regulation or government order (hereinafter 'Law') of any jurisdiction in which a CA operates or issues certificates, a CA MAY modify any conflicting requirement to the minimum extent necessary to make the requirement valid and legal in the jurisdiction. This applies only to operations or certificate issuances that are subject to that Law. In such event, the CA SHALL immediately (and prior to issuing a certificate under the modified requirement) include in Section 9.16.3 of the CA's CPS a detailed reference to the Law requiring a modification of these Requirements under this section, and the specific modification to these Requirements implemented by the CA.
 
-The CA MUST also (prior to issuing a certificate under the modified requirement) notify the CA/Browser Forum of the relevant information newly added to its CPS by sending a message to questions@cabforum.org and receiving confirmation that it has been posted to the Public Mailing List and is indexed in the Public Mail Archives available at https://cabforum.org/pipermail/public/ (or such other email addresses and links as the Forum may designate), so that the CA/Browser Forum may consider possible revisions to these Requirements accordingly.
+The CA MUST also (prior to issuing a certificate under the modified requirement) notify the CA/Browser Forum of the relevant information newly added to its CPS by sending a message to <questions@cabforum.org> and receiving confirmation that it has been posted to the Public Mailing List and is indexed in the Public Mail Archives available at https://cabforum.org/pipermail/public/ (or such other email addresses and links as the Forum may designate), so that the CA/Browser Forum may consider possible revisions to these Requirements accordingly.
 
 Any modification to CA practice enabled under this section MUST be discontinued if and when the Law no longer applies, or these Requirements are modified to make it possible to comply with both them and the Law simultaneously. An appropriate change in practice, modification to the CA's CPS and a notice to the CA/Browser Forum, as outlined above, MUST be made within 90 days.
 
@@ -2345,32 +2342,36 @@ This appendix defines permissible verification procedures for including one or m
 
 1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address, as defined in section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
 2. The CA MUST verify the Applicant’s control over the .onion Domain Name using at least one of the methods listed below:
+
     a. The CA MAY verify the Applicant’s control over the .onion service by using method 3.2.2.4.6, Agreed‐Upon Change to Website. If this method is replaced by a newer version(s) of Agreed-Upon Change to Website, the timelines for use of new and existing version of this method that are defined in section 3.2.2.4 SHALL apply.
     b. The CA MAY verify the Applicant's control over the .onion service by having the Applicant provide a Certificate Request signed using the .onion public key if the Attributes section of the certificationRequestInfo contains:
+
         (i) A caSigningNonce attribute that contains a Random Value that is generated by the CA; and
         (ii) An applicantSigningNonce attribute that contains a single value with at least 64-bits of entropy that is generated by the Applicant.
 
-The signing nonce attributes have the following format:
-```
-caSigningNonce ATTRIBUTE ::= {
-    WITH SYNTAX              OCTET STRING
-    EQUALITY MATCHING RULE   octetStringMatch
-    SINGLE VALUE             TRUE
-    ID                       { cabf-caSigningNonce }
-}
+        The signing nonce attributes have the following format:
 
-cabf-caSigningNonce OBJECT IDENTIFIER ::= { cabf 41 }
+        ```
+        caSigningNonce ATTRIBUTE ::= {
+            WITH SYNTAX              OCTET STRING
+            EQUALITY MATCHING RULE   octetStringMatch
+            SINGLE VALUE             TRUE
+            ID                       { cabf-caSigningNonce }
+        }
 
-applicantSigningNonce ATTRIBUTE ::= {
-    WITH SYNTAX              OCTET STRING
-    EQUALITY MATCHING RULE   octetStringMatch
-    SINGLE VALUE             TRUE
-    ID                       { cabf-applicantSigningNonce }
-}
+        cabf-caSigningNonce OBJECT IDENTIFIER ::= { cabf 41 }
 
-cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
-```
-The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
-The CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of these Requirements.
+        applicantSigningNonce ATTRIBUTE ::= {
+            WITH SYNTAX              OCTET STRING
+            EQUALITY MATCHING RULE   octetStringMatch
+            SINGLE VALUE             TRUE
+            ID                       { cabf-applicantSigningNonce }
+        }
+
+        cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
+        ```
+
+        The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+        The CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of these Requirements.
 
 3. When a Certificate includes an FQDN where "onion" is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this Appendix B.
