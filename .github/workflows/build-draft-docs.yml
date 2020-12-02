@@ -22,7 +22,7 @@ jobs:
         with:
           name: Converted ${{ matrix.document }}
           path: |
-            '**/*.pdf'
-            '**/*.docx'
+            **/*.pdf
+            **/*.docx
           if-no-files-found: 'error'
           retention-days: 21
