@@ -1,0 +1,29 @@
+name: Build Draft Guidelines
+on: [push, pull_request]
+jobs:
+  build_brs:
+    strategy:
+      matrix:
+        document:
+          - 'BR.md'
+          - 'EVG.md'
+          - 'NSR.md'
+    name: Build ${{ matrix.document }}
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cabforum/build-guidelines-action@v1.0.0-rc4
+        with:
+          markdown-file: docs/${{ matrix.document }}
+          pdf: true
+          docx: true
+          lint: true
+          draft: true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Converted ${{ matrix.document }}
+          path: |
+            docs/*.pdf
+            docs/*.docx
+          if-no-files-found: 'error'
+          retention-days: 21
