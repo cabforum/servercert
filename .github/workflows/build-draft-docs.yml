@@ -4,16 +4,16 @@ jobs:
     strategy:
       matrix:
         document:
-          - 'docs/BR.md'
-          - 'docs/EVG.md'
-          - 'docs/NSR.md'
+          - 'BR.md'
+          - 'EVG.md'
+          - 'NSR.md'
     name: Build ${{ matrix.document }}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - uses: cabforum/build-guidelines-action@v1.0.0-rc4
         with:
-          markdown-file: ${{ matrix.document }}
+          markdown-file: docs/${{ matrix.document }}
           pdf: true
           docx: true
           lint: true
