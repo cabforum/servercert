@@ -1,55 +1,28 @@
 on: [push, pull_request]
 jobs:
-  build_pandoc:
-    runs-on: ubuntu-latest
+  build_brs:
+    strategy:
+      matrix:
+        document:
+          - 'docs/BR.md'
+          - 'docs/EVG.md'
+          - 'docs/NSR.md'
+    name: Build ${{ matrix.document }}
+    runs-on: ubuntu-20.04
     steps:
-      - name: Checkout the documents
-        uses: actions/checkout@v2
-      - name: Build the Baseline Requirements
-        uses: cabforum/build-guidelines-action@v1.0.0-rc4
+      - uses: actions/checkout@v2
+      - uses: cabforum/build-guidelines-action@v1.0.0-rc4
         with:
-          markdown-file: docs/BR.md
+          markdown-file: ${{ matrix.document }}
           pdf: true
           docx: true
           lint: true
           draft: true
       - uses: actions/upload-artifact@v2
         with:
-          name: BRs
+          name: Converted ${{ matrix.document }}
           path: |
-            docs/BR.pdf
-            docs/BR.docx
-          if-no-files-found: 'error'
-          retention-days: 21
-      - name: Build the EV Guidelines
-        uses: cabforum/build-guidelines-action@v1.0.0-rc4
-        with:
-          markdown-file: docs/EVG.md
-          pdf: true
-          docx: true
-          lint: true
-          draft: true
-      - uses: actions/upload-artifact@v2
-        with:
-          name: EVGs
-          path: |
-            docs/EVG.pdf
-            docs/EVG.docx
-          if-no-files-found: 'error'
-          retention-days: 21
-      - name: Build the NCSSRs
-        uses: cabforum/build-guidelines-action@v1.0.0-rc4
-        with:
-          markdown-file: docs/NSR.md
-          pdf: true
-          docx: true
-          lint: true
-          draft: true
-      - uses: actions/upload-artifact@v2
-        with:
-          name: NSRs
-          path: |
-            docs/NSR.pdf
-            docs/NSR.docx
+            '**/*.pdf'
+            '**/*.docx'
           if-no-files-found: 'error'
           retention-days: 21
