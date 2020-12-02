@@ -1,3 +1,4 @@
+name: Build Draft Guidelines
 on: [push, pull_request]
 jobs:
   build_brs:
