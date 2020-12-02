@@ -127,6 +127,7 @@ e.	Require employees and contractors to observe the principle of “least privil
 f.	Require that each individual in a Trusted Role use a unique credential created by or assigned to that person in order to authenticate to Certificate Systems (for accountability purposes, group accounts or shared role credentials SHALL NOT be used);
 
 g.	If an authentication control used by a Trusted Role is a username and password, then, where technically feasible, implement the following controls:
+
     i.	For accounts that are accessible only within Secure Zones or High Security Zones, require that passwords have at least twelve (12) characters;
     ii.	For authentications which cross a zone boundary into a Secure Zone or High Security Zone, require Multi-Factor Authentication. For accounts accessible from outside a Secure Zone or High Security Zone require passwords that have at least eight (8) characters and are not be one of the user's previous four (4) passwords; and implement account lockout for failed access attempts in accordance with subsection k;
     iii. When developing password policies, CAs SHOULD take into account the password guidance in NIST 800-63B Appendix A.
@@ -134,11 +135,12 @@ g.	If an authentication control used by a Trusted Role is a username and passwor
 
 h.	Have a policy that requires Trusted Roles to log out of or lock workstations when no longer in use;
 
-i.	Have a procedure to configure workstations with inactivity time-outs that log the user off or lock the workstation after a set time of inactivity without input from the user  (the CA or Delegated Third Party MAY allow a workstation to remain active and unattended if the workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time-out or system lock);
+i.	Have a procedure to configure workstations with inactivity time-outs that log the user off or lock the workstation after a set time of inactivity without input from the user (the CA or Delegated Third Party MAY allow a workstation to remain active and unattended if the workstation is otherwise secured and running administrative tasks that would be interrupted by an inactivity time-out or system lock);
 
 j.	Review all system accounts at least every three (3) months and deactivate any accounts that are no longer necessary for operations;
 
 k.	Lockout account access to Certificate Systems after no more than five (5) failed access attempts, provided that this security measure;
+
     i. Is supported by the Certificate System,
     ii. Cannot be leveraged for a denial of service attack, and
     iii. Does not weaken the security of this authentication control;
@@ -150,12 +152,14 @@ m.	Enforce Multi-Factor Authentication OR multi-party authentication for adminis
 n.	Enforce Multi-Factor Authentication for all Trusted Role accounts on Certificate Systems (including those approving the issuance of a Certificate, which equally applies to Delegated Third Parties) that are accessible from outside a Secure Zone or High Security Zone; and
 
 o.	Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when:
+
     i.   the remote connection originates from a device owned or controlled by the CA or Delegated Third Party,
     ii.  the remote connection is through a temporary, non-persistent encrypted channel that is  supported by Multi-Factor Authentication, and
     iii.  the remote connection is made to a designated intermediary device
-         a.  located within the CA’s network,
-         b.  secured in accordance with these Requirements, and
-         c.  that mediates the remote connection to the Issuing System.
+
+          a.  located within the CA’s network,
+          b.  secured in accordance with these Requirements, and
+          c.  that mediates the remote connection to the Issuing System.
 
 # 3. Logging, Monitoring, and Alerting
 
@@ -184,6 +188,7 @@ a.	Implement intrusion detection and prevention controls under the control of CA
 b.	Document and follow a vulnerability correction process that addresses the identification, review, response, and remediation of vulnerabilities;
 
 c.	Undergo or perform a Vulnerability Scan
+
     i.  within one (1) week of receiving a request from the CA/Browser Forum,
     ii.  after any system or network changes that the CA determines are significant, and
     iii.  at least every three (3) months, on public and private IP addresses identified by the CA or Delegated Third Party as the CA’s or Delegated Third Party’s Certificate Systems;
@@ -193,9 +198,16 @@ d.	Undergo a Penetration Test on the CA’s and each Delegated Third Party’s C
 e.	Record evidence that each Vulnerability Scan and Penetration Test was performed by a person or entity (or collective group thereof) with the skills, tools, proficiency, code of ethics, and independence necessary to provide a reliable Vulnerability Scan or Penetration Test; and
 
 f.	Do one of the following within ninety-six (96) hours of discovery of a Critical Vulnerability not previously addressed by the CA’s vulnerability correction process:
+
     i.	Remediate the Critical Vulnerability;
-    ii.	If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to (1) vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical  (such as those with a CVSS score of 10.0) and (2) systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise;  or
+
+    ii.	If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to
+
+          1.  vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical  (such as those with a CVSS score of 10.0) and
+          2.  systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise;  or
+
     iii.	Document the factual basis for the CA’s determination that the vulnerability does not require remediation because
+
           a.  the CA disagrees with the NVD rating,
           b.  the identification is a false positive,
           c.  the exploit of the vulnerability is prevented by compensating controls or an absence of threats; or
