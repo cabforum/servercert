@@ -711,7 +711,9 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the Cer
 
 CAs SHALL NOT perform validations using this method after June 3, 2020. CAs MAY continue to re-use information and validations for domains validated under this method per the applicable certificate data reuse periods.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+**Note**:
+  * For certificates issued prior to 2021-10-01, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+  * For certificates issued on or after 2021-10-01, the CA MUST NOT issue Certificates for other FQDNs that end with all labels of the validated FQDN. This method is NOT suitable for validating Wildcard Domain Names, except as permitted by [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names) when validating a FQDN where "onion" is the right-most label of the Domain Name.
 
 ##### 3.2.2.4.7 DNS Change
 
@@ -728,7 +730,7 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the Cer
 
 Confirming the Applicant's control over the FQDN by confirming that the Applicant controls an IP address returned from a DNS lookup for A or AAAA records for the FQDN in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
+**Note**: Once the FQDN has been validated using this method, the CA MUST NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.9 Test Certificate
 
@@ -830,7 +832,9 @@ If a Random Value is used, then:
 1. The CA MUST provide a Random Value unique to the certificate request.
 2. The Random Value MUST remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+**Note**:
+  * For certificates issued prior to 2021-10-01, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+  * For certificates issued on or after 2021-10-01, the CA MUST NOT issue Certificates for other FQDNs that end with all labels of the validated FQDN. This method is NOT suitable for validating Wildcard Domain Names, except as permitted by [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names) when validating a FQDN where "onion" is the right-most label of the Domain Name.
 
 ##### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
 
@@ -847,7 +851,9 @@ If the CA follows redirects:
 3. Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
 4. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+**Note**:
+  * For certificates issued prior to 2021-10-01, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+  * For certificates issued on or after 2021-10-01, the CA MUST NOT issue Certificates for other FQDNs that end with all labels of the validated FQDN. This method is NOT suitable for validating Wildcard Domain Names, except as permitted by [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names) when validating a FQDN where "onion" is the right-most label of the Domain Name.
 
 ##### 3.2.2.4.20 TLS Using ALPN
 
@@ -855,7 +861,7 @@ Confirming the Applicant's control over a FQDN by validating domain control of t
 
 The token (as defined in RFC 8737, Section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
+**Note**: Once the FQDN has been validated using this method, the CA MUST NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 
