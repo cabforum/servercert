@@ -1,7 +1,7 @@
 name: Build Draft Guidelines
 on: [push, pull_request]
 jobs:
-  build_brs:
+  build_docs:
     strategy:
       matrix:
         document:
@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: cabforum/build-guidelines-action@v1.0.0-rc4
+      - uses: cabforum/build-guidelines-action@v2.0.0-rc1
+        name: build_doc
         with:
-          markdown-file: docs/${{ matrix.document }}
+          markdown_file: docs/${{ matrix.document }}
           pdf: true
           docx: true
           lint: true
@@ -23,7 +24,7 @@ jobs:
         with:
           name: Converted ${{ matrix.document }}
           path: |
-            docs/*.pdf
-            docs/*.docx
+            ${{ steps.build_doc.outputs.pdf_file }}
+            ${{ steps.build_doc.outputs.docx_file }}
           if-no-files-found: 'error'
           retention-days: 21
