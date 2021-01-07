@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: cabforum/build-guidelines-action@v2.0.0-rc1
-        name: build_doc
+        id: build_doc
         with:
           markdown_file: docs/${{ matrix.document }}
           pdf: true
