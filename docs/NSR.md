@@ -128,10 +128,10 @@ f.  Require that each individual in a Trusted Role use a unique credential creat
 
 g.  If an authentication control used by a Trusted Role is a username and password, then, where technically feasible, implement the following controls:
 
-    i.  For accounts that are accessible only within Secure Zones or High Security Zones, require that passwords have at least twelve (12) characters;
-    ii.  For authentications which cross a zone boundary into a Secure Zone or High Security Zone, require Multi-Factor Authentication. For accounts accessible from outside a Secure Zone or High Security Zone require passwords that have at least eight (8) characters and are not be one of the user's previous four (4) passwords; and implement account lockout for failed access attempts in accordance with subsection k;
-    iii.  When developing password policies, CAs SHOULD take into account the password guidance in NIST 800-63B Appendix A.
-    iv.  Frequent password changes have been shown to cause users to select less secure passwords. If the CA has any policy that specifies routine periodic password changes, that period SHOULD NOT be less than two years. Effective April 1, 2020, if the CA has any policy that requires routine periodic password changes, that period SHALL NOT be less than two years.
+    1.  For accounts that are accessible only within Secure Zones or High Security Zones, require that passwords have at least twelve (12) characters;
+    2.  For authentications which cross a zone boundary into a Secure Zone or High Security Zone, require Multi-Factor Authentication. For accounts accessible from outside a Secure Zone or High Security Zone require passwords that have at least eight (8) characters and are not be one of the user's previous four (4) passwords; and implement account lockout for failed access attempts in accordance with subsection k;
+    3.  When developing password policies, CAs SHOULD take into account the password guidance in NIST 800-63B Appendix A.
+    4.  Frequent password changes have been shown to cause users to select less secure passwords. If the CA has any policy that specifies routine periodic password changes, that period SHOULD NOT be less than two years. Effective April 1, 2020, if the CA has any policy that requires routine periodic password changes, that period SHALL NOT be less than two years.
 
 h.  Have a policy that requires Trusted Roles to log out of or lock workstations when no longer in use;
 
@@ -141,9 +141,9 @@ j.  Review all system accounts at least every three (3) months and deactivate an
 
 k.  Lockout account access to Certificate Systems after no more than five (5) failed access attempts, provided that this security measure;
 
-    i. Is supported by the Certificate System,
-    ii. Cannot be leveraged for a denial of service attack, and
-    iii. Does not weaken the security of this authentication control;
+    1. Is supported by the Certificate System,
+    2. Cannot be leveraged for a denial of service attack, and
+    3. Does not weaken the security of this authentication control;
 
 l.  Implement a process that disables all privileged access of an individual to Certificate Systems  within twenty four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
 
@@ -153,13 +153,13 @@ n.  Enforce Multi-Factor Authentication for all Trusted Role accounts on Certifi
 
 o.  Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when:
 
-    i.   the remote connection originates from a device owned or controlled by the CA or Delegated Third Party,
-    ii.  the remote connection is through a temporary, non-persistent encrypted channel that is  supported by Multi-Factor Authentication, and
-    iii.  the remote connection is made to a designated intermediary device
+    1. the remote connection originates from a device owned or controlled by the CA or Delegated Third Party,
+    2. the remote connection is through a temporary, non-persistent encrypted channel that is  supported by Multi-Factor Authentication, and
+    3. the remote connection is made to a designated intermediary device
 
-          a.  located within the CA’s network,
-          b.  secured in accordance with these Requirements, and
-          c.  that mediates the remote connection to the Issuing System.
+          i.  located within the CA’s network,
+          ii.  secured in accordance with these Requirements, and
+          iii.  that mediates the remote connection to the Issuing System.
 
 # 3. Logging, Monitoring, and Alerting
 
@@ -189,9 +189,9 @@ b.  Document and follow a vulnerability correction process that addresses the id
 
 c.  Undergo or perform a Vulnerability Scan
 
-    i.  within one (1) week of receiving a request from the CA/Browser Forum,
-    ii.  after any system or network changes that the CA determines are significant, and
-    iii.  at least every three (3) months, on public and private IP addresses identified by the CA or Delegated Third Party as the CA’s or Delegated Third Party’s Certificate Systems;
+    1.  within one (1) week of receiving a request from the CA/Browser Forum,
+    2.  after any system or network changes that the CA determines are significant, and
+    3.  at least every three (3) months, on public and private IP addresses identified by the CA or Delegated Third Party as the CA’s or Delegated Third Party’s Certificate Systems;
 
 d.  Undergo a Penetration Test on the CA’s and each Delegated Third Party’s Certificate Systems on at least an annual basis and after infrastructure or application upgrades or modifications that the CA determines are significant;
 
@@ -199,16 +199,16 @@ e.  Record evidence that each Vulnerability Scan and Penetration Test was perfor
 
 f.  Do one of the following within ninety-six (96) hours of discovery of a Critical Vulnerability not previously addressed by the CA’s vulnerability correction process:
 
-    i.  Remediate the Critical Vulnerability;
+    1.  Remediate the Critical Vulnerability;
 
-    ii.  If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to
+    2.  If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to
 
-         1.  vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical  (such as those with a CVSS score of 10.0) and
-         2.  systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise;  or
+         i.  vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical  (such as those with a CVSS score of 10.0) and
+         ii.  systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise;  or
 
-    iii.  Document the factual basis for the CA’s determination that the vulnerability does not require remediation because
+    3.  Document the factual basis for the CA’s determination that the vulnerability does not require remediation because
 
-          a.  the CA disagrees with the NVD rating,
-          b.  the identification is a false positive,
-          c.  the exploit of the vulnerability is prevented by compensating controls or an absence of threats; or
-          d.  other similar reasons.
+          i.  the CA disagrees with the NVD rating,
+          ii.  the identification is a false positive,
+          iii.  the exploit of the vulnerability is prevented by compensating controls or an absence of threats; or
+          iv.  other similar reasons.
