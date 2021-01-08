@@ -53,7 +53,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.6.0 | 171 | Updating ETSI Standards | 1 July 2016  | 1 July 2016   |
 | 1.6.1 | 180 | In EV 11.7.1, removed outdated cross-reference to BR 3.2.2.4(7)  | 7 Jan. 2017  | 7 Jan. 2017   |
 | 1.6.2 | 103 | 825-day Certificate Lifetimes | 17 Mar. 2017 | 17 Mar. 2017 |
-| 1.6.3 | 198 | .Onion Revisions (declared invalid) | 7 May 2017	| 8 June 2017 |
+| 1.6.3 | 198 | .Onion Revisions (declared invalid) | 7 May 2017 | 8 June 2017 |
 | 1.6.4 | 191 | Clarify Place of Business Information | 23 May 2017 | 23 June 2017 |
 | 1.6.5 | 201 | .onion Revisions | 8 June 2017 | 8 July 2017 |
 | 1.6.6 | 192 | Notary revision | 28 June 2017 | 28 July 2017 |
@@ -62,10 +62,10 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.6.9 | SC16 | Other Subject Attributes | 15 Mar 2019 | 16 Apr 2019 |
 | 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 21 May 2019 | 21 June 2019 |
 | 1.7.1 | SC24 | Fall cleanup v2 | 12 Nov 2019 | 19 Dec 2019 |
-| 1.7.2 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
-| 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
-| 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
-| 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020	| 19-Oct-2020 |
+| 1.7.2 | SC27 | Version 3 Onion Certificates | 19-Feb-2020 | 27-Mar-2020 |
+| 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020 | 20-Aug-2020 |
+| 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020 | 20-Aug-2020 |
+| 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -132,7 +132,9 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Business Entity**:  Any entity that is not a Private Organization, Government Entity, or Non-Commercial Entity as defined herein. Examples include, but are not limited to, general partnerships, unincorporated associations, sole proprietorships, etc.
 
-**Certificate Approver**:   A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to (i) act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and (ii) to approve EV Certificate Requests submitted by other Certificate Requesters.
+**Certificate Approver**:   A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to
+  i. act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and
+  ii. to approve EV Certificate Requests submitted by other Certificate Requesters.
 
 **Certificate Requester**:  A natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits an EV Certificate Request on behalf of the Applicant.
 
@@ -162,7 +164,9 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **EV Certificate Warranties**:   In conjunction with the CA issuing an EV Certificate, the CA and its Root CA, during the period when the EV Certificate is Valid, promise that the CA has followed the requirements of these Guidelines and the CA's EV Policies in issuing the EV Certificate and in verifying the accuracy of the information contained in the EV Certificate.
 
-**EV OID**:  An identifying number, in the form of an "object identifier," that is included in the `certificatePolicies` field of a certificate that:  (i) indicates which CA policy statement relates to that certificate, and (ii) is either the CA/Browser Forum EV policy identifier or a policy identifier that, by pre-agreement with one or more Application Software Supplier, marks the certificate as being an EV Certificate.
+**EV OID**:  An identifying number, in the form of an "object identifier," that is included in the `certificatePolicies` field of a certificate that:
+  i. indicates which CA policy statement relates to that certificate, and
+  ii. is either the CA/Browser Forum EV policy identifier or a policy identifier that, by pre-agreement with one or more Application Software Supplier, marks the certificate as being an EV Certificate.
 
 **EV Policies**:  Auditable EV Certificate practices, policies and procedures, such as a certification practice statement  and certificate policy, that are developed, implemented, and enforced by the CA and its Root CA.
 
@@ -212,13 +216,20 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Qualified Independent Information Source**:  A regularly-updated and current, publicly available, database designed for the purpose of accurately providing the information for which it is consulted, and which is generally recognized as a dependable source of such information.
 
-**Registration Agency**:  A Governmental Agency that registers business information in connection with an entity's business formation or authorization to conduct business under a license, charter or other certification.  A Registration Agency MAY include, but is not limited to (i) a State Department of Corporations or a Secretary of State; (ii) a licensing agency, such as a State Department of Insurance; or (iii) a chartering agency, such as a state office or department of financial regulation, banking or finance, or a federal agency such as the Office of the Comptroller of the Currency or Office of Thrift Supervision.
+**Registration Agency**:  A Governmental Agency that registers business information in connection with an entity's business formation or authorization to conduct business under a license, charter or other certification.  A Registration Agency MAY include, but is not limited to
+
+  i. a State Department of Corporations or a Secretary of State;
+  ii. a licensing agency, such as a State Department of Insurance; or
+  iii. a chartering agency, such as a state office or department of financial regulation, banking or finance, or a federal agency such as the Office of the Comptroller of the Currency or Office of Thrift Supervision.
 
 **Registration Reference**: A unique identifier assigned to a Legal Entity.
 
 **Registration Scheme**: A scheme for assigning a Registration Reference meeting the requirements identified in Appendix H.
 
-**Registered Agent**:  An individual or entity that is:  (i) authorized by the Applicant to receive service of process and business communications on behalf of the Applicant; and (ii) listed in the official records of the Applicant's Jurisdiction of Incorporation as acting in the role specified in (i) above.
+**Registered Agent**:  An individual or entity that is:
+
+  i. authorized by the Applicant to receive service of process and business communications on behalf of the Applicant; and
+  ii. listed in the official records of the Applicant's Jurisdiction of Incorporation as acting in the role specified in (i) above.
 
 **Registered Office**:   The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received.
 
@@ -319,7 +330,10 @@ Each CA must develop, implement, enforce, display prominently on its Web site, a
 
 A.  Implement the requirements of these Guidelines as they are revised from time-to-time;
 
-B.  Implement the requirements of (i) the then-current WebTrust Program for CAs, and (ii) the then-current WebTrust EV Program or ETSI TS 102 042 for EVCP or ETSI EN 319 411-1 for EVCP policy; and
+B.  Implement the requirements of
+
+    i. the then-current WebTrust Program for CAs, and
+    ii. the then-current WebTrust EV Program or ETSI TS 102 042 for EVCP or ETSI EN 319 411-1 for EVCP policy; and
 
 C.  Specify the CA's and its Root CA's entire root certificate hierarchy including all roots that its EV Certificates depend on for proof of those EV Certificates' authenticity.
 
@@ -675,7 +689,10 @@ The following Applicant roles are required for the issuance of an EV Certificate
 
 1. **Certificate Requester**:  The EV Certificate Request MUST be submitted by an authorized Certificate Requester.  A Certificate Requester is a natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits an EV Certificate Request on behalf of the Applicant.
 
-2. **Certificate Approver**:  The EV Certificate Request MUST be approved by an authorized Certificate Approver.  A Certificate Approver is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to (i) act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and (ii) to approve EV Certificate Requests submitted by other Certificate Requesters.
+2. **Certificate Approver**:  The EV Certificate Request MUST be approved by an authorized Certificate Approver.  A Certificate Approver is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to
+
+   i. act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and
+   ii. to approve EV Certificate Requests submitted by other Certificate Requesters.
 
 3. **Contract Signer**:  A Subscriber Agreement applicable to the requested EV Certificate MUST be signed by an authorized Contract Signer.  A Contract Signer is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
 
@@ -849,7 +866,10 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 
 ### 11.3.1.  Verification Requirements
 
-If, in addition to the Applicant's formal legal name, as recorded with the applicable Incorporating Agency or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, the Applicant's identity, as asserted in the EV Certificate, is to contain any assumed name (also known as "doing business as", "DBA", or "d/b/a" in the US, and "trading as" in the UK) under which the Applicant conducts business, the CA MUST verify that:  (i) the Applicant has registered its use of the assumed name with the appropriate government agency for such filings in the jurisdiction of its Place of Business (as verified in accordance with these Guidelines), and (ii) that such filing continues to be valid.
+If, in addition to the Applicant's formal legal name, as recorded with the applicable Incorporating Agency or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, the Applicant's identity, as asserted in the EV Certificate, is to contain any assumed name (also known as "doing business as", "DBA", or "d/b/a" in the US, and "trading as" in the UK) under which the Applicant conducts business, the CA MUST verify that:
+
+   i. the Applicant has registered its use of the assumed name with the appropriate government agency for such filings in the jurisdiction of its Place of Business (as verified in accordance with these Guidelines), and
+   ii. that such filing continues to be valid.
 
 ### 11.3.2.  Acceptable Method of Verification
 
@@ -899,7 +919,11 @@ To assist in communicating with the Applicant and confirming that the Applicant 
 
 To verify a Verified Method of Communication with the Applicant, the CA MUST:
 
-A.  Verify that the Verified Method of Communication belongs to the Applicant, or a Parent/Subsidiary or Affiliate of the Applicant, by matching it with one of the Applicant's Parent/Subsidiary or Affiliate's Places of Business in: (i) records provided by the applicable phone company; (ii) a QGIS, QTIS, or QIIS; or (iii) a Verified Professional Letter; and
+A.  Verify that the Verified Method of Communication belongs to the Applicant, or a Parent/Subsidiary or Affiliate of the Applicant, by matching it with one of the Applicant's Parent/Subsidiary or Affiliate's Places of Business in:
+
+  i. records provided by the applicable phone company;
+  ii. a QGIS, QTIS, or QIIS; or
+  iii. a Verified Professional Letter; and
 
 B.  Confirm the Verified Method of Communication by using it to obtain an affirmative response sufficient to enable a reasonable person to conclude that the Applicant, or a Parent/Subsidiary or Affiliate of Applicant, can be contacted reliably by using the Verified Method of Communication.
 
@@ -962,7 +986,11 @@ Acceptable methods of verification of the name, title, and agency status of the 
 Acceptable methods of verification of the Signing Authority of the Contract Signer, and the EV Authority of the Certificate Approver, as applicable, include:
 
 1. **Verified Professional Letter**:  The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by reliance on a Verified Professional Letter;
-2. **Corporate Resolution**:  The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by reliance on a properly authenticated corporate resolution that confirms that the person has been granted such Signing Authority, provided that such resolution is (i) certified by the appropriate corporate officer (e.g., secretary), and (ii) the CA can reliably verify that the certification was validly signed by such person, and that such person does have the requisite authority to provide such certification;
+2. **Corporate Resolution**:  The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by reliance on a properly authenticated corporate resolution that confirms that the person has been granted such Signing Authority, provided that such resolution is
+
+   i. certified by the appropriate corporate officer (e.g., secretary), and
+   ii. the CA can reliably verify that the certification was validly signed by such person, and that such person does have the requisite authority to provide such certification;
+
 3. **Independent Confirmation from Applicant**:  The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by obtaining an Independent Confirmation from the Applicant (as described in [Section 11.11.4](#independent-confirmation-from-applicant));
 4. **Contract between CA and Applicant**:  The EV Authority of the Certificate Approver MAY be verified by reliance on a contract between the CA and the Applicant that designates the Certificate Approver with such EV Authority, provided that the contract is signed by the Contract Signer and provided that the agency and Signing Authority of the Contract Signer have been verified;
 5. **Prior Equivalent Authority**:  The signing authority of the Contract Signer, and/or the EV authority of the Certificate Approver, MAY be verified by relying on a demonstration of Prior Equivalent Authority.
@@ -973,7 +1001,7 @@ Acceptable methods of verification of the Signing Authority of the Contract Sign
 
        ii. Date of Contract Signer's signature,
 
-       iii.  Contract reference number, and
+       iii. Contract reference number, and
 
        iv. Filing location.
 
@@ -1118,7 +1146,7 @@ An Independent Confirmation from the Applicant MAY be obtained via the following
 
    A.  **Addressee**:  The Confirmation Request MUST be directed to:
 
-       i.  A position within the Applicant's organization that qualifies as a Confirming Person (e.g., Secretary, President, CEO, CFO, COO, CIO, CSO, Director, etc.) and is identified by name and title in a current QGIS, QIIS, QTIS, Verified Legal Opinion, Verified Accountant Letter, or by contacting the Applicant using a Verified Method of Communication; or
+       i. A position within the Applicant's organization that qualifies as a Confirming Person (e.g., Secretary, President, CEO, CFO, COO, CIO, CSO, Director, etc.) and is identified by name and title in a current QGIS, QIIS, QTIS, Verified Legal Opinion, Verified Accountant Letter, or by contacting the Applicant using a Verified Method of Communication; or
        ii. The Applicant's Registered Agent or Registered Office in the Jurisdiction of Incorporation as listed in the official records of the Incorporating Agency, with instructions that it be forwarded to an appropriate Confirming Person; or
        iii. A named individual verified to be in the direct line of management above the Contract Signer or Certificate Approver by contacting the Applicant's Human Resources Department by phone or mail (at the phone number or address for the Applicant's Place of Business, verified in accordance with these Guidelines).
 
@@ -1149,7 +1177,12 @@ A Qualified Independent Information Source (QIIS) is a regularly-updated and pub
 
 2. The database provider updates its data on at least an annual basis.
 
-The CA SHALL use a documented process to check the accuracy of the database and ensure its data is acceptable, including reviewing the database provider's terms of use. The CA SHALL NOT use any data in a QIIS that the CA knows is (i) self-reported and (ii) not verified by the QIIS as accurate. Databases in which the CA or its owners or affiliated companies maintain a controlling interest, or in which any Registration Authorities or subcontractors to whom the CA has outsourced any portion of the vetting process (or their owners or affiliated companies) maintain any ownership or beneficial interest, do not qualify as a QIIS.
+The CA SHALL use a documented process to check the accuracy of the database and ensure its data is acceptable, including reviewing the database provider's terms of use. The CA SHALL NOT use any data in a QIIS that the CA knows is
+
+  i. self-reported and
+  ii. not verified by the QIIS as accurate.
+
+Databases in which the CA or its owners or affiliated companies maintain a controlling interest, or in which any Registration Authorities or subcontractors to whom the CA has outsourced any portion of the vetting process (or their owners or affiliated companies) maintain any ownership or beneficial interest, do not qualify as a QIIS.
 
 ### 11.11.6.  Qualified Government Information Source
 
@@ -1187,7 +1220,7 @@ The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirem
 
 ### 11.12.3.  Parent/Subsidiary/Affiliate Relationship
 
-A CA verifying an Applicant using information of the Applicant's Parent, Subsidiary, or Affiliate, when allowed under [section 11.4.1](#address-of-applicants-place-of-business), [Section 11.5](#verified-method-of-communication), [Section 11.6.1](#verification-requirements-4), or [Section 11.7.1](#verification-requirements-5), MUST verify the Applicant's relationship to the Parent, Subsidiary, or Affiliate. Acceptable methods of verifying the Applicant's relationship to the Parent, Subsidiary, or Affiliate include the following:
+A CA verifying an Applicant using information of the Applicant's Parent, Subsidiary, or Affiliate, when allowed under [Section 11.4.1](#address-of-applicants-place-of-business), [Section 11.5](#verified-method-of-communication), [Section 11.6.1](#verification-requirements-4), or [Section 11.7.1](#verification-requirements-5), MUST verify the Applicant's relationship to the Parent, Subsidiary, or Affiliate. Acceptable methods of verifying the Applicant's relationship to the Parent, Subsidiary, or Affiliate include the following:
 
 1. QIIS or QGIS: The relationship between the Applicant and the Parent, Subsidiary, or Affiliate is identified in a QIIS or QGIS;
 2. Independent Confirmation from the Parent, Subsidiary, or Affiliate: A CA MAY verify the relationship between an Applicant and a Parent, Subsidiary, or Affiliate by obtaining an Independent Confirmation from the appropriate Parent, Subsidiary, or Affiliate (as described in [Section 11.11.4](#independent-confirmation-from-applicant));
@@ -1364,7 +1397,9 @@ CAs SHOULD make its audit report publicly available no later than three months a
 1. If the CA has a currently valid WebTrust Seal of Assurance for CAs, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against the WebTrust EV Program.
 2. If the CA has a currently valid ETSI 102 042 audit, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI TS 102 042.
 3. If the CA has a currently valid ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI EN 319 411-1 for EVCP.
-4. If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI TS 102 042 EVCP audit or an ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete either: (i) a point-in-time readiness assessment audit against the WebTrust for CA Program, or (ii) a point-in-time readiness assessment audit against the WebTrust EV Program, the ETSI TS 102 042 EVCP, or the ETSI EN 319 411-1 for EVCP policy.
+4. If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI TS 102 042 EVCP audit or an ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete either:
+   i. a point-in-time readiness assessment audit against the WebTrust for CA Program, or
+   ii. a point-in-time readiness assessment audit against the WebTrust EV Program, the ETSI TS 102 042 EVCP, or the ETSI EN 319 411-1 for EVCP policy.
 
 The CA MUST complete any required point-in-time readiness assessment no earlier than twelve (12) months prior to issuing an EV Certificate.  The CA MUST undergo a complete audit under such scheme within ninety (90) days of issuing the first EV Certificate.
 
@@ -1607,7 +1642,11 @@ As interpretation of the procedures set out above:
 
 A CA may rely on the Contract Signer's authority to enter into the Subscriber Agreement using a representation/warranty executed by the Contract Signer.  An example of an acceptable warranty is as follows:
 
-[CA] and Applicant are entering into a legally valid and enforceable Subscriber Agreement that creates extensive obligations on Applicant.  An EV Certificate serves as a form of digital identity for Applicant.  The loss or misuse of this identity can result in great harm to the Applicant.  By signing this Subscriber Agreement, the contract signer acknowledges that they have the authority to obtain the digital equivalent of a company stamp, seal, or (where applicable) officer's signature to establish the authenticity of the company's website, and that [Applicant name] is responsible for all uses of its EV Certificate.  By signing this Agreement on behalf of [Applicant name], the contract signer represents that the contract signer (i) is acting as an authorized representative of [Applicant name], (ii) is expressly authorized by [Applicant name] to sign Subscriber Agreements and approve EV Certificate requests on Applicant's behalf, and (iii) has confirmed Applicant's right to use the domain(s) to be included in EV Certificates.
+[CA] and Applicant are entering into a legally valid and enforceable Subscriber Agreement that creates extensive obligations on Applicant.  An EV Certificate serves as a form of digital identity for Applicant.  The loss or misuse of this identity can result in great harm to the Applicant.  By signing this Subscriber Agreement, the contract signer acknowledges that they have the authority to obtain the digital equivalent of a company stamp, seal, or (where applicable) officer's signature to establish the authenticity of the company's website, and that [Applicant name] is responsible for all uses of its EV Certificate.  By signing this Agreement on behalf of [Applicant name], the contract signer represents that the contract signer
+
+   i. is acting as an authorized representative of [Applicant name],
+   ii. is expressly authorized by [Applicant name] to sign Subscriber Agreements and approve EV Certificate requests on Applicant's behalf, and
+   iii. has confirmed Applicant's right to use the domain(s) to be included in EV Certificates.
 
 # Appendix F – Issuance of Certificates for .onion Domain Names
 

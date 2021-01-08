@@ -56,7 +56,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.1.2 | 96 | Wildcard certificates and new gTLDs | 20-Feb-13 | 20-Feb-13 01-Sep-13 |
 | 1.1.3 | 97 | Prevention of Unknown Certificate Contents | 21-Feb-13 | 21-Feb-13 |
 | 1.1.4 | 99 | Add DSA Keys (BR v.1.1.4) | 3-May-2013 | 3-May-2013 |
-| 1.1.5 | 102 | Revision to subject domainComponent language in section 9.2.3 | 31-May-2013 | 31-May-2013 |
+| 1.1.5 | 102 | Revision to subject domainComponent language in Section 9.2.3 | 31-May-2013 | 31-May-2013 |
 | 1.1.6 | 105 | Technical Constraints for Subordinate Certificate Authorities | 29-July-2013 | 29-July-2013 |
 | 1.1.7 | 112 | Replace Definition of "Internal Server Name" with "Internal Name" | 3-April-2014 | 3-April-2014 |
 | 1.1.8 | 120 | Affiliate Authority to Verify Domain | 5-June-2014 | 5-June-2014 |
@@ -79,9 +79,9 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.3.9 | 174 | Reform of Requirements Relating to Conflicts with Local Law | 29-Aug-2016 | 27-Nov-2016 |
 | 1.4.0 | 173 | Removal of requirement to cease use of public key due to incorrect info | 28-July-2016 | 11-Sept-2016 |
 | 1.4.1 | 175 | Addition of givenName and surname | 7-Sept-2016 | 7-Sept-2016 |
-| 1.4.2 | 181 | Removal of some validation methods listed in section 3.2.2.4 | 7-Jan-2017 | 7-Jan-2017 |
-| 1.4.3 | 187 | Make CAA Checking Mandatory	| 8-Mar-2017 | 8-Sep-2017 |
-| 1.4.4 | 193 | 825-day Certificate Lifetimes | 17-Mar-2017	| 1-Mar-2018 |
+| 1.4.2 | 181 | Removal of some validation methods listed in Section 3.2.2.4 | 7-Jan-2017 | 7-Jan-2017 |
+| 1.4.3 | 187 | Make CAA Checking Mandatory | 8-Mar-2017 | 8-Sep-2017 |
+| 1.4.4 | 193 | 825-day Certificate Lifetimes | 17-Mar-2017 | 1-Mar-2018 |
 | 1.4.5 | 189 | Amend Section 6.1.7 of Baseline Requirements | 14-Apr-2017 | 14-May-2017 |
 | 1.4.6 | 195 | CAA Fixup | 17-Apr-2017 | 18-May-2017 |
 | 1.4.7 | 196 | Define “Audit Period” | 17-Apr-2017 | 18-May-2017 |
@@ -91,31 +91,31 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.5.1 | 197 | Effective Date of Ballot 193 Provisions | 1-May-2017 | 2-June-2017 |
 | 1.5.2 | 190 | Add Validation Methods with Minor Corrections | 19-Sept-2017 | 19-Oct-2017 |
 | 1.5.3 | 214 | CAA Discovery CNAME Errata | 27-Sept-2017 | 27-Oct-2017 |
-| 1.5.4 | 215 | Fix	Ballot	190	Errata | 4‐Oct‐2017	 | 5‐Nov‐2017 |
-| 1.5.5 | 217 | Sunset RFC 2527 | 21‐Dec‐2017	 | 9‐Mar‐2018 |
-| 1.5.6 | 218 | Remove validation methods #1 and #5 | 5‐Feb‐2018	 | 9‐Mar‐2018 |
-| 1.5.7 | 220 | Minor Cleanups (Spring 2018) | 30‐Mar‐2018	 | 29‐Apr‐2018 |
-| 1.5.8 | 219 | Clarify handling of CAA Record Sets with no "issue"/"issuewild" property tag | 10-Apr-2018	 | 10-May-2018 |
-| 1.5.9 | 223 | Update BR Section 8.4 for CA audit criteria | 15-May-2018	 | 14-June-2018 |
-| 1.6.0 | 224 | WhoIs and RDAP | 22-May-2018	 | 22-June-2018 |
-| 1.6.1 | SC6 | Revocation Timeline Extension | 14-Sep-2018	| 14-Oct-2018 |
-| 1.6.2 | SC12 | Sunset of Underscores in dNSNames | 9-Nov-2018	| 10-Dec-2018 |
-| 1.6.3 | SC13 | CAA Contact Property and Associated E-mail Validation Methods | 25-Dec-2018	| 1-Feb-2019 |
-| 1.6.4 | SC14 | Updated Phone Validation Methods | 31-Jan-2019	| 16-Mar-2019 |
-| 1.6.4 | SC15 | Remove Validation Method Number 9 | 5-Feb-2019	| 16-Mar-2019 |
-| 1.6.4 | SC7 | Update IP Address Validation Methods | 8-Feb-2019	| 16-Mar-2019 |
-| 1.6.5 | SC16 | Other Subject Attributes | 15-Mar-2019	| 16-Apr-2019 |
-| 1.6.6 | SC19 | Phone Contact with DNS CAA Phone Contact v2 | 20-May-2019	| 9-Sep-2019 |
-| 1.6.7 | SC23 | Precertificates | 14-Nov-2019	| 19-Dec-2019 |
-| 1.6.7 | SC24 | Fall Cleanup v2 | 12-Nov-2019	| 19-Dec-2019 |
-| 1.6.8 | SC25 | Define New HTTP Domain Validation Methods v2 | 31-Jan-2020	| 3-Mar-2020 |
-| 1.6.9 | SC27 | Version 3 Onion Certificates | 19-Feb-2020	| 27-Mar-2020 |
-| 1.7.0 | SC29 | Pandoc-Friendly Markdown Formatting Changes | 20-Mar-2020	| 4-May-2020 |
-| 1.7.1 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020	| 20-Aug-2020 |
-| 1.7.1 | SC31 | Browser Alignment | 16-Jul-2020	| 20-Aug-2020 |
-| 1.7.2 | SC33 | TLS Using ALPN Method | 14-Aug-2020	| 22-Sept-2020 |
-| 1.7.3 | SC28 | Logging and Log Retention | 10-Sep-2020	| 19-Oct-2020 |
-| 1.7.3 | SC35 | Cleanups and Clarifications | 9-Sep-2020	| 19-Oct-2020 |
+| 1.5.4 | 215 | Fix Ballot 190 Errata | 4‐Oct‐2017 | 5‐Nov‐2017 |
+| 1.5.5 | 217 | Sunset RFC 2527 | 21‐Dec‐2017 | 9‐Mar‐2018 |
+| 1.5.6 | 218 | Remove validation methods #1 and #5 | 5‐Feb‐2018 | 9‐Mar‐2018 |
+| 1.5.7 | 220 | Minor Cleanups (Spring 2018) | 30‐Mar‐2018 | 29‐Apr‐2018 |
+| 1.5.8 | 219 | Clarify handling of CAA Record Sets with no "issue"/"issuewild" property tag | 10-Apr-2018 | 10-May-2018 |
+| 1.5.9 | 223 | Update BR Section 8.4 for CA audit criteria | 15-May-2018 | 14-June-2018 |
+| 1.6.0 | 224 | WhoIs and RDAP | 22-May-2018 | 22-June-2018 |
+| 1.6.1 | SC6 | Revocation Timeline Extension | 14-Sep-2018 | 14-Oct-2018 |
+| 1.6.2 | SC12 | Sunset of Underscores in dNSNames | 9-Nov-2018 | 10-Dec-2018 |
+| 1.6.3 | SC13 | CAA Contact Property and Associated E-mail Validation Methods | 25-Dec-2018 | 1-Feb-2019 |
+| 1.6.4 | SC14 | Updated Phone Validation Methods | 31-Jan-2019 | 16-Mar-2019 |
+| 1.6.4 | SC15 | Remove Validation Method Number 9 | 5-Feb-2019 | 16-Mar-2019 |
+| 1.6.4 | SC7 | Update IP Address Validation Methods | 8-Feb-2019 | 16-Mar-2019 |
+| 1.6.5 | SC16 | Other Subject Attributes | 15-Mar-2019 | 16-Apr-2019 |
+| 1.6.6 | SC19 | Phone Contact with DNS CAA Phone Contact v2 | 20-May-2019 | 9-Sep-2019 |
+| 1.6.7 | SC23 | Precertificates | 14-Nov-2019 | 19-Dec-2019 |
+| 1.6.7 | SC24 | Fall Cleanup v2 | 12-Nov-2019 | 19-Dec-2019 |
+| 1.6.8 | SC25 | Define New HTTP Domain Validation Methods v2 | 31-Jan-2020 | 3-Mar-2020 |
+| 1.6.9 | SC27 | Version 3 Onion Certificates | 19-Feb-2020 | 27-Mar-2020 |
+| 1.7.0 | SC29 | Pandoc-Friendly Markdown Formatting Changes | 20-Mar-2020 | 4-May-2020 |
+| 1.7.1 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020 | 20-Aug-2020 |
+| 1.7.1 | SC31 | Browser Alignment | 16-Jul-2020 | 20-Aug-2020 |
+| 1.7.2 | SC33 | TLS Using ALPN Method | 14-Aug-2020 | 22-Sept-2020 |
+| 1.7.3 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Oct-2020 |
+| 1.7.3 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -140,7 +140,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2016-10-01 | 7.1.4.2.1 | All Certificates with Reserved IP Address or Internal Name must be revoked. |
 | 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
 | 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
-| 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in section 3.2.2.4. |
+| 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in Section 3.2.2.4. |
 | 2017-09-08 | 3.2.2.8  | CAs MUST check and process CAA records  |
 | 2018-03-01 | 4.2.1 and 6.3.2 | Certificates issued MUST have a Validity Period no greater than 825 days and re-use of validation information limited to 825 days |
 | 2018-05-31 | 2.2 | CP and CPS must follow RFC 3647 format |
@@ -149,7 +149,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2019-05-01 | 7.1.4.2.1 | underscore characters (“_”) MUST NOT be present in dNSName entries |
 | 2019-06-01 | 3.2.2.4.3 | CAs SHALL NOT perform validations using this method after May 31, 2019.  Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.
 | 2019-08-01 | 3.2.2.5 | CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address |
-| 2019-08-01 | 3.2.2.5.4 | CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
+| 2019-08-01 | 3.2.2.5.4 | CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this Section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
 | 2020-06-03 | 3.2.2.4.6 | CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25 |
 | 2020-08-01 | 8.6 | Audit Reports for periods on-or-after 2020-08-01 MUST be structured as defined. |
 | 2020-09-01 | 6.3.2 | Certificates issued SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. |
@@ -226,13 +226,17 @@ No stipulation.
 
 **Applicant**: The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate issues, the Applicant is referred to as the Subscriber. For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
 
-**Applicant Representative**: A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant: (i) who signs and submits, or approves a certificate request on behalf of the Applicant, and/or (ii) who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or (iii) who acknowledges the Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA or is the CA.
+**Applicant Representative**: A natural person or human sponsor who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant:
+
+  i. who signs and submits, or approves a certificate request on behalf of the Applicant, and/or
+  ii. who signs and submits a Subscriber Agreement on behalf of the Applicant, and/or
+  iii. who acknowledges the Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA or is the CA.
 
 **Application Software Supplier**: A supplier of Internet browser software or other relying-party application software that displays or uses Certificates and incorporates Root Certificates.
 
 **Attestation Letter**: A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
 
-**Audit Period**:  In a period-of-time audit, the period between the first day (start) and the last day of operations (end) covered by the auditors in their engagement. (This is not the same as the period of time when the auditors are on-site at the CA.) The coverage rules and maximum length of audit periods are defined in [section 8.1](#frequency-or-circumstances-of-assessment).
+**Audit Period**:  In a period-of-time audit, the period between the first day (start) and the last day of operations (end) covered by the auditors in their engagement. (This is not the same as the period of time when the auditors are on-site at the CA.) The coverage rules and maximum length of audit periods are defined in [Section 8.1](#frequency-or-circumstances-of-assessment).
 
 **Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
 
@@ -292,7 +296,10 @@ No stipulation.
 
 **Domain Name Registrant**: Sometimes referred to as the "owner" of a Domain Name, but more properly the person(s) or entity(ies) registered with a Domain Name Registrar as having the right to control how a Domain Name is used, such as the natural person or Legal Entity that is listed as the "Registrant" by WHOIS or the Domain Name Registrar.
 
-**Domain Name Registrar**: A person or entity that registers Domain Names under the auspices of or by agreement with: (i) the Internet Corporation for Assigned Names and Numbers (ICANN), (ii) a national Domain Name authority/registry, or (iii) a Network Information Center (including their affiliates, contractors, delegates, successors, or assignees).
+**Domain Name Registrar**: A person or entity that registers Domain Names under the auspices of or by agreement with:
+  i. the Internet Corporation for Assigned Names and Numbers (ICANN),
+  ii. a national Domain Name authority/registry, or
+  iii. a Network Information Center (including their affiliates, contractors, delegates, successors, or assignees).
 
 **Enterprise RA**: An employee or agent of an organization unaffiliated with the CA who authorizes issuance of Certificates to that organization.
 
@@ -371,9 +378,11 @@ A Request Token that does not include a timestamp is valid for a single use and 
 The binding SHALL use a digital signature algorithm or a cryptographic hash algorithm at least as strong as that to be used in signing the certificate request.
 
 **Note:** Examples of Request Tokens include, but are not limited to:
-  (i) a hash of the public key; or
-  (ii) a hash of the Subject Public Key Info [X.509]; or
-  (iii) a hash of a PKCS#10 CSR.
+
+  i. a hash of the public key; or
+  ii. a hash of the Subject Public Key Info [X.509]; or
+  iii. a hash of a PKCS#10 CSR.
+
 A Request Token may also be concatenated with a timestamp or other data. If a CA wanted to always use a hash of a PKCS#10 CSR as a Request Token and did not want to incorporate a timestamp and did want to allow certificate key re-use then the applicant might use the challenge password in the creation of a CSR with OpenSSL to ensure uniqueness even if the subject and key are identical between subsequent requests.
 
 **Note**: This simplistic shell command produces a Request Token which has a timestamp and a hash of a CSR.
@@ -436,7 +445,7 @@ The script outputs:
 | **Acronym** | **Meaning** |
 | --- | --- |
 | AICPA | American Institute of Certified Public Accountants |
-| ADN	| Authorization Domain Name |
+| ADN | Authorization Domain Name |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
@@ -528,7 +537,10 @@ The CA SHALL publicly give effect to these Requirements and represent that it wi
 
 > [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
 
-The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are (i) valid, (ii) revoked, and (iii) expired.
+The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are
+  i. valid,
+  ii. revoked, and
+  iii. expired.
 
 ## 2.3 Time or frequency of publication
 The CA SHALL develop, implement, enforce, and annually update a Certificate Policy and/or Certification Practice Statement that describes in detail how the CA implements the latest version of these Requirements. The CA SHALL indicate conformance with this requirement by incrementing the version number and adding a dated changelog entry, even if no other changes are made to the document.
@@ -599,7 +611,7 @@ This section defines the permitted processes and procedures for validating the A
 The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate as follows:
 
 1.  When the FQDN does not contain "onion" as the rightmost label, the CA SHALL validate the FQDN using at least one of the methods listed below; and
-1.  When the FQDN contains "onion" as the rightmost label, the CA SHALL validate the FQDN in accordance with Appendix B.
+2.  When the FQDN contains "onion" as the rightmost label, the CA SHALL validate the FQDN in accordance with Appendix B.
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
@@ -662,8 +674,8 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 Confirming the Applicant's control over the FQDN by confirming one of the following under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of Domain Validation, on the Authorization Domain Name that is accessible by the CA via HTTP/HTTPS over an Authorized Port:
 
-1.	The presence of Required Website Content contained in the content of a file. The entire Required Website Content MUST NOT appear in the request used to retrieve the file or web page, or
-2.	The presence of the Request Token or Random Value contained in the content of a file where the Request Token or Random Value MUST NOT appear in the request.
+1. The presence of Required Website Content contained in the content of a file. The entire Required Website Content MUST NOT appear in the request used to retrieve the file or web page, or
+2. The presence of the Request Token or Random Value contained in the content of a file where the Request Token or Random Value MUST NOT appear in the request.
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after the longer of
 
@@ -768,44 +780,44 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 Confirming the Applicant's control over the FQDN by verifying that the Request Token or Random Value is contained in the contents of a file.
 
-1.	The entire Request Token or Random Value MUST NOT appear in the request used to retrieve the file, and
-2.	the CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
+1. The entire Request Token or Random Value MUST NOT appear in the request used to retrieve the file, and
+2. the CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
 
 The file containing the Request Token or Random Number:
 
-1.	MUST be located on the Authorization Domain Name, and
-2.	MUST be located under the "/.well-known/pki-validation" directory, and
-3.	MUST be retrieved via either the "http" or "https" scheme, and
-4.	MUST be accessed over an Authorized Port.
+1. MUST be located on the Authorization Domain Name, and
+2. MUST be located under the "/.well-known/pki-validation" directory, and
+3. MUST be retrieved via either the "http" or "https" scheme, and
+4. MUST be accessed over an Authorized Port.
 
 If the CA follows redirects the following apply:
 
-1.	Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
-2.	Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
-3.	Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
-4.	Redirects MUST be to resource URLs accessed via Authorized Ports.
+1. Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
+2. Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
+3. Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
+4. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 If a Random Value is used, then:
 
-1.	The CA MUST provide a Random Value unique to the certificate request.
-2.	The Random Value MUST remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
+1. The CA MUST provide a Random Value unique to the certificate request.
+2. The Random Value MUST remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
 
-Confirming the Applicant's control over a FQDN by validating domain control of the FQDN using the ACME HTTP Challenge method defined in section 8.3 of RFC 8555. The following are additive requirements to RFC 8555.
+Confirming the Applicant's control over a FQDN by validating domain control of the FQDN using the ACME HTTP Challenge method defined in Section 8.3 of RFC 8555. The following are additive requirements to RFC 8555.
 
 The CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
 
-The token (as defined in RFC 8555, section 8.3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
+The token (as defined in RFC 8555, Section 8.3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
 If the CA follows redirects:
 
-1.	Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
-2.	Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
-3.	Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
-4.	Redirects MUST be to resource URLs accessed via Authorized Ports.
+1. Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
+2. Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
+3. Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
+4. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
@@ -813,7 +825,7 @@ If the CA follows redirects:
 
 Confirming the Applicant's control over a FQDN by validating domain control of the FQDN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC7301] as defined in RFC 8737. The following are additive requirements to RFC 8737.
 
-The token (as defined in RFC 8737, section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
+The token (as defined in RFC 8737, Section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
 **Note:** Once the FQDN has been validated using this method, the CA MAY NOT also issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
@@ -832,7 +844,9 @@ After July 31, 2019, CAs SHALL maintain a record of which IP validation method, 
 ##### 3.2.2.5.1 Agreed-Upon Change to Website
 Confirming the Applicant's control over the requested IP Address by confirming the presence of a Request Token or Random Value contained in the content of a file or webpage in the form of a meta tag under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of validating control of IP Addresses, on the IP Address that is accessible by the CA via HTTP/HTTPS over an Authorized Port. The Request Token or Random Value MUST NOT appear in the request.
 
-If a Random Value is used, the CA SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of (i) 30 days or (ii) if the Applicant submitted the certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in [Section 4.2.1](#performing-identification-and-authentication-functions) of this document).
+If a Random Value is used, the CA SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of
+  i. 30 days or
+  ii. if the Applicant submitted the certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in [Section 4.2.1](#performing-identification-and-authentication-functions) of this document).
 
 ##### 3.2.2.5.2 Email, Fax, SMS, or Postal Mail to IP Address Contact
 Confirming the Applicant's control over the IP Address  by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as an IP Address Contact.
@@ -902,15 +916,15 @@ When processing CAA records, CAs MUST process the issue, issuewild, and iodef pr
 
 RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determines that either (1) the certificate request is consistent with the applicable CAA RRset or (2) an exception specified in the relevant CP or CPS applies." For issuances conforming to these Baseline Requirements, CAs MUST NOT rely on any exceptions specified in their CP or CPS unless they are one of the following:
 
-*	CAA checking is optional for certificates for which a Certificate Transparency pre-certificate was created and logged in at least two public logs, and for which CAA was checked.
-*	CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in Baseline Requirements [Section 7.1.5](#name-constraints), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
-*	CAA checking is optional if the CA or an Affiliate of the CA is the DNS Operator (as defined in RFC 7719) of the domain's DNS.
+* CAA checking is optional for certificates for which a Certificate Transparency pre-certificate was created and logged in at least two public logs, and for which CAA was checked.
+* CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in Baseline Requirements [Section 7.1.5](#name-constraints), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
+* CAA checking is optional if the CA or an Affiliate of the CA is the DNS Operator (as defined in RFC 7719) of the domain's DNS.
 
 CAs are permitted to treat a record lookup failure as permission to issue if:
 
-*	the failure is outside the CA's infrastructure; and
-*	the lookup has been retried at least once; and
-*	the domain's zone does not have a DNSSEC validation chain to the ICANN root.
+* the failure is outside the CA's infrastructure; and
+* the lookup has been retried at least once; and
+*  the domain's zone does not have a DNSSEC validation chain to the ICANN root.
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CAB Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
@@ -1128,7 +1142,7 @@ The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscri
 ### 4.9.3 Procedure for revocation request
 The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and Certificate Problem Reports.
 
-The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in section 1.5.2 of their CPS.
+The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in Section 1.5.2 of their CPS.
 
 ### 4.9.4 Revocation request grace period
 No stipulation.
@@ -1156,7 +1170,11 @@ If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least on
 
 For the status of Subordinate CA Certificates:
 
-The CA SHALL update and reissue CRLs at least (i) once every twelve months and (ii) within 24 hours after revoking a Subordinate CA Certificate, and the value of the nextUpdate field MUST NOT be more than twelve months beyond the value of the thisUpdate field.
+The CA SHALL update and reissue CRLs at least:
+  i. once every twelve months; and
+  ii. within 24 hours after revoking a Subordinate CA Certificate.
+
+The value of the nextUpdate field MUST NOT be more than twelve months beyond the value of the thisUpdate field.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 No stipulation.
@@ -1190,7 +1208,9 @@ Effective 2020-09-30:
 
 For the status of Subordinate CA Certificates:
 
-* The CA SHALL update information provided via an Online Certificate Status Protocol (i) at least every twelve months; and (ii) within 24 hours after revoking a Subordinate CA Certificate.
+* The CA SHALL update information provided via an Online Certificate Status Protocol
+  i. at least every twelve months; and
+  ii. within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with [Section 7.1.5](#name-constraints), the responder MUST NOT respond with a "good" status for such requests.
 
@@ -1200,9 +1220,11 @@ The OCSP responder MAY provide definitive responses about "reserved" certificate
 
 A certificate serial number within an OCSP request is one of the following three options:
 
-1.	"assigned" if a Certificate with that serial number has been issued by the Issuing CA, using any current or previous key associated with that CA subject; or
-2.	"reserved" if a Precertificate [RFC6962] with that serial number has been issued by (a) the Issuing CA; or (b) a Precertificate Signing Certificate [RFC6962] associated with the Issuing CA; or
-3.	"unused" if neither of the previous conditions are met.
+1. "assigned" if a Certificate with that serial number has been issued by the Issuing CA, using any current or previous key associated with that CA subject; or
+2. "reserved" if a Precertificate [RFC6962] with that serial number has been issued by
+   a.  the Issuing CA; or 
+   b.  a Precertificate Signing Certificate [RFC6962] associated with the Issuing CA; or
+3. "unused" if neither of the previous conditions are met.
 
 ### 4.9.11 Other forms of revocation advertisements available
 No Stipulation.
@@ -1457,7 +1479,11 @@ The business continuity plan MUST include:
 ### 6.1.1 Key pair generation
 
 #### 6.1.1.1 CA Key Pair Generation
-For CA Key Pairs that are either (i) used as a CA Key Pair for a Root Certificate or (ii) used as a CA Key Pair for a Subordinate CA Certificate, where the Subordinate CA is not the operator of the Root CA or an Affiliate of the Root CA, the CA SHALL:
+For CA Key Pairs that are either
+
+  i. used as a CA Key Pair for a Root Certificate or
+  ii. used as a CA Key Pair for a Subordinate CA Certificate, where the Subordinate CA is not the operator of the Root CA or an Affiliate of the Root CA,
+the CA SHALL:
 
 1. prepare and follow a Key Generation Script,
 2. have a Qualified Auditor witness the CA Key Pair generation process or record a video of the entire CA Key Pair generation process, and
@@ -1727,7 +1753,7 @@ g. `authorityKeyIdentifier` (required)
    This extension MUST be present and MUST NOT be marked critical. It MUST contain a `keyIdentifier` field and it MUST NOT contain a `authorityCertIssuer` or `authorityCertSerialNumber` field.
 
 #### 7.1.2.4 All Certificates
-All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a `keyUsage` flag, `extKeyUsage` value, Certificate extension, or other data not specified in [section 7.1.2.1](#root-ca-certificate), [Section 7.1.2.2](#subordinate-ca-certificate), or [Section 7.1.2.3](#subscriber-certificate) unless the CA is aware of a reason for including the data in the Certificate.
+All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a `keyUsage` flag, `extKeyUsage` value, Certificate extension, or other data not specified in [Section 7.1.2.1](#root-ca-certificate), [Section 7.1.2.2](#subordinate-ca-certificate), or [Section 7.1.2.3](#subscriber-certificate) unless the CA is aware of a reason for including the data in the Certificate.
 
 CAs SHALL NOT issue a Certificate with:
 
@@ -1859,7 +1885,7 @@ If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When enc
 ### 7.1.4 Name Forms
 
 #### 7.1.4.1 Name Encoding
-Prior to 2020-09-30, the content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, section 4.1.2.4.
+Prior to 2020-09-30, the content of the Certificate Issuer Distinguished Name field MUST match the Subject DN of the Issuing CA to support Name chaining as specified in RFC 5280, Section 4.1.2.4.
 
 Effective 2020-09-30, the following requirements SHOULD be met by all newly-issued Subordinate CA Certificates that are not used to issue TLS certificates, as defined in [Section 7.1.2.2](#subordinate-ca-certificate), and MUST be met for all other Certificates, regardless of whether the Certificate is a CA Certificate or a Subscriber Certificate.
 
@@ -1959,7 +1985,7 @@ For a Subordinate CA Certificate to be considered Technically Constrained, the c
 
 If the Subordinate CA Certificate includes the id-kp-serverAuth extended key usage, then the Subordinate CA Certificate MUST include the Name Constraints X.509v3 extension with constraints on dNSName, iPAddress and DirectoryName as follows:
 
-a. For each dNSName in permittedSubtrees, the CA MUST confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of [section 3.2.2.4](#validation-of-domain-authorization-or-control).
+a. For each dNSName in permittedSubtrees, the CA MUST confirm that the Applicant has registered the dNSName or has been authorized by the domain registrant to act on the registrant's behalf in line with the verification practices of [Section 3.2.2.4](#validation-of-domain-authorization-or-control).
 b. For each iPAddress range in permittedSubtrees, the CA MUST confirm that the Applicant has been assigned the iPAddress range or has been authorized by the assigner to act on the assignee's behalf.
 c. For each DirectoryName in permittedSubtrees, the CA MUST confirm the Applicant's and/or Subsidiary's Organizational name and location such that end entity certificates issued from the subordinate CA Certificate will be in compliance with [Section 7.1.2.4](#all-certificates) and [Section 7.1.2.5](#application-of-rfc-5280).
 
@@ -2111,7 +2137,10 @@ The CA SHALL undergo an audit in accordance with one of the following schemes:
 
 1. “WebTrust for CAs v2.1 or newer” AND “WebTrust for CAs SSL Baseline with Network Security v2.3 or newer”; or
 2. ETSI EN 319 411-1 v1.2.2, which includes normative references to ETSI EN 319 401 (the latest version of the referenced ETSI documents should be applied); or
-3. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either (a) encompasses all requirements of one of the above schemes or (b) consists of comparable criteria that are available for public review.
+3. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either
+
+   a.  encompasses all requirements of one of the above schemes or
+   b.  consists of comparable criteria that are available for public review.
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
@@ -2261,7 +2290,11 @@ The Subscriber Agreement or Terms of Use MUST contain provisions imposing on the
 2. **Protection of Private Key**: An obligation and warranty by the Applicant to take all reasonable measures to assure control of, keep confidential, and properly protect at all times the Private Key that corresponds to the Public Key to be included in the requested Certificate(s) (and any associated activation data or device, e.g. password or token);
 3. **Acceptance of Certificate**: An obligation and warranty that the Subscriber will review and verify the Certificate contents for accuracy;
 4. **Use of Certificate**: An obligation and warranty to install the Certificate only on servers that are accessible at the subjectAltName(s) listed in the Certificate, and to use the Certificate solely in compliance with all applicable laws and solely in accordance with the Subscriber Agreement or Terms of Use;
-5. **Reporting and Revocation**: An obligation and warranty to: (a) promptly request revocation of the Certificate, and cease using it and its associated Private Key, if there is any actual or suspected misuse or compromise of the Subscriber’s Private Key associated with the Public Key included in the Certificate, and (b) promptly request revocation of the Certificate, and cease using it, if any information in the Certificate is or becomes incorrect or inaccurate;
+5. **Reporting and Revocation**: An obligation and warranty to:
+
+   a.  promptly request revocation of the Certificate, and cease using it and its associated Private Key, if there is any actual or suspected misuse or compromise of the Subscriber’s Private Key associated with the Public Key included in the Certificate, and
+   b.  promptly request revocation of the Certificate, and cease using it, if any information in the Certificate is or becomes incorrect or inaccurate;
+
 6. **Termination of Use of Certificate**: An obligation and warranty to promptly cease all use of the Private Key corresponding to the Public Key included in the Certificate upon revocation of that Certificate for reasons of Key Compromise.
 7. **Responsiveness**: An obligation to respond to the CA's instructions concerning Key Compromise or Certificate misuse within a specified time period.
 8. **Acknowledgment and Acceptance**: An acknowledgment and acceptance that the CA is entitled to revoke the certificate immediately if the Applicant were to violate the terms of the Subscriber Agreement or Terms of Use or if revocation is required by the CA's CP, CPS, or these Baseline Requirements.
@@ -2335,7 +2368,7 @@ These methods allow domain owners to publish contact information in DNS for the 
 
 SYNTAX: `contactemail <rfc6532emailaddress>`
 
-The CAA contactemail property takes an email address as its parameter.  The entire parameter value MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
+The CAA contactemail property takes an email address as its parameter.  The entire parameter value MUST be a valid email address as defined in RFC 6532, Section 3.2, with no additional padding or structure, or it cannot be used.
 
 The following is an example where the holder of the domain specified the contact property using an email address.
 
@@ -2350,7 +2383,7 @@ The contactemail property MAY be critical, if the domain owner does not want CAs
 
 SYNTAX: `contactphone <rfc3966 Global Number>`
 
-The CAA contactphone property takes a phone number as its parameter. The entire parameter value MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used. Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
+The CAA contactphone property takes a phone number as its parameter. The entire parameter value MUST be a valid Global Number as defined in RFC 3966, Section 5.1.4, or it cannot be used. Global Numbers MUST have a preceding + and a country code and MAY contain visual separators.
 
 The following is an example where the holder of the domain specified the contact property using a phone number.
 
@@ -2363,23 +2396,23 @@ The contactphone property MAY be critical if the domain owner does not want CAs 
 
 ### A.2.1. DNS TXT Record Email Contact
 
-The DNS TXT record MUST be placed on the "`_validation-contactemail`" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532 section 3.2, with no additional padding or structure, or it cannot be used.
+The DNS TXT record MUST be placed on the "`_validation-contactemail`" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid email address as defined in RFC 6532, Section 3.2, with no additional padding or structure, or it cannot be used.
 
 ### A.2.2. DNS TXT Record Phone Contact
-The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966 section 5.1.4, or it cannot be used.
+The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain of the domain being validated.  The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966, Section 5.1.4, or it cannot be used.
 
 # APPENDIX B – Issuance of Certificates for .onion Domain Names
 
 This appendix defines permissible verification procedures for including one or more RFC 7686 ".onion" special-use Domain Names in a Certificate.
 
-1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address, as defined in section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
+1. The Domain Name MUST contain at least two labels, where the right-most label is "onion", and the label immediately preceding the right-most "onion" label is a valid Version 3 Onion Address, as defined in Section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
 2. The CA MUST verify the Applicant’s control over the .onion Domain Name using at least one of the methods listed below:
 
     a. The CA MAY verify the Applicant’s control over the .onion service by using method in [Section 3.2.2.4.6 - Agreed‐Upon Change to Website](#agreed-upon-change-to-website). If this method is replaced by a newer version(s) of Agreed-Upon Change to Website, the timelines for use of new and existing version of this method that are defined in [Section 3.2.2.4](#validation-of-domain-authorization-or-control) SHALL apply.
     b. The CA MAY verify the Applicant's control over the .onion service by having the Applicant provide a Certificate Request signed using the .onion public key if the Attributes section of the certificationRequestInfo contains:
 
-        (i) A caSigningNonce attribute that contains a Random Value that is generated by the CA; and
-        (ii) An applicantSigningNonce attribute that contains a single value with at least 64-bits of entropy that is generated by the Applicant.
+        i. A caSigningNonce attribute that contains a Random Value that is generated by the CA; and
+        ii. An applicantSigningNonce attribute that contains a single value with at least 64-bits of entropy that is generated by the Applicant.
 
         The signing nonce attributes have the following format:
 
