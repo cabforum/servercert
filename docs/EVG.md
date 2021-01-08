@@ -133,6 +133,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 **Business Entity**:  Any entity that is not a Private Organization, Government Entity, or Non-Commercial Entity as defined herein. Examples include, but are not limited to, general partnerships, unincorporated associations, sole proprietorships, etc.
 
 **Certificate Approver**:   A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to
+
   i. act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and
   ii. to approve EV Certificate Requests submitted by other Certificate Requesters.
 
@@ -165,6 +166,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 **EV Certificate Warranties**:   In conjunction with the CA issuing an EV Certificate, the CA and its Root CA, during the period when the EV Certificate is Valid, promise that the CA has followed the requirements of these Guidelines and the CA's EV Policies in issuing the EV Certificate and in verifying the accuracy of the information contained in the EV Certificate.
 
 **EV OID**:  An identifying number, in the form of an "object identifier," that is included in the `certificatePolicies` field of a certificate that:
+
   i. indicates which CA policy statement relates to that certificate, and
   ii. is either the CA/Browser Forum EV policy identifier or a policy identifier that, by pre-agreement with one or more Application Software Supplier, marks the certificate as being an EV Certificate.
 
@@ -998,31 +1000,23 @@ Acceptable methods of verification of the Signing Authority of the Contract Sign
    A.  Prior Equivalent Authority of a Contract Signer MAY be relied upon for confirmation or verification of the signing authority of the Contract Signer when the Contract Signer has executed a binding contract between the CA and the Applicant with a legally valid and enforceable seal or handwritten signature and only when the contract was executed more than 90 days prior to the EV Certificate application.  The CA MUST record sufficient details of the previous agreement to correctly identify it and associate it with the EV application.  Such details MAY include any of the following:
 
        i. Agreement title,
-
        ii. Date of Contract Signer's signature,
-
        iii. Contract reference number, and
-
        iv. Filing location.
 
    B.  Prior Equivalent Authority of a Certificate Approver MAY be relied upon for confirmation or verification of the EV Authority of the Certificate Approver when the Certificate Approver has performed one or more of the following:
 
        i. Under contract to the CA, has served (or is serving) as an Enterprise RA for the Applicant, or
-
        ii. Has participated in the approval of one or more certificate requests, for certificates issued by the CA and which are currently and verifiably in use by the Applicant.  In this case the CA MUST have contacted the Certificate Approver by phone at a previously validated phone number or have accepted a signed and notarized letter approving the certificate request.
 
 6. **QIIS or QGIS**:  The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by a QIIS or QGIS that identifies the Contract Signer and/or the Certificate Approver as a corporate officer, sole proprietor, or other senior official of the Applicant.
 
 7. **Contract Signer's Representation/Warranty**: Provided that the CA verifies that the Contract Signer is an employee or agent of the Applicant, the CA MAY rely on the signing authority of the Contract Signer by obtaining a duly executed representation or warranty from the Contract Signer that includes the following acknowledgments:
 
-   A.  That the Applicant authorizes the Contract Signer to sign the Subscriber Agreement on the Applicant's behalf
-,
+   A.  That the Applicant authorizes the Contract Signer to sign the Subscriber Agreement on the Applicant's behalf,
    B.  That the Subscriber Agreement is a legally valid and enforceable agreement,
-
    C.  That, upon execution of the Subscriber Agreement, the Applicant will be bound by all of its terms and conditions,
-
    D.  That serious consequences attach to the misuse of an EV certificate, and
-
    E.  The contract signer has the authority to obtain the digital equivalent of a corporate seal, stamp or officer's signature to establish the authenticity of the company's Web site.
 
 Note: An example of an acceptable representation/warranty appears in Appendix E.

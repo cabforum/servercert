@@ -297,6 +297,7 @@ No stipulation.
 **Domain Name Registrant**: Sometimes referred to as the "owner" of a Domain Name, but more properly the person(s) or entity(ies) registered with a Domain Name Registrar as having the right to control how a Domain Name is used, such as the natural person or Legal Entity that is listed as the "Registrant" by WHOIS or the Domain Name Registrar.
 
 **Domain Name Registrar**: A person or entity that registers Domain Names under the auspices of or by agreement with:
+
   i. the Internet Corporation for Assigned Names and Numbers (ICANN),
   ii. a national Domain Name authority/registry, or
   iii. a Network Information Center (including their affiliates, contractors, delegates, successors, or assignees).
@@ -538,6 +539,7 @@ The CA SHALL publicly give effect to these Requirements and represent that it wi
 > [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at http://www.cabforum.org. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
 
 The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are
+
   i. valid,
   ii. revoked, and
   iii. expired.
@@ -845,6 +847,7 @@ After July 31, 2019, CAs SHALL maintain a record of which IP validation method, 
 Confirming the Applicant's control over the requested IP Address by confirming the presence of a Request Token or Random Value contained in the content of a file or webpage in the form of a meta tag under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of validating control of IP Addresses, on the IP Address that is accessible by the CA via HTTP/HTTPS over an Authorized Port. The Request Token or Random Value MUST NOT appear in the request.
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of
+
   i. 30 days or
   ii. if the Applicant submitted the certificate request, the timeframe permitted for reuse of validated information relevant to the certificate (such as in [Section 4.2.1](#performing-identification-and-authentication-functions) of this document).
 
@@ -1171,6 +1174,7 @@ If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least on
 For the status of Subordinate CA Certificates:
 
 The CA SHALL update and reissue CRLs at least:
+
   i. once every twelve months; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
@@ -1209,6 +1213,7 @@ Effective 2020-09-30:
 For the status of Subordinate CA Certificates:
 
 * The CA SHALL update information provided via an Online Certificate Status Protocol
+
   i. at least every twelve months; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
@@ -1483,6 +1488,7 @@ For CA Key Pairs that are either
 
   i. used as a CA Key Pair for a Root Certificate or
   ii. used as a CA Key Pair for a Subordinate CA Certificate, where the Subordinate CA is not the operator of the Root CA or an Affiliate of the Root CA,
+
 the CA SHALL:
 
 1. prepare and follow a Key Generation Script,
