@@ -22,7 +22,7 @@ jobs:
           draft: true
       - uses: actions/upload-artifact@v2
         with:
-          name: Converted ${{ matrix.document }}
+          name: ${{ matrix.document }}-${{ github.event.pull_request.head.sha || github.sha }}
           path: |
             ${{ steps.build_doc.outputs.pdf_file }}
             ${{ steps.build_doc.outputs.docx_file }}
