@@ -278,13 +278,13 @@ No stipulation.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA, and whose activities are not within the scope of the appropriate CA audits, to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
-**DNS CAA Email Contact**: The email address defined in Section A.1.1.
+**DNS CAA Email Contact**: The email address defined in [Appendix A.1.1](#a11-caa-contactemail-property).
 
-**DNS CAA Phone Contact**: The phone number defined in Section A.1.2.
+**DNS CAA Phone Contact**: The phone number defined in [Appendix A.1.2](#a12-caa-contactphone-property).
 
-**DNS TXT Record Email Contact**: The email address defined in Section A.2.1.
+**DNS TXT Record Email Contact**: The email address defined in [Appendix A.2.1](#a21-dns-txt-record-email-contact).
 
-**DNS TXT Record Phone Contact**: The phone number defined in Section A.2.2.
+**DNS TXT Record Phone Contact**: The phone number defined in [Appendix A.2.2](#a22-dns-txt-record-phone-contact).
 
 **Domain Authorization Document**: Documentation provided by, or a CA's documentation of a communication with, a Domain Name Registrar, the Domain Name Registrant, or the person or entity listed in WHOIS as the Domain Name Registrant (including any private, anonymous, or proxy registration service) attesting to the authority of an Applicant to request a Certificate for a specific Domain Namespace.
 
@@ -613,7 +613,7 @@ This section defines the permitted processes and procedures for validating the A
 The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate as follows:
 
 1.  When the FQDN does not contain "onion" as the rightmost label, the CA SHALL validate the FQDN using at least one of the methods listed below; and
-2.  When the FQDN contains "onion" as the rightmost label, the CA SHALL validate the FQDN in accordance with Appendix B.
+2.  When the FQDN contains "onion" as the rightmost label, the CA SHALL validate the FQDN in accordance with [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names).
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
@@ -2445,4 +2445,4 @@ This appendix defines permissible verification procedures for including one or m
         The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
         The CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with [Section 3.2.2.6](#3226-wildcard-domain-validation) of these Requirements.
 
-3. When a Certificate includes an FQDN where "onion" is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this Appendix B.
+3. When a Certificate includes an FQDN where "onion" is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names).
