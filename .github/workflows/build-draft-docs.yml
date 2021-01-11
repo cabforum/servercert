@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - uses: cabforum/build-guidelines-action@v2.0.0-rc2
+      - uses: cabforum/build-guidelines-action@v2.0.0-rc3
         id: build_doc
         with:
           markdown_file: docs/${{ matrix.document }}
