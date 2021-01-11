@@ -77,7 +77,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 2020-09-01 | [9.4](#94-maximum-validity-period-for-ev-certificate) & [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names) | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
 | 2020-10-01 | [11.1.3](#1113-disclosure-of-verification-sources) | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
 
-**Implementers' Note:**  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
+**Implementers' Note**:  Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
 # 1. Scope
 
@@ -268,26 +268,26 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 Abbreviations and Acronyms are defined in the Baseline Requirements except as otherwise defined herein:
 
 | **Acronym** | **Meaning** |
-|-|-----|
-| BIPM | International Bureau of Weights and Measures|
-| BIS | (US Government) Bureau of Industry and Security|
-| CEO | Chief Executive Officer|
-| CFO | Chief Financial Officer|
-| CIO | Chief Information Officer|
-| CISO | Chief Information Security Officer|
-| COO | Chief Operating Officer|
-| CPA | Chartered Professional Accountant|
-| CSO | Chief Security Officer|
-| EV | Extended Validation|
-| gTLD | Generic Top-Level Domain|
-| IFAC | International Federation of Accountants|
-| IRS | Internal Revenue Service|
-| ISP | Internet Service Provider|
-| QGIS | Qualified Government Information Source|
-| QTIS | Qualified Government Tax Information Source|
-| QIIS | Qualified Independent Information Source|
-| SEC | (US Government) Securities and Exchange Commission|
-| UTC(k) | National realization of Coordinated Universal Time|
+| --- | --- |
+| BIPM | International Bureau of Weights and Measures |
+| BIS | (US Government) Bureau of Industry and Security |
+| CEO | Chief Executive Officer |
+| CFO | Chief Financial Officer |
+| CIO | Chief Information Officer |
+| CISO | Chief Information Security Officer |
+| COO | Chief Operating Officer |
+| CPA | Chartered Professional Accountant |
+| CSO | Chief Security Officer |
+| EV | Extended Validation |
+| gTLD | Generic Top-Level Domain |
+| IFAC | International Federation of Accountants |
+| IRS | Internal Revenue Service |
+| ISP | Internet Service Provider |
+| QGIS | Qualified Government Information Source |
+| QTIS | Qualified Government Tax Information Source |
+| QIIS | Qualified Independent Information Source |
+| SEC | (US Government) Securities and Exchange Commission |
+| UTC(k) | National realization of Coordinated Universal Time |
 
 # 6. Conventions
 
@@ -357,9 +357,9 @@ In addition, the CA MUST include (directly or by reference) the applicable requi
 
 Each CA SHALL maintain the following insurance related to their respective performance and obligations under these Guidelines:
 
-A. Commercial General Liability insurance (occurrence form) with policy limits of at least two million US dollars in coverage; and
+A.  Commercial General Liability insurance (occurrence form) with policy limits of at least two million US dollars in coverage; and
 
-B. Professional Liability/Errors and Omissions insurance, with policy limits of at least five million US dollars in coverage, and including coverage for:
+B.  Professional Liability/Errors and Omissions insurance, with policy limits of at least five million US dollars in coverage, and including coverage for:
    i. claims for damages arising out of an act, error, or omission, unintentional breach of contract, or neglect in issuing or maintaining EV Certificates, and;
    ii. claims for damages arising out of infringement of the proprietary rights of any third party (excluding copyright, and trademark infringement), and invasion of privacy and advertising injury.
 
