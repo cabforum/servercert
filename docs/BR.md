@@ -899,7 +899,7 @@ Confirming the Applicant’s control over the IP Address by obtaining a Domain N
 
 Using any other method of confirmation, including variations of the methods defined in BR [Section 3.2.2.5](#3225-authentication-for-an-ip-address), provided that the CA maintains documented evidence that the method of confirmation establishes that the Applicant has control over the IP Address to at least the same level of assurance as the methods previously described in version 1.6.2 of these Requirements.
 
-CAs SHALL NOT perform validations using this method after July 31, 2019.  Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this [Section 3.2.2.5](#3225-authentication-for-an-ip-address) MAY continue to be used without revalidation until such certificate naturally expires.
+CAs SHALL NOT perform validations using this method after July 31, 2019. Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this [Section 3.2.2.5](#3225-authentication-for-an-ip-address) MAY continue to be used without revalidation until such certificate naturally expires.
 
 ##### 3.2.2.5.5 Phone Contact with IP Address Contact
 
@@ -2185,18 +2185,29 @@ For certificates issued prior to 2020-09-30, a Certificate issued to a Subscribe
 
 Prior to including a Reserved Certificate Policy Identifier, the CA MUST ensure the following requirements are met:
 
-* __Certificate Policy Identifier:__ `2.23.140.1.2.1`  
-  If the Certificate complies with these requirements and lacks Subject identity information that has been verified in accordance with [Section 3.2.2.1](#3221-identity) or [Section 3.2.3](#323-authentication-of-individual-identity).  
-  Such Certificates MUST NOT include `organizationName`, `givenName`, `surname`, `streetAddress`, `localityName`, `stateOrProvinceName`, or `postalCode` in the Subject field.  
-* __Certificate Policy Identifier:__ `2.23.140.1.2.2`  
-  If the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with [Section 3.2.2.1](#3221-identity).  
-  Such Certificates MUST also include `organizationName`, `localityName` (to the extent such field is required under [Section 7.1.4.2.2](#71422-subject-distinguished-name-fields)), `stateOrProvinceName` (to the extent such field is required under [Section 7.1.4.2.2](#71422-subject-distinguished-name-fields)), and `countryName` in the Subject field.  
-* __Certificate Policy Identifier:__ `2.23.140.1.2.3`  
-  If the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with [Section 3.2.3](#323-authentication-of-individual-identity).  
-  Such Certificates MUST also include either `organizationName` or both `givenName` and `surname`, `localityName` (to the extent such field is required under [Section 7.1.4.2.2](#71422-subject-distinguished-name-fields)), `stateOrProvinceName` (to the extent required under [Section 7.1.4.2.2](#71422-subject-distinguished-name-fields)), and `countryName` in the Subject field.  
-* __Certificate Policy Identifier:__ `2.23.140.1.1`  
-  If the Certificate complies with these Requirements and has been issued and operated in accordance with the CA/Browser Forum Guidelines for the Issuance and Management of Extended Validation Certificates ("EV Guidelines").  
-  Such Certificates MUST also include Subject Identity Information as required and verified according to the EV Guidelines.  
+* __Certificate Policy Identifier:__ `2.23.140.1.2.1`
+
+  If the Certificate complies with these requirements and lacks Subject identity information that has been verified in accordance with [Section 3.2.2.1](#3221-identity) or [Section 3.2.3](#323-authentication-of-individual-identity).
+
+  Such Certificates MUST NOT include `organizationName`, `givenName`, `surname`, `streetAddress`, `localityName`, `stateOrProvinceName`, or `postalCode` in the Subject field.
+
+* __Certificate Policy Identifier:__ `2.23.140.1.2.2`
+
+  If the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with [Section 3.2.2.1](#3221-identity).
+
+  Such Certificates MUST also include `organizationName`, `localityName` (to the extent such field is required under [Section 7.1.4.2.2](#71422-subject-distinguished-name-fields)), `stateOrProvinceName` (to the extent such field is required under [Section 7.1.4.2.2](#71422-subject-distinguished-name-fields)), and `countryName` in the Subject field.
+
+* __Certificate Policy Identifier:__ `2.23.140.1.2.3`
+
+  If the Certificate complies with these Requirements and includes Subject Identity Information that is verified in accordance with [Section 3.2.3](#323-authentication-of-individual-identity).
+
+  Such Certificates MUST also include either `organizationName` or both `givenName` and `surname`, `localityName` (to the extent such field is required under [Section 7.1.4.2.2](#71422-subject-distinguished-name-fields)), `stateOrProvinceName` (to the extent required under [Section 7.1.4.2.2](#71422-subject-distinguished-name-fields)), and `countryName` in the Subject field.
+
+* __Certificate Policy Identifier:__ `2.23.140.1.1`
+
+  If the Certificate complies with these Requirements and has been issued and operated in accordance with the CA/Browser Forum Guidelines for the Issuance and Management of Extended Validation Certificates ("EV Guidelines").
+
+  Such Certificates MUST also include Subject Identity Information as required and verified according to the EV Guidelines.
 
 ### 7.1.7 Usage of Policy Constraints extension
 
