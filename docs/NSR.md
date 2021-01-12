@@ -16,10 +16,13 @@ copyright: |
 
 **Scope and Applicability**:
 
-These Network and Certificate System Security Requirements (Requirements) apply to all publicly trusted Certification Authorities (CAs) and are adopted with the intent that all such CAs and Delegated Third Parties be audited for conformity with these Requirements as soon as they have been incorporated as mandatory requirements (if not already mandatory requirements) in the root embedding program for any major Internet browsing client and that they be incorporated into the WebTrust Service Principles and Criteria for Certification Authorities, ETSI TS 101 456, ETSI TS 102 042 and ETSI EN 319 411-1 including revisions and implementations thereof, including any audit scheme that purports to determine conformity therewith.  In these Requirements, the CA is responsible for all tasks performed by Delegated Third Parties and Trusted Roles, and the CA SHALL define, document, and disclose to its auditors
-  a.  the tasks assigned to Delegated Third Parties or Trusted Roles, and
-  b.  the arrangements made with Delegated Third parties to ensure compliance with these Requirements, and
-  c.  the relevant practices implemented by Delegated Third Parties.
+These Network and Certificate System Security Requirements (Requirements) apply to all publicly trusted Certification Authorities (CAs) and are adopted with the intent that all such CAs and Delegated Third Parties be audited for conformity with these Requirements as soon as they have been incorporated as mandatory requirements (if not already mandatory requirements) in the root embedding program for any major Internet browsing client and that they be incorporated into the WebTrust Service Principles and Criteria for Certification Authorities, ETSI TS 101 456, ETSI TS 102 042 and ETSI EN 319 411-1 including revisions and implementations thereof, including any audit scheme that purports to determine conformity therewith.
+
+In these Requirements, the CA is responsible for all tasks performed by Delegated Third Parties and Trusted Roles, and the CA SHALL define, document, and disclose to its auditors
+
+a. the tasks assigned to Delegated Third Parties or Trusted Roles, and
+b. the arrangements made with Delegated Third parties to ensure compliance with these Requirements, and
+c. the relevant practices implemented by Delegated Third Parties.
 
 ## Document History
 
@@ -36,51 +39,51 @@ These Network and Certificate System Security Requirements (Requirements) apply 
 
 ## Definitions
 
-**Certificate Management System**:   A system used by a CA or Delegated Third Party to process, approve issuance of, or store certificates or certificate status information, including the database, database server, and storage.
+**Certificate Management System**: A system used by a CA or Delegated Third Party to process, approve issuance of, or store certificates or certificate status information, including the database, database server, and storage.
 
-**Certificate Systems**:  The system used by a CA or Delegated Third Party in providing identity verification, registration and enrollment, certificate approval, issuance, validity status, support, and other PKI-related services.
+**Certificate Systems**: The system used by a CA or Delegated Third Party in providing identity verification, registration and enrollment, certificate approval, issuance, validity status, support, and other PKI-related services.
 
-**Common Vulnerability Scoring System (CVSS)**:  A quantitative model used to measure the base level severity of a vulnerability (see <http://nvd.nist.gov/home.cfm>).
+**Common Vulnerability Scoring System (CVSS)**: A quantitative model used to measure the base level severity of a vulnerability (see <http://nvd.nist.gov/home.cfm>).
 
-**Critical Security Event**:  Detection of an event, a set of circumstances, or anomalous activity that could lead to a circumvention of a Zone’s security controls or a compromise of a Certificate System’s integrity, including excessive login attempts, attempts to access prohibited resources, DoS/DDoS attacks, attacker reconnaissance, excessive traffic at unusual hours, signs of unauthorized access, system intrusion, or an actual compromise of component integrity.
+**Critical Security Event**: Detection of an event, a set of circumstances, or anomalous activity that could lead to a circumvention of a Zone’s security controls or a compromise of a Certificate System’s integrity, including excessive login attempts, attempts to access prohibited resources, DoS/DDoS attacks, attacker reconnaissance, excessive traffic at unusual hours, signs of unauthorized access, system intrusion, or an actual compromise of component integrity.
 
-**Critical Vulnerability**:  A system vulnerability that has a CVSS score of 7.0 or higher according to the NVD or an equivalent to such CVSS rating (see <http://nvd.nist.gov/home.cfm>), or as otherwise designated as a Critical Vulnerability  by the CA or the CA/Browser Forum.
+**Critical Vulnerability**: A system vulnerability that has a CVSS score of 7.0 or higher according to the NVD or an equivalent to such CVSS rating (see <http://nvd.nist.gov/home.cfm>), or as otherwise designated as a Critical Vulnerability  by the CA or the CA/Browser Forum.
 
-**Delegated Third Party**:   A natural person or legal entity that is not the CA and that operates any part of a Certificate System.
+**Delegated Third Party**: A natural person or legal entity that is not the CA and that operates any part of a Certificate System.
 
 **Delegated Third Party System**: Any part of a Certificate System used by a Delegated Third Party while performing the functions delegated to it by the CA.
 
-**Front End / Internal Support System**:  A system with a public IP address, including a web server, mail server, DNS server, jump host, or authentication server.
+**Front End / Internal Support System**: A system with a public IP address, including a web server, mail server, DNS server, jump host, or authentication server.
 
-**High Security Zone**:  A physical location where a CA’s or Delegated Third Party’s Private Key or cryptographic hardware is located.
+**High Security Zone**: A physical location where a CA’s or Delegated Third Party’s Private Key or cryptographic hardware is located.
 
-**Issuing System**:  A system used to sign certificates or validity status information.
+**Issuing System**: A system used to sign certificates or validity status information.
 
 **Multi-Factor Authentication**: An authentication mechanism consisting of two or more of the following independent categories of credentials (i.e. factors) to verify the user’s identity for a login or other transaction: something you know (knowledge factor), something you have (possession factor), and something you are (inherence factor). Each factor must be independent. Certificate-based authentication can be used as part of Multifactor Authentication only if the private key is stored in a Secure Key Storage Device.
 
-**National Vulnerability Database (NVD)**:   A database that includes the Common Vulnerability Scoring System (CVSS) scores of security-related software flaws, misconfigurations, and vulnerabilities associated with systems (see <http://nvd.nist.gov/home.cfm>).
+**National Vulnerability Database (NVD)**: A database that includes the Common Vulnerability Scoring System (CVSS) scores of security-related software flaws, misconfigurations, and vulnerabilities associated with systems (see <http://nvd.nist.gov/home.cfm>).
 
-**OWASP Top Ten**:  A list of application vulnerabilities published by the Open Web Application Security Project (see <https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project>).
+**OWASP Top Ten**: A list of application vulnerabilities published by the Open Web Application Security Project (see <https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project>).
 
-**Penetration Test**:   A process that identifies and attempts to exploit openings and vulnerabilities on systems through the active use of known attack techniques, including the combination of different types of exploits, with a goal of breaking through layers of defenses and reporting on unpatched vulnerabilities and system weaknesses.
+**Penetration Test**: A process that identifies and attempts to exploit openings and vulnerabilities on systems through the active use of known attack techniques, including the combination of different types of exploits, with a goal of breaking through layers of defenses and reporting on unpatched vulnerabilities and system weaknesses.
 
-**Root CA System**:  A system used to create a Root Certificate or to generate, store, or sign with the Private Key associated with a Root Certificate.
+**Root CA System**: A system used to create a Root Certificate or to generate, store, or sign with the Private Key associated with a Root Certificate.
 
-**SANS Top 25**:  A list created with input from the SANS Institute and the Common Weakness Enumeration (CWE) that identifies the Top 25 Most Dangerous Software Errors that lead to exploitable vulnerabilities (see <http://www.sans.org/top25-software-errors/>).
+**SANS Top 25**: A list created with input from the SANS Institute and the Common Weakness Enumeration (CWE) that identifies the Top 25 Most Dangerous Software Errors that lead to exploitable vulnerabilities (see <http://www.sans.org/top25-software-errors/>).
 
 **Secure Key Storage Device**: A device certified as meeting at least FIPS 140-2 level 2 overall, level 3 physical, or Common Criteria (EAL 4+).
 
-**Secure Zone**:  An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of Certificate Systems.
+**Secure Zone**: An area (physical or logical) protected by physical and logical controls that appropriately protect the confidentiality, integrity, and availability of Certificate Systems.
 
-**Security Support System**:   A system used to provide security support functions, which MAY include authentication, network boundary control, audit logging, audit log reduction and analysis, vulnerability scanning, and intrusion detection (Host-based intrusion detection, Network-based intrusion detection).
+**Security Support System**: A system used to provide security support functions, which MAY include authentication, network boundary control, audit logging, audit log reduction and analysis, vulnerability scanning, and intrusion detection (Host-based intrusion detection, Network-based intrusion detection).
 
-**System**:  One or more pieces of equipment or software that stores, transforms, or communicates data.
+**System**: One or more pieces of equipment or software that stores, transforms, or communicates data.
 
-**Trusted Role**:  An employee or contractor of a CA or Delegated Third Party who has authorized access to or control over a Secure Zone or High Security Zone.
+**Trusted Role**: An employee or contractor of a CA or Delegated Third Party who has authorized access to or control over a Secure Zone or High Security Zone.
 
-**Vulnerability Scan**:  A process that uses manual or automated tools to probe internal and external systems to check and report on the status of operating systems, services, and devices exposed to the network and the presence of vulnerabilities listed in the NVD, OWASP Top Ten, or SANS Top 25.
+**Vulnerability Scan**: A process that uses manual or automated tools to probe internal and external systems to check and report on the status of operating systems, services, and devices exposed to the network and the presence of vulnerabilities listed in the NVD, OWASP Top Ten, or SANS Top 25.
 
-**Zone**:  A subset of Certificate Systems created by the logical or physical partitioning of systems from other Certificate Systems.
+**Zone**: A subset of Certificate Systems created by the logical or physical partitioning of systems from other Certificate Systems.
 
 # 1. General Protections for the Network and Supporting Systems
 
@@ -145,7 +148,7 @@ k. Lockout account access to Certificate Systems after no more than five (5) fai
    2. Cannot be leveraged for a denial of service attack, and
    3. Does not weaken the security of this authentication control;
 
-l. Implement a process that disables all privileged access of an individual to Certificate Systems  within twenty four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
+l. Implement a process that disables all privileged access of an individual to Certificate Systems within twenty four (24) hours upon termination of the individual’s employment or contracting relationship with the CA or Delegated Third Party;
 
 m. Enforce Multi-Factor Authentication OR multi-party authentication for administrator access to Issuing Systems and Certificate Management Systems;
 
@@ -154,7 +157,7 @@ n. Enforce Multi-Factor Authentication for all Trusted Role accounts on Certific
 o. Restrict remote administration or access to an Issuing System, Certificate Management System, or Security Support System except when:
 
    1. the remote connection originates from a device owned or controlled by the CA or Delegated Third Party,
-   2. the remote connection is through a temporary, non-persistent encrypted channel that is  supported by Multi-Factor Authentication, and
+   2. the remote connection is through a temporary, non-persistent encrypted channel that is supported by Multi-Factor Authentication, and
    3. the remote connection is made to a designated intermediary device
 
       i. located within the CA’s network,
@@ -173,7 +176,7 @@ c. Implement automated mechanisms under the control of CA or Delegated Third Par
 
 d. Require Trusted Role personnel to follow up on alerts of possible Critical Security Events;
 
-e. Monitor the integrity of the logging processes for application and system logs through continuous automated monitoring and alerting or through a human review to ensure that logging and log-integrity  functions are effective. Alternatively, if a human review is utilized and the system is online, the process must be performed at least once every 31 days.
+e. Monitor the integrity of the logging processes for application and system logs through continuous automated monitoring and alerting or through a human review to ensure that logging and log-integrity functions are effective. Alternatively, if a human review is utilized and the system is online, the process must be performed at least once every 31 days.
 
 f. Monitor the archival and retention of logs to ensure that logs are retained for the appropriate amount of time in accordance with the disclosed business practices and applicable legislation.
 
@@ -202,8 +205,8 @@ f. Do one of the following within ninety-six (96) hours of discovery of a Critic
    1. Remediate the Critical Vulnerability;
    2. If remediation of the Critical Vulnerability within ninety-six (96) hours is not possible, create and implement a plan to mitigate the Critical Vulnerability, giving priority to
 
-      i. vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical  (such as those with a CVSS score of 10.0) and
-      ii. systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise;  or
+      i. vulnerabilities with high CVSS scores, starting with the vulnerabilities the CA determines are the most critical (such as those with a CVSS score of 10.0) and
+      ii. systems that lack sufficient compensating controls that, if the vulnerability were left unmitigated, would allow external system control, code execution, privilege escalation, or system compromise; or
 
    3. Document the factual basis for the CA’s determination that the vulnerability does not require remediation because
 
