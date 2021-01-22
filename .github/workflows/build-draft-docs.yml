@@ -11,20 +11,28 @@ jobs:
     name: Build ${{ matrix.document }}
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Checkout old version for redline (pull request)
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.event.push.before }}
+          path: old/
       - uses: cabforum/build-guidelines-action@v2.0.0-rc3
         id: build_doc
         with:
           markdown_file: docs/${{ matrix.document }}
+          diff_file: old/docs/${{ matrix.document }}
           pdf: true
           docx: true
           lint: true
-          draft: true
+          draft: ${{ github.event.name != 'push' }}
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.document }}-${{ github.event.pull_request.head.sha || github.sha }}
           path: |
             ${{ steps.build_doc.outputs.pdf_file }}
             ${{ steps.build_doc.outputs.docx_file }}
+            ${{ steps.build_doc.outputs.pdf_redline_file }}
           if-no-files-found: 'error'
           retention-days: 21
