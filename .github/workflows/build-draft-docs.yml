@@ -18,7 +18,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.base.sha || github.event.push.before }}
           path: old/
-      - uses: cabforum/build-guidelines-action@v2.0.0-rc3
+      - uses: cabforum/build-guidelines-action@v2
         id: build_doc
         with:
           markdown_file: docs/${{ matrix.document }}
@@ -26,7 +26,7 @@ jobs:
           pdf: true
           docx: true
           lint: true
-          draft: ${{ github.event.name != 'push' }}
+          draft: ${{ !(github.event.name == 'push' && github.repository == 'cabforum/servercert' && github.ref == 'refs/heads/main') }}
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.document }}-${{ github.event.pull_request.head.sha || github.sha }}
