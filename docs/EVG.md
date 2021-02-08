@@ -657,7 +657,7 @@ If present, this extension MUST contain a Registration Reference for a Legal Ent
 
 The Registration Scheme MUST be encoded as described by the following ASN.1 grammar:
 
-```
+```ASN.1
 id-CABFOrganizationIdentifier OBJECT IDENTIFIER ::= {
     joint-iso-itu-t(2) international-organizations(23)
     ca-browser-forum(140) certificate-extensions(3)
@@ -1643,7 +1643,7 @@ A CA may issue an EV Certificate with .onion in the right-most label of the Doma
 
    The CA MUST include the CAB Forum Tor Service Descriptor Hash extension in the `TBSCertificate` to convey hashes of keys related to .onion addresses. The CA MUST include the Tor Service Descriptor Hash extension using the following format:
 
-   ```
+   ```ASN.1
    cabf-TorServiceDescriptor OBJECT IDENTIFIER ::= { 2.23.140.1.31 }
 
    TorServiceDescriptorSyntax ::=
@@ -1677,7 +1677,7 @@ A CA may issue an EV Certificate with .onion in the right-most label of the Doma
 
       The signing nonce attributes have the following format:
 
-      ```
+      ```ASN.1
       caSigningNonce ATTRIBUTE ::= {
           WITH SYNTAX              OCTET STRING
           EQUALITY MATCHING RULE   octetStringMatch
@@ -1707,7 +1707,7 @@ A CA may issue an EV Certificate with .onion in the right-most label of the Doma
 
 # Appendix G – Abstract Syntax Notation One module for EV certificates
 
-```
+```ASN.1
 CABFSelectedAttributeTypes {
     joint‐iso‐itu‐t(2) international‐organizations(23)
     ca‐browser‐forum(140) module(4)

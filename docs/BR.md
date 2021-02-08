@@ -1950,7 +1950,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
 
   Encoding:
 
-  ```
+  ```hexdump
   304106092a864886f70d01010a3034a00f300d0609608648016503040201
   0500a11c301a06092a864886f70d010108300d0609608648016503040201
   0500a203020120
@@ -1960,7 +1960,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
 
   Encoding:
 
-  ```
+  ```hexdump
   304106092a864886f70d01010a3034a00f300d0609608648016503040202
   0500a11c301a06092a864886f70d010108300d0609608648016503040202
   0500a203020130
@@ -1970,7 +1970,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
 
   Encoding:
 
-  ```
+  ```hexdump
   304106092a864886f70d01010a3034a00f300d0609608648016503040203
   0500a11c301a06092a864886f70d010108300d0609608648016503040203
   0500a203020140
@@ -2126,7 +2126,7 @@ If the Subordinate CA Certificate is not allowed to issue certificates with an I
 
 A decoded example for issuance to the domain and sub domains of `example.com` by organization `Example LLC, Boston, Massachusetts, US` would be:
 
-```
+```text
 X509v3 Name Constraints:
   Permitted:
     DNS:example.com
@@ -2526,7 +2526,7 @@ The CAA contactemail property takes an email address as its parameter. The entir
 
 The following is an example where the holder of the domain specified the contact property using an email address.
 
-```
+```DNS Zone
 $ORIGIN example.com.
                CAA 0 contactemail "domainowner@example.com"
 ```
@@ -2541,7 +2541,7 @@ The CAA contactphone property takes a phone number as its parameter. The entire 
 
 The following is an example where the holder of the domain specified the contact property using a phone number.
 
-```
+```DNS Zone
 $ORIGIN example.com.
                CAA 0 contactphone "+1 (555) 123-4567"
 ```
@@ -2575,7 +2575,7 @@ This appendix defines permissible verification procedures for including one or m
 
       The signing nonce attributes have the following format:
 
-      ```
+      ```ASN.1
       caSigningNonce ATTRIBUTE ::= {
          WITH SYNTAX              OCTET STRING
          EQUALITY MATCHING RULE   octetStringMatch
