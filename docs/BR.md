@@ -1511,8 +1511,8 @@ The CA SHALL record at least the following events:
    1. Certificate requests, renewal, and re-key requests, and revocation;
    2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
    3. Approval and rejection of certificate requests;
-   4. Issuance of Certificates; 
-   5. Generation of Certificate Revocation Lists; and 
+   4. Issuance of Certificates;
+   5. Generation of Certificate Revocation Lists; and
    6. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)).
 
 3. Security events, including:
@@ -1927,7 +1927,7 @@ The extKeyUsage extension MAY be "unrestricted" as described in the following ta
 - the organizationName represented in the Issuer and Subject names of the corresponding certificate are either:
    - the same, or
    - the organizationName represented in the Subject name is an affiliate of the organizationName represented in the Issuer name
-- the corresponding CA represented by the Subject of the Cross-Certificate is operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA organization. 
+- the corresponding CA represented by the Subject of the Cross-Certificate is operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA organization.
 
 Table: Cross-Certified Subordinate CA with Unrestricted EKU
 
@@ -2250,7 +2250,7 @@ CAs SHALL NOT include additional names unless the CA is aware of a reason for in
 
 ##### 7.1.2.7.1 Subscriber Certificate Types
 
-There are four types of Subscriber Certificates that may be issued, which vary based on the amount of Subject Information that is included.  Each of these certificate types shares a common profile, with three exceptions: the `subject` name fields that may occur, how those fields are validated, and the contents of the `certificatePolicies` extension. 
+There are four types of Subscriber Certificates that may be issued, which vary based on the amount of Subject Information that is included.  Each of these certificate types shares a common profile, with three exceptions: the `subject` name fields that may occur, how those fields are validated, and the contents of the `certificatePolicies` extension.
 
 | __Type__                    | __Description__                                       |
 | ---                         | -------                                                |
@@ -2373,7 +2373,9 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `nameConstraints`                 | MUST NOT        | -            | - |
 | `keyUsage`                        | SHOULD          | Y            | See [Section 7.1.2.7.11](#712711-subscriber-certificate-key-usage) |
 | `basicConstraints`                | MAY             | Y            | See [Section 7.1.2.7.8](#71278-subscriber-certificate-basic-constraints) |
-| `crlDistributionPoints`           | MAY             | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
+| `crlDistributionPoints`           | -               | -            | - |
+|  \ \ \ \ _For Short-lived Subscriber Certificates_           | SHOULD NOT            | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
+| \ \ \ \ _For all other Subscriber Certificates_         | MUST      | N            | See [Section
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
@@ -2388,7 +2390,7 @@ The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with t
 
 | __Access Method__ | __OID__            | __Access Location__         | __Presence__ | __Maximum__ | __Description__ |
 | --                | --                 | ----                        | -            | -          | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MUST         | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
+| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
 | `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*         | A HTTP URL of the Issuing CA's certificate. |
 | Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
 
@@ -2748,7 +2750,7 @@ The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with t
 
 | __Access Method__ | __OID__            | __Access Location__         | __Presence__ | __Maximum__ | __Description__ |
 | --                | --                 | ----                        | -            | -          | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | SHOULD       | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
+| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY       | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
 | `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's certificate. |
 | Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
 
@@ -2887,17 +2889,45 @@ This section contains several fields that are common among multiple certificate 
 
 ##### 7.1.2.11.2 CRL Distribution Points
 
-If present, the CRL Distribution Points extension MUST contain at least one `DistributionPoint`; containing more than one is NOT RECOMMENDED. All `DistributionPoint` items must be formatted as follows:
+The CRL Distribution Points extension MUST be present in:
+- Subordinate CA Certificates; and
+- Subscriber Certificates with validity greater than or equal to ten days.
 
-Table: `DistributionPoint` profile
+The CRL Distribution Points extension SHOULD NOT be present in:
+- Root CA Certificates; and
+- Subscriber Certificates with validity less than ten days (i.e., Short-lived Subscriber Certificates).
 
-| __Field__           | __Presence__    | __Description__ |
-| ---                 | --              | ------          |
-| `distributionPoint` | MUST            | The `DistributionPointName` MUST be a `fullName` formatted as described below. |
-| `reasons`           | MUST NOT        |                 |
-| `cRLIssuer`         | MUST NOT        |                 |
+The CRL Distribution Points extension MUST NOT be present in:
+- OCSP Responder Certificates
 
-A `fullName` MUST contain at least one `GeneralName`; it MAY contain more than one. All `GeneralName`s MUST be of type `uniformResourceIdentifier`, and the scheme of each MUST be "http". The first `GeneralName` must contain the HTTP URL of the Issuing CA's CRL service for this certificate.
+The CRL Distribution Points extension MUST be formatted as follows:
+
+Table: `CRLDistributionPoints` profile
+
+| __Field__                   | __Presence__    | __Description__ |
+| ---                         | --              | ------          |
+| `CRLDistributionPoints`     |                 |                 |
+| \ \ **1**                   | MUST            | The first `DistributionPoint` present in the `CRLDistributionPoints` |
+| \ \ \ \ `distributionPoint` | MUST            | The `DistributionPointName` MUST be a `fullName` formatted as described below. |
+| \ \ \ \ `reasons`           | MUST NOT        |                 |
+| \ \ \ \ `cRLIssuer`         | MUST NOT        |                 |
+| \ \ **2+**                  | NOT RECOMMENDED | Additional `DistributionPoint`s are NOT RECOMMENDED. |
+| \ \ \ \ `distributionPoint` | MUST            | The `DistributionPointName` MUST be a `fullName` formatted as described below. |
+| \ \ \ \ `reasons`           | MUST NOT        |                 |
+| \ \ \ \ `cRLIssuer`         | MUST NOT        |                 |
+| \ \ **3**                   | MUST NOT        | `DistributionPoints` that do not conform to the above requirements MUST NOT be present. |
+
+Table: `fullName` profile
+
+| __Field__                           | __Presence__ | __Description__ |
+| ---                                 | -            | -----           |
+| `fullName`                          |              |                 |
+| \ \ **1**                           | MUST         | The first `GeneralName` present in `fullName` MUST be of type `uniformResourceIdentifier` |
+| \ \ \ \ `uniformResourceIdentifier` | MUST         | The HTTP URL of the Issuing CA's CRL service for this certificate (either a full and complete CRL or the applicable partitioned CRL) |
+| \ \ **2+**                          | MAY          | Additional `GeneralName`s MAY be present. If present, they MUST be of type `uniformResourceIdentifier`. |
+| \ \ \ \ `uniformResourceIdentifier` | MUST         | If present, the scheme of the `uniformResourceIdentifier` MUST be "http". |
+| \ \ **3**                           | MUST NOT     | `GeneralName`s that do not conform to the above requirements MUST NOT be present. |
+
 
 ##### 7.1.2.11.3 Signed Certificate Timestamp List
 
@@ -3163,25 +3193,25 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
    If a CRL entry is for a Certificate subject to these Requirements, the `CRLReason` MUST NOT be certificateHold (6).
 
    If a `reasonCode` CRL entry extension is present, the `CRLReason` MUST indicate the most appropriate reason for revocation of the Certificate.
-   
+
     CRLReason MUST be included in the `reasonCode` extension of the CRL entry corresponding to a Subscriber Certificate that is revoked after July 15, 2023, unless the CRLReason is "unspecified (0)". Revocation reason code entries for Subscriber Certificates revoked prior to July 15, 2023, do NOT need to be added or changed.
 
 Only the following CRLReasons MAY be present in the CRL `reasonCode` extension for Subscriber Certifificates:
 
-  * **keyCompromise (RFC 5280 CRLReason #1):** Indicates that it is known or suspected that the Subscriber’s Private Key has been compromised; 
+  * **keyCompromise (RFC 5280 CRLReason #1):** Indicates that it is known or suspected that the Subscriber’s Private Key has been compromised;
   * **affiliationChanged (RFC 5280 CRLReason #3):** Indicates that the Subject's name or other Subject Identity Information in the Certificate has changed, but there is no cause to suspect that the Certificate's Private Key has been compromised;
   * **superseded (RFC 5280 CRLReason #4):** Indicates that the Certificate is being replaced because: the Subscriber has requested a new Certificate, the CA has reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the Certificate should not be relied upon, or the CA has revoked the Certificate for compliance reasons such as the Certificate does not comply with these Baseline Requirements or the CA's CP or CPS;
   * **cessationOfOperation (RFC 5280 CRLReason #5):** Indicates that the website with the Certificate is shut down prior to the expiration of the Certificate, or if the Subscriber no longer owns or controls the Domain Name in the Certificate prior to the expiration of the Certificate; or
   * **privilegeWithdrawn (RFC 5280 CRLReason #9):** Indicates that there has been a subscriber-side infraction that has not resulted in keyCompromise, such as the Certificate Subscriber provided misleading information in their Certificate Request or has not upheld their material obligations under the Subscriber Agreement or Terms of Use.
 
-The Subscriber Agreement, or an online resource referenced therein, MUST inform Subscribers about the revocation reason options listed above and provide explanation about when to choose each option. Tools that the CA provides to the Subscriber MUST allow for these options to be easily specified when the Subscriber requests revocation of their Certificate, with the default value being that no revocation reason is provided (i.e. the default corresponds to the CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL). 
+The Subscriber Agreement, or an online resource referenced therein, MUST inform Subscribers about the revocation reason options listed above and provide explanation about when to choose each option. Tools that the CA provides to the Subscriber MUST allow for these options to be easily specified when the Subscriber requests revocation of their Certificate, with the default value being that no revocation reason is provided (i.e. the default corresponds to the CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL).
 
 The privilegeWithdrawn reasonCode SHOULD NOT be made available to the Subscriber as a revocation reason option, because the use of this reasonCode is determined by the CA and not the Subscriber.
 
 When a CA obtains verifiable evidence of Key Compromise for a Certificate whose CRL entry does not contain a reasonCode extension or has a reasonCode extension with a non-keyCompromise reason, the CA SHOULD update the CRL entry to enter keyCompromise as the CRLReason in the reasonCode extension. Additionally, the CA SHOULD update the revocation date in a CRL entry when it is determined that the private key of the certificate was compromised prior to the revocation date that is indicated in the CRL entry for that certificate.
 
 Note: Backdating the revocationDate field is an exception to best practice described in RFC 5280 (section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
-   
+
 2. `issuingDistributionPoint` (OID 2.5.29.28)
 
    Effective 2023-01-15, if a CRL does not contain entries for all revoked unexpired certificates issued by the CRL issuer, then it MUST contain a critical Issuing Distribution Point extension and MUST populate the `distributionPoint` field of that extension.
