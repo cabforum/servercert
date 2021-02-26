@@ -1,11 +1,11 @@
 ---
 title: Network and Certificate System Security Requirements
-subtitle: Version 1.6
+subtitle: Version 1.7
 author:
   - CA/Browser Forum
-date: 18 March, 2021
+date: 26 March, 2021
 copyright: |
-  Copyright 2020 CA/Browser Forum
+  Copyright 2021 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -35,6 +35,7 @@ c. the relevant practices implemented by Delegated Third Parties.
 | 1.4 | SC29 | System Configuration Management | 7-May-20 | 8-Jun-2020 |
 | 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 18-Mar-2021 |
+| 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 26-Mar-2021 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
