@@ -3,7 +3,7 @@ title: Baseline Requirements for the Issuance and Management of Publicly-Trusted
 subtitle: Version 1.7.4
 author:
   - CA/Browser Forum
-date: 26 March, 2021  
+date: 28 March, 2021  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -116,7 +116,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.2 | SC33 | TLS Using ALPN Method | 14-Aug-2020 | 22-Sept-2020 |
 | 1.7.3 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Oct-2020 |
 | 1.7.3 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
-| 1.7.4 | SC41 | Reformat the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 26-Mar-2021 |
+| 1.7.4 | SC41 | Reformat the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 28-Mar-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
