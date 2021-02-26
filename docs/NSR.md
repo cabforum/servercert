@@ -181,6 +181,8 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 | 1.2 | SC3 | Two-Factor Authentication and Password Improvements | 16‐Aug‐18 | 15-Sep-18 |
 | 1.3 | SC21 | The Network and Certificate Systems Security Requirements section 3 (Log Integrity Controls) | 26‐Sep‐19 | 4-Nov-2019 |
 | 1.4 | SC29 | System Configuration Management | 7-May-20 | 8-Jun-2020 |
+| 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
+| 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 18-Mar-2021 |
 
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
