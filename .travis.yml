@@ -42,4 +42,4 @@ deploy:
   acl: public_read
   on:
     all_branches: true
-    repo: cabforum/documents
+    repo: cabforum/servercert
