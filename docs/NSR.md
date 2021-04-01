@@ -2,7 +2,7 @@
 
 **NETWORK AND CERTIFICATE SYSTEM SECURITY REQUIREMENTS** 
 
-**Version 1.5 - Effective 19 October 2020**
+**Version 1.6 - Effective 30 March 2021**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -132,7 +132,7 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 
 **Critical Security Event:**  Detection of an event, a set of circumstances, or anomalous activity that could lead to a circumvention of a Zone’s security controls or a compromise of a Certificate System’s integrity, including excessive login attempts, attempts to access prohibited resources, DoS/DDoS attacks, attacker reconnaissance, excessive traffic at unusual hours, signs of unauthorized access, system intrusion, or an actual compromise of component integrity.
 
-**Critical Vulnerability:**  A system vulnerability that has a CVSS score of 7.0 or higher according to the NVD or an equivalent to such CVSS rating (see http://nvd.nist.gov/home.cfm), or as otherwise designated as a Critical Vulnerability  by the CA or the CA/Browser Forum.
+**Critical Vulnerability:**  A system vulnerability that has a CVSS v2.0 score of 7.0 or higher according to the NVD or an equivalent to such CVSS rating (see https://nvd.nist.gov/vuln-metrics/cvss), or as otherwise designated as a Critical Vulnerability by the CA or the CA/Browser Forum.
 
 **Delegated Third Party:**   A natural person or legal entity that is not the CA and that operates any part of a Certificate System.  
 
@@ -181,7 +181,8 @@ f.	Do one of the following within ninety-six (96) hours of discovery of a Critic
 | 1.2 | SC3 | Two-Factor Authentication and Password Improvements | 16‐Aug‐18 | 15-Sep-18 |
 | 1.3 | SC21 | The Network and Certificate Systems Security Requirements section 3 (Log Integrity Controls) | 26‐Sep‐19 | 4-Nov-2019 |
 | 1.4 | SC29 | System Configuration Management | 7-May-20 | 8-Jun-2020 |
-
+| 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
+| 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
