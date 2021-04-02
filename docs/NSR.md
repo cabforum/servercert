@@ -3,7 +3,7 @@ title: Network and Certificate System Security Requirements
 subtitle: Version 1.7
 author:
   - CA/Browser Forum
-date: 28 March, 2021
+date: 30 March, 2021
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -34,7 +34,7 @@ c. the relevant practices implemented by Delegated Third Parties.
 | 1.3 | SC21 | The Network and Certificate Systems Security Requirements Section 3 (Log Integrity Controls) | 26‐Sep‐19 | 4-Nov-2019 |
 | 1.4 | SC29 | System Configuration Management | 7-May-20 | 8-Jun-2020 |
 | 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
-| 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 18-Mar-2021 |
+| 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
 | 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 28-Mar-2021 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
