@@ -18,7 +18,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.base.sha || github.event.push.before }}
           path: old/
-      - uses: cabforum/build-guidelines-action@v2.0.0
+      - uses: cabforum/build-guidelines-action@v2.0.1
         id: build_doc
         with:
           markdown_file: docs/${{ matrix.document }}
