@@ -26,7 +26,7 @@ jobs:
           pdf: true
           docx: true
           lint: true
-          draft: ${{ !(github.event.name == 'push' && github.repository == 'cabforum/servercert' && github.ref == 'refs/heads/main') }}
+          draft: ${{ !(github.event_name == 'push' && github.repository == 'cabforum/servercert' && github.ref == 'refs/heads/main') }}
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.document }}-${{ github.event.pull_request.head.sha || github.sha }}
