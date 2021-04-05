@@ -66,7 +66,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 13-Jul-2020 | 20-Aug-2020 |
 | 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020 | 20-Aug-2020 |
 | 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
-| 1.7.5 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 28-Mar-2021 |
+| 1.7.5 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 

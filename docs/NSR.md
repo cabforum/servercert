@@ -35,7 +35,7 @@ c. the relevant practices implemented by Delegated Third Parties.
 | 1.4 | SC29 | System Configuration Management | 7-May-20 | 8-Jun-2020 |
 | 1.5 | SC28 | Logging and Log Retention | 10-Sep-2020 | 19-Sep-2020 |
 | 1.6 | SC39 | Definition of Critical Vulnerability | 16-Feb-2021 | 30-Mar-2021 |
-| 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 28-Mar-2021 |
+| 1.7 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 
 \* Effective Date based on completion of 30‐day IPR review without filing of any Exclusion Notices.
 
