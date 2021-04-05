@@ -3,7 +3,7 @@ title: Baseline Requirements for the Issuance and Management of Publicly-Trusted
 subtitle: Version 1.7.4
 author:
   - CA/Browser Forum
-date: 28 March, 2021  
+date: 30 March, 2021  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
