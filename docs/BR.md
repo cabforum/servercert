@@ -818,12 +818,13 @@ The file containing the Request Token or Random Number:
 3. MUST be retrieved via either the "http" or "https" scheme, and
 4. MUST be accessed over an Authorized Port.
 
-If the CA follows redirects the following apply:
+If the CA follows redirects, the following apply:
 
-1. Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
-2. Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
-3. Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
-4. Redirects MUST be to resource URLs accessed via Authorized Ports.
+1. Redirects MUST be initiated at the HTTP protocol layer.
+   a. Effective July 1, 2021 for new validations, Redirects MUST be the result of a 301, 302, 307, or 308 HTTP status code response and MUST be to the resource URL contained in the Location HTTP response header.
+   b. For validations performed prior to July 1, 2021, Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4. CAs SHOULD limit the accepted status codes and resource URLs to those defined within 1.a.
+2. Redirects MUST be to resource URLs with either the "http" or "https" scheme.
+3. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 If a Random Value is used, then:
 
@@ -840,12 +841,13 @@ The CA MUST receive a successful HTTP response from the request (meaning a 2xx H
 
 The token (as defined in RFC 8555, Section 8.3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
-If the CA follows redirects:
+If the CA follows redirects, the following apply:
 
-1. Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
-2. Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
-3. Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
-4. Redirects MUST be to resource URLs accessed via Authorized Ports.
+1. Redirects MUST be initiated at the HTTP protocol layer.
+   a. Effective July 1, 2021 for new validations, Redirects MUST be the result of a 301, 302, 307, or 308 HTTP status code response and MUST be to the resource URL contained in the Location HTTP response header.
+   b. For validations performed prior to July 1, 2021, Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4. CAs SHOULD limit the accepted status codes and resource URLs to those defined within 1.a.
+2. Redirects MUST be to resource URLs with either the "http" or "https" scheme.
+3. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
