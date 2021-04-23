@@ -2580,13 +2580,13 @@ This appendix defines permissible verification procedures for including one or m
 
          The CA SHALL only use this method when reusing a previously completed domain validation permitted by that method and [Section 4.2.1](#421-performing-identification-and-authentication-functions). The CA MUST NOT perform new validations using this method.
 
-      ii. [Section 3.2.2.4.18](#322418-agreed-upon-change-to-website-v2):
+      ii. [Section 3.2.2.4.18 - Agreed-Upon Change to Website v2](#322418-agreed-upon-change-to-website-v2):
 
           The CA SHALL only use this method to validate Wildcard Certificates or as an Authorization Domain Name as specified by that section, except as follows:
 
           When the CA performs the validation with the FQDN containing exactly two labels, the hidden service name and "onion", the CA MAY use this validation to validate a Wildcard Domain Name for this FQDN and MAY use this validation to issue Certificates for other FQDNs that end with all the labels, without regard to the prohibition of such certificates in [Section 3.2.2.4.18](#322418-agreed-upon-change-to-website-v2).
 
-      iii. [Section 3.2.2.4.19](#322419-agreed-upon-change-to-website-acme):
+      iii. [Section 3.2.2.4.19 - Agreed-Upon Change to Website - ACME](#322419-agreed-upon-change-to-website-acme):
 
            The CA SHALL only use this method to validate Wildcard Certificates or as an Authorization Domain Name as specified by that section, except as follows:
 
