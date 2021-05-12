@@ -834,8 +834,8 @@ If a Random Value is used, then:
 2. The Random Value MUST remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
 **Note**:
-  * For certificates issued prior to 2021-12-01, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-  * For certificates issued on or after 2021-12-01, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
+  * For Certificates issued prior to 2021-12-01, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+  * For Certificates issued on or after 2021-12-01, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
 
@@ -853,8 +853,8 @@ If the CA follows redirects:
 4. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 **Note**:
-  * For certificates issued prior to 2021-12-01, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-  * For certificates issued on or after 2021-12-01, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
+  * For Certificates issued prior to 2021-12-01, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+  * For Certificates issued on or after 2021-12-01, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.20 TLS Using ALPN
 
@@ -2576,21 +2576,13 @@ This appendix defines permissible verification procedures for including one or m
 
    a. The CA MAY verify the Applicant's control over the .onion service by using one of the following methods from [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control):
 
-      i. [Section 3.2.2.4.6 - Agreed-Upon Change to Website](#32246-agreed-upon-change-to-website):
+      i. [Section 3.2.2.4.6 - Agreed-Upon Change to Website](#32246-agreed-upon-change-to-website)
+      ii. [Section 3.2.2.4.18 - Agreed-Upon Change to Website v2](#322418-agreed-upon-change-to-website-v2)
+      iii. [Section 3.2.2.4.19 - Agreed-Upon Change to Website - ACME](#322419-agreed-upon-change-to-website-acme)
 
-         The CA SHALL only use this method when reusing a previously completed domain validation permitted by that method and [Section 4.2.1](#421-performing-identification-and-authentication-functions). The CA MUST NOT perform new validations using this method.
+      When these methods are used to verify the Applicant's control over the .onion service, the CA MUST use Tor protocol to establish a connection to the .onion hidden service. The CA MUST NOT delegate or rely on a third-party to establish the connection, such as by using Tor2Web.
 
-      ii. [Section 3.2.2.4.18 - Agreed-Upon Change to Website v2](#322418-agreed-upon-change-to-website-v2):
-
-          The CA SHALL only use this method to validate Wildcard Certificates or as an Authorization Domain Name as specified by that section, except as follows:
-
-          When the CA performs the validation with the FQDN containing exactly two labels, the hidden service name and "onion", the CA MAY use this validation to validate a Wildcard Domain Name for this FQDN and MAY use this validation to issue Certificates for other FQDNs that end with all the labels, without regard to the prohibition of such certificates in [Section 3.2.2.4.18](#322418-agreed-upon-change-to-website-v2).
-
-      iii. [Section 3.2.2.4.19 - Agreed-Upon Change to Website - ACME](#322419-agreed-upon-change-to-website-acme):
-
-           The CA SHALL only use this method to validate Wildcard Certificates or as an Authorization Domain Name as specified by that section, except as follows:
-
-           When the CA performs the validation with the FQDN containing exactly two labels, the hidden service name and "onion", the CA MAY use this validation to validate a Wildcard Domain Name for this FQDN and MAY use this validation to issue Certificates for other FQDNs that end with all the labels, without regard to the prohibition of such certificates in [Section 3.2.2.4.19](#322419-agreed-upon-change-to-website-acme).
+      **Note**: This section does not override or supersede any provisions specified within the respective methods. The CA MUST only use a method if it is still permitted within that section and MUST NOT issue Wildcard Certificates or use it as an Authorization Domain Name, except as specified by that method.
 
    b. The CA MAY verify the Applicant's control over the .onion service by having the Applicant provide a Certificate Request signed using the .onion public key if the Attributes section of the certificationRequestInfo contains:
 
