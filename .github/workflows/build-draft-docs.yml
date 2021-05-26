@@ -1,7 +1,7 @@
 name: Build Draft Guidelines
 on: [push, pull_request]
 jobs:
-  build_brs:
+  build_docs:
     strategy:
       matrix:
         document:
@@ -11,19 +11,28 @@ jobs:
     name: Build ${{ matrix.document }}
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: cabforum/build-guidelines-action@v1.0.0-rc4
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      - name: Checkout old version for redline (pull request)
+        uses: actions/checkout@v2
         with:
-          markdown-file: docs/${{ matrix.document }}
+          ref: ${{ github.event.pull_request.base.sha || github.event.push.before }}
+          path: old/
+      - uses: docker://ghcr.io/cabforum/build-guidelines-action:2.0.2
+        id: build_doc
+        with:
+          markdown_file: docs/${{ matrix.document }}
+          diff_file: old/docs/${{ matrix.document }}
           pdf: true
           docx: true
           lint: true
-          draft: true
+          draft: ${{ !(github.event_name == 'push' && github.repository == 'cabforum/servercert' && github.ref == 'refs/heads/main') }}
       - uses: actions/upload-artifact@v2
         with:
-          name: Converted ${{ matrix.document }}
+          name: ${{ matrix.document }}-${{ github.event.pull_request.head.sha || github.sha }}
           path: |
-            docs/*.pdf
-            docs/*.docx
+            ${{ steps.build_doc.outputs.pdf_file }}
+            ${{ steps.build_doc.outputs.docx_file }}
+            ${{ steps.build_doc.outputs.pdf_redline_file }}
           if-no-files-found: 'error'
           retention-days: 21
