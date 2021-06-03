@@ -1,9 +1,9 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
-subtitle: Version 1.7.5
+subtitle: Version 1.7.6
 author:
   - CA/Browser Forum
-date: 5 April, 2021
+date: 2 June, 2021
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -67,6 +67,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020 | 20-Aug-2020 |
 | 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
 | 1.7.5 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
+| 1.7.6 | SC42 | 398-day Re-use Period | 22-Apr-2021 | 2-Jun-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -1270,15 +1271,15 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 
 1. Except for reissuance of an EV Certificate under [Section 11.14.2](#11142-re-issuance-requests) and except when permitted otherwise in [Section 11.14.1](#11141-validation-for-existing-subscribers), the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL NOT exceed the following limits:
 
-   A.  Legal existence and identity – thirteen months;
-   B.  Assumed name – thirteen months;
-   C.  Address of Place of Business – thirteen months;
-   D.  Verified Method of Communication – thirteen months;
-   E.  Operational existence – thirteen months;
-   F.  Domain Name – thirteen months;
-   G.  Name, Title, Agency, and Authority – thirteen months, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
+   A.  Legal existence and identity – 398 days;
+   B.  Assumed name – 398 days;
+   C.  Address of Place of Business – 398 days;
+   D.  Verified Method of Communication – 398 days;
+   E.  Operational existence – 398 days;
+   F.  Domain Name – 398 days;
+   G.  Name, Title, Agency, and Authority – 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
-2. The thirteen-month period set forth above SHALL begin to run on the date the information was collected by the CA.
+2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
 3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 11.9](#119-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 11.10](#1110-verification-of-approval-of-ev-certificate-request).
 4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 11.14.1](#11141-validation-for-existing-subscribers).
 
