@@ -1,9 +1,9 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.7.5
+subtitle: Version 1.7.6
 author:
   - CA/Browser Forum
-date: 2 June, 2021  
+date: 3 June, 2021  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -118,6 +118,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.3 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
 | 1.7.4 | SC41 | Reformat the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 1.7.5 | SC42 | 398-day Re-use Period | 22-Apr-2021 | 2-Jun-2021 |
+| 1.7.6 | SC44 | Clarify Acceptable Status Codes | 30-Apr-2021 | 3-Jun-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
