@@ -1,9 +1,9 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.7.5
+subtitle: Version 1.7.6
 author:
   - CA/Browser Forum
-date: 2 June, 2021  
+date: 3 June, 2021  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -118,6 +118,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.3 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
 | 1.7.4 | SC41 | Reformat the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 1.7.5 | SC42 | 398-day Re-use Period | 22-Apr-2021 | 2-Jun-2021 |
+| 1.7.6 | SC44 | Clarify Acceptable Status Codes | 30-Apr-2021 | 3-Jun-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -159,6 +160,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2020-09-30 | 7.1.4.1 | Subject and Issuer Names for all possible certification paths MUST be byte-for-byte identical. |
 | 2020-09-30 | 7.1.6.4 | Subscriber Certificates MUST include a CA/Browser Form Reserved Policy Identifier in the Certificate Policies extension. |
 | 2020-09-30 | 7.2 and 7.3 | All OCSP and CRL responses for Subordinate CA Certificates MUST include a meaningful reason code. |
+| 2021-07-01 | 3.2.2.4.18 and 3.2.2.4.19 | Redirects MUST be the result of one of the HTTP status code responses defined.  |
 
 ## 1.3 PKI Participants
 
@@ -525,6 +527,10 @@ RFC6960, Request for Comments: 6960, X.509 Internet Public Key Infrastructure On
 
 RFC6962, Request for Comments: 6962, Certificate Transparency. B. Laurie, A. Langley, E. Kasper. June 2013.
 
+RFC7231, Request For Comments: 7231, Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content, R. Fielding, J. Reschke. June 2014.
+
+RFC7538, Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect), J. Reschke. April 2015.
+
 RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.3, available at <https://www.cpacanada.ca/-/media/site/business-and-accounting-resources/docs/webtrust/wt-pcca-ss-lbns2-3.pdf>.
@@ -819,12 +825,13 @@ The file containing the Request Token or Random Number:
 3. MUST be retrieved via either the "http" or "https" scheme, and
 4. MUST be accessed over an Authorized Port.
 
-If the CA follows redirects the following apply:
+If the CA follows redirects, the following apply:
 
-1. Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
-2. Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
-3. Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
-4. Redirects MUST be to resource URLs accessed via Authorized Ports.
+1. Redirects MUST be initiated at the HTTP protocol layer.
+   a. For validations performed on or after July 1, 2021, redirects MUST be the result of a 301, 302, or 307 HTTP status code response, as defined in [RFC 7231, Section 6.4](https://tools.ietf.org/html/rfc7231#section-6.4), or a 308 HTTP status code response, as defined in [RFC 7538, Section 3](https://tools.ietf.org/html/rfc7538#section-3). Redirects MUST be to the final value of the Location HTTP response header, as defined in [RFC 7231, Section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2).
+   b. For validations performed prior to July 1, 2021, redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in [RFC 7231, Section 6.4](https://tools.ietf.org/html/rfc7231#section-6.4). CAs SHOULD limit the accepted status codes and resource URLs to those defined within 1.a.
+2. Redirects MUST be to resource URLs with either the "http" or "https" scheme.
+3. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 If a Random Value is used, then:
 
@@ -841,12 +848,13 @@ The CA MUST receive a successful HTTP response from the request (meaning a 2xx H
 
 The token (as defined in RFC 8555, Section 8.3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
-If the CA follows redirects:
+If the CA follows redirects, the following apply:
 
-1. Redirects MUST be initiated at the HTTP protocol layer (e.g. using a 3xx status code).
-2. Redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in RFC 7231, Section 6.4.
-3. Redirects MUST be to resource URLs with either via the "http" or "https" scheme.
-4. Redirects MUST be to resource URLs accessed via Authorized Ports.
+1. Redirects MUST be initiated at the HTTP protocol layer.
+   a. For validations performed on or after July 1, 2021, redirects MUST be the result of a 301, 302, or 307 HTTP status code response, as defined in [RFC 7231, Section 6.4](https://tools.ietf.org/html/rfc7231#section-6.4), or a 308 HTTP status code response, as defined in [RFC 7538, Section 3](https://tools.ietf.org/html/rfc7538#section-3). Redirects MUST be to the final value of the Location HTTP response header, as defined in [RFC 7231, Section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2).
+   b. For validations performed prior to July 1, 2021, redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in [RFC 7231, Section 6.4](https://tools.ietf.org/html/rfc7231#section-6.4). CAs SHOULD limit the accepted status codes and resource URLs to those defined within 1.a.
+2. Redirects MUST be to resource URLs with either the "http" or "https" scheme.
+3. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
