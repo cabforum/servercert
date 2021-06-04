@@ -2098,7 +2098,8 @@ h. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)
    __Contents:__ If the `subject:organizationName` field is present, the `subject:countryName` MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under [Section 3.2.2.1](#3221-identity). If the `subject:organizationName` field is absent, the `subject:countryName` field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with [Section 3.2.2.3](#3223-verification-of-country). If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
 i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)  
-   __Required/Optional:__ __Optional__.  
+   __Required/Optional:__ __Deprecated__. 
+   __Prohibited__ if the `subject:organizationName` is absent or the certificate is issued after August 31, 2022.
    __Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with [Section 3.2](#32-initial-identity-validation) and the Certificate also contains `subject:organizationName`, `subject:givenName`, `subject:surname`, `subject:localityName`, and `subject:countryName` attributes, also verified in accordance with [Section 3.2.2.1](#3221-identity).
 
 j. Other Subject Attributes  
