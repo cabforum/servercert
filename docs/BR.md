@@ -161,7 +161,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2020-09-30 | 7.1.6.4 | Subscriber Certificates MUST include a CA/Browser Form Reserved Policy Identifier in the Certificate Policies extension. |
 | 2020-09-30 | 7.2 and 7.3 | All OCSP and CRL responses for Subordinate CA Certificates MUST include a meaningful reason code. |
 | 2021-07-01 | 3.2.2.4.18 and 3.2.2.4.19 | Redirects MUST be the result of one of the HTTP status code responses defined. | 
-| 202x-yy-zz | 7.1.4.2.1 | Fully-Qualified Domain Names MUST consist solely of P-Labels and Non-reserved LDH Labels. |
+| 202x-yy-zz | 7.1.4.2.1 | Fully-Qualified Domain Names MUST consist solely of P-Labels and Non-Reserved LDH Labels. |
 
 ## 1.3 PKI Participants
 
@@ -352,7 +352,7 @@ No stipulation.
 
 **Legal Entity**: An association, corporation, partnership, proprietorship, trust, government entity or other entity with legal standing in a country's legal system.
 
-**Non-reserved LDH Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "The set of valid LDH labels that do not have '--' in the third and fourth positions."
+**Non-Reserved LDH Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "The set of valid LDH labels that do not have '--' in the third and fourth positions."
 
 **Object Identifier**: A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
 
@@ -2067,13 +2067,13 @@ __Certificate Field:__ `extensions:subjectAltName`
 __Required/Optional:__ Required  
 __Contents:__ This extension MUST contain at least one entry. Each entry MUST be one of the following types:
 
-1. `dNSName`: The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT not contain an Internal Name.
+* `dNSName`: The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT not contain an Internal Name.
 
    The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be in the "preferred name syntax", as specified in RFC 5280. Namely, entries MUST NOT contain underscore characters ("_").
 
-   Effective xxx 1, 202x, the Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name MUST consist solely of Domain Labels that are P-Labels or Non-reserved LDH Labels.
+   Effective xxx 1, 202x, the Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name MUST consist solely of Domain Labels that are P-Labels or Non-Reserved LDH Labels.
 
-2. `iPAddress`: The entry MUST contain an IPv4 or IPv6 address that the CA has validated in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address). The entry MUST NOT contain a Reserved IP Address.
+* `iPAddress`: The entry MUST contain an IPv4 or IPv6 address that the CA has validated in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address). The entry MUST NOT contain a Reserved IP Address.
 
 ##### 7.1.4.2.2 Subject Distinguished Name Fields
 
@@ -2081,9 +2081,9 @@ a. __Certificate Field:__ `subject:commonName` (OID 2.5.4.3)
    __Required/Optional:__ __Deprecated__ (Discouraged, but not prohibited)  
    __Contents:__ If present, this field MUST contain exactly one entry that is one of the values contained in the Certificate's `subjectAltName` extension (see [Section 7.1.4.2.1](#71421-subject-alternative-name-extension)). The value of the field MUST be encoded as follows:
 
-   1. If the value is an IPv4 address, then the value MUST be encoded as an IPv4Address as specified in RFC 3986, Section 3.2.2.
-   2. If the value is an IPv6 address, then the value MUST be encoded in the text representation specified in RFC 5952, Section 4.
-   3. If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, all Domain Labels of the Fully-Qualified Domain Name or FQDN portion of the Wildcard Domain Name must be encoded as LDH Labels and P-Labels MUST NOT be converted to their Unicode representation.
+   * If the value is an IPv4 address, then the value MUST be encoded as an IPv4Address as specified in RFC 3986, Section 3.2.2.
+   * If the value is an IPv6 address, then the value MUST be encoded in the text representation specified in RFC 5952, Section 4.
+   * If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, all Domain Labels of the Fully-Qualified Domain Name or FQDN portion of the Wildcard Domain Name must be encoded as LDH Labels, and P-Labels MUST NOT be converted to their Unicode representation.
 
 b. __Certificate Field:__ `subject:organizationName` (OID 2.5.4.10)  
    __Required/Optional:__ __Optional__.  
