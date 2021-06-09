@@ -528,6 +528,8 @@ RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: C
 
 RFC3912, Request for Comments: 3912, WHOIS Protocol Specification, Daigle, September 2004.
 
+RFC3986, Request for Comments: 3986, Uniform Resource Identifier (URI): Generic Syntax. T. Berners-Lee, et al. January 2005.
+
 RFC4366, Request for Comments: 4366, Transport Layer Security (TLS) Extensions, Blake-Wilson, et al, April 2006.
 
 RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments, A. Deacon, et al, September 2007.
@@ -535,6 +537,8 @@ RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status P
 RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile, Cooper et al, May 2008.
 
 RFC5890, Request for Comments: 5890, Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework. J. Klensin. August 2010.
+
+RFC5952, Request for Comments: 5952, A Recommendation for IPv6 Address Text Representation. S. Kawamura, et al. August 2010.
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, Stradling, Hoffman-Andrews, November 2019.
 
@@ -2067,7 +2071,7 @@ __Contents:__ This extension MUST contain at least one entry. Each entry MUST be
 
    The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be in the "preferred name syntax", as specified in RFC 5280. Namely, entries MUST NOT contain underscore characters ("_").
 
-   Effective xxx 1, 202x, the Fully-Qualified Domain Name or the FQDN portion of a Wildcard Domain Name MUST consist solely of Domain Labels that are P-Labels or Non-reserved LDH Labels.
+   Effective xxx 1, 202x, the Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name MUST consist solely of Domain Labels that are P-Labels or Non-reserved LDH Labels.
 
 2. `iPAddress`: The entry MUST contain an IPv4 or IPv6 address that the CA has validated in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address). The entry MUST NOT contain a Reserved IP Address.
 
@@ -2077,10 +2081,9 @@ a. __Certificate Field:__ `subject:commonName` (OID 2.5.4.3)
    __Required/Optional:__ __Deprecated__ (Discouraged, but not prohibited)  
    __Contents:__ If present, this field MUST contain exactly one entry that is one of the values contained in the Certificate's `subjectAltName` extension (see [Section 7.1.4.2.1](#71421-subject-alternative-name-extension)). The value of the field MUST be encoded as follows:
 
-   1. If the value is an IPv4 address, then the value MUST be encoded as an IPv4Address as
-defined in RFC 3986.
-   2. If the value is an IPv6 address, then the value MUST use the format specified in RFC 5952, Section 4.
-   3. If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, P-Labels MUST NOT be converted to their Unicode representation.
+   1. If the value is an IPv4 address, then the value MUST be encoded as an IPv4Address as specified in RFC 3986, Section 3.2.2.
+   2. If the value is an IPv6 address, then the value MUST be encoded in the text representation specified in RFC 5952, Section 4.
+   3. If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, all Domain Labels of the Fully-Qualified Domain Name or FQDN portion of the Wildcard Domain Name must be encoded as LDH Labels and P-Labels MUST NOT be converted to their Unicode representation.
 
 b. __Certificate Field:__ `subject:organizationName` (OID 2.5.4.10)  
    __Required/Optional:__ __Optional__.  
