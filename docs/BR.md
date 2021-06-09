@@ -134,7 +134,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2013-12-31 | 6.1.5 | CAs SHALL confirm that the RSA Public Key is at least 2048 bits or that one of the following ECC curves is used: P-256, P-384, or P-521. A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor. |
 | 2015-01-16 | 7.1.3 | CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017. |
 | 2015-04-01 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 39 months, except under certain circumstances. |
-| 2015-04-15 | 2.2 | A CA's CPS must state whether it reviews CAA Records, and if so, its policy or practice on processing CAA records for Fully Qualified Domain Names. |
+| 2015-04-15 | 2.2 | A CA's CPS must state whether it reviews CAA Records, and if so, its policy or practice on processing CAA records for Fully-Qualified Domain Names. |
 | 2015-11-01 | 7.1.4.2.1 | Issuance of Certificates with Reserved IP Address or Internal Name prohibited. |
 | 2016-01-01 | 7.1.3 | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. |
 | 2016-06-30 | 6.1.7 | CAs MUST NOT issue Subscriber Certificates directly from Root CAs. |
@@ -160,7 +160,8 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2020-09-30 | 7.1.4.1 | Subject and Issuer Names for all possible certification paths MUST be byte-for-byte identical. |
 | 2020-09-30 | 7.1.6.4 | Subscriber Certificates MUST include a CA/Browser Form Reserved Policy Identifier in the Certificate Policies extension. |
 | 2020-09-30 | 7.2 and 7.3 | All OCSP and CRL responses for Subordinate CA Certificates MUST include a meaningful reason code. |
-| 2021-07-01 | 3.2.2.4.18 and 3.2.2.4.19 | Redirects MUST be the result of one of the HTTP status code responses defined.  |
+| 2021-07-01 | 3.2.2.4.18 and 3.2.2.4.19 | Redirects MUST be the result of one of the HTTP status code responses defined. | 
+| 202x-yy-zz | 7.1.4.2.1 | Fully-Qualified Domain Names MUST consist solely of P-Labels and Non-reserved LDH Labels. |
 
 ## 1.3 PKI Participants
 
@@ -307,6 +308,8 @@ No stipulation.
 
 **Domain Contact**: The Domain Name Registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record, or as obtained through direct contact with the Domain Name Registrar.
 
+**Domain Label**: From RFC 8499 (<http://tools.ietf.org/html/rfc8499>): "An ordered list of zero or more octets that makes up a portion of a domain name. Using graph theory, a label identifies one node in a portion of the graph of all possible domain names."
+
 **Domain Name**: The label assigned to a node in the Domain Name System.
 
 **Domain Namespace**: The set of all possible Domain Names that are subordinate to a single node in the Domain Name System.
@@ -323,7 +326,7 @@ No stipulation.
 
 **Expiry Date**: The "Not After" date in a Certificate that defines the end of a Certificate's validity period.
 
-**Fully-Qualified Domain Name**: A Domain Name that includes the labels of all superior nodes in the Internet Domain Name System.
+**Fully-Qualified Domain Name**: A Domain Name that includes the Domain Labels of all superior nodes in the Internet Domain Name System.
 
 **Government Entity**: A government-operated legal entity, agency, department, ministry, branch, or similar element of the government of a country, or political subdivision within such country (such as a state, province, city, county, etc.).
 
@@ -345,7 +348,11 @@ No stipulation.
 
 **Key Pair**: The Private Key and its associated Public Key.
 
+**LDH Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "A string consisting of ASCII letters, digits, and the hyphen with the further restriction that the hyphen cannot appear at the beginning or end of the string. Like all DNS labels, its total length must not exceed 63 octets."
+
 **Legal Entity**: An association, corporation, partnership, proprietorship, trust, government entity or other entity with legal standing in a country's legal system.
+
+**Non-reserved LDH Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "The set of valid LDH labels that do not have '--' in the third and fourth positions."
 
 **Object Identifier**: A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
 
@@ -354,6 +361,8 @@ No stipulation.
 **Online Certificate Status Protocol**: An online Certificate-checking protocol that enables relying-party application software to determine the status of an identified Certificate. See also OCSP Responder.
 
 **Parent Company**: A company that Controls a Subsidiary Company.
+
+**P-Label**: A XN-Label that contains valid output of the Punycode algorithm (as defined in RFC 3492, Section 6.3) from the fifth and subsequent positions.
 
 **Private Key**: The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
 
@@ -412,11 +421,11 @@ The script outputs:
 
 **Requirements**: The Baseline Requirements found in this document.
 
-**Reserved IP Address**: An IPv4 or IPv6 address that the IANA has marked as reserved:
+**Reserved IP Address**: An IPv4 or IPv6 address that is contained in the address block of any entry in either of the following IANA registries:
 
-[http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml](http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.xml)
+[https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml)
 
-[http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml](http://www.iana.org/assignments/ipv6-address-space/ipv6-address-space.xml)
+[https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml)
 
 **Root CA**: The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
 
@@ -454,9 +463,11 @@ The script outputs:
 
 **WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
 
-**Wildcard Certificate**: A Certificate containing an asterisk (\*) in the left-most position of any of the Subject Fully-Qualified Domain Names contained in the Certificate.
+**Wildcard Certificate**: A Certificate containing at least one Wildcard Domain Name in the Subject Alternative Names in the Certificate.
 
-**Wildcard Domain Name**: A Domain Name consisting of a single asterisk character followed by a single full stop character ("\*.") followed by a Fully-Qualified Domain Name.
+**Wildcard Domain Name**: A string starting with "\*." (U+002A ASTERISK, U+002E FULL STOP) immediately followed by a Fully-Qualified Domain Name.
+
+**XN-Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "The class of labels that begin with the prefix "xn--" (case independent), but otherwise conform to the rules for LDH labels."
 
 ### 1.6.2 Acronyms
 
@@ -474,7 +485,7 @@ The script outputs:
 | DBA | Doing Business As |
 | DNS | Domain Name System |
 | FIPS | (US Government) Federal Information Processing Standard |
-| FQDN | Fully Qualified Domain Name |
+| FQDN | Fully-Qualified Domain Name |
 | IM | Instant Messaging |
 | IANA | Internet Assigned Numbers Authority |
 | ICANN | Internet Corporation for Assigned Names and Numbers |
@@ -511,6 +522,8 @@ RFC2119, Request for Comments: 2119, Key words for use in RFCs to Indicate Requi
 
 RFC2527, Request for Comments: 2527, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, March 1999.
 
+RFC3492, Request for Comments: 3492, Punycode: A Bootstring encoding of Unicode for Internationalized Domain Names in Applications (IDNA). A. Costello. March 2003.
+
 RFC3647, Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework, Chokhani, et al, November 2003.
 
 RFC3912, Request for Comments: 3912, WHOIS Protocol Specification, Daigle, September 2004.
@@ -520,6 +533,8 @@ RFC4366, Request for Comments: 4366, Transport Layer Security (TLS) Extensions, 
 RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments, A. Deacon, et al, September 2007.
 
 RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile, Cooper et al, May 2008.
+
+RFC5890, Request for Comments: 5890, Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework. J. Klensin. August 2010.
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record, Hallam-Baker, Stradling, Hoffman-Andrews, November 2019.
 
@@ -532,6 +547,8 @@ RFC7231, Request For Comments: 7231, Hypertext Transfer Protocol (HTTP/1.1): Sem
 RFC7538, Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect), J. Reschke. April 2015.
 
 RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format, Newton, et al, March 2015.
+
+RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.3, available at <https://www.cpacanada.ca/-/media/site/business-and-accounting-resources/docs/webtrust/wt-pcca-ss-lbns2-3.pdf>.
 
@@ -557,7 +574,7 @@ The CA SHALL publicly disclose its Certificate Policy and/or Certification Pract
 
 The Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with RFC 3647 and MUST include all material required by RFC 3647.
 
-Section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement SHALL state the CA's policy or practice on processing CAA Records for Fully Qualified Domain Names; that policy shall be consistent with these Requirements. It shall clearly specify the set of Issuer Domain Names that the CA recognizes in CAA "issue" or "issuewild" records as permitting it to issue. The CA SHALL log all actions taken, if any, consistent with its processing practice.
+Section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement SHALL state the CA's policy or practice on processing CAA Records for Fully-Qualified Domain Names; that policy shall be consistent with these Requirements. It shall clearly specify the set of Issuer Domain Names that the CA recognizes in CAA "issue" or "issuewild" records as permitting it to issue. The CA SHALL log all actions taken, if any, consistent with its processing practice.
 
 The CA SHALL publicly give effect to these Requirements and represent that it will adhere to the latest published version. The CA MAY fulfill this requirement by incorporating these Requirements directly into its Certificate Policy and/or Certification Practice Statements or by incorporating them by reference using a clause such as the following (which MUST include a link to the official version of these Requirements):
 
@@ -931,9 +948,10 @@ Confirming the Applicant's control over the IP Address by performing the procedu
 
 #### 3.2.2.6 Wildcard Domain Validation
 
-Before issuing a certificate with a wildcard character (\*) in a CN or `subjectAltName` of type DNS-ID, the CA MUST establish and follow a documented procedure that determines if the wildcard character occurs in the first label position to the left of a "registry-controlled" label or "public suffix" (e.g. "\*.com", "\*.co.uk", see RFC 6454 Section 8.2 for further explanation).
+Before issuing a Wildcard Certificate, the CA MUST establish and follow a documented procedure that determines if the if the FQDN portion of any
+Wildcard Domain Name in the Certificate is “registry-controlled” or is a “public suffix” (e.g. “\*.com”, “\*.co.uk”, see RFC 6454 Section 8.2 for further explanation).
 
-If a wildcard would fall within the label immediately to the left of a registry-controlled or public suffix, CAs MUST refuse issuance unless the applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.).
+If the FQDN portion of any Wildcard Domain Name is "registry-controlled" or is a "public suffix", CAs MUST refuse issuance unless the Applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.).
 
 Determination of what is "registry-controlled" versus the registerable portion of a Country Code Top-Level Domain Namespace is not standardized at the time of writing and is not a property of the DNS itself. Current best practice is to consult a "public suffix list" such as the [Public Suffix List (PSL)](<http://publicsuffix.org/>), and to retrieve a fresh copy regularly.
 
@@ -1046,7 +1064,7 @@ If a Delegated Third Party fulfills any of the CA's obligations under this secti
 
 ### 4.2.2 Approval or rejection of certificate applications
 
-CAs SHALL NOT issue certificates containing Internal Names (see [Section 7.1.4.2.1](#71421-subject-alternative-name-extension)).
+CAs SHALL NOT issue Certificates containing Internal Names or Reserved IP Addresses (see [Section 7.1.4.2.1](#71421-subject-alternative-name-extension)).
 
 ### 4.2.3 Time to process certificate applications
 
@@ -2043,19 +2061,26 @@ Subject attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e
 
 __Certificate Field:__ `extensions:subjectAltName`  
 __Required/Optional:__ Required  
-__Contents:__ This extension MUST contain at least one entry. Each entry MUST be either a `dNSName` containing the Fully-Qualified Domain Name or an `iPAddress` containing the IP address of a server. The CA MUST confirm that the Applicant controls the Fully-Qualified Domain Name or IP address or has been granted the right to use it by the Domain Name Registrant or IP address assignee, as appropriate.
+__Contents:__ This extension MUST contain at least one entry. Each entry MUST be one of the following types:
 
-Wildcard FQDNs are permitted.
+1. `dNSName`: The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT not contain an Internal Name.
 
-CAs SHALL NOT issue certificates with a `subjectAltName` extension or `subject:commonName` field containing a Reserved IP Address or Internal Name.
+   The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be in the "preferred name syntax", as specified in RFC 5280. Namely, entries MUST NOT contain underscore characters ("_").
 
-Entries in the `dNSName` MUST be in the "preferred name syntax", as specified in RFC 5280, and thus MUST NOT contain underscore characters ("_").
+   Effective xxx 1, 202x, the Fully-Qualified Domain Name or the FQDN portion of a Wildcard Domain Name MUST consist solely of Domain Labels that are P-Labels or Non-reserved LDH Labels.
+
+2. `iPAddress`: The entry MUST contain an IPv4 or IPv6 address that the CA has validated in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address). The entry MUST NOT contain a Reserved IP Address.
 
 ##### 7.1.4.2.2 Subject Distinguished Name Fields
 
 a. __Certificate Field:__ `subject:commonName` (OID 2.5.4.3)  
    __Required/Optional:__ __Deprecated__ (Discouraged, but not prohibited)  
-   __Contents:__ If present, this field MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension (see [Section 7.1.4.2.1](#71421-subject-alternative-name-extension)).
+   __Contents:__ If present, this field MUST contain exactly one entry that is one of the values contained in the Certificate's `subjectAltName` extension (see [Section 7.1.4.2.1](#71421-subject-alternative-name-extension)). The value of the field MUST be encoded as follows:
+
+   1. If the value is an IPv4 address, then the value MUST be encoded as an IPv4Address as
+defined in RFC 3986.
+   2. If the value is an IPv6 address, then the value MUST use the format specified in RFC 5952, Section 4.
+   3. If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, P-Labels MUST NOT be converted to their Unicode representation.
 
 b. __Certificate Field:__ `subject:organizationName` (OID 2.5.4.10)  
    __Required/Optional:__ __Optional__.  
