@@ -2099,7 +2099,7 @@ h. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)
 
 i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)  
    __Required/Optional:__ __Deprecated__. 
-   __Prohibited__ if the `subject:organizationName` is absent or the certificate is issued after August 31, 2022.
+   __Prohibited__ if the `subject:organizationName` is absent or the certificate is issued on or after September 1, 2022.
    __Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with [Section 3.2](#32-initial-identity-validation) and the Certificate also contains `subject:organizationName`, `subject:givenName`, `subject:surname`, `subject:localityName`, and `subject:countryName` attributes, also verified in accordance with [Section 3.2.2.1](#3221-identity).
 
 j. Other Subject Attributes  
