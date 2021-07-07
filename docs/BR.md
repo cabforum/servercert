@@ -952,7 +952,7 @@ Confirming the Applicant's control over the IP Address by performing the procedu
 
 #### 3.2.2.6 Wildcard Domain Validation
 
-Before issuing a Wildcard Certificate, the CA MUST establish and follow a documented procedure that determines if the if the FQDN portion of any
+Before issuing a Wildcard Certificate, the CA MUST establish and follow a documented procedure that determines if the FQDN portion of any
 Wildcard Domain Name in the Certificate is “registry-controlled” or is a “public suffix” (e.g. “\*.com”, “\*.co.uk”, see RFC 6454 Section 8.2 for further explanation).
 
 If the FQDN portion of any Wildcard Domain Name is "registry-controlled" or is a "public suffix", CAs MUST refuse issuance unless the Applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.).
