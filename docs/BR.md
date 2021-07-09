@@ -3,7 +3,7 @@ title: Baseline Requirements for the Issuance and Management of Publicly-Trusted
 subtitle: Version 1.7.7
 author:
   - CA/Browser Forum
-date: 9 July, 2021  
+date: 12 July, 2021  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -119,7 +119,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.4 | SC41 | Reformat the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 1.7.5 | SC42 | 398-day Re-use Period | 22-Apr-2021 | 2-Jun-2021 |
 | 1.7.6 | SC44 | Clarify Acceptable Status Codes | 30-Apr-2021 | 3-Jun-2021 |
-| 1.7.7 | SC46 | Sunset the CAA Exception for DNS Operator | 2-Jun-2021 | 9-Jul-2021 |
+| 1.7.7 | SC46 | Sunset the CAA Exception for DNS Operator | 2-Jun-2021 | 12-Jul-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
