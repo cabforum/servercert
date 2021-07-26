@@ -2556,6 +2556,8 @@ If present, the `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDesc
 
 OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE.
 
+OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE. When using DER encoding, the encoded value of a `BasicConstraints` sequence is an empty SEQUENCE, as DEFAULT values are not encoded.
+
 | __Field__           | __Description__ |
 | ---                 | ------- |
 | `cA`                | MUST be FALSE |
