@@ -2393,10 +2393,10 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | __Extension__                     | __Presence__ | __Critical__ | __Description__ |
 | ----                              | -            | -            | -----           |
 | `authorityKeyIdentifier`          | MUST         | N            | See [Section 7.1.2.9.1](#71291-authority-key-identifier) |
-| `basicConstraints`                | MUST         | Y            | See [Section 7.1.2.7.3](#71273-basic-constraints) |
 | `extKeyUsage`                     | MUST         | -            | See [Section 7.1.2.7.4](#71274-extended-key-usage) |
 | `id-pkix-ocsp-nocheck`            | MUST         | N            | See [Section 7.1.2.7.5](#71275-id-pkix-ocsp-nocheck) |
 | `keyUsage`                        | MUST         | Y            | See [Section 7.1.2.7.6](#71276-key-usage) |
+| `basicConstraints`                | MAY          | Y            | See [Section 7.1.2.7.3](#71273-basic-constraints) |
 | `nameConstraints`                 | MUST NOT     | -            | - |
 | `subjectAltName`                  | MUST NOT     | -            | - |
 | `subjectKeyIdentifier`            | SHOULD       | N            | See [Section 7.1.2.9.4](#71294-subject-key-identifier) |
@@ -2420,6 +2420,8 @@ If present, the `AuthorityInformationAccesssSyntax` MUST contain one or more `Ac
 | Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
 
 ##### 7.1.2.7.3 Basic Constraints
+
+OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE. When using DER encoding, the encoded value of a `BasicConstraints` sequence is an empty SEQUENCE, as DEFAULT values are not encoded.
 
 | __Field__           | __Description__ |
 | ---                 | ------- |
