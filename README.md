@@ -8,6 +8,6 @@ In particular, the following Final Guidelines are maintained by the SCWG:
 * [Baseline Requirements](https://cabforum.org/baseline-requirements/)
   Pandoc-flavored Markdown: [docs/BR.md](docs/BR.md)
 * [EV SSL Certificate Guidelines](https://cabforum.org/extended-validation/)
-  Kramdown-flavored Markdown: [docs/EVG.md](docs/EVG.md)
+  Pandoc-flavored Markdown: [docs/EVG.md](docs/EVG.md)
 * [Network Security Requirements](https://cabforum.org/network-security-requirements/)
-  Kramdown-flavored Markdown: [docs/NSR.md](docs/NSR.md)
+  Pandoc-flavored Markdown: [docs/NSR.md](docs/NSR.md)
