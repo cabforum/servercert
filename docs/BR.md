@@ -2384,7 +2384,7 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | \ \ \ \ `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
 | \ \ \ \ `subjectUniqueID`      | MUST NOT be present |
-| \ \ \ \ `extensions`           | See [Section 7.1.2.5.1](#71251-tls-subordinate-ca-extensions) |
+| \ \ \ \ `extensions`           | See [Section 7.1.7.5.1](#71251-ocsp-responder-extensions) |
 | `signatureAlgorithm`           | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                    | |
 
@@ -2684,20 +2684,22 @@ Table: `CRLDistributionPoints` profile
 | \ \ \ \ `distributionPoint` | MUST         | The `DistributionPointName` MUST be a `fullName` formatted as described below. |
 | \ \ \ \ `reasons`           | MUST NOT     |                 |
 | \ \ \ \ `cRLIssuer`         | MUST NOT     |                 |
-| \ \ **2+**                  | MAY          | Additional `DistributionPoint`s that meet the following profile MAY be present. |
+| \ \ **2+**                  | SHOULD NOT   | Additional `DistributionPoint`s SHOULD NOT be present. |
 | \ \ \ \ `distributionPoint` | MUST         | The `DistributionPointName` MUST be a `fullName` formatted as described below. |
 | \ \ \ \ `reasons`           | MUST NOT     |                 |
 | \ \ \ \ `cRLIssuer`         | MUST NOT     |                 |
-| \ \ **3**                   | MUST NOT     | `DistributionPoints` that to not conform to the above requirements MUST NOT be present. |
+| \ \ **3**                   | MUST NOT     | `DistributionPoints` that do not conform to the above requirements MUST NOT be present. |
 
 Table: `fullName` profile
 
 | __Field__                           | __Presence__ | __Description__ |
 | ----                                | -            | -----           |
 | `fullName`                          |              |                 |
-| \ \ **1**                           | MUST         | The first `GeneralName` present in `fullName` MUST be of type `unformResourceIdentifier` |
+| \ \ **1**                           | MUST         | The first `GeneralName` present in `fullName` MUST be of type `uniformResourceIdentifier` |
 | \ \ \ \ `uniformResourceIdentifier` | MUST         | The HTTP URL of the Issuing CA's CRL service for this certificate. |
-| \ \ **2**                           | SHOULD NOT   | Additional `GeneralName`s SHOULD NOT be present. __**TBD: MUST NOT**__ |
+| \ \ **2+**                          | MAY          | Additional `GeneralName`s MAY be present. If present, they MUST be of type `uniformResourceIdentifier`. |
+| \ \ \ \ `uniformResourceIdentifier` | MUST         | If present, the scheme of the `uniformResourceIdentifier` MUST be "http". |
+| \ \ **3**                           | MUST NOT     | `GeneralName`s that do not conform to the above requirements MUST NOT be present. |
 
 ##### 7.1.2.9.3 Signed Certificate Timestamp List
 
