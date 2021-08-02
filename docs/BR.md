@@ -2332,7 +2332,7 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | \ \ \ \ `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
 | \ \ \ \ `subjectUniqueID`      | MUST NOT be present |
-| \ \ \ \ `extensions`           | See [Section 7.1.7.5.1](#71251-ocsp-responder-extensions) |
+| \ \ \ \ `extensions`           | See [Section 7.1.2.7.1](#71271-ocsp-responder-extensions) |
 | `signatureAlgorithm`           | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                    | |
 
@@ -2659,7 +2659,9 @@ Each `SignedCertificateTimestamp` included within the `SignedCertificateTimestam
 
 If present, the `subjectKeyIdentifier` MUST be set as defined within [RFC 5280, Section 4.2.1.2](https://tools.ietf.org/html/rfc5280#section-4.2.1.2). CAs MUST generate a unique `subjectKeyIdentifier` for each unique public key (the `subjectPublicKeyInfo` field of the `tbsCertificate`). For example, CAs MAY generate the subject key identifier using an algorithm derived from the public key, or MAY generate a unique number, such by using a CSPRNG.
 
-#### 7.1.2.4 All Certificates
+#### 7.1.2.4 TO DELETE All Certificates
+
+**TODO: Integrate into 7.1.2.9 as the catch-all for all certificates (currently listed TBD)**
 
 All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a `keyUsage` flag, `extKeyUsage` value, Certificate extension, or other data not specified in [Section 7.1.2](#712-certificate-content-and-extensions) unless the CA is aware of a reason for including the data in the Certificate.
 
@@ -2670,7 +2672,9 @@ a. Extensions that do not apply in the context of the public Internet (such as a
    ii. the Applicant can otherwise demonstrate the right to assert the data in a public context; or
 b. semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA (such as including an `extKeyUsage` value for a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
 
-#### 7.1.2.5 Application of RFC 5280
+#### 7.1.2.5 TO DELETE Application of RFC 5280
+
+**TODO: Move this text into 7.1.2 requirements**
 
 Except where explicitly noted, all certificates MUST conform to the certificate profile of RFC 5280. The following requirements are noted in addition to any normative requirements placed within RFC 5280. In particular, CAs SHOULD examine [RFC 5280, Appendix B](https://tools.ietf.org/html/rfc5280#appendix-B) for further discussion of normative requirements imposed by RFC 5280 and its normative dependencies.
 
