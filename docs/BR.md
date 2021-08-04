@@ -2595,9 +2595,9 @@ The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to 
 | `id-kp-codeSigning`     | 1.3.6.1.5.5.7.3.3 | MAY          |
 | `id-kp-emailProtection` | 1.3.6.1.5.5.7.3.4 | MAY          |
 | `id-kp-timeStamping`    | 1.3.6.1.5.5.7.3.8 | MAY          |
-| `id-kp-OCSPSigning`     | 1.3.6.1.5.5.7.3.9 | MAY          |
+| `id-kp-OCSPSigning`     | 1.3.6.1.5.5.7.3.9 | MUST NOT     |
 | `anyExtendedKeyUsage`   | 2.5.29.37.0       | MUST NOT     |
-| Any other value         | -                 | SHOULD NOT   |
+| Any other value         | -                 | MAY          |
 
 ##### 7.1.2.8.7 Extended Key Usage - TLS CA
 
