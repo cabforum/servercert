@@ -1,9 +1,9 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.7.8
+subtitle: Version 1.7.9
 author:
   - CA/Browser Forum
-date: 13 July, 2021  
+date: 16 August, 2021  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -121,6 +121,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.6 | SC44 | Clarify Acceptable Status Codes | 30-Apr-2021 | 3-Jun-2021 |
 | 1.7.7 | SC46 | Sunset the CAA Exception for DNS Operator | 2-Jun-2021 | 12-Jul-2021 |
 | 1.7.8 | SC45 | Wildcard Domain Validation | 2-Jun-2021 | 13-Jul-2021 |
+| 1.7.9 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -2106,7 +2107,8 @@ h. __Certificate Field:__ `subject:countryName` (OID: 2.5.4.6)
    __Contents:__ If the `subject:organizationName` field is present, the `subject:countryName` MUST contain the two-letter ISO 3166-1 country code associated with the location of the Subject verified under [Section 3.2.2.1](#3221-identity). If the `subject:organizationName` field is absent, the `subject:countryName` field MAY contain the two-letter ISO 3166-1 country code associated with the Subject as verified in accordance with [Section 3.2.2.3](#3223-verification-of-country). If a Country is not represented by an official ISO 3166-1 country code, the CA MAY specify the ISO 3166-1 user-assigned code of XX indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
 i. __Certificate Field:__ `subject:organizationalUnitName` (OID: 2.5.4.11)  
-   __Required/Optional:__ __Optional__.  
+   __Required/Optional:__ __Deprecated__. 
+   __Prohibited__ if the `subject:organizationName` is absent or the certificate is issued on or after September 1, 2022.
    __Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with [Section 3.2](#32-initial-identity-validation) and the Certificate also contains `subject:organizationName`, `subject:givenName`, `subject:surname`, `subject:localityName`, and `subject:countryName` attributes, also verified in accordance with [Section 3.2.2.1](#3221-identity).
 
 j. Other Subject Attributes  
