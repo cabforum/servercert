@@ -1,9 +1,9 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
-subtitle: Version 1.7.6
+subtitle: Version 1.7.7
 author:
   - CA/Browser Forum
-date: 2 June, 2021
+date: 16 August, 2021
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -68,6 +68,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
 | 1.7.5 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 1.7.6 | SC42 | 398-day Re-use Period | 22-Apr-2021 | 2-Jun-2021 |
+| 1.7.7 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 

@@ -1,9 +1,9 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.7.8
+subtitle: Version 1.7.9
 author:
   - CA/Browser Forum
-date: 13 July, 2021  
+date: 16 August, 2021  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -121,6 +121,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.6 | SC44 | Clarify Acceptable Status Codes | 30-Apr-2021 | 3-Jun-2021 |
 | 1.7.7 | SC46 | Sunset the CAA Exception for DNS Operator | 2-Jun-2021 | 12-Jul-2021 |
 | 1.7.8 | SC45 | Wildcard Domain Validation | 2-Jun-2021 | 13-Jul-2021 |
+| 1.7.9 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
