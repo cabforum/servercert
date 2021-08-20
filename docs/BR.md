@@ -2450,8 +2450,8 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | `subjectKeyIdentifier`            | SHOULD       | N            | See [Section 7.1.2.10.4](#712104-subject-key-identifier) |
 | `authorityInformationAccess`      | SHOULD NOT   | N            | See [Section 7.1.2.8.2](#71282-authority-information-access) |
 | `certificatePolicies`             | -            | -            | - |
-| \ \ \ \ _Prior to 2021-10-01_     | SHOULD NOT   | N            | See [Section 7.1.2.8.7](#71287-certificate-policies) |
-| \ \ \ \ _Effective 2021-10-01_    | MUST NOT     | -            | - |
+| \ \ \ \ _Prior to 2022-02-01_     | SHOULD NOT   | N            | See [Section 7.1.2.8.7](#71287-certificate-policies) |
+| \ \ \ \ _Effective 2022-02-01_    | MUST NOT     | -            | - |
 | `crlDistributionPoints`           | SHOULD NOT   | N            | See [Section 7.1.2.10.2](#712102-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY          | N            | See [Section 7.1.2.10.3](#712103-signed-certificate-timestamp-list) |
 | Any other extension               | SHOULD NOT   | -            | __**TBD**__ |
