@@ -2108,8 +2108,8 @@ Table: `otherName` requirements within a `GeneralName`
 | `keyUsage`                        | MUST          | Y                     | See [Section 7.1.2.9.8](#71298-key-usage) |
 | `subjectKeyIdentifier`            | MUST          | N                     | See [Section 7.1.2.10.4](#712104-subject-key-identifier) |
 | `extKeyUsage`                     | MUST[^eku_ca] | N                     | See [Section 7.1.2.9.7](#71297-extended-key-usage---tls-ca) (TLS CA) |
-| `nameConstraints`                 | MUST          | \*[^name_constraints] | See [Section 7.1.2.9.9](#71299-name-constraints) |
 | `authorityInformationAccess`      | SHOULD        | N                     | See [Section 7.1.2.9.2](#71292-authority-information-access) |
+| `nameConstraints`                 | MAY           | \*[^name_constraints] | See [Section 7.1.2.9.9](#71299-name-constraints) |
 | Signed Certificate Timestamp List | MAY           | N                     | See [Section 7.1.2.10.3](#712103-signed-certificate-timestamp-list) |
 | Any other extension               | SHOULD NOT    | -                     | __**TBD**__ |
 
