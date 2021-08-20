@@ -2189,8 +2189,8 @@ Table: Individual Validated `subject` Attributes
 | `countryName`            | MUST         | The two-letter ISO 3166-1 country code for the country associated with the Subject. If a Country is not represented by an official ISO 3166-1 country code, the CA MUST specify the ISO 3166-1 user-assigned code of `XX`, indicating that an official ISO 3166-1 alpha-2 code has not been assigned. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `stateOrProvinceName`    | MUST / MAY   | MUST be present if `localityName` is absent, MAY be present otherwise. If present, MUST contain the Subject's state or province information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `localityName`           | MUST / MAY   | MUST be present if `stateOrProvinceName` is absent, MAY be present otherwise. If present, MUST contain the Subject's locality information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
-| `streetAddress`          | SHOULD NOT   | If present, MUST contain the Subject's street address information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `postalCode`             | SHOULD NOT   | If present, MUST contain the Subject's zip or postal information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
+| `streetAddress`          | SHOULD NOT   | If present, MUST contain the Subject's street address information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `organizationName`       | SHOULD NOT   | If present, MUST contain the Subject's name or DBA. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `surname`                | MUST         | The Subject's surname. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `givenName`              | MUST         | The Subject's given name. | [Section 3.2.3](#323-authentication-of-individual-identity) |
@@ -2219,8 +2219,8 @@ Table: Individual Validated `subject` Attributes
 | `countryName`            | MUST         | The two-letter ISO 3166-1 country code for the country associated with the Subject. If a Country is not represented by an official ISO 3166-1 country code, the CA MUST specify the ISO 3166-1 user-assigned code of `XX`, indicating that an official ISO 3166-1 alpha-2 code has not been assigned. | [Section 3.2.2.1](#3221-identity) |
 | `stateOrProvinceName`    | MUST / MAY   | MUST be present if `localityName` is absent, MAY be present otherwise. If present, MUST contain the Subject's state or province information. | [Section 3.2.2.1](#3221-identity) |
 | `localityName`           | MUST / MAY   | MUST be present if `stateOrProvinceName` is absent, MAY be present otherwise. If present, MUST contain the Subject's locality information. | [Section 3.2.2.1](#3221-identity) |
-| `streetAddress`          | SHOULD NOT   | If present, MUST contain the Subject's street address information. | [Section 3.2.2.1](#3221-identity) |
 | `postalCode`             | SHOULD NOT   | If present, MUST contain the Subject's zip or postal information. | [Section 3.2.2.1](#3221-identity)) |
+| `streetAddress`          | SHOULD NOT   | If present, MUST contain the Subject's street address information. | [Section 3.2.2.1](#3221-identity) |
 | `organizationName`       | MUST         | The Subject's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
 | `surname`                | MUST NOT     |             |             |
 | `givenName`              | MUST NOT     |             |             |
@@ -2489,8 +2489,8 @@ The following table details the acceptable `AttributeType`s that may appear with
 | `countryName`            | MUST         | The two-letter ISO 3166-1 country code for the country in which the CA's place of business is located. | [Section 3.2.2.3](#3223-verification-of-country) |
 | `stateOrProvinceName`    | MAY          | If present, the CA's state or province information. | [Section 3.2.2.1](#3221-identity) |
 | `localityName`           | MAY          | If present, the CA's locality. | [Section 3.2.2.1](#3221-identity) |
-| `streetAddress`          | MAY          | If present, the CA's street address. Multiple instances MAY be present. | [Section 3.2.2.1](#3221-identity) |
 | `postalCode`             | MAY          | If present, the CA's zip or postal information. | [Section 3.2.2.1](#3221-identity) |
+| `streetAddress`          | MAY          | If present, the CA's street address. Multiple instances MAY be present. | [Section 3.2.2.1](#3221-identity) |
 | `organizationName`       | MUST         | The CA's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
 | `organizationalUnitName` | SHOULD NOT   | __**TBD**__ |                |
 | `commonName`             | MUST         | The contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate. | |
@@ -2884,8 +2884,8 @@ Table: Attribute Encoding and Order Requirements
 | `countryName`            | `2.5.4.6`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) |                       | 2 |
 | `stateOrProvinceName`    | `2.5.4.8`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 128 |
 | `localityName`           | `2.5.4.7`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 128 |
-| `streetAddress`          | `2.5.4.9`  | X.520                                           | MUST use `UTF8String` or `PrintableString` | 128 |
 | `postalCode`             | `2.5.4.17` | X.520                                           | MUST use `UTF8String` or `PrintableString` | 40 |
+| `streetAddress`          | `2.5.4.9`  | X.520                                           | MUST use `UTF8String` or `PrintableString` | 128 |
 | `organizationName`       | `2.5.4.10` | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 64 |
 | `surname`                | `2.5.4.4`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 64[^surname_givenname] |
 | `givenName`              | `2.5.4.42` | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 64[^surname_givenname] |
