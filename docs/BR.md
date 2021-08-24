@@ -473,7 +473,7 @@ The script outputs:
 
 **Wildcard Domain Name**: A string starting with "\*." (U+002A ASTERISK, U+002E FULL STOP) immediately followed by a Fully-Qualified Domain Name.
 
-**XN-Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "The class of labels that begin with the prefix "xn--" (case independent), but otherwise conform to the rules for LDH labels."
+**XN-Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "The class of labels that begin with the prefix `"xn--"` (case independent), but otherwise conform to the rules for LDH labels."
 
 ### 1.6.2 Acronyms
 
