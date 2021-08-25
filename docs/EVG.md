@@ -1,9 +1,9 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
-subtitle: Version 1.7.7
+subtitle: Version 1.7.8
 author:
   - CA/Browser Forum
-date: 16 August, 2021
+date: 25 August, 2021
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -12,7 +12,7 @@ copyright: |
 
 # Introduction
 
-This version 1.7.4 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC35, passed by the Server Certificate Working Group on 9 September 2020, and effective as of 19 October 2020.
+This version 1.7.8 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC48, passed by the Server Certificate Working Group on 22 July 2021, and effective as of 25 August 2021.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -69,6 +69,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.5 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
 | 1.7.6 | SC42 | 398-day Re-use Period | 22-Apr-2021 | 2-Jun-2021 |
 | 1.7.7 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
+| 1.7.8 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
