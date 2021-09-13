@@ -1,9 +1,9 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
-subtitle: Version 1.7.5
+subtitle: Version 1.7.8
 author:
   - CA/Browser Forum
-date: 5 April, 2021
+date: 25 August, 2021
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -12,7 +12,7 @@ copyright: |
 
 # Introduction
 
-This version 1.7.4 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC35, passed by the Server Certificate Working Group on 9 September 2020, and effective as of 19 October 2020.
+This version 1.7.8 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC48, passed by the Server Certificate Working Group on 22 July 2021, and effective as of 25 August 2021.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -67,6 +67,9 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.3 | SC31 | Browser Alignment | 16-Jul-2020 | 20-Aug-2020 |
 | 1.7.4 | SC35 | Cleanups and Clarifications | 9-Sep-2020 | 19-Oct-2020 |
 | 1.7.5 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 24-Feb-2021 | 5-Apr-2021 |
+| 1.7.6 | SC42 | 398-day Re-use Period | 22-Apr-2021 | 2-Jun-2021 |
+| 1.7.7 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
+| 1.7.8 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -77,6 +80,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 2020-01-31 | [9.2.8](#928-subject-organization-identifier-field) | If subject:organizationIdentifier is present, the CA/Browser Forum Organization Identifier Extension MUST be present |
 | 2020-09-01 | [9.4](#94-maximum-validity-period-for-ev-certificate) & [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names) | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
 | 2020-10-01 | [11.1.3](#1113-disclosure-of-verification-sources) | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
+| 2022-09-01 | [9.2.7](#927-subject-organizational-unit-name-field) | CAs MUST NOT include the organizationalUnitName field in the Subject |
 
 **Implementers' Note**: Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -513,7 +517,7 @@ __Contents__: This field MUST contain the address of the physical location of th
 ### 9.2.7. Subject Organizational Unit Name Field
 
 __Certificate Field__: `subject:organizationalUnitName` (OID: 2.5.4.11)  
-__Required/Optional__: Optional  
+__Required/Optional/Prohibited:__ As stated in Section 7.1.4.2.2 i of the Baseline Requirements. 
 __Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with [Section 11](#11-verification-requirements). This field MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ### 9.2.8. Subject Organization Identifier Field
@@ -955,7 +959,7 @@ To verify the Applicant's ability to engage in business, the CA MUST verify the 
 
 ### 11.7.1. Verification Requirements
 
-1. For each Fully-Qualified Domain Name listed in a Certificate, other than a Domain Name with .onion in the right-most label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section)  either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements.  For a Certificate issued to a Domain Name with .onion in the right-most label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the .onion Domain Name in accordance with [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+1. For each Fully-Qualified Domain Name listed in a Certificate, other than a Domain Name with "onion" as the right-most Domain Label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section)  either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements.  For a Certificate issued to a Domain Name with "onion" as the right-most Domain Label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the .onion Domain Name in accordance with [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
 
 2. **Mixed Character Set Domain Names**: EV Certificates MAY include Domain Names containing mixed character sets only in compliance with the rules set forth by the domain registrar.  The CA MUST visually compare any Domain Names with mixed character sets with known high risk domains.  If a similarity is found, then the EV Certificate Request MUST be flagged as High Risk.  The CA must perform reasonably appropriate additional authentication and verification to be certain beyond reasonable doubt that the Applicant and the target in question are the same organization.
 
@@ -1270,15 +1274,15 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 
 1. Except for reissuance of an EV Certificate under [Section 11.14.2](#11142-re-issuance-requests) and except when permitted otherwise in [Section 11.14.1](#11141-validation-for-existing-subscribers), the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL NOT exceed the following limits:
 
-   A.  Legal existence and identity – thirteen months;
-   B.  Assumed name – thirteen months;
-   C.  Address of Place of Business – thirteen months;
-   D.  Verified Method of Communication – thirteen months;
-   E.  Operational existence – thirteen months;
-   F.  Domain Name – thirteen months;
-   G.  Name, Title, Agency, and Authority – thirteen months, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
+   A.  Legal existence and identity – 398 days;
+   B.  Assumed name – 398 days;
+   C.  Address of Place of Business – 398 days;
+   D.  Verified Method of Communication – 398 days;
+   E.  Operational existence – 398 days;
+   F.  Domain Name – 398 days;
+   G.  Name, Title, Agency, and Authority – 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
-2. The thirteen-month period set forth above SHALL begin to run on the date the information was collected by the CA.
+2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
 3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 11.9](#119-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 11.10](#1110-verification-of-approval-of-ev-certificate-request).
 4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 11.14.1](#11141-validation-for-existing-subscribers).
 
@@ -1638,7 +1642,7 @@ A CA may rely on the Contract Signer's authority to enter into the Subscriber Ag
 
 # Appendix F – Issuance of Certificates for .onion Domain Names
 
-A CA may issue an EV Certificate with .onion in the right-most label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix or Appendix C of the Baseline Requirements.
+A CA may issue an EV Certificate with "onion" as the right-most Domain Label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix or Appendix C of the Baseline Requirements.
 
 1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31)
 
@@ -1698,13 +1702,13 @@ A CA may issue an EV Certificate with .onion in the right-most label of the Doma
       cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
       ```
 
-3. Each Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
+3. Each Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
 
-4. CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 15 months. Effective 2020-09-01, CAs MUST NOT issue a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name with a Validity Period longer than 398 days.
+4. CAs MUST NOT issue a Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name with a Validity Period longer than 15 months. Effective 2020-09-01, CAs MUST NOT issue a Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name with a Validity Period longer than 398 days.
 
-5. When a Certificate that includes a Domain Name where .onion is in the right-most label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+5. When a Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
 
-6. On or before May 1, 2015, each CA MUST revoke all Certificates issued with the Subject Alternative Name extension or Common Name field that includes a Domain Name where .onion is in the right-most label of the Domain Name unless the Certificate was issued in compliance with this [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+6. On or before May 1, 2015, each CA MUST revoke all Certificates issued with the Subject Alternative Name extension or Common Name field that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name unless the Certificate was issued in compliance with this [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
 
 # Appendix G – Abstract Syntax Notation One module for EV certificates
 
