@@ -1503,7 +1503,7 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 
 ### 5.4.1 Types of events recorded
 
-The CA and each Delegated Third Party SHALL record events related to the security of Certificate Systems, Certificate Management Systems, Root CA Systems, and Delegated Third Party Systems. The CA and each Delegated Third Party SHALL record events related to actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA’s compliance with these Requirements.
+The CA and each Delegated Third Party SHALL record events related to the security of their Certificate Systems, Certificate Management Systems, Root CA Systems, and Delegated Third Party Systems. The CA and each Delegated Third Party SHALL record events related to their actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA’s compliance with these Requirements.
 
 The CA SHALL record at least the following events:
 
@@ -1543,7 +1543,7 @@ Log records MUST include the following elements:
 
 ### 5.4.3 Retention period for audit log
 
-The CA SHALL retain, for at least two (2) years:
+The CA and each Delegated Third Party SHALL retain, for at least two (2) years:
 
   1. CA certificate and key lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (1)) after the later occurrence of:
      1. the destruction of the CA Private Key; or
@@ -1571,7 +1571,7 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 
 ### 5.5.1 Types of records archived
 
-The CA and each Delegated Third Party SHALL archive records related to the security of Certificate Systems, Certificate Management Systems, Root CA Systems, and Delegated Third Party Systems, including event records related to the verification, issuance and revocation of certificate requests and Certificates.
+The CA and each Delegated Third Party SHALL archive records related to the security of their Certificate Systems, Certificate Management Systems, Root CA Systems, and Delegated Third Party Systems, including event records and documentation related to their verification, issuance, and revocation of certificate requests and Certificates.
 
 The CA and each Delegated Third Party SHALL archive records relating to:
 
@@ -1587,8 +1587,8 @@ The CA and each Delegated Third Party SHALL retain, for at least two (2) years:
     1. the destruction of the CA Private Key; or
     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
 2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the expiration of the Subscriber Certificate;
-3. Any security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred; 
-4. All archived records and documentation relating to the verification, issuance, and revocation of certificate requests and Certificates; and
+3. All security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred; 
+4. All archived records and documentation relating to the verification, issuance, and revocation of certificate requests and Certificates after such records and documentation were last relied upon in the verification, issuance, or revocation of certificate requests and Certificates; and
 5. All archived records and documentation related to the security of Certificate Systems, Certificate Management Systems, Root CA Systems and Delegated Third Party Systems (as set forth in [Section 5.5.1](#551-types-of-records-archived)).
 
 ### 5.5.3 Protection of archive
