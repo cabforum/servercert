@@ -1,6 +1,6 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.8.0 WIP SCXX Consolidate and Clarify Audit Logging and Records Archival Retention Requirements
+subtitle: Version 1.8.0
 author:
   - CA/Browser Forum
 date: 25 August, 2021  
@@ -1588,8 +1588,10 @@ The CA and each Delegated Third Party SHALL retain, for at least two (2) years:
     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
 2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the expiration of the Subscriber Certificate;
 3. All security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred; 
-4. All archived records and documentation relating to the verification, issuance, and revocation of certificate requests and Certificates after such records and documentation were last relied upon in the verification, issuance, or revocation of certificate requests and Certificates; and
-5. All archived records and documentation related to the security of Certificate Systems, Certificate Management Systems, Root CA Systems and Delegated Third Party Systems (as set forth in [Section 5.5.1](#551-types-of-records-archived)).
+4. All archived records and documentation related to the security of Certificate Systems, Certificate Management Systems, Root CA Systems and Delegated Third Party Systems (as set forth in [Section 5.5.1](#551-types-of-records-archived));
+5. All archived records and documentation relating to the verification, issuance, and revocation of certificate requests and Certificates after the later occurrence of:
+   1. such records and documentation were last relied upon in the verification, issuance, or revocation of certificate requests and Certificates; or
+   2. the expiration of the Subscriber Certificates relying upon such records and documentation.
 
 ### 5.5.3 Protection of archive
 
