@@ -1044,7 +1044,7 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 
 ### 4.1.1 Who can submit a certificate application
 
-In accordance with [Section 5.5.2](#552-retention-period-for-archive), the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
+No stipulation.
 
 ### 4.1.2 Enrollment process and responsibilities
 
@@ -1652,6 +1652,8 @@ In all cases, the CA SHALL:
 #### 6.1.1.2 RA Key Pair Generation
 
 #### 6.1.1.3 Subscriber Key Pair Generation
+
+The CA SHALL implement a Trustworthy System or process which identifies forbidden, weak, or compromised keys (such as a Debian weak key, see https://wiki.debian.org/SSLkeys).
 
 The CA SHALL reject a certificate request if one or more of the following conditions are met:
 
