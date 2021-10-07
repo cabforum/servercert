@@ -1,4 +1,0 @@
-docs/*.pdf
-docs/*.html
-output/*
-!output/Makefile
