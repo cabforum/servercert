@@ -1284,9 +1284,15 @@ No stipulation.
 
 ### 4.9.7 CRL issuance frequency (if applicable)
 
+The validity interval of a CRL is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
+
 For the status of Subscriber Certificates:
 
+For CRLs issued prior to 2022-02-01:
 If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the value of the `nextUpdate` field MUST NOT be more than ten days beyond the value of the `thisUpdate` field.
+
+For CRLs issued on or after 2022-02-01:
+If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the validity interval MUST NOT be more than ten days.
 
 For the status of Subordinate CA Certificates:
 
@@ -1295,7 +1301,11 @@ The CA SHALL update and reissue CRLs at least:
   i. once every twelve months; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
+For CRLs issued prior to 2022-02-01:
 The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field.
+
+For CRLs issued on or after 2022-02-01:
+The validity interval MUST NOT be more than twelve months.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
