@@ -1653,8 +1653,6 @@ In all cases, the CA SHALL:
 
 #### 6.1.1.3 Subscriber Key Pair Generation
 
-The CA SHALL implement a Trustworthy System or process which identifies forbidden, weak, or compromised keys (such as a Debian weak key, see https://wiki.debian.org/SSLkeys).
-
 The CA SHALL reject a certificate request if one or more of the following conditions are met:
 
 1. The Key Pair does not meet the requirements set forth in [Section 6.1.5](#615-key-sizes) and/or [Section 6.1.6](#616-public-key-parameters-generation-and-quality-checking);
