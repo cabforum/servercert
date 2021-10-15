@@ -466,6 +466,8 @@ The script outputs:
 
 **Validation Specialists**: Someone who performs the information verification duties specified by these Requirements.
 
+**Validity Interval**: For CRLs and OCSP responses, the difference in time between the thisUpdate and nextUpdate field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap‐seconds.
+
 **Validity Period**: Prior to 2020-09-01, the period of time measured from the date when the Certificate is issued until the Expiry Date. For Certificates issued on or after 2020-09-01, the validity period is as defined within RFC 5280, Section 4.1.2.5: the period of time from notBefore through notAfter, inclusive.
 
 **WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
@@ -1284,28 +1286,26 @@ No stipulation.
 
 ### 4.9.7 CRL issuance frequency (if applicable)
 
-The validity interval of a CRL is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
-
 For the status of Subscriber Certificates:
 
 For CRLs issued prior to 2022-02-01:
 If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the value of the `nextUpdate` field MUST NOT be more than ten days beyond the value of the `thisUpdate` field.
 
 For CRLs issued on or after 2022-02-01:
-If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the validity interval MUST NOT be more than ten days.
+If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the Validity Interval MUST NOT be more than ten days.
 
 For the status of Subordinate CA Certificates:
 
-The CA SHALL update and reissue CRLs at least:
+The CA SHOULD update and reissue CRLs at least every 397 days and the CA SHALL update and reissue CRLs:
 
-  i. once every twelve months; and
+  i. once every 398 days; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
 For CRLs issued prior to 2022-02-01:
 The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field.
 
 For CRLs issued on or after 2022-02-01:
-The validity interval MUST NOT be more than twelve months.
+The Validity Interval SHOULD NOT be more than 397 days and the Validity Interval MUST NOT be more than 398 days.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
@@ -1326,8 +1326,6 @@ defined by RFC6960.
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
 
-The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
-
 For the status of Subscriber Certificates:
 
 Prior to 2020-09-30:
@@ -1335,16 +1333,16 @@ The CA SHALL update information provided via an Online Certificate Status Protoc
 
 Effective 2020-09-30:
 
-1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
-2. OCSP responses MUST have a validity interval less than or equal to ten days;
-3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
-4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
+1. OCSP responses MUST have a Validity Interval greater than or equal to eight hours;
+2. OCSP responses MUST have a Validity Interval less than or equal to ten days;
+3. For OCSP responses with Validity Intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the Validity Interval before the nextUpdate.
+4. For OCSP responses with Validity Intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
 For the status of Subordinate CA Certificates:
 
-* The CA SHALL update information provided via an Online Certificate Status Protocol
+The CA SHOULD update information provided via an Online Certificate Status Protocol at least every 397 days and the CA SHALL update information provided via an Online Certificate Status Protocol
 
-  i. at least every twelve months; and
+  i. at least every 398 days; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with [Section 7.1.5](#715-name-constraints), the responder MUST NOT respond with a "good" status for such requests.
