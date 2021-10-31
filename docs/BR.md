@@ -1298,7 +1298,7 @@ For the status of Subordinate CA Certificates:
 
 The CA SHOULD update and reissue CRLs at least every 366 days and the CA SHALL update and reissue CRLs:
 
-  i. once every 367 days; and
+  i. at least every 367 days; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
 **For CRLs issued prior to 2022-02-01:** The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field.
