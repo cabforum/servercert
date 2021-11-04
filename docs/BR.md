@@ -573,7 +573,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
 
-For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional unit of measure, such as an additional hour or additional day.
+**Effective 2022-06-01:** For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional unit of measure, such as an additional hour or additional day.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
@@ -1290,9 +1290,9 @@ No stipulation.
 
 For the status of Subscriber Certificates:
 
-**For CRLs issued prior to 2022-02-01:** If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the value of the `nextUpdate` field MUST NOT be more than ten days beyond the value of the `thisUpdate` field.
+**For CRLs issued prior to 2022-06-01:** If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the value of the `nextUpdate` field MUST NOT be more than ten days beyond the value of the `thisUpdate` field.
 
-**For CRLs issued on or after 2022-02-01:** If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the Validity Interval MUST NOT be more than ten days.
+**For CRLs issued on or after 2022-06-01:** If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the Validity Interval MUST NOT be more than ten days.
 
 For the status of Subordinate CA Certificates:
 
@@ -1301,9 +1301,9 @@ The CA SHOULD update and reissue CRLs at least every 366 days and the CA SHALL u
   i. at least every 367 days; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
-**For CRLs issued prior to 2022-02-01:** The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field.
+**For CRLs issued prior to 2022-06-01:** The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field.
 
-**For CRLs issued on or after 2022-02-01:** The Validity Interval SHOULD NOT be more than 366 days and the Validity Interval MUST NOT be more than 367 days.
+**For CRLs issued on or after 2022-06-01:** The Validity Interval SHOULD NOT be more than 366 days and the Validity Interval MUST NOT be more than 367 days.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
@@ -1323,6 +1323,8 @@ defined by RFC6960.
 ### 4.9.10 On-line revocation checking requirements
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
+
+For the purpose of computing an OCSP Validity Interval, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
 
 For the status of Subscriber Certificates:
 
