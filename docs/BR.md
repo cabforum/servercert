@@ -1324,7 +1324,7 @@ defined by RFC6960.
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
 
-For the purpose of computing an OCSP Validity Interval, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
+As stated in [Section 1.6.4](#164-conventions), for the purpose of computing an OCSP Validity Interval, an hour is measured as 3,600 seconds and a day is measured as 86,400 seconds, ignoring leap seconds.
 
 For the status of Subscriber Certificates:
 
