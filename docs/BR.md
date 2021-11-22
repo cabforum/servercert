@@ -1748,7 +1748,9 @@ Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Va
 Subscriber Certificates issued after 1 March 2018, but prior to 1 September 2020, MUST NOT have a Validity Period greater than 825 days.
 Subscriber Certificates issued after 1 July 2016 but prior to 1 March 2018 MUST NOT have a Validity Period greater than 39 months.
 
-As stated in [Section 1.6.4](#164-conventions), a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
+**For Certificates issued prior to 2022-06-01:** For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
+
+**For Certificates issued on or after 2022-06-01:** As stated in [Section 1.6.4](#164-conventions), a day is measured as 86,400 seconds, ignoring leap seconds. Any amount of time greater than this, including fractional seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default.
 
 ## 6.4 Activation data
 
