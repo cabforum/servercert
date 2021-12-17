@@ -1521,7 +1521,7 @@ The CA SHALL record at least the following events:
    5. Generation of Certificate Revocation Lists and OCSP entries.
 
 3. Security events, including:
-   1. Successful and unsuccessful PKI system access attempts;
+   1. Successful and unsuccessful Certificate Management System access attempts;
    2. PKI and security system actions performed;
    3. Security profile changes;
    4. Installation, update and removal of software on a Certificate System;
