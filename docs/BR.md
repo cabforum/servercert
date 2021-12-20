@@ -2032,7 +2032,7 @@ In addition, the CA MAY use the following signature algorithm and encoding if al
     * The new Certificate's `extKeyUsage` extension is present, has at least one key purpose specified, and none of the key purposes specified are the id-kp-serverAuth (OID: 1.3.6.1.5.5.7.3.1) or the anyExtendedKeyUsage (OID: 2.5.2937.0) key purposes; and/or
     * The new Certificate's `basicConstraints` extension has a pathLenConstraint that is zero.
 * If used within an OCSP response, such as the `signatureAlgorithm` of a BasicOCSPResponse:
-  * The `producedAt` field value of the ResponseData MUST be earlier than June 1, 2022 00:00:00 UTC.
+  * The `producedAt` field value of the ResponseData MUST be earlier than June 1, 2022 00:00:00 UTC; and,
   * All unexpired, un-revoked Certificates that contain the Public Key of the CA Key Pair and that have the same Subject Name MUST also contain an `extKeyUsage` extension with the only key usage present being the id-kp-ocspSigning (OID: 1.3.6.1.5.5.7.3.9) key usage.
 * If used within a CRL, such as the `signatureAlgorithm` field of a CertificateList or the `signature` field of a TBSCertList:
   * The CRL is referenced by one or more Root CA or Subordinate CA Certificates; and,
