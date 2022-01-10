@@ -986,7 +986,7 @@ Databases maintained by the CA, its owner, or its affiliated companies do not qu
 
 #### 3.2.2.8 CAA Records
 
-As part of the issuance process, the CA MUST check for CAA records and follow the processing instructions found, for each `dNSName` in the `subjectAltName` extension of the certificate to be issued, as specified in RFC 8659. If the CA issues, they MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
+When the FQDN does not contain "onion" as the rightmost Domain Label, as part of the issuance process, the CA MUST check for CAA records and follow the processing instructions found, for each `dNSName` in the `subjectAltName` extension of the certificate to be issued, as specified in RFC 8659. If the CA issues, they MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 
 This stipulation does not prevent the CA from checking CAA records at any other time.
 
