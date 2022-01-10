@@ -1,19 +1,20 @@
 name: Build Draft Guidelines
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 jobs:
   build_docs:
     strategy:
       matrix:
         document:
-          - 'BR.md'
-          - 'EVG.md'
-          - 'NSR.md'
+          - 'BR'
+          - 'EVG'
+          - 'NSR'
     name: Build ${{ matrix.document }}
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
-      - name: Checkout old version for redline (pull request)
+      - name: Checkout old version for redline
+        if: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
         uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.base.sha || github.event.push.before }}
@@ -21,18 +22,17 @@ jobs:
       - uses: docker://ghcr.io/cabforum/build-guidelines-action:2.0.2
         id: build_doc
         with:
-          markdown_file: docs/${{ matrix.document }}
-          diff_file: old/docs/${{ matrix.document }}
+          markdown_file: docs/${{ matrix.document }}.md
+          diff_file: old/docs/${{ matrix.document }}.md
           pdf: true
           docx: true
           lint: true
           draft: ${{ !(github.event_name == 'push' && github.repository == 'cabforum/servercert' && github.ref == 'refs/heads/main') }}
       - uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.document }}-${{ github.event.pull_request.head.sha || github.sha }}
+          name: ${{ matrix.document }}-${{ github.event.pull_request.head.sha || github.sha }}-${{ github.event_name }}
           path: |
             ${{ steps.build_doc.outputs.pdf_file }}
             ${{ steps.build_doc.outputs.docx_file }}
             ${{ steps.build_doc.outputs.pdf_redline_file }}
           if-no-files-found: 'error'
-          retention-days: 21
