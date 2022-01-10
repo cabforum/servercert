@@ -2621,6 +2621,7 @@ This appendix defines permissible verification procedures for including one or m
       i. [Section 3.2.2.4.6 - Agreed-Upon Change to Website](#32246-agreed-upon-change-to-website)
       ii. [Section 3.2.2.4.18 - Agreed-Upon Change to Website v2](#322418-agreed-upon-change-to-website-v2)
       iii. [Section 3.2.2.4.19 - Agreed-Upon Change to Website - ACME](#322419-agreed-upon-change-to-website-acme)
+      iv. [Section 3.2.2.4.20 - TLS Using ALPN](#322420-tls-using-alpn)
 
       When these methods are used to verify the Applicant's control over the .onion service, the CA MUST use Tor protocol to establish a connection to the .onion hidden service. The CA MUST NOT delegate or rely on a third-party to establish the connection, such as by using Tor2Web.
 
@@ -2657,4 +2658,4 @@ This appendix defines permissible verification procedures for including one or m
 
       Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-3. When a Certificate includes an FQDN where "onion" is the right-most Domain Label of the Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names).
+4. When a Certificate includes an FQDN where "onion" is the right-most Domain Label of the Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names).
