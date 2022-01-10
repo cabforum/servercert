@@ -1644,6 +1644,8 @@ A CA may rely on the Contract Signer's authority to enter into the Subscriber Ag
 
 A CA may issue an EV Certificate with "onion" as the right-most Domain Label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix or Appendix C of the Baseline Requirements.
 
+**Effective 2022-04-01**, A CA may issue an EV Certificate with "onion" as the right-most Domain Label of the Domain Name provided that issuance complies with the requirements set forth in Appendix B of the Baseline Requirements. The remaining text of this Appendix F shall be obsoleted.
+
 1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31)
 
    The CA MUST include the CAB Forum Tor Service Descriptor Hash extension in the `TBSCertificate` to convey hashes of keys related to .onion addresses. The CA MUST include the Tor Service Descriptor Hash extension using the following format:
