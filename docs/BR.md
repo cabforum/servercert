@@ -1838,9 +1838,9 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 
 #### 7.1.2.2 Cross-Certified Subordinate CA Certificate Profile
 
-This Certificate Profile MAY be used when issuing a CA Certificate using the same Subject Name and Subject Public Key Information as an existing CA Certificate, whether a Root CA Certificate or Subordinate CA Certificate.
+This Certificate Profile MAY be used when issuing a CA Certificate using the same Subject Name and Subject Public Key Information as one or more existing CA Certificate(s), whether a Root CA Certificate or Subordinate CA Certificate.
 
-Before issuing a CA Certificate using this Profile, the Issuing CA MUST confirm that the existing CA Certificate(s) are subject to these Baseline Requirements and were issued in compliance with the then-current version of the Baseline Requirements at time of issuance.
+Before issuing a Cross-Certified Subordinate CA, the Issuing CA MUST confirm that the existing CA Certificate(s) are subject to these Baseline Requirements and were issued in compliance with the then-current version of the Baseline Requirements at time of issuance.
 
 __**TBD: Remarks about audits**__
 
@@ -2599,10 +2599,10 @@ These extensions apply in the context of a Precertificate directly issued from a
 | __Extension__                                        | __Presence__ | __Critical__ | __Description__ |
 | ----                                                 | -            | -            | ----- |
 | Precertificate Poison (OID: 1.3.6.1.4.1.11129.2.4.3) | MUST         | Y            | See [Section 7.1.2.9.3](#71293-precertificate-poison) |
-| Signed Certificate Timestamp List                    | MUST NOT     | \*           | |
+| Signed Certificate Timestamp List                    | MUST NOT     | -            | |
 | Any other extension                                  | \*           | \*           | The order, criticality, and encoded values of all other extensions MUST be byte-for-byte identical to the `extensions` field of the Certificate |
 
-**Note:** This requirement is expressing that if the Precertificate Poison extension is removed from the Precertificate, and the Signed Certificate Timestamp List is removed from the certificate, the contents of the `extensions` field MUST be byte-for-byte identical to the Certificate.
+**Note**: This requirement is expressing that if the Precertificate Poison extension is removed from the Precertificate, and the Signed Certificate Timestamp List is removed from the certificate, the contents of the `extensions` field MUST be byte-for-byte identical to the Certificate.
 
 ##### 7.1.2.9.2 Precertificate CA Issued Precertificate Profile Extensions
 
@@ -2612,7 +2612,7 @@ These extensions apply in the context of a Precertificate from a Precertificate 
 | ----                                                 | -            | -            | ----- |
 | Precertificate Poison (OID: 1.3.6.1.4.1.11129.2.4.3) | MUST         | Y            | See [Section 7.1.2.9.3](#71293-precertificate-poison) |
 | `authorityKeyIdentifier`                             | \*           | \*           | See [Section 7.1.2.9.4](#71294-authority-key-identifier) |
-| Signed Certificate Timestamp List                    | MUST NOT     | \*           | |
+| Signed Certificate Timestamp List                    | MUST NOT     | -            | |
 | Any other extension                                  | \*           | \*           | The order, criticality, and encoded values of all other extensions MUST be byte-for-byte identical to the `extensions` field of the Certificate |
 
 ##### 7.1.2.9.3 Precertificate Poison
