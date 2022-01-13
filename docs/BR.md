@@ -2080,6 +2080,31 @@ The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to 
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT     |
 | Any other value                    | -                       | MAY          |
 
+##### 7.1.2.3.2 Certificate Policies
+
+If present, the Certificate Policies extension MUST be one of the following two formats:
+
+Table: No Policy Restrictions
+
+| __Field__                  | __Presence__ | __Description__                    |
+| ---                        | -            | ------                             |
+| `certificatePolicies`      |              |                                    |
+| \ \ **1**                  |              | The first `PolicyInformation` present in the `certificatePolicies`. |
+| \ \ \ \ `policyIdentifier` | MUST         | The `anyPolicy` (OID: 2.5.29.32.0) identifier. |
+| \ \ \ \ `policyQualifiers` | MUST NOT     |                                    |
+| \ \ **2**                  | MUST NOT     | When the `anyPolicy` policy is present, the CA MUST NOT include any further `PolicyInformation` values. |
+
+
+Table: Policy Restricted
+
+| __Field__                  | __Presence__ | __Description__ |
+| ---                        | -            | ------          |
+| `certificatePolicies`      |              |                 |
+| \ \ **1+**                 | MAY          | The CA MAY include one or more `PolicyInformation` values that meet the following profile: |
+| \ \ \ \ `policyIdentifier` | MUST         | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
+| \ \ **4**                  | MUST NOT     | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+
 #### 7.1.2.4 Technically Constrained Precertificate Signing CA Certificate Profile
 
 This Certificate Profile MUST be used when issuing a CA Certificate that will be used as a Precertificate Signing CA, as described in [RFC 6962, Section 3.1](https://tools.ietf.org/html/rfc6962#section-3.1). If a CA Certificate conforms to this profile, it is considered Technically Constrained.
