@@ -1990,6 +1990,16 @@ Each included Extended Key Usage key usage purpose:
 
 CAs MUST NOT include additional key usage purposes unless the CA is aware of a reason for including the key usage purpose in the Certificate.
 
+Each included Extended Key Usage key usage purpose:
+
+  1. MUST apply in the context of the public Internet (e.g. MUST NOT be for a service that is only valid in a privately managed network), unless:
+    a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
+    b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
+  2. MUST NOT include semantics that will mislead the Relying Party about the certificate information verified by the CA, such as including a key usage purpose asserting storage on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance.
+  3. MUST NOT be included unless the Certificate conforms to the relevant specification defining the key usage purpose.
+
+CAs MUST NOT include additional key usage purposes unless the CA is aware of a reason for including the key usage purpose in the Certificate.
+
 #### 7.1.2.3 Technically Constrained Non-TLS Subordinate CA Certificate Profile
 
 This Certificate Profile MAY be used when issuing a CA Certificate that will be considered Technically Constrained, and which will not be used to issue TLS certificates directly or transitively.
@@ -2117,6 +2127,10 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST          |
 | Any other value                    | -                       | MUST NOT      |
 
+CAs SHOULD NOT include additional key usage purposes beyond those specified in the table above. If present, they SHOULD be equal to, or a subset of, the key usage purposes for the Issuing CA Certificate.
+
+Any additional key usage purposes MUST conform to the requirements and restrictions specified in [Section 7.1.2.2.4, Extended Key Usage - Restricted Cross-Certified CA](#71224-extended-key-usage---restricted-cross-certified-ca).
+
 #### 7.1.2.5 Technically Constrained TLS Subordinate CA Certificate Profile
 
 This Certificate Profile MAY be used when issuing a CA Certificate that will be considered Technically Constrained, and which will be used to issue TLS certificates directly or transitively.
@@ -2188,6 +2202,15 @@ Any `otherName`, if present:
 
   1. MUST apply in the context of the public Internet, unless:
      a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
+     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
+  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
+  3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
+
+CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
+
+All other `otherName` `type-id`s other than those listed above:
+  1. MUST apply in the context of the public Internet, unless:
+     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
      b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
   3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
@@ -2556,7 +2579,7 @@ If present, the `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDesc
 
 OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE.
 
-OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE. When using DER encoding, the encoded value of a `BasicConstraints` sequence is an empty SEQUENCE, as DEFAULT values are not encoded.
+OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE.
 
 | __Field__           | __Description__ |
 | ---                 | ------- |
@@ -2876,6 +2899,26 @@ Any `otherName`, if present:
   3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
 
 CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
+
+When an `otherName` is present within a `GeneralName` present in the `base` of a `nameConstraints` `permittedSubtrees` or `excludedSubtrees`, it MUST meet the following requirements:
+
+Table: `otherName` requirements within a `GeneralName`
+
+| __`type-id`__                                                                      | __Presence__ |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
+| ---                                                                                | -            | ----                    | ----                  | ----                           |
+| `id-on-dnsSRV` (1.3.6.1.5.5.7.8.7) [RFC 4985](https://tools.ietf.org/html/rfc4985) | SHOULD NOT   | The CA MUST confirm that the Applicant has registered the `Name` portion or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `id-on-dnsSRV` `otherName` name is present in the `permittedSubtrees`, the CA MAY indicate one or more SRVNames, service names, or DNS names to exclude. | If no `id-on-dnsSRV` `otherName` is present in the `permittedSubtrees`, then the CA MAY include a zero-length `SRVName` to indicate no SRVNames are permitted. |
+| Any other value                                                                    | SHOULD NOT   | -                       | -                     | -                              |
+
+All other `otherName` `type-id`s other than those listed above:
+  1. MUST apply in the context of the public Internet, unless:
+     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
+  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
+  3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
+
+CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
+
+
 
 #### 7.1.2.11 Common Certificate Fields
 
