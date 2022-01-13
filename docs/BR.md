@@ -1760,7 +1760,7 @@ Certificates MUST be of type X.509 v3.
 
 ### 7.1.2 Certificate Content and Extensions
 
-If the CA asserts compliance with these Baseline Requirements, all certificates that it issues MUST comply with one of the following certificate profiles:
+If the CA asserts compliance with these Baseline Requirements, all certificates that it issues MUST comply with one of the following certificate profiles, which incorporate, and are derived from [RFC 5280](https://tools.ietf.org/html/rfc5280). Except as explicitly noted, all normative requirements imposed by RFC 5280 shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://tools.ietf.org/html/rfc5280](https://tools.ietf.org/doc/html/rfc5280#appendix-B) for further issues to be aware of.
 
   * CA Certificates
     * [Section 7.1.2.1.- Root CA Certificate Profile](#7121-root-ca-certificate-profile)
@@ -1819,7 +1819,7 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 | `extKeyUsage`                     | MUST NOT     | N            | - |
 | `certificatePolicies`             | SHOULD NOT   | N            | See [Section 7.1.2.10 4](#712104-certificate-policies---affiliated-ca) |
 | Signed Certificate Timestamp List | MAY          | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | SHOULD NOT   | -            | __**TBD**__ |
+| Any other extension               | SHOULD NOT   | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 ##### 7.1.2.1.2 Authority Key Identifier
 
@@ -1891,7 +1891,7 @@ Table: Extensions when the Subordinate CA is operated by the Issuing CA or an Af
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
 | `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | SHOULD NOT      | -                     | __**TBD**__ |
+| Any other extension               | SHOULD NOT      | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 Table: Extensions when the Subordinate CA is operated by an entity that is not the Issuing CA or an Affiliate of the Issuing CA.
 
@@ -1907,7 +1907,7 @@ Table: Extensions when the Subordinate CA is operated by an entity that is not t
 | `authorityInformationAccess`      | SHOULD        | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
 | `nameConstraints`                 | MAY           | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
 | Signed Certificate Timestamp List | MAY           | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | SHOULD NOT    | -                     | __**TBD**__ |
+| Any other extension               | SHOULD NOT    | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 [^eku_ca]: While [RFC 5280, Section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.13) notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of CA Certificates, as implemented by a number of Application Software Suppliers.
 
@@ -1929,6 +1929,16 @@ Alternatively, if the Issuing CA does not use this form, then the Extended Key U
 ##### 7.1.2.2.4 Extended Key Usage - Restricted Cross-Certified CA
 
 If present, the Extended Key Usage extension MUST only contain key usage purposes for which the Issuing CA has verified the Cross-Certified Subordinate CA is authorized to assert.
+
+Each included Extended Key Usage key usage purpose:
+
+  1. MUST apply in the context of the public Internet (e.g. MUST NOT be for a service that is only valid in a privately managed network), unless:
+    a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
+    b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
+  2. MUST NOT include semantics that will mislead the Relying Party about the certificate information verified by the CA, such as including a key usage purpose asserting storage on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance.
+  3. MUST NOT be included unless the Certificate conforms to the relevant specification defining the key usage purpose.
+
+CAs MUST NOT include additional key usage purposes unless the CA is aware of a reason for including the key usage purpose in the Certificate.
 
 #### 7.1.2.3 Technically Constrained Non-TLS Subordinate CA Certificate Profile
 
@@ -1964,7 +1974,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | `authorityInformationAccess`      | SHOULD        | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
 | `nameConstraints`                 | MAY           | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
 | Signed Certificate Timestamp List | MAY           | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | SHOULD NOT    | -                     | __**TBD**__ |
+| Any other extension               | SHOULD NOT    | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 #### 7.1.2.4 Technically Constrained Precertificate Signing CA Certificate Profile
 
@@ -2004,21 +2014,18 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | `authorityInformationAccess`      | SHOULD        | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
 | `nameConstraints`                 | MAY           | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
 | Signed Certificate Timestamp List | MAY           | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | SHOULD NOT    | -                     | __**TBD**__ |
+| Any other extension               | SHOULD NOT    | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 ##### 7.1.2.4.2 Extended Key Usage
 
 | __Key Purpose__                    | __OID__                 | __Presence__ |
 | ----                               | ----                    | -            |
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST         |
-| `id-kp-serverAuth`                 | 1.3.6.1.5.5.7.3.1       | MUST NOT     |
-| `id-kp-clientAuth`                 | 1.3.6.1.5.5.7.3.2       | MUST NOT     |
-| `id-kp-codeSigning`                | 1.3.6.1.5.5.7.3.3       | MUST NOT     |
-| `id-kp-emailProtection`            | 1.3.6.1.5.5.7.3.4       | MUST NOT     |
-| `id-kp-timeStamping`               | 1.3.6.1.5.5.7.3.8       | MUST NOT     |
-| `id-kp-OCSPSigning`                | 1.3.6.1.5.5.7.3.9       | MUST NOT     |
-| `anyExtendedKeyUsage`              | 2.5.29.37.0             | MUST NOT     |
 | Any other value                    | -                       | SHOULD NOT   |
+
+CAs SHOULD NOT include additional key usage purposes beyond those specified in the table above. If present, they SHOULD be equal to, or a subset of, the key usage purposes for the Issuing CA Certificate.
+
+Any additional key usage purposes MUST conform to the requirements and restrictions specified in [Section 7.1.2.2.4, Extended Key Usage - Restricted Cross-Certified CA](#71224-extended-key-usage---restricted-cross-certified-ca).
 
 #### 7.1.2.5 Technically Constrained TLS Subordinate CA Certificate Profile
 
@@ -2054,7 +2061,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | `nameConstraints`                 | MUST          | \*[^name_constraints] | See [Section 7.1.2.5.2](#71252-name-constraints) |
 | `authorityInformationAccess`      | SHOULD        | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
 | Signed Certificate Timestamp List | MAY           | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | SHOULD NOT    | -                     | __**TBD**__ |
+| Any other extension               | SHOULD NOT    | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 ##### 7.1.2.5.2 Name Constraints
 
@@ -2086,7 +2093,7 @@ Table: `GeneralName` requirements for the `base` field
 | `directoryName` | MUST        | The CA MUST confirm the Applicant's and/or Subsidiary's name attributes such that all certificates issued will comply with the relevant Certificate Profile (see [Section 7.1.2](#712-certificate-content-and-extensions)), including Name Forms (See [Section 7.1.4](#714-name-forms)). | The CA SHOULD NOT include values within `excludedSubtrees`. | The CA MUST include a value within `permittedSubtrees`, and as such, this does not apply. See the Excluded Subtrees requirements for more. |
 | `rfc822Name`    | SHOULD NOT  | The CA MAY constrain to a mailbox, a particular host, or any address within a domain, as specified within [RFC 5280, Section 4.2.1.10](https://tools.ietf.org/html/rfc5280#section-4.2.1.10). For each host, domain, or Domain portion of a Mailbox (as specified within [RFC 5280, Section 4.2.1.6](https://tools.ietf.org/html/rfc5280#section-4.2.1.6)), the CA MUST confirm that the Applicant has registered the domain or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `rfc822Name` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more mailboxes, hosts, or domains to be excluded. | If no `rfc822Name` instance is present in the `permittedSubtrees`, then the CA MAY include a zero-length `rfc822Name` to indicate no mailboxes are permitted. |
 | `otherName`     | SHOULD NOT  | See following table.     | See following table.  | See following table.           |
-| Any other value | SHOULD NOT  | -                        | -                     | -                              |
+| Any other value | MUST NOT    | -                        | -                     | -                              |
 
 When an `otherName` is present within a `GeneralName` present in the `base` of a `nameConstraints` `permittedSubtrees` or `excludedSubtrees`, it MUST meet the following requirements:
 
@@ -2096,6 +2103,15 @@ Table: `otherName` requirements within a `GeneralName`
 | ---                                                                                | -            | ----                    | ----                  | ----                           |
 | `id-on-dnsSRV` (1.3.6.1.5.5.7.8.7) [RFC 4985](https://tools.ietf.org/html/rfc4985) | SHOULD NOT   | The CA MUST confirm that the Applicant has registered the `Name` portion or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `id-on-dnsSRV` `otherName` name is present in the `permittedSubtrees`, the CA MAY indicate one or more SRVNames, service names, or DNS names to exclude. | If no `id-on-dnsSRV` `otherName` is present in the `permittedSubtrees`, then the CA MAY include a zero-length `SRVName` to indicate no SRVNames are permitted. |
 | Any other value                                                                    | SHOULD NOT   | -                       | -                     | -                              |
+
+All other `otherName` `type-id`s other than those listed above:
+  1. MUST apply in the context of the public Internet, unless:
+     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
+  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
+  3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
+
+CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
 
 #### 7.1.2.6 TLS Subordinate CA Certificate Profile
 
@@ -2129,7 +2145,7 @@ Table: `otherName` requirements within a `GeneralName`
 | `authorityInformationAccess`      | SHOULD        | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
 | `nameConstraints`                 | MAY           | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
 | Signed Certificate Timestamp List | MAY           | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | SHOULD NOT    | -                     | __**TBD**__ |
+| Any other extension               | SHOULD NOT    | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 #### 7.1.2.7 Subscriber (Server) Certificate Profile
 
@@ -2184,7 +2200,7 @@ Table: Domain Validated `subject` Attributes
 | ---                      | -            | ------      | -- |
 | `countryName`            | MAY          | The two-letter ISO 3166-1 country code for the country associated with the Subject. | [Section 3.2.2.3](#3223-verification-of-country) |
 | `commonName`             | SHOULD NOT   | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
-| Any other attribute      | MUST NOT     | __**TBD**__ |                  |
+| Any other attribute      | MUST NOT     | -           | -                |
 
 ##### 7.1.2.7.3 Individual Validated
 
@@ -2214,7 +2230,7 @@ Table: Individual Validated `subject` Attributes
 | `givenName`              | MUST         | The Subject's given name. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `organizationalUnitName` | SHOULD NOT   | __**TBD**__ | __**TBD**__ |
 | `commonName`             | SHOULD NOT   | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
-| Any other attribute      | SHOULD NOT   | __**TBD**__ | __**TBD**__ |
+| Any other attribute      | SHOULD NOT   | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
 ##### 7.1.2.7.4 Organization Validated
 
@@ -2240,11 +2256,11 @@ Table: Individual Validated `subject` Attributes
 | `postalCode`             | SHOULD NOT   | If present, MUST contain the Subject's zip or postal information. | [Section 3.2.2.1](#3221-identity)) |
 | `streetAddress`          | SHOULD NOT   | If present, MUST contain the Subject's street address information. | [Section 3.2.2.1](#3221-identity) |
 | `organizationName`       | MUST         | The Subject's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
-| `surname`                | MUST NOT     |             |             |
-| `givenName`              | MUST NOT     |             |             |
+| `surname`                | MUST NOT     | -           | -           |
+| `givenName`              | MUST NOT     | -           | -           |
 | `organizationalUnitName` | SHOULD NOT   | __**TBD**__ | __**TBD**__ |
 | `commonName`             | SHOULD NOT   | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
-| Any other attribute      | SHOULD NOT   | __**TBD**__ | __**TBD**__ |
+| Any other attribute      | SHOULD NOT   | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
 ##### 7.1.2.7.5 Extended Validation
 
@@ -2273,7 +2289,7 @@ For a Subscriber Certificate to be Extended Validation, it MUST comply with the 
 | CA/Browser Forum Onion Extension  | MAY          | N            | __**TODO**__ |
 | Signed Certificate Timestamp List | MAY          | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | SHOULD NOT   | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
-| Any other extension               | SHOULD NOT   | -            | __**TBD**__ |
+| Any other extension               | SHOULD NOT   | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 ##### 7.1.2.7.7 Authority Information Access
 
@@ -2427,7 +2443,7 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | \ \ \ \ _Effective 2022-02-01_    | MUST NOT     | -            | - |
 | `crlDistributionPoints`           | MUST NOT     | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY          | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | SHOULD NOT   | -            | __**TBD**__ |
+| Any other extension               | SHOULD NOT   | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 ##### 7.1.2.8.2 Authority Information Access
 
@@ -2442,7 +2458,7 @@ If present, the `AuthorityInformationAccesssSyntax` MUST contain one or more `Ac
 
 ##### 7.1.2.8.3 Basic Constraints
 
-OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE. When using DER encoding, the encoded value of a `BasicConstraints` sequence is an empty SEQUENCE, as DEFAULT values are not encoded.
+OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE.
 
 | __Field__           | __Description__ |
 | ---                 | ------- |
@@ -2549,7 +2565,7 @@ Table: When the Precertificate is issued by a Precertificate Signing CA on behal
 | `signatureAlgorithm`           | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                    | |
 
-**Note:** This profile requires that the `serialNumber` field of the Precertificate be identical to that of the equivalent Certificate. [RFC 5280, Section 4.1.2.2](https://tools.ietf.org/doc/html/rfc5280#section-4.1.2.2) requires that the `serialNumber` of certificates be unique. For the purposes of this document, a Precertificate shall not be considered a "certificate" subject to that requirement, and thus may have the same `serialNumber` of the equivalent Certificate. However, this does not permit two Precertificates to share the same `serialNumber`, unless they are byte-for-byte equivalent, as this would otherwise indicate there are equivalent Certificates that share the same `serialNumber`.
+**Note**: This profile requires that the `serialNumber` field of the Precertificate be identical to that of the equivalent Certificate. [RFC 5280, Section 4.1.2.2](https://tools.ietf.org/doc/html/rfc5280#section-4.1.2.2) requires that the `serialNumber` of certificates be unique. For the purposes of this document, a Precertificate shall not be considered a "certificate" subject to that requirement, and thus may have the same `serialNumber` of the equivalent Certificate. However, this does not permit two Precertificates to share the same `serialNumber`, unless they are byte-for-byte equivalent, as this would otherwise indicate there are equivalent Certificates that share the same `serialNumber`.
 
 ##### 7.1.2.9.1 Directly Issued Precertificate Profile Extensions
 
@@ -2617,7 +2633,7 @@ The following table details the acceptable `AttributeType`s that may appear with
 | `organizationName`       | MUST         | The CA's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
 | `organizationalUnitName` | SHOULD NOT   | __**TBD**__ |                |
 | `commonName`             | MUST         | The contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate. | |
-| Any other attribute      | SHOULD NOT   | __**TBD**__ |                |
+| Any other attribute      | SHOULD NOT   | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
 ##### 7.1.2.10.2 Authority Information Access
 
@@ -2772,7 +2788,29 @@ Table: `GeneralName` requirements for the `base` field
 | `dNSName`       | MAY          | The CA MUST confirm that the Applicant has registered the `dNSName` or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `dNSName` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more subordinate domains to be excluded. |
 | `iPAddress`     | MAY          | The CA MUST confirm that the Applicant has been assigned the `iPAddress` range or has been authorized by the assigner to act on the asignee's behalf. See [Section 3.2.2.5](#3225-authentication-for-an-ip-address). | If at least one `iPAddress` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more subdivisions of those ranges to be excluded. |
 | `directoryName` | MAY          | The CA MUST confirm the Applicant's and/or Subsidiary's name attributes such that all certificates issued will comply with the relevant Certificate Profile (see [Section 7.1.2](#712-certificate-content-and-extensions)), including Name Forms (See [Section 7.1.4](#714-name-forms)). | The CA SHOULD NOT include values within `excludedSubtrees`. |
+| `rfc822Name`    | SHOULD NOT  | The CA MAY constrain to a mailbox, a particular host, or any address within a domain, as specified within [RFC 5280, Section 4.2.1.10](https://tools.ietf.org/html/rfc5280#section-4.2.1.10). For each host, domain, or Domain portion of a Mailbox (as specified within [RFC 5280, Section 4.2.1.6](https://tools.ietf.org/html/rfc5280#section-4.2.1.6)), the CA MUST confirm that the Applicant has registered the domain or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `rfc822Name` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more mailboxes, hosts, or domains to be excluded. | If no `rfc822Name` instance is present in the `permittedSubtrees`, then the CA MAY include a zero-length `rfc822Name` to indicate no mailboxes are permitted. |
+| `otherName`     | SHOULD NOT  | See following table.     | See following table.  | See following table.           |
 | Any other value | SHOULD NOT   | -                        | -                     |
+
+When an `otherName` is present within a `GeneralName` present in the `base` of a `nameConstraints` `permittedSubtrees` or `excludedSubtrees`, it MUST meet the following requirements:
+
+Table: `otherName` requirements within a `GeneralName`
+
+| __`type-id`__                                                                      | __Presence__ |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
+| ---                                                                                | -            | ----                    | ----                  | ----                           |
+| `id-on-dnsSRV` (1.3.6.1.5.5.7.8.7) [RFC 4985](https://tools.ietf.org/html/rfc4985) | SHOULD NOT   | The CA MUST confirm that the Applicant has registered the `Name` portion or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `id-on-dnsSRV` `otherName` name is present in the `permittedSubtrees`, the CA MAY indicate one or more SRVNames, service names, or DNS names to exclude. | If no `id-on-dnsSRV` `otherName` is present in the `permittedSubtrees`, then the CA MAY include a zero-length `SRVName` to indicate no SRVNames are permitted. |
+| Any other value                                                                    | SHOULD NOT   | -                       | -                     | -                              |
+
+All other `otherName` `type-id`s other than those listed above:
+  1. MUST apply in the context of the public Internet, unless:
+     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
+  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
+  3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
+
+CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
+
+
 
 #### 7.1.2.11 Common Certificate Fields
 
@@ -2826,26 +2864,17 @@ Each `SignedCertificateTimestamp` included within the `SignedCertificateTimestam
 
 If present, the `subjectKeyIdentifier` MUST be set as defined within [RFC 5280, Section 4.2.1.2](https://tools.ietf.org/html/rfc5280#section-4.2.1.2). CAs MUST generate a unique `subjectKeyIdentifier` for each unique public key (the `subjectPublicKeyInfo` field of the `tbsCertificate`). For example, CAs MAY generate the subject key identifier using an algorithm derived from the public key, or MAY generate a unique number, such by using a CSPRNG.
 
-#### 7.1.2.5 TO DELETE All Certificates
+##### 7.1.2.11.5 Other Extensions
 
-**TODO: Integrate into 7.1.2.11 as the catch-all for all certificates (currently listed TBD)**
+All extensions and extension values not directly addressed by the applicable certificate profile:
 
-All other fields and extensions MUST be set in accordance with RFC 5280. The CA SHALL NOT issue a Certificate that contains a `keyUsage` flag, `extKeyUsage` value, Certificate extension, or other data not specified in [Section 7.1.2](#712-certificate-content-and-extensions) unless the CA is aware of a reason for including the data in the Certificate.
+  1. MUST apply in the context of the public Internet, unless:
+     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
+  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA (such as including an extension that indicates a Private Key is stored on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
+  3. MUST be DER encoded according to the relevant ASN.1 module defining the extension and extension values.
 
-CAs SHALL NOT issue a Certificate with:
-
-a. Extensions that do not apply in the context of the public Internet (such as an extKeyUsage value for a service that is only valid in the context of a privately managed network), unless:
-   i. such value falls within an OID arc for which the Applicant demonstrates ownership, or
-   ii. the Applicant can otherwise demonstrate the right to assert the data in a public context; or
-b. semantics that, if included, will mislead a Relying Party about the certificate information verified by the CA (such as including an `extKeyUsage` value for a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
-
-#### 7.1.2.6 TO DELETE Application of RFC 5280
-
-**TODO: Move this text into 7.1.2 requirements**
-
-Except where explicitly noted, all certificates MUST conform to the certificate profile of RFC 5280. The following requirements are noted in addition to any normative requirements placed within RFC 5280. In particular, CAs SHOULD examine [RFC 5280, Appendix B](https://tools.ietf.org/html/rfc5280#appendix-B) for further discussion of normative requirements imposed by RFC 5280 and its normative dependencies.
-
-For purposes of clarification, a Precertificate, as described in [RFC 6962 - Certificate Transparency](https://tools.ietf.org/html/rfc6962), shall not be considered to be a "certificate" subject to the requirements of [RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile](https://tools.ietf.org/html/rfc5280) under these Baseline Requirements.
+CAs SHALL NOT include additional extensions or values unless the CA is aware of a reason for including the data in the Certificate.
 
 ### 7.1.3 Algorithm object identifiers
 
