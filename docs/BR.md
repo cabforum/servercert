@@ -1842,7 +1842,7 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 | \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | Encoded value MUST be byte-for-byte identical to the encoded `subject` |
-| \ \ \ \ `validity`             | __**TBD**__ |
+| \ \ \ \ `validity`             | See [Section 7.1.2.1.x](#7121x-root-ca-validity) |
 | \ \ \ \ `subject`              | See [Section 7.1.2.10.1](#712101-ca-certificate-naming) |
 | \ \ \ \ `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
@@ -1850,6 +1850,15 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 | \ \ \ \ `extensions`           | See [Section 7.1.2.1.1](#71211-root-ca-extensions) |
 | `signatureAlgorithm`           | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                    | |
+
+##### 7.1.2.1.x Root CA Validity
+
+| __Field__   | __Minimum__ | __Maximum__ |
+| -           | ----        | ----        |
+| `notBefore` | One day prior to the time of signing | The time of signing |
+| `notAfter`  | 2922 days (e.g. 8 years)  | 9132 days (e.g. 25 years) |
+
+**Note**: This restriction applies even in the event of generating a new Root CA Certificate for an existing `subject` and `subjectPublicKeyInfo` (e.g. reissuance). The new CA Certificate MUST conform to these rules.
 
 ##### 7.1.2.1.1 Root CA Extensions
 
@@ -1894,7 +1903,7 @@ __**TBD: Remarks about audits**__
 | \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
-| \ \ \ \ `validity`             | __**TBD**__ |
+| \ \ \ \ `validity`             | See [Section 7.1.2.2.x](#7122x-cross-certified-subordinate-ca-validity) |
 | \ \ \ \ `subject`              | See [Section 7.1.2.2.1](#71221-cross-certified-subordinate-ca-naming) |
 | \ \ \ \ `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
@@ -1902,6 +1911,13 @@ __**TBD: Remarks about audits**__
 | \ \ \ \ `extensions`           | See [Section 7.1.2.2.2](#71222-cross-certified-subordinate-ca-extensions) |
 | `signatureAlgorithm`           | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                    | |
+
+##### 7.1.2.2.x Cross-Certified Subordinate CA Validity
+
+| __Field__   | __Minimum__ | __Maximum__ |
+| --          | ----        | ----        |
+| `notBefore` | The earlier of one day prior to the time of signing or the earliest `notBefore` date of the existing CA Certificate(s) | The time of signing |
+| `notAfter`  | The time of signing | Unspecified |
 
 ##### 7.1.2.2.1 Cross-Certified Subordinate CA Naming
 
@@ -1977,7 +1993,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
-| \ \ \ \ `validity`             | __**TBD**__ |
+| \ \ \ \ `validity`             | See [Section 7.1.2.10.x](#71210x-ca-certificate-validity) |
 | \ \ \ \ `subject`              | See [Section 7.1.2.10.1](#712101-ca-certificate-naming) |
 | \ \ \ \ `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
@@ -2017,7 +2033,7 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
-| \ \ \ \ `validity`             | __**TBD**__ |
+| \ \ \ \ `validity`             | See [Section 7.1.2.10.x](#71210x-ca-certificate-validity) |
 | \ \ \ \ `subject`              | See [Section 7.1.2.10.1](#712101-ca-certificate-naming) |
 | \ \ \ \ `subjectPublicKeyInfo` | The algorithm identifier MUST be byte-for-byte identical to the algorithm identifier of the `subjectPublicKeyInfo` field of the Issuing CA. See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
@@ -2067,7 +2083,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
-| \ \ \ \ `validity`             | __**TBD**__ |
+| \ \ \ \ `validity`             | See [Section 7.1.2.10.x](#71210x-ca-certificate-validity) |
 | \ \ \ \ `subject`              | See [Section 7.1.2.10.1](#712101-ca-certificate-naming) |
 | \ \ \ \ `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
@@ -2142,7 +2158,7 @@ Table: `otherName` requirements within a `GeneralName`
 | \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
-| \ \ \ \ `validity`             | __**TBD**__ |
+| \ \ \ \ `validity`             | See [Section 7.1.2.10.x](#71210x-ca-certificate-validity) |
 | \ \ \ \ `subject`              | See [Section 7.1.2.10.1](#712101-ca-certificate-naming) |
 | \ \ \ \ `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
@@ -2429,7 +2445,7 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
-| \ \ \ \ `validity`             | __**TBD**__ |
+| \ \ \ \ `validity`             | See [Section 7.1.2.8.x](#7128x-ocsp-responder-validity) |
 | \ \ \ \ `subject`              | See [Section 7.1.2.10.1](#712101-ca-certificate-naming) |
 | \ \ \ \ `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 | \ \ \ \ `issuerUniqueID`       | MUST NOT be present |
@@ -2437,6 +2453,13 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | \ \ \ \ `extensions`           | See [Section 7.1.2.8.1](#71281-ocsp-responder-extensions) |
 | `signatureAlgorithm`           | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                    | |
+
+##### 7.1.2.8.x OCSP Responder Validity
+
+| __Field__   | __Minimum__                          | __Maximum__ |
+| --          | ----                                 | ----        |
+| `notBefore` | One day prior to the time of signing | The time of signing |
+| `notAfter`  | The time of signing                  | Unspecified |
 
 ##### 7.1.2.8.1 OCSP Responder Extensions
 
@@ -2622,6 +2645,13 @@ If the `authorityKeyIdentifier` extension is present in the Certificate, then th
 #### 7.1.2.10 Common CA Fields
 
 This section contains several fields that are common among multiple CA Certificate profiles. However, these fields may not be common among all CA Certificate profiles. Before issuing a certificate, the CA MUST ensure the certificate contents, including the contents of each field, complies in whole with all of the requirements of at least one Certificate Profile documented in [Section 7.1.2](#712-certificate-content-and-extensions).
+
+##### 7.1.2.10.x CA Certificate Validity
+
+| __Field__   | __Minimum__ | __Maximum__ |
+| --          | ----        | ----        |
+| `notBefore` | One day prior to the time of signing | The time of signing |
+| `notAfter`  | The time of signing | Unspecified |
 
 ##### 7.1.2.10.1 CA Certificate Naming
 
