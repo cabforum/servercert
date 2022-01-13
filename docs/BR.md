@@ -1966,7 +1966,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | ----                              | -             | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST          | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `basicConstraints`                | MUST          | Y                     | See [Section 7.1.2.10.3](#712103-basic-constraints) |
-| `certificatePolicies`             | MUST          | N                     | See [Section 7.1.2.10.4](#712104-certificate-policies---affiliated-ca) (Affiliated CA) |
+| `certificatePolicies`             | MUST          | N                     | See [Section 7.1.2.10.4](#71232-certificate-policies) |
 | `crlDistributionPoints`           | MUST          | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | `keyUsage`                        | MUST          | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
 | `subjectKeyIdentifier`            | MUST          | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
@@ -1975,6 +1975,31 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | `nameConstraints`                 | MAY           | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
 | Signed Certificate Timestamp List | MAY           | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | SHOULD NOT    | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
+
+##### 7.1.2.3.2 Certificate Policies
+
+If present, the Certificate Policies extension MUST be one of the following two formats:
+
+Table: No Policy Restrictions
+
+| __Field__                  | __Presence__ | __Description__                    |
+| ---                        | -            | ------                             |
+| `certificatePolicies`      |              |                                    |
+| \ \ **1**                  |              | The first `PolicyInformation` present in the `certificatePolicies`. |
+| \ \ \ \ `policyIdentifier` | MUST         | The `anyPolicy` (OID: 2.5.29.32.0) identifier. |
+| \ \ \ \ `policyQualifiers` | MUST NOT     |                                    |
+| \ \ **2**                  | MUST NOT     | When the `anyPolicy` policy is present, the CA MUST NOT include any further `PolicyInformation` values. |
+
+
+Table: Policy Restricted
+
+| __Field__                  | __Presence__ | __Description__ |
+| ---                        | -            | ------          |
+| `certificatePolicies`      |              |                 |
+| \ \ **1+**                 | MAY          | The CA MAY include one or more `PolicyInformation` values that meet the following profile: |
+| \ \ \ \ `policyIdentifier` | MUST         | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
+| \ \ **4**                  | MUST NOT     | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
 
 #### 7.1.2.4 Technically Constrained Precertificate Signing CA Certificate Profile
 
@@ -2439,8 +2464,8 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | `subjectKeyIdentifier`            | SHOULD       | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `authorityInformationAccess`      | SHOULD NOT   | N            | See [Section 7.1.2.8.2](#71282-authority-information-access) |
 | `certificatePolicies`             | -            | -            | - |
-| \ \ \ \ _Prior to 2022-02-01_     | SHOULD NOT   | N            | See [Section 7.1.2.8.7](#71287-certificate-policies) |
-| \ \ \ \ _Effective 2022-02-01_    | MUST NOT     | -            | - |
+| \ \ \ \ _Prior to 2022-04-01_     | SHOULD NOT   | N            | See [Section 7.1.2.8.7](#71287-certificate-policies) |
+| \ \ \ \ _Effective 2022-04-01_    | MUST NOT     | -            | - |
 | `crlDistributionPoints`           | MUST NOT     | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY          | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | SHOULD NOT   | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
