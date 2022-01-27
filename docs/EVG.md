@@ -465,7 +465,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 __Certificate Field__: `subject:commonName` (OID: 2.5.4.3)  
 __Required/Optional__: Deprecated (Discouraged, but not prohibited)  
-__Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates except as permitted under [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+__Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). Wildcard certificates are not allowed for EV Certificates except as permitted under [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
 
 ### 9.2.3. Subject Business Category Field
 
