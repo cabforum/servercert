@@ -465,7 +465,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 __Certificate Field__: `subject:commonName` (OID: 2.5.4.3)  
 __Required/Optional__: Deprecated (Discouraged, but not prohibited)  
-__Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This field MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name contains an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
+__Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This field MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 ### 9.2.3. Subject Business Category Field
 
@@ -649,7 +649,7 @@ If a CA includes an extension in a certificate that has a Certificate field whic
 
 __Certificate Field__: `subjectAltName:dNSName`  
 __Required/Optional__: __Required__  
-__Contents__: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This extension MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name contains an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
+__Contents__: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This extension MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 ### 9.8.2. CA/Browser Forum Organization Identifier Extension
 
@@ -1642,7 +1642,7 @@ A CA may rely on the Contract Signer's authority to enter into the Subscriber Ag
 
 # Appendix F – Unused
 
-This section is intentionally left blank.
+This appendix is intentionally left blank.
 
 # Appendix G – Abstract Syntax Notation One module for EV certificates
 
