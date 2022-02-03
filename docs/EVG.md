@@ -465,7 +465,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 __Certificate Field__: `subject:commonName` (OID: 2.5.4.3)  
 __Required/Optional__: Deprecated (Discouraged, but not prohibited)  
-__Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). Wildcard certificates are not allowed for EV Certificates except as permitted under [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+__Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This field MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 ### 9.2.3. Subject Business Category Field
 
@@ -649,7 +649,7 @@ If a CA includes an extension in a certificate that has a Certificate field whic
 
 __Certificate Field__: `subjectAltName:dNSName`  
 __Required/Optional__: __Required__  
-__Contents__: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
+__Contents__: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This extension MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 ### 9.8.2. CA/Browser Forum Organization Identifier Extension
 
@@ -959,7 +959,7 @@ To verify the Applicant's ability to engage in business, the CA MUST verify the 
 
 ### 11.7.1. Verification Requirements
 
-1. For each Fully-Qualified Domain Name listed in a Certificate, other than a Domain Name with "onion" as the right-most Domain Label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section) either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements. For a Certificate issued to a Domain Name with "onion" as the right-most Domain Label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the .onion Domain Name in accordance with [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+1. For each Fully-Qualified Domain Name listed in a Certificate which is not an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section) either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements. For a Certificate issued to an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the Onion Domain Name in accordance with Appendix B of the Baseline Requirements.
 
 2. **Mixed Character Set Domain Names**: EV Certificates MAY include Domain Names containing mixed character sets only in compliance with the rules set forth by the domain registrar.  The CA MUST visually compare any Domain Names with mixed character sets with known high risk domains.  If a similarity is found, then the EV Certificate Request MUST be flagged as High Risk.  The CA must perform reasonably appropriate additional authentication and verification to be certain beyond reasonable doubt that the Applicant and the target in question are the same organization.
 
@@ -1640,11 +1640,9 @@ A CA may rely on the Contract Signer's authority to enter into the Subscriber Ag
    ii. is expressly authorized by [Applicant name] to sign Subscriber Agreements and approve EV Certificate requests on Applicant's behalf, and
    iii. has confirmed Applicant's right to use the domain(s) to be included in EV Certificates.
 
-# Appendix F – Issuance of Certificates for .onion Domain Names
+# Appendix F – Unused
 
-A CA may issue an EV Certificate with "onion" as the right-most Domain Label of the Domain Name provided that issuance complies with the requirements set forth in Appendix B of the Baseline Requirements.
-
-Each Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
+This appendix is intentionally left blank.
 
 # Appendix G – Abstract Syntax Notation One module for EV certificates
 
