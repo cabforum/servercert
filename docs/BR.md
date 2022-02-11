@@ -1514,7 +1514,7 @@ The CA SHALL record at least the following events:
    3. Approval and rejection of certificate requests;
    4. Cryptographic device lifecycle management events;
    5. Generation of Certificate Revocation Lists;
-   6. Signing of OCSP Responses (as described in Sections [4.9](#49-certificate-revocation-and-suspension) and [4.10](#410-certificate-status-services)); and
+   6. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)); and
    7. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
 
 2. Subscriber Certificate lifecycle management events, including:
@@ -1523,7 +1523,7 @@ The CA SHALL record at least the following events:
    3. Approval and rejection of certificate requests;
    4. Issuance of Certificates; 
    5. Generation of Certificate Revocation Lists; and 
-   6. Signing of OCSP Responses (as described in Sections [4.9](#49-certificate-revocation-and-suspension) and [4.10](#410-certificate-status-services)).
+   6. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)).
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
