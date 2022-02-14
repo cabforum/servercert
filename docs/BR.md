@@ -1,9 +1,9 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.8.0
+subtitle: Version 1.8.1
 author:
   - CA/Browser Forum
-date: 25 August, 2021  
+date: 23 December, 2021  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -123,6 +123,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.8 | SC45 | Wildcard Domain Validation | 2-Jun-2021 | 13-Jul-2021 |
 | 1.7.9 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
 | 1.8.0 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
+| 1.8.1 | SC50 | Remove the requirements of 4.1.1 | 22-Nov-2021 | 23-Dec-2021 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -1044,7 +1045,7 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 
 ### 4.1.1 Who can submit a certificate application
 
-In accordance with [Section 5.5.2](#552-retention-period-for-archive), the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
+No stipulation.
 
 ### 4.1.2 Enrollment process and responsibilities
 
