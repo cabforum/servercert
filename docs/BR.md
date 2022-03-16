@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.8.2
+subtitle: Version 1.8.3
 author:
   - CA/Browser Forum
-date: 26 January, 2022  
+date: 15 April, 2022  
 copyright: |
-  Copyright 2021 CA/Browser Forum
+  Copyright 2022 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
