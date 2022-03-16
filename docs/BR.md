@@ -1,9 +1,9 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.8.1
+subtitle: Version 1.8.2
 author:
   - CA/Browser Forum
-date: 23 December, 2021  
+date: 26 January, 2022  
 copyright: |
   Copyright 2021 CA/Browser Forum
 
@@ -124,6 +124,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.7.9 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
 | 1.8.0 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 | 1.8.1 | SC50 | Remove the requirements of 4.1.1 | 22-Nov-2021 | 23-Dec-2021 |
+| 1.8.2 | SC53 | Sunset for SHA-1 OCSP Signing | 26-Jan-2022 | 4-Mar-2022 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -169,6 +170,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2021-07-01 | 3.2.2.4.18 and 3.2.2.4.19 | Redirects MUST be the result of one of the HTTP status code responses defined.  |
 | 2021-10-01 | 7.1.4.2.1 | Fully-Qualified Domain Names MUST consist solely of P-Labels and Non-Reserved LDH Labels. |
 | 2021-12-01 | 3.2.2.4 | CAs MUST NOT use methods 3.2.2.4.6, 3.2.2.4.18, or 3.2.2.4.19 to issue wildcard certificates or with Authorization Domain Names other than the FQDN. |
+| 2022-06-01 | 7.1.3.2.1 | CAs MUST NOT sign OCSP responses using the SHA-1 hash algorithm. |
 | 2022-09-01 | 7.1.4.2.2 | CAs MUST NOT include the organizationalUnitName field in the Subject |
 
 ## 1.3 PKI Participants
@@ -2032,6 +2034,7 @@ In addition, the CA MAY use the following signature algorithm and encoding if al
     * The new Certificate's `extKeyUsage` extension is present, has at least one key purpose specified, and none of the key purposes specified are the id-kp-serverAuth (OID: 1.3.6.1.5.5.7.3.1) or the anyExtendedKeyUsage (OID: 2.5.2937.0) key purposes; and/or
     * The new Certificate's `basicConstraints` extension has a pathLenConstraint that is zero.
 * If used within an OCSP response, such as the `signatureAlgorithm` of a BasicOCSPResponse:
+  * The `producedAt` field value of the ResponseData MUST be earlier than 2022-06-01 00:00:00 UTC; and,
   * All unexpired, un-revoked Certificates that contain the Public Key of the CA Key Pair and that have the same Subject Name MUST also contain an `extKeyUsage` extension with the only key usage present being the id-kp-ocspSigning (OID: 1.3.6.1.5.5.7.3.9) key usage.
 * If used within a CRL, such as the `signatureAlgorithm` field of a CertificateList or the `signature` field of a TBSCertList:
   * The CRL is referenced by one or more Root CA or Subordinate CA Certificates; and,
