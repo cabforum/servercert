@@ -530,7 +530,7 @@ FIPS 186-4, Federal Information Processing Standards Publication - Digital Signa
 
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
-Network and Certificate System Security Requirements, v.1.0, 1/1/2013.
+Network and Certificate System Security Requirements, Version 1.7, available at <https://cabforum.org/wp-content/uploads/CA-Browser-Forum-Network-Security-Guidelines-v1.7.pdf>.
 
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, <http://csrc.nist.gov/publications/nistpubs/800-89/SP-800-89_November2006.pdf>.
 
@@ -570,7 +570,7 @@ RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Qu
 
 RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
 
-WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.3, available at <https://www.cpacanada.ca/-/media/site/business-and-accounting-resources/docs/webtrust/wt-pcca-ss-lbns2-3.pdf>.
+WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.5, available at <https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf>.
 
 X.509, Recommendation ITU-T X.509 (10/2012) \| ISO/IEC 9594-8:2014 (E), Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
 
