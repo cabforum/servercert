@@ -166,7 +166,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2020-09-01 | 6.3.2 | Certificates issued SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. |
 | 2020-09-30 | 4.9.10 | OCSP responses MUST conform to the validity period requirements specified. |
 | 2020-09-30 | 7.1.4.1 | Subject and Issuer Names for all possible certification paths MUST be byte-for-byte identical. |
-| 2020-09-30 | 7.1.6.4 | Subscriber Certificates MUST include a CA/Browser Form Reserved Policy Identifier in the Certificate Policies extension. |
+| 2020-09-30 | 7.1.6.4 | Subscriber Certificates MUST include a CA/Browser Forum Reserved Policy Identifier in the Certificate Policies extension. |
 | 2020-09-30 | 7.2 and 7.3 | All OCSP and CRL responses for Subordinate CA Certificates MUST include a meaningful reason code. |
 | 2021-07-01 | 3.2.2.8 | CAA checking is no longer optional if the CA is the DNS Operator or an Affiliate. |
 | 2021-07-01 | 3.2.2.4.18 and 3.2.2.4.19 | Redirects MUST be the result of one of the HTTP status code responses defined.  |
