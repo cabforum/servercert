@@ -125,7 +125,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 1.8.0 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 | 1.8.1 | SC50 | Remove the requirements of 4.1.1 | 22-Nov-2021 | 23-Dec-2021 |
 | 1.8.2 | SC53 | Sunset for SHA-1 OCSP Signing | 26-Jan-2022 | 4-Mar-2022 |
-| 1.8.3 | SC51 | Reduce and Clarify Log and Records Archival Retention Requirements | 01-Mar-2021 | 15 April 2022 |
+| 1.8.3 | SC51 | Reduce and Clarify Log and Records Archival Retention Requirements | 01-Mar-2021 | 15-Apr-2022 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
