@@ -1,11 +1,11 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
-subtitle: Version 1.7.8
+subtitle: Version 1.7.9
 author:
   - CA/Browser Forum
-date: 25 August, 2021
+date: 23 April, 2022
 copyright: |
-  Copyright 2021 CA/Browser Forum
+  Copyright 2022 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -70,6 +70,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.6 | SC42 | 398-day Re-use Period | 22-Apr-2021 | 2-Jun-2021 |
 | 1.7.7 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
 | 1.7.8 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
+| 1.7.9 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -465,7 +466,7 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 __Certificate Field__: `subject:commonName` (OID: 2.5.4.3)  
 __Required/Optional__: Deprecated (Discouraged, but not prohibited)  
-__Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates except as permitted under [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+__Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This field MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 ### 9.2.3. Subject Business Category Field
 
@@ -649,7 +650,7 @@ If a CA includes an extension in a certificate that has a Certificate field whic
 
 __Certificate Field__: `subjectAltName:dNSName`  
 __Required/Optional__: __Required__  
-__Contents__: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).  Wildcard certificates are not allowed for EV Certificates.
+__Contents__: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This extension MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 ### 9.8.2. CA/Browser Forum Organization Identifier Extension
 
@@ -959,7 +960,7 @@ To verify the Applicant's ability to engage in business, the CA MUST verify the 
 
 ### 11.7.1. Verification Requirements
 
-1. For each Fully-Qualified Domain Name listed in a Certificate, other than a Domain Name with "onion" as the right-most Domain Label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section)  either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements.  For a Certificate issued to a Domain Name with "onion" as the right-most Domain Label of the Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the .onion Domain Name in accordance with [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+1. For each Fully-Qualified Domain Name listed in a Certificate which is not an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section) either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements. For a Certificate issued to an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the Onion Domain Name in accordance with Appendix B of the Baseline Requirements.
 
 2. **Mixed Character Set Domain Names**: EV Certificates MAY include Domain Names containing mixed character sets only in compliance with the rules set forth by the domain registrar.  The CA MUST visually compare any Domain Names with mixed character sets with known high risk domains.  If a similarity is found, then the EV Certificate Request MUST be flagged as High Risk.  The CA must perform reasonably appropriate additional authentication and verification to be certain beyond reasonable doubt that the Applicant and the target in question are the same organization.
 
@@ -1640,75 +1641,9 @@ A CA may rely on the Contract Signer's authority to enter into the Subscriber Ag
    ii. is expressly authorized by [Applicant name] to sign Subscriber Agreements and approve EV Certificate requests on Applicant's behalf, and
    iii. has confirmed Applicant's right to use the domain(s) to be included in EV Certificates.
 
-# Appendix F – Issuance of Certificates for .onion Domain Names
+# Appendix F – Unused
 
-A CA may issue an EV Certificate with "onion" as the right-most Domain Label of the Domain Name provided that issuance complies with the requirements set forth in this Appendix or Appendix C of the Baseline Requirements.
-
-1. CAB Forum Tor Service Descriptor Hash extension (2.23.140.1.31)
-
-   The CA MUST include the CAB Forum Tor Service Descriptor Hash extension in the `TBSCertificate` to convey hashes of keys related to .onion addresses. The CA MUST include the Tor Service Descriptor Hash extension using the following format:
-
-   ```ASN.1
-   cabf-TorServiceDescriptor OBJECT IDENTIFIER ::= { 2.23.140.1.31 }
-
-   TorServiceDescriptorSyntax ::=
-       SEQUENCE (1..MAX) of TorServiceDescriptorHash
-
-   TorServiceDescriptorHash:: = SEQUENCE {
-       onionURI             UTF8String,
-       algorithm            AlgorithmIdentifier,
-       subjectPublicKeyHash BIT STRING
-   }
-   ```
-
-   Where the `AlgorithmIdentifier` is a hashing algorithm (defined in RFC 6234) performed over the DER-encoding of an ASN.1 `subjectPublicKey` of the .onion service and `subjectPublicKeyHash` is the hash output.
-
-2. The CA MUST verify the Applicant's control over the .onion Domain Name using one of the following:
-
-   a. The CA MAY verify the Applicant's control over the .onion service by posting a specific value at a well-known URL under RFC5785.
-
-   b. The CA MAY verify the Applicant's control over the .onion service by having the Applicant provide a Certificate Request signed using the .onion public key if the `Attributes` section of the `certificationRequestInfo` contains:
-
-      i. A `caSigningNonce` attribute that:
-
-         1. contains a single value with at least 64-bits of entropy,
-         2. is generated by the CA, and
-         3. delivered to the Applicant through a Verified Method of Communication and
-
-      ii. An `applicantSigningNonce` attribute that:
-
-          1. contains a single value with at least 64-bits of entropy and 
-          2. is generated by the Applicant.
-
-      The signing nonce attributes have the following format:
-
-      ```ASN.1
-      caSigningNonce ATTRIBUTE ::= {
-          WITH SYNTAX              OCTET STRING
-          EQUALITY MATCHING RULE   octetStringMatch
-          SINGLE VALUE             TRUE
-          ID                       { cabf-caSigningNonce }
-      }
-
-      cabf-caSigningNonce OBJECT IDENTIFIER ::= { cabf 41 }
-
-      applicantSigningNonce ATTRIBUTE ::= {
-          WITH SYNTAX              OCTET STRING
-          EQUALITY MATCHING RULE   octetStringMatch
-          SINGLE VALUE             TRUE
-          ID                       { cabf-applicantSigningNonce }
-      }
-
-      cabf-applicantSigningNonce OBJECT IDENTIFIER ::= { cabf 42 }
-      ```
-
-3. Each Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name MUST conform to the requirements of these Guidelines, including the content requirements in Section 7.1 of the Baseline Requirements, except that the CA MAY include a wildcard character in the Subject Alternative Name Extension and Subject Common Name Field as the left-most character in the .onion Domain Name provided inclusion of the wildcard character complies with Section 3.2.2.6 of the Baseline Requirements.
-
-4. CAs MUST NOT issue a Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name with a Validity Period longer than 15 months. Effective 2020-09-01, CAs MUST NOT issue a Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name with a Validity Period longer than 398 days.
-
-5. When a Certificate that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name, the Domain Name shall not be considered an Internal Name if the Certificate was issued in compliance with this [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
-
-6. On or before May 1, 2015, each CA MUST revoke all Certificates issued with the Subject Alternative Name extension or Common Name field that includes a Domain Name where "onion" is the right-most Domain Label of the Domain Name unless the Certificate was issued in compliance with this [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names).
+This appendix is intentionally left blank.
 
 # Appendix G – Abstract Syntax Notation One module for EV certificates
 
