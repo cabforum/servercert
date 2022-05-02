@@ -2152,7 +2152,7 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST          |
 | Any other value                    | -                       | MUST NOT      |
 
-CAs SHOULD NOT include additional key usage purposes beyond those specified in the table above. If present, they SHOULD be equal to, or a subset of, the key usage purposes for the Issuing CA Certificate.
+CAs are NOT RECOMMENDED to include additional key usage purposes beyond those specified in the table above. If present, they SHOULD be equal to, or a subset of, the key usage purposes for the Issuing CA Certificate.
 
 Any additional key usage purposes MUST conform to the requirements and restrictions specified in [Section 7.1.2.2.4, Extended Key Usage - Restricted Cross-Certified CA](#71224-extended-key-usage---restricted-cross-certified-ca).
 
@@ -2929,10 +2929,10 @@ When an `otherName` is present within a `GeneralName` present in the `base` of a
 
 Table: `otherName` requirements within a `GeneralName`
 
-| __`type-id`__                                                                      | __Presence__ |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
-| ---                                                                                | -            | ----                    | ----                  | ----                           |
-| `id-on-dnsSRV` (1.3.6.1.5.5.7.8.7) [RFC 4985](https://tools.ietf.org/html/rfc4985) | SHOULD NOT   | The CA MUST confirm that the Applicant has registered the `Name` portion or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `id-on-dnsSRV` `otherName` name is present in the `permittedSubtrees`, the CA MAY indicate one or more SRVNames, service names, or DNS names to exclude. | If no `id-on-dnsSRV` `otherName` is present in the `permittedSubtrees`, then the CA MAY include a zero-length `SRVName` to indicate no SRVNames are permitted. |
-| Any other value                                                                    | SHOULD NOT   | -                       | -                     | -                              |
+| __`type-id`__                                                                      | __Presence__    |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
+| ---                                                                                | -               | ----                    | ----                  | ----                           |
+| `id-on-dnsSRV` (1.3.6.1.5.5.7.8.7) [RFC 4985](https://tools.ietf.org/html/rfc4985) | NOT RECOMMENDED | The CA MUST confirm that the Applicant has registered the `Name` portion or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `id-on-dnsSRV` `otherName` name is present in the `permittedSubtrees`, the CA MAY indicate one or more SRVNames, service names, or DNS names to exclude. | If no `id-on-dnsSRV` `otherName` is present in the `permittedSubtrees`, then the CA MAY include a zero-length `SRVName` to indicate no SRVNames are permitted. |
+| Any other value                                                                    | NOT RECOMMENDED | -                       | -                     | -                              |
 
 All other `otherName` `type-id`s other than those listed above:
   1. MUST apply in the context of the public Internet, unless:
