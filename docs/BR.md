@@ -2310,9 +2310,15 @@ Table: Individual Validated `subject` Attributes
 | `organizationName`       | NOT RECOMMENDED | If present, MUST contain the Subject's name or DBA. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `surname`                | MUST            | The Subject's surname. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `givenName`              | MUST            | The Subject's given name. | [Section 3.2.3](#323-authentication-of-individual-identity) |
-| `organizationalUnitName` | NOT RECOMMENDED | __**TBD**__ | __**TBD**__ |
+| `organizationalUnitName` | -               | - |
+| \ \ \ \ _Prior to 2022-09-01_ | NOT RECOMMENDED | If present, the CA MUST implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with [Section 3.2](#32-initial-identity-validation) |
+| \ \ \ \ _Effective 2022-09-01_ | MUST NOT  | - |
 | `commonName`             | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
 | Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
+
+In addition, the following requirements apply to `subject` Attributes.
+  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
 
 ##### 7.1.2.7.4 Organization Validated
 
@@ -2340,9 +2346,15 @@ Table: Individual Validated `subject` Attributes
 | `organizationName`       | MUST            | The Subject's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
 | `surname`                | MUST NOT        | -           | -           |
 | `givenName`              | MUST NOT        | -           | -           |
-| `organizationalUnitName` | NOT RECOMMENDED | __**TBD**__ | __**TBD**__ |
+| `organizationalUnitName` | -               | - |
+| \ \ \ \ _Prior to 2022-09-01_ | NOT RECOMMENDED | If present, the CA MUST implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with [Section 3.2](#32-initial-identity-validation) |
+| \ \ \ \ _Effective 2022-09-01_ | MUST NOT  | - |
 | `commonName`             | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
 | Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
+
+In addition, the following requirements apply to `subject` Attributes.
+  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
 
 ##### 7.1.2.7.5 Extended Validation
 
@@ -2354,6 +2366,10 @@ For a Subscriber Certificate to be Extended Validation, it MUST comply with the 
 | `subject`             | See Guidelines for the Issuance and Management of Extended Validation Certificates, Section 9.2. |
 | `certificatePolicies` | MUST be present and MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.1` as a `policyIdentifier`. |
 | All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) and the Guidelines for the Issuance and Management of Extended Validation Certificates. |
+
+In addition, the following requirements apply to `subject` Attributes.
+  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
 
 ##### 7.1.2.7.6 Subscriber Certificate Extensions
 
@@ -3070,10 +3086,6 @@ If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When enc
 ### 7.1.4 Name Forms
 
 This section details encoding rules that apply to all Certificates issued by a CA. Further restrictions may be specified within [Section 7.1.2](#712-certificate-content-and-extensions), but these restrictions do not supersede these requirements.
-
-In addition, the following requirements apply to all Subject Attributes (i.e. those attributes within the `subject` field of a `tbsCertificate`):
-  * Subject Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * Subject Attributes MUST NOT include a Domain Name or IP Address, except as specified in [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address)
 
 #### 7.1.4.1 Name Encoding
 
