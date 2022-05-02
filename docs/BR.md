@@ -2235,7 +2235,7 @@ CAs SHALL NOT include additional names unless the CA is aware of a reason for in
 
 All other `otherName` `type-id`s other than those listed above:
   1. MUST apply in the context of the public Internet, unless:
-     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+     a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
      b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
   3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
@@ -2925,25 +2925,15 @@ Any `otherName`, if present:
 
 CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
 
-When an `otherName` is present within a `GeneralName` present in the `base` of a `nameConstraints` `permittedSubtrees` or `excludedSubtrees`, it MUST meet the following requirements:
+Any `otherName`, if present:
 
-Table: `otherName` requirements within a `GeneralName`
-
-| __`type-id`__                                                                      | __Presence__    |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
-| ---                                                                                | -               | ----                    | ----                  | ----                           |
-| `id-on-dnsSRV` (1.3.6.1.5.5.7.8.7) [RFC 4985](https://tools.ietf.org/html/rfc4985) | NOT RECOMMENDED | The CA MUST confirm that the Applicant has registered the `Name` portion or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `id-on-dnsSRV` `otherName` name is present in the `permittedSubtrees`, the CA MAY indicate one or more SRVNames, service names, or DNS names to exclude. | If no `id-on-dnsSRV` `otherName` is present in the `permittedSubtrees`, then the CA MAY include a zero-length `SRVName` to indicate no SRVNames are permitted. |
-| Any other value                                                                    | NOT RECOMMENDED | -                       | -                     | -                              |
-
-All other `otherName` `type-id`s other than those listed above:
   1. MUST apply in the context of the public Internet, unless:
-     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+     a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
      b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
   3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
 
 CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
-
-
 
 #### 7.1.2.11 Common Certificate Fields
 
