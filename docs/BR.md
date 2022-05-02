@@ -1775,7 +1775,6 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
   * [Section 7.1.2.7 - Subscriber (End-Entity) Certificate Profile](#7127-subscriber-server-certificate-profile)
   * [Section 7.1.2.8 - OCSP Responder Certificate Profile](#7128-ocsp-responder-certificate-profile)
   * [Section 7.1.2.9 - Precertificate Profile](#7129-precertificate-profile)
-  * __**TBD: Interoperability Testing Certs (valid/revoked/expired)?**__
 
 #### 7.1.2.1 Root CA Certificate Profile
 
@@ -1837,8 +1836,6 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 This Certificate Profile MAY be used when issuing a CA Certificate using the same Subject Name and Subject Public Key Information as one or more existing CA Certificate(s), whether a Root CA Certificate or Subordinate CA Certificate.
 
 Before issuing a Cross-Certified Subordinate CA, the Issuing CA MUST confirm that the existing CA Certificate(s) are subject to these Baseline Requirements and were issued in compliance with the then-current version of the Baseline Requirements at time of issuance.
-
-__**TBD: Remarks about audits**__
 
 | __Field__                      | __Description__ |
 | ---                            | ------          |
@@ -2331,7 +2328,6 @@ In addition, the following requirements apply to `subject` Attributes:
 | `keyUsage`                        | SHOULD          | Y            | See [Section 7.1.2.7.11](#712711-key-usage) |
 | `basicConstraints`                | MAY             | Y            | See [Section 7.1.2.7.8](#71278-basic-constraints) |
 | `crlDistributionPoints`           | MAY             | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| CA/Browser Forum Onion Extension  | MAY             | N            | __**TODO**__ |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
