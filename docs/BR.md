@@ -2547,8 +2547,8 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | `subjectKeyIdentifier`            | SHOULD          | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `authorityInformationAccess`      | NOT RECOMMENDED | N            | See [Section 7.1.2.8.2](#71282-authority-information-access) |
 | `certificatePolicies`             | -               | -            | - |
-| \ \ \ \ _Prior to 2022-04-01_     | NOT RECOMMENDED | N            | See [Section 7.1.2.8.7](#71287-certificate-policies) |
-| \ \ \ \ _Effective 2022-04-01_    | MUST NOT        | -            | - |
+| \ \ \ \ _Prior to 2022-11-01_     | NOT RECOMMENDED | N            | See [Section 7.1.2.8.7](#71287-certificate-policies) |
+| \ \ \ \ _Effective 2022-11-01_    | MUST NOT        | -            | - |
 | `crlDistributionPoints`           | MUST NOT        | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
@@ -3096,7 +3096,7 @@ For every valid Certification Path (as defined by [RFC 5280, Section 6](https://
 * For each Certificate in the Certification Path, the encoded content of the Issuer Distinguished Name field of a Certificate SHALL be byte-for-byte identical with the encoded form of the Subject Distinguished Name field of the Issuing CA certificate.
 * For each CA Certificate in the Certification Path, the encoded content of the Subject Distinguished Name field of a Certificate SHALL be byte-for-byte identical among all Certificates whose Subject Distinguished Names can be compared as equal according to [RFC 5280, Section 7.1](https://tools.ietf.org/html/rfc5280#section-7.1), and including expired and revoked Certificates.
 
-Effective 2022-10-01, when encoding a `Name`, the CA SHALL ensure that:
+Effective 2022-11-01, when encoding a `Name`, the CA SHALL ensure that:
 
   * Each `Name` MUST contain an `RDNSequence`.
   * Each `RelativeDistinguishedName` MUST contain exactly one `AttributeTypeAndValue`.
