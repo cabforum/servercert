@@ -2397,20 +2397,30 @@ The `AuthorityInformationAccessSyntax` MAY contain multiple `AccessDescription`s
 | __Field__                  | __Presence__    | __Description__ |
 | ---                        | -               | ------          |
 | `certificatePolicies`      |                 |                 |
-| \ \ **1**                  | MUST            | The first `PolicyInformation` present in the `certificatePolicies`. |
-| \ \ \ \ `policyIdentifier` |                 | The Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)) associated with the given Subscriber Certificate type (see [Section 7.1.2.7.1](#71271-subscriber-certificate-types). |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED | See below for restrictions on `policyQualifiers` |
-| \ \ **2+**                 | MAY             | The Issuing CA MAY include additional `PolicyInformation` values that meet the following profile: |
-| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the Issuing CA in its Certificate Policy and/or Certification Practice Statement. |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED | See below for restrictions on `policyQualifiers` |
-| \ \ **3**                  | MUST NOT        | The Issuing CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+| \ \ **1+**                 | MUST            | One or more `PolicyInformation` values meeting the following requirements. |
+| \ \ \ \ `policyIdentifier` |                 | See below for permitted `policyIdentifier` values. |
+| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED | See below for permitted `policyQualifiers`. |
+| \ \ **2**                  | MUST NOT        | The Issuing CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
 
-If the `policyQualifiers` is permitted and present within a `PolicyInformation` field, it MUST be formatted as follows:
+Table: Permitted `policyIdentifier` values
+
+| __Policy Identifier__ | __Presence__ | __Contents__ |
+| ---                   | -            | ------       |
+| A [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) | MUST | The Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)) associated with the given Subscriber Certificate type (see [Section 7.1.2.7.1](#71271-subscriber-certificate-types)). |
+| Any other identifier  | MAY          | If present, the identifier MUST be documented by the Issuing CA in its Certificate Policy and/or Certification Practice Statement. |
+
+This Profile RECOMMENDS that the first `PolicyInformation` value within a `certificatePolicies` contains the Reserved Certificate Policy Identifier (see [7.1.6.1](#7161-reserved-certificate-policy-identifiers))[^first_policy_note]. Regardless of the order of `PolicyInformation` values, the Certificate Policies extension MUST contain exactly one Reserved Certificate Policy Identifier.
+
+
+Table: Permitted `policyQualifiers`
 
 | __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
 | `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
 | Any other qualifier                  | MUST NOT     | -              | -             |
+
+
+[^first_policy_note]: Although RFC 5280 allows `PolicyInformation`s to appear in any order, several client implementations have implemented logic that considers the `policyIdentifier` that matches a given filter. As such, ensuring the Reserved Certificate Policy Identifier is the first `PolicyInformation` reduces the risk of interoperability challenges.
 
 ##### 7.1.2.7.10 Extended Key Usage
 
