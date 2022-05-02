@@ -1966,19 +1966,31 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.3](#712103-basic-constraints) |
-| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.4](#71232-certificate-policies) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.3.3](#71233-extended-key-usage)|
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
+| `certificatePolicies`             | MAY             | N                     | See [Section 7.1.2.3.2](#71232-certificate-policies) |
 | `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 ##### 7.1.2.3.2 Certificate Policies
 
-If present, the Certificate Policies extension MUST be one of the following two formats:
+If present, the Certificate Policies extension MUST be formatted as one of the two tables below:
+
+
+Table: Policy Restricted
+
+| __Field__                  | __Presence__    | __Description__ |
+| ---                        | -               | ------          |
+| `certificatePolicies`      |                 |                 |
+| \ \ **1+**                 | MUST            | At least one `PolicyInformation` MUST be present in the `certificatePolicies`. Multiple `PolicyInformation` values MAY be present, if they meet the following profile. |
+| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED |                 |
+| \ \ **2**                  | MUST NOT        | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+
 
 Table: No Policy Restrictions
 
@@ -1989,17 +2001,6 @@ Table: No Policy Restrictions
 | \ \ \ \ `policyIdentifier` | MUST         | The `anyPolicy` (OID: 2.5.29.32.0) identifier. |
 | \ \ \ \ `policyQualifiers` | MUST NOT     |                                    |
 | \ \ **2**                  | MUST NOT     | When the `anyPolicy` policy is present, the CA MUST NOT include any further `PolicyInformation` values. |
-
-
-Table: Policy Restricted
-
-| __Field__                  | __Presence__ | __Description__ |
-| ---                        | -            | ------          |
-| `certificatePolicies`      |              |                 |
-| \ \ **1+**                 | MAY          | The CA MAY include one or more `PolicyInformation` values that meet the following profile: |
-| \ \ \ \ `policyIdentifier` | MUST         | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
-| \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
-| \ \ **4**                  | MUST NOT     | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
 
 ##### 7.1.2.3.3 Extended Key Usage
 
