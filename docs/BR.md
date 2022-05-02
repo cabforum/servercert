@@ -1993,8 +1993,8 @@ CAs MUST NOT include additional key usage purposes unless the CA is aware of a r
 Each included Extended Key Usage key usage purpose:
 
   1. MUST apply in the context of the public Internet (e.g. MUST NOT be for a service that is only valid in a privately managed network), unless:
-    a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
-    b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
+     a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
+     b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about the certificate information verified by the CA, such as including a key usage purpose asserting storage on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance.
   3. MUST NOT be included unless the Certificate conforms to the relevant specification defining the key usage purpose.
 
