@@ -2376,6 +2376,10 @@ Table: Individual Validated `subject` Attributes
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
+In addition, the following requirements apply to `subject` Attributes.
+  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+
 ##### 7.1.2.7.4 Organization Validated
 
 For a Subscriber Certificate to be Organization Validated, it MUST meet the following profile:
@@ -2408,6 +2412,10 @@ Table: Organization Validated `subject` Attributes
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.4](#7144-other-subject-attributes) |
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+
+In addition, the following requirements apply to `subject` Attributes.
+  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
 
 ##### 7.1.2.7.5 Extended Validation
 
