@@ -1839,7 +1839,7 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 | ---                            | ------          |
 | `tbsCertificate`               | |
 | \ \ \ \ `version`              | MUST be v3(2) |
-| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
+| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) and less than 2^159 containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | Encoded value MUST be byte-for-byte identical to the encoded `subject` |
 | \ \ \ \ `validity`             | See [Section 7.1.2.1.x](#7121x-root-ca-validity) |
@@ -1900,7 +1900,7 @@ __**TBD: Remarks about audits**__
 | ---                            | ------          |
 | `tbsCertificate`               | |
 | \ \ \ \ `version`              | MUST be v3(2) |
-| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
+| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) and less than 2^159 containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
 | \ \ \ \ `validity`             | See [Section 7.1.2.2.x](#7122x-cross-certified-subordinate-ca-validity) |
@@ -2000,7 +2000,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | ---                            | ------          |
 | `tbsCertificate`               | |
 | \ \ \ \ `version`              | MUST be v3(2) |
-| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
+| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) and less than 2^159 containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
 | \ \ \ \ `validity`             | See [Section 7.1.2.10.x](#71210x-ca-certificate-validity) |
@@ -2078,7 +2078,7 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | ---                            | ------          |
 | `tbsCertificate`               | |
 | \ \ \ \ `version`              | MUST be v3(2) |
-| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
+| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) and less than 2^159 containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
 | \ \ \ \ `validity`             | See [Section 7.1.2.10.x](#71210x-ca-certificate-validity) |
@@ -2125,7 +2125,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | ---                            | ------          |
 | `tbsCertificate`               | |
 | \ \ \ \ `version`              | MUST be v3(2) |
-| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
+| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) and less than 2^159 containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
 | \ \ \ \ `validity`             | See [Section 7.1.2.10.x](#71210x-ca-certificate-validity) |
@@ -2201,7 +2201,7 @@ CAs SHALL NOT include additional names unless the CA is aware of a reason for in
 | ---                            | ------          |
 | `tbsCertificate`               | |
 | \ \ \ \ `version`              | MUST be v3(2) |
-| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
+| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) and less than 2^159 containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
 | \ \ \ \ `validity`             | See [Section 7.1.2.10.x](#71210x-ca-certificate-validity) |
@@ -2235,7 +2235,7 @@ CAs SHALL NOT include additional names unless the CA is aware of a reason for in
 | ---                            | ------          |
 | `tbsCertificate`               | |
 | \ \ \ \ `version`              | MUST be v3(2) |
-| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
+| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) and less than 2^159 containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
 | \ \ \ \ `validity`             | |
@@ -2498,7 +2498,7 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | ---                            | ------          |
 | `tbsCertificate`               | |
 | \ \ \ \ `version`              | MUST be v3(2) |
-| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) containing at least 64 bits of output from a CSPRNG. |
+| \ \ \ \ `serialNumber`         | MUST be a non-sequential number greater than zero (0) and less than 2^159 containing at least 64 bits of output from a CSPRNG. |
 | \ \ \ \ `signature`            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 | \ \ \ \ `issuer`               | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. See [Section 7.1.4.1](#7141-name-encoding) |
 | \ \ \ \ `validity`             | See [Section 7.1.2.8.x](#7128x-ocsp-responder-validity) |
