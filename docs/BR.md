@@ -2082,7 +2082,19 @@ The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to 
 
 ##### 7.1.2.3.2 Certificate Policies
 
-If present, the Certificate Policies extension MUST be one of the following two formats:
+If present, the Certificate Policies extension MUST be formatted as one of the two tables below:
+
+
+Table: Policy Restricted
+
+| __Field__                  | __Presence__    | __Description__ |
+| ---                        | -               | ------          |
+| `certificatePolicies`      |                 |                 |
+| \ \ **1+**                 | MUST            | At least one `PolicyInformation` MUST be present in the `certificatePolicies`. Multiple `PolicyInformation` values MAY be present, if they meet the following profile. |
+| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED |                 |
+| \ \ **2**                  | MUST NOT        | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+
 
 Table: No Policy Restrictions
 
@@ -2093,17 +2105,6 @@ Table: No Policy Restrictions
 | \ \ \ \ `policyIdentifier` | MUST         | The `anyPolicy` (OID: 2.5.29.32.0) identifier. |
 | \ \ \ \ `policyQualifiers` | MUST NOT     |                                    |
 | \ \ **2**                  | MUST NOT     | When the `anyPolicy` policy is present, the CA MUST NOT include any further `PolicyInformation` values. |
-
-
-Table: Policy Restricted
-
-| __Field__                  | __Presence__ | __Description__ |
-| ---                        | -            | ------          |
-| `certificatePolicies`      |              |                 |
-| \ \ **1+**                 | MAY          | The CA MAY include one or more `PolicyInformation` values that meet the following profile: |
-| \ \ \ \ `policyIdentifier` | MUST         | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
-| \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
-| \ \ **4**                  | MUST NOT     | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
 
 ##### 7.1.2.3.3 Extended Key Usage
 
