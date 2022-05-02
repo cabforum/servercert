@@ -1814,7 +1814,7 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 | ----                              | -               | -            | ----- |
 | `authorityKeyIdentifier`          | RECOMMENDED     | N            | See [Section 7.1.2.1.2](#71212-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y            | See [Section 7.1.2.1.3](#71213-basic-constraints) |
-| `keyUsage`                        | MUST            | Y            | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y            | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | MUST NOT        | N            | - |
 | `certificatePolicies`             | NOT RECOMMENDED | N            | See [Section 7.1.2.10 4](#712104-certificate-policies---affiliated-ca) |
@@ -1885,11 +1885,11 @@ Table: Extensions when the Subordinate CA is operated by the Issuing CA or an Af
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.3](#712103-basic-constraints) |
 | `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.4](#712104-certificate-policies---affiliated-ca) (Affiliated CA) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | SHOULD[^eku_ca] | N                     | See [Section 7.1.2.2.3](#71223-extended-key-usage---unrestricted-affiliated-cross-certified-ca) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -1901,17 +1901,17 @@ Table: Extensions when the Subordinate CA is operated by an entity that is not t
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.3](#712103-basic-constraints) |
 | `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies---non-affiliated-ca) (Non-Affiliated CA) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.2.4](#71224-extended-key-usage---restricted-cross-certified-ca) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 [^eku_ca]: While [RFC 5280, Section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.13) notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of CA Certificates, as implemented by a number of Application Software Suppliers.
 
-[^name_constraints]: See [Section 7.1.2.10.9](#712109-name-constraints) for further requirements, including regarding criticality of this extension.
+[^name_constraints]: See [Section 7.1.2.10.8](#712108-name-constraints) for further requirements, including regarding criticality of this extension.
 
 ##### 7.1.2.2.3 Extended Key Usage - Unrestricted Affiliated Cross-Certified CA
 
@@ -1968,11 +1968,11 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.3](#712103-basic-constraints) |
 | `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.4](#71232-certificate-policies) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
-| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.5](#712106-extended-key-usage---non-tls-ca) (Non-TLS CA) |
+| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.3.3](#71233-extended-key-usage)|
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -2000,6 +2000,18 @@ Table: Policy Restricted
 | \ \ \ \ `policyIdentifier` | MUST         | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
 | \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
 | \ \ **4**                  | MUST NOT     | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+
+##### 7.1.2.3.3 Extended Key Usage
+
+The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to issue certificates for each included extended key usage purpose. Multiple, independent key purposes (e.g. `id-kp-timeStamping` and `id-kp-codeSigning`) are NOT RECOMMENDED.
+
+| __Key Purpose__                    | __OID__                 | __Presence__ |
+| ----                               | ----                    | -            |
+| `id-kp-serverAuth`                 | 1.3.6.1.5.5.7.3.1       | MUST NOT     |
+| `id-kp-OCSPSigning`                | 1.3.6.1.5.5.7.3.9       | MUST NOT     |
+| `anyExtendedKeyUsage`              | 2.5.29.37.0             | MUST NOT     |
+| Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT     |
+| Any other value                    | -                       | MAY          |
 
 #### 7.1.2.4 Technically Constrained Precertificate Signing CA Certificate Profile
 
@@ -2033,11 +2045,11 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.3](#712103-basic-constraints) |
 | `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.4](#712104-certificate-policies---affiliated-ca) (Affiliated CA) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.4.2](#71242-extended-key-usage) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -2080,9 +2092,9 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.3](#712103-basic-constraints) |
 | `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.4](#712104-certificate-policies---affiliated-ca) (Affiliated CA) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
-| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.7](#712107-extended-key-usage---tls-ca) (TLS CA) |
+| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.6](#712106-extended-key-usage) |
 | `nameConstraints`                 | MUST            | \*[^name_constraints] | See [Section 7.1.2.5.2](#71252-name-constraints) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
@@ -2156,11 +2168,11 @@ CAs SHALL NOT include additional names unless the CA is aware of a reason for in
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.3](#712103-basic-constraints) |
 | `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.4](#712104-certificate-policies---affiliated-ca) (Affiliated CA) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
-| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.7](#712107-extended-key-usage---tls-ca) (TLS CA) |
+| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.6](#712106-extended-key-usage) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.2](#712102-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -2730,23 +2742,7 @@ If the `policyQualifiers` is permitted and present within a `PolicyInformation` 
 | `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
 | Any other qualifier                  | MUST NOT     | -              | -             |
 
-##### 7.1.2.10.6 Extended Key Usage - Non-TLS CA
-
-The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to issue certificates for each included extended key usage purpose. Multiple, independent key purposes (e.g. `id-kp-timeStamping` and `id-kp-codeSigning`) are NOT RECOMMENDED.
-
-| __Key Purpose__                    | __OID__                 | __Presence__ |
-| ----                               | ----                    | -            |
-| `id-kp-clientAuth`                 | 1.3.6.1.5.5.7.3.2       | MAY          |
-| `id-kp-codeSigning`                | 1.3.6.1.5.5.7.3.3       | MAY          |
-| `id-kp-emailProtection`            | 1.3.6.1.5.5.7.3.4       | MAY          |
-| `id-kp-timeStamping`               | 1.3.6.1.5.5.7.3.8       | MAY          |
-| `id-kp-serverAuth`                 | 1.3.6.1.5.5.7.3.1       | MUST NOT     |
-| `id-kp-OCSPSigning`                | 1.3.6.1.5.5.7.3.9       | MUST NOT     |
-| `anyExtendedKeyUsage`              | 2.5.29.37.0             | MUST NOT     |
-| Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT     |
-| Any other value                    | -                       | MAY          |
-
-##### 7.1.2.10.7 Extended Key Usage - TLS CA
+##### 7.1.2.10.6 Extended Key Usage
 
 | __Key Purpose__                    | __OID__                 | __Presence__    |
 | ----                               | ----                    | -               |
@@ -2760,7 +2756,7 @@ The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to 
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT        |
 | Any other value                    | -                       | NOT RECOMMENDED |
 
-##### 7.1.2.10.8 Key Usage
+##### 7.1.2.10.7 Key Usage
 
 | __Key Usage__      | __Permitted__ | __Required__     |
 | ----               | -             | -                |
@@ -2776,7 +2772,7 @@ The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to 
 
 [^ocsp_signing]: If a CA Certificate does not assert the `digitalSignature` bit, the CA Private Key MUST NOT be used to sign an OCSP Response. See [Section 7.3](#73-ocsp-profile) for more information.
 
-##### 7.1.2.10.9 Name Constraints
+##### 7.1.2.10.8 Name Constraints
 
 If present, the Name Constraints extension MUST be encoded as follows. As an explicit exception from RFC 5280, this extension SHOULD be marked critical, but MAY be marked non-critical if compatability with certain legacy applications that do not support Name Constraints is necessary.
 
