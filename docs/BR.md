@@ -2167,7 +2167,7 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 
 CAs are NOT RECOMMENDED to include additional key usage purposes beyond those specified in the table above. If present, they SHOULD be equal to, or a subset of, the key usage purposes for the Issuing CA Certificate.
 
-Any additional key usage purposes MUST conform to the requirements and restrictions specified in [Section 7.1.2.2.4, Extended Key Usage - Restricted Cross-Certified CA](#71224-extended-key-usage---restricted-cross-certified-ca).
+Any additional key usage purposes MUST conform to the requirements and restrictions specified in [Section 7.1.2.2.5, Extended Key Usage - Restricted Cross-Certified CA](#71225-extended-key-usage---restricted-cross-certified-ca).
 
 #### 7.1.2.5 Technically Constrained TLS Subordinate CA Certificate Profile
 
@@ -2376,7 +2376,8 @@ Table: Individual Validated `subject` Attributes
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
-In addition, the following requirements apply to `subject` Attributes.
+In addition, the following requirements apply to `subject` Attributes:
+
   * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
   * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
 
@@ -2413,7 +2414,8 @@ Table: Organization Validated `subject` Attributes
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
-In addition, the following requirements apply to `subject` Attributes.
+In addition, the following requirements apply to `subject` Attributes:
+
   * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
   * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
 
