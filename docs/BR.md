@@ -2111,27 +2111,19 @@ The following table contains the requirements for the `GeneralName` that appears
 
 Table: `GeneralName` requirements for the `base` field
 
-| __Name Type__   | __Presence__ |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
-| ---             | -            | ----                    | ----                  | ----                           |
-| `dNSName`       | MUST         | The CA MUST confirm that the Applicant has registered the `dNSName` or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `dNSName` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more subordinate domains to be excluded. | If no `dNSName` instance is present in the `permittedSubtrees`, then the CA MUST include a zero-length `dNSName` to indicate no domain names are permitted. |
-| `iPAddress`     | MUST        | The CA MUST confirm that the Applicant has been assigned the `iPAddress` range or has been authorized by the assigner to act on the asignee's behalf. See [Section 3.2.2.5](#3225-authentication-for-an-ip-address). | If at least one `iPAddress` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more subdivisions of those ranges to be excluded. | If no IPv4 `iPAddress` is present in the `permittedSubtrees`, the CA MUST include an `iPAddress` of 8 zero octets, indicating the IPv4 range of 0.0.0.0/0 being excluded. If no IPv6 `iPAddress` is present in the `permittedSubtrees`, the CA MUST include an `iPAddress` of 32 zero octets, indicating the IPv6 range of ::0/0 being excluded. |
-| `directoryName` | MUST        | The CA MUST confirm the Applicant's and/or Subsidiary's name attributes such that all certificates issued will comply with the relevant Certificate Profile (see [Section 7.1.2](#712-certificate-content-and-extensions)), including Name Forms (See [Section 7.1.4](#714-name-forms)). | It is NOT RECOMMENDED to include values within `excludedSubtrees`. | The CA MUST include a value within `permittedSubtrees`, and as such, this does not apply. See the Excluded Subtrees requirements for more. |
-| `rfc822Name`    | NOT RECOMMENDED  | The CA MAY constrain to a mailbox, a particular host, or any address within a domain, as specified within [RFC 5280, Section 4.2.1.10](https://tools.ietf.org/html/rfc5280#section-4.2.1.10). For each host, domain, or Domain portion of a Mailbox (as specified within [RFC 5280, Section 4.2.1.6](https://tools.ietf.org/html/rfc5280#section-4.2.1.6)), the CA MUST confirm that the Applicant has registered the domain or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `rfc822Name` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more mailboxes, hosts, or domains to be excluded. | If no `rfc822Name` instance is present in the `permittedSubtrees`, then the CA MAY include a zero-length `rfc822Name` to indicate no mailboxes are permitted. |
-| `otherName`     | NOT RECOMMENDED  | See following table.     | See following table.  | See following table.           |
-| Any other value | MUST NOT    | -                        | -                     | -                              |
+| __Name Type__   | __Presence__    |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
+| ---             | -               | ----                    | ----                  | ----                           |
+| `dNSName`       | MUST            | The CA MUST confirm that the Applicant has registered the `dNSName` or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `dNSName` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more subordinate domains to be excluded. | If no `dNSName` instance is present in the `permittedSubtrees`, then the CA MUST include a zero-length `dNSName` to indicate no domain names are permitted. |
+| `iPAddress`     | MUST            | The CA MUST confirm that the Applicant has been assigned the `iPAddress` range or has been authorized by the assigner to act on the asignee's behalf. See [Section 3.2.2.5](#3225-authentication-for-an-ip-address). | If at least one `iPAddress` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more subdivisions of those ranges to be excluded. | If no IPv4 `iPAddress` is present in the `permittedSubtrees`, the CA MUST include an `iPAddress` of 8 zero octets, indicating the IPv4 range of 0.0.0.0/0 being excluded. If no IPv6 `iPAddress` is present in the `permittedSubtrees`, the CA MUST include an `iPAddress` of 32 zero octets, indicating the IPv6 range of ::0/0 being excluded. |
+| `directoryName` | MUST            | The CA MUST confirm the Applicant's and/or Subsidiary's name attributes such that all certificates issued will comply with the relevant Certificate Profile (see [Section 7.1.2](#712-certificate-content-and-extensions)), including Name Forms (See [Section 7.1.4](#714-name-forms)). | It is NOT RECOMMENDED to include values within `excludedSubtrees`. | The CA MUST include a value within `permittedSubtrees`, and as such, this does not apply. See the Excluded Subtrees requirements for more. |
+| `rfc822Name`    | NOT RECOMMENDED | The CA MAY constrain to a mailbox, a particular host, or any address within a domain, as specified within [RFC 5280, Section 4.2.1.10](https://tools.ietf.org/html/rfc5280#section-4.2.1.10). For each host, domain, or Domain portion of a Mailbox (as specified within [RFC 5280, Section 4.2.1.6](https://tools.ietf.org/html/rfc5280#section-4.2.1.6)), the CA MUST confirm that the Applicant has registered the domain or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `rfc822Name` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more mailboxes, hosts, or domains to be excluded. | If no `rfc822Name` instance is present in the `permittedSubtrees`, then the CA MAY include a zero-length `rfc822Name` to indicate no mailboxes are permitted. |
+| `otherName`     | NOT RECOMMENDED | See below           | See below             | See below                      |
+| Any other value | MUST NOT        | -                        | -                     | -                              |
 
-When an `otherName` is present within a `GeneralName` present in the `base` of a `nameConstraints` `permittedSubtrees` or `excludedSubtrees`, it MUST meet the following requirements:
+Any `otherName`, if present:
 
-Table: `otherName` requirements within a `GeneralName`
-
-| __`type-id`__                                                                      | __Presence__    |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
-| ---                                                                                | -               | ----                    | ----                  | ----                           |
-| `id-on-dnsSRV` (1.3.6.1.5.5.7.8.7) [RFC 4985](https://tools.ietf.org/html/rfc4985) | NOT RECOMMENDED | The CA MUST confirm that the Applicant has registered the `Name` portion or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `id-on-dnsSRV` `otherName` name is present in the `permittedSubtrees`, the CA MAY indicate one or more SRVNames, service names, or DNS names to exclude. | If no `id-on-dnsSRV` `otherName` is present in the `permittedSubtrees`, then the CA MAY include a zero-length `SRVName` to indicate no SRVNames are permitted. |
-| Any other value                                                                    | NOT RECOMMENDED | -                       | -                     | -                              |
-
-All other `otherName` `type-id`s other than those listed above:
   1. MUST apply in the context of the public Internet, unless:
-     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+     a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
      b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
   3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
@@ -2814,28 +2806,18 @@ Table: `GeneralName` requirements for the `base` field
 | `iPAddress`     | MAY             | The CA MUST confirm that the Applicant has been assigned the `iPAddress` range or has been authorized by the assigner to act on the asignee's behalf. See [Section 3.2.2.5](#3225-authentication-for-an-ip-address). | If at least one `iPAddress` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more subdivisions of those ranges to be excluded. |
 | `directoryName` | MAY             | The CA MUST confirm the Applicant's and/or Subsidiary's name attributes such that all certificates issued will comply with the relevant Certificate Profile (see [Section 7.1.2](#712-certificate-content-and-extensions)), including Name Forms (See [Section 7.1.4](#714-name-forms)). | It is NOT RECOMMENDED to include values within `excludedSubtrees`. |
 | `rfc822Name`    | NOT RECOMMENDED | The CA MAY constrain to a mailbox, a particular host, or any address within a domain, as specified within [RFC 5280, Section 4.2.1.10](https://tools.ietf.org/html/rfc5280#section-4.2.1.10). For each host, domain, or Domain portion of a Mailbox (as specified within [RFC 5280, Section 4.2.1.6](https://tools.ietf.org/html/rfc5280#section-4.2.1.6)), the CA MUST confirm that the Applicant has registered the domain or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `rfc822Name` instance is present in the `permittedSubtrees`, the CA MAY indicate one or more mailboxes, hosts, or domains to be excluded. | If no `rfc822Name` instance is present in the `permittedSubtrees`, then the CA MAY include a zero-length `rfc822Name` to indicate no mailboxes are permitted. |
-| `otherName`     | NOT RECOMMENDED | See following table.     | See following table.  | See following table.           |
-| Any other value | NOT RECOMMENDED | -                        | -                     |
+| `otherName`     | NOT RECOMMENDED | See below                | See below             | See below                      |
+| Any other value | NOT RECOMMENDED | -                        | -                     | -                              |
 
-When an `otherName` is present within a `GeneralName` present in the `base` of a `nameConstraints` `permittedSubtrees` or `excludedSubtrees`, it MUST meet the following requirements:
+Any `otherName`, if present:
 
-Table: `otherName` requirements within a `GeneralName`
-
-| __`type-id`__                                                                      | __Presence__    |  __Permitted Subtrees__ | __Excluded Subtrees__ | __Entire Namespace Exclusion__ |
-| ---                                                                                | -               | ----                    | ----                  | ----                           |
-| `id-on-dnsSRV` (1.3.6.1.5.5.7.8.7) [RFC 4985](https://tools.ietf.org/html/rfc4985) | NOT RECOMMENDED | The CA MUST confirm that the Applicant has registered the `Name` portion or has been authorized by the domain registrant to act on the registrant's behalf. See [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). | If at least one `id-on-dnsSRV` `otherName` name is present in the `permittedSubtrees`, the CA MAY indicate one or more SRVNames, service names, or DNS names to exclude. | If no `id-on-dnsSRV` `otherName` is present in the `permittedSubtrees`, then the CA MAY include a zero-length `SRVName` to indicate no SRVNames are permitted. |
-| Any other value                                                                    | NOT RECOMMENDED | -                       | -                     | -                              |
-
-All other `otherName` `type-id`s other than those listed above:
   1. MUST apply in the context of the public Internet, unless:
-     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+     a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
      b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
   3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
 
 CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
-
-
 
 #### 7.1.2.11 Common Certificate Fields
 
