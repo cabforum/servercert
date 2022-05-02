@@ -2105,6 +2105,18 @@ Table: Policy Restricted
 | \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
 | \ \ **4**                  | MUST NOT     | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
 
+##### 7.1.2.3.3 Extended Key Usage
+
+The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to issue certificates for each included extended key usage purpose. Multiple, independent key purposes (e.g. `id-kp-timeStamping` and `id-kp-codeSigning`) are NOT RECOMMENDED.
+
+| __Key Purpose__                    | __OID__                 | __Presence__ |
+| ----                               | ----                    | -            |
+| `id-kp-serverAuth`                 | 1.3.6.1.5.5.7.3.1       | MUST NOT     |
+| `id-kp-OCSPSigning`                | 1.3.6.1.5.5.7.3.9       | MUST NOT     |
+| `anyExtendedKeyUsage`              | 2.5.29.37.0             | MUST NOT     |
+| Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT     |
+| Any other value                    | -                       | MAY          |
+
 #### 7.1.2.4 Technically Constrained Precertificate Signing CA Certificate Profile
 
 This Certificate Profile MUST be used when issuing a CA Certificate that will be used as a Precertificate Signing CA, as described in [RFC 6962, Section 3.1](https://tools.ietf.org/html/rfc6962#section-3.1). If a CA Certificate conforms to this profile, it is considered Technically Constrained.
