@@ -1921,9 +1921,9 @@ __**TBD: Remarks about audits**__
 
 ##### 7.1.2.2.1 Cross-Certified Subordinate CA Naming
 
-Provided that the Issuing CA has confirmed that the existing CA Certificate was issued in compliance with the then-current version of the Baseline Requirements, the Issuing CA MAY deviate from the requirements in [Section 7.1.4](#714-name-forms) as follows:
+The `subject` MUST comply with the requirements of [Section 7.1.4](#714-name-forms), or, if the existing CA Certificate was issued in compliance with the then-current version of the Baseline Requirements, the encoded `subject` name MUST be byte-for-byte identical to the encoded `subject` name of the existing CA Certificate.
 
-The encoded `subject` name shall be byte-for-byte identical to the encoded `subject` name of the existing CA Certificate.
+**Note**: The above exception allows the CAs to issue Cross-Certified Subordinate CA Certificates, provided that the existing CA Certificate complied with the Baseline Requirements in force at time of issuance. This allows the requirements of [Section 7.1.4](#714-name-forms) to be improved over time, while still permitting Cross-Certification. If the existing CA Certificate did not comply, issuing a Cross-Certificate is not permitted.
 
 ##### 7.1.2.2.2 Cross-Certified Subordinate CA Extensions
 
@@ -3088,20 +3088,22 @@ In addition, the following requirements apply to all Subject Attributes (i.e. th
 
 #### 7.1.4.1 Name Encoding
 
-When encoding a `Name`, the CA SHALL ensure that:
+The following requirements apply to all Certificates listed in [Section 7.1.2](#712-certificate-content-and-extensions). Specifically, this includes Technically Constrained Non-TLS Subordinate CA Certificates, as defined in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile), but does not include certificates issued by such CA Certificates, as they are out of scope of these Baseline Requirements.
+
+For every valid Certification Path (as defined by [RFC 5280, Section 6](https://tools.ietf.org/html/rfc5280#section-6)):
+
+* For each Certificate in the Certification Path, the encoded content of the Issuer Distinguished Name field of a Certificate SHALL be byte-for-byte identical with the encoded form of the Subject Distinguished Name field of the Issuing CA certificate.
+* For each CA Certificate in the Certification Path, the encoded content of the Subject Distinguished Name field of a Certificate SHALL be byte-for-byte identical among all Certificates whose Subject Distinguished Names can be compared as equal according to [RFC 5280, Section 7.1](https://tools.ietf.org/html/rfc5280#section-7.1), and including expired and revoked Certificates.
+
+Effective 2022-10-01, when encoding a `Name`, the CA SHALL ensure that:
 
   * Each `Name` MUST contain an `RDNSequence`.
   * Each `RelativeDistinguishedName` MUST contain exactly one `AttributeTypeAndValue`.
   * Each `RelativeDistinguishedName`, if present, is encoded within the `RDNSequence` in the order that it appears in [Section 7.1.4.2](#7142-subject-attribute-encoding).
     * For example, a `RelativeDistinguishedName` that contains a `countryName` `AttributeTypeAndValue` pair MUST be encoded within the `RDNSequence` before a `RelativeDistinguishedName` that contains a `stateOrProvinceName` `AttributeTypeAndValue`.
-  * Except where explicitly specified, each `Name` MUST NOT contain more than one instance of a given `AttributeTypeAndValue` across all `RelativeDistinguishedName`s.
+  * Each `Name` MUST NOT contain more than one instance of a given `AttributeTypeAndValue` across all `RelativeDistinguishedName`s.
 
-In addition to the above, the following requirements SHOULD be met by all newly-issued Technically Constrained Non-TLS Subordinate CA Certificates, as defined in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile), and MUST be met for all other Certificates, regardless of whether the Certificate is a CA Certificate or a Subscriber Certificate.
-
-For every valid Certification Path (as defined by [RFC 5280, Section 6](https://tools.ietf.org/html/rfc5280#section-6)):
-
-* For each Certificate in the Certification Path, the encoded content of the Issuer Distinguished Name field of a Certificate SHALL be byte-for-byte identical with the encoded form of the Subject Distinguished Name field of the Issuing CA certificate.
-* For each CA Certificate in the Certification Path, the encoded content of the Subject Distinguished Name field of a Certificate SHALL be byte-for-byte identical among all Certificates whose Subject Distinguished Names can be compared as equal according to RFC 5280, Section 7.1, and including expired and revoked Certificates.
+**Note**: [Section 7.1.2.2.1](#71221-cross-certified-subordinate-ca-naming) provides an exception to the above `Name` encoding requirements when issuing a [Cross-Certified Subordinate CA Certificate](#7122-cross-certified-subordinate-ca-certificate-profile), as described within that section.
 
 #### 7.1.4.2 Subject Attribute Encoding
 
@@ -3109,9 +3111,9 @@ This document defines requirements for the content and validation of a number of
 
 Table: Attribute Encoding and Order Requirements
 
-| __Attribute__            | __OID__    | __Specification__                               | __Encoding Requirements__ | __Max Length[^maxlength]__ |
-| ----                     | --         | ---                                             | ----                  | - |
-| `countryName`            | `2.5.4.6`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) |                       | 2 |
+| __Attribute__            | __OID__    | __Specification__                               | __Encoding Requirements__                  | __Max Length[^maxlength]__ |
+| ----                     | --         | ---                                             | ----                                       | - |
+| `countryName`            | `2.5.4.6`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `PrintableString`                 | 2 |
 | `stateOrProvinceName`    | `2.5.4.8`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 128 |
 | `localityName`           | `2.5.4.7`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 128 |
 | `postalCode`             | `2.5.4.17` | X.520                                           | MUST use `UTF8String` or `PrintableString` | 40 |
@@ -3131,7 +3133,7 @@ Table: Attribute Encoding and Order Requirements
 When explicitly stated as permitted by the relavant certificate profile specified within [Section 7.1.2](#712-certificate-content-and-extensions), CAs MAY include additional attributes within the `AttributeTypeAndValue` beyond those specified in [Section 7.1.4.2](#7142-subject-attribute-encoding).
 
 Before including such an attribute, the CA SHALL:
-  * Document the attributes within Section 7.1.4 of their CP/CPS, along with the applicable validation practices.
+  * Document the attributes within Section 7.1.4 of their CP or CPS, along with the applicable validation practices.
   * Ensure that the contents contain information that has been verified by the CA, independent of the Applicant.
 
 ### 7.1.6 Certificate policy object identifier
