@@ -2032,7 +2032,7 @@ Table: Policy Restricted
 | ---                        | -               | ------          |
 | `certificatePolicies`      |                 |                 |
 | \ \ **1+**                 | MUST            | At least one `PolicyInformation` MUST be present in the `certificatePolicies`. Multiple `PolicyInformation` values MAY be present, if they meet the following profile. |
-| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. This identifier MUST NOT be a Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)). |
 | \ \ \ \ `policyQualifiers` | NOT RECOMMENDED |                 |
 | \ \ **2**                  | MUST NOT        | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
 
