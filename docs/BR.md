@@ -967,7 +967,7 @@ When processing CAA records, CAs MUST process the issue, issuewild, and iodef pr
 
 RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determines that either (1) the certificate request is consistent with the applicable CAA RRset or (2) an exception specified in the relevant CP or CPS applies." For issuances conforming to these Baseline Requirements, CAs MUST NOT rely on any exceptions specified in their CP or CPS unless they are one of the following:
 
-* CAA checking is optional for certificates for which a Certificate Transparency pre-certificate was created and logged in at least two public logs, and for which CAA was checked.
+* CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
 * CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
 * For certificates issued prior to July 1, 2021, CAA checking is optional if the CA or an Affiliate of the CA is the DNS Operator (as defined in RFC 7719) of the domain's DNS.
 
@@ -2049,14 +2049,10 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 
 ##### 7.1.2.4.2 Extended Key Usage
 
-| __Key Purpose__                    | __OID__                 | __Presence__    |
-| ----                               | ----                    | -               |
-| Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST            |
-| Any other value                    | -                       | NOT RECOMMENDED |
-
-CAs are NOT RECOMMENDED to include additional key usage purposes beyond those specified in the table above. If present, they SHOULD be equal to, or a subset of, the key usage purposes for the Issuing CA Certificate.
-
-Any additional key usage purposes MUST conform to the requirements and restrictions specified in [Section 7.1.2.2.5, Extended Key Usage - Restricted Cross-Certified CA](#71225-extended-key-usage---restricted-cross-certified-ca).
+| __Key Purpose__                    | __OID__                 | __Presence__  |
+| ----                               | ----                    | -             |
+| Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST          |
+| Any other value                    | -                       | MUST NOT      |
 
 #### 7.1.2.5 Technically Constrained TLS Subordinate CA Certificate Profile
 
@@ -2646,7 +2642,7 @@ The Precertificate Poison extension is identified by the OID 1.3.6.1.4.1.11129.2
 
 ##### 7.1.2.9.4 Authority Key Identifier
 
-For Precertificates issued by a Precertificate Signing CA, the `authorityKeyIdentifier`, if present in the equivalent Certificate, MAY be modified to reflect the values of the Technically Constrained Precertificate Signing CA Certificate; for example, if the Precertificate Signing CA uses a different Key Pair than the Issuing CA it is acting on behalf of.
+For Precertificates issued by a Precertificate Signing CA, the `authorityKeyIdentifier`, if present in the equivalent Certificate, may be modified to reflect the values of the Technically Constrained Precertificate Signing CA Certificate; for example, if the Precertificate Signing CA uses a different Key Pair than the Issuing CA it is acting on behalf of.
 
 If the `authorityKeyIdentifier` extension is present in the Certificate, then the Precertificate MUST contain an `authorityKeyIdentifier` in the same order within the extension sequence as the Certificate, ignoring the [Precertificate Poison](#71293-precertificate-poison) extension. It MUST be byte-for-byte identical in value to the `authorityKeyIdentifier` extension of the Certificate, or MAY be modified as defined below:
 
