@@ -2562,13 +2562,13 @@ If the `policyQualifiers` is permitted and present within a `PolicyInformation` 
 
 #### 7.1.2.9 Precertificate Profile
 
-A Precertificate is a signed data structure that can be submitted to a Certificate Transparency log, as defined by [RFC 6962](https://tools.ietf.org/doc/html/rfc6962). A Precertificate appears structurally identical to a Certificate, with the exception of a special critical poison extension in the `extensions` field, with the OID of `1.3.6.1.4.1.11129.2.4.3`. This extension ensures that the Precertificate will not be accepted as a Certificate by clients conforming to [RFC 5280](https://tools.ietf.org/doc/html/rfc5280). The existence of a signed Precertificate can be treated as evidence of an equivalent Certificate also existing, as the signature represents a binding committment by the CA that it may issue such a Certificate.
+A Precertificate is a signed data structure that can be submitted to a Certificate Transparency log, as defined by [RFC 6962](https://tools.ietf.org/doc/html/rfc6962). A Precertificate appears structurally identical to a Certificate, with the exception of a special critical poison extension in the `extensions` field, with the OID of `1.3.6.1.4.1.11129.2.4.3`. This extension ensures that the Precertificate will not be accepted as a Certificate by clients conforming to [RFC 5280](https://tools.ietf.org/doc/html/rfc5280). The existence of a signed Precertificate can be treated as evidence of a corresponding Certificate also existing, as the signature represents a binding committment by the CA that it may issue such a Certificate.
 
-A Precertificate is created after a CA has decided to issue a Certificate, but prior to the actual signing of the Certificate. The CA MAY construct and sign a Precertificate to be equivalent to the Certificate, for purposes of submitting to Certificate Transparency Logs. The CA MAY use the returned Signed Certificate Timestamps to then alter the Certificate's `extensions` field, adding a Signed Certificate Timestamp List, as defined in [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) and as permitted by the relevant profile, prior to signing the Certificate.
+A Precertificate is created after a CA has decided to issue a Certificate, but prior to the actual signing of the Certificate. The CA MAY construct and sign a Precertificate corresponding to the Certificate, for purposes of submitting to Certificate Transparency Logs. The CA MAY use the returned Signed Certificate Timestamps to then alter the Certificate's `extensions` field, adding a Signed Certificate Timestamp List, as defined in [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) and as permitted by the relevant profile, prior to signing the Certificate.
 
-Once a Precertificate is signed, relying parties are permitted to treat this as a binding committment from the CA of the intent to issue an equivalent Certificate, or more commonly, that an equivalent Certificate exists. A Certificate is said to be equivalent to a Precertificate based upon the value of the `tbsCertificate` contents, as transformed by the process defined in [RFC 6962, Section 3.2](https://tools.ietf.org/doc/html/rfc6962#section-3.2).
+Once a Precertificate is signed, relying parties are permitted to treat this as a binding committment from the CA of the intent to issue a corresponding Certificate, or more commonly, that a corresponding Certificate exists. A Certificate is said to be corresponding to a Precertificate based upon the value of the `tbsCertificate` contents, as transformed by the process defined in [RFC 6962, Section 3.2](https://tools.ietf.org/doc/html/rfc6962#section-3.2).
 
-This profile describes the transformations that are permitted to a Certificate to construct a Precertificate. CAs MUST NOT issue a Precertificate unless they are willing to issue an equivalent Certificate, regardless of whether they have done so. Similarly, a CA MUST NOT issue a Precertificate unless the equivalent Certificate conforms to these Baseline Requirements, regardless of whether they sign the equivalent Certificate.
+This profile describes the transformations that are permitted to a Certificate to construct a Precertificate. CAs MUST NOT issue a Precertificate unless they are willing to issue a corresponding Certificate, regardless of whether they have done so. Similarly, a CA MUST NOT issue a Precertificate unless the corresponding Certificate conforms to these Baseline Requirements, regardless of whether the CA signs the corresponding Certificate.
 
 A Precertificate may be issued either directly by the Issuing CA or by a Technically Constrained Precertificate Signing CA, as defined in [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile). If issued by a Precertificate Signing CA, then in addition to the precertificate poison and signed certificate timestamp list extensions, the Precertificate `issuer` field and, if present, `authorityKeyIdentifier` extension, may differ from the Certificate, as described below.
 
@@ -2610,7 +2610,7 @@ Table: When the Precertificate is issued by a Precertificate Signing CA on behal
 | `signatureAlgorithm`           | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                    | |
 
-**Note**: This profile requires that the `serialNumber` field of the Precertificate be identical to that of the equivalent Certificate. [RFC 5280, Section 4.1.2.2](https://tools.ietf.org/doc/html/rfc5280#section-4.1.2.2) requires that the `serialNumber` of certificates be unique. For the purposes of this document, a Precertificate shall not be considered a "certificate" subject to that requirement, and thus may have the same `serialNumber` of the equivalent Certificate. However, this does not permit two Precertificates to share the same `serialNumber`, unless they are byte-for-byte equivalent, as this would otherwise indicate there are equivalent Certificates that share the same `serialNumber`.
+**Note**: This profile requires that the `serialNumber` field of the Precertificate be identical to that of the corresponding Certificate. [RFC 5280, Section 4.1.2.2](https://tools.ietf.org/doc/html/rfc5280#section-4.1.2.2) requires that the `serialNumber` of certificates be unique. For the purposes of this document, a Precertificate shall not be considered a "certificate" subject to that requirement, and thus may have the same `serialNumber` of the corresponding Certificate. However, this does not permit two Precertificates to share the same `serialNumber`, unless they are byte-for-byte identical, as this would otherwise indicate there are corresponding Certificates that share the same `serialNumber`.
 
 ##### 7.1.2.9.1 Directly Issued Precertificate Profile Extensions
 
@@ -2641,15 +2641,20 @@ The Precertificate Poison extension is identified by the OID 1.3.6.1.4.1.11129.2
 
 ##### 7.1.2.9.4 Authority Key Identifier
 
-For Precertificates issued by a Precertificate Signing CA, the `authorityKeyIdentifier`, if present in the equivalent Certificate, may be modified to reflect the values of the Technically Constrained Precertificate Signing CA Certificate; for example, if the Precertificate Signing CA uses a different Key Pair than the Issuing CA it is acting on behalf of.
+For Precertificates issued by a Precertificate Signing CA, the contents of the `authorityKeyIdentifier` extension MUST be one of the following:
 
-If the `authorityKeyIdentifier` extension is present in the Certificate, then the Precertificate MUST contain an `authorityKeyIdentifier` in the same order within the extension sequence as the Certificate, ignoring the [Precertificate Poison](#71293-precertificate-poison) extension. It MUST be byte-for-byte identical in value to the `authorityKeyIdentifier` extension of the Certificate, or MAY be modified as defined below:
+1. SHOULD be as defined in the profile below, or;
+2. MAY be byte-for-byte identical with the contents of the `authorityKeyIdentifier` extension of the corresponding Certificate.
+
 
 | __Field__                   | __Description__ |
 | ---                         | ------- |
 | `keyIdentifier`             | MUST be present. MUST be identical to the `subjectKeyIdentifier` field of the [Precertificate Signing CA Certificate](#7124-technically-constrained-precertificate-signing-ca-certificate-profile) |
 | `authorityCertIssuer`       | MUST NOT be present |
 | `authorityCertSerialNumber` | MUST NOT be present |
+
+
+**Note**: [RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962) describes how the `authorityKeyIdentifier` present on a Precertificate is transformed to contain the value of the Precertificate Signing CA's `authorityKeyIdentifier` extension (i.e. reflecting the actual issuer certificate's `keyIdentifier`), thus matching the corresponding Certificate when verified by clients. These Baseline Requirements RECOMMEND the use of the Precertificate Signing CA's `keyIdentifier` in Precertificates issued by it in order to ensure consistency between the `subjectKeyIdentifier` and `authorityKeyIdentifier` of all certificates in the chain. Although [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) does not strictly require such consistency, a number of client implementations enforce such consistency for Certificates, and this avoids any risks from Certificate Transparency Logs incorrectly implementing such checks.
 
 #### 7.1.2.10 Common CA Fields
 
