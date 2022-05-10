@@ -475,6 +475,8 @@ The script outputs:
 
 **Validation Specialists**: Someone who performs the information verification duties specified by these Requirements.
 
+**Validity Interval**: For CRLs and OCSP responses, the difference in time between the thisUpdate and nextUpdate field, inclusive.
+
 **Validity Period**: Prior to 2020-09-01, the period of time measured from the date when the Certificate is issued until the Expiry Date. For Certificates issued on or after 2020-09-01, the validity period is as defined within RFC 5280, Section 4.1.2.5: the period of time from notBefore through notAfter, inclusive.
 
 **WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
@@ -579,6 +581,8 @@ X.509, Recommendation ITU-T X.509 (10/2012) \| ISO/IEC 9594-8:2014 (E), Informat
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Requirements shall be interpreted in accordance with RFC 2119.
 
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
+
+**Effective 2022-06-01:** For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap seconds. Any amount of time greater than this, including fractional seconds, shall represent an additional unit of measure, such as an additional hour or additional day.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
@@ -1295,16 +1299,20 @@ No stipulation.
 
 For the status of Subscriber Certificates:
 
-If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the value of the `nextUpdate` field MUST NOT be more than ten days beyond the value of the `thisUpdate` field.
+**For CRLs issued prior to 2022-06-01:** If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the value of the `nextUpdate` field MUST NOT be more than ten days beyond the value of the `thisUpdate` field.
+
+**For CRLs issued on or after 2022-06-01:** If the CA publishes a CRL, then the CA SHALL update and reissue CRLs at least once every seven days, and the Validity Interval MUST NOT be more than ten days.
 
 For the status of Subordinate CA Certificates:
 
-The CA SHALL update and reissue CRLs at least:
+The CA SHOULD update and reissue CRLs at least every 366 days and the CA SHALL update and reissue CRLs:
 
-  i. once every twelve months; and
+  i. at least every 367 days; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
-The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field.
+**For CRLs issued prior to 2022-06-01:** The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field.
+
+**For CRLs issued on or after 2022-06-01:** The Validity Interval SHOULD NOT be more than 366 days and the Validity Interval MUST NOT be more than 367 days.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
@@ -1325,25 +1333,20 @@ defined by RFC6960.
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
 
-The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
+As stated in [Section 1.6.4](#164-conventions), for the purpose of computing an OCSP Validity Interval, an hour is measured as 3,600 seconds and a day is measured as 86,400 seconds, ignoring leap seconds.
 
 For the status of Subscriber Certificates:
 
-Prior to 2020-09-30:
-The CA SHALL update information provided via an Online Certificate Status Protocol at least every four days. OCSP responses from this service MUST have a maximum expiration time of ten days.
-
-Effective 2020-09-30:
-
-1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
-2. OCSP responses MUST have a validity interval less than or equal to ten days;
-3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
-4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
+1. OCSP responses MUST have a Validity Interval greater than or equal to eight hours;
+2. OCSP responses MUST have a Validity Interval less than or equal to ten days;
+3. For OCSP responses with Validity Intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the Validity Interval before the nextUpdate.
+4. For OCSP responses with Validity Intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
 For the status of Subordinate CA Certificates:
 
-* The CA SHALL update information provided via an Online Certificate Status Protocol
+The CA SHOULD update information provided via an Online Certificate Status Protocol at least every 366 days and the CA SHALL update information provided via an Online Certificate Status Protocol
 
-  i. at least every twelve months; and
+  i. at least every 367 days; and
   ii. within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with [Section 7.1.5](#715-name-constraints), the responder MUST NOT respond with a "good" status for such requests.
@@ -1772,7 +1775,9 @@ Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Va
 Subscriber Certificates issued after 1 March 2018, but prior to 1 September 2020, MUST NOT have a Validity Period greater than 825 days.
 Subscriber Certificates issued after 1 July 2016 but prior to 1 March 2018 MUST NOT have a Validity Period greater than 39 months.
 
-For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
+**For Certificates issued prior to 2022-06-01:** For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
+
+**For Certificates issued on or after 2022-06-01:** As stated in [Section 1.6.4](#164-conventions), a day is measured as 86,400 seconds, ignoring leap seconds. Any amount of time greater than this, including fractional seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default.
 
 ## 6.4 Activation data
 
