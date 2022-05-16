@@ -2084,27 +2084,33 @@ The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to 
 
 If present, the Certificate Policies extension MUST be formatted as one of the two tables below:
 
+Table: No Policy Restrictions (Affiliated CA)
+
+| __Field__           | __Presence__    | __Contents__ |
+| ---                 | -               | ------       |
+| `policyIdentifier`  | MUST            | When the Issuing CA wishes to express that there are no policy restrictions, the Subordinate CA MUST be an Affiliate of the Issuing CA. The Certificate Policies extension MUST contain only a single `PolicyInformation` value, which MUST contain the `anyPolicy` Policy Identifier. |
+| \ \ \ \ `anyPolicy` | MUST            | |
+| `policyQualifiers`  | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
+
 
 Table: Policy Restricted
 
-| __Field__                  | __Presence__    | __Description__ |
-| ---                        | -               | ------          |
-| `certificatePolicies`      |                 |                 |
-| \ \ **1+**                 | MUST            | At least one `PolicyInformation` MUST be present in the `certificatePolicies`. Multiple `PolicyInformation` values MAY be present, if they meet the following profile. |
-| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. This identifier MUST NOT be a Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)). |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED |                 |
-| \ \ **2**                  | MUST NOT        | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+| __Field__                    | __Presence__    | __Contents__ |
+| ---                          | -               | ------       |
+| `policyIdentifier`           | MUST            | One of the following policy identifiers: |
+| \ \ \ \ A [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) | MUST NOT | |
+| \ \ \ \ `anyPolicy`          | MUST NOT        | The `anyPolicy` Policy Identifier MUST NOT be present. |
+| \ \ \ \ Any other identifier | MAY             | If present, MUST be documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| `policyQualifiers`           | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
 
 
-Table: No Policy Restrictions
+Table: Permitted `policyQualifiers`
 
-| __Field__                  | __Presence__ | __Description__                    |
-| ---                        | -            | ------                             |
-| `certificatePolicies`      |              |                                    |
-| \ \ **1**                  |              | The first `PolicyInformation` present in the `certificatePolicies`. |
-| \ \ \ \ `policyIdentifier` | MUST         | The `anyPolicy` (OID: 2.5.29.32.0) identifier. |
-| \ \ \ \ `policyQualifiers` | MUST NOT     |                                    |
-| \ \ **2**                  | MUST NOT     | When the `anyPolicy` policy is present, the CA MUST NOT include any further `PolicyInformation` values. |
+| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| ---                                  | -            | -              | -----         |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other qualifier                  | MUST NOT     | -              | -             |
+
 
 ##### 7.1.2.3.3 Extended Key Usage
 
