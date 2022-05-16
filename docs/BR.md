@@ -1861,10 +1861,10 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 | ----                              | -               | -            | ----- |
 | `authorityKeyIdentifier`          | RECOMMENDED     | N            | See [Section 7.1.2.1.3](#71213-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y            | See [Section 7.1.2.1.4](#71214-basic-constraints) |
-| `keyUsage`                        | MUST            | Y            | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y            | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | MUST NOT        | N            | - |
-| `certificatePolicies`             | NOT RECOMMENDED | N            | See [Section 7.1.2.10.5](#712105-certificate-policies---affiliated-ca) |
+| `certificatePolicies`             | NOT RECOMMENDED | N            | See [Section 7.1.2.10.5](#712105-certificate-policies) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -1928,13 +1928,13 @@ Table: Extensions when the Subordinate CA is operated by the Issuing CA or an Af
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.4](#712104-basic-constraints) |
-| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies---affiliated-ca) (Affiliated CA) |
+| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | SHOULD[^eku_ca] | N                     | See [Section 7.1.2.2.4](#71224-extended-key-usage---unrestricted-affiliated-cross-certified-ca) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -1944,19 +1944,19 @@ Table: Extensions when the Subordinate CA is operated by an entity that is not t
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.4](#712104-basic-constraints) |
-| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.6](#712106-certificate-policies---non-affiliated-ca) (Non-Affiliated CA) |
+| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.6](#712105-certificate-policies) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.2.5](#71225-extended-key-usage---restricted-cross-certified-ca) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 [^eku_ca]: While [RFC 5280, Section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.13) notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of CA Certificates, as implemented by a number of Application Software Suppliers.
 
-[^name_constraints]: See [Section 7.1.2.10.9](#712109-name-constraints) for further requirements, including regarding criticality of this extension.
+[^name_constraints]: See [Section 7.1.2.10.8](#712108-name-constraints) for further requirements, including regarding criticality of this extension.
 
 ##### 7.1.2.2.4 Extended Key Usage - Unrestricted Affiliated Cross-Certified CA
 
@@ -2012,12 +2012,12 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.4](#712104-basic-constraints) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.3.3](#71233-extended-key-usage)|
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-authority-information-access) |
 | `certificatePolicies`             | MAY             | N                     | See [Section 7.1.2.3.2](#71232-certificate-policies) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -2025,27 +2025,33 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 
 If present, the Certificate Policies extension MUST be formatted as one of the two tables below:
 
+Table: No Policy Restrictions (Affiliated CA)
+
+| __Field__           | __Presence__    | __Contents__ |
+| ---                 | -               | ------       |
+| `policyIdentifier`  | MUST            | When the Issuing CA wishes to express that there are no policy restrictions, the Subordinate CA MUST be an Affiliate of the Issuing CA. The Certificate Policies extension MUST contain only a single `PolicyInformation` value, which MUST contain the `anyPolicy` Policy Identifier. |
+| \ \ \ \ `anyPolicy` | MUST            | |
+| `policyQualifiers`  | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
+
 
 Table: Policy Restricted
 
-| __Field__                  | __Presence__    | __Description__ |
-| ---                        | -               | ------          |
-| `certificatePolicies`      |                 |                 |
-| \ \ **1+**                 | MUST            | At least one `PolicyInformation` MUST be present in the `certificatePolicies`. Multiple `PolicyInformation` values MAY be present, if they meet the following profile. |
-| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. This identifier MUST NOT be a Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)). |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED |                 |
-| \ \ **2**                  | MUST NOT        | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+| __Field__                    | __Presence__    | __Contents__ |
+| ---                          | -               | ------       |
+| `policyIdentifier`           | MUST            | One of the following policy identifiers: |
+| \ \ \ \ A [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) | MUST NOT | |
+| \ \ \ \ `anyPolicy`          | MUST NOT        | The `anyPolicy` Policy Identifier MUST NOT be present. |
+| \ \ \ \ Any other identifier | MAY             | If present, MUST be documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| `policyQualifiers`           | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
 
 
-Table: No Policy Restrictions
+Table: Permitted `policyQualifiers`
 
-| __Field__                  | __Presence__ | __Description__                    |
-| ---                        | -            | ------                             |
-| `certificatePolicies`      |              |                                    |
-| \ \ **1**                  |              | The first `PolicyInformation` present in the `certificatePolicies`. |
-| \ \ \ \ `policyIdentifier` | MUST         | The `anyPolicy` (OID: 2.5.29.32.0) identifier. |
-| \ \ \ \ `policyQualifiers` | MUST NOT     |                                    |
-| \ \ **2**                  | MUST NOT     | When the `anyPolicy` policy is present, the CA MUST NOT include any further `PolicyInformation` values. |
+| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| ---                                  | -            | -              | -----         |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other qualifier                  | MUST NOT     | -              | -             |
+
 
 ##### 7.1.2.3.3 Extended Key Usage
 
@@ -2089,13 +2095,13 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.4](#712104-basic-constraints) |
-| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies---affiliated-ca) (Affiliated CA) |
+| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.4.2](#71242-extended-key-usage) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -2132,11 +2138,11 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.4](#712104-basic-constraints) |
-| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies---affiliated-ca) (Affiliated CA) |
+| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
-| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.7](#712107-extended-key-usage) |
+| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.6](#712106-extended-key-usage) |
 | `nameConstraints`                 | MUST            | \*[^name_constraints] | See [Section 7.1.2.5.2](#71252-name-constraints) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-authority-information-access) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
@@ -2207,13 +2213,13 @@ CAs SHALL NOT include additional names unless the CA is aware of a reason for in
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.4](#712104-basic-constraints) |
-| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies---affiliated-ca) (Affiliated CA) |
+| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.5](#712105-certificate-policies) |
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.8](#712108-key-usage) |
+| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
-| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.7](#712107-extended-key-usage) |
+| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.10.6](#712106-extended-key-usage) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.9](#712109-name-constraints) |
+| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
@@ -2257,7 +2263,7 @@ For a Subscriber Certificate to be Domain Validated, it MUST meet the following 
 | __Field__             | __Requirements__     |
 | --                    | -------              |
 | `subject`             | See following table. |
-| `certificatePolicies` | MUST be present and MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.2.1` as a `policyIdentifier`. |
+| `certificatePolicies` | MUST be present. MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.2.1` as a `policyIdentifier`. See [Section 7.1.2.7.9](#71279-certificate-policies). |
 | All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) |
 
 All `subject` names MUST be encoded as specified in [Section 7.1.4](#714-name-forms).
@@ -2279,7 +2285,7 @@ For a Subscriber Certificate to be Individual Validated, it MUST meet the follow
 | __Field__             | __Requirements__     |
 | --                    | -------              |
 | `subject`             | See following table. |
-| `certificatePolicies` | MUST be present and MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.2.3` as a `policyIdentifier`. |
+| `certificatePolicies` | MUST be present. MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.2.3` as a `policyIdentifier`. See [Section 7.1.2.7.9](#71279-certificate-policies). |
 | All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) |
 
 All `subject` names MUST be encoded as specified in [Section 7.1.4](#714-name-forms).
@@ -2316,7 +2322,7 @@ For a Subscriber Certificate to be Organization Validated, it MUST meet the foll
 | __Field__             | __Requirements__     |
 | --                    | -------              |
 | `subject`             | See following table. |
-| `certificatePolicies` | MUST be present and MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.2.2` as a `policyIdentifier`. |
+| `certificatePolicies` | MUST be present. MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.2.2` as a `policyIdentifier`. See [Section 7.1.2.7.9](#71279-certificate-policies). |
 | All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) |
 
 All `subject` names MUST be encoded as specified in [Section 7.1.4](#714-name-forms).
@@ -2354,7 +2360,7 @@ For a Subscriber Certificate to be Extended Validation, it MUST comply with the 
 | __Field__             | __Requirements__     |
 | --                    | -------              |
 | `subject`             | See Guidelines for the Issuance and Management of Extended Validation Certificates, Section 9.2. |
-| `certificatePolicies` | MUST be present and MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.1` as a `policyIdentifier`. |
+| `certificatePolicies` | MUST be present. MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.1` as a `policyIdentifier`. See [Section 7.1.2.7.9](#71279-certificate-policies). |
 | All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) and the Guidelines for the Issuance and Management of Extended Validation Certificates. |
 
 In addition, the following requirements apply to `subject` Attributes:
@@ -2400,22 +2406,18 @@ The `AuthorityInformationAccessSyntax` MAY contain multiple `AccessDescription`s
 
 ##### 7.1.2.7.9 Certificate Policies
 
-| __Field__                  | __Presence__    | __Description__ |
-| ---                        | -               | ------          |
-| `certificatePolicies`      |                 |                 |
-| \ \ **1+**                 | MUST            | One or more `PolicyInformation` values meeting the following requirements. |
-| \ \ \ \ `policyIdentifier` |                 | See below for permitted `policyIdentifier` values. |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED | See below for permitted `policyQualifiers`. |
-| \ \ **2**                  | MUST NOT        | The Issuing CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+If present, the Certificate Policies extension MUST contain at least one `PolicyInformation`. Each `PolicyInformation` MUST match the following profile:
 
-Table: Permitted `policyIdentifier` values
+| __Field__                    | __Presence__    | __Contents__ |
+| ---                          | -               | ------       |
+| `policyIdentifier`           | MUST            | One of the following policy identifiers: |
+| \ \ \ \ A [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) | MUST | The Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)) associated with the given Subscriber Certificate type (see [Section 7.1.2.7.1](#71271-subscriber-certificate-types)). |
+| \ \ \ \ `anyPolicy`          | MUST NOT        | The `anyPolicy` Policy Identifier MUST NOT be present. |
+| \ \ \ \ Any other identifier | MAY             | If present, MUST be defined by the CA and documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| `policyQualifiers`           | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
 
-| __Policy Identifier__ | __Presence__ | __Contents__ |
-| ---                   | -            | ------       |
-| A [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) | MUST | The Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)) associated with the given Subscriber Certificate type (see [Section 7.1.2.7.1](#71271-subscriber-certificate-types)). |
-| Any other identifier  | MAY          | If present, the identifier MUST be documented by the Issuing CA in its Certificate Policy and/or Certification Practice Statement. |
 
-This Profile RECOMMENDS that the first `PolicyInformation` value within a `certificatePolicies` contains the Reserved Certificate Policy Identifier (see [7.1.6.1](#7161-reserved-certificate-policy-identifiers))[^first_policy_note]. Regardless of the order of `PolicyInformation` values, the Certificate Policies extension MUST contain exactly one Reserved Certificate Policy Identifier.
+This Profile RECOMMENDS that the first `PolicyInformation` value within the Certificate Policies extension contains the Reserved Certificate Policy Identifier (see [7.1.6.1](#7161-reserved-certificate-policy-identifiers))[^first_policy_note]. Regardless of the order of `PolicyInformation` values, the Certificate Policies extension MUST contain exactly one Reserved Certificate Policy Identifier.
 
 
 Table: Permitted `policyQualifiers`
@@ -2593,24 +2595,28 @@ This extension MUST be encoded as a single ASN.1 NULL, as specified in [RFC 6960
 
 ##### 7.1.2.8.8 Certificate Policies
 
-**Note**: See [Section 7.1.2.8.2](#71282-ocsp-responder-extensions) for applicable effective dates for when this extension may be included.
+If present, the Certificate Policies extension MUST contain at least one `PolicyInformation`. Each `PolicyInformation` MUST match the following profile:
 
-If present, the Certificate Policies extension MUST be formatted as follows:
+| __Field__                    | __Presence__    | __Contents__ |
+| ---                          | -               | ------       |
+| `policyIdentifier`           | MUST            | One of the following policy identifiers: |
+| \ \ \ \ A [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) | NOT RECOMMENDED | |
+| \ \ \ \ `anyPolicy`          | NOT RECOMMENDED | |
+| \ \ \ \ Any other identifier | NOT RECOMMENDED | If present, MUST be defined by the CA and documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| `policyQualifiers`           | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
 
-| __Field__                  | __Presence__    | __Description__ |
-| ---                        | -               | ------          |
-| `certificatePolicies`      |                 |                 |
-| \ \ **1**                  | MAY             | The CA MAY include one or more `PolicyInformation` values that meet the following profile: |
-| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED | See below for restrictions on `policyQualifiers` |
-| \ \ **4**                  | MUST NOT        | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
 
-If the `policyQualifiers` is permitted and present within a `PolicyInformation` field, it MUST be formatted as follows:
+Table: Permitted `policyQualifiers`
 
 | __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
 | `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
 | Any other qualifier                  | MUST NOT     | -              | -             |
+
+
+**Note**: See [Section 7.1.2.8.2](#71282-ocsp-responder-extensions) for applicable effective dates for when this extension may be included.
+
+**Note**: Because the Certificate Policies extension may be used to restrict the applicable usages for a Certificate, incorrect policies may result in OCSP Responder Certificates that fail to successfully validate, resulting in invalid OCSP Responses. Including the `anyPolicy` policy can reduce this risk, but add to client processing complexity and interoperability issues.
 
 #### 7.1.2.9 Precertificate Profile
 
@@ -2755,66 +2761,45 @@ The `AuthorityInformationAccessSyntax` MAY contain multiple `AccessDescription`s
 | `cA`                | MUST be set TRUE |
 | `pathLenConstraint` | MAY be present |
 
-##### 7.1.2.10.5 Certificate Policies - Affiliated CA
+##### 7.1.2.10.5 Certificate Policies
 
-The following requirements apply to the Certificate Policies extension within CA certificates that are issued to and operated by an organization that is the same as the organization operating the Issuing CA or that is an Affiliate of the organization operating the Issuing CA.
+If present, the Certificate Policies extension MUST contain at least one `PolicyInformation`. Each `PolicyInformation` MUST match the following profile:
 
-If present, the Certificate Policies extension MUST be one of the following two formats:
 
-Table: No Policy Restrictions
+Table: No Policy Restrictions (Affiliated CA)
 
-| __Field__                  | __Presence__ | __Description__                    |
-| ---                        | -            | ------                             |
-| `certificatePolicies`      |              |                                    |
-| \ \ **1**                  |              | The first `PolicyInformation` present in the `certificatePolicies`. |
-| \ \ \ \ `policyIdentifier` | MUST         | The `anyPolicy` (OID: 2.5.29.32.0) identifier. |
-| \ \ \ \ `policyQualifiers` | MUST NOT     |                                    |
-| \ \ **2**                  | MUST NOT     | When the `anyPolicy` policy is present, the CA MUST NOT include any further `PolicyInformation` values. |
+| __Field__           | __Presence__    | __Contents__ |
+| ---                 | -               | ------       |
+| `policyIdentifier`  | MUST            | When the Issuing CA wishes to express that there are no policy restrictions, the Subordinate CA MUST be an Affiliate of the Issuing CA. The Certificate Policies extension MUST contain only a single `PolicyInformation` value, which MUST contain the `anyPolicy` Policy Identifier. |
+| \ \ \ \ `anyPolicy` | MUST            | |
+| `policyQualifiers`  | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
+
 
 Table: Policy Restricted
 
-| __Field__                  | __Presence__ | __Description__ |
-| ---                        | -            | ------          |
-| `certificatePolicies`      |              |                 |
-| \ \ **1**                  | MUST         | The first `PolicyInformation` present in the `certificatePolicies`. |
-| \ \ \ \ `policyIdentifier` |              | A Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)). |
-| \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
-| \ \ **2+**                 | SHOULD       | The CA SHOULD include additional Reserved Certificate Policy Identifiers for each type of Subscriber certificate that may be issued beneath it. |
-| \ \ \ \ `policyIdentifier` | MUST         | A Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)). |
-| \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
-| \ \ **3+**                 | MAY          | The CA MAY include additional `PolicyInformation` values that meet the following profile: |
-| \ \ \ \ `policyIdentifier` | MUST         | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
-| \ \ \ \ `policyQualifiers` | MUST NOT     |                 |
-| \ \ **4**                  | MUST NOT     | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
+| __Field__                    | __Presence__    | __Contents__ |
+| ---                          | -               | ------       |
+| `policyIdentifier`           | MUST            | One of the following policy identifiers: |
+| \ \ \ \ A [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) | MUST | The CA MUST include at least one Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)) associated with the given Subscriber Certificate type (see [Section 7.1.2.7.1](#71271-subscriber-certificate-types)) directly or transitively issued by this Certificate. |
+| \ \ \ \ `anyPolicy`          | MUST NOT        | The `anyPolicy` Policy Identifier MUST NOT be present. |
+| \ \ \ \ Any other identifier | MAY             | If present, MUST be defined by the CA and documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
+| `policyQualifiers`           | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
 
-##### 7.1.2.10.6 Certificate Policies - Non-Affiliated CA
 
-The following requirements apply to the Certificate Policies extension within CA certificates that are issued to and operated by a CA that is an not an Affiliate of the Issuing CA.
+This Profile RECOMMENDS that the first `PolicyInformation` value within the Certificate Policies extension contains the Reserved Certificate Policy Identifier (see [7.1.6.1](#7161-reserved-certificate-policy-identifiers))[^first_policy_note]. Regardless of the order of `PolicyInformation` values, the Certificate Policies extension MUST contain exactly one Reserved Certificate Policy Identifier.
 
-If present, the Certificate Policies extension MUST be formatted as follows:
-
-| __Field__                  | __Presence__    | __Description__ |
-| ---                        | -               | ------          |
-| `certificatePolicies`      |                 |                 |
-| \ \ **1**                  | MUST            | The first `PolicyInformation` present in the `certificatePolicies`. |
-| \ \ \ \ `policyIdentifier` |                 | A Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)). |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED | See below for restrictions on `policyQualifiers` |
-| \ \ **2+**                 | SHOULD          | The CA SHOULD include additional Reserved Certificate Policy Identifiers for each type of Subscriber certificate that may be issued beneath it. |
-| \ \ \ \ `policyIdentifier` | MUST            | A Reserved Certificate Policy Identifier (see [Section 7.1.6.1](#7161-reserved-certificate-policy-identifiers)). |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED | See below for restrictions on `policyQualifiers` |
-| \ \ **3+**                 | MAY             | The CA MAY include additional `PolicyInformation` values that meet the following profile: |
-| \ \ \ \ `policyIdentifier` | MUST            | An identifier documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
-| \ \ \ \ `policyQualifiers` | NOT RECOMMENDED | See below for restrictions on `policyQualifiers` |
-| \ \ **4**                  | MUST NOT        | The CA MUST NOT include any additional `PolicyInformation` values that do not meet the above profile. |
 
 If the `policyQualifiers` is permitted and present within a `PolicyInformation` field, it MUST be formatted as follows:
+
+
+Table: Permitted `policyQualifiers`
 
 | __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
 | `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
 | Any other qualifier                  | MUST NOT     | -              | -             |
 
-##### 7.1.2.10.7 Extended Key Usage
+##### 7.1.2.10.6 Extended Key Usage
 
 | __Key Purpose__                    | __OID__                 | __Presence__    |
 | ----                               | ----                    | -               |
@@ -2828,7 +2813,7 @@ If the `policyQualifiers` is permitted and present within a `PolicyInformation` 
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT        |
 | Any other value                    | -                       | NOT RECOMMENDED |
 
-##### 7.1.2.10.8 Key Usage
+##### 7.1.2.10.7 Key Usage
 
 | __Key Usage__      | __Permitted__ | __Required__     |
 | ----               | -             | -                |
@@ -2844,7 +2829,7 @@ If the `policyQualifiers` is permitted and present within a `PolicyInformation` 
 
 [^ocsp_signing]: If a CA Certificate does not assert the `digitalSignature` bit, the CA Private Key MUST NOT be used to sign an OCSP Response. See [Section 7.3](#73-ocsp-profile) for more information.
 
-##### 7.1.2.10.9 Name Constraints
+##### 7.1.2.10.8 Name Constraints
 
 If present, the Name Constraints extension MUST be encoded as follows. As an explicit exception from RFC 5280, this extension SHOULD be marked critical, but MAY be marked non-critical if compatability with certain legacy applications that do not support Name Constraints is necessary.
 
