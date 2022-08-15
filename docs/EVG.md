@@ -1295,7 +1295,7 @@ Root CA Private Keys MUST NOT be used to sign EV Certificates.
 
 # 13. Certificate Revocation and Status Checking
 
-The requirements in Section 4.9 of the Baseline Requirements apply equally to EV Certificates.  However, CAs MUST  ensure that CRLs for an EV Certificate chain can be downloaded in no more than three (3) seconds over an analog telephone line under normal network conditions.
+The requirements in Section 4.9 of the Baseline Requirements apply equally to EV Certificates.
 
 # 14. Employee and third party issues
 
