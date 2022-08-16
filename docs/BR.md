@@ -2402,7 +2402,7 @@ Table: Key Usage for RSA Public Keys
 | `digitalSignature` | Y             | SHOULD           |
 | `nonRepudiation`   | N             | --               |
 | `keyEncipherment`  | Y             | MAY              |
-| `dataEncipherment` | N             | --               |
+| `dataEncipherment` | Y             | NOT RECOMMENDED  |
 | `keyAgreement`     | N             | --               |
 | `keyCertSign`      | N             | --               |
 | `cRLSign`          | N             | --               |
@@ -2419,7 +2419,7 @@ Table: Key Usage for ECC Public Keys
 | `nonRepudiation`   | N             | --               |
 | `keyEncipherment`  | N             | --               |
 | `dataEncipherment` | N             | --               |
-| `keyAgreement`     | N             | --               |
+| `keyAgreement`     | Y             | NOT RECOMMENDED  |
 | `keyCertSign`      | N             | --               |
 | `cRLSign`          | N             | --               |
 | `encipherOnly`     | N             | --               |
