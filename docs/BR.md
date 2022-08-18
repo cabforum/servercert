@@ -1754,6 +1754,8 @@ The CA SHALL enforce multi-factor authentication for all accounts capable of dir
 
 The CA SHALL meet the technical requirements set forth in [Section 2.2 - Publication of Information](#22-publication-of-information), [Section 6.1.5 - Key Sizes](#615-key-sizes), and [Section 6.1.6 - Public Key Parameters Generation and Quality Checking](#616-public-key-parameters-generation-and-quality-checking).
 
+Prior to 2023-04-01, the CA SHALL issue Certificates in accordance with the profile specified in these Requirements or the profile specified in version 1.8.4 of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates. Effective 2023-04-01, the CA SHALL issue Certificates in accordance with the profile specified in these Requirements.
+
 ### 7.1.1 Version number(s)
 
 Certificates MUST be of type X.509 v3.
@@ -2485,9 +2487,7 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | `subjectAltName`                  | MUST NOT        | -            | - |
 | `subjectKeyIdentifier`            | SHOULD          | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `authorityInformationAccess`      | NOT RECOMMENDED | N            | See [Section 7.1.2.8.3](#71283-authority-information-access) |
-| `certificatePolicies`             | -               | -            | - |
-| \ \ \ \ _Prior to 2022-11-01_     | NOT RECOMMENDED | N            | See [Section 7.1.2.8.8](#71288-certificate-policies) |
-| \ \ \ \ _Effective 2022-11-01_    | MUST NOT        | -            | - |
+| `certificatePolicies`             | NOT RECOMMENDED | N            | See [Section 7.1.2.8.8](#71288-certificate-policies) |
 | `crlDistributionPoints`           | MUST NOT        | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
@@ -3021,7 +3021,7 @@ For every valid Certification Path (as defined by [RFC 5280, Section 6](https://
 * For each Certificate in the Certification Path, the encoded content of the Issuer Distinguished Name field of a Certificate SHALL be byte-for-byte identical with the encoded form of the Subject Distinguished Name field of the Issuing CA certificate.
 * For each CA Certificate in the Certification Path, the encoded content of the Subject Distinguished Name field of a Certificate SHALL be byte-for-byte identical among all Certificates whose Subject Distinguished Names can be compared as equal according to [RFC 5280, Section 7.1](https://tools.ietf.org/html/rfc5280#section-7.1), and including expired and revoked Certificates.
 
-Effective 2022-11-01, when encoding a `Name`, the CA SHALL ensure that:
+When encoding a `Name`, the CA SHALL ensure that:
 
   * Each `Name` MUST contain an `RDNSequence`.
   * Each `RelativeDistinguishedName` MUST contain exactly one `AttributeTypeAndValue`.
