@@ -512,8 +512,7 @@ __Contents__: This field MUST contain the address of the physical location of th
 ### 9.2.7. Subject Organizational Unit Name Field
 
 __Certificate Field__: `subject:organizationalUnitName` (OID: 2.5.4.11)  
-__Required/Optional/Prohibited:__ As stated in Section 7.1.4.2.2 i of the Baseline Requirements. 
-__Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with [Section 11](#11-verification-requirements). This field MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+__Required/Optional/Prohibited:__ __Prohibited__. 
 
 ### 9.2.8. Subject Organization Identifier Field
 
