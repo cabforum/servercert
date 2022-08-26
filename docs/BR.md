@@ -1760,7 +1760,7 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 
 ### 6.2.10 Destroying Private Keys
 
-### 6.2.11 Cryptographic Module Capabilities
+### 6.2.11 Cryptographic Module Rating
 
 ## 6.3 Other aspects of key pair management
 
