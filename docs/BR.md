@@ -2053,7 +2053,7 @@ In addition, the CA MAY use the following signature algorithm and encoding if al
   * The only differences between the new Certificate and existing Certificate are one of the following:
     * A new `subjectPublicKey` within the `subjectPublicKeyInfo`, using the same algorithm and key size; and/or,
     * A new `serialNumber`, of the same encoded length as the existing Certificate; and/or
-    * The new Certificate's `extKeyUsage` extension is present, has at least one key purpose specified, and none of the key purposes specified are the id-kp-serverAuth (OID: 1.3.6.1.5.5.7.3.1) or the anyExtendedKeyUsage (OID: 2.5.2937.0) key purposes; and/or
+    * The new Certificate's `extKeyUsage` extension is present, has at least one key purpose specified, and none of the key purposes specified are the id-kp-serverAuth (OID: 1.3.6.1.5.5.7.3.1) or the anyExtendedKeyUsage (OID: 2.5.29.37.0) key purposes; and/or
     * The new Certificate's `basicConstraints` extension has a pathLenConstraint that is zero.
 * If used within an OCSP response, such as the `signatureAlgorithm` of a BasicOCSPResponse:
   * The `producedAt` field value of the ResponseData MUST be earlier than 2022-06-01 00:00:00 UTC; and,
