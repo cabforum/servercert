@@ -586,8 +586,7 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 
 ## 9.4. Maximum Validity Period For EV Certificate
 
-The Validity Period for an EV Certificate SHALL NOT exceed 825 days.
-Effective 2020-09-01, the Validity Period for an EV Certificate SHALL NOT exceed 398 days.
+The Validity Period for an EV Certificate SHALL NOT exceed 398 days.
 
 It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
 
