@@ -292,7 +292,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Certificate Problem Report**: Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates.
 
-**Certificate Profile**: A set of documents or files that defines requirements for Certificate content and Certificate extensions in accordance with [Section 7](#7-certificate-crl-and-ocsp-profiles). e.g. a Section in a CA’s CPS or a certificate template file used by CA software.
+**Certificate Profile**: A set of documents or files that defines requirements for Certificate content and Certificate extensions in accordance with [Section 7](#7-certificate-crl-and-ocsp-profiles), e.g. a Section in a CA’s CPS or a certificate template file used by CA software.
 
 **Certificate Revocation List**: A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
@@ -306,7 +306,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Cross Certificate**: A certificate that is used to establish a trust relationship between two Root CAs.
 
-**CSPRNG**: A random number generator intended for use in cryptographic system.
+**CSPRNG**: A random number generator intended for use in a cryptographic system.
 
 **Delegated Third Party**: A natural person or Legal Entity that is not the CA but is authorized by the CA, and whose activities are not within the scope of the appropriate CA audits, to assist in the Certificate Management Process by performing or fulfilling one or more of the CA requirements found herein.
 
@@ -471,7 +471,7 @@ The script outputs:
 
 **Valid Certificate**: A Certificate that passes the validation procedure specified in RFC 5280.
 
-**Validation Specialists**: Someone who performs the information verification duties specified by these Requirements.
+**Validation Specialist**: Someone who performs the information verification duties specified by these Requirements.
 
 **Validity Period**: Prior to 2020-09-01, the period of time measured from the date when the Certificate is issued until the Expiry Date. For Certificates issued on or after 2020-09-01, the validity period is as defined within RFC 5280, Section 4.1.2.5: the period of time from notBefore through notAfter, inclusive.
 
