@@ -2289,13 +2289,14 @@ Table: Individual Validated `subject` Attributes
 | `stateOrProvinceName`          | MUST / MAY      | MUST be present if `localityName` is absent, MAY be present otherwise. If present, MUST contain the Subject's state or province information. | [Section 3.2.2.1](#3221-identity) |
 | `localityName`                 | MUST / MAY      | MUST be present if `stateOrProvinceName` is absent, MAY be present otherwise. If present, MUST contain the Subject's locality information. | [Section 3.2.2.1](#3221-identity) |
 | `postalCode`                   | NOT RECOMMENDED | If present, MUST contain the Subject's zip or postal information. | [Section 3.2.2.1](#3221-identity)) |
-| `streetAddress`                | NOT RECOMMENDED | If present, MUST contain the Subject's street address information. | [Section 3.2.2.1](#3221-identity) |
+| `streetAddress`                | NOT RECOMMENDED | If present, MUST contain the Subject's street address information. Multiple instances MAY be present.| [Section 3.2.2.1](#3221-identity) |
 | `organizationName`             | MUST            | The Subject's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
 | `surname`                      | MUST NOT        | -           | -           |
 | `givenName`                    | MUST NOT        | -           | -           |
 | `organizationalUnitName`       | -               | -           | -           |
 | \ \ \ \ _Prior to 2022-09-01_  | NOT RECOMMENDED | If present, the CA MUST implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information. | [Section 3.2](#32-initial-identity-validation) |
 | \ \ \ \ _Effective 2022-09-01_ | MUST NOT        | -           | -           |
+| `domainComponent`       | MAY | If present, this field MUST contain a label from a Domain Name. The `domainComponent` fields for each Domain Name MUST be in a single ordered sequence containing all labels from the Domain name. The labels MUST be encoded in the reverse order to the on-wire representation of domain names in the DNS protocol, so that the label closest to the root is encoded first. Multiple instances MAY be present. | [Section 3.2]
 | `commonName`                   | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
@@ -2689,7 +2690,7 @@ The following table details the acceptable `AttributeType`s that may appear with
 | `stateOrProvinceName`    | MAY             | If present, the CA's state or province information. | [Section 3.2.2.1](#3221-identity) |
 | `localityName`           | MAY             | If present, the CA's locality. | [Section 3.2.2.1](#3221-identity) |
 | `postalCode`             | MAY             | If present, the CA's zip or postal information. | [Section 3.2.2.1](#3221-identity) |
-| `streetAddress`          | MAY             | If present, the CA's street address. | [Section 3.2.2.1](#3221-identity) |
+| `streetAddress`          | MAY             | If present, the CA's street address. Multiple instances MAY be present. | [Section 3.2.2.1](#3221-identity) |
 | `organizationName`       | MUST            | The CA's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
 | `commonName`             | MUST            | The contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate. | |
 | Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
@@ -3031,6 +3032,7 @@ When encoding a `Name`, the CA SHALL ensure that:
   * Each `RelativeDistinguishedName` MUST contain exactly one `AttributeTypeAndValue`.
   * Each `RelativeDistinguishedName`, if present, is encoded within the `RDNSequence` in the order that it appears in [Section 7.1.4.2](#7142-subject-attribute-encoding).
     * For example, a `RelativeDistinguishedName` that contains a `countryName` `AttributeTypeAndValue` pair MUST be encoded within the `RDNSequence` before a `RelativeDistinguishedName` that contains a `stateOrProvinceName` `AttributeTypeAndValue`.
+  * Each `Name` MUST NOT contain more than one instance of a given `AttributeTypeAndValue` across all `RelativeDistinguishedName`s unless explicitly allowed in these Requirements.
 
 **Note**: [Section 7.1.2.2.2](#71222-cross-certified-subordinate-ca-naming) provides an exception to the above `Name` encoding requirements when issuing a [Cross-Certified Subordinate CA Certificate](#7122-cross-certified-subordinate-ca-certificate-profile), as described within that section.
 
