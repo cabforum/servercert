@@ -2252,7 +2252,7 @@ Table: Individual Validated `subject` Attributes
 | `stateOrProvinceName`          | MUST / MAY      | MUST be present if `localityName` is absent, MAY be present otherwise. If present, MUST contain the Subject's state or province information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `localityName`                 | MUST / MAY      | MUST be present if `stateOrProvinceName` is absent, MAY be present otherwise. If present, MUST contain the Subject's locality information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `postalCode`                   | NOT RECOMMENDED | If present, MUST contain the Subject's zip or postal information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
-| `streetAddress`                | NOT RECOMMENDED | If present, MUST contain the Subject's street address information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
+| `streetAddress`                | NOT RECOMMENDED | If present, MUST contain the Subject's street address information. Multiple instances MAY be present. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `organizationName`             | NOT RECOMMENDED | If present, MUST contain the Subject's name or DBA. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `surname`                      | MUST            | The Subject's surname. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `givenName`                    | MUST            | The Subject's given name. | [Section 3.2.3](#323-authentication-of-individual-identity) |
