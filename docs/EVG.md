@@ -1206,9 +1206,9 @@ The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirem
 
    A.  If the CA has operations in the U.S., the CA MUST take reasonable steps to verify with the following US Government denied lists and regulations:
 
-       i. BIS Denied Persons List - https://www.bis.doc.gov/index.php/the-denied-persons-list
-       ii. BIS Denied Entities List - https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list
-       iii. US Treasury Department List of Specially Designated Nationals and Blocked Persons - https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx
+       i. BIS Denied Persons List - [https://www.bis.doc.gov/index.php/the-denied-persons-list](https://www.bis.doc.gov/index.php/the-denied-persons-list)
+       ii. BIS Denied Entities List - [https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list](https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list)
+       iii. US Treasury Department List of Specially Designated Nationals and Blocked Persons - [https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx](https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx)
        iv. US Government export regulations
 
    B.  If the CA has operations in any other country, the CA MUST take reasonable steps to verify with all equivalent denied lists and export regulations (if any) in such other country.
