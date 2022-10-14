@@ -174,6 +174,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2021-12-01 | 3.2.2.4 | CAs MUST NOT use methods 3.2.2.4.6, 3.2.2.4.18, or 3.2.2.4.19 to issue wildcard certificates or with Authorization Domain Names other than the FQDN. |
 | 2022-06-01 | 7.1.3.2.1 | CAs MUST NOT sign OCSP responses using the SHA-1 hash algorithm. |
 | 2022-09-01 | 7.1.4.2.2 | CAs MUST NOT include the organizationalUnitName field in the Subject |
+| 2023-01-01 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
 
 ## 1.3 PKI Participants
 
@@ -2312,6 +2313,10 @@ Prior to including a Reserved Certificate Policy Identifier, the CA MUST ensure 
    If a CRL entry is for a Certificate subject to these Requirements, the `CRLReason` MUST NOT be certificateHold (6).
 
    If a `reasonCode` CRL entry extension is present, the `CRLReason` MUST indicate the most appropriate reason for revocation of the certificate, as defined by the CA within its CP/CPS.
+   
+2. `issuingDistributionPoint` (OID 2.5.29.28)
+
+   Effective 2023-01-01, if a CRL does not contain entries for all revoked unexpired certificates issued by the CRL issuer, then it MUST contain the Issuing Distribution Point extension and MUST populate the `distributionPoint` field of that extension.
 
 ## 7.3 OCSP profile
 
