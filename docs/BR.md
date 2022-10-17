@@ -2316,7 +2316,7 @@ Prior to including a Reserved Certificate Policy Identifier, the CA MUST ensure 
    
 2. `issuingDistributionPoint` (OID 2.5.29.28)
 
-   Effective 2023-01-01, if a CRL does not contain entries for all revoked unexpired certificates issued by the CRL issuer, then it MUST contain a critical Issuing Distribution Point extension and MUST populate the `distributionPoint` field of that extension.
+   Effective 2023-01-15, if a CRL does not contain entries for all revoked unexpired certificates issued by the CRL issuer, then it MUST contain a critical Issuing Distribution Point extension and MUST populate the `distributionPoint` field of that extension.
 
 ## 7.3 OCSP profile
 
