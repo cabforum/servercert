@@ -174,7 +174,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 | 2021-12-01 | 3.2.2.4 | CAs MUST NOT use methods 3.2.2.4.6, 3.2.2.4.18, or 3.2.2.4.19 to issue wildcard certificates or with Authorization Domain Names other than the FQDN. |
 | 2022-06-01 | 7.1.3.2.1 | CAs MUST NOT sign OCSP responses using the SHA-1 hash algorithm. |
 | 2022-09-01 | 7.1.4.2.2 | CAs MUST NOT include the organizationalUnitName field in the Subject |
-| 2023-01-01 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
+| 2023-01-15 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
 
 ## 1.3 PKI Participants
 
