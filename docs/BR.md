@@ -2691,6 +2691,9 @@ The following table details the acceptable `AttributeType`s that may appear with
 | `postalCode`             | MAY             | If present, the CA's zip or postal information. | [Section 3.2.2.1](#3221-identity) |
 | `streetAddress`          | MAY             | If present, the CA's street address. Multiple instances MAY be present. | [Section 3.2.2.1](#3221-identity) |
 | `organizationName`       | MUST            | The CA's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
+| `organizationalUnitName`       | -  | -           | -           |
+| \ \ \ \ _Prior to 2022-12-12_  | NOT RECOMMENDED | If present, the CA MUST implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information. | [Section 3.2](#32-initial-identity-validation) |
+| \ \ \ \ _Effective 2022-12-12_ | "MUST NOT" for TLS Subordinate CA Certificates defined in section 7.1.2.3 and "SHOULD" NOT for all other CAs  | -           | -           |
 | `commonName`             | MUST            | The contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate. | |
 | Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
