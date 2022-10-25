@@ -2107,7 +2107,7 @@ Table: `nameConstraints` requirements
 
 | __Field__                 | __Description__ |
 | --                        | -------         |
-| `permittedSubtrees`       | The `permittedSubtrees` MUST contain at least one `GeneralSubtree` for both of the `dNSName` and `iPAddress` `GeneralName` name types, UNLESS the specified `GeneralName` appears within the `excludedSubtrees` to exclude all names of that name type. Additionally, the `permittedSubtrees` MUST contain at least one `GeneralSubtree` of the `directoryName` `GeneralName` name type. |
+| `permittedSubtrees`       | The `permittedSubtrees` MUST contain at least one `GeneralSubtree` for both of the `dNSName` and `iPAddress` `GeneralName` name types, UNLESS the specified `GeneralName` name type appears within the `excludedSubtrees` to exclude all names of that name type. Additionally, the `permittedSubtrees` MUST contain at least one `GeneralSubtree` of the `directoryName` `GeneralName` name type. |
 | \ \ \ \  `GeneralSubtree` | The requirements for a `GeneralSubtree` that appears within a `permittedSubtrees`. |
 | \ \ \ \ \ \ \ \ `base`    | See following table. |
 | \ \ \ \ \ \ \ \ `minimum` | MUST NOT be present. |
