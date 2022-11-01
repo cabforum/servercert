@@ -2261,10 +2261,7 @@ Table: Individual Validated `subject` Attributes
 | `commonName`                   | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
-In addition, the following requirements apply to `subject` Attributes:
-
-  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ##### 7.1.2.7.4 Organization Validated
 
@@ -2299,10 +2296,7 @@ Table: Individual Validated `subject` Attributes
 | `commonName`                   | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
-In addition, the following requirements apply to `subject` Attributes:
-
-  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ##### 7.1.2.7.5 Extended Validation
 
@@ -2315,10 +2309,7 @@ For a Subscriber Certificate to be Extended Validation, it MUST comply with the 
 | `certificatePolicies` | MUST be present. MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.1` as a `policyIdentifier`. See [Section 7.1.2.7.9](#71279-certificate-policies). |
 | All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) and the Guidelines for the Issuance and Management of Extended Validation Certificates. |
 
-In addition, the following requirements apply to `subject` Attributes:
-
-  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ##### 7.1.2.7.6 Subscriber Certificate Extensions
 
