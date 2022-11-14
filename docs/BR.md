@@ -1996,7 +1996,6 @@ Each included Extended Key Usage key usage purpose:
      a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
      b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about the certificate information verified by the CA, such as including a key usage purpose asserting storage on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance.
-  3. MUST NOT be included unless the Certificate conforms to the relevant specification defining the key usage purpose.
 
 CAs MUST NOT include additional key usage purposes unless the CA is aware of a reason for including the key usage purpose in the Certificate.
 
@@ -2382,10 +2381,7 @@ Table: Individual Validated `subject` Attributes
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
-In addition, the following requirements apply to `subject` Attributes:
-
-  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ##### 7.1.2.7.4 Organization Validated
 
@@ -2420,10 +2416,7 @@ Table: Organization Validated `subject` Attributes
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
-In addition, the following requirements apply to `subject` Attributes:
-
-  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ##### 7.1.2.7.5 Extended Validation
 
