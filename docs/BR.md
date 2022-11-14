@@ -1933,7 +1933,6 @@ Each included Extended Key Usage key usage purpose:
      a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
      b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about the certificate information verified by the CA, such as including a key usage purpose asserting storage on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance.
-  3. MUST NOT be included unless the Certificate conforms to the relevant specification defining the key usage purpose.
 
 CAs MUST NOT include additional key usage purposes unless the CA is aware of a reason for including the key usage purpose in the Certificate.
 
@@ -2108,7 +2107,7 @@ Table: `nameConstraints` requirements
 
 | __Field__                 | __Description__ |
 | --                        | -------         |
-| `permittedSubtrees`       | The `permittedSubtrees` MUST contain at least one `GeneralSubtree` for both of the `dNSName` and `iPAddress` `GeneralName` name types, UNLESS the specified `GeneralName` appears within the `excludedSubtrees` to exclude all names of that name type. Additionally, the `permittedSubtrees` MUST contain at least one `GeneralSubtree` of the `directoryName` `GeneralName` name type. |
+| `permittedSubtrees`       | The `permittedSubtrees` MUST contain at least one `GeneralSubtree` for both of the `dNSName` and `iPAddress` `GeneralName` name types, UNLESS the specified `GeneralName` name type appears within the `excludedSubtrees` to exclude all names of that name type. Additionally, the `permittedSubtrees` MUST contain at least one `GeneralSubtree` of the `directoryName` `GeneralName` name type. |
 | \ \ \ \  `GeneralSubtree` | The requirements for a `GeneralSubtree` that appears within a `permittedSubtrees`. |
 | \ \ \ \ \ \ \ \ `base`    | See following table. |
 | \ \ \ \ \ \ \ \ `minimum` | MUST NOT be present. |
@@ -2262,10 +2261,7 @@ Table: Individual Validated `subject` Attributes
 | `commonName`                   | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
-In addition, the following requirements apply to `subject` Attributes:
-
-  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ##### 7.1.2.7.4 Organization Validated
 
@@ -2300,10 +2296,7 @@ Table: Individual Validated `subject` Attributes
 | `commonName`                   | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
-In addition, the following requirements apply to `subject` Attributes:
-
-  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ##### 7.1.2.7.5 Extended Validation
 
@@ -2316,10 +2309,7 @@ For a Subscriber Certificate to be Extended Validation, it MUST comply with the 
 | `certificatePolicies` | MUST be present. MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.1` as a `policyIdentifier`. See [Section 7.1.2.7.9](#71279-certificate-policies). |
 | All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) and the Guidelines for the Issuance and Management of Extended Validation Certificates. |
 
-In addition, the following requirements apply to `subject` Attributes:
-
-  * `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
-  * `subject` Attributes other than `commonName` MUST NOT include a Domain Name or IP Address.
+In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 ##### 7.1.2.7.6 Subscriber Certificate Extensions
 
@@ -3071,7 +3061,7 @@ Table: Encoding Requirements for Selected Attributes
 | `jurisdictionCountry`    | `1.3.6.1.4.1.311.60.2.1.3` | Guidelines for the Issuance and Management of Extended Validation Certificates | MUST use `PrintableString` | 2 |
 | `jurisdictionStateOrProvince`    | `1.3.6.1.4.1.311.60.2.1.2` | Guidelines for the Issuance and Management of Extended Validation Certificates | MUST use `UTF8String` or `PrintableString` | 128 |
 | `jurisdictionLocality`    | `1.3.6.1.4.1.311.60.2.1.1` | Guidelines for the Issuance and Management of Extended Validation Certificates | MUST use `UTF8String` or `PrintableString` | 128 |
-| `serialNumber`    | `2.5.4.5` | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 64 |
+| `serialNumber`    | `2.5.4.5` | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `PrintableString` | 64 |
 | `organizationIdentifier` | `2.5.4.97` | X.520 | MUST use `UTF8String` or `PrintableString` | None |
 
 [^maxlength]: **Note**: ASN.1 length limits for DirectoryString are expressed as character limits, not byte limits.
