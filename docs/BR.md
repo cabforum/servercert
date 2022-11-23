@@ -2278,7 +2278,7 @@ Table: Domain Validated `subject` Attributes
 | __Attribute Name__       | __Presence__    | __Value__   | __Verification__ |
 | ---                      | -               | ------      | -- |
 | `countryName`            | MAY             | The two-letter ISO 3166-1 country code for the country associated with the Subject. | [Section 3.2.2.3](#3223-verification-of-country) |
-| `commonName`             | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
+| `commonName`             | NOT RECOMMENDED | If present, MUST contain a value derived from the `subjectAltName` extension according to [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute). | |
 | Any other attribute      | MUST NOT        | -           | -                |
 
 ##### 7.1.2.7.3 Individual Validated
@@ -2310,7 +2310,7 @@ Table: Individual Validated `subject` Attributes
 | `organizationalUnitName`       | -               | -           | -           |
 | \ \ \ \ _Prior to 2022-09-01_  | NOT RECOMMENDED | If present, the CA MUST implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information. | [Section 3.2](#32-initial-identity-validation) |
 | \ \ \ \ _Effective 2022-09-01_ | MUST NOT        | -           | -           |
-| `commonName`                   | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
+| `commonName`                   | NOT RECOMMENDED | If present, MUST contain a value derived from the `subjectAltName` extension according to [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute). | |
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
@@ -2345,7 +2345,7 @@ Table: Individual Validated `subject` Attributes
 | \ \ \ \ _Prior to 2022-09-01_  | NOT RECOMMENDED | If present, the CA MUST implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information. | [Section 3.2](#32-initial-identity-validation) |
 | \ \ \ \ _Effective 2022-09-01_ | MUST NOT        | -           | -           |
 | `domainComponent`       | MAY | If present, this field MUST contain a Domain Label from a Domain Name. The `domainComponent` fields for the Domain Name MUST be in a single ordered sequence containing all Domain Labels from the Domain Name. The Domain Labels MUST be encoded in the reverse order to the on-wire representation of domain names in the DNS protocol, so that the Domain Label closest to the root is encoded first. Multiple instances MAY be present. | [Section 3.2]
-| `commonName`                   | NOT RECOMMENDED | If present, MUST contain a single IP address or Fully-Qualified Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension. | |
+| `commonName`                   | NOT RECOMMENDED | If present, MUST contain a value derived from the `subjectAltName` extension according to [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute). | |
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
@@ -2486,7 +2486,7 @@ Table: `GeneralName` within a `subjectAltName` extension
 | ---                         | -             | ------         |
 | `otherName`                 | N             | -              |
 | `rfc822Name`                | N             | -              |
-| `dNSName`                   | Y             | MUST contain the Fully-Qualified Domain Name. The Issuing CA MUST confirm that the Applicant controls or has been granted the right to use the Domain Name through a method specified in [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). As an exception to the requirement of RFC 5280 requirements, Wildcard FQDNs are permitted. All other domain labels MUST be in the "preferred name syntax" and thus MUST NOT contain underscore characters ("\_"). MUST NOT contain an Internal Name. |
+| `dNSName`                   | Y             | The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT contain an Internal Name. The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be composed entirely of P-Labels or Non-Reserved LDH Labels joined together by a U+002E FULL STOP (".") character. The zero-length Domain Label representing the root zone of the Internet Domain Name System MUST NOT be included (e.g. "example.com" MUST be encoded as "example.com" and MUST NOT be encoded as "example.com."). |
 | `x400Address`               | N             | -              |
 | `directoryName`             | N             | -              |
 | `ediPartyName`              | N             | -              |
@@ -3119,7 +3119,15 @@ Table: Encoding Requirements for Selected Attributes
 
 [^maxlength]: **Note**: ASN.1 length limits for DirectoryString are expressed as character limits, not byte limits.
 
-#### 7.1.4.3 Other Subject Attributes
+#### 7.1.4.3 Subscriber Certificate Common Name Attribute
+
+If present, this attribute MUST contain exactly one entry that is one of the values contained in the Certificate's `subjectAltName` extension (see [Section 7.1.4.2.1](#71421-subject-alternative-name-extension)). The value of the field MUST be encoded as follows:
+
+  * If the value is an IPv4 address, then the value MUST be encoded as an IPv4Address as specified in RFC 3986, Section 3.2.2.
+  * If the value is an IPv6 address, then the value MUST be encoded in the text representation specified in RFC 5952, Section 4.
+  * If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, all Domain Labels of the Fully-Qualified Domain Name or FQDN portion of the Wildcard Domain Name must be encoded as LDH Labels, and P-Labels MUST NOT be converted to their Unicode representation.
+
+#### 7.1.4.4 Other Subject Attributes
 
 When explicitly stated as permitted by the relavant certificate profile specified within [Section 7.1.2](#712-certificate-content-and-extensions), CAs MAY include additional attributes within the `AttributeTypeAndValue` beyond those specified in [Section 7.1.4.2](#7142-subject-attribute-encoding).
 
