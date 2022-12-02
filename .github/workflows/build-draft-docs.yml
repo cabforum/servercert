@@ -19,7 +19,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.base.sha || github.event.push.before }}
           path: old/
-      - uses: docker://ghcr.io/cabforum/build-guidelines-action:2.0.2
+      - uses: docker://ghcr.io/cabforum/build-guidelines-action:2.1.0
         id: build_doc
         with:
           markdown_file: docs/${{ matrix.document }}.md
@@ -28,7 +28,7 @@ jobs:
           docx: true
           lint: true
           draft: ${{ !(github.event_name == 'push' && github.repository == 'cabforum/servercert' && github.ref == 'refs/heads/main') }}
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.document }}-${{ github.event.pull_request.head.sha || github.sha }}-${{ github.event_name }}
           path: |
