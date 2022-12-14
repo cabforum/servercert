@@ -1,9 +1,10 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.8.5
+subtitle: Version 1.8.6
 author:
   - CA/Browser Forum
-date: 30 November, 2022  
+date: 14 December, 2022  
+
 copyright: |
   Copyright 2022 CA/Browser Forum
 
@@ -128,6 +129,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.8.3 | SC51 | Reduce and Clarify Log and Records Archival Retention Requirements | 01-Mar-2022 | 15-Apr-2022 |
 | 1.8.4 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 | 1.8.5 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
+| 1.8.6 | SC58 | Require distributionPoint in sharded CRLs | 7-Nov-2022 |	11-Dec-2022 |
+
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -175,6 +178,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2021-12-01 | 3.2.2.4 | CAs MUST NOT use methods 3.2.2.4.6, 3.2.2.4.18, or 3.2.2.4.19 to issue wildcard certificates or with Authorization Domain Names other than the FQDN. |
 | 2022-06-01 | 7.1.3.2.1 | CAs MUST NOT sign OCSP responses using the SHA-1 hash algorithm. |
 | 2022-09-01 | 7.1.4.2.2 | CAs MUST NOT include the organizationalUnitName field in the Subject |
+| 2023-01-15 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
 
 ## 1.3 PKI Participants
 
@@ -2276,6 +2280,10 @@ Prior to including a Reserved Certificate Policy Identifier, the CA MUST ensure 
    If a CRL entry is for a Certificate subject to these Requirements, the `CRLReason` MUST NOT be certificateHold (6).
 
    If a `reasonCode` CRL entry extension is present, the `CRLReason` MUST indicate the most appropriate reason for revocation of the certificate, as defined by the CA within its CP/CPS.
+   
+2. `issuingDistributionPoint` (OID 2.5.29.28)
+
+   Effective 2023-01-15, if a CRL does not contain entries for all revoked unexpired certificates issued by the CRL issuer, then it MUST contain a critical Issuing Distribution Point extension and MUST populate the `distributionPoint` field of that extension.
 
 ## 7.3 OCSP profile
 
