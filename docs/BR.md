@@ -1240,7 +1240,7 @@ The privilegeWithdrawn reasonCode SHOULD NOT be made available to the Subscriber
 
 The CA SHALL revoke a Certificate within 24 hours and use the corresponding CRLReason if one or more of the following occurs:
 
-1. The Subscriber requests in writing that the CA revoke the Certificate (CRLReason "unspecified (0)" which results in no reasonCode extension being provided in the CRL);
+1. The Subscriber requests in writing, without giving a reason, that the CA revoke the Certificate (CRLReason "unspecified (0)" which results in no reasonCode extension being provided in the CRL);
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization (CRLReason #9, privilegeWithdrawn);
 3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise (CRLReason #1, keyCompromise);
 4. The CA is made aware of a demonstrated or proven method that can easily compute the Subscriber's Private Key based on the Public Key in the Certificate (such as a Debian weak key, see <https://wiki.debian.org/SSLkeys>) (CRLReason #1, keyCompromise);
@@ -1257,7 +1257,7 @@ The CA SHOULD revoke a certificate within 24 hours and MUST revoke a Certificate
 7. The CA is made aware that the Certificate was not issued in accordance with these Requirements or the CA's Certificate Policy or Certification Practice Statement (CRLReason #4, superseded);
 8. The CA determines or is made aware that any of the information appearing in the Certificate is inaccurate (CRLReason #9, privilegeWithdrawn);
 9. The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository (CRLReason "unspecified (0)" which results in no reasonCode extension being provided in the CRL);
-10. Revocation, other than what is described in this section 4.9.1.1, is required by the CA's Certificate Policy and/or Certification Practice Statement (CRLReason "unspecified (0)" which results in no reasonCode extension being provided in the CRL); or
+10. Revocation is required by the CA's Certificate Policy and/or Certification Practice Statement for a reason that is not otherwise required to be specified by this section 4.9.1.1 (CRLReason "unspecified (0)" which results in no reasonCode extension being provided in the CRL); or
 11. The CA is made aware of a demonstrated or proven method that exposes the Subscriber's Private Key to compromise or if there is clear evidence that the specific method used to generate the Private Key was flawed (CRLReason #1, keyCompromise).
 
 #### 4.9.1.2 Reasons for Revoking a Subordinate CA Certificate
