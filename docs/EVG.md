@@ -1,9 +1,9 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
-subtitle: Version 1.7.9
+subtitle: Version 1.8.0
 author:
   - CA/Browser Forum
-date: 23 April, 2022
+date: 30 November, 2022
 copyright: |
   Copyright 2022 CA/Browser Forum
 
@@ -11,8 +11,6 @@ copyright: |
 ---
 
 # Introduction
-
-This version 1.7.8 represents the Extended Validation Guidelines, as adopted by the CA/Browser Forum as of Ballot SC48, passed by the Server Certificate Working Group on 22 July 2021, and effective as of 25 August 2021.
 
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
@@ -71,6 +69,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.7 | SC47 | Sunset subject:organizationalUnitName | 30-Jun-2021 | 16-Aug-2021 |
 | 1.7.8 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 | 1.7.9 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
+| 1.8.0 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -79,7 +78,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 |--|--|----------|
 | 2020-01-31 | [9.2.8](#928-subject-organization-identifier-field) | If subject:organizationIdentifier is present, the CA/Browser Forum Organization Identifier Extension MUST be present |
-| 2020-09-01 | [9.4](#94-maximum-validity-period-for-ev-certificate) & [Appendix F](#appendix-f--issuance-of-certificates-for-onion-domain-names) | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
+| 2020-09-01 | [9.4](#94-maximum-validity-period-for-ev-certificate) & Appendix F | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
 | 2020-10-01 | [11.1.3](#1113-disclosure-of-verification-sources) | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
 | 2022-09-01 | [9.2.7](#927-subject-organizational-unit-name-field) | CAs MUST NOT include the organizationalUnitName field in the Subject |
 
@@ -152,10 +151,6 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 **Contract Signer**: A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
 
 **Demand Deposit Account**: A deposit account held at a bank or other financial institution, the funds deposited in which are payable on demand.  The primary purpose of demand accounts is to facilitate cashless payments by means of check, bank draft, direct debit, electronic funds transfer, etc.  Usage varies among countries, but a demand deposit account is commonly known as a share draft account, a current account, or a checking account.
-
-**Enterprise EV Certificate**: An EV Certificate that an Enterprise RA authorizes the CA to issue at third and higher domain levels.
-
-**Enterprise EV RA**: An RA that is authorized by the CA to authorize the CA to issue EV Certificates at third and higher domain levels.
 
 **EV Authority**: A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the EV Certificate Request, to take the Request actions described in these Guidelines.
 
@@ -518,8 +513,7 @@ __Contents__: This field MUST contain the address of the physical location of th
 ### 9.2.7. Subject Organizational Unit Name Field
 
 __Certificate Field__: `subject:organizationalUnitName` (OID: 2.5.4.11)  
-__Required/Optional/Prohibited:__ As stated in Section 7.1.4.2.2 i of the Baseline Requirements. 
-__Contents__: The CA SHALL implement a process that prevents an OU attribute from including a name, DBA, tradename, trademark, address, location, or other text that refers to a specific natural person or Legal Entity unless the CA has verified this information in accordance with [Section 11](#11-verification-requirements). This field MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
+__Required/Optional/Prohibited:__ __Prohibited__. 
 
 ### 9.2.8. Subject Organization Identifier Field
 
@@ -593,8 +587,7 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 
 ## 9.4. Maximum Validity Period For EV Certificate
 
-The Validity Period for an EV Certificate SHALL NOT exceed 825 days.
-Effective 2020-09-01, the Validity Period for an EV Certificate SHALL NOT exceed 398 days.
+The Validity Period for an EV Certificate SHALL NOT exceed 398 days.
 
 It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
 
@@ -679,7 +672,7 @@ CABFOrganizationIdentifier ::= SEQUENCE {
     registrationSchemeIdentifier PrintableString (SIZE(3)),
     registrationCountry          PrintableString (SIZE(2)),
     registrationStateOrProvince  [0] IMPLICIT PrintableString
-                                  OPTIONAL (SIZE(0..128)),
+                                  (SIZE(0..128)) OPTIONAL,
     registrationReference        UTF8String
 }
 ```
@@ -1214,9 +1207,9 @@ The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirem
 
    A.  If the CA has operations in the U.S., the CA MUST take reasonable steps to verify with the following US Government denied lists and regulations:
 
-       i. BIS Denied Persons List - https://www.bis.doc.gov/index.php/the-denied-persons-list
-       ii. BIS Denied Entities List - https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list
-       iii. US Treasury Department List of Specially Designated Nationals and Blocked Persons - https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx
+       i. BIS Denied Persons List - [https://www.bis.doc.gov/index.php/the-denied-persons-list](https://www.bis.doc.gov/index.php/the-denied-persons-list)
+       ii. BIS Denied Entities List - [https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list](https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list)
+       iii. US Treasury Department List of Specially Designated Nationals and Blocked Persons - [https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx](https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx)
        iv. US Government export regulations
 
    B.  If the CA has operations in any other country, the CA MUST take reasonable steps to verify with all equivalent denied lists and export regulations (if any) in such other country.
@@ -1236,8 +1229,6 @@ A CA verifying an Applicant using information of the Applicant's Parent, Subsidi
 
 ## 11.13. Final Cross-Correlation and Due Diligence
 
-Except for Enterprise EV Certificates:
-
 1. The results of the verification processes and procedures outlined in these Guidelines are intended to be viewed both individually and as a group.  Thus, after all of the verification processes and procedures are completed, the CA MUST have a person who is not responsible for the collection of information review all of the information and documentation assembled in support of the EV Certificate application and look for discrepancies or other details requiring further explanation.
 2. The CA MUST obtain and document further explanation or clarification from the Applicant, Certificate Approver, Certificate Requester, Qualified Independent Information Sources, and/or other sources of information, as necessary, to resolve those discrepancies or details that require further explanation.
 3. The CA MUST refrain from issuing an EV Certificate until the entire corpus of information and documentation assembled in support of the EV Certificate Request is such that issuance of the EV Certificate will not communicate factual information that the CA knows, or the exercise of due diligence should discover from the assembled information and documentation, to be inaccurate,.  If satisfactory explanation and/or additional documentation are not received within a reasonable time, the CA MUST decline the EV Certificate Request and SHOULD notify the Applicant accordingly.
@@ -1247,7 +1238,7 @@ Except for Enterprise EV Certificates:
    B.  When the CA has utilized the services of an RA, the CA MAY rely on the language skills of the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with [Section 11.13](#1113-final-cross-correlation-and-due-diligence), Subsections (1), (2) and (3).  Notwithstanding the foregoing, prior to issuing the EV Certificate, the CA MUST review the work completed by the RA and determine that all requirements have been met; or
    C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 17.5](#175-regular-self-audits) and [Section 17.6](#176-auditor-qualification).
 
-   In the case of Enterprise EV Certificates to be issued in compliance with the requirements of [Section 14.2](#142-delegation-of-functions-to-registration-authorities-and-subcontractors), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
+In the case of EV Certificates to be issued in compliance with the requirements of [Section 14.2](#142-delegation-of-functions-to-registration-authorities-and-subcontractors), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
 
 ## 11.14. Requirements for Re-use of Existing Documentation
 
@@ -1295,7 +1286,7 @@ Root CA Private Keys MUST NOT be used to sign EV Certificates.
 
 # 13. Certificate Revocation and Status Checking
 
-The requirements in Section 4.9 of the Baseline Requirements apply equally to EV Certificates.  However, CAs MUST  ensure that CRLs for an EV Certificate chain can be downloaded in no more than three (3) seconds over an analog telephone line under normal network conditions.
+The requirements in Section 4.9 of the Baseline Requirements apply equally to EV Certificates.
 
 # 14. Employee and third party issues
 
@@ -1343,13 +1334,13 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 
 ### 14.2.2. Enterprise RAs
 
-The CA MAY contractually authorize the Subject of a specified Valid EV Certificate to perform the RA function and authorize the CA to issue additional EV Certificates at third and higher domain levels that are contained within the domain of the original EV Certificate (also known as an Enterprise EV Certificate).  In such case, the Subject SHALL be considered an Enterprise RA, and the following requirements SHALL apply:
+The CA MAY contractually authorize a Subscriber to perform the RA function and authorize the CA to issue additional EV Certificates.  In such case, the Subscriber SHALL be considered an Enterprise RA, and the following requirements SHALL apply:
 
-1. An Enterprise RA SHALL NOT authorize the CA to issue an Enterprise EV Certificate at the third or higher domain levels to any Subject other than the Enterprise RA or a business that is owned or directly controlled by the Enterprise RA;
-2. In all cases, the Subject of an Enterprise EV Certificate MUST be an organization verified by the CA in accordance with these Guidelines;
-3. The CA MUST impose these limitations as a contractual requirement with the Enterprise RA and monitor compliance by the Enterprise RA;
-4. The Final Cross-Correlation and Due Diligence requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence) MAY be performed by a single person representing the Enterprise RA; and
-5. The audit requirements of [Section 17.1](#171-eligible-audit-schemes) SHALL apply to the Enterprise RA, except in the case where the CA maintains control over the Root CA Private Key or Subordinate CA Private Key used to issue the Enterprise EV Certificates, in which case, the Enterprise RA MAY be exempted from the audit requirements.
+1. In all cases, the Subscriber MUST be an organization verified by the CA in accordance with these Guidelines;
+2. The CA MUST impose these limitations as a contractual requirement with the Enterprise RA and monitor compliance by the Enterprise RA; and
+3. The Final Cross-Correlation and Due Diligence requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence) MAY be performed by a single person representing the Enterprise RA.
+
+Enterprise RAs that authorize the issuance of EV Certificates solely for its own organization are exempted from the audit requirements of [Section 17.1](#171-eligible-audit-schemes). In all other cases, the requirements of [Section 17.1](#171-eligible-audit-schemes) SHALL apply.
 
 ### 14.2.3. Guidelines Compliance Obligation
 
@@ -1419,7 +1410,7 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 
 # 18. Liability and Indemnification
 
-CAs MAY limit their liability as described in Section 9.8 of the Baseline Requirements except that a CA MAY NOT limit its liability to Subscribers or Relying Parties for legally recognized and provable claims to a monetary amount less than two thousand US dollars per Subscriber or Relying Party per EV Certificate.
+CAs MAY limit their liability as described in Section 9.8 of the Baseline Requirements except that a CA MUST NOT limit its liability to Subscribers or Relying Parties for legally recognized and provable claims to a monetary amount less than two thousand US dollars per Subscriber or Relying Party per EV Certificate.
 
 A CA's indemnification obligations and a Root CA's obligations with respect to subordinate CAs are set forth in Section 9.9 of the Baseline Requirements.
 
