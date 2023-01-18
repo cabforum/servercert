@@ -1293,7 +1293,7 @@ CAs MUST generate and publish either:
 CRLs must be available via a publicly-accessible HTTP URL.
 
 CAs issuing Subscriber Certificates (i.e., Certificates for servers) SHALL:
-- update and reissue CRLs at least once daily; and
+- update and reissue CRLs at least once every 24 hours; and
 - the value of the `nextUpdate` field MUST NOT be more than ten (10) days beyond the value of the `thisUpdate` field.
 
 CAs issuing CA Certificates SHALL:
