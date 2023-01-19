@@ -130,7 +130,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.8.4 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 | 1.8.5 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
 | 1.8.6 | SC58 | Require distributionPoint in sharded CRLs | 7-Nov-2022 |	11-Dec-2022 |
-| 1.8.7 | SC61 | New CRL Entries must have a Revocation Reason Code | x-XXX-2023 | 15-Mar-2023 |
+| 1.8.7 | SC61 | New CRL Entries must have a Revocation Reason Code | x-XXX-2023 | 15-Jul-2023 |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
@@ -180,7 +180,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2022-06-01 | 7.1.3.2.1 | CAs MUST NOT sign OCSP responses using the SHA-1 hash algorithm. |
 | 2022-09-01 | 7.1.4.2.2 | CAs MUST NOT include the organizationalUnitName field in the Subject |
 | 2023-01-15 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
-| 2023-03-15 | 4.9.1.1 | New CRL entries MUST have a revocation reason code  |
+| 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code  |
 
 ## 1.3 PKI Participants
 
