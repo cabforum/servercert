@@ -2283,7 +2283,7 @@ Prior to including a Reserved Certificate Policy Identifier, the CA MUST ensure 
 
    If a `reasonCode` CRL entry extension is present, the `CRLReason` MUST indicate the most appropriate reason for revocation of the Certificate.
    
-    CRLReason MUST be included in the `reasonCode` extension of the CRL entry corresponding to a Certificate that is revoked after March 15, 2023, unless the CRLReason is "unspecified (0)". Revocation reason code entries for Certificates revoked prior to March 15, 2023, do NOT need to be added or changed.
+    CRLReason MUST be included in the `reasonCode` extension of the CRL entry corresponding to a Subscriber Certificate that is revoked after July 15, 2023, unless the CRLReason is "unspecified (0)". Revocation reason code entries for Subscriber Certificates revoked prior to July 15, 2023, do NOT need to be added or changed.
 
 Only the following CRLReasons MAY be present in the CRL `reasonCode` extension for Subscriber Certifificates:
 
