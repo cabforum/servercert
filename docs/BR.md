@@ -2761,7 +2761,7 @@ Table: Policy Restricted
 This Profile RECOMMENDS that the first `PolicyInformation` value within the Certificate Policies extension contains the Reserved Certificate Policy Identifier (see [7.1.6.1](#7161-reserved-certificate-policy-identifiers))[^first_policy_note]. Regardless of the order of `PolicyInformation` values, the Certificate Policies extension MUST contain exactly one Reserved Certificate Policy Identifier.
 
 
-**Note**: policyQualifiers is NOT RECOMMENDED to be present in any Certificate issued under this Profile because this information increases the size of the Certificate without providing any value to a typical Relying Party, and the information may be obtained by other means when necessary.
+**Note**: policyQualifiers is NOT RECOMMENDED to be present in any Certificate issued under this Certificate Profile because this information increases the size of the Certificate without providing any value to a typical Relying Party, and the information may be obtained by other means when necessary.
 
 
 If the `policyQualifiers` is permitted and present within a `PolicyInformation` field, it MUST be formatted as follows:
