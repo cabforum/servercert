@@ -1900,10 +1900,6 @@ The `subject` MUST comply with the requirements of [Section 7.1.4](#714-name-for
 
 ##### 7.1.2.2.3 Cross-Certified Subordinate CA Extensions
 
-The acceptable extensions and the requirements for those extensions in a Cross-Certified Subordinate CA vary based on whether or not the Subordinate CA is issued to and operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA organization.
-
-Table: Extensions when the Subordinate CA is operated by the Issuing CA or an Affiliate of the Issuing CA.
-
 | __Extension__                     | __Presence__    | __Critical__          | __Description__ |
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
@@ -1912,27 +1908,24 @@ Table: Extensions when the Subordinate CA is operated by the Issuing CA or an Af
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
-| `extKeyUsage`                     | SHOULD[^eku_ca] | N                     | See [Section 7.1.2.2.4](#71224-extended-key-usage---unrestricted-affiliated-cross-certified-ca) |
 | `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-authority-information-access) |
 | `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-Table: Extensions when the Subordinate CA is operated by an entity that is not the Issuing CA or an Affiliate of the Issuing CA.
+In addition to the above, the extKeyUsage extension varies based on whether or not the Subordinate CA is issued to and operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA organization.
+
+Table: The extKeyUsage extension when the Subordinate CA is operated by the Issuing CA or an Affiliate of the Issuing CA.
 
 | __Extension__                     | __Presence__    | __Critical__          | __Description__ |
 | ----                              | -               | -                     | ----- |
-| `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
-| `basicConstraints`                | MUST            | Y                     | See [Section 7.1.2.10.4](#712104-basic-constraints) |
-| `certificatePolicies`             | MUST            | N                     | See [Section 7.1.2.10.6](#712105-certificate-policies) |
-| `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-key-usage) |
-| `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
+| `extKeyUsage`                     | SHOULD[^eku_ca] | N                     | See [Section 7.1.2.2.4](#71224-extended-key-usage---unrestricted-affiliated-cross-certified-ca) |
+
+Table: The extKeyUsage extension when the Subordinate CA is operated by an entity that is not the Issuing CA or an Affiliate of the Issuing CA.
+
+| __Extension__                     | __Presence__    | __Critical__          | __Description__ |
+| ----                              | -               | -                     | ----- |
 | `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.2.5](#71225-extended-key-usage---restricted-cross-certified-ca) |
-| `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-authority-information-access) |
-| `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-name-constraints) |
-| Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
-| Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 [^eku_ca]: While [RFC 5280, Section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.13) notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of CA Certificates, as implemented by a number of Application Software Suppliers.
 
