@@ -309,7 +309,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Country**: Either a member of the United Nations OR a geographic region recognized as a Sovereign State by at least two UN member nations.
 
-**Cross-Certified Subordinate CA Certificate**: A certificate that is used to establish a trust relationship between two Root CAs.
+**Cross-Certified Subordinate CA Certificate**: A certificate that is used to establish a trust relationship between two CAs.
 
 **CSPRNG**: A random number generator intended for use in a cryptographic system.
 
