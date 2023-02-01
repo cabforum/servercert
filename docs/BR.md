@@ -2854,33 +2854,17 @@ This section contains several fields that are common among multiple certificate 
 
 ##### 7.1.2.11.2 CRL Distribution Points
 
-If present, the CRL Distribution Points extension MUST be formatted as follows:
+If present, the CRL Distribution Points extension MUST contain at least one `DistributionPoint`; containing more than one is NOT RECOMMENDED. All `DistributionPoint` items must be formatted as follows:
 
-Table: `CRLDistributionPoints` profile
+Table: `DistributionPoint` profile
 
-| __Field__               | __Presence__    | __Description__ |
-| ---                     | --              | ------          |
-| `CRLDistributionPoints` |                 |                 |
-|   **1**                 | MUST            | The first `DistributionPoint` present in the `CRLDistributionPoints` |
-|     `distributionPoint` | MUST            | The `DistributionPointName` MUST be a `fullName` formatted as described below. |
-|     `reasons`           | MUST NOT        |                 |
-|     `cRLIssuer`         | MUST NOT        |                 |
-|   **2+**                | NOT RECOMMENDED | Additional `DistributionPoint`s are NOT RECOMMENDED. |
-|     `distributionPoint` | MUST            | The `DistributionPointName` MUST be a `fullName` formatted as described below. |
-|     `reasons`           | MUST NOT        |                 |
-|     `cRLIssuer`         | MUST NOT        |                 |
-|   **3**                 | MUST NOT        | `DistributionPoints` that do not conform to the above requirements MUST NOT be present. |
+| __Field__           | __Presence__    | __Description__ |
+| ---                 | --              | ------          |
+| `distributionPoint` | MUST            | The `DistributionPointName` MUST be a `fullName` formatted as described below. |
+| `reasons`           | MUST NOT        |                 |
+| `cRLIssuer`         | MUST NOT        |                 |
 
-Table: `fullName` profile
-
-| __Field__                       | __Presence__ | __Description__ |
-| ---                             | -            | -----           |
-| `fullName`                      |              |                 |
-|   **1**                         | MUST         | The first `GeneralName` present in `fullName` MUST be of type `uniformResourceIdentifier` |
-|     `uniformResourceIdentifier` | MUST         | The HTTP URL of the Issuing CA's CRL service for this certificate. |
-|   **2+**                        | MAY          | Additional `GeneralName`s MAY be present. If present, they MUST be of type `uniformResourceIdentifier`. |
-|     `uniformResourceIdentifier` | MUST         | If present, the scheme of the `uniformResourceIdentifier` MUST be "http". |
-|   **3**                         | MUST NOT     | `GeneralName`s that do not conform to the above requirements MUST NOT be present. |
+A `fullName` MUST contain at least one `GeneralName`; it MAY contain more than one. All `GeneralName`s MUST be of type `uniformResourceIdentifier`, and the scheme of each MUST be "http". The first `GeneralName` must contain the HTTP URL of the Issuing CA's CRL service for this certificate.
 
 ##### 7.1.2.11.3 Signed Certificate Timestamp List
 
