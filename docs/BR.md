@@ -1848,7 +1848,7 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-##### 7.1.2.1.3 Authority Key Identifier
+##### 7.1.2.1.3 Root CA Authority Key Identifier
 
 | __Field__                   | __Description__ |
 | ---                         | ------- |
@@ -1856,7 +1856,7 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 | `authorityCertIssuer`       | MUST NOT be present |
 | `authorityCertSerialNumber` | MUST NOT be present |
 
-##### 7.1.2.1.4 Basic Constraints
+##### 7.1.2.1.4 Root CA Basic Constraints
 
 | __Field__           | __Description__ |
 | ---                 | ------- |
@@ -1938,7 +1938,7 @@ Table: Extensions when the Subordinate CA is operated by an entity that is not t
 
 [^name_constraints]: See [Section 7.1.2.10.8](#712108-name-constraints) for further requirements, including regarding criticality of this extension.
 
-##### 7.1.2.2.4 Extended Key Usage - Unrestricted Affiliated Cross-Certified CA
+##### 7.1.2.2.4 Cross-Certified Subordinate CA Extended Key Usage - Unrestricted Affiliated
 
 When the Cross-Certified Subordinate CA is issued to and operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA, the Extended Key Usage extension MAY be encoded as follows:
 
@@ -1951,7 +1951,7 @@ Table: Unrestricted Extended Key Usage (Affiliated Cross-Certified CA)
 
 Alternatively, if the Issuing CA does not use this form, then the Extended Key Usage extension MUST be encoded as specified in [Section 7.1.2.2.5, Extended Key Usage - Restricted Cross-Certified CA](#71225-extended-key-usage---restricted-cross-certified-ca).
 
-##### 7.1.2.2.5 Extended Key Usage - Restricted Cross-Certified CA
+##### 7.1.2.2.5 Cross-Certified Subordinate CA Extended Key Usage - Restricted
 
 If present, the Extended Key Usage extension MUST only contain key usage purposes for which the Issuing CA has verified the Cross-Certified Subordinate CA is authorized to assert.
 
@@ -2000,7 +2000,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-##### 7.1.2.3.2 Certificate Policies
+##### 7.1.2.3.2 Technically Constrained Non-TLS Subordinate CA Certificate Policies
 
 If present, the Certificate Policies extension MUST be formatted as one of the two tables below:
 
@@ -2032,7 +2032,7 @@ Table: Permitted `policyQualifiers`
 | Any other qualifier                  | MUST NOT     | -              | -             |
 
 
-##### 7.1.2.3.3 Extended Key Usage
+##### 7.1.2.3.3 Technically Constrained Non-TLS Subordinate CA Extended Key Usage
 
 The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to issue certificates for each included extended key usage purpose. Multiple, independent key purposes (e.g. `id-kp-timeStamping` and `id-kp-codeSigning`) are NOT RECOMMENDED.
 
@@ -2084,7 +2084,7 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-##### 7.1.2.4.2 Extended Key Usage
+##### 7.1.2.4.2 Technically Constrained Precertificate Signing CA Extended Key Usage
 
 | __Key Purpose__                    | __OID__                 | __Presence__  |
 | ----                               | ----                    | -             |
@@ -2127,7 +2127,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-##### 7.1.2.5.2 Name Constraints
+##### 7.1.2.5.2 Technically Constrained TLS Subordinate CA Name Constraints
 
 For a TLS Subordinate CA to be Technically Constrained, Name Constraints extension MUST be encoded as follows. As an explicit exception from RFC 5280, this extension SHOULD be marked critical, but MAY be marked non-critical if compatability with certain legacy applications that do not support Name Constraints is necessary.
 
@@ -2352,7 +2352,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-##### 7.1.2.7.7 Authority Information Access
+##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
 The `AuthorityInformationAccessSyntax` MUST contain one or more `AccessDescription`s. Each `AccessDescription` MUST only contain a permitted `accessMethod`, as detailed below, and each `accessLocation` MUST be encoded as the specified `GeneralName` type.
 
@@ -2364,14 +2364,14 @@ The `AuthorityInformationAccessSyntax` MAY contain multiple `AccessDescription`s
 | `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*         | A HTTP URL of the Issuing CA's certificate. |
 | Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
 
-##### 7.1.2.7.8 Basic Constraints
+##### 7.1.2.7.8 Subscriber Certificate Basic Constraints
 
 | __Field__           | __Description__ |
 | ---                 | ------- |
 | `cA`                | MUST be FALSE |
 | `pathLenConstraint` | MUST NOT be present |
 
-##### 7.1.2.7.9 Certificate Policies
+##### 7.1.2.7.9 Subscriber Certificate Certificate Policies
 
 If present, the Certificate Policies extension MUST contain at least one `PolicyInformation`. Each `PolicyInformation` MUST match the following profile:
 
@@ -2396,7 +2396,7 @@ Table: Permitted `policyQualifiers`
 
 [^first_policy_note]: Although RFC 5280 allows `PolicyInformation`s to appear in any order, several client implementations have implemented logic that considers the `policyIdentifier` that matches a given filter. As such, ensuring the Reserved Certificate Policy Identifier is the first `PolicyInformation` reduces the risk of interoperability challenges.
 
-##### 7.1.2.7.10 Extended Key Usage
+##### 7.1.2.7.10 Subscriber Certificate Extended Key Usage
 
 | __Key Purpose__                    | __OID__                 | __Presence__    |
 | ----                               | ----                    | -               |
@@ -2410,7 +2410,7 @@ Table: Permitted `policyQualifiers`
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT        |
 | Any other value                    | -                       | NOT RECOMMENDED |
 
-##### 7.1.2.7.11 Key Usage
+##### 7.1.2.7.11 Subscriber Certificate Key Usage
 
 The acceptable Key Usage values vary based on whether the Certificate's `subjectPublicKeyInfo` identifies an RSA public key or an ECC public key. CAs MUST ensure the Key Usage is appropriate for the Certificate Public Key.
 
@@ -2446,7 +2446,7 @@ Table: Key Usage for ECC Public Keys
 
 **Note**: The `keyAgreement` bit is currently permitted, although setting it is NOT RECOMMENDED, as it is a Pending Prohibition (https://github.com/cabforum/servercert/issues/384).
 
-##### 7.1.2.7.12 Subject Alternative Name
+##### 7.1.2.7.12 Subscriber Certificate Subject Alternative Name
 
 For Subscriber Certificates, the Subject Alternative Name MUST be present and MUST contain at least one `dNSName` or `iPAddress` `GeneralName`. See below for further requirements about the permitted fields and their validation requirements.
 
@@ -2511,7 +2511,7 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-##### 7.1.2.8.3 Authority Information Access
+##### 7.1.2.8.3 OCSP Responder Authority Information Access
 
 For OCSP Responder certificates, this extension is NOT RECOMMENDED, as the Relying Party should already possess the necessary information. In order to validate the given Responder certificate, the Relying Party must have access to the Issuing CA's certificate, eliminating the need to provide `id-ad-caIssuers`. Similarly, because of the requirement for an OCSP Responder certificate to include the `id-pkix-ocsp-nocheck` extension, it is not necessary to provide `id-ad-ocsp`, as such responses will not be checked by Relying Parties.
 
@@ -2522,7 +2522,7 @@ If present, the `AuthorityInformationAccesssSyntax` MUST contain one or more `Ac
 | `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | NOT RECOMMENDED | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
 | Any other value   | -                  | -                           | MUST NOT        | -          | No other `accessMethod`s may be used. |
 
-##### 7.1.2.8.4 Basic Constraints
+##### 7.1.2.8.4 OCSP Responder Basic Constraints
 
 OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE.
 
@@ -2533,20 +2533,20 @@ OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indi
 
 **Note**: CAs MUST observe DER encoding rules, such as not explicitly encoding DEFAULT values within OPTIONAL fields.
 
-##### 7.1.2.8.5 Extended Key Usage
+##### 7.1.2.8.5 OCSP Responder Extended Key Usage
 
 | __Key Purpose__                    | __OID__                 | __Presence__ |
 | ----                               | ----                    | -            |
 | `id-kp-OCSPSigning`                | 1.3.6.1.5.5.7.3.9       | MUST         |
 | Any other value                    | -                       | MUST NOT     |
 
-##### 7.1.2.8.6 id-pkix-ocsp-nocheck
+##### 7.1.2.8.6 OCSP Responder id-pkix-ocsp-nocheck
 
 The CA MUST include the `id-pkix-ocsp-nocheck` extension (OID: 1.3.6.1.5.5.7.48.1.5).
 
 This extension MUST be encoded as a single ASN.1 NULL, as specified in [RFC 6960, Section 4.2.2.2.1](https://tools.ietf.org/html/rfc6960#section-4.2.2.2.1).
 
-##### 7.1.2.8.7 Key Usage
+##### 7.1.2.8.7 OCSP Responder Key Usage
 
 | __Key Usage__      | __Permitted__ | __Required__     |
 | ----               | -             | -                |
@@ -2560,7 +2560,7 @@ This extension MUST be encoded as a single ASN.1 NULL, as specified in [RFC 6960
 | `encipherOnly`     | N             | --               |
 | `decipherOnly`     | N             | --               |
 
-##### 7.1.2.8.8 Certificate Policies
+##### 7.1.2.8.8 OCSP Responder Certificate Policies
 
 If present, the Certificate Policies extension MUST contain at least one `PolicyInformation`. Each `PolicyInformation` MUST match the following profile:
 
@@ -2637,7 +2637,7 @@ Table: When the Precertificate is issued by a Precertificate Signing CA on behal
 
 **Note**: This profile requires that the `serialNumber` field of the Precertificate be identical to that of the corresponding Certificate. [RFC 5280, Section 4.1.2.2](https://tools.ietf.org/doc/html/rfc5280#section-4.1.2.2) requires that the `serialNumber` of certificates be unique. For the purposes of this document, a Precertificate shall not be considered a "certificate" subject to that requirement, and thus may have the same `serialNumber` of the corresponding Certificate. However, this does not permit two Precertificates to share the same `serialNumber`, unless they are byte-for-byte identical, as this would otherwise indicate there are corresponding Certificates that share the same `serialNumber`.
 
-##### 7.1.2.9.1 Directly Issued Precertificate Profile Extensions
+##### 7.1.2.9.1 Precertificate Profile Extensions - Directly Issued
 
 These extensions apply in the context of a Precertificate directly issued from a CA, and not from a Precertificate Signing CA Certificate, as defined in [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile).
 
@@ -2649,7 +2649,7 @@ These extensions apply in the context of a Precertificate directly issued from a
 
 **Note**: This requirement is expressing that if the Precertificate Poison extension is removed from the Precertificate, and the Signed Certificate Timestamp List is removed from the certificate, the contents of the `extensions` field MUST be byte-for-byte identical to the Certificate.
 
-##### 7.1.2.9.2 Precertificate CA Issued Precertificate Profile Extensions
+##### 7.1.2.9.2 Precertificate Profile Extensions - Precertificate CA Issued
 
 These extensions apply in the context of a Precertificate from a Precertificate Signing CA Certificate, as defined in [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile). For such Precertificates, the `authorityKeyIdentifier`, if present in the Certificate, is modified in the Precertificate, as described in [RFC 6962, Section 3.2](https://tools.ietf.org/doc/html/rfc6962#section-3.2).
 
@@ -2664,7 +2664,7 @@ These extensions apply in the context of a Precertificate from a Precertificate 
 
 The Precertificate Poison extension is identified by the OID 1.3.6.1.4.1.11129.2.4.3. The contents of the extension's `extnValue` `OCTET STRING` MUST be byte-for-byte identical with the following hex-encoded bytes, `0500`, representing the encoded representation of a zero-length ASN.1 `NULL` value, as specified in [RFC 6962, Section 3.1](https://tools.ietf.org/doc/html/rfc6962#section-3.1).
 
-##### 7.1.2.9.4 Authority Key Identifier
+##### 7.1.2.9.4 Precertificate Authority Key Identifier
 
 For Precertificates issued by a Precertificate Signing CA, the contents of the `authorityKeyIdentifier` extension MUST be one of the following:
 
@@ -2710,7 +2710,7 @@ The following table details the acceptable `AttributeType`s that may appear with
 | `commonName`             | MUST            | The contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate. | |
 | Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-other-subject-attributes) |
 
-##### 7.1.2.10.3 Authority Information Access
+##### 7.1.2.10.3 CA Certificate Authority Information Access
 
 If present, the `AuthorityInformationAccessSyntax` MUST contain one or more `AccessDescription`s. Each `AccessDescription` MUST only contain a permitted `accessMethod`, as detailed below, and each `accessLocation` MUST be encoded as the specified `GeneralName` type.
 
@@ -2722,14 +2722,14 @@ The `AuthorityInformationAccessSyntax` MAY contain multiple `AccessDescription`s
 | `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's certificate. |
 | Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
 
-##### 7.1.2.10.4 Basic Constraints
+##### 7.1.2.10.4 CA Certificate Basic Constraints
 
 | __Field__           | __Description__ |
 | ---                 | ------- |
 | `cA`                | MUST be set TRUE |
 | `pathLenConstraint` | MAY be present |
 
-##### 7.1.2.10.5 Certificate Policies
+##### 7.1.2.10.5 CA Certificate Certificate Policies
 
 If present, the Certificate Policies extension MUST contain at least one `PolicyInformation`. Each `PolicyInformation` MUST match the following profile:
 
@@ -2770,7 +2770,7 @@ Table: Permitted `policyQualifiers`
 | `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
 | Any other qualifier                  | MUST NOT     | -              | -             |
 
-##### 7.1.2.10.6 Extended Key Usage
+##### 7.1.2.10.6 CA Certificate Extended Key Usage
 
 | __Key Purpose__                    | __OID__                 | __Presence__    |
 | ----                               | ----                    | -               |
@@ -2784,7 +2784,7 @@ Table: Permitted `policyQualifiers`
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT        |
 | Any other value                    | -                       | NOT RECOMMENDED |
 
-##### 7.1.2.10.7 Key Usage
+##### 7.1.2.10.7 CA Certificate Key Usage
 
 | __Key Usage__      | __Permitted__ | __Required__     |
 | ----               | -             | -                |
@@ -2800,7 +2800,7 @@ Table: Permitted `policyQualifiers`
 
 [^ocsp_signing]: If a CA Certificate does not assert the `digitalSignature` bit, the CA Private Key MUST NOT be used to sign an OCSP Response. See [Section 7.3](#73-ocsp-profile) for more information.
 
-##### 7.1.2.10.8 Name Constraints
+##### 7.1.2.10.8 CA Certificate Name Constraints
 
 If present, the Name Constraints extension MUST be encoded as follows. As an explicit exception from RFC 5280, this extension SHOULD be marked critical, but MAY be marked non-critical if compatability with certain legacy applications that do not support Name Constraints is necessary.
 
