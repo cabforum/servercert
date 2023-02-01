@@ -2458,7 +2458,7 @@ Table: `GeneralName` within a `subjectAltName` extension
 | `directoryName`             | N             | -              |
 | `ediPartyName`              | N             | -              |
 | `uniformResourceIdentifier` | N             | -              |
-| `iPAddress`                 | Y             | MUST contain the IPv4 or IPv6 address that the CA has confirmed the Applicant controls or has been granted the right to use through a method specified in [Section 3.2.2.5](#3225-authentication-for-an-ip-address). MUST NOT contain a Reserved IP Address. |
+| `iPAddress`                 | Y             | The entry MUST contain the IPv4 or IPv6 address that the CA has confirmed the Applicant controls or has been granted the right to use through a method specified in [Section 3.2.2.5](#3225-authentication-for-an-ip-address). The entry MUST NOT contain a Reserved IP Address. |
 | `registeredID`              | N             | -              |
 
 #### 7.1.2.8 OCSP Responder Certificate Profile
