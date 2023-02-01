@@ -2336,7 +2336,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `authorityKeyIdentifier`          | MUST            | N            | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `certificatePolicies`             | MUST            | N            | See [Section 7.1.2.7.9](#71279-certificate-policies) |
 | `extKeyUsage`                     | MUST            | N            | See [Section 7.1.2.7.10](#712710-extended-key-usage) |
-| `subjectAltName`                  | MUST            | -            | See [Section 7.1.2.7.12](#712712-subject-alternative-name) |
+| `subjectAltName`                  | MUST            | *            | See [Section 7.1.2.7.12](#712712-subject-alternative-name) |
 | `nameConstraints`                 | MUST NOT        | -            | - |
 | `keyUsage`                        | SHOULD          | Y            | See [Section 7.1.2.7.11](#712711-key-usage) |
 | `basicConstraints`                | MAY             | Y            | See [Section 7.1.2.7.8](#71278-basic-constraints) |
@@ -2344,6 +2344,8 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
+
+**Note**: whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subject-alternative-name).
 
 ##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
