@@ -2526,7 +2526,7 @@ OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indi
 | `cA`                | MUST be FALSE |
 | `pathLenConstraint` | MUST NOT be present |
 
-**Note**: CAs MUST observe DER encoding rules, such as not explicitly encoding DEFAULT values within OPTIONAL fields.
+**Note**: Due to DER encoding rules regarding the encoding of DEFAULT values within OPTIONAL fields, a `basicConstraints` extension that sets the `cA` boolean to FALSE MUST have an `extnValue` `OCTET STRING` which is exactly the hex-encoded bytes `0500`, the encoded representation of the ASN.1 `NULL` value.
 
 ##### 7.1.2.8.5 OCSP Responder Extended Key Usage
 
@@ -2539,7 +2539,7 @@ OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indi
 
 The CA MUST include the `id-pkix-ocsp-nocheck` extension (OID: 1.3.6.1.5.5.7.48.1.5).
 
-This extension MUST be encoded as a single ASN.1 NULL, as specified in [RFC 6960, Section 4.2.2.2.1](https://tools.ietf.org/html/rfc6960#section-4.2.2.2.1).
+This extension MUST have an `extnValue` `OCTET STRING` which is exactly the hex-encoded bytes `0500`, the encoded representation of the ASN.1 NULL value, as specified in [RFC 6960, Section 4.2.2.2.1](https://tools.ietf.org/html/rfc6960#section-4.2.2.2.1).
 
 ##### 7.1.2.8.7 OCSP Responder Key Usage
 
@@ -2657,7 +2657,9 @@ These extensions apply in the context of a Precertificate from a Precertificate 
 
 ##### 7.1.2.9.3 Precertificate Poison
 
-The Precertificate Poison extension is identified by the OID 1.3.6.1.4.1.11129.2.4.3. The contents of the extension's `extnValue` `OCTET STRING` MUST be byte-for-byte identical with the following hex-encoded bytes, `0500`, representing the encoded representation of a zero-length ASN.1 `NULL` value, as specified in [RFC 6962, Section 3.1](https://tools.ietf.org/doc/html/rfc6962#section-3.1).
+The Precertificate MUST contain the Precertificate Poison extension (OID: 1.3.6.1.4.1.11129.2.4.3).
+
+This extension MUST have an `extnValue` `OCTET STRING` which is exactly the hex-encoded bytes `0500`, the encoded representation of the ASN.1 NULL value, as specified in [RFC 6962, Section 3.1](https://tools.ietf.org/doc/html/rfc6962#section-3.1).
 
 ##### 7.1.2.9.4 Precertificate Authority Key Identifier
 
