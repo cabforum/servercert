@@ -1913,40 +1913,64 @@ The `subject` MUST comply with the requirements of [Section 7.1.4](#714-name-for
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-In addition to the above, the extKeyUsage extension varies based on whether or not the Subordinate CA is issued to and operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA organization.
+In addition to the above, extKeyUsage extension requirements vary based on the relationship between the Issuer and Subject organizations represented in the Cross-Certificate.
 
-Table: The extKeyUsage extension when the Subordinate CA is operated by the Issuing CA or an Affiliate of the Issuing CA.
+The extKeyUsage extension MAY be "unrestricted" as described in the following table if:
+- the organizationName represented in the Issuer and Subject names of the corresponding certificate are either:
+   - the same, or
+   - the organizationName represented in the Subject name is an affiliate of the organizationName represented in the Issuer name
+- the corresponding CA represented by the Subject of the Cross-Certificate is operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA organization. 
+
+Table: Cross-Certified Subordinate CA with Unrestricted EKU
 
 | __Extension__                     | __Presence__    | __Critical__          | __Description__ |
 | ----                              | -               | -                     | ----- |
-| `extKeyUsage`                     | SHOULD[^eku_ca] | N                     | See [Section 7.1.2.2.4](#71224-extended-key-usage---unrestricted-affiliated-cross-certified-ca) |
+| `extKeyUsage`                     | SHOULD[^eku_ca] | N                     | See [Section 7.1.2.2.4](#71224-cross-certified-subordinate-ca-extended-key-usage---unrestricted) |
 
-Table: The extKeyUsage extension when the Subordinate CA is operated by an entity that is not the Issuing CA or an Affiliate of the Issuing CA.
+In all other cases, the extKeyUsage extension MUST be "restricted" as described in the following table:
+
+Table: Cross-Certified Subordinate CA with Restricted EKU
 
 | __Extension__                     | __Presence__    | __Critical__          | __Description__ |
 | ----                              | -               | -                     | ----- |
-| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.2.5](#71225-extended-key-usage---restricted-cross-certified-ca) |
+| `extKeyUsage`                     | MUST[^eku_ca]   | N                     | See [Section 7.1.2.2.5](#71225-cross-certified-subordinate-ca-extended-key-usage---restricted) |
 
 [^eku_ca]: While [RFC 5280, Section 4.2.1.12](https://tools.ietf.org/html/rfc5280#section-4.2.1.13) notes that this extension will generally only appear within end-entity certificates, these Requirements make use of this extension to further protect relying parties by limiting the scope of CA Certificates, as implemented by a number of Application Software Suppliers.
 
 [^name_constraints]: See [Section 7.1.2.10.8](#712108-name-constraints) for further requirements, including regarding criticality of this extension.
 
-##### 7.1.2.2.4 Cross-Certified Subordinate CA Extended Key Usage - Unrestricted Affiliated
+##### 7.1.2.2.4 Cross-Certified Subordinate CA Extended Key Usage - Unrestricted
 
-When the Cross-Certified Subordinate CA is issued to and operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA, the Extended Key Usage extension MAY be encoded as follows:
-
-Table: Unrestricted Extended Key Usage (Affiliated Cross-Certified CA)
+Table: Unrestricted Extended Key Usage Purposes (Affiliated Cross-Certified CA)
 
 | __Key Purpose__        | __Description__ |
 | ---                    | -------         |
 | `anyExtendedKeyUsage`  | The special extended key usage to indicate there are no restrictions applied. If present, this MUST be the only key usage present. |
 | Any other value        | CAs MUST NOT include any other key usage with the `anyExtendedKeyUsage` key usage present. |
 
-Alternatively, if the Issuing CA does not use this form, then the Extended Key Usage extension MUST be encoded as specified in [Section 7.1.2.2.5, Extended Key Usage - Restricted Cross-Certified CA](#71225-extended-key-usage---restricted-cross-certified-ca).
+Alternatively, if the Issuing CA does not use this form, then the Extended Key Usage extension, if present, MUST be encoded as specified in [Section 7.1.2.2.5](#71225-cross-certified-subordinate-ca-extended-key-usage---restricted).
 
 ##### 7.1.2.2.5 Cross-Certified Subordinate CA Extended Key Usage - Restricted
 
-If present, the Extended Key Usage extension MUST only contain key usage purposes for which the Issuing CA has verified the Cross-Certified Subordinate CA is authorized to assert.
+Table: Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs issuing TLS certificates directly or transitively)
+
+| __Key Purpose__        | __Description__ |
+| ---                    | -------         |
+| `id-kp-serverAuth`     | MUST be present.|
+| `id-kp-clientAuth`     | MAY be present.|
+| `id-kp-emailProtection`| MUST NOT be present.|
+| `id-kp-codeSigning`    | MUST NOT be present.|
+| `id-kp-timeStamping`   | MUST NOT be present.|
+| `anyExtendedKeyUsage`  | MUST NOT be present.|
+| Any other value        | NOT RECOMMENDED.|
+
+Table: Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs not issuing TLS certificates directly or transitively)
+
+| __Key Purpose__        | __Description__ |
+| ---                    | -------         |
+| `id-kp-serverAuth`     | MUST NOT be present.|
+| `anyExtendedKeyUsage`  | MUST NOT be present.|
+| Any other value        | MAY be present.|
 
 Each included Extended Key Usage key usage purpose:
 
@@ -1954,6 +1978,7 @@ Each included Extended Key Usage key usage purpose:
      a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
      b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
   2. MUST NOT include semantics that will mislead the Relying Party about the certificate information verified by the CA, such as including a key usage purpose asserting storage on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance.
+  3. MUST be verified by the Issuing CA (i.e. the Issuing CA MUST verify the Cross-Certified Subordinate CA is authorized to assert the key usage purpose).
 
 CAs MUST NOT include additional key usage purposes unless the CA is aware of a reason for including the key usage purpose in the Certificate.
 
