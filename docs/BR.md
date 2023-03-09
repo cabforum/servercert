@@ -3,7 +3,7 @@ title: Baseline Requirements for the Issuance and Management of Publicly-Trusted
 subtitle: Version 1.8.7
 author:
   - CA/Browser Forum
-date: XX XXX, 2023  
+date: 2 March, 2023  
 
 copyright: |
   Copyright 2023 CA/Browser Forum
@@ -130,7 +130,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.8.4 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 | 1.8.5 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
 | 1.8.6 | SC58 | Require distributionPoint in sharded CRLs | 7-Nov-2022 |	11-Dec-2022 |
-| 1.8.7 | SC61 | New CRL Entries must have a Revocation Reason Code | x-XXX-2023 | 15-Jul-2023 |
+| 1.8.7 | SC61 | New CRL Entries must have a Revocation Reason Code | 2-March-2023 | 15-Jul-2023 |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
