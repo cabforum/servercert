@@ -3332,7 +3332,7 @@ The Certificate Warranties specifically include, but are not limited to, the fol
    ii. followed the procedure when issuing the Certificate; and
    iii. accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
 4. **Identity of Applicant**: That, if the Certificate contains Subject Identity Information, the CA
-  i. implemented a procedure to verify the identity of the Applicant in accordance with [Section 3.2](#32-initial-identity-validation) and [Section 7.1.2](#712-certificate-content-and-extensions);
+   i. implemented a procedure to verify the identity of the Applicant in accordance with [Section 3.2](#32-initial-identity-validation) and [Section 7.1.2](#712-certificate-content-and-extensions);
    ii. followed the procedure when issuing the Certificate; and
    iii. accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
 5. **Subscriber Agreement**: That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative acknowledged the Terms of Use;
