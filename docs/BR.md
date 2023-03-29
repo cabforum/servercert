@@ -2307,7 +2307,7 @@ Table: Individual Validated `subject` Attributes
 | `givenName`                    | MUST            | The Subject's given name. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `organizationalUnitName`       | MUST NOT        | -           | -           |
 | `commonName`                   | NOT RECOMMENDED | If present, MUST contain a value derived from the `subjectAltName` extension according to [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute). | |
-| Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute) |
+| Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.4](#7144-other-subject-attributes) |
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
@@ -2340,7 +2340,7 @@ Table: Organization Validated `subject` Attributes
 | `givenName`                    | MUST NOT        | -           | -           |
 | `organizationalUnitName`       | MUST NOT        | -           | -           |
 | `commonName`                   | NOT RECOMMENDED | If present, MUST contain a value derived from the `subjectAltName` extension according to [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute). | |
-| Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute) |
+| Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.4](#7144-other-subject-attributes) |
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
@@ -2734,7 +2734,7 @@ The following table details the acceptable `AttributeType`s that may appear with
 | `organizationName`       | MUST            | The CA's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
 | `organizationalUnitName`  | This attribute MUST NOT be included in Root CA Certificates defined in [Section 7.1.2.1](#7121-root-ca-certificate-profile) or TLS Subordinate CA Certificates defined in [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile) or Technically-Constrained TLS Subordinate CA Certificates defined in [Section 7.1.2.6](#7126-tls-subordinate-ca-certificate-profile). This attribute SHOULD NOT be included in other types of CA Certificates. | -           | -           |
 | `commonName`             | MUST            | The contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate. | |
-| Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute) |
+| Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.4](#7144-other-subject-attributes) |
 
 ##### 7.1.2.10.3 CA Certificate Authority Information Access
 
