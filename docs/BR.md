@@ -182,7 +182,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2022-09-01 | 7.1.4.2.2 | CAs MUST NOT include the organizationalUnitName field in the Subject |
 | 2023-01-15 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
 | 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code |
-| 2023-09-15 | Section 7 (and others) | Certificate Profiles Update |
+| 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 1.8.8 |
 
 ## 1.3 PKI Participants
 
