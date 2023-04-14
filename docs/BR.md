@@ -1,6 +1,6 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 1.8.8
+subtitle: Version 2.0.0
 author:
   - CA/Browser Forum
 date: 11 April, 2023  
@@ -131,7 +131,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.8.5 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
 | 1.8.6 | SC58 | Require distributionPoint in sharded CRLs | 7-Nov-2022 |	11-Dec-2022 |
 | 1.8.7 | SC61  | New CRL entries must have a Revocation Reason Code | 1-Apr-2023 | 15-Jul-2023 |
-| 1.8.8 | SC62  | Certificate Profiles Update | 22-Apr-2023 | 15-Sep-2023 |
+| 2.0.0 | SC62  | Certificate Profiles Update | 22-Apr-2023 | 15-Sep-2023 |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
@@ -182,7 +182,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2022-09-01 | 7.1.4.2.2 | CAs MUST NOT include the organizationalUnitName field in the Subject |
 | 2023-01-15 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
 | 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code |
-| 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 1.8.8 |
+| 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0 |
 
 ## 1.3 PKI Participants
 
@@ -2151,7 +2151,7 @@ This Certificate Profile MAY be used when issuing a CA Certificate that will be 
 
 ##### 7.1.2.5.2 Technically Constrained TLS Subordinate CA Name Constraints
 
-For a TLS Subordinate CA to be Technically Constrained, Name Constraints extension MUST be encoded as follows. As an explicit exception from RFC 5280, this extension SHOULD be marked critical, but MAY be marked non-critical if compatability with certain legacy applications that do not support Name Constraints is necessary.
+For a TLS Subordinate CA to be Technically Constrained, Name Constraints extension MUST be encoded as follows. As an explicit exception from RFC 5280, this extension SHOULD be marked critical, but MAY be marked non-critical if compatibility with certain legacy applications that do not support Name Constraints is necessary.
 
 Table: `nameConstraints` requirements
 
@@ -2240,7 +2240,7 @@ CAs SHALL NOT include additional names unless the CA is aware of a reason for in
 |     `subjectPublicKeyInfo` | See [Section 7.1.3.1](#7131-subjectpublickeyinfo) |
 |     `issuerUniqueID`       | MUST NOT be present |
 |     `subjectUniqueID`      | MUST NOT be present |
-|     `extensions`           | See [Section 7.1.2.7.1](#71271-subscriber-certificate-types) |
+|     `extensions`           | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) |
 | `signatureAlgorithm`       | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                | |
 
@@ -2828,7 +2828,7 @@ Table: Permitted `policyQualifiers`
 
 ##### 7.1.2.10.8 CA Certificate Name Constraints
 
-If present, the Name Constraints extension MUST be encoded as follows. As an explicit exception from RFC 5280, this extension SHOULD be marked critical, but MAY be marked non-critical if compatability with certain legacy applications that do not support Name Constraints is necessary.
+If present, the Name Constraints extension MUST be encoded as follows. As an explicit exception from RFC 5280, this extension SHOULD be marked critical, but MAY be marked non-critical if compatibility with certain legacy applications that do not support Name Constraints is necessary.
 
 
 Table: `nameConstraints` requirements
@@ -3114,7 +3114,7 @@ If present, this attribute MUST contain exactly one entry that is one of the val
 
 #### 7.1.4.4 Other Subject Attributes
 
-When explicitly stated as permitted by the relavant certificate profile specified within [Section 7.1.2](#712-certificate-content-and-extensions), CAs MAY include additional attributes within the `AttributeTypeAndValue` beyond those specified in [Section 7.1.4.2](#7142-subject-attribute-encoding).
+When explicitly stated as permitted by the relevant certificate profile specified within [Section 7.1.2](#712-certificate-content-and-extensions), CAs MAY include additional attributes within the `AttributeTypeAndValue` beyond those specified in [Section 7.1.4.2](#7142-subject-attribute-encoding).
 
 Before including such an attribute, the CA SHALL:
 
