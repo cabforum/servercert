@@ -1,7 +1,6 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-
-subtitle: Version 2.0.0
+subtitle: Version 2.0.1
 author:
   - CA/Browser Forum
 date: 11 April, 2023  
@@ -134,6 +133,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.8.6 | SC58 | Require distributionPoint in sharded CRLs | 7-Nov-2022 |	11-Dec-2022 |
 | 1.8.7 | SC61  | New CRL entries must have a Revocation Reason Code | 1-Apr-2023 | 15-Jul-2023 |
 | 2.0.0 | SC62  | Certificate Profiles Update | 22-Apr-2023 | 15-Sep-2023 |
+| 2.0.1 | SC63  | Make OCSP optional, require CRLs, and incentivize automation | TBD | 15-Mar-2024 |
 
 
 
@@ -186,7 +186,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-01-15 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
 | 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code |
 | 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0 |
-
+| 2024-03-15 | 4.9.7 | CAs MUST generate and publish CRLs. |
 
 ## 1.3 PKI Participants
 
@@ -1765,7 +1765,7 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
 
-Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. To qualify as a Short-lived Subscriber Certificate, Subscriber Certificates issued after 15 January 2024, but prior to 15 January 2026, MUST NOT have a Valdity Period greater than 10 days. Short-lived Subscriber Certificates issued on or after 15 January 2026 MUST NOT have a Validity Period greater than 7 days.
+Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. To qualify as a Short-lived Subscriber Certificate, Subscriber Certificates issued after 15 March 2024, but prior to 15 March 2026, MUST NOT have a Valdity Period greater than 10 days. Short-lived Subscriber Certificates issued on or after 15 March 2026 MUST NOT have a Validity Period greater than 7 days.
 
 Subscriber Certificates issued after 1 March 2018, but prior to 1 September 2020, MUST NOT have a Validity Period greater than 825 days.
 Subscriber Certificates issued after 1 July 2016 but prior to 1 March 2018 MUST NOT have a Validity Period greater than 39 months.
