@@ -3,7 +3,7 @@ title: Baseline Requirements for the Issuance and Management of Publicly-Trusted
 subtitle: Version 2.0.1
 author:
   - CA/Browser Forum
-date: 11 April, 2023  
+date: [TBD]  
 
 
 copyright: |
@@ -2389,7 +2389,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `basicConstraints`                | MAY             | Y            | See [Section 7.1.2.7.8](#71278-subscriber-certificate-basic-constraints) |
 | `crlDistributionPoints`           | -               | -            | - |
 |  \ \ \ \ _For Short-lived Subscriber Certificates_           | SHOULD NOT            | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| \ \ \ \ _For all other Subscriber Certificates_         | MUST      | N            | See [Section
+| \ \ \ \ _For all other Subscriber Certificates_         | MUST      | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
@@ -3176,22 +3176,63 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 ### 7.2.1 Version number(s)
 
+Certificate Revocation Lists MUST be of type X.509 v2.
+
 ### 7.2.2 CRL and CRL entry extensions
 
-1. `reasonCode` (OID 2.5.29.21)
+If the CA asserts compliance with these Baseline Requirements, all CRLs that it issues MUST comply with the following CRL profile, which incorporates, and is derived from [RFC 5280](https://tools.ietf.org/html/rfc5280). Except as explicitly noted, all normative requirements imposed by RFC 5280 shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://tools.ietf.org/html/rfc5280#appendix-B) for further issues to be aware of.
 
-   If present, this extension MUST NOT be marked critical.
+A full and complete CRL is a list of all revoked certificates issued by the CA for any and all reasons.
 
-   If a CRL entry is for a Root CA or Subordinate CA Certificate, including Cross-Certified Subordinate CA Certificates, this CRL entry extension MUST be present.
-   If a CRL entry is for a Certificate not technically capable of causing issuance, this CRL entry extension SHOULD be present, but MAY be omitted, subject to the following requirements.
+A partitioned CRL (sometimes referred to as a "sharded CRL") is a list of revoked certificates issued by the CA for any and all reasons constrained to a specific scope (e.g., temporal sharding).
 
-   The `CRLReason` indicated MUST NOT be unspecified (0). If the reason for revocation is unspecified, CAs MUST omit `reasonCode` entry extension, if allowed by the previous requirements.
-   If a CRL entry is for a Certificate not subject to these Requirements and was either issued on-or-after 2020-09-30 or has a `notBefore` on-or-after 2020-09-30, the `CRLReason` MUST NOT be certificateHold (6).
-   If a CRL entry is for a Certificate subject to these Requirements, the `CRLReason` MUST NOT be certificateHold (6).
+Minimally, CAs MUST issue either a "full and complete" CRL - or "partitioned" CRLs. 
 
-   If a `reasonCode` CRL entry extension is present, the `CRLReason` MUST indicate the most appropriate reason for revocation of the Certificate.
-   
-    CRLReason MUST be included in the `reasonCode` extension of the CRL entry corresponding to a Subscriber Certificate that is revoked after July 15, 2023, unless the CRLReason is "unspecified (0)". Revocation reason code entries for Subscriber Certificates revoked prior to July 15, 2023, do NOT need to be added or changed.
+If using only partitioned CRLs, the full set of partitioned CRLs MUST cover the complete set of public-key certificates issued by the CA. Thus, the complete set of partitioned CRLs MUST be equivalent to a full CRL for the same set of public-key certificates, if the CA was not using partitioned CRLs. 
+
+CAs MUST NOT issue indirect CRLs (i.e., the issuer of the CRL is not the issuer of all Certificates that are included in the scope of the CRL).
+
+Aside from the presence of the `IssuingDistributionPoint` extension in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
+
+Table: CRL Fields
+
+| __Field__                  | __Presence__    | __Description__ |
+| ---                        | ------          | ------          |
+| `tbsCertList`              |                 |                 |
+|     `version`              | MUST     | MUST be v2(1) |
+|     `signature`            | MUST     | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
+|     `issuer`               | MUST     | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. |
+|     `thisUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
+|     `nextUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
+|     `revokedCertificates`  | *        | MUST only be present if the CA has issued a certificate that is both revoked and unexpired. An entry MUST NOT be removed from the CRL until it appears on one regularly scheduled CRL issued beyond the revoked certificate's validity period. See the "revokedCertificates" table for additional requirements. |
+|     `extensions`           | MUST     | See below table. |
+| `signatureAlgorithm`       | MUST     | Encoded value MUST be byte-for-byte identical to the `tbsCertList.signature`. |
+| `signature`                | MUST     | - |
+| Any other value            | NOT RECOMMENDED | - |
+
+Table: CRL Extensions
+
+| __Extension__                     | __Presence__    | __Critical__          | __Description__ |
+| ----                              | -               | -                     | ----- |
+| `authorityKeyIdentifier`          | MUST            | N                     | The `keyIdentifier` field MUST be included and its value MUST be byte-for-byte identical to the Subject Key Identifier of the Issuing CA's Certificate. The `authorityCertIssuer` and `authorityCertSerialNumber` fields MUST NOT be populated.      |
+| `CRLNumber`                       | MUST            | N                     | MUST contain an INTEGER greater than or equal to zero (0) and less than 2¹⁵⁹, and convey a monotonically increasing sequence.       |
+| `IssuingDistributionPoint`        | *           | Y                     | Partitioned CRLs MUST include at least one of the names from the corresponding distributionPoint field of the cRLDistributionPoints extension of every certificate that is within the scope of this CRL. The encoded value MUST be byte-for-byte identical to the encoding used in the distributionPoint field of the certificate. The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to `FALSE` (i.e., not asserted). The CA MAY set either of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields to `TRUE`, depending on the scope of the CRL. The CA MUST NOT assert both of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields. The `onlySomeReasons` field SHOULD NOT be included; if included, then the CA MUST provide another CRL whose scope encompasses all revocations regardless of reason code. This extension is NOT RECOMMENDED for full and complete CRLs. |
+| Any other extension               | NOT RECOMMENDED        | -                     |       |
+
+Table: revokedCertificates Component
+
+| __Component__                     | __Presence__    | __Description__ |
+| ----                              | -               | ----- |
+| `serialNumber`                    | MUST            | MUST be byte-for-byte identical to the serialNumber contained in the revoked certificate. |
+| `revocationDate`                  | MUST            | The date and time which revocation occured. utcTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. generalTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049. | 
+| `crlEntryExtensions`              | *               | See crlEntryExtensions table (below) |
+
+Table: crlEntryExtensions Component 
+
+| __CRL Entry Extension__   | __Presence__  | __Description__ |
+| ---                       | -              | ------          |
+| `reasonCode`              | *              | See below. |
+| Any other value | NOT RECOMMENDED | |
 
 Only the following CRLReasons MAY be present in the CRL `reasonCode` extension for Subscriber Certifificates:
 
@@ -3209,10 +3250,6 @@ When a CA obtains verifiable evidence of Key Compromise for a Certificate whose 
 
 Note: Backdating the revocationDate field is an exception to best practice described in RFC 5280 (section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
    
-2. `issuingDistributionPoint` (OID 2.5.29.28)
-
-   Effective 2023-01-15, if a CRL does not contain entries for all revoked unexpired certificates issued by the CRL issuer, then it MUST contain a critical Issuing Distribution Point extension and MUST populate the `distributionPoint` field of that extension.
-
 ## 7.3 OCSP profile
 
 If an OCSP response is for a Root CA or Subordinate CA Certificate, including Cross-Certified Subordinate CA Certificates, and that certificate has been revoked, then the `revocationReason` field within the `RevokedInfo` of the `CertStatus` MUST be present.
