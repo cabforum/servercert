@@ -513,7 +513,7 @@ __Contents__: This field MUST contain the address of the physical location of th
 ### 9.2.7. Subject Organizational Unit Name Field
 
 __Certificate Field__: `subject:organizationalUnitName` (OID: 2.5.4.11)  
-__Required/Optional/Prohibited:__ __Prohibited__.
+__Required/Optional/Prohibited:__ __Prohibited__. 
 
 ### 9.2.8. Subject Organization Identifier Field
 
@@ -660,7 +660,7 @@ The Registration Scheme MUST be encoded as described by the following ASN.1 gram
 id-CABFOrganizationIdentifier OBJECT IDENTIFIER ::= {
     joint-iso-itu-t(2) international-organizations(23)
     ca-browser-forum(140) certificate-extensions(3)
-    cabf-organizationIdentifier(1)
+    cabf-organizationIdentifier(1) 
 }
 
 ext-CABFOrganizationIdentifier EXTENSION ::= {
