@@ -1310,11 +1310,14 @@ The CA MAY support on-line revocation status checking using OCSP.
 
 If the CA supports OCSP, the following requirements SHALL apply:
 
-OCSP responses MUST conform to RFC6960 and/or RFC5019; and MUST either:
-1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
-2. Be signed by an OCSP Responder whose Certificate is signed by the CA that issued the Certificate whose revocation status is being checked.
+OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
 
-In the latter case, the OCSP signing Certificate MUST contain an extension of type `id-pkix-ocsp-nocheck`, as defined by RFC6960.
+1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
+2. Be signed by an OCSP Responder whose Certificate is signed by the CA that issued the Certificate whose
+revocation status is being checked.
+
+In the latter case, the OCSP signing Certificate MUST contain an extension of type `id-pkix-ocsp-nocheck`, as
+defined by RFC6960.
 
 ### 4.9.10 On-line revocation checking requirements
 
@@ -1328,20 +1331,17 @@ The validity interval of an OCSP response is the difference in time between the 
 
 For the status of Subscriber Certificates:
 
-- Prior to 2020-09-30:
-     1. The CA SHALL update information provided via an Online Certificate Status Protocol at least every four days.
-     2. OCSP responses from this service MUST have a maximum expiration time of ten days.
-
-- Effective 2020-09-30:
-     1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
-     2. OCSP responses MUST have a validity interval less than or equal to ten days;
-     3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
-     4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
+1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
+2. OCSP responses MUST have a validity interval less than or equal to ten days;
+3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
+4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
 For the status of Subordinate CA Certificates:
-- The CA SHALL update information provided via an Online Certificate Status Protocol
-     1. at least every twelve months; and
-     2. within 24 hours after revoking a Subordinate CA Certificate.
+
+* The CA SHALL update information provided via an Online Certificate Status Protocol
+
+  i. at least every twelve months; and
+  ii. within 24 hours after revoking a Subordinate CA Certificate.
 
 If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), the responder MUST NOT respond with a "good" status for such requests.
 
