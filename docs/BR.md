@@ -2084,50 +2084,6 @@ The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to 
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT     |
 | Any other value                    | -                       | MAY          |
 
-##### 7.1.2.3.2 Certificate Policies
-
-If present, the Certificate Policies extension MUST be formatted as one of the two tables below:
-
-Table: No Policy Restrictions (Affiliated CA)
-
-| __Field__           | __Presence__    | __Contents__ |
-| ---                 | -               | ------       |
-| `policyIdentifier`  | MUST            | When the Issuing CA wishes to express that there are no policy restrictions, the Subordinate CA MUST be an Affiliate of the Issuing CA. The Certificate Policies extension MUST contain only a single `PolicyInformation` value, which MUST contain the `anyPolicy` Policy Identifier. |
-| \ \ \ \ `anyPolicy` | MUST            | |
-| `policyQualifiers`  | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
-
-
-Table: Policy Restricted
-
-| __Field__                    | __Presence__    | __Contents__ |
-| ---                          | -               | ------       |
-| `policyIdentifier`           | MUST            | One of the following policy identifiers: |
-| \ \ \ \ A [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) | MUST NOT | |
-| \ \ \ \ `anyPolicy`          | MUST NOT        | The `anyPolicy` Policy Identifier MUST NOT be present. |
-| \ \ \ \ Any other identifier | MAY             | If present, MUST be documented by the CA in its Certificate Policy and/or Certification Practice Statement. |
-| `policyQualifiers`           | NOT RECOMMENDED | If present, MUST contain only permitted `policyQualifiers` from the table below. |
-
-
-Table: Permitted `policyQualifiers`
-
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
-| ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
-
-
-##### 7.1.2.3.3 Extended Key Usage
-
-The Issuing CA MUST verify that the Subordinate CA Certificate is authorized to issue certificates for each included extended key usage purpose. Multiple, independent key purposes (e.g. `id-kp-timeStamping` and `id-kp-codeSigning`) are NOT RECOMMENDED.
-
-| __Key Purpose__                    | __OID__                 | __Presence__ |
-| ----                               | ----                    | -            |
-| `id-kp-serverAuth`                 | 1.3.6.1.5.5.7.3.1       | MUST NOT     |
-| `id-kp-OCSPSigning`                | 1.3.6.1.5.5.7.3.9       | MUST NOT     |
-| `anyExtendedKeyUsage`              | 2.5.29.37.0             | MUST NOT     |
-| Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST NOT     |
-| Any other value                    | -                       | MAY          |
-
 #### 7.1.2.4 Technically Constrained Precertificate Signing CA Certificate Profile
 
 This Certificate Profile MUST be used when issuing a CA Certificate that will be used as a Precertificate Signing CA, as described in [RFC 6962, Section 3.1](https://tools.ietf.org/html/rfc6962#section-3.1). If a CA Certificate conforms to this profile, it is considered Technically Constrained.
@@ -2174,10 +2130,6 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | ----                               | ----                    | -             |
 | Precertificate Signing Certificate | 1.3.6.1.4.1.11129.2.4.4 | MUST          |
 | Any other value                    | -                       | MUST NOT      |
-
-CAs are NOT RECOMMENDED to include additional key usage purposes beyond those specified in the table above. If present, they SHOULD be equal to, or a subset of, the key usage purposes for the Issuing CA Certificate.
-
-Any additional key usage purposes MUST conform to the requirements and restrictions specified in [Section 7.1.2.2.5, Extended Key Usage - Restricted Cross-Certified CA](#71225-extended-key-usage---restricted-cross-certified-ca).
 
 #### 7.1.2.5 Technically Constrained TLS Subordinate CA Certificate Profile
 
@@ -2248,15 +2200,6 @@ Table: `GeneralName` requirements for the `base` field
 
 Any `otherName`, if present:
 
-  1. MUST apply in the context of the public Internet, unless:
-     a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
-     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
-  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
-  3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
-
-CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
-
-All other `otherName` `type-id`s other than those listed above:
   1. MUST apply in the context of the public Internet, unless:
      a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
      b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
@@ -2416,8 +2359,6 @@ Table: Organization Validated `subject` Attributes
 | `organizationalUnitName`       | MUST NOT        | -           | -           |
 | `commonName`                   | NOT RECOMMENDED | If present, MUST contain a value derived from the `subjectAltName` extension according to [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute). | |
 | Any other attribute            | NOT RECOMMENDED | -           | See [Section 7.1.4.4](#7144-other-subject-attributes) |
-
-In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
@@ -2628,7 +2569,6 @@ If present, the `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDesc
 ##### 7.1.2.8.4 OCSP Responder Basic Constraints
 
 OCSP Responder certificates MUST NOT be CA certificates. The issuing CA may indicate this one of two ways: by omission of the `basicConstraints` extension, or through the inclusion of a `basicConstraints` extension that sets the `cA` boolean to FALSE.
-
 
 | __Field__           | __Description__ |
 | ---                 | ------- |
@@ -2947,6 +2887,8 @@ Any `otherName`, if present:
   2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
   3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
 
+CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
+
 #### 7.1.2.11 Common Certificate Fields
 
 This section contains several fields that are common among multiple certificate profiles. However, these fields may not be common among all certificate profiles. Before issuing a certificate, the CA MUST ensure the certificate contents, including the contents of each field, complies in whole with all of the requirements of at least one Certificate Profile documented in [Section 7.1.2](#712-certificate-content-and-extensions).
@@ -3000,6 +2942,7 @@ Table: `fullName` profile
 | \ \ \ \ `uniformResourceIdentifier` | MUST         | If present, the scheme of the `uniformResourceIdentifier` MUST be "http". |
 | \ \ **3**                           | MUST NOT     | `GeneralName`s that do not conform to the above requirements MUST NOT be present. |
 
+A `fullName` MUST contain at least one `GeneralName`; it MAY contain more than one. All `GeneralName`s MUST be of type `uniformResourceIdentifier`, and the scheme of each MUST be "http". The first `GeneralName` must contain the HTTP URL of the Issuing CA's CRL service for this certificate.
 
 ##### 7.1.2.11.3 Signed Certificate Timestamp List
 
