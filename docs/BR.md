@@ -2905,11 +2905,11 @@ This section contains several fields that are common among multiple certificate 
 
 The CRL Distribution Points extension MUST be present in:
 - Subordinate CA Certificates; and
-- Subscriber Certificates with validity greater than or equal to ten days.
+- Subscriber Certificates with validity greater than ten days.
 
 The CRL Distribution Points extension SHOULD NOT be present in:
 - Root CA Certificates; and
-- Subscriber Certificates with validity less than ten days (i.e., Short-lived Subscriber Certificates).
+- Subscriber Certificates with validity less than or equal to ten days (i.e., Short-lived Subscriber Certificates).
 
 The CRL Distribution Points extension MUST NOT be present in:
 - OCSP Responder Certificates
