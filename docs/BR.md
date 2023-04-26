@@ -3205,8 +3205,8 @@ Table: CRL Fields
 |     `issuer`               | MUST     | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. |
 |     `thisUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
 |     `nextUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
-|     `revokedCertificates`  | *        | MUST only be present if the CA has issued a certificate that is both revoked and unexpired. An entry MUST NOT be removed from the CRL until it appears on one regularly scheduled CRL issued beyond the revoked certificate's validity period. See the "revokedCertificates" table for additional requirements. |
-|     `extensions`           | MUST     | See below table. |
+|     `revokedCertificates`  | *        | MUST only be present if the CA has issued a certificate that is both revoked and unexpired. An entry MUST NOT be removed from the CRL until it appears on one regularly scheduled CRL issued beyond the revoked certificate's validity period. See the "revokedCertificates Component" table for additional requirements. |
+|     `extensions`           | MUST     | See the "CRL Extensions" table for additional requirements. |
 | `signatureAlgorithm`       | MUST     | Encoded value MUST be byte-for-byte identical to the `tbsCertList.signature`. |
 | `signature`                | MUST     | - |
 | Any other value            | NOT RECOMMENDED | - |
@@ -3215,7 +3215,7 @@ Table: CRL Extensions
 
 | __Extension__                     | __Presence__    | __Critical__          | __Description__ |
 | ----                              | -               | -                     | ----- |
-| `authorityKeyIdentifier`          | MUST            | N                     | The `keyIdentifier` field MUST be included and its value MUST be byte-for-byte identical to the Subject Key Identifier of the Issuing CA's Certificate. The `authorityCertIssuer` and `authorityCertSerialNumber` fields MUST NOT be populated.      |
+| `authorityKeyIdentifier`          | MUST            | N                     | The `keyIdentifier` field MUST be included and its value MUST be byte-for-byte identical to the Subject Key Identifier of the Issuing CA's Certificate. <br><br>The `authorityCertIssuer` and `authorityCertSerialNumber` fields MUST NOT be populated.      |
 | `CRLNumber`                       | MUST            | N                     | MUST contain an INTEGER greater than or equal to zero (0) and less than 2¹⁵⁹, and convey a monotonically increasing sequence.       |
 | `IssuingDistributionPoint`        | *           | Y                     | Partitioned CRLs MUST include at least one of the names from the corresponding distributionPoint field of the cRLDistributionPoints extension of every certificate that is within the scope of this CRL. The encoded value MUST be byte-for-byte identical to the encoding used in the distributionPoint field of the certificate. <br><br>The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to `FALSE` (i.e., not asserted). <br><br>The CA MAY set either of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields to `TRUE`, depending on the scope of the CRL. <br><br>The CA MUST NOT assert both of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields. <br><br>The `onlySomeReasons` field SHOULD NOT be included; if included, then the CA MUST provide another CRL whose scope encompasses all revocations regardless of reason code. <br><br>This extension is NOT RECOMMENDED for full and complete CRLs. |
 | Any other extension               | NOT RECOMMENDED        | -                     |       |
@@ -3226,7 +3226,7 @@ Table: revokedCertificates Component
 | ----                              | -               | ----- |
 | `serialNumber`                    | MUST            | MUST be byte-for-byte identical to the serialNumber contained in the revoked certificate. |
 | `revocationDate`                  | MUST            | The date and time which revocation occured. UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.  | 
-| `crlEntryExtensions`              | *               | See crlEntryExtensions table (below) |
+| `crlEntryExtensions`              | *               | See the "crlEntryExtensions Component" table for additional requirements. |
 
 **Note:** Backdating the revocationDate field is an exception to best practice described in RFC 5280 (Section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
 
