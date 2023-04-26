@@ -3225,34 +3225,29 @@ Table: revokedCertificates Component
 | __Component__                     | __Presence__    | __Description__ |
 | ----                              | -               | ----- |
 | `serialNumber`                    | MUST            | MUST be byte-for-byte identical to the serialNumber contained in the revoked certificate. |
-| `revocationDate`                  | MUST            | The date and time which revocation occured. utcTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. generalTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.  | 
+| `revocationDate`                  | MUST            | The date and time which revocation occured. UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.  | 
 | `crlEntryExtensions`              | *               | See crlEntryExtensions table (below) |
 
-*Note:* Backdating the revocationDate field is an exception to best practice described in RFC 5280 (Section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
+**Note:** Backdating the revocationDate field is an exception to best practice described in RFC 5280 (Section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
 
 Table: crlEntryExtensions Component 
 
 | __CRL Entry Extension__   | __Presence__  | __Description__ |
 | ---                       | -              | ------          |
-| `reasonCode`              | *              | When present, MUST NOT be marked critical. MUST be present if the CRL entry is for a Root CA or Subordinate CA Certificate, including Cross-Certified Subordinate CA Certificates. SHOULD be present if the CRL entry is for a Certificate not technically capable of causing issuance, but MAY be subject to the bulleted list of requirements immediately following this table.|
+| `reasonCode`              | *              | When present, MUST indicate the most appropriate reason for revocation of the Certificate and MUST NOT be marked critical. <br> MUST be present if the CRL entry is for a Root CA or Subordinate CA Certificate, including Cross-Certified Subordinate CA Certificates. <br>MUST be present if the CRL entry is for a Certificate not technically capable of causing issuance unless 1) the CRL entry is for a Subscriber Certificate subject to these Requirements revoked prior to July 15, 2023 or 2) the reason for revocation is unspecified. <br>See the "  Certificate CRLReasons" table for additional requirements. |
 | Any other value | NOT RECOMMENDED | |
 
 
-`reasonCode` MAY be omitted if the CRL entry is for a Certificate not technically capable of causing issuance, subject to the following requirements:
-- The `CRLReason` indicated MUST NOT be unspecified (0). If the reason for revocation is unspecified, CAs MUST omit `reasonCode` entry extension, if allowed by the previous requirements.
-- If a CRL entry is for a Certificate not subject to these Requirements and was either issued on-or-after 2020-09-30 or has a `notBefore` on-or-after 2020-09-30, the `CRLReason` MUST NOT be certificateHold (6).
-- If a CRL entry is for a Certificate subject to these Requirements, the `CRLReason` MUST NOT be certificateHold (6).
-- If a `reasonCode` is present, the `CRLReason` MUST indicate the most appropriate reason for revocation of the Certificate.
-- CRLReason MUST be included in the `reasonCode` extension of the CRL entry corresponding to a Subscriber Certificate that is revoked after July 15, 2023, unless the CRLReason is "unspecified (0)". Revocation reason code entries for Subscriber Certificates revoked prior to July 15, 2023, do NOT need to be added or changed.
+Table:  Certificate CRLReasons
 
-Only the following CRLReasons MAY be present in the CRL `reasonCode` extension for Subscriber Certifificates:
-
-| __CRLReason__            | __RFC 5280 CRLReason Value__               | __Description__ |
-| ---                       | -                        | ------          |
+| __RFC 5280 reasonCode__            | __RFC 5280 reasonCode value__               | __Description__ |
+| ---                      | -                        | ------          |
+| unspecified              | 0    | `reasonCode` MUST be omitted if the CRL entry is for a Certificate not technically capable of causing issuance unless 1) the CRL entry is for a Subscriber Certificate subject to these Requirements revoked prior to July 15, 2023. 
 | keyCompromise             | 1   | Indicates that it is known or suspected that the Subscriber’s Private Key has been compromised. |
 | affiliationChanged        | 3   |  Indicates that the Subject's name or other Subject Identity Information in the Certificate has changed, but there is no cause to suspect that the Certificate's Private Key has been compromised. |
 | superseded                | 4   | Indicates that the Certificate is being replaced because: the Subscriber has requested a new Certificate, the CA has reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the Certificate should not be relied upon, or the CA has revoked the Certificate for compliance reasons such as the Certificate does not comply with these Baseline Requirements or the CA's CP or CPS. |
 | cessationOfOperation      | 5   | Indicates that the website with the Certificate is shut down prior to the expiration of the Certificate, or if the Subscriber no longer owns or controls the Domain Name in the Certificate prior to the expiration of the Certificate.
+| certificateHold           | 6.  | MUST NOT be included if 1) a CRL entry is for a Certificate subject to these Requirements, or 2) a CRL entry is for a Certificate not subject to these Requirements and was either issued on-or-after 2020-09-30 or has a `notBefore` on-or-after 2020-09-30
 | privilegeWithdrawn        | 9  | Indicates that there has been a subscriber-side infraction that has not resulted in keyCompromise, such as the Certificate Subscriber provided misleading information in their Certificate Request or has not upheld their material obligations under the Subscriber Agreement or Terms of Use. |
 
 The Subscriber Agreement, or an online resource referenced therein, MUST inform Subscribers about the revocation reason options listed above and provide explanation about when to choose each option. Tools that the CA provides to the Subscriber MUST allow for these options to be easily specified when the Subscriber requests revocation of their Certificate, with the default value being that no revocation reason is provided (i.e. the default corresponds to the CRLReason “unspecified (0)” which results in no reasonCode extension being provided in the CRL). 
