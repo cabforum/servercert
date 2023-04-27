@@ -460,7 +460,7 @@ The script outputs:
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
 
-**Short-lived Subscriber Certificate**: A server Certificate with a Validity Period that is less than ten (10) days (864,000 seconds).
+**Short-lived Subscriber Certificate**: A server Certificate with a Validity Period that is less than or equal to ten (10) days (864,000 seconds).
 
 **Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
 
