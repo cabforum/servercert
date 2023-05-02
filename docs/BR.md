@@ -1306,9 +1306,7 @@ No stipulation.
 
 ### 4.9.9 On-line revocation/status checking availability
 
-The CA MAY support on-line revocation status checking using OCSP.
-
-If the CA supports OCSP, the following requirements SHALL apply:
+If the CA signs OCSP responses either directly (i.e., using the private key corresponding with its certificate) or through a delegated OCSP responder, the following requirements SHALL apply.
 
 OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
 
@@ -1321,9 +1319,7 @@ defined by RFC6960.
 
 ### 4.9.10 On-line revocation checking requirements
 
-The CA MAY support on-line revocation status checking using OCSP.
-
-If the CA supports OCSP, the following requirements SHALL apply:
+If the CA signs OCSP responses either directly or through a delegated OCSP responder, the following requirements SHALL apply.
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
 
