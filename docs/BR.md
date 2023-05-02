@@ -2385,7 +2385,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `basicConstraints`                | MAY             | Y            | See [Section 7.1.2.7.8](#71278-subscriber-certificate-basic-constraints) |
 | `crlDistributionPoints`           | -               | -            | - |
 |  \ \ \ \ _For Short-lived Subscriber Certificates_           | SHOULD NOT            | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| \ \ \ \ _For all other Subscriber Certificates_         | MUST      | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
+| \ \ \ \ _For all other Subscriber Certificates_         | SHOULD      | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
@@ -2901,7 +2901,8 @@ This section contains several fields that are common among multiple certificate 
 
 The CRL Distribution Points extension MUST be present in:
 - Subordinate CA Certificates; and
-- Subscriber Certificates with validity greater than ten days.
+- Subscriber Certificates with 1) validity greater than ten days and that 2) do not contain an id-ad-ocsp accessMethod (i.e., A HTTP URL of the
+Issuing CA’s OCSP responder) within the Authority Information Access extension.
 
 The CRL Distribution Points extension SHOULD NOT be present in:
 - Root CA Certificates; and
