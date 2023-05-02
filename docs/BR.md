@@ -1286,14 +1286,16 @@ No stipulation.
 
 ### 4.9.7 CRL issuance frequency
 
-CAs MUST generate and publish either:
-- a full and complete; OR
+Within 24 hours of issuing its first certificate, CAs MUST generate and publish either:
+- a full and complete CRL; OR
 - partitioned (i.e., "sharded") CRLs, that when aggregated, represent the equivalent of the full and complete CRL.
 
 CRLs must be available via a publicly-accessible HTTP URL.
 
 CAs issuing Subscriber Certificates (i.e., Certificates for servers) SHALL:
-- update and reissue CRLs at least once every 24 hours; and
+- update and reissue CRLs at least once every:
+     - 24 hours if it has signed at least one unexpired and unrevoked certificate, OR
+     - 7 days in all other cases; and
 - the value of the `nextUpdate` field MUST NOT be more than ten (10) days beyond the value of the `thisUpdate` field.
 
 CAs issuing CA Certificates SHALL:
