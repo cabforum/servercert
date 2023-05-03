@@ -1296,14 +1296,14 @@ CAs issuing Subscriber Certififcates MUST continue to issue CRLs in accordance w
 
 | __Conditions__ | __Minimum CRL Issuance Frequency__ | __Maximum nextUpdate Period__ | 
 | ----           | -                                  | -                             |
-| The CA has revoked at least one unexpired Certificate since the `thisUpdate` field of the last CRL. | A CRL MUST be generated and published within 24 hours of the `thisUpdate` field of the last CRL. <br><br> A CRL SHOULD be generated and published within 4 hours of the `thisUpdate` field of the last CRL. | The value of the `nextUpdate` field MUST NOT be more than 10 days beyond the value of the `thisUpdate` field. |
-| All other conditions. | A CRL MUST be generated and published within 7 days of the `thisUpdate` field of the last CRL. <br><br> A CRL SHOULD be generated and published within 4 hours of the `thisUpdate` field of the last CRL. | The value of the `nextUpdate` field MUST NOT be more than 10 days beyond the value of the `thisUpdate` field. |
+| The CA has revoked at least one unexpired Certificate since the `thisUpdate` field of the last CRL. | A CRL MUST be generated and published within 24 hours of the `thisUpdate` field of the last CRL. <br><br> A CRL SHOULD be generated and published within 4 hours of the `thisUpdate` field of the current CRL. | The value of the `nextUpdate` field MUST NOT be more than 10 days beyond the value of the `thisUpdate` field. |
+| All other conditions. | A CRL MUST be generated and published within 7 days of the `thisUpdate` field of the last CRL. <br><br> A CRL SHOULD be generated and published within 4 hours of the `thisUpdate` field of the current CRL. | The value of the `nextUpdate` field MUST NOT be more than 10 days beyond the value of the `thisUpdate` field. |
 
 CAs issuing CA Certificates MUST issue CRLs in accordance with the table below:
 | __Conditions__ | __Minimum CRL Issuance Frequency__ | __Maximum nextUpdate Period__ | 
 | ----           | -                                  | -                             |
-| The CA has revoked at least one unexpired Subordinate CA Certificate since the `thisUpdate` field of the last CRL. | A CRL MUST be generated and published within 24 hours of the `thisUpdate` field of the last CRL. <br><br> A CRL SHOULD be generated and published within 4 hours of the `thisUpdate` field of the last CRL. | The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field. |
-| All other conditions. | A CRL MUST be generated and published within 12 months of the `thisUpdate` field of the last CRL. | The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field. |
+| The CA has revoked at least one unexpired Subordinate CA Certificate since the `thisUpdate` field of the last CRL. | A CRL MUST be generated and published within 24 hours of the `thisUpdate` field of the last CRL. <br><br> A CRL SHOULD be generated and published within 4 hours of the `thisUpdate` field of the current CRL. | The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field. |
+| All other conditions. | A CRL MUST be generated and published within 12 months of the `thisUpdate` field of the current CRL. | The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field. |
 
 CAs MUST continue issuing CRLs until one of the following is true:
 - all CA Certificates containing the same Subject Public Key are expired or revoked, OR
