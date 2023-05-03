@@ -1288,7 +1288,7 @@ No stipulation.
 
 CRLs must be available via a publicly-accessible HTTP URL (i.e., "published").
 
-Within 24 hours of issuing its first certificate, CAs MUST generate and publish either:
+Within 24 hours of issuing its first Certificate, CAs MUST generate and publish either:
 - a full and complete CRL; OR
 - partitioned (i.e., "sharded") CRLs, that when aggregated, represent the equivalent of the full and complete CRL.
 
@@ -1306,7 +1306,7 @@ CAs issuing CA Certificates MUST issue CRLs in accordance with the table below:
 | All other conditions. | A CRL MUST be generated and published within 12 months of the `thisUpdate` field of the last CRL. | The value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field. |
 
 CAs MUST continue issuing CRLs until one of the following is true:
-- all corresponding Certificates containing the same Subject Public Key are expired or revoked, OR
+- all corresponding Certificates containing the same CA Subject Public Key are expired or revoked, OR
 - the corresponding CA Private Key is destroyed
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
