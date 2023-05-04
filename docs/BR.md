@@ -3192,7 +3192,7 @@ A full and complete CRL is a list of all revoked certificates issued by the CA f
 
 A partitioned CRL (sometimes referred to as a "sharded CRL") is a list of revoked certificates issued by the CA for any and all reasons constrained to a specific scope (e.g., temporal sharding).
 
-Minimally, CAs MUST issue either a "full and complete" CRL - or "partitioned" CRLs. Aside from the presence of the `IssuingDistributionPoint` extension (OID 2.5.29.28) in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
+Minimally, CAs MUST issue either a "full and complete" CRL or "partitioned" CRLs. Aside from the presence of the `IssuingDistributionPoint` extension (OID 2.5.29.28) in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
 
 If using only partitioned CRLs, the full set of partitioned CRLs MUST cover the complete set of public-key certificates issued by the CA. Thus, the complete set of partitioned CRLs MUST be equivalent to a full CRL for the same set of public-key certificates, if the CA was not using partitioned CRLs. 
 
