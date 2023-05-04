@@ -1293,10 +1293,10 @@ Within 24 hours of issuing its first Certificate, the CA MUST generate and publi
 - partitioned (i.e., "sharded") CRLs that, when aggregated, represent the equivalent of a full and complete CRL.
 
 CAs issuing Subscriber Certificates MUST continue to issue CRLs that:  
-1. are minimally updated: 
-     - within 7 days if all Subscriber Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”); OR
-     - within 4 days if all Subscriber Certificates DO NOT include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”); 
-2. are updated within 24 hours after recording a certificate must be revoked; 
+1. are minimally updated within: 
+     - 7 days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”) OR
+     - 4 days if all Certificates DO NOT include an Authority Information Access extension with an id-ad-ocsp accessMethod. 
+2. are updated within 24 hours after recording a certificate must be revoked.
 3. include a `nextUpdate` field value that is no more than 10 days beyond the value of the `thisUpdate` field.
 
 CAs issuing CA Certificates MUST continue to issue CRLs that:  
@@ -1315,7 +1315,7 @@ No stipulation.
 
 ### 4.9.9 On-line revocation/status checking availability
 
-The following SHALL apply for communicating the status of Certificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”).
+The following SHALL apply for communicating the status of Certificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
 OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
 
@@ -1328,7 +1328,7 @@ defined by RFC6960.
 
 ### 4.9.10 On-line revocation checking requirements
 
-The following SHALL apply for communicating the status of Certificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”).
+The following SHALL apply for communicating the status of Certificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
 
