@@ -1290,7 +1290,7 @@ CRLs must be available via a publicly-accessible HTTP URL (i.e., "published").
 
 Within 24 hours of issuing its first Certificate, CAs MUST generate and publish either:
 - a full and complete CRL; OR
-- partitioned (i.e., "sharded") CRLs, that when aggregated, represent the equivalent of the full and complete CRL.
+- partitioned (i.e., "sharded") CRLs that, when aggregated, represent the equivalent of a full and complete CRL.
 
 CAs issuing Subscriber Certififcates MUST continue to issue CRLs in accordance with the table below:
 
