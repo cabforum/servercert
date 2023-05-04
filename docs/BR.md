@@ -1295,15 +1295,14 @@ Within 24 hours of issuing its first Certificate, the CA MUST generate and publi
 CAs issuing Subscriber Certificates MUST continue to issue CRLs that:  
 1. are minimally updated within: 
      - 7 days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”); OR
-     - 4 days if all Certificates DO NOT include an Authority Information Access extension with an id-ad-ocsp accessMethod. 
-2. are updated within 24 hours after recording a certificate must be revoked.
+     - 4 days in all other cases. 
+2. are updated within 24 hours after recording a Certificate must be revoked.
 3. include a `nextUpdate` field value that is no more than 10 days beyond the value of the `thisUpdate` field.
 
 CAs issuing CA Certificates MUST continue to issue CRLs that:  
-1. are minimally updated:
-     - within 24 hours after recording a certificate must be revoked; OR
-     - once every 12 months.
-2. include a `nextUpdate` field value that is no more than 12 months beyond the value of the `thisUpdate` field.
+1. are minimally updated within 12 months.
+2. are updated within 24 hours after recording a Certificate must be revoked.
+3. include a `nextUpdate` field value that is no more than 12 months beyond the value of the `thisUpdate` field.
 
 CAs MUST continue issuing CRLs until one of the following is true:
 - all CA Certificates containing the same Subject Public Key are expired or revoked; OR
