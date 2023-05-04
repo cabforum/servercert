@@ -1307,7 +1307,7 @@ CAs issuing CA Certificates MUST issue CRLs in accordance with the table below:
 
 CAs MUST continue issuing CRLs until one of the following is true:
 - all CA Certificates containing the same Subject Public Key are expired or revoked, OR
-- the corresponding CA Private Key is destroyed
+- the corresponding CA Private Key is destroyed.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
