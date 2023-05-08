@@ -1288,25 +1288,10 @@ No stipulation.
 
 CRLs must be available via a publicly-accessible HTTP URL (i.e., "published").
 
-Within 24 hours of issuing its first Certificate, the CA MUST generate and publish either:
+Within twenty-four (24) hours of issuing its first Certificate, the CA MUST generate and publish either:
 - a full and complete CRL; OR
 - partitioned (i.e., "sharded") CRLs that, when aggregated, represent the equivalent of a full and complete CRL.
 
-CAs issuing Subscriber Certificates MUST continue to issue CRLs that:  
-1. are minimally updated within: 
-     - 7 days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”); OR
-     - 4 days in all other cases. 
-2. are updated within 24 hours after recording a Certificate within that CRL's scopemust be revoked.
-3. include a `nextUpdate` field value that is no more than 10 days beyond the value of the `thisUpdate` field.
-
-CAs issuing CA Certificates MUST continue to issue CRLs that:  
-1. are minimally updated within 12 months.
-2. are updated within 24 hours after recording a Certificate must be revoked.
-3. include a `nextUpdate` field value that is no more than 12 months beyond the value of the `thisUpdate` field.
-
-CAs MUST continue issuing CRLs until one of the following is true:
-- all CA Certificates containing the same Subject Public Key are expired or revoked; OR
-- the corresponding CA Private Key is destroyed.
 CAs issuing Subscriber Certificates:  
 1. MUST update and publish a new CRL within at least: 
      - seven (7) days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”); or
@@ -1322,6 +1307,8 @@ CAs issuing CA Certificates:
 CAs MUST continue issuing CRLs until one of the following is true:
 - all Subordinate CA Certificates containing the same Subject Public Key are expired or revoked; OR
 - the corresponding Subordinate CA Private Key is destroyed.
+
+
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
 No stipulation.
