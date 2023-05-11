@@ -2401,7 +2401,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 
 **Notes**: 
 - whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
-- whether or not the `crlDistributionPoints` extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points)
+- whether or not the `crlDistributionPoints` extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
 
 ##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
