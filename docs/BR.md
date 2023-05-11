@@ -2394,9 +2394,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `nameConstraints`                 | MUST NOT        | -            | - |
 | `keyUsage`                        | SHOULD          | Y            | See [Section 7.1.2.7.11](#712711-subscriber-certificate-key-usage) |
 | `basicConstraints`                | MAY             | Y            | See [Section 7.1.2.7.8](#71278-subscriber-certificate-basic-constraints) |
-| `crlDistributionPoints`           | -               | -            | - |
-|  \ \ \ \ _For Short-lived Subscriber Certificates_           | SHOULD NOT            | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| \ \ \ \ _For all other Subscriber Certificates_         | SHOULD      | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
+| `crlDistributionPoints`           | *               | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
