@@ -1303,7 +1303,7 @@ CAs issuing Subscriber Certificates:
 
 CAs issuing CA Certificates:  
 1. MUST update and publish a new CRL within at least twelve (12) months;
-2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Subordinate CA Certificate as revoked; and
+2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked; and
 3. MUST include a `nextUpdate` field value that is no more than twelve (12) months beyond the value of the `thisUpdate` field.
 
 CAs MUST continue issuing CRLs until one of the following is true:
