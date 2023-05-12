@@ -460,7 +460,7 @@ The script outputs:
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
 
-**Short-lived Subscriber Certificate**: A server Certificate with a Validity Period that is less than or equal to ten (10) days (864,000 seconds).
+**Short-lived Subscriber Certificate**: For Certificates issued on or after 15 March 2024 and prior to 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 10 days (864,000 seconds). For Certificates issued on or after 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 7 days (604,800 seconds).
 
 **Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
 
@@ -582,6 +582,8 @@ RFC7538, Request For Comments: 7538, The Hypertext Transfer Protocol Status Code
 RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record. P. Hallam-Baker, et al. November 2019.
+
+RFC8954, Request for Comments: 8954, Online Certificate Status Protocol (OCSP) Nonce Extension. M. Sahni, Ed. November 2020.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.5, available at <https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf>.
 
@@ -1286,19 +1288,28 @@ No stipulation.
 
 ### 4.9.7 CRL issuance frequency
 
-CAs MUST generate and publish either:
-- a full and complete; OR
-- partitioned (i.e., "sharded") CRLs, that when aggregated, represent the equivalent of the full and complete CRL.
+CRLs must be available via a publicly-accessible HTTP URL (i.e., "published").
 
-CRLs must be available via a publicly-accessible HTTP URL.
+Within twenty-four (24) hours of issuing its first Certificate, the CA MUST generate and publish either:
+- a full and complete CRL; OR
+- partitioned (i.e., "sharded") CRLs that, when aggregated, represent the equivalent of a full and complete CRL.
 
-CAs issuing Subscriber Certificates (i.e., Certificates for servers) SHALL:
-- update and reissue CRLs at least once every 24 hours; and
-- the value of the `nextUpdate` field MUST NOT be more than ten (10) days beyond the value of the `thisUpdate` field.
+CAs issuing Subscriber Certificates:  
+1. MUST update and publish a new CRL within at least: 
+     - seven (7) days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”); or
+     - four (4) days in all other cases; 
+2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked; and
+3. MUST include a `nextUpdate` field value that is no more than ten (10) days beyond the value of the `thisUpdate` field.
 
-CAs issuing CA Certificates SHALL:
-- update and reissue CRLs at least once every twelve months and within 24 hours after revoking a Subordinate CA Certificate; and
-- the value of the `nextUpdate` field MUST NOT be more than twelve months beyond the value of the `thisUpdate` field.
+CAs issuing CA Certificates:  
+1. MUST update and publish a new CRL within at least twelve (12) months;
+2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Subordinate CA Certificate as revoked; and
+3. MUST include a `nextUpdate` field value that is no more than twelve (12) months beyond the value of the `thisUpdate` field.
+
+CAs MUST continue issuing CRLs until one of the following is true:
+- all Subordinate CA Certificates containing the same Subject Public Key are expired or revoked; OR
+- the corresponding Subordinate CA Private Key is destroyed.
+
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
@@ -1306,9 +1317,7 @@ No stipulation.
 
 ### 4.9.9 On-line revocation/status checking availability
 
-The CA MAY support on-line revocation status checking using OCSP.
-
-If the CA supports OCSP, the following requirements SHALL apply:
+The following SHALL apply for communicating the status of Certificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
 OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
 
@@ -1321,11 +1330,9 @@ defined by RFC6960.
 
 ### 4.9.10 On-line revocation checking requirements
 
-The CA MAY support on-line revocation status checking using OCSP.
+The following SHALL apply for communicating the status of Certificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
-If the CA supports OCSP, the following requirements SHALL apply:
-
-OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019.
+OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019. The CA MAY process the Nonce extension (`1.3.6.1.5.5.7.48.1.2`) in accordance with RFC 8954.
 
 The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
 
@@ -1765,7 +1772,7 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
 
-Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. To qualify as a Short-lived Subscriber Certificate, Subscriber Certificates issued after 15 March 2024, but prior to 15 March 2026, MUST NOT have a Valdity Period greater than 10 days. Short-lived Subscriber Certificates issued on or after 15 March 2026 MUST NOT have a Validity Period greater than 7 days.
+Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. 
 
 Subscriber Certificates issued after 1 March 2018, but prior to 1 September 2020, MUST NOT have a Validity Period greater than 825 days.
 Subscriber Certificates issued after 1 July 2016 but prior to 1 March 2018 MUST NOT have a Validity Period greater than 39 months.
@@ -2387,14 +2394,14 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `nameConstraints`                 | MUST NOT        | -            | - |
 | `keyUsage`                        | SHOULD          | Y            | See [Section 7.1.2.7.11](#712711-subscriber-certificate-key-usage) |
 | `basicConstraints`                | MAY             | Y            | See [Section 7.1.2.7.8](#71278-subscriber-certificate-basic-constraints) |
-| `crlDistributionPoints`           | -               | -            | - |
-|  \ \ \ \ _For Short-lived Subscriber Certificates_           | SHOULD NOT            | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
-| \ \ \ \ _For all other Subscriber Certificates_         | MUST      | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
+| `crlDistributionPoints`           | *               | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-**Note**: whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
+**Notes**: 
+- whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
+- whether or not the `crlDistributionPoints` extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
 
 ##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
@@ -2905,11 +2912,11 @@ This section contains several fields that are common among multiple certificate 
 
 The CRL Distribution Points extension MUST be present in:
 - Subordinate CA Certificates; and
-- Subscriber Certificates with validity greater than ten days.
+- Subscriber Certificates that 1) do not qualify as "Short-lived Subscriber Certificates" and 2) do not include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
 The CRL Distribution Points extension SHOULD NOT be present in:
 - Root CA Certificates; and
-- Subscriber Certificates with validity less than or equal to ten days (i.e., Short-lived Subscriber Certificates).
+- Short-lived Subscriber Certificates.
 
 The CRL Distribution Points extension MUST NOT be present in:
 - OCSP Responder Certificates
@@ -3184,16 +3191,13 @@ Certificate Revocation Lists MUST be of type X.509 v2.
 
 If the CA asserts compliance with these Baseline Requirements, all CRLs that it issues MUST comply with the following CRL profile, which incorporates, and is derived from [RFC 5280](https://tools.ietf.org/html/rfc5280). Except as explicitly noted, all normative requirements imposed by RFC 5280 shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://tools.ietf.org/html/rfc5280#appendix-B) for further issues to be aware of.
 
-A full and complete CRL is a list of all revoked certificates issued by the CA for any and all reasons.
+A full and complete CRL is a CRL whose scope includes all certificates issued by the CA.
 
-A partitioned CRL (sometimes referred to as a "sharded CRL") is a list of revoked certificates issued by the CA for any and all reasons constrained to a specific scope (e.g., temporal sharding).
+A partitioned CRL (sometimes referred to as a "sharded CRL") is a CRL with a constrained scope, such as all certificates issued by the CA during a certain period of time ("temporal sharding"). Aside from the presence of the `IssuingDistributionPoint` extension (OID 2.5.29.28) in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
 
-Minimally, CAs MUST issue either a "full and complete" CRL - or "partitioned" CRLs. Aside from the presence of the `IssuingDistributionPoint` extension (OID 2.5.29.28) in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
-
-If using only partitioned CRLs, the full set of partitioned CRLs MUST cover the complete set of public-key certificates issued by the CA. Thus, the complete set of partitioned CRLs MUST be equivalent to a full CRL for the same set of public-key certificates, if the CA was not using partitioned CRLs. 
+Minimally, CAs MUST issue either a "full and complete" CRL or a set of "partitioned" CRLs which cover the complete set of certificates issued by the CA. In other words, if issuing only partitioned CRLs, the combined scope of those CRLs must be equivalent to that of a full and complete CRL. 
 
 CAs MUST NOT issue indirect CRLs (i.e., the issuer of the CRL is not the issuer of all Certificates that are included in the scope of the CRL).
-
 
 Table: CRL Fields
 
@@ -3205,7 +3209,7 @@ Table: CRL Fields
 |     `issuer`               | MUST     | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. |
 |     `thisUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
 |     `nextUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
-|     `revokedCertificates`  | *        | MUST only be present if the CA has issued a certificate that is both revoked and unexpired. An entry MUST NOT be removed from the CRL until it appears on one regularly scheduled CRL issued beyond the revoked certificate's validity period. See the "revokedCertificates Component" table for additional requirements. |
+|     `revokedCertificates`  | *        | MUST be present if the CA has issued a certificate that has been revoked and the corresponding entry has yet to appear on at least one regularly scheduled CRL beyond the revoked certificate's validity period. The CA SHOULD remove an entry for a corresponding certificate after it has appeared on at least one regularly scheduled CRL beyond the revoked certificate's validity period. See the "revokedCertificates Component" table for additional requirements.  |
 |     `extensions`           | MUST     | See the "CRL Extensions" table for additional requirements. |
 | `signatureAlgorithm`       | MUST     | Encoded value MUST be byte-for-byte identical to the `tbsCertList.signature`. |
 | `signature`                | MUST     | - |
@@ -3216,7 +3220,7 @@ Table: CRL Extensions
 | __Extension__                     | __Presence__    | __Critical__          | __Description__ |
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | The `keyIdentifier` field MUST be included and its value MUST be byte-for-byte identical to the Subject Key Identifier of the Issuing CA's Certificate. <br><br>The `authorityCertIssuer` and `authorityCertSerialNumber` fields MUST NOT be populated.      |
-| `CRLNumber`                       | MUST            | N                     | MUST contain an INTEGER greater than or equal to zero (0) and less than 2¹⁵⁹, and convey a monotonically increasing sequence.       |
+| `CRLNumber`                       | MUST            | N                     | MUST contain an INTEGER greater than or equal to zero (0) and less than 2¹⁵⁹, and convey a strictly increasing sequence.        |
 | `IssuingDistributionPoint`        | *           | Y                     | Partitioned CRLs MUST include at least one of the names from the corresponding distributionPoint field of the cRLDistributionPoints extension of every certificate that is within the scope of this CRL. The encoded value MUST be byte-for-byte identical to the encoding used in the distributionPoint field of the certificate. <br><br>The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to `FALSE` (i.e., not asserted). <br><br>The CA MAY set either of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields to `TRUE`, depending on the scope of the CRL. <br><br>The CA MUST NOT assert both of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields. <br><br>The `onlySomeReasons` field SHOULD NOT be included; if included, then the CA MUST provide another CRL whose scope encompasses all revocations regardless of reason code. <br><br>This extension is NOT RECOMMENDED for full and complete CRLs. |
 | Any other extension               | NOT RECOMMENDED        | -                     |       |
 
