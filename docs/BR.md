@@ -3229,7 +3229,7 @@ Table: revokedCertificates Component
 | __Component__                     | __Presence__    | __Description__ |
 | ----                              | -               | ----- |
 | `serialNumber`                    | MUST            | MUST be byte-for-byte identical to the serialNumber contained in the revoked certificate. |
-| `revocationDate`                  | MUST            | Normally, the date and time which revocation occurred, although see footnote for circumstances under which backdating is permitted. UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.  | 
+| `revocationDate`                  | MUST            | Normally, the date and time revocation occurred. See the footnote following this table for circumstances where backdating is permitted. UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049. | 
 | `crlEntryExtensions`              | *               | See the "crlEntryExtensions Component" table for additional requirements. |
 
 **Note:** 
