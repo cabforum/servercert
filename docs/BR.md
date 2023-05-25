@@ -3206,8 +3206,8 @@ Table: CRL Fields
 |     `version`              | MUST     | MUST be v2(1), see [Section 7.2.1](#721-version-numbers) |
 |     `signature`            | MUST     | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 |     `issuer`               | MUST     | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. |
-|     `thisUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
-|     `nextUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
+|     `thisUpdate`           | MUST     | Indicates the issue date of the CRL. |
+|     `nextUpdate`           | MUST     | Indicates the date by which the next CRL will be issued. For CRLs covering Subscriber Certificates, at most 10 days after the `thisUpdate`. For other CRLs, at most 12 months after the `thisUpdate`. |
 |     `revokedCertificates`  | *        | MUST be present if the CA has issued a certificate that has been revoked and the corresponding entry has yet to appear on at least one regularly scheduled CRL beyond the revoked certificate's validity period. The CA SHOULD remove an entry for a corresponding certificate after it has appeared on at least one regularly scheduled CRL beyond the revoked certificate's validity period. See the "revokedCertificates Component" table for additional requirements.  |
 |     `extensions`           | MUST     | See the "CRL Extensions" table for additional requirements. |
 | `signatureAlgorithm`       | MUST     | Encoded value MUST be byte-for-byte identical to the `tbsCertList.signature`. |
