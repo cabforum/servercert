@@ -3182,12 +3182,6 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 Prior to 2024‐03‐15, the CA SHALL issue CRLs in accordance with the profile specified in these Requirements or the profile specified in Version 1.8.7 of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates. Effective 2024‐03‐15, the CA SHALL issue CRLs in accordance with the profile specified in these Requirements.
 
-### 7.2.1 Version number(s)
-
-Certificate Revocation Lists MUST be of type X.509 v2.
-
-### 7.2.2 CRL and CRL entry extensions
-
 If the CA asserts compliance with these Baseline Requirements, all CRLs that it issues MUST comply with the following CRL profile, which incorporates, and is derived from [RFC 5280](https://tools.ietf.org/html/rfc5280). Except as explicitly noted, all normative requirements imposed by RFC 5280 shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://tools.ietf.org/html/rfc5280#appendix-B) for further issues to be aware of.
 
 A full and complete CRL is a CRL whose scope includes all certificates issued by the CA.
@@ -3214,6 +3208,12 @@ Table: CRL Fields
 | `signature`                | MUST     | - |
 | Any other value            | NOT RECOMMENDED | - |
 
+### 7.2.1 Version number(s)
+
+Certificate Revocation Lists MUST be of type X.509 v2.
+
+### 7.2.2 CRL and CRL entry extensions
+
 Table: CRL Extensions
 
 | __Extension__                     | __Presence__    | __Critical__          | __Description__ |
@@ -3239,7 +3239,6 @@ Table: crlEntryExtensions Component
 | ---                       | -             | ------          |
 | `reasonCode`              | *             | When present (OID 2.5.29.21), MUST NOT be marked critical and MUST indicate the most appropriate reason for revocation of the Certificate. <br><br> MUST be present unless the CRL entry is for a Certificate not technically capable of causing issuance and either 1) the CRL entry is for a Subscriber Certificate subject to these Requirements revoked prior to July 15, 2023 or 2) the reason for revocation (i.e., reasonCode) is unspecified (0). <br><br>See the "CRLReasons" table for additional requirements. |
 | Any other value | NOT RECOMMENDED | |
-
 
 Table: CRLReasons
 
