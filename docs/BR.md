@@ -3203,7 +3203,7 @@ Table: CRL Fields
 | __Field__                  | __Presence__    | __Description__ |
 | ---                        | ------          | ------          |
 | `tbsCertList`              |                 |                 |
-|     `version`              | MUST     | MUST be v2(1) |
+|     `version`              | MUST     | MUST be v2(1), see [Section 7.2.1](#721-version-numbers) |
 |     `signature`            | MUST     | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
 |     `issuer`               | MUST     | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. |
 |     `thisUpdate`           | MUST     | UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049.|
