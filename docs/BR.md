@@ -3228,7 +3228,7 @@ Table: revokedCertificates Component
 | __Component__                     | __Presence__    | __Description__ |
 | ----                              | -               | ----- |
 | `serialNumber`                    | MUST            | MUST be byte-for-byte identical to the serialNumber contained in the revoked certificate. |
-| `revocationDate`                  | MUST            | Normally, the date and time revocation occurred. See the footnote following this table for circumstances where backdating is permitted. UTCTime (YYMMDDHHMMSSZ) MUST be used for dates up to and including 2049. GeneralizedTime (YYYYMMDDHHMMSSZ) MUST be used for dates after 2049. | 
+| `revocationDate`                  | MUST            | Normally, the date and time revocation occurred. See the footnote following this table for circumstances where backdating is permitted.  | 
 | `crlEntryExtensions`              | *               | See the "crlEntryExtensions Component" table for additional requirements. |
 
 **Note:** The CA SHOULD update the revocation date in a CRL entry when it is determined that the private key of the certificate was compromised prior to the revocation date that is indicated in the CRL entry for that certificate. Backdating the revocationDate field is an exception to best practice described in RFC 5280 (Section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
