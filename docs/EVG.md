@@ -3,9 +3,9 @@ title: Guidelines for the Issuance and Management of Extended Validation Certifi
 subtitle: Version 2.0.0
 author:
   - CA/Browser Forum
-date: 30 November, 2022
+date: 8 June, 2023
 copyright: |
-  Copyright 2022 CA/Browser Forum
+  Copyright 2023 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
