@@ -1295,14 +1295,14 @@ Within twenty-four (24) hours of issuing its first Certificate, the CA MUST gene
 - partitioned (i.e., "sharded") CRLs that, when aggregated, represent the equivalent of a full and complete CRL.
 
 CAs issuing Subscriber Certificates:  
-1. MUST update and publish a new CRL within at least: 
+1. MUST update and publish a new CRL at least every: 
      - seven (7) days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”); or
      - four (4) days in all other cases; 
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked; and
 3. MUST include a `nextUpdate` field value that is no more than ten (10) days beyond the value of the `thisUpdate` field.
 
 CAs issuing CA Certificates:  
-1. MUST update and publish a new CRL within at least twelve (12) months;
+1. MUST update and publish a new CRL at least every twelve (12) months;
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked; and
 3. MUST include a `nextUpdate` field value that is no more than twelve (12) months beyond the value of the `thisUpdate` field.
 
