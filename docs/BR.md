@@ -2768,7 +2768,7 @@ The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with t
 
 | __Access Method__ | __OID__            | __Access Location__         | __Presence__ | __Maximum__ | __Description__ |
 | --                | --                 | ----                        | -            | -          | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY       | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
+| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
 | `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's certificate. |
 | Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
 
@@ -3197,15 +3197,15 @@ Table: CRL Fields
 | __Field__                  | __Presence__    | __Description__ |
 | ---                        | ------          | ------          |
 | `tbsCertList`              |                 |                 |
-|     `version`              | MUST     | MUST be v2(1), see [Section 7.2.1](#721-version-numbers) |
-|     `signature`            | MUST     | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
-|     `issuer`               | MUST     | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. |
-|     `thisUpdate`           | MUST     | Indicates the issue date of the CRL. |
-|     `nextUpdate`           | MUST     | Indicates the date by which the next CRL will be issued. For CRLs covering Subscriber Certificates, at most 10 days after the `thisUpdate`. For other CRLs, at most 12 months after the `thisUpdate`. |
-|     `revokedCertificates`  | *        | MUST be present if the CA has issued a certificate that has been revoked and the corresponding entry has yet to appear on at least one regularly scheduled CRL beyond the revoked certificate's validity period. The CA SHOULD remove an entry for a corresponding certificate after it has appeared on at least one regularly scheduled CRL beyond the revoked certificate's validity period. See the "revokedCertificates Component" table for additional requirements.  |
-|     `extensions`           | MUST     | See the "CRL Extensions" table for additional requirements. |
-| `signatureAlgorithm`       | MUST     | Encoded value MUST be byte-for-byte identical to the `tbsCertList.signature`. |
-| `signature`                | MUST     | - |
+|     `version`              | MUST            | MUST be v2(1), see [Section 7.2.1](#721-version-numbers) |
+|     `signature`            | MUST            | See [Section 7.1.3.2](#7132-signature-algorithmidentifier) |
+|     `issuer`               | MUST            | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. |
+|     `thisUpdate`           | MUST            | Indicates the issue date of the CRL. |
+|     `nextUpdate`           | MUST            | Indicates the date by which the next CRL will be issued. For CRLs covering Subscriber Certificates, at most 10 days after the `thisUpdate`. For other CRLs, at most 12 months after the `thisUpdate`. |
+|     `revokedCertificates`  | *               | MUST be present if the CA has issued a certificate that has been revoked and the corresponding entry has yet to appear on at least one regularly scheduled CRL beyond the revoked certificate's validity period. The CA SHOULD remove an entry for a corresponding certificate after it has appeared on at least one regularly scheduled CRL beyond the revoked certificate's validity period. See the "revokedCertificates Component" table for additional requirements.  |
+|     `extensions`           | MUST            | See the "CRL Extensions" table for additional requirements. |
+| `signatureAlgorithm`       | MUST            | Encoded value MUST be byte-for-byte identical to the `tbsCertList.signature`. |
+| `signature`                | MUST            | - |
 | Any other value            | NOT RECOMMENDED | - |
 
 ### 7.2.1 Version number(s)
@@ -3220,16 +3220,16 @@ Table: CRL Extensions
 | ----                              | -               | -                     | ----- |
 | `authorityKeyIdentifier`          | MUST            | N                     | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `CRLNumber`                       | MUST            | N                     | MUST contain an INTEGER greater than or equal to zero (0) and less than 2¹⁵⁹, and convey a strictly increasing sequence.        |
-| `IssuingDistributionPoint`        | *           | Y                     | See [Section 7.2.2.1 CRL Issuing Distribution Point](#7221-crl-issuing-distribution-point) |
-| Any other extension               | NOT RECOMMENDED        | -                     |       |
+| `IssuingDistributionPoint`        | *               | Y                     | See [Section 7.2.2.1 CRL Issuing Distribution Point](#7221-crl-issuing-distribution-point) |
+| Any other extension               | NOT RECOMMENDED | -                     |       |
 
 Table: revokedCertificates Component
 
-| __Component__                     | __Presence__    | __Description__ |
-| ----                              | -               | ----- |
-| `serialNumber`                    | MUST            | MUST be byte-for-byte identical to the serialNumber contained in the revoked certificate. |
-| `revocationDate`                  | MUST            | Normally, the date and time revocation occurred. See the footnote following this table for circumstances where backdating is permitted.  | 
-| `crlEntryExtensions`              | *               | See the "crlEntryExtensions Component" table for additional requirements. |
+| __Component__        | __Presence__ | __Description__ |
+| ----                 | -            | ----- |
+| `serialNumber`       | MUST         | MUST be byte-for-byte identical to the serialNumber contained in the revoked certificate. |
+| `revocationDate`     | MUST         | Normally, the date and time revocation occurred. See the footnote following this table for circumstances where backdating is permitted. | 
+| `crlEntryExtensions` | *            | See the "crlEntryExtensions Component" table for additional requirements. |
 
 **Note:** The CA SHOULD update the revocation date in a CRL entry when it is determined that the private key of the certificate was compromised prior to the revocation date that is indicated in the CRL entry for that certificate. Backdating the revocationDate field is an exception to best practice described in RFC 5280 (Section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
 
@@ -3259,6 +3259,7 @@ The privilegeWithdrawn reasonCode SHOULD NOT be made available to the Subscriber
 When a CA obtains verifiable evidence of Key Compromise for a Certificate whose CRL entry does not contain a reasonCode extension or has a reasonCode extension with a non-keyCompromise reason, the CA SHOULD update the CRL entry to enter keyCompromise as the CRLReason in the reasonCode extension. 
 
 #### 7.2.2.1 CRL Issuing Distribution Point
+
 Partitioned CRLs MUST include at least one of the names from the corresponding distributionPoint field of the cRLDistributionPoints extension of every certificate that is within the scope of this CRL. The encoded value MUST be byte-for-byte identical to the encoding used in the distributionPoint field of the certificate. 
 
 The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to `FALSE` (i.e., not asserted).
