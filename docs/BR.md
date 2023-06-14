@@ -3258,7 +3258,7 @@ When a CA obtains verifiable evidence of Key Compromise for a Certificate whose 
 
 #### 7.2.2.1 CRL Issuing Distribution Point
 
-Partitioned CRLs MUST include at least one of the names from the corresponding distributionPoint field of the cRLDistributionPoints extension of every certificate that is within the scope of this CRL. The encoded value MUST be byte-for-byte identical to the encoding used in the distributionPoint field of the certificate. 
+If a Certificate contains a distributionPoint field that does not point to the URI of a full and complete CRL, the corresponding CRL MUST contain the issuingDistributionPoint extension (OID 2.5.29.28). The encoded value of the issuingDistributionPoint extension MUST be byte-for-byte identical to the encoding used in the distributionPoint field of the Certificate.
 
 The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to `FALSE` (i.e., not asserted).
 
