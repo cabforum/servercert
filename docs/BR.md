@@ -2396,7 +2396,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 
 **Notes**: 
 - whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
-- whether or not the `crlDistributionPoints` extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
+- whether or not the CRL Distribution Points extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
 
 ##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
@@ -3184,7 +3184,7 @@ If the CA asserts compliance with these Baseline Requirements, all CRLs that it 
 
 A full and complete CRL is a CRL whose scope includes all certificates issued by the CA.
 
-A partitioned CRL (sometimes referred to as a "sharded CRL") is a CRL with a constrained scope, such as all certificates issued by the CA during a certain period of time ("temporal sharding"). Aside from the presence of the `IssuingDistributionPoint` extension (OID 2.5.29.28) in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
+A partitioned CRL (sometimes referred to as a "sharded CRL") is a CRL with a constrained scope, such as all certificates issued by the CA during a certain period of time ("temporal sharding"). Aside from the presence of the Issuing Distribution Point extension (OID 2.5.29.28) in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
 
 Minimally, CAs MUST issue either a "full and complete" CRL or a set of "partitioned" CRLs which cover the complete set of certificates issued by the CA. In other words, if issuing only partitioned CRLs, the combined scope of those CRLs must be equivalent to that of a full and complete CRL. 
 
@@ -3258,7 +3258,11 @@ When a CA obtains verifiable evidence of Key Compromise for a Certificate whose 
 
 #### 7.2.2.1 CRL Issuing Distribution Point
 
-If a Certificate contains a distributionPoint field that does not point to the URI of a full and complete CRL, the corresponding CRL MUST contain the issuingDistributionPoint extension (OID 2.5.29.28). The encoded value of the issuingDistributionPoint extension MUST be byte-for-byte identical to the encoding used in the distributionPoint field of the Certificate.
+Partitioned CRLs MUST contain an Issuing Distribution Point extension. The `distributionPoint` field of the Issuing Distribution Point extension MUST be present. Additionally, the `fullName` field of the DistributionPointName value MUST be present, and its value MUST conform to the following requirements:
+
+1. If a Certificate within the scope of the CRL contains a CRL Distribution Points extension, then at least one of the `uniformResourceIdentifiers` in the CRL Distribution Points's `fullName` field MUST be included in the `fullName` field of the CRL's Issuing Distribution Point extension. The encoding of the `uniformResourceIdentifier` value in the Issuing Distribution Point extension SHALL be byte-for-byte identical to the encoding used in the Certificate's CRL Distribution Points extension.
+3. Other GeneralNames of type `uniformResourceIdentifier` MAY be included.
+4. Non-`uniformResourceIdentifier` GeneralName types MUST NOT be included.
 
 The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to `FALSE` (i.e., not asserted).
 
