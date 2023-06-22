@@ -1298,11 +1298,11 @@ CAs issuing Subscriber Certificates:
 1. MUST update and publish a new CRL at least every: 
      - seven (7) days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod (“AIA OCSP pointer”); or
      - four (4) days in all other cases; 
-2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked; and
+2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
 CAs issuing CA Certificates:  
 1. MUST update and publish a new CRL at least every twelve (12) months;
-2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked; and
+2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
 CAs MUST continue issuing CRLs until one of the following is true:
 - all Subordinate CA Certificates containing the same Subject Public Key are expired or revoked; OR
@@ -3217,7 +3217,7 @@ Table: CRL Extensions
 | __Extension__              | __Presence__    | __Critical__ | __Description__ |
 | ----                       | -               | -            | ----- |
 | `authorityKeyIdentifier`   | MUST            | N            | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
-| `CRLNumber`                | MUST            | N            | MUST contain an INTEGER greater than or equal to zero (0) and less than 2¹⁵⁹, and convey a strictly increasing sequence.        |
+| `CRLNumber`                | MUST            | N            | MUST contain an INTEGER greater than or equal to zero (0) and less than 2¹⁵⁹, and convey a strictly increasing sequence. |
 | `IssuingDistributionPoint` | *               | Y            | See [Section 7.2.2.1 CRL Issuing Distribution Point](#7221-crl-issuing-distribution-point) |
 | Any other extension        | NOT RECOMMENDED | -            | - |
 
