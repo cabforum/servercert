@@ -3182,11 +3182,11 @@ Prior to 2024‐03‐15, the CA SHALL issue CRLs in accordance with the profile 
 
 If the CA asserts compliance with these Baseline Requirements, all CRLs that it issues MUST comply with the following CRL profile, which incorporates, and is derived from [RFC 5280](https://tools.ietf.org/html/rfc5280). Except as explicitly noted, all normative requirements imposed by RFC 5280 shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://tools.ietf.org/html/rfc5280#appendix-B) for further issues to be aware of.
 
-A full and complete CRL is a CRL whose scope includes all certificates issued by the CA.
+A full and complete CRL is a CRL whose scope includes all Certificates issued by the CA.
 
-A partitioned CRL (sometimes referred to as a "sharded CRL") is a CRL with a constrained scope, such as all certificates issued by the CA during a certain period of time ("temporal sharding"). Aside from the presence of the Issuing Distribution Point extension (OID 2.5.29.28) in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
+A partitioned CRL (sometimes referred to as a "sharded CRL") is a CRL with a constrained scope, such as all Certificates issued by the CA during a certain period of time ("temporal sharding"). Aside from the presence of the Issuing Distribution Point extension (OID 2.5.29.28) in partitioned CRLs, both CRL formats are syntactically the same from the perspective of this profile.
 
-Minimally, CAs MUST issue either a "full and complete" CRL or a set of "partitioned" CRLs which cover the complete set of certificates issued by the CA. In other words, if issuing only partitioned CRLs, the combined scope of those CRLs must be equivalent to that of a full and complete CRL. 
+Minimally, CAs MUST issue either a "full and complete" CRL or a set of "partitioned" CRLs which cover the complete set of Certificates issued by the CA. In other words, if issuing only partitioned CRLs, the combined scope of those CRLs must be equivalent to that of a full and complete CRL. 
 
 CAs MUST NOT issue indirect CRLs (i.e., the issuer of the CRL is not the issuer of all Certificates that are included in the scope of the CRL).
 
@@ -3200,7 +3200,7 @@ Table: CRL Fields
 |     `issuer`               | MUST            | MUST be byte-for-byte identical to the `subject` field of the Issuing CA. |
 |     `thisUpdate`           | MUST            | Indicates the issue date of the CRL. |
 |     `nextUpdate`           | MUST            | Indicates the date by which the next CRL will be issued. For CRLs covering Subscriber Certificates, at most 10 days after the `thisUpdate`. For other CRLs, at most 12 months after the `thisUpdate`. |
-|     `revokedCertificates`  | *               | MUST be present if the CA has issued a certificate that has been revoked and the corresponding entry has yet to appear on at least one regularly scheduled CRL beyond the revoked certificate's validity period. The CA SHOULD remove an entry for a corresponding certificate after it has appeared on at least one regularly scheduled CRL beyond the revoked certificate's validity period. See the "revokedCertificates Component" table for additional requirements.  |
+|     `revokedCertificates`  | *               | MUST be present if the CA has issued a Certificate that has been revoked and the corresponding entry has yet to appear on at least one regularly scheduled CRL beyond the revoked Certificate's validity period. The CA SHOULD remove an entry for a corresponding Certificate after it has appeared on at least one regularly scheduled CRL beyond the revoked Certificate's validity period. See the "revokedCertificates Component" table for additional requirements.  |
 |     `extensions`           | MUST            | See the "CRL Extensions" table for additional requirements. |
 | `signatureAlgorithm`       | MUST            | Encoded value MUST be byte-for-byte identical to the `tbsCertList.signature`. |
 | `signature`                | MUST            | - |
@@ -3225,11 +3225,11 @@ Table: revokedCertificates Component
 
 | __Component__        | __Presence__ | __Description__ |
 | ----                 | -            | ----- |
-| `serialNumber`       | MUST         | MUST be byte-for-byte identical to the serialNumber contained in the revoked certificate. |
+| `serialNumber`       | MUST         | MUST be byte-for-byte identical to the serialNumber contained in the revoked Certificate. |
 | `revocationDate`     | MUST         | Normally, the date and time revocation occurred. See the footnote following this table for circumstances where backdating is permitted. | 
 | `crlEntryExtensions` | *            | See the "crlEntryExtensions Component" table for additional requirements. |
 
-**Note:** The CA SHOULD update the revocation date in a CRL entry when it is determined that the private key of the certificate was compromised prior to the revocation date that is indicated in the CRL entry for that certificate. Backdating the revocationDate field is an exception to best practice described in RFC 5280 (Section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
+**Note:** The CA SHOULD update the revocation date in a CRL entry when it is determined that the private key of the Certificate was compromised prior to the revocation date that is indicated in the CRL entry for that Certificate. Backdating the revocationDate field is an exception to best practice described in RFC 5280 (Section 5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
 
 Table: crlEntryExtensions Component 
 
@@ -3261,8 +3261,8 @@ When a CA obtains verifiable evidence of Key Compromise for a Certificate whose 
 Partitioned CRLs MUST contain an Issuing Distribution Point extension. The `distributionPoint` field of the Issuing Distribution Point extension MUST be present. Additionally, the `fullName` field of the DistributionPointName value MUST be present, and its value MUST conform to the following requirements:
 
 1. If a Certificate within the scope of the CRL contains a CRL Distribution Points extension, then at least one of the `uniformResourceIdentifiers` in the CRL Distribution Points's `fullName` field MUST be included in the `fullName` field of the CRL's Issuing Distribution Point extension. The encoding of the `uniformResourceIdentifier` value in the Issuing Distribution Point extension SHALL be byte-for-byte identical to the encoding used in the Certificate's CRL Distribution Points extension.
-3. Other GeneralNames of type `uniformResourceIdentifier` MAY be included.
-4. Non-`uniformResourceIdentifier` GeneralName types MUST NOT be included.
+2. Other GeneralNames of type `uniformResourceIdentifier` MAY be included.
+3. Non-`uniformResourceIdentifier` GeneralName types MUST NOT be included.
 
 The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to `FALSE` (i.e., not asserted).
 
