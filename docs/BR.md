@@ -2729,7 +2729,7 @@ All `subject` names MUST be encoded as specified in [Section 7.1.4](#714-name-fo
 The following table details the acceptable `AttributeType`s that may appear within the `type` field of an `AttributeTypeAndValue`, as well as the contents permitted within the `value` field.
 
 | __Attribute Name__       | __Presence__    | __Value__ | __Verification__ |
-| ---                      | -               | ------    | -- |
+| ---                      | -----           | ----   | -- |
 | `countryName`            | MUST            | The two-letter ISO 3166-1 country code for the country in which the CA's place of business is located. | [Section 3.2.2.3](#3223-verification-of-country) |
 | `stateOrProvinceName`    | MAY             | If present, the CA's state or province information. | [Section 3.2.2.1](#3221-identity) |
 | `localityName`           | MAY             | If present, the CA's locality. | [Section 3.2.2.1](#3221-identity) |
