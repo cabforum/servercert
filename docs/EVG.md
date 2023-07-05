@@ -294,13 +294,7 @@ The CA MUST complete any required point‐in‐time readiness assessment no earl
 (12) months prior to issuing an EV Certificate. The CA MUST undergo a complete audit under such
 scheme within ninety (90) days of issuing the first EV Certificate.
 ## 8.8  Self audits
-During the period in which it issues EV Certificates, the CA MUST strictly control its service quality
-by performing ongoing self audits against a randomly selected sample of at least three percent of
-the EV Certificates it has issued in the period beginning immediately after the last sample was
-taken. For all EV Certificates where the Final Cross‐Correlation and Due Diligence requirements of
-Section 11.13 is performed by an RA, the CA MUST strictly control its service quality by performing
-ongoing self audits against a randomly selected sample of at least six percent of the EV Certificates
-it has issued in the period beginning immediately after the last sample was taken.
+During the period in which it issues EV Certificates, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least three percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.  For all EV Certificates where the Final Cross-Correlation and Due Diligence requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence) is performed by an RA, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least six percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.
 # 9.  OTHER BUSINESS AND LEGAL MATTERS
 ## 9.1  Fees
 ### 9.1.1  Certificate issuance or renewal fees
