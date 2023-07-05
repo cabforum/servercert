@@ -181,6 +181,21 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 # 6.  TECHNICAL SECURITY CONTROLS (11)
 ## 6.1  Key pair generation and installation
 ### 6.1.1  Key pair generation
+All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally to EV Certificates.
+However, for Root CA Key Pairs generated after the release of these Guidelines, the Root CA Key
+Pair generation ceremony MUST be witnessed by the CA’s Qualified Auditor in order to observe the
+process and the controls over the integrity and confidentiality of the Root CA Key Pairs produced.
+The Qualified Auditor MUST then issue a report opining that the CA, during its Root CA Key Pair
+and Certificate generation process:
+
+  1. Documented its Root CA key generation and protection procedures in its Certificate Policy,
+     and its Certification Practices Statement;
+  2. Included appropriate detail in its Root Key Generation Script;
+  3. Maintained effective controls to provide reasonable assurance that the Root CA key pair was
+     generated and protected in conformity with the procedures described in its CP/CPS and with
+     its Root Key Generation Script;
+  4. Performed, during the Root CA key generation process, all the procedures required by its
+     Root Key Generation Script.
 ### 6.1.2  Private key delivery to subscriber
 ### 6.1.3  Public key delivery to certificate issuer
 ### 6.1.4  CA public key delivery to relying parties
@@ -233,12 +248,59 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 ### 7.3.1  Version number(s)
 ### 7.3.2  OCSP extensions
 # 8.  COMPLIANCE AUDIT AND OTHER ASSESSMENTS
+A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following
+schemes:
+  i. WebTrust Program for CAs audit and WebTrust EV Program audit,
+  ii. ETSI TS 102 042 audit for EVCP, or
+  iii. ETSI EN 319 411‐1 audit for EVCP policy.
+  
+If the CA is a Government Entity, an audit of the CA by the appropriate internal government
+auditing agency is acceptable in lieu of the audits specified above, provided that such internal
+government auditing agency publicly certifies in writing that its audit addresses the criteria
+specified in one of the above audit schemes and certifies that the government CA has successfully
+passed the audit.
+EV audits MUST cover all CA obligations under these Guidelines regardless of whether they are
+performed directly by the CA or delegated to an RA or subcontractor.
 ## 8.1  Frequency or circumstances of assessment
+CAs issuing EV Certificates MUST undergo an annual audit that meets the criteria of Section 17.1
 ## 8.2  Identity/qualifications of assessor
+A Qualified Auditor (as defined in Section 8.2 of the Baseline Requirements) MUST perform the
+CA’s audit.
 ## 8.3  Assessor's relationship to assessed entity
 ## 8.4  Topics covered by assessment
 ## 8.5  Actions taken as a result of deficiency
 ## 8.6  Communication of results
+CAs SHOULD make its audit report publicly available no later than three months after the end of
+the audit period. If there is a delay greater than three months and if so requested by an Application
+Software Supplier, the CA MUST provide an explanatory letter signed by its auditor.
+## 8.7  Pre-issuance Readiness Audit
+1. If the CA has a currently valid WebTrust Seal of Assurance for CAs, then, before issuing EV
+   Certificates, the CA and its Root CA MUST successfully complete a point‐in‐time readiness
+   assessment audit against the WebTrust EV Program.
+2. If the CA has a currently valid ETSI 102 042 audit, then, before issuing EV Certificates, the CA
+   and its Root CA MUST successfully complete a point‐in‐time readiness assessment audit
+   against ETSI TS 102 042.
+3. If the CA has a currently valid ETSI EN 319 411‐1 audit for EVCP policy, then, before issuing EV
+   Certificates, the CA and its Root CA MUST successfully complete a point‐in‐time readiness
+   assessment audit against ETSI EN 319 411‐1 for EVCP.
+4. If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI TS
+   102 042 EVCP audit or an ETSI EN 319 411‐1 audit for EVCP policy, then, before issuing EV
+   Certificates, the CA and its Root CA MUST successfully complete either:
+    i. a point‐in‐time readiness assessment audit against the WebTrust for CA Program, or
+    ii. a point‐in‐time readiness assessment audit against the WebTrust EV Program, the ETSI
+        TS 102 042 EVCP, or the ETSI EN 319 411‐1 for EVCP policy.
+   
+The CA MUST complete any required point‐in‐time readiness assessment no earlier than twelve
+(12) months prior to issuing an EV Certificate. The CA MUST undergo a complete audit under such
+scheme within ninety (90) days of issuing the first EV Certificate.
+## 8.8  Self audits
+During the period in which it issues EV Certificates, the CA MUST strictly control its service quality
+by performing ongoing self audits against a randomly selected sample of at least three percent of
+the EV Certificates it has issued in the period beginning immediately after the last sample was
+taken. For all EV Certificates where the Final Cross‐Correlation and Due Diligence requirements of
+Section 11.13 is performed by an RA, the CA MUST strictly control its service quality by performing
+ongoing self audits against a randomly selected sample of at least six percent of the EV Certificates
+it has issued in the period beginning immediately after the last sample was taken.
 # 9.  OTHER BUSINESS AND LEGAL MATTERS
 ## 9.1  Fees
 ### 9.1.1  Certificate issuance or renewal fees
@@ -297,3 +359,327 @@ set forth in Section 9.9 of the Baseline Requirements.
 ### 9.16.4  Enforcement (attorneys' fees and waiver of rights)
 ### 9.16.5  Force Majeure
 ## 9.17  Other provisions
+# Appendix A - User Agent Verification (Normative)
+The CA MUST host test Web pages that allow Application Software Suppliers to test their software
+with EV Certificates that chain up to each EV Root Certificate. At a minimum, the CA MUST host
+separate Web pages using certificates that are:
+i. valid;
+ii. revoked; and
+iii. expired.
+
+# Appendix B - Sample Attorney Opinions Confirming Specified Information
+
+**(Informative)**
+
+[Law Firm Letterhead]
+
+[Date]
+
+| To: | **(Name of Issuing Certification Authority)(Address / fax number of Issuing CA – may be sent by fax or email attachment)** |
+| --- | --- |
+| Re: | **EV Certificate Request No. (CA Reference Number)** |
+| Client: | **(Exact company name of Client – see footnote 1)** |
+| Client Representative: | **(Exact name of Client Representative who signed the Application – see footnote 2)** |
+| Application Date: | **(Insert date of Client's Application to the Issuing CA)** |
+
+This firm represents _[__exact__ company name of Client]_ [^1] ("Client"), who has submitted the Application to you dated as of the Application Date shown above ("Application").  We have been asked by our Client to present you with our opinion as stated in this letter.
+
+[Insert customary preliminary matters for opinion letters in your jurisdiction.]
+
+On this basis, we hereby offer the following opinion:
+
+1. That [exact company name of Client] ("Company") is a duly formed [corporation, LLC, etc.] that is "active," "valid," "current," or the equivalent under the laws of the state/province of [name of governing jurisdiction where Client is incorporated or registered] and is not under any legal disability known to the author of this letter.
+
+2. That Company conducts business under the assumed name or "DBA"_[assumed name of the Applicant]_ and has registered such name with the appropriate government agency in the jurisdiction of its place of business below.
+
+3. That _[name of Client's Representative]_[^2]  has authority to act on behalf of Company to: [_select as appropriate_] (a) provide the information about Company required for issuance of the EV Certificates as contained in the attached Application, (b) request one or more EV Certificates and to designate other persons to request EV Certificates, and (c) agree to the relevant contractual obligations contained in the Subscriber Agreement on behalf of Company.
+
+4. That Company has a physical presence and its place of business is at the following location:
+
+   \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+   \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+   \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+5. That Company can be contacted at its stated place of business at the following telephone number:
+
+   \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+6. That Company has an active current Demand Deposit Account with a regulated financial institution.
+
+7. That Company has the right to use the following Domain Name in identifying itself on the Internet:
+
+   \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Insert customary limitations and disclaimers for opinion letters in your jurisdiction.
+
+(Name and signature)
+
+_[Jurisdiction(s) in which attorney / Latin notary is admitted to practice]_[^3]
+
+cc: [Send copy to Client_]_
+
+[^1]: This must be the Client's exact corporate name, as registered with the relevant Incorporating Agency in the Client's Jurisdiction of Incorporation.  This is the name that will be included in the EV Certificate.
+
+[^2]: If necessary to establish the Client Representative's actual authority, you may rely on a Power of Attorney from an officer of Client who has authority to delegate the authority to the Client Representative.
+
+[^3]: This letter may be issued by in-house counsel for the Client so long as permitted by the rules of your jurisdiction.
+
+# Appendix C - Sample Accountant Letters Confirming Specified Information
+
+**(Informative)**
+
+It is acceptable for professional accountants to provide letters that address specified matters.  The letters would be provided in accordance with the professional standards in the jurisdiction in which the accountant practices.
+
+Two examples of the letter that might be prepared by an accountant in the United States and in Canada follow:
+
+## UNITED STATES
+
+To the [Certification Authority] and Management of [Client]:
+
+We have performed the procedures enumerated below, which were agreed to by the Managements of Client, solely to assist you in evaluating the company's application for an Extended Validation (EV) Certificate, dated......................., 20......  This agreed-upon procedures engagement was conducted in accordance with attestation standards established by the American Institute of Certified Public Accountants.  The sufficiency of these procedures is solely the responsibility of those parties specified in this report.  Consequently, we make no representation regarding the sufficiency of the procedures described below either for the purpose for which this report has been requested or for any other purpose.
+
+| Specified Information: | Procedure:(Note 1: These are illustrative of the procedures that would be undertaken and are designed to meet the needs of the Certification Authorities issuing Extended Validation Certificates) | Results: (Note 2: If you are unavailable to perform any of the stated procedure, this should be noted in this column.  Any exceptions should be noted in a separate paragraph below) |
+| --- | --- | --- |
+|   |   |   |
+| Legal Name - 123456 Delaware corporation | Agree legal name to permanent audit file information (If audit has been completed). | Legal name on the application agrees with the information contained in our permanent file with respect to Client.(If there is no permanent file, state this fact) |
+|   |   |   |
+| Doing business as - "Name" | Agree name to government data base of business names | The name "Name" is registered with the (name of database to which the name was agreed) |
+|   |   |   |
+| Physical location - "Address Information" | Visit the location at the address | Site visit completed at Address |
+|   |   |   |
+| Business Phone Number - 555 999 9999 | Phone the number provided and confirm that it was answered by the named organization  | Phoned Business Number and noted that it was answered with the Doing Business As name.  This would provided by the receptionist |
+|   |   |   |
+| Bank Account – "Bank Name", "Account Number" | Request a letter directly from "the Bank" confirming the existence of the account for the benefit of "the Client" | Received letter directly from "the Bank" confirming the existence of the account for the benefit of "the Client" |
+|   |   |   |
+| The corporate officers are "NAMED" (verified officer) | Agree Names to annual shareholders meeting minutes (Note - not required to personally know the officers) | Agreed Names listed as corporate officers on the application to minute books maintained by the Client |
+|   |   |   |
+| Name of application signer and approver | Obtain letter from verified Officer confirming the names of the application signer and approver | Obtained letter from the President confirming the names of the duly authorized names of the application signer and approver as they appear in the application |
+
+We were not engaged to and did not conduct an examination, the objective of which would be the expression of an opinion on the Application for Extended Validation Certificate.  Accordingly, we do not express such an opinion.  Had we performed additional procedures, other matters might have come to our attention that would have been reported to you.
+
+This report is intended solely for the information and use of the Certification Authority and managements of Client, and is not intended to be and should not be used by anyone other than these specified parties.
+
+[Signature]
+
+[Date]
+
+## CANADA
+
+To: [Name of Certification Authority]
+
+Re: Client Limited [Applicant]
+
+As specifically agreed, I/we have performed the following procedures in connection with the above company's application for an Extended Validation (EV) Certificate, dated ......................., 20....  with respect to the following specified information contained in the application
+
+| Specified Information: | Procedure:(Note 1: These are illustrative of the procedures that would be undertaken and are designed to meet the needs of the Certification Authorities issuing Extended Validation Certificates) | Results: (Note 2: If you are unavailable to perform any of the stated procedure, this should be noted in this column.  Any exceptions should be noted in a separate paragraph below) |
+| --- | --- | --- |
+|   |   |   |
+| Legal Name - 123456 Ontario limited | Agree legal name to permanent audit file information (If audit has been completed) | Legal name on the application agrees with the information contained in our permanent file with respect to Client.(If there is no permanent file, state this fact) |
+|   |   |   |
+| Doing business as - "Name" | Agree name to government data base of business names | The name "Name" is registered with the (name of database to which the name was agreed) |
+|   |   |   |
+| Physical location - "Address Information" | Visit the location at the address | Site visit completed at Address |
+|   |   |   |
+| Business Phone Number - 555 999 9999 | Phone the number provided and confirm that it was answered by the named organization  | Phoned Business Number and noted that it was answered with the Doing Business As name.  This would provided by the receptionist |
+|   |   |   |
+| Bank Account – "Bank Name", "Account Number" | Request a letter directly from "the Bank" confirming the existence of the account for the benefit of "the Client" | Received letter directly from "the Bank" confirming the existence of the account for the benefit of "the Client" |
+|   |   |   |
+| The corporate officers are "NAMED" (verified officer) | Agree Names to annual shareholders meeting minutes (Note - not required to personally know the officers) | Agreed Names listed as corporate officers on the application to minute books maintained by the Client |
+|   |   |   |
+| Name of application signer and approver | Obtain letter from verified Officer confirming the names of the application signer and approver | Obtained letter from the President confirming the names of the duly authorized names of the application signer and approver as they appear in the application |
+
+As a result of applying the above procedures, I/we found [no / the following] exceptions [list of exceptions].  However, these procedures do not constitute an audit of the company's application for an EV Certificate, and therefore I express no opinion on the application dated ......................., 20.....
+
+This letter is for use solely in connection with the application for an Extended Validation Certificate by [Client] dated ......................., 20......
+
+City
+
+(signed) ......................................
+
+# Appendix D - Country-Specific Interpretative Guidelines (Normative)
+
+NOTE: This appendix provides alternative interpretations of the EV Guidelines for countries that have a language, cultural, technical, or legal reason for deviating from a strict interpretation of the EV Guidelines.  More specific information for particular countries may be added to this appendix in the future.
+
+## 1. Organization Names
+
+1. Non-Latin Organization Name
+
+   Where an EV Applicant's organization name is not registered with a QGIS in _Latin_ characters and the Applicant's foreign character organization name and registration have been verified with a QGIS in accordance with these Guidelines, a CA MAY include a Latin character organization name in the EV Certificate.  In such a case, the CA MUST follow the procedures laid down in this section.
+
+2. Romanized Names
+
+   In order to include a transliteration/Romanization of the registered name, the Romanization MUST be verified by the CA using a system officially recognized by the Government in the Applicant's Jurisdiction of Incorporation.
+
+   If the CA can not rely on a transliteration/Romanization of the registered name using a system officially recognized by the Government in the Applicant's Jurisdiction of Incorporation, then it MUST rely on one of the options below, in order of preference:
+
+   A.  A system recognized by the International Organization for Standardization (ISO);
+   B.  A system recognized by the United Nations; or
+   C.  A Lawyer's Opinion or Accountant's Letter confirming the proper Romanization of the registered name.
+
+3. Translated Name
+
+   In order to include a Latin character name in the EV certificate that is not a direct Romanization of the registered name (e.g. an English Name)  the CA MUST verify that the Latin character name is:
+
+   A.  Included in the Articles of Incorporation (or equivalent document) filed as part of the organization registration; or
+   B.  Recognized by a QTIS in the Applicant's Jurisdiction of Incorporation as the Applicant's recognized name for tax filings; or
+   C.  Confirmed with a QIIS to be the name associated with the registered organization; or
+   D.  Confirmed by a Verified Legal Opinion or Accountant's Letter to be a translated trading name associated with the registered organization.
+
+### Country-Specific Procedures
+
+#### D-1. Japan
+
+As interpretation of the procedures set out above:
+
+1. Organization Names
+
+   A.  The Revised Hepburn method of Romanization, as well as Kunrei-shiki and Nihon-shiki methods described in ISO 3602, are acceptable for Japanese Romanizations.
+   B.  The CA MAY verify the Romanized transliteration, language translation (e.g. English name), or other recognized Roman-letter substitute of the Applicant's formal legal name with either a QIIS, Verified Legal Opinion, or Verified Accountant Letter.
+   C.  The CA MAY use the Financial Services Agency to verify a Romanized, translated, or other recognized Roman-letter substitute name.  When used, the CA MUST verify that the translated English is recorded in the audited Financial Statements.
+   D.  When relying on Articles of Incorporation to verify a Romanized, translated, or other recognized Roman-letter substitute name, the Articles of Incorporation MUST be accompanied either: by a document, signed with the original Japanese Corporate Stamp, that proves that the Articles of Incorporation are authentic and current, or by a Verified Legal Opinion or a Verified Accountant Letter.  The CA MUST verify the authenticity of the Corporate Stamp.
+   E.  A Romanized, translated, or other recognized Roman-lettered substitute name confirmed in accordance with this [Appendix D-1](#d-1-japan) stored in the ROBINS database operated by JIPDEC MAY be relied upon by a CA for determining the allowed organization name during any issuance or renewal process of an EV Certificate without the need to re-perform the above procedures.
+
+2. Accounting Practitioner
+
+   In Japan:
+
+   A.  Accounting Practitioner includes either a certified public accountant (公認会計士 - Konin-kaikei-shi) or a licensed tax accountant (税理士 – Zei-ri-shi).
+   B.  The CA MUST verify the professional status of the Accounting Practitioner through direct contact with the relevant local member association that is affiliated with either the Japanese Institute of Certified Public Accountants ([http://www.hp.jicpa.or.jp](http://www.hp.jicpa.or.jp/)), the Japan Federation of Certified Tax Accountant's Associations ([http://www.nichizeiren.or.jp](http://www.nichizeiren.or.jp/)), or any other authoritative source recognized by the Japanese Ministry of Finance ([http://www.mof.go.jp](http://www.mof.go.jp/)) as providing the current registration status of such professionals.
+
+3. Legal Practitioner
+
+   In Japan:
+
+   A.  Legal Practitioner includes any of the following:
+
+       - a licensed lawyer (弁護士 - Ben-go-shi),
+       - a judicial scrivener (司法書士 - Shiho-sho-shi lawyer),
+       - an administrative solicitor (行政書士 - Gyosei-sho-shi Lawyer),
+       - or a notary public (公証人 - Ko-sho-nin).
+
+       For purposes of the EV Guidelines, a Japanese Notary Public is considered equivalent to a Latin Notary.
+
+   B.  The CA MUST verify the professional status of the Legal Practitioner by direct contact through the relevant local member association that is affiliated with one of the following national associations:
+
+       - the Japan Federation of Bar Associations ([http://www.nichibenren.or.jp](http://www.nichibenren.or.jp/)),
+       - the Japan Federation of Shiho-Shoshi Lawyer's Associations ([http://www.shiho-shoshi.or.jp](http://www.shiho-shoshi.or.jp/)),
+       - the Japan Federation of Administrative Solicitors ([http://www.gyosei.or.jp](http://www.gyosei.or.jp/)),
+       - the Japan National Notaries Association ([http://www.koshonin.gr.jp](http://www.koshonin.gr.jp/)), or
+       - any other authoritative source recognized by the Japanese Ministry of Justice ([http://www.moj.go.jp](http://www.moj.go.jp/)) as providing the current registration status of such professionals.
+
+# Appendix E - Sample Contract Signer's Representation/Warranty (Informative)
+
+A CA may rely on the Contract Signer's authority to enter into the Subscriber Agreement using a representation/warranty executed by the Contract Signer.  An example of an acceptable warranty is as follows:
+
+[CA] and Applicant are entering into a legally valid and enforceable Subscriber Agreement that creates extensive obligations on Applicant.  An EV Certificate serves as a form of digital identity for Applicant.  The loss or misuse of this identity can result in great harm to the Applicant.  By signing this Subscriber Agreement, the contract signer acknowledges that they have the authority to obtain the digital equivalent of a company stamp, seal, or (where applicable) officer's signature to establish the authenticity of the company's website, and that [Applicant name] is responsible for all uses of its EV Certificate.  By signing this Agreement on behalf of [Applicant name], the contract signer represents that the contract signer
+
+   i. is acting as an authorized representative of [Applicant name],
+   ii. is expressly authorized by [Applicant name] to sign Subscriber Agreements and approve EV Certificate requests on Applicant's behalf, and
+   iii. has confirmed Applicant's right to use the domain(s) to be included in EV Certificates.
+
+# Appendix F – Unused
+
+This appendix is intentionally left blank.
+
+# Appendix G – Abstract Syntax Notation One module for EV certificates
+
+```ASN.1
+CABFSelectedAttributeTypes {
+    joint‐iso‐itu‐t(2) international‐organizations(23)
+    ca‐browser‐forum(140) module(4)
+    cabfSelectedAttributeTypes(1) 1 }
+DEFINITIONS ::=
+BEGIN
+-- EXPORTS All
+IMPORTS
+  -- from Rec. ITU-T X.501 | ISO/IEC 9594-2
+  selectedAttributeTypes, ID, ldap-enterprise
+    FROM UsefulDefinitions {joint-iso-itu-t ds(5) module(1)
+    usefulDefinitions(0) 7}
+
+  -- from the X.500 series
+  ub-locality-name, ub-state-name
+    FROM UpperBounds {joint-iso-itu-t ds(5) module(1) upperBounds(10) 7}
+
+  -- from Rec. ITU-T X.520 | ISO/IEC 9594-6
+  DirectoryString{}, CountryName
+    FROM SelectedAttributeTypes selectedAttributeTypes;
+
+id-evat-jurisdiction ID ::= {ldap-enterprise 311 ev(60) 2 1}
+id-evat-jurisdiction-localityName ID ::= {id-evat-jurisdiction 1}
+id-evat-jurisdiction-stateOrProvinceName ID ::= {id-evat-jurisdiction 2}
+id-evat-jurisdiction-countryName ID ::= {id-evat-jurisdiction 3}
+
+jurisdictionLocalityName ATTRIBUTE ::= {
+  SUBTYPE OF    name
+  WITH SYNTAX   DirectoryString{ub-locality-name}
+  LDAP-SYNTAX   directoryString.&id
+  LDAP-NAME     {"jurisdictionL"}
+  ID            id-evat-jurisdiction-localityName }
+
+jurisdictionStateOrProvinceName ATTRIBUTE ::= {
+  SUBTYPE OF    name
+  WITH SYNTAX   DirectoryString{ub-state-name}
+  LDAP-SYNTAX   directoryString.&id
+  LDAP-NAME     {"jurisdictionST"}
+  ID            id-evat-jurisdiction-stateOrProvinceName }
+
+jurisdictionCountryName ATTRIBUTE ::= {
+  SUBTYPE OF    name
+  WITH SYNTAX   CountryName
+  SINGLE VALUE  TRUE
+  LDAP-SYNTAX   countryString.&id
+  LDAP-NAME     {"jurisdictionC"}
+  ID            id-evat-jurisdiction-countryName }
+
+END
+```
+
+# Appendix H – Registration Schemes
+
+The following Registration Schemes are currently recognized as valid under these
+guidelines:
+
+* **NTR**:
+
+  The information carried in this field shall be the same as held in
+  Subject Registration Number Field as specified in
+  [Section 9.2.5](#925-subject-registration-number-field) and the country code
+  used in the Registration Scheme identifier shall match that of the
+  subject’s jurisdiction as specified in
+  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
+
+  Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4
+  includes more than the country code, the additional locality information shall
+  be included as specified in [Section 9.2.8](#928-subject-organization-identifier-field)
+  and/or [Section 9.8.2](#982-cabrowser-forum-organization-identifier-extension).
+
+* **VAT**:
+
+  Reference allocated by the national tax authorities to a Legal Entity. This
+  information shall be validated using information provided by the national tax
+  authority against the organization as identified by the Subject Organization
+  Name Field (see [Section 9.2.1](#921-subject-organization-name-field)) and
+  Subject Registration Number Field (see
+  Section 9.2.5](#925-subject-registration-number-field)) within the context of
+  the subject’s jurisdiction as specified in
+  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
+
+* **PSD**:
+
+  Authorization number as specified in ETSI TS 119 495 clause 4.4
+  allocated to a payment service provider and containing the information as
+  specified in ETSI TS 119 495 clause 5.2.1.  This information SHALL be
+  obtained directly from the national competent authority register for
+  payment services or from an information source approved by a government
+  agency, regulatory body, or legislation for this purpose.  This information
+  SHALL be validated by being matched directly or indirectly (for example, by
+  matching a globally unique registration number) against the organization as
+  identified by the Subject Organization Name Field (see
+  [Section 9.2.1](#921-subject-organization-name-field)) and
+  Subject Registration Number Field (see
+  [Section 9.2.5](#925-subject-registration-number-field)) within the context of
+  the subject’s jurisdiction as specified in
+  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
+  The stated address of the organization combined with the organization name
+  SHALL NOT be the only information used to disambiguate the organization.
