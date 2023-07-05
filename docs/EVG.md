@@ -271,6 +271,11 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 ### 9.6.5  Representations and warranties of other participants
 ## 9.7  Disclaimers of warranties
 ## 9.8  Limitations of liability
+CAs MAY limit their liability as described in Section 9.8 of the Baseline Requirements except that a
+CA MUST NOT limit its liability to Subscribers or Relying Parties for legally recognized and
+provable claims to a monetary amount less than two thousand US dollars per Subscriber or Relying
+Party per EV Certificate.
+
 ## 9.9  Indemnities
 ## 9.10  Term and termination
 ### 9.10.1  Term
