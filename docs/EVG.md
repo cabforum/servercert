@@ -181,21 +181,13 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 # 6.  TECHNICAL SECURITY CONTROLS (11)
 ## 6.1  Key pair generation and installation
 ### 6.1.1  Key pair generation
-All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally to EV Certificates.
-However, for Root CA Key Pairs generated after the release of these Guidelines, the Root CA Key
-Pair generation ceremony MUST be witnessed by the CA’s Qualified Auditor in order to observe the
-process and the controls over the integrity and confidentiality of the Root CA Key Pairs produced.
-The Qualified Auditor MUST then issue a report opining that the CA, during its Root CA Key Pair
-and Certificate generation process:
+All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally to EV Certificates. However, for Root CA Key Pairs generated after the release of these Guidelines, the Root CA Key Pair generation ceremony MUST be witnessed by the CA's Qualified Auditor in order to observe the process and the controls over the integrity and confidentiality of the Root CA Key Pairs produced.  The Qualified Auditor MUST then issue a report opining that the CA, during its Root CA Key Pair and Certificate generation process:
 
-  1. Documented its Root CA key generation and protection procedures in its Certificate Policy,
-     and its Certification Practices Statement;
+  1. Documented its Root CA key generation and protection procedures in its Certificate Policy, and its Certification Practices Statement;
   2. Included appropriate detail in its Root Key Generation Script;
-  3. Maintained effective controls to provide reasonable assurance that the Root CA key pair was
-     generated and protected in conformity with the procedures described in its CP/CPS and with
-     its Root Key Generation Script;
-  4. Performed, during the Root CA key generation process, all the procedures required by its
-     Root Key Generation Script.
+  3. Maintained effective controls to provide reasonable assurance that the Root CA key pair was generated and protected in conformity with the procedures described in its CP/CPS and with its Root Key Generation Script;
+  4. Performed, during the Root CA key generation process, all the procedures required by its Root Key Generation Script.
+
 ### 6.1.2  Private key delivery to subscriber
 ### 6.1.3  Public key delivery to certificate issuer
 ### 6.1.4  CA public key delivery to relying parties
@@ -248,51 +240,34 @@ and Certificate generation process:
 ### 7.3.1  Version number(s)
 ### 7.3.2  OCSP extensions
 # 8.  COMPLIANCE AUDIT AND OTHER ASSESSMENTS
-A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following
-schemes:
-  i. WebTrust Program for CAs audit and WebTrust EV Program audit,
-  ii. ETSI TS 102 042 audit for EVCP, or
-  iii. ETSI EN 319 411‐1 audit for EVCP policy.
-  
-If the CA is a Government Entity, an audit of the CA by the appropriate internal government
-auditing agency is acceptable in lieu of the audits specified above, provided that such internal
-government auditing agency publicly certifies in writing that its audit addresses the criteria
-specified in one of the above audit schemes and certifies that the government CA has successfully
-passed the audit.
-EV audits MUST cover all CA obligations under these Guidelines regardless of whether they are
-performed directly by the CA or delegated to an RA or subcontractor.
+A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following schemes:
+
+i. WebTrust Program for CAs audit and WebTrust EV Program audit,
+ii. ETSI TS 102 042 audit for EVCP, or
+iii. ETSI EN 319 411-1 audit for EVCP policy.
+
+If the CA is a Government Entity, an audit of the CA by the appropriate internal government auditing agency is acceptable in lieu of the audits specified above, provided that such internal government auditing agency publicly certifies in writing that its audit addresses the criteria specified in one of the above audit schemes and certifies that the government CA has successfully passed the audit.
+
 ## 8.1  Frequency or circumstances of assessment
-CAs issuing EV Certificates MUST undergo an annual audit that meets the criteria of Section 17.1
+CAs issuing EV Certificates MUST undergo an annual audit that meets the criteria of [Section 17.1](#171-eligible-audit-schemes).
 ## 8.2  Identity/qualifications of assessor
-A Qualified Auditor (as defined in Section 8.2 of the Baseline Requirements) MUST perform the
-CA’s audit.
+A Qualified Auditor (as defined in Section 8.2 of the Baseline Requirements) MUST perform the CA's audit.
 ## 8.3  Assessor's relationship to assessed entity
 ## 8.4  Topics covered by assessment
 ## 8.5  Actions taken as a result of deficiency
 ## 8.6  Communication of results
-CAs SHOULD make its audit report publicly available no later than three months after the end of
-the audit period. If there is a delay greater than three months and if so requested by an Application
-Software Supplier, the CA MUST provide an explanatory letter signed by its auditor.
+CAs SHOULD make its audit report publicly available no later than three months after the end of the audit period.  If there is a delay greater than three months and if so requested by an Application Software Supplier, the CA MUST provide an explanatory letter signed by its auditor.
 ## 8.7  Pre-issuance Readiness Audit
-1. If the CA has a currently valid WebTrust Seal of Assurance for CAs, then, before issuing EV
-   Certificates, the CA and its Root CA MUST successfully complete a point‐in‐time readiness
-   assessment audit against the WebTrust EV Program.
-2. If the CA has a currently valid ETSI 102 042 audit, then, before issuing EV Certificates, the CA
-   and its Root CA MUST successfully complete a point‐in‐time readiness assessment audit
-   against ETSI TS 102 042.
-3. If the CA has a currently valid ETSI EN 319 411‐1 audit for EVCP policy, then, before issuing EV
-   Certificates, the CA and its Root CA MUST successfully complete a point‐in‐time readiness
-   assessment audit against ETSI EN 319 411‐1 for EVCP.
-4. If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI TS
-   102 042 EVCP audit or an ETSI EN 319 411‐1 audit for EVCP policy, then, before issuing EV
-   Certificates, the CA and its Root CA MUST successfully complete either:
-    i. a point‐in‐time readiness assessment audit against the WebTrust for CA Program, or
-    ii. a point‐in‐time readiness assessment audit against the WebTrust EV Program, the ETSI
-        TS 102 042 EVCP, or the ETSI EN 319 411‐1 for EVCP policy.
-   
-The CA MUST complete any required point‐in‐time readiness assessment no earlier than twelve
-(12) months prior to issuing an EV Certificate. The CA MUST undergo a complete audit under such
-scheme within ninety (90) days of issuing the first EV Certificate.
+
+1. If the CA has a currently valid WebTrust Seal of Assurance for CAs, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against the WebTrust EV Program.
+2. If the CA has a currently valid ETSI 102 042 audit, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI TS 102 042.
+3. If the CA has a currently valid ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI EN 319 411-1 for EVCP.
+4. If the CA does not have a currently valid WebTrust Seal of Assurance for CAs or an ETSI TS 102 042 EVCP audit or an ETSI EN 319 411-1 audit for EVCP policy, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete either:
+   i. a point-in-time readiness assessment audit against the WebTrust for CA Program, or
+   ii. a point-in-time readiness assessment audit against the WebTrust EV Program, the ETSI TS 102 042 EVCP, or the ETSI EN 319 411-1 for EVCP policy.
+
+The CA MUST complete any required point-in-time readiness assessment no earlier than twelve (12) months prior to issuing an EV Certificate.  The CA MUST undergo a complete audit under such scheme within ninety (90) days of issuing the first EV Certificate.
+
 ## 8.8  Self audits
 During the period in which it issues EV Certificates, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least three percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.  For all EV Certificates where the Final Cross-Correlation and Due Diligence requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence) is performed by an RA, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least six percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.
 # 9.  OTHER BUSINESS AND LEGAL MATTERS
@@ -350,12 +325,11 @@ A CA's indemnification obligations and a Root CA's obligations with respect to s
 ### 9.16.5  Force Majeure
 ## 9.17  Other provisions
 # Appendix A - User Agent Verification (Normative)
-The CA MUST host test Web pages that allow Application Software Suppliers to test their software
-with EV Certificates that chain up to each EV Root Certificate. At a minimum, the CA MUST host
-separate Web pages using certificates that are:
-i. valid;
-ii. revoked; and
-iii. expired.
+The CA MUST host test Web pages that allow Application Software Suppliers to test their software with EV Certificates that chain up to each EV Root Certificate.  At a minimum, the CA MUST host separate Web pages using certificates that are:
+
+  i. valid;
+  ii. revoked; and
+  iii. expired.
 
 # Appendix B - Sample Attorney Opinions Confirming Specified Information
 
