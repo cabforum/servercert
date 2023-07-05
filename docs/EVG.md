@@ -44,7 +44,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 ## 2.2  Publication of certification information
 ## 2.3  Time or frequency of publication
 ## 2.4  Access controls on repositories
-# 3. IDENTIFICATION AND AUTHENTICATION (11)
+# 3. IDENTIFICATION AND AUTHENTICATION
 ## 3.1  Naming
 ### 3.1.1  Types of names
 ### 3.1.2  Need for names to be meaningful
@@ -130,7 +130,8 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 ## 4.12  Key escrow and recovery
 ### 4.12.1 Key escrow and recovery policy and practices
 ### 4.12.2 Session key encapsulation and recovery policy and practices
-# 5.  FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS (11)
+# 5.  FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS 
+As specified in Section 5 of the Baseline Requirements. In addition, systems used to process and approve EV Certificate Requests MUST require actions by at least two trusted persons before creating an EV Certificate.
 ## 5.1  Physical controls
 ### 5.1.1  Site location and construction
 ### 5.1.2  Physical access
@@ -155,6 +156,8 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 ### 5.3.7  Independent contractor requirements
 ### 5.3.8  Documentation supplied to personnel
 ## 5.4  Audit logging procedures
+As specified in Section 5.4 of the Baseline Requirements.
+
 ### 5.4.1  Types of events recorded
 ### 5.4.2  Frequency of processing log
 ### 5.4.3  Retention period for audit log
@@ -178,7 +181,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 ### 5.7.3  Entity private key compromise procedures
 ### 5.7.4  Business continuity capabilities after a disaster
 ## 5.8  CA or RA termination
-# 6.  TECHNICAL SECURITY CONTROLS (11)
+# 6.  TECHNICAL SECURITY CONTROLS 
 ## 6.1  Key pair generation and installation
 ### 6.1.1  Key pair generation
 All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally to EV Certificates. However, for Root CA Key Pairs generated after the release of these Guidelines, the Root CA Key Pair generation ceremony MUST be witnessed by the CA's Qualified Auditor in order to observe the process and the controls over the integrity and confidentiality of the Root CA Key Pairs produced.  The Qualified Auditor MUST then issue a report opining that the CA, during its Root CA Key Pair and Certificate generation process:
