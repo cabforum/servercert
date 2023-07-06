@@ -216,7 +216,9 @@ Abbreviations and Acronyms are defined in the Baseline Requirements except as ot
 | QIIS | Qualified Independent Information Source |
 | SEC | (US Government) Securities and Exchange Commission |
 | UTC(k) | National realization of Coordinated Universal Time |
-### 1.6.3  Conventions
+### 1.6.3  References
+See Baseline Requirements, which are available at <https://www.cabforum.org/>.
+### 1.6.4  Conventions
 Terms not otherwise defined in these Guidelines shall be as defined in applicable agreements, user manuals, certification practice statements (CPS), and certificate policies (CP) of the CA issuing EV Certificates.
 
 The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Guidelines shall be interpreted in accordance with RFC 2119.
@@ -528,9 +530,22 @@ During the period in which it issues EV Certificates, the CA MUST strictly contr
 ## 9.5  Intellectual property rights
 ## 9.6  Representations and warranties
 ### 9.6.1  CA representations and warranties
+When the CA issues an EV Certificate, the CA and its Root CA represent and warrant to the Certificate Beneficiaries listed in Section 9.6.1 of the Baseline Requirements, during the period when the EV Certificate is Valid, that the CA has followed the requirements of these Guidelines and its EV Policies in issuing and managing the EV Certificate and in verifying the accuracy of the information contained in the EV Certificate.  The EV Certificate Warranties specifically include, but are not limited to, the following:
+
+A.  **Legal Existence**: The CA has confirmed with the Incorporating or Registration Agency in the Subject's Jurisdiction of Incorporation or Registration that, as of the date the EV Certificate was issued, the Subject named in the EV Certificate legally exists as a valid organization or entity in the Jurisdiction of Incorporation or Registration;
+B.  **Identity**: The CA has confirmed that, as of the date the EV Certificate was issued, the legal name of the Subject named in the EV Certificate matches the name on the official government records of the Incorporating or Registration Agency in the Subject's Jurisdiction of Incorporation or Registration, and if an assumed name is also included, that the assumed name is properly registered by the Subject in the jurisdiction of its Place of Business;
+C.  **Right to Use Domain Name**: The CA has taken all steps reasonably necessary to verify that, as of the date the EV Certificate was issued, the Subject named in the EV Certificate has the right to use all the Domain Name(s) listed in the EV Certificate;
+D.  **Authorization for EV Certificate**: The CA has taken all steps reasonably necessary to verify that the Subject named in the EV Certificate has authorized the issuance of the EV Certificate;
+E.  **Accuracy of Information**: The CA has taken all steps reasonably necessary to verify that all of the other information in the EV Certificate is accurate, as of the date the EV Certificate was issued;
+F.  **Subscriber Agreement**: The Subject named in the EV Certificate has entered into a legally valid and enforceable Subscriber Agreement with the CA that satisfies the requirements of these Guidelines or, if they are affiliated, the Applicant Representative has acknowledged and accepted the Terms of Use;
+G.  **Status**: The CA will follow the requirements of these Guidelines and maintain a 24 x 7 online-accessible Repository with current information regarding the status of the EV Certificate as Valid or revoked; and
+H.  **Revocation**: The CA will follow the requirements of these Guidelines and revoke the EV Certificate for any of the revocation reasons specified in these Guidelines.
+
 ### 9.6.2  RA representations and warranties
 ### 9.6.3  Subscriber representations and warranties
 Section 9.6.3 of the Baseline Requirements applies equally to EV Certificates.  In cases where the Certificate Request does not contain all necessary information about the Applicant, the CA MUST additionally confirm the data with the Certificate Approver or Contract Signer rather than the Certificate Requester.
+
+EV Certificate Applicants make the commitments and warranties set forth in Section 9.6.3 of the Baseline Requirements for the benefit of the CA and Certificate Beneficiaries.
 ### 9.6.4  Relying party representations and warranties
 ### 9.6.5  Representations and warranties of other participants
 ## 9.7  Disclaimers of warranties
