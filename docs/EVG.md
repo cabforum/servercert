@@ -70,6 +70,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.8 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 | 1.7.9 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 | 1.8.0 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
+| 1.8.1 | SCxx | Clarifications about use and disclosure of QGIS | xx-xxx-2023 | xx-xxx-2023 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -449,7 +450,7 @@ Subject to the requirements of these Guidelines, the EV Certificate and certific
 
 __Certificate Field__: `subject:organizationName` (OID 2.5.4.10)  
 __Required/Optional__: Required  
-__Contents__: This field MUST contain the Subject's full legal organization name as listed in the official records of the Incorporating or Registration Agency in the Subject's Jurisdiction of Incorporation or Registration or as otherwise verified by the CA as provided herein. A CA MAY abbreviate the organization prefixes or suffixes in the organization name, e.g., if the official record shows "Company Name Incorporated" the CA MAY include "Company Name, Inc."
+__Contents__: This field MUST contain the Subject's full legal organization name as listed in the official records of the Incorporating or Registration Agency or QGIS in the Subject's Jurisdiction of Incorporation or Registration or as otherwise verified by the CA as provided herein. A CA MAY abbreviate the organization prefixes or suffixes in the organization name, e.g., if the official record shows "Company Name Incorporated" the CA MAY include "Company Name, Inc."
 
 When abbreviating a Subject's full legal name as allowed by this subsection, the CA MUST use abbreviations that are not misleading in the Jurisdiction of Incorporation or Registration.
 
@@ -797,6 +798,8 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
    B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
    C.  **Registration Number**: The CA MUST attempt to obtain the Applicant's date of formation, or the identifier for the legislative act that created the International Organization Entity.  In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is an International Organization Entity.
 
+For the above requirements (1 to 4), when necessary, it's allowed the use of QGIS that consolidate and publish official information of one or more Incorporating or Registration Agencies.
+
 ### 11.2.2. Acceptable Method of Verification
 
 1. **Private Organization Subjects**: Unless verified under subsection (6), all items listed in [Section 11.2.1](#1121-verification-requirements) (1) MUST be verified directly with, or obtained directly from, the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Such verification MAY be through use of a Qualified Government Information Source operated by, or on behalf of, the Incorporating or Registration Agency, or by direct contact with the Incorporating or Registration Agency in person or via mail, e-mail, Web address, or telephone, using an address or phone number obtained directly from the Qualified Government Information Source, Incorporating or Registration Agency, or from a Qualified Independent Information Source.
@@ -871,6 +874,8 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 
    i. the Verified Professional Letter includes a copy of supporting documentation used to establish the Applicant's legal existence, such as a certificate of registration, articles of incorporation, operating agreement, statute, or regulatory act, and
    ii. the CA confirms the Applicant's organization name specified in the Verified Professional Letter with a QIIS or QGIS.
+
+For the above requirements (1 to 5), when necessary, it's allowed the use of QGIS that consolidate and publish official information of one or more Incorporating or Registration Agencies.
 
 ## 11.3. Verification of Applicant's Legal Existence and Identity – Assumed Name
 
