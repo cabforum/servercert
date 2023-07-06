@@ -27,6 +27,21 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 ## 1.3  PKI participants
 ### 1.3.1  Certification authorities
 ### 1.3.2  Registration authorities
+The CA MAY delegate the performance of all or any part of a requirement of these Guidelines to an Affiliate or a Registration Authority (RA) or subcontractor, provided that the process employed by the CA fulfills all of the requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence).
+Affiliates and/or RAs must comply with the qualification requirements of [Section 14.1](#141-trustworthiness-and-competence).
+
+The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of [Section 14](#14-employee-and-third-party-issues) and the document retention and event logging requirements of [Section 15](#15-data-records).
+
+In all cases, the CA MUST contractually obligate each Affiliate, RA, subcontractor, and Enterprise RA to comply with all applicable requirements in these Guidelines and to perform them as required of the CA itself.  The CA SHALL enforce these obligations and internally audit each Affiliate's, RA's, subcontractor's, and Enterprise RA's compliance with these Requirements on an annual basis.
+#### 1.3.2.1  Enterprise Registration authorities
+The CA MAY contractually authorize a Subscriber to perform the RA function and authorize the CA to issue additional EV Certificates.  In such case, the Subscriber SHALL be considered an Enterprise RA, and the following requirements SHALL apply:
+
+1. In all cases, the Subscriber MUST be an organization verified by the CA in accordance with these Guidelines;
+2. The CA MUST impose these limitations as a contractual requirement with the Enterprise RA and monitor compliance by the Enterprise RA; and
+3. The Final Cross-Correlation and Due Diligence requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence) MAY be performed by a single person representing the Enterprise RA.
+
+Enterprise RAs that authorize the issuance of EV Certificates solely for its own organization are exempted from the audit requirements of [Section 17.1](#171-eligible-audit-schemes). In all other cases, the requirements of [Section 17.1](#171-eligible-audit-schemes) SHALL apply.
+
 ### 1.3.3  Subscribers
 ### 1.3.4 Relying parties
 ### 1.3.5  Other participants
@@ -146,10 +161,33 @@ As specified in Section 5 of the Baseline Requirements. In addition, systems use
 ### 5.2.2  Number of persons required per task
 ### 5.2.3  Identification and authentication for each role
 ### 5.2.4  Roles requiring separation of duties
+1. The CA MUST enforce rigorous control procedures for the separation of validation duties to ensure that no one person can single-handedly validate and authorize the issuance of an EV Certificate.  The Final Cross-Correlation and Due Diligence steps, as outlined in [Section 11.13](#1113-final-cross-correlation-and-due-diligence), MAY be performed by one of the persons.  For example, one Validation Specialist MAY review and verify all the Applicant information and a second Validation Specialist MAY approve issuance of the EV Certificate.
+2. Such controls MUST be auditable.
 ## 5.3  Personnel controls
 ### 5.3.1  Qualifications, experience, and clearance requirements
 ### 5.3.2  Background check procedures
+Prior to the commencement of employment of any person by the CA for engagement in the EV Processes, whether as an employee, agent, or an independent contractor of the CA, the CA MUST:
+
+1. **Verify the Identity of Such Person**: Verification of identity MUST be performed through:
+
+   A.  The personal (physical) presence of such person before trusted persons who perform human resource or security functions, and
+   B.  The verification of well-recognized forms of government-issued photo identification (e.g., passports and/or drivers licenses);
+
+   and
+
+2. **Verify the Trustworthiness of Such Person**: Verification of trustworthiness SHALL include background checks, which address at least the following, or their equivalent:
+
+   A.  Confirmation of previous employment,
+   B.  Check of professional references;
+   C.  Confirmation of the highest or most-relevant educational qualification obtained;
+   D.  Search of criminal records (local, state or provincial, and national) where allowed by the jurisdiction in which the person will be employed;
+
+   and
+
+3. In the case of employees already in the employ of the CA at the time of adoption of these Guidelines whose identity and background has not previously been verified as set forth above, the CA SHALL conduct such verification within three months of the date of adoption of these Guidelines.
+
 ### 5.3.3  Training requirements
+The requirements in Section 5.3.3 of the Baseline Requirements apply equally to EV Certificates and these Guidelines.  The required internal examination must relate to the EV Certificate validation criteria outlined in these Guidelines.
 ### 5.3.4  Retraining frequency and requirements
 ### 5.3.5  Job rotation frequency and sequence
 ### 5.3.6  Sanctions for unauthorized actions
