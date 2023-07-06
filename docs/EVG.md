@@ -189,9 +189,9 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **International Organization**: An organization founded by a constituent document, e.g., a charter, treaty, convention or similar document, signed by, or on behalf of, a minimum of two Sovereign State governments.
 
-**Jurisdiction of Incorporation**: In the context of a Private Organization, the country and (where applicable) the state or province or locality where the organization's legal existence was established by a filing with (or an act of) an appropriate government agency or entity (e.g., where it was incorporated).  In the context of a Government Entity, the country and (where applicable) the state or province where the Entity's legal existence was created by law.
+**Jurisdiction of Incorporation**: The country and (where applicable) the state or province or locality where the organization's legal existence was established by a filing with (or an act of) an appropriate government agency or entity (e.g., where it was incorporated).
 
-**Jurisdiction of Registration**: In the case of a Business Entity, the state, province, or locality where the organization has registered its business presence by means of filings by a Principal Individual involved in the business.
+**Jurisdiction of Registration**: The country and (where applicable) the state, province, or locality where the organization has registered its business presence by means of filings by a government agency, entity or Principal Individual involved in the business.
 
 **Latin Notary**: A person with legal training whose commission under applicable law not only includes authority to authenticate the execution of a signature on a document but also responsibility for the correctness and content of the document. A Latin Notary is sometimes referred to as a Civil Law Notary.
 
@@ -748,7 +748,7 @@ As a general rule, the CA is responsible for taking all verification steps reaso
 
 ### 11.1.3. Disclosure of Verification Sources
 
-Effective as of 1 October 2020, prior to the use of an Incorporating Agency or Registration Agency to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency or Registration Agency. This disclosure SHALL be through an appropriate and readily accessible online means.
+Prior to the use of Verification Source to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency, Registration Agency or QGIS. This disclosure SHALL be through an appropriate and readily accessible online means.
 
 This Agency Information SHALL include at least the following:
 
@@ -756,6 +756,12 @@ This Agency Information SHALL include at least the following:
 * The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisdiction(s) that the Agency is appropriate for; and,
 * The acceptable form or syntax of Registration Numbers used by the Incorporating Agency or Registration Agency, if the CA restricts such Numbers to an acceptable form or syntax; and,
 * A revision history that includes a unique version number and date of publication for any additions, modifications, and/or removals from this list.
+
+When using a QGIS, the CA MUST ensure that the following conditions are met:
+* The QGIS informs of:
+   - The name of the Incorporating Agency or Registration Agency where the applicant is incorporated/registered, and
+   - The registration number assigned by the Agency to the Applicant
+* The Jurisdiction of Incorporation or Registration of the subscriber to be included in the certificate MUST match the accepted values listed for the Agency informed by the QGIS
 
 The CA MUST document where to obtain this information within Section 3.2 of the CA's Certificate Policy and/or Certification Practice Statement.
 
