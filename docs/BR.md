@@ -468,7 +468,7 @@ The script outputs:
 
 **Subordinate CA**: A Certification Authority whose Certificate is signed by the Root CA, or another Subordinate CA.
 
-**Subscriber**: A natural person or Legal Entity to whom a Certificate is issued and who is legally bound by a Subscriber Agreement or Terms of Use.
+**Subscriber**: A natural person or Legal Entity to whom a Certificate is issued and who has accepted a Subscriber Agreement or Terms of Use.
 
 **Subscriber Agreement**: An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
 
@@ -1049,7 +1049,7 @@ No stipulation.
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
 
 1. A certificate request, which may be electronic; and
-2. An executed Subscriber Agreement or Terms of Use, which may be electronic.
+2. The acceptance of a Subscriber Agreement or Terms of Use, which may be electronic.
 
 The CA SHOULD obtain any additional documentation the CA determines necessary to meet these Requirements.
 
@@ -3361,7 +3361,7 @@ The Certificate Warranties specifically include, but are not limited to, the fol
    i. implemented a procedure to verify the identity of the Applicant in accordance with [Section 3.2](#32-initial-identity-validation) and [Section 7.1.2](#712-certificate-content-and-extensions);
    ii. followed the procedure when issuing the Certificate; and
    iii. accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-5. **Subscriber Agreement**: That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative acknowledged the Terms of Use;
+5. **Subscriber Agreement or Terms of Use**: That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative acknowledged the Terms of Use;
 6. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
 7. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
 
@@ -3373,14 +3373,14 @@ No stipulation.
 
 ### 9.6.3 Subscriber representations and warranties
 
-The CA SHALL require, as part of the Subscriber Agreement or Terms of Use, that the Applicant make the commitments and warranties in this section for the benefit of the CA and the Certificate Beneficiaries.
+The CA SHALL require, as part of the Subscriber Agreement (or as part of the Applicant's commitment to comply with the Terms of Use), that the Applicant make the commitments and warranties in this section for the benefit of the CA and the Certificate Beneficiaries.
 
 Prior to the issuance of a Certificate, the CA SHALL obtain, for the express benefit of the CA and the Certificate Beneficiaries, either:
 
 1. The Applicant's agreement to the Subscriber Agreement with the CA, or
-2. The Applicant's acknowledgement of the Terms of Use.
+2. The Applicant's acknowledgement of and commitment to comply with the Terms of Use (where use of a Terms of Use is permitted).
 
-The CA SHALL implement a process to ensure that each Subscriber Agreement or Terms of Use is legally enforceable against the Applicant. In either case, the Agreement MUST apply to the Certificate to be issued pursuant to the certificate request. The CA MAY use an electronic or "click-through" Agreement provided that the CA has determined that such agreements are legally enforceable. A separate Agreement MAY be used for each certificate request, or a single Agreement MAY be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement or Terms of Use.
+The CA SHALL implement a process to ensure that (a) for each instance where a Subscriber Agreement is required, each such Subscriber Agreement is legally enforceable against the Applicant, and (b) for each instance where Terms of Use are required, that Applicant has committed in writing (which may include an online form) as a matter of its internal corporate policy to comply with the Terms of Use. The Subscriber Agreement or Terms of Use MUST apply to the Certificate to be issued pursuant to the certificate request. The CA MAY use an electronic or "click-through" Subscriber Agreement or Terms of Use. A separate Subscriber Agreement (or a separate commitment to comply with a Terms of Use) MAY be used for each certificate request, or a single Subscriber Agreement (or single commitment to comply with a Terms of Use) MAY be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement or Terms of Use.
 
 The Subscriber Agreement or Terms of Use MUST contain provisions imposing on the Applicant itself (or made by the Applicant on behalf of its principal or agent under a subcontractor or hosting service relationship) the following obligations and warranties:
 
