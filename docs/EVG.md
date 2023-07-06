@@ -82,12 +82,34 @@ Enterprise RAs that authorize the issuance of EV Certificates solely for its own
 ## 4.1  Certificate Application
 ### 4.1.1  Who can submit a certificate application
 ### 4.1.2  Enrollment process and responsibilities
+The documentation requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates.
+The Certificate Request requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates subject to the additional more stringent ageing and updating requirement of [Section 11.14](#1114-requirements-for-re-use-of-existing-documentation).
+
 ## 4.2 Certificate application processing
 ### 4.2.1 Performing identification and authentication functions
+The following Applicant roles are required for the issuance of an EV Certificate.
+
+1. **Certificate Requester**: The EV Certificate Request MUST be submitted by an authorized Certificate Requester.  A Certificate Requester is a natural person who is either the Applicant, employed by the Applicant, an authorized agent who has express authority to represent the Applicant, or a third party (such as an ISP or hosting company) that completes and submits an EV Certificate Request on behalf of the Applicant.
+
+2. **Certificate Approver**: The EV Certificate Request MUST be approved by an authorized Certificate Approver.  A Certificate Approver is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to
+
+   i. act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and
+   ii. to approve EV Certificate Requests submitted by other Certificate Requesters.
+
+3. **Contract Signer**: A Subscriber Agreement applicable to the requested EV Certificate MUST be signed by an authorized Contract Signer.  A Contract Signer is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
+
+4. **Applicant Representative**: In the case where the CA and the Subscriber are affiliated, Terms of Use applicable to the requested EV Certificate MUST be acknowledged and agreed to by an authorized Applicant Representative.  An Applicant Representative is a natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to acknowledge and agree to the Terms of Use.
+
+The Applicant MAY authorize one individual to occupy two or more of these roles. The Applicant MAY authorize more than one individual to occupy any of these roles.
+
 ### 4.2.2 Approval or rejection of certificate applications
 ### 4.2.3  Time to process certificate applications
 ## 4.3  Certificate issuance
 ### 4.3.1  CA actions during certificate issuance
+Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
+
+Root CA Private Keys MUST NOT be used to sign EV Certificates.
+
 ### 4.3.2  Notification to subscriber by the CA of issuance of certificate
 ## 4.4  Certificate acceptance
 ### 4.4.1  Conduct constituting certificate acceptance
@@ -339,6 +361,7 @@ During the period in which it issues EV Certificates, the CA MUST strictly contr
 ### 9.6.1  CA representations and warranties
 ### 9.6.2  RA representations and warranties
 ### 9.6.3  Subscriber representations and warranties
+Section 9.6.3 of the Baseline Requirements applies equally to EV Certificates.  In cases where the Certificate Request does not contain all necessary information about the Applicant, the CA MUST additionally confirm the data with the Certificate Approver or Contract Signer rather than the Certificate Requester.
 ### 9.6.4  Relying party representations and warranties
 ### 9.6.5  Representations and warranties of other participants
 ## 9.7  Disclaimers of warranties
