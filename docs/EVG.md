@@ -114,7 +114,7 @@ Enterprise RAs that authorize the issuance of EV Certificates solely for its own
 ### 1.4.1  Appropriate certificate uses
 EV Certificates are intended for establishing Web-based data communication conduits via the TLS/SSL protocols and for verifying the authenticity of executable code.
 
-#### 1.4.1.1. Primary Purposes
+#### 1.4.1.1 Primary Purposes
 
 The primary purposes of an EV Certificate are to:
 
@@ -122,7 +122,7 @@ The primary purposes of an EV Certificate are to:
 
 2. **Enable encrypted communications with a Web site**: Facilitate the exchange of encryption keys in order to enable the encrypted communication of information over the Internet between the user of an Internet browser and a Web site.
 
-#### 1.4.1.2. Secondary Purposes
+#### 1.4.1.2 Secondary Purposes
 
 The secondary purposes of an EV Certificate are to help establish the legitimacy of a business claiming to operate a Web site or distribute executable code, and to provide a vehicle that can be used to assist in addressing problems related to phishing, malware, and other forms of online identity fraud.  By providing more reliable third-party verified identity and address information regarding the business, EV Certificates may help to:
 
@@ -380,7 +380,7 @@ An Applicant qualifies as a Private Organization if:
 
 6. The entity is not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
 
-#### 4.1.1.2. Government Entity Subjects
+#### 4.1.1.2 Government Entity Subjects
 
 An Applicant qualifies as a Government Entity if:
 
@@ -390,7 +390,7 @@ An Applicant qualifies as a Government Entity if:
 
 3. The entity is not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
 
-#### 4.1.1.3. Business Entity Subjects
+#### 4.1.1.3 Business Entity Subjects
 
 An Applicant qualifies as a Business Entity if:
 
@@ -408,7 +408,7 @@ An Applicant qualifies as a Business Entity if:
 
 7. The entity and the identified Principal Individual associated with the entity are not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
 
-#### 4.1.1.4. Non-Commercial Entity Subjects
+#### 4.1.1.4 Non-Commercial Entity Subjects
 
 An Applicant qualifies as a Non-Commercial Entity if:
 
