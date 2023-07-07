@@ -11,7 +11,6 @@ copyright: |
 ---
 
 # 1.  INTRODUCTION
-## 1.1  Overview
 The Guidelines describe an integrated set of technologies, protocols, identity proofing, lifecycle management, and auditing practices specifying the minimum requirements that must be met in order to issue and maintain Extended Validation Certificates ("EV Certificates") concerning an organization.  Subject Organization information from valid EV Certificates can then be used in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site or other services they are accessing.  Although initially intended for use in establishing Web-based data communication conduits via TLS/SSL protocols, extensions are envisioned for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
 The primary purposes of Extended Validation Certificates are to: 1) identify the legal entity that controls a Web or service site, and 2) enable encrypted communications with that site.  The secondary purposes include significantly enhancing cybersecurity by helping establish the legitimacy of an organization claiming to operate a Web site, and providing a vehicle that can be used to assist in addressing problems related to distributing malware, phishing, identity theft, and diverse forms of online fraud.
@@ -23,6 +22,13 @@ The Guidelines for the Issuance and Management of Extended Validation Certificat
 **The CA/Browser Forum**
 
 The CA/Browser Forum is a voluntary open organization of certification authorities and suppliers of Internet browsers and other relying-party software applications.  Membership is listed at <https://cabforum.org/members/>.
+## 1.1  Scope
+These Guidelines for the issuance and management of Extended Validation Certificates describe certain of the minimum requirements that a Certification Authority must meet in order to issue Extended Validation Certificates.   Subject Organization information from Valid EV Certificates may be displayed in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site they are accessing. These Guidelines incorporate the Baseline Requirements established by the CA/Browser Forum by reference.  A copy of the Baseline Requirements is available on the CA/Browser Forum's website at <https://www.cabforum.org/>.
+
+These Guidelines address the basic issue of validating Subject identity information in EV Certificates and some related matters.   They do not address all of the related matters, such as certain technical and operational ones. This version of the Guidelines addresses only requirements for EV Certificates intended to be used for SSL/TLS authentication on the Internet and for code signing.  Similar requirements for S/MIME, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
+
+These Guidelines do not address the verification of information, or the issuance, use, maintenance, or revocation of EV Certificates by enterprises that operate their own Public Key Infrastructure for internal purposes only, where its Root CA Certificate is not distributed by any Application Software Supplier.
+
 ## 1.2  Document name and identification
 ### 1.2.1  Revisions
 | **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
@@ -106,7 +112,31 @@ Enterprise RAs that authorize the issuance of EV Certificates solely for its own
 ### 1.3.5  Other participants
 ## 1.4  Certificate usage
 ### 1.4.1  Appropriate certificate uses
+EV Certificates are intended for establishing Web-based data communication conduits via the TLS/SSL protocols and for verifying the authenticity of executable code.
+
+#### 1.4.1.1. Primary Purposes
+
+The primary purposes of an EV Certificate are to:
+
+1. **Identify the legal entity that controls a Web site**: Provide a reasonable assurance to the user of an Internet browser that the Web site the user is accessing is controlled by a specific legal entity identified in the EV Certificate by name, address of Place of Business, Jurisdiction of Incorporation or Registration and Registration Number or other disambiguating information; and
+
+2. **Enable encrypted communications with a Web site**: Facilitate the exchange of encryption keys in order to enable the encrypted communication of information over the Internet between the user of an Internet browser and a Web site.
+
+#### 1.4.1.2. Secondary Purposes
+
+The secondary purposes of an EV Certificate are to help establish the legitimacy of a business claiming to operate a Web site or distribute executable code, and to provide a vehicle that can be used to assist in addressing problems related to phishing, malware, and other forms of online identity fraud.  By providing more reliable third-party verified identity and address information regarding the business, EV Certificates may help to:
+
+1. Make it more difficult to mount phishing and other online identity fraud attacks using Certificates;
+2. Assist companies that may be the target of phishing attacks or online identity fraud by providing them with a tool to better identify themselves to users; and
+3. Assist law enforcement organizations in their investigations of phishing and other online identity fraud, including where appropriate, contacting, investigating, or taking legal action against the Subject.
+
 ### 1.4.2 Prohibited certificate uses
+EV Certificates focus only on the identity of the Subject named in the Certificate, and not on the behavior of the Subject.  As such, an EV Certificate is **not** intended to provide any assurances, or otherwise represent or warrant:
+
+1. That the Subject named in the EV Certificate is actively engaged in doing business;
+2. That the Subject named in the EV Certificate complies with applicable laws;
+3. That the Subject named in the EV Certificate is trustworthy, honest, or reputable in its business dealings; or
+4. That it is "safe" to do business with the Subject named in the EV Certificate.
 ## 1.5  Policy administration
 ### 1.5.1  Organization administering the document
 ### 1.5.2  Contact person
