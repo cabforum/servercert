@@ -315,8 +315,29 @@ The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMME
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
+Each CA must develop, implement, enforce, display prominently on its Web site, and periodically update as necessary its own auditable EV Certificate practices, policies and procedures, such as a Certification Practice Statement (CPS) and Certificate Policy (CP) that:
+
+A.  Implement the requirements of these Guidelines as they are revised from time-to-time;
+
+B.  Implement the requirements of
+
+    i. the then-current WebTrust Program for CAs, and
+    ii. the then-current WebTrust EV Program or ETSI TS 102 042 for EVCP or ETSI EN 319 411-1 for EVCP policy; and
+
+C.  Specify the CA's and its Root CA's entire root certificate hierarchy including all roots that its EV Certificates depend on for proof of those EV Certificates' authenticity.
+
 ## 2.1  Repositories
 ## 2.2  Publication of certification information
+Each CA MUST publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see [Section 17.1](#171-eligible-audit-schemes)).
+
+The CA's Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with RFC 3647. The Certificate Policy and/or Certification Practice Statement MUST include all material required by RFC 3647.
+
+Each CA SHALL publicly give effect to these Guidelines and represent that they will adhere to the latest published version by incorporating them into their respective EV Policies, using a clause such as the following (which must include a link to the official version of these Guidelines):
+
+> [Name of CA] conforms to the current version of the CA/Browser Forum Guidelines for Issuance and Management of Extended Validation Certificates published at <https://www.cabforum.org>.  In the event of any inconsistency between this document and those Guidelines, those Guidelines take precedence over this document.
+
+In addition, the CA MUST include (directly or by reference) the applicable requirements of these Guidelines in all contracts with Subordinate CAs, RAs, Enterprise RAs, and subcontractors that involve or relate to the issuance or maintenance of EV Certificates.  The CA MUST enforce compliance with such terms.
+
 ## 2.3  Time or frequency of publication
 ## 2.4  Access controls on repositories
 # 3. IDENTIFICATION AND AUTHENTICATION
@@ -341,6 +362,64 @@ By convention, this document omits time and timezones when listing effective req
 # 4.  CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS
 ## 4.1  Certificate Application
 ### 4.1.1  Who can submit a certificate application
+The CA MAY only issue EV Certificates to Applicants that meet the Private Organization, Government Entity, Business Entity and Non-Commercial Entity requirements specified below.
+
+#### 4.1.1.1 Private Organization Subjects
+
+An Applicant qualifies as a Private Organization if:
+
+1. The entity's legal existence is created or recognized by a by a filing with (or an act of) the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration (e.g., by issuance of a certificate of incorporation, registration number, etc.) or created or recognized by a Government Agency (e.g. under a charter, treaty, convention, or equivalent recognition instrument);
+
+2. The entity designated with the Incorporating or Registration Agency a Registered Agent, a Registered Office (as required under the laws of the Jurisdiction of Incorporation or Registration), or an equivalent facility;
+
+3. The entity is not designated on the records of the Incorporating or Registration Agency by labels such as "inactive," "invalid," "not current," or the equivalent;
+
+4. The entity has a verifiable physical existence and business presence;
+
+5. The entity's Jurisdiction of Incorporation, Registration, Charter, or License, and/or its Place of Business is not in any country where the CA is prohibited from doing business or issuing a certificate by the laws of the CA's jurisdiction; and
+
+6. The entity is not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
+
+#### 4.1.1.2. Government Entity Subjects
+
+An Applicant qualifies as a Government Entity if:
+
+1. The entity's legal existence was established by the political subdivision in which the entity operates;
+
+2. The entity is not in any country where the CA is prohibited from doing business or issuing a certificate by the laws of the CA's jurisdiction; and
+
+3. The entity is not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
+
+#### 4.1.1.3. Business Entity Subjects
+
+An Applicant qualifies as a Business Entity if:
+
+1. The entity is a legally recognized entity that filed certain forms with a Registration Agency in its jurisdiction, the Registration Agency issued or approved the entity's charter, certificate, or license, and the entity's existence can be verified with that Registration Agency;
+
+2. The entity has a verifiable physical existence and business presence;
+
+3. At least one Principal Individual associated with the entity is identified and validated by the CA;
+
+4. The identified Principal Individual attests to the representations made in the Subscriber Agreement;
+
+5. The CA verifies the entity's use of any assumed name used to represent the entity pursuant to the requirements of [Section 11.3](#113-verification-of-applicants-legal-existence-and-identity--assumed-name);
+
+6. The entity and the identified Principal Individual associated with the entity are not located or residing in any country where the CA is prohibited from doing business or issuing a certificate by the laws of the CA's jurisdiction; and
+
+7. The entity and the identified Principal Individual associated with the entity are not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
+
+#### 4.1.1.4. Non-Commercial Entity Subjects
+
+An Applicant qualifies as a Non-Commercial Entity if:
+
+1. The Applicant is an International Organization Entity, created under a charter, treaty, convention or equivalent instrument that was signed by, or on behalf of, more than one country's government.  The CA/Browser Forum may publish a listing of Applicants who qualify as an International Organization for EV eligibility; and
+
+2. The Applicant is not headquartered in any country where the CA is prohibited from doing business or issuing a certificate by the laws of the CA's jurisdiction; and
+
+3. The Applicant is not listed on any government denial list or prohibited list (e.g., trade embargo) under the laws of the CA's jurisdiction.
+
+Subsidiary organizations or agencies of an entity that qualifies as a Non-Commercial Entity also qualifies for EV Certificates as a Non-Commercial Entity.
+
 ### 4.1.2  Enrollment process and responsibilities
 The documentation requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates.
 The Certificate Request requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates subject to the additional more stringent ageing and updating requirement of [Section 11.14](#1114-requirements-for-re-use-of-existing-documentation).
@@ -602,6 +681,18 @@ During the period in which it issues EV Certificates, the CA MUST strictly contr
 ### 9.1.5  Refund policy
 ## 9.2  Financial responsibility
 ### 9.2.1  Insurance coverage
+Each CA SHALL maintain the following insurance related to their respective performance and obligations under these Guidelines:
+
+A.  Commercial General Liability insurance (occurrence form) with policy limits of at least two million US dollars in coverage; and
+
+B.  Professional Liability/Errors and Omissions insurance, with policy limits of at least five million US dollars in coverage, and including coverage for:
+    i. claims for damages arising out of an act, error, or omission, unintentional breach of contract, or neglect in issuing or maintaining EV Certificates, and;
+    ii. claims for damages arising out of infringement of the proprietary rights of any third party (excluding copyright, and trademark infringement), and invasion of privacy and advertising injury.
+
+Such insurance must be with a company rated no less than A- as to Policy Holder's Rating in the current edition of Best's Insurance Guide (or with an association of companies each of the members of which are so rated).
+
+A CA MAY self-insure for liabilities that arise from such party's performance and obligations under these Guidelines provided that it has at least five hundred million US dollars in liquid assets based on audited financial statements in the past twelve months, and a quick ratio (ratio of liquid assets to current liabilities) of not less than 1.0.
+
 ### 9.2.2  Other assets
 ### 9.2.3  Insurance or warranty coverage for end-entities
 ## 9.3  Confidentiality of business information
@@ -665,6 +756,10 @@ A CA's indemnification obligations and a Root CA's obligations with respect to s
 ### 9.16.1  Entire agreement
 ### 9.16.2  Assignment
 ### 9.16.3  Severability
+The CA MAY issue EV Certificates, provided that the CA and its Root CA satisfy the requirements in these Guidelines and the Baseline Requirements.
+
+If a court or government body with jurisdiction over the activities covered by these Guidelines determines that the performance of any mandatory requirement is illegal, then such requirement is considered reformed to the minimum extent necessary to make the requirement valid and legal.  This applies only to operations or certificate issuances that are subject to the laws of that jurisdiction.  The parties involved SHALL notify the CA / Browser Forum of the facts, circumstances, and law(s) involved, so that the CA/Browser Forum may revise these Guidelines accordingly.
+
 ### 9.16.4  Enforcement (attorneys' fees and waiver of rights)
 ### 9.16.5  Force Majeure
 ## 9.17  Other provisions
