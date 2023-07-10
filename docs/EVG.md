@@ -611,6 +611,9 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 ## 6.3  Other aspects of key pair management
 ### 6.3.1  Public key archival
 ### 6.3.2  Certificate operational periods and key pair usage periods
+The Validity Period for an EV Certificate SHALL NOT exceed 398 days.
+
+It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
 ## 6.4  Activation data
 ### 6.4.1  Activation data generation and installation
 ### 6.4.2  Activation data protection
@@ -626,6 +629,8 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 ## 6.8  Time-stamping
 # 7.  CERTIFICATE, CRL, AND OCSP PROFILES
 ## 7.1  Certificate profile
+This section sets forth minimum requirements for the content of the EV Certificate as they relate to the identity of the CA and the Subject of the EV Certificate.
+
 ### 7.1.1  Version number(s)
 ### 7.1.2  Certificate extensions
 The extensions listed in [Section 9.8](#98-certificate-extensions) are recommended for maximum interoperability between certificates and browsers / applications, but are not mandatory on the CAs except where indicated as “Required”.  CAs may use other extensions that are not listed in [Section 9.8](#98-certificate-extensions), but are encouraged to add them to this section by ballot from time to time to help increase extension standardization across the industry.
@@ -674,6 +679,9 @@ where the subfields have the same values, meanings, and restrictions described i
 
 ### 7.1.3  Algorithm object identifiers
 ### 7.1.4  Name forms
+## 9.1. Issuer Information
+
+Issuer Information listed in an EV Certificate MUST comply with Section 7.1.4.1 of the Baseline Requirements.
 ## 9.2. Subject Distinguished Name Fields
 
 Subject to the requirements of these Guidelines, the EV Certificate and certificates issued to Subordinate CAs that are not controlled by the same entity as the CA MUST include the following information about the Subject organization in the fields listed:
@@ -787,6 +795,41 @@ The CA SHALL:
 ### 9.2.9. Other Subject Attributes
 
 CAs SHALL NOT include any Subject Distinguished Name attributes except as specified in [Section 9.2](#92-subject-distinguished-name-fields).
+
+## 9.7. Additional Technical Requirements for EV Certificates
+
+All provisions of the Baseline Requirements concerning Minimum Cryptographic Algorithms, Key Sizes, and Certificate Extensions apply to EV Certificates with the following exceptions:
+
+1. If a Subordinate CA Certificates is issued to a Subordinate CA not controlled by the entity that controls the Root CA, the policy identifiers in the `certificatePolicies` extension MUST include the CA's Extended Validation policy identifier.
+
+   Otherwise, it MAY contain the anyPolicy identifier.
+
+2. The following fields MUST be present if the Subordinate CA is not controlled by the entity that controls the Root CA.
+
+   * `certificatePolicies:policyQualifiers:policyQualifierId`
+
+      `id-qt 1` [RFC 5280]
+
+   * `certificatePolicies:policyQualifiers:qualifier:cPSuri`
+
+      HTTP URL for the Root CA's Certification Practice Statement
+
+3. The `certificatePolicies` extension in EV Certificates issued to Subscribers MUST include the following:
+
+   * `certificatePolicies:policyIdentifier` (Required)
+
+      The Issuer's EV policy identifier
+
+   * `certificatePolicies:policyQualifiers:policyQualifierId` (Required)
+
+      `id-qt 1` [RFC 5280]
+
+   * `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Required)
+
+      HTTP URL for the Subordinate CA's Certification Practice Statement
+
+4. The `cRLDistributionPoints` extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an `authorityInformationAccess` extension.
+
 
 ### 7.1.5  Name constraints
 ### 7.1.6  Certificate policy object identifier
