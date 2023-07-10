@@ -93,9 +93,9 @@ These Guidelines do not address the verification of information, or the issuance
 ### 1.3.1  Certification authorities
 ### 1.3.2  Registration authorities
 The CA MAY delegate the performance of all or any part of a requirement of these Guidelines to an Affiliate or a Registration Authority (RA) or subcontractor, provided that the process employed by the CA fulfills all of the requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence).
-Affiliates and/or RAs must comply with the qualification requirements of [Section 14.1](#141-trustworthiness-and-competence).
+Affiliates and/or RAs must comply with the qualification requirements of [Section 5.3.2](#532-trustworthiness-and-competence).
 
-The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of [Section 14](#14-employee-and-third-party-issues) and the document retention and event logging requirements of [Section 15](#15-data-records).
+The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of [Section 5.3](#53-employee-and-third-party-issues) and the document retention and event logging requirements of [Section 5.4](#54-data-records).
 
 In all cases, the CA MUST contractually obligate each Affiliate, RA, subcontractor, and Enterprise RA to comply with all applicable requirements in these Guidelines and to perform them as required of the CA itself.  The CA SHALL enforce these obligations and internally audit each Affiliate's, RA's, subcontractor's, and Enterprise RA's compliance with these Requirements on an annual basis.
 #### 1.3.2.1  Enterprise Registration authorities
@@ -105,7 +105,7 @@ The CA MAY contractually authorize a Subscriber to perform the RA function and a
 2. The CA MUST impose these limitations as a contractual requirement with the Enterprise RA and monitor compliance by the Enterprise RA; and
 3. The Final Cross-Correlation and Due Diligence requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence) MAY be performed by a single person representing the Enterprise RA.
 
-Enterprise RAs that authorize the issuance of EV Certificates solely for its own organization are exempted from the audit requirements of [Section 17.1](#171-eligible-audit-schemes). In all other cases, the requirements of [Section 17.1](#171-eligible-audit-schemes) SHALL apply.
+Enterprise RAs that authorize the issuance of EV Certificates solely for its own organization are exempted from the audit requirements of [Section 8.1](#81-eligible-audit-schemes). In all other cases, the requirements of [Section 8.1](#81-eligible-audit-schemes) SHALL apply.
 
 ### 1.3.3  Subscribers
 ### 1.3.4 Relying parties
@@ -229,7 +229,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Private Organization**: A non-governmental legal entity (whether ownership interests are privately held or publicly traded) whose existence was created by a filing with (or an act of) the Incorporating Agency or equivalent in its Jurisdiction of Incorporation.
 
-**Qualified Auditor**: An independent public accounting firm that meets the auditing qualification requirements specified in [Section 17.6](#176-auditor-qualification).
+**Qualified Auditor**: An independent public accounting firm that meets the auditing qualification requirements specified in [Section 8.3](#83-auditor-qualification).
 
 **Qualified Government Information Source**: A database maintained by a Government Entity (e.g. SEC filings) that meets the requirements of [Section 11.11.6](#11116-qualified-government-information-source).
 
@@ -328,7 +328,7 @@ C.  Specify the CA's and its Root CA's entire root certificate hierarchy includi
 
 ## 2.1  Repositories
 ## 2.2  Publication of certification information
-Each CA MUST publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see [Section 17.1](#171-eligible-audit-schemes)).
+Each CA MUST publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see [Section 8.1](#81-eligible-audit-schemes)).
 
 The CA's Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with RFC 3647. The Certificate Policy and/or Certification Practice Statement MUST include all material required by RFC 3647.
 
@@ -633,9 +633,9 @@ This section sets forth minimum requirements for the content of the EV Certifica
 
 ### 7.1.1  Version number(s)
 ### 7.1.2  Certificate extensions
-The extensions listed in [Section 9.8](#98-certificate-extensions) are recommended for maximum interoperability between certificates and browsers / applications, but are not mandatory on the CAs except where indicated as “Required”.  CAs may use other extensions that are not listed in [Section 9.8](#98-certificate-extensions), but are encouraged to add them to this section by ballot from time to time to help increase extension standardization across the industry.
+The extensions listed in [Section 7.1.2](#712-certificate-extensions) are recommended for maximum interoperability between certificates and browsers / applications, but are not mandatory on the CAs except where indicated as “Required”.  CAs may use other extensions that are not listed in [Section 7.1.2](#712-certificate-extensions), but are encouraged to add them to this section by ballot from time to time to help increase extension standardization across the industry.
 
-If a CA includes an extension in a certificate that has a Certificate field which is named in [Section 9.8](#98-certificate-extensions), the CA must follow the format specified in that subsection.  However, no extension or extension format shall be mandatory on a CA unless specifically stated as “Required” in the subsection that describes the extension.
+If a CA includes an extension in a certificate that has a Certificate field which is named in [Section 7.1.2](#712-certificate-extensions), the CA must follow the format specified in that subsection.  However, no extension or extension format shall be mandatory on a CA unless specifically stated as “Required” in the subsection that describes the extension.
 
 #### 7.1.2.1 Subject Alternative Name Extension
 
@@ -675,7 +675,7 @@ CABFOrganizationIdentifier ::= SEQUENCE {
 }
 ```
 
-where the subfields have the same values, meanings, and restrictions described in [Section 9.2.8](#928-subject-organization-identifier-field). The CA SHALL validate the contents using the requirements in [Section 9.2.8](#928-subject-organization-identifier-field).
+where the subfields have the same values, meanings, and restrictions described in [Section 7.1.4.2.1](#71421-subject-organization-identifier-field). The CA SHALL validate the contents using the requirements in [Section 7.1.4.2.1](#71421-subject-organization-identifier-field).
 
 ### 7.1.3  Algorithm object identifiers
 ### 7.1.4  Name forms
@@ -708,7 +708,7 @@ __Contents__: If present, this field MUST contain a single Domain Name(s) owned 
 
 __Certificate Field__: `subject:businessCategory` (OID: 2.5.4.15)  
 __Required/Optional__: Required  
-__Contents__: This field MUST contain one of the following strings: "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity" depending upon whether the Subject qualifies under the terms of [Section 8.5.2](#852-private-organization-subjects), [Section 8.5.3](#853-government-entity-subjects), [Section 8.5.4](#854-business-entity-subjects) or [Section 8.5.5](#855-non-commercial-entity-subjects), respectively.
+__Contents__: This field MUST contain one of the following strings: "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity" depending upon whether the Subject qualifies under the terms of [Section 4.1.1.1](#4111-private-organization-subjects), [Section 4.1.1.2](#4112-government-entity-subjects), [Section 4.1.1.3](#4113-business-entity-subjects) or [Section 4.1.1.4](#4114-non-commercial-entity-subjects), respectively.
 
 ##### 7.1.4.2.4 Subject Jurisdiction of Incorporation or Registration Field
 
@@ -768,13 +768,13 @@ The Registration Scheme MUST be identified using the using the following structu
 
 * 3 character Registration Scheme identifier;
 * 2 character ISO 3166 country code for the nation in which the Registration Scheme is operated, or if the scheme is operated globally ISO 3166 code "XG" shall be used;
-* For the NTR Registration Scheme identifier, if required under [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field), a 2 character ISO 3166-2 identifier for the subdivision (state or province) of the nation in which the Registration Scheme is operated, preceded by plus "+" (0x2B (ASCII), U+002B (UTF-8));
+* For the NTR Registration Scheme identifier, if required under [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field), a 2 character ISO 3166-2 identifier for the subdivision (state or province) of the nation in which the Registration Scheme is operated, preceded by plus "+" (0x2B (ASCII), U+002B (UTF-8));
 * a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8));
 * Registration Reference allocated in accordance with the identified Registration Scheme
 
 Note: Registration References MAY contain hyphens, but Registration Schemes, ISO 3166 country codes, and ISO 3166-2 identifiers do not.  Therefore if more than one hyphen appears in the structure, the leftmost hyphen is a separator, and the remaining hyphens are part of the Registration Reference.
 
-As in [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field), the specified location information MUST match the scope of the registration being referenced.
+As in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field), the specified location information MUST match the scope of the registration being referenced.
 
 Examples:
 
@@ -787,14 +787,14 @@ Registration Schemes listed in [Appendix H](#appendix-h--registration-schemes) a
 
 The CA SHALL:
 
-1. confirm that the organization represented by the Registration Reference is the same as the organization named in the `organizationName` field as specified in [Section 9.2.1](#921-subject-organization-name-field) within the context of the subject’s jurisdiction as specified in [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field);
+1. confirm that the organization represented by the Registration Reference is the same as the organization named in the `organizationName` field as specified in [Section 7.1.4.2.1](#71421-subject-organization-name-field) within the context of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field);
 2. further verify the Registration Reference matches other information verified in accordance with [Section 11](#11-verification-requirements);
 3. take appropriate measures to disambiguate between different organizations as described in [Appendix H](#appendix-h--registration-schemes) for each Registration Scheme;
 4. Apply the validation rules relevant to the Registration Scheme as specified in [Appendix H](#appendix-h--registration-schemes).
 
 ##### 7.1.4.2.9 Other Subject Attributes
 
-CAs SHALL NOT include any Subject Distinguished Name attributes except as specified in [Section 9.2](#92-subject-distinguished-name-fields).
+CAs SHALL NOT include any Subject Distinguished Name attributes except as specified in [Section 7.1.4.2](#7142-subject-distinguished-name-fields).
 
 #### 7.1.4.3 Additional Technical Requirements for EV Certificates
 
@@ -869,6 +869,7 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 ### 7.3.1  Version number(s)
 ### 7.3.2  OCSP extensions
 # 8.  COMPLIANCE AUDIT AND OTHER ASSESSMENTS
+## 8.1  Elegible Audit Schemes
 A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following schemes:
 
 i. WebTrust Program for CAs audit and WebTrust EV Program audit,
@@ -877,16 +878,16 @@ iii. ETSI EN 319 411-1 audit for EVCP policy.
 
 If the CA is a Government Entity, an audit of the CA by the appropriate internal government auditing agency is acceptable in lieu of the audits specified above, provided that such internal government auditing agency publicly certifies in writing that its audit addresses the criteria specified in one of the above audit schemes and certifies that the government CA has successfully passed the audit.
 
-## 8.1  Frequency or circumstances of assessment
-CAs issuing EV Certificates MUST undergo an annual audit that meets the criteria of [Section 17.1](#171-eligible-audit-schemes).
-## 8.2  Identity/qualifications of assessor
+## 8.2  Frequency or circumstances of assessment
+CAs issuing EV Certificates MUST undergo an annual audit that meets the criteria of [Section 8.1](#81-eligible-audit-schemes).
+## 8.3  Identity/qualifications of assessor
 A Qualified Auditor (as defined in Section 8.2 of the Baseline Requirements) MUST perform the CA's audit.
-## 8.3  Assessor's relationship to assessed entity
-## 8.4  Topics covered by assessment
-## 8.5  Actions taken as a result of deficiency
-## 8.6  Communication of results
+## 8.4  Assessor's relationship to assessed entity
+## 8.5  Topics covered by assessment
+## 8.6  Actions taken as a result of deficiency
+## 8.7  Communication of results
 CAs SHOULD make its audit report publicly available no later than three months after the end of the audit period.  If there is a delay greater than three months and if so requested by an Application Software Supplier, the CA MUST provide an explanatory letter signed by its auditor.
-## 8.7  Pre-issuance Readiness Audit
+## 8.8  Pre-issuance Readiness Audit
 
 1. If the CA has a currently valid WebTrust Seal of Assurance for CAs, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against the WebTrust EV Program.
 2. If the CA has a currently valid ETSI 102 042 audit, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against ETSI TS 102 042.
@@ -897,7 +898,7 @@ CAs SHOULD make its audit report publicly available no later than three months a
 
 The CA MUST complete any required point-in-time readiness assessment no earlier than twelve (12) months prior to issuing an EV Certificate.  The CA MUST undergo a complete audit under such scheme within ninety (90) days of issuing the first EV Certificate.
 
-## 8.8  Self audits
+## 8.9  Self audits
 During the period in which it issues EV Certificates, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least three percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.  For all EV Certificates where the Final Cross-Correlation and Due Diligence requirements of [Section 11.13](#1113-final-cross-correlation-and-due-diligence) is performed by an RA, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least six percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.
 # 9.  OTHER BUSINESS AND LEGAL MATTERS
 ## 9.1  Fees
@@ -985,11 +986,12 @@ A CA's indemnification obligations and a Root CA's obligations with respect to s
 ### 9.16.3  Severability
 The CA MAY issue EV Certificates, provided that the CA and its Root CA satisfy the requirements in these Guidelines and the Baseline Requirements.
 
-If a court or government body with jurisdiction over the activities covered by these Guidelines determines that the performance of any mandatory requirement is illegal, then such requirement is considered reformed to the minimum extent necessary to make the requirement valid and legal.  This applies only to operations or certificate issuances that are subject to the laws of that jurisdiction.  The parties involved SHALL notify the CA / Browser Forum of the facts, circumstances, and law(s) involved, so that the CA/Browser Forum may revise these Guidelines accordingly.
+If a court or government body with jurisdiction over the activities covered by these Guidelines determines that the performance of any mandatory requirement is illegal, then such requirement is considered reformed to the minimum extent necessary to make the requirement valid and legal.  This applies only to operations or certificate issuances that are subject to the laws of that jurisdiction.  The parties involved SHALL notify the CA/Browser Forum of the facts, circumstances, and law(s) involved, so that the CA/Browser Forum may revise these Guidelines accordingly.
 
 ### 9.16.4  Enforcement (attorneys' fees and waiver of rights)
 ### 9.16.5  Force Majeure
 ## 9.17  Other provisions
+
 # Appendix A - User Agent Verification (Normative)
 The CA MUST host test Web pages that allow Application Software Suppliers to test their software with EV Certificates that chain up to each EV Root Certificate.  At a minimum, the CA MUST host separate Web pages using certificates that are:
 
@@ -1274,26 +1276,26 @@ guidelines:
 
   The information carried in this field shall be the same as held in
   Subject Registration Number Field as specified in
-  [Section 9.2.5](#925-subject-registration-number-field) and the country code
+  [Section 7.1.4.2.5](#71425-subject-registration-number-field) and the country code
   used in the Registration Scheme identifier shall match that of the
   subject’s jurisdiction as specified in
-  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
+  [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
 
   Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4
   includes more than the country code, the additional locality information shall
-  be included as specified in [Section 9.2.8](#928-subject-organization-identifier-field)
-  and/or [Section 9.8.2](#982-cabrowser-forum-organization-identifier-extension).
+  be included as specified in [Section 7.1.4.2.8](#71428-subject-organization-identifier-field)
+  and/or [Section 7.1.2.2](#7122-cabrowser-forum-organization-identifier-extension).
 
 * **VAT**:
 
   Reference allocated by the national tax authorities to a Legal Entity. This
   information shall be validated using information provided by the national tax
   authority against the organization as identified by the Subject Organization
-  Name Field (see [Section 9.2.1](#921-subject-organization-name-field)) and
+  Name Field (see [Section 7.1.4.2.1](#71421-subject-organization-name-field)) and
   Subject Registration Number Field (see
-  Section 9.2.5](#925-subject-registration-number-field)) within the context of
+  Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of
   the subject’s jurisdiction as specified in
-  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
+  [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
 
 * **PSD**:
 
@@ -1306,10 +1308,10 @@ guidelines:
   SHALL be validated by being matched directly or indirectly (for example, by
   matching a globally unique registration number) against the organization as
   identified by the Subject Organization Name Field (see
-  [Section 9.2.1](#921-subject-organization-name-field)) and
+  [Section 7.1.4.2.1](#71421-subject-organization-name-field)) and
   Subject Registration Number Field (see
-  [Section 9.2.5](#925-subject-registration-number-field)) within the context of
+  [Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of
   the subject’s jurisdiction as specified in
-  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
+  [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
   The stated address of the organization combined with the organization name
   SHALL NOT be the only information used to disambiguate the organization.
