@@ -637,13 +637,13 @@ The extensions listed in [Section 9.8](#98-certificate-extensions) are recommend
 
 If a CA includes an extension in a certificate that has a Certificate field which is named in [Section 9.8](#98-certificate-extensions), the CA must follow the format specified in that subsection.  However, no extension or extension format shall be mandatory on a CA unless specifically stated as “Required” in the subsection that describes the extension.
 
-### 9.8.1. Subject Alternative Name Extension
+#### 7.1.2.1 Subject Alternative Name Extension
 
 __Certificate Field__: `subjectAltName:dNSName`  
 __Required/Optional__: __Required__  
 __Contents__: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This extension MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
-### 9.8.2. CA/Browser Forum Organization Identifier Extension
+#### 7.1.2.2 CA/Browser Forum Organization Identifier Extension
 
 __Extension Name__: `cabfOrganizationIdentifier` (OID: 2.23.140.3.1)  
 __Verbose OID__: `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }`  
@@ -679,14 +679,14 @@ where the subfields have the same values, meanings, and restrictions described i
 
 ### 7.1.3  Algorithm object identifiers
 ### 7.1.4  Name forms
-## 9.1. Issuer Information
+#### 7.1.4.1 Issuer Information
 
 Issuer Information listed in an EV Certificate MUST comply with Section 7.1.4.1 of the Baseline Requirements.
-## 9.2. Subject Distinguished Name Fields
+#### 7.1.4.2 Subject Distinguished Name Fields
 
 Subject to the requirements of these Guidelines, the EV Certificate and certificates issued to Subordinate CAs that are not controlled by the same entity as the CA MUST include the following information about the Subject organization in the fields listed:
 
-### 9.2.1. Subject Organization Name Field
+##### 7.1.4.2.1 Subject Organization Name Field
 
 __Certificate Field__: `subject:organizationName` (OID 2.5.4.10)  
 __Required/Optional__: Required  
@@ -698,19 +698,19 @@ In addition, an assumed name or DBA name used by the Subject MAY be included at 
 
 If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with [Section 11.12.1](#11121-high-risk-status) and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the EV Certificate.
 
-### 9.2.2. Subject Common Name Field
+##### 7.1.4.2.2 Subject Common Name Field
 
 __Certificate Field__: `subject:commonName` (OID: 2.5.4.3)  
 __Required/Optional__: Deprecated (Discouraged, but not prohibited)  
 __Contents__: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server.  Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This field MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
-### 9.2.3. Subject Business Category Field
+##### 7.1.4.2.3 Subject Business Category Field
 
 __Certificate Field__: `subject:businessCategory` (OID: 2.5.4.15)  
 __Required/Optional__: Required  
 __Contents__: This field MUST contain one of the following strings: "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity" depending upon whether the Subject qualifies under the terms of [Section 8.5.2](#852-private-organization-subjects), [Section 8.5.3](#853-government-entity-subjects), [Section 8.5.4](#854-business-entity-subjects) or [Section 8.5.5](#855-non-commercial-entity-subjects), respectively.
 
-### 9.2.4. Subject Jurisdiction of Incorporation or Registration Field
+##### 7.1.4.2.4 Subject Jurisdiction of Incorporation or Registration Field
 
 __Certificate Fields__:
 
@@ -728,7 +728,7 @@ __Contents__: These fields MUST NOT contain information that is not relevant to 
 
 Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, the values within these fields have been disclosed within the latest publicly-available disclosure, as described in [Section 11.1.3](#1113-disclosure-of-verification-sources), as acceptable values for the applicable Incorporating Agency or Registration Agency.
 
-### 9.2.5. Subject Registration Number Field
+##### 7.1.4.2.5 Subject Registration Number Field
 
 __Certificate Field__: `subject:serialNumber` (OID: 2.5.4.5)  
 __Required/Optional__: __Required__  
@@ -740,7 +740,7 @@ For Business Entities, the Registration Number that was received by the Business
 
 Effective as of 1 October 2020, if the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in [Section 11.1.3](#1113-disclosure-of-verification-sources), the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating agency.
 
-### 9.2.6. Subject Physical Address of Place of Business Field
+##### 7.1.4.2.6 Subject Physical Address of Place of Business Field
 
 __Certificate Fields__:  
     Number and street: `subject:streetAddress` (OID: 2.5.4.9)  
@@ -751,12 +751,12 @@ __Certificate Fields__:
 __Required/Optional__: As stated in Section 7.1.4.2.2 d, e, f, g and h of the Baseline Requirements.  
 __Contents__: This field MUST contain the address of the physical location of the Subject's Place of Business.
 
-### 9.2.7. Subject Organizational Unit Name Field
+##### 7.1.4.2.7 Subject Organizational Unit Name Field
 
 __Certificate Field__: `subject:organizationalUnitName` (OID: 2.5.4.11)  
 __Required/Optional/Prohibited:__ __Prohibited__. 
 
-### 9.2.8. Subject Organization Identifier Field
+##### 7.1.4.2.8 Subject Organization Identifier Field
 
 __Certificate Field__: `subject:organizationIdentifier` (OID: 2.5.4.97)  
 __Required/Optional__: Optional  
@@ -792,11 +792,11 @@ The CA SHALL:
 3. take appropriate measures to disambiguate between different organizations as described in [Appendix H](#appendix-h--registration-schemes) for each Registration Scheme;
 4. Apply the validation rules relevant to the Registration Scheme as specified in [Appendix H](#appendix-h--registration-schemes).
 
-### 9.2.9. Other Subject Attributes
+##### 7.1.4.2.9 Other Subject Attributes
 
 CAs SHALL NOT include any Subject Distinguished Name attributes except as specified in [Section 9.2](#92-subject-distinguished-name-fields).
 
-## 9.7. Additional Technical Requirements for EV Certificates
+#### 7.1.4.3 Additional Technical Requirements for EV Certificates
 
 All provisions of the Baseline Requirements concerning Minimum Cryptographic Algorithms, Key Sizes, and Certificate Extensions apply to EV Certificates with the following exceptions:
 
@@ -833,11 +833,9 @@ All provisions of the Baseline Requirements concerning Minimum Cryptographic Alg
 
 ### 7.1.5  Name constraints
 ### 7.1.6  Certificate policy object identifier
-### 9.3.1. EV Certificate Policy Identification Requirements
-
 This section sets forth minimum requirements for the contents of EV Certificates as they relate to the identification of EV Certificate Policy.
 
-### 9.3.2. EV Subscriber Certificates
+#### 7.1.6.1 EV Subscriber Certificates
 
 Each EV Certificate issued by the CA to a Subscriber MUST contain a policy identifier that is either defined by these Guidelines or the CA in the certificate's `certificatePolicies` extension that:
 
@@ -848,16 +846,16 @@ Each EV Certificate issued by the CA to a Subscriber MUST contain a policy ident
 The following Certificate Policy identifier is the CA/Browser Forum’s EV policy identifier:
 `{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines (1) } (2.23.140.1.1)`, if the Certificate complies with these Guidelines.
 
-### 9.3.3. Root CA Certificates
+#### 7.1.6.2 Root CA Certificates
 
 The Application Software Supplier identifies Root CAs that are approved to issue EV Certificates by storing EV policy identifiers in metadata associated with Root CA Certificates.
 
-### 9.3.4. EV Subordinate CA Certificates
+#### 7.1.6.3 EV Subordinate CA Certificates
 
 1. Certificates issued to Subordinate CAs that are not controlled by the issuing CA MUST contain one or more policy identifiers defined by the issuing CA that explicitly identify the EV Policies that are implemented by the Subordinate CA.
 2. Certificates issued to Subordinate CAs that are controlled by the Root CA MAY contain the special `anyPolicy` identifier (OID: 2.5.29.32.0).
 
-### 9.3.5. Subscriber Certificates
+#### 7.1.6.4 Subscriber Certificates
 
 A Certificate issued to a Subscriber MUST contain one or more policy identifier(s), defined by the Issuing CA, in the Certificate's `certificatePolicies` extension that indicates adherence to and compliance with these Guidelines.  Each CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Guidelines.
 
