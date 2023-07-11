@@ -349,6 +349,574 @@ In addition, the CA MUST include (directly or by reference) the applicable requi
 ### 3.1.5  Uniqueness of names
 ### 3.1.6  Recognition, authentication, and role of trademarks
 ## 3.2  Initial identity validation
+
+## 11.1. General Overview
+
+This part of the Guidelines sets forth Verification Requirements and Acceptable Methods of Verification for each such Requirement.
+
+### 11.1.1. Verification Requirements – Overview
+
+Before issuing an EV Certificate, the CA MUST ensure that all Subject organization information to be included in the EV Certificate conforms to the requirements of, and is verified in accordance with, these Guidelines and matches the information confirmed and documented by the CA pursuant to its verification processes.  Such verification processes are intended to accomplish the following:
+
+1. Verify Applicant's existence and identity, including;
+
+   A.  Verify the Applicant's legal existence and identity (as more fully set forth in [Section 11.2](#112-verification-of-applicants-legal-existence-and-identity)),
+
+   B.  Verify the Applicant's physical existence (business presence at a physical address), and
+
+   C.  Verify the Applicant's operational existence (business activity).
+
+2. Verify the Applicant is a registered holder, or has control, of the Domain Name(s) to be included in the EV Certificate;
+
+3. Verify a reliable means of communication with the entity to be named as the Subject in the Certificate;
+
+4. Verify the Applicant's authorization for the EV Certificate, including;
+
+   A.  Verify the name, title, and authority of the Contract Signer, Certificate Approver, and Certificate Requester,
+
+   B.  Verify that a Contract Signer signed the Subscriber Agreement or that a duly authorized Applicant Representative acknowledged and agreed to the Terms of Use; and
+
+   C.  Verify that a Certificate Approver has signed or otherwise approved the EV Certificate Request.
+
+### 11.1.2. Acceptable Methods of Verification – Overview
+
+As a general rule, the CA is responsible for taking all verification steps reasonably necessary to satisfy each of the Verification Requirements set forth in the subsections below.  The Acceptable Methods of Verification set forth in each of Sections 11.2 through 11.14 (which usually include alternatives) are considered to be the minimum acceptable level of verification required of the CA.  In all cases, however, the CA is responsible for taking any additional verification steps that may be reasonably necessary under the circumstances to satisfy the applicable Verification Requirement.
+
+### 11.1.3. Disclosure of Verification Sources
+
+Effective as of 1 October 2020, prior to the use of an Incorporating Agency or Registration Agency to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency or Registration Agency. This disclosure SHALL be through an appropriate and readily accessible online means.
+
+This Agency Information SHALL include at least the following:
+
+* Sufficient information to unambiguously identify the Incorporating Agency or Registration Agency (such as a name, jurisdiction, and website); and,
+* The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisdiction(s) that the Agency is appropriate for; and,
+* The acceptable form or syntax of Registration Numbers used by the Incorporating Agency or Registration Agency, if the CA restricts such Numbers to an acceptable form or syntax; and,
+* A revision history that includes a unique version number and date of publication for any additions, modifications, and/or removals from this list.
+
+The CA MUST document where to obtain this information within Section 3.2 of the CA's Certificate Policy and/or Certification Practice Statement.
+
+## 11.2. Verification of Applicant's Legal Existence and Identity
+
+### 11.2.1. Verification Requirements
+
+To verify the Applicant's legal existence and identity, the CA MUST do the following.
+
+1. **Private Organization Subjects**
+
+   A.  **Legal Existence**: Verify that the Applicant is a legally recognized entity, in existence and validly formed (e.g., incorporated) with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, and not designated on the records of the Incorporating or Registration Agency by labels such as "inactive", "invalid", "not current", or the equivalent.
+   B.  **Organization Name**: Verify that the Applicant's formal legal name as recorded with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration matches the Applicant's name in the EV Certificate Request.
+   C.  **Registration Number**: Obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration.  Where the Incorporating or Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Incorporation or Registration.
+   D.  **Registered Agent**: Obtain the identity and address of the Applicant's Registered Agent or Registered Office (as applicable in the Applicant's Jurisdiction of Incorporation or Registration).
+
+2. **Government Entity Subjects**
+
+   A.  **Legal Existence**: Verify that the Applicant is a legally recognized Government Entity, in existence in the political subdivision in which such Government Entity operates.
+   B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
+   C.  **Registration Number**: The CA MUST attempt to obtain the Applicant's date of incorporation, registration, or formation, or the identifier for the legislative act that created the Government Entity.  In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is a Government Entity.
+
+3. **Business Entity Subjects**
+
+   A.  **Legal Existence**: Verify that the Applicant is engaged in business under the name submitted by the Applicant in the Application.
+   B.  **Organization Name**: Verify that the Applicant's formal legal name as recognized by the Registration Agency in the Applicant's Jurisdiction of Registration matches the Applicant's name in the EV Certificate Request.
+   C.  **Registration Number**: Attempt to obtain the specific unique Registration Number assigned to the Applicant by the Registration Agency in the Applicant's Jurisdiction of Registration.  Where the Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Registration.
+   D.  **Principal Individual**: Verify the identity of the identified Principal Individual.
+
+4. **Non-Commercial Entity Subjects (International Organizations)**
+
+   A.  **Legal Existence**: Verify that the Applicant is a legally recognized International Organization Entity.
+   B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
+   C.  **Registration Number**: The CA MUST attempt to obtain the Applicant's date of formation, or the identifier for the legislative act that created the International Organization Entity.  In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is an International Organization Entity.
+
+### 11.2.2. Acceptable Method of Verification
+
+1. **Private Organization Subjects**: Unless verified under subsection (6), all items listed in [Section 11.2.1](#1121-verification-requirements) (1) MUST be verified directly with, or obtained directly from, the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Such verification MAY be through use of a Qualified Government Information Source operated by, or on behalf of, the Incorporating or Registration Agency, or by direct contact with the Incorporating or Registration Agency in person or via mail, e-mail, Web address, or telephone, using an address or phone number obtained directly from the Qualified Government Information Source, Incorporating or Registration Agency, or from a Qualified Independent Information Source.
+
+2. **Government Entity Subjects**: Unless verified under subsection (6), all items listed in [Section 11.2.1](#1121-verification-requirements) (2) MUST either be verified directly with, or obtained directly from, one of the following:
+   i. a Qualified Government Information Source in the political subdivision in which such Government Entity operates;
+   ii. a superior governing Government Entity in the same political subdivision as the Applicant (e.g. a Secretary of State may verify the legal existence of a specific State Department), or
+   iii. from a judge that is an active member of the federal, state or local judiciary within that political subdivision.
+
+   Any communication from a judge SHALL be verified in the same manner as is used for verifying factual assertions that are asserted by an Attorney as set forth in [Section 11.11.1](#11111-verified-legal-opinion).
+
+   Such verification MAY be by direct contact with the appropriate Government Entity in person or via mail, e-mail, Web address, or telephone, using an address or phone number obtained from a Qualified Independent Information Source.
+
+3. **Business Entity Subjects**: Unless verified under subsection (6), Items listed in [Section 11.2.1](#1121-verification-requirements) (3) (A) through (C) above, MUST be verified directly with, or obtained directly from, the Registration Agency in the Applicant's Jurisdiction of Registration. Such verification MAY be performed by means of a Qualified Government Information Source, a Qualified Governmental Tax Information Source, or by direct contact with the Registration Agency in person or via mail, e-mail, Web address, or telephone, using an address or phone number obtained directly from the Qualified Government Information Source, Qualified Governmental Tax Information Source or Registration Agency, or from a Qualified Independent Information Source. In addition, the CA MUST validate a Principal Individual associated with the Business Entity pursuant to the requirements in subsection (4), below.
+
+4. **Principal Individual**: A Principal Individual associated with the Business Entity MUST be validated in a face-to-face setting.  The CA MAY rely upon a face-to-face validation of the Principal Individual performed by the Registration Agency, provided that the CA has evaluated the validation procedure and concluded that it satisfies the requirements of the Guidelines for face-to-face validation procedures.  Where no face-to-face validation was conducted by the Registration Agency, or the Registration Agency's face-to-face validation procedure does not satisfy the requirements of the Guidelines, the CA SHALL perform face-to-face validation.
+
+   A.  **Face-To-Face Validation**: The face-to-face validation MUST be conducted before either an employee of the CA, a Latin Notary, a Notary (or equivalent in the Applicant's jurisdiction), a Lawyer, or Accountant (Third-Party Validator).  The Principal Individual(s) MUST present the following documentation (Vetting Documents) directly to the Third-Party Validator:
+
+       i. A Personal Statement that includes the following information:
+
+          1. Full name or names by which a person is, or has been, known (including all other names used);
+          2. Residential Address at which he/she can be located;
+          3. Date of birth; and
+          4. An affirmation that all of the information contained in the Certificate Request is true and correct.
+
+       ii. A current signed government-issued identification document that includes a photo of the Individual and is signed by the Individual such as:
+
+           1. A passport;
+           2. A driver's license;
+           3. A personal identification card;
+           4. A concealed weapons permit; or
+           5. A military ID.
+
+       iii. At least two secondary documentary evidences to establish his/her identity that include the name of the Individual, one of which MUST be from a financial institution.
+
+            1. Acceptable financial institution documents include:
+
+               a. A major credit card, provided that it contains an expiration date and it has not expired'
+               b. A debit card from a regulated financial institution, provided that it contains an expiration date and it has not expired,
+               c. A mortgage statement from a recognizable lender that is less than six months old,
+               d. A bank statement from a regulated financial institution that is less than six months old.
+
+            2. Acceptable non-financial documents include:
+
+               a. Recent original utility bills or certificates from a utility company confirming the arrangement to pay for the services at a fixed address (not a mobile/cellular telephone bill),
+               b. A copy of a statement for payment of a lease, provided that the statement is dated within the past six months,
+               c. A certified copy of a birth certificate,
+               d. A local authority tax bill for the current year,
+               e. A certified copy of a court order, such as a divorce certificate, annulment papers, or adoption papers.
+
+       The Third-Party Validator performing the face-to-face validation MUST:
+
+         i. Attest to the signing of the Personal Statement and the identity of the signer; and
+         ii. Identify the original Vetting Documents used to perform the identification.  In addition, the Third-Party Validator MUST attest on a copy of the current signed government-issued photo identification document that it is a full, true, and accurate reproduction of the original.
+
+   B.  **Verification of Third-Party Validator**: The CA MUST independently verify that the Third-Party Validator is a legally-qualified Latin Notary or Notary (or legal equivalent in the Applicant's jurisdiction), lawyer, or accountant in the jurisdiction of the Individual's residency, and that the Third-Party Validator actually did perform the services and did attest to the signature of the Individual.
+
+   C.  **Cross-checking of Information**: The CA MUST obtain the signed and attested Personal Statement together with the attested copy of the current signed government-issued photo identification document.  The CA MUST review the documentation to determine that the information is consistent, matches the information in the application, and identifies the Individual.  The CA MAY rely on electronic copies of this documentation, provided that:
+
+       i. the CA confirms their authenticity (not improperly modified when compared with the underlying original) with the Third-Party Validator; and
+       ii. electronic copies of similar kinds of documents are recognized as legal substitutes for originals under the laws of the CA's jurisdiction.
+
+5. **Non-Commercial Entity Subjects (International Organization)**: Unless verified under subsection (6), all items listed in [Section 11.2.1](#1121-verification-requirements) (4) MUST be verified either:
+
+   A.  With reference to the constituent document under which the International Organization was formed; or
+   B.  Directly with a signatory country's government in which the CA is permitted to do business.  Such verification may be obtained from an appropriate government agency or from the laws of that country, or by verifying that the country's government has a mission to represent it at the International Organization; or
+   C.  Directly against any current list of qualified entities that the CA/Browser Forum may maintain at www.cabforum.org.
+   D.  In cases where the International Organization applying for the EV Certificate is an organ or agency - including a non-governmental organization of a verified International Organization, then the CA may verify the International Organization Applicant directly with the verified umbrella International Organization of which the Applicant is an organ or agency.
+
+6. The CA may rely on a Verified Professional Letter to establish the Applicant's information listed in (1)-(5) above if:
+
+   i. the Verified Professional Letter includes a copy of supporting documentation used to establish the Applicant's legal existence, such as a certificate of registration, articles of incorporation, operating agreement, statute, or regulatory act, and
+   ii. the CA confirms the Applicant's organization name specified in the Verified Professional Letter with a QIIS or QGIS.
+
+## 11.3. Verification of Applicant's Legal Existence and Identity – Assumed Name
+
+### 11.3.1. Verification Requirements
+
+If, in addition to the Applicant's formal legal name, as recorded with the applicable Incorporating Agency or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, the Applicant's identity, as asserted in the EV Certificate, is to contain any assumed name (also known as "doing business as", "DBA", or "d/b/a" in the US, and "trading as" in the UK) under which the Applicant conducts business, the CA MUST verify that:
+
+   i. the Applicant has registered its use of the assumed name with the appropriate government agency for such filings in the jurisdiction of its Place of Business (as verified in accordance with these Guidelines), and
+   ii. that such filing continues to be valid.
+
+### 11.3.2. Acceptable Method of Verification
+
+To verify any assumed name under which the Applicant conducts business:
+
+1. The CA MAY verify the assumed name through use of a Qualified Government Information Source operated by, or on behalf of, an appropriate government agency in the jurisdiction of the Applicant's Place of Business, or by direct contact with such government agency in person or via mail, e-mail, Web address, or telephone; or
+2. The CA MAY verify the assumed name through use of a Qualified Independent Information Source provided that the QIIS has verified the assumed name with the appropriate government agency.
+3. The CA MAY rely on a Verified Professional Letter  that indicates the assumed name under which the Applicant conducts business, the government agency with which the assumed name is registered, and that such filing continues to be valid.
+
+## 11.4. Verification of Applicant's Physical Existence
+
+### 11.4.1. Address of Applicant's Place of Business
+
+1. **Verification Requirements**: To verify the Applicant's physical existence and business presence, the CA MUST verify that the physical address provided by the Applicant is an address where the Applicant or a Parent/Subsidiary Company conducts business operations (not, for example, a mail drop or P.O. box, or 'care of' (C/O) address, such as an address for an agent of the Organization), and is the address of the Applicant's Place of Business.
+
+2. **Acceptable Methods of Verification**
+
+   A.  **Place of Business in the Country of Incorporation or Registration**
+
+       i. For Applicants whose Place of Business is in the same country as the Applicant's Jurisdiction of Incorporation or Registration and whose Place of Business is NOT the same as that indicated in the relevant Qualified Government Information Source used in [Section 11.2](#112-verification-of-applicants-legal-existence-and-identity) to verify legal existence:
+
+          1. For Applicants listed at the same Place of Business address in the current version of either at least one QGIS (other than that used to verify legal existence), QIIS or QTIS, the CA MUST confirm that the Applicant's address, as listed in the EV Certificate Request, is a valid business address for the Applicant or a Parent/Subsidiary Company by reference to such QGIS, QIIS, or QTIS, and MAY rely on the Applicant's representation that such address is its Place of Business;
+
+          2. For Applicants who are not listed at the same Place of Business address in the current version of either at least one QIIS or QTIS, the CA MUST confirm that the address provided by the Applicant in the EV Certificate Request is the Applicant's or a Parent/Subsidiary Company's business address, by obtaining documentation of a site visit to the business address, which MUST be performed by a reliable individual or firm.  The documentation of the site visit MUST:
+
+             a. Verify that the Applicant's business is located at the exact address stated in the EV Certificate Request (e.g., via permanent signage, employee confirmation, etc.),
+             b. Identify the type of facility (e.g., office in a commercial building, private residence, storefront, etc.) and whether it appears to be a permanent business location,
+             c. Indicate whether there is a permanent sign (that cannot be moved) that identifies the Applicant,
+             d. Indicate whether there is evidence that the Applicant is conducting ongoing business activities at the site (not that it is just, for example, a mail drop, P.O. box, etc.), and
+             e. Include one or more photos of
+                i. the exterior of the site (showing signage indicating the Applicant's name, if present, and showing the street address if possible), and
+                ii. the interior reception area or workspace.
+
+       ii. For all Applicants, the CA MAY alternatively rely on a Verified Professional Letter that indicates the address of the Applicant's or a Parent/Subsidiary Company's Place of Business and that business operations are conducted there.
+       iii. For Government Entity Applicants, the CA MAY rely on the address contained in the records of the QGIS in the Applicant's jurisdiction.
+       iv. For Applicants whose Place of Business is in the same country as the Applicant's Jurisdiction of Incorporation or Registration and where the QGIS used in [Section 11.2](#112-verification-of-applicants-legal-existence-and-identity) to verify legal existence contains a business address for the Applicant, the CA MAY rely on the address in the QGIS to confirm the Applicant's or a Parent/Subsidiary Company's address as listed in the EV Certificate Request, and MAY rely on the Applicant's representation that such address is its Place of Business.
+
+   B.  **Place of Business not in the Country of Incorporation or Registration**: The CA MUST rely on a Verified Professional Letter that indicates the address of the Applicant's Place of Business and that business operations are conducted there.
+
+## 11.5. Verified Method of Communication
+
+### 11.5.1. Verification Requirements
+
+To assist in communicating with the Applicant and confirming that the Applicant is aware of and approves issuance, the CA MUST verify a telephone number, fax number, email address, or postal delivery address as a Verified Method of Communication with the Applicant.
+
+### 11.5.2. Acceptable Methods of Verification
+
+To verify a Verified Method of Communication with the Applicant, the CA MUST:
+
+A.  Verify that the Verified Method of Communication belongs to the Applicant, or a Parent/Subsidiary or Affiliate of the Applicant, by matching it with one of the Applicant's Parent/Subsidiary or Affiliate's Places of Business in:
+
+  i. records provided by the applicable phone company;
+  ii. a QGIS, QTIS, or QIIS; or
+  iii. a Verified Professional Letter; and
+
+B.  Confirm the Verified Method of Communication by using it to obtain an affirmative response sufficient to enable a reasonable person to conclude that the Applicant, or a Parent/Subsidiary or Affiliate of Applicant, can be contacted reliably by using the Verified Method of Communication.
+
+## 11.6. Verification of Applicant's Operational Existence
+
+### 11.6.1. Verification Requirements
+
+The CA MUST verify that the Applicant has the ability to engage in business by verifying the Applicant's, or Affiliate/Parent/Subsidiary Company's, operational existence.  The CA MAY rely on its verification of a Government Entity's legal existence under [Section 11.2](#112-verification-of-applicants-legal-existence-and-identity) as verification of a Government Entity's operational existence.
+
+### 11.6.2. Acceptable Methods of Verification
+
+To verify the Applicant's ability to engage in business, the CA MUST verify the operational existence of the Applicant, or its Affiliate/Parent/Subsidiary Company, by:
+
+1. Verifying that the Applicant, Affiliate, Parent Company, or Subsidiary Company has been in existence for at least three years, as indicated by the records of an Incorporating Agency or Registration Agency;
+
+2. Verifying that the Applicant, Affiliate, Parent Company, or Subsidiary Company is listed in either a current QIIS or QTIS;
+
+3. Verifying that the Applicant, Affiliate, Parent Company, or Subsidiary Company has an active current Demand Deposit Account with a Regulated Financial Institution by receiving authenticated documentation of the Applicant's, Affiliate's, Parent Company's, or Subsidiary Company's Demand Deposit Account directly from a Regulated Financial Institution; or
+
+4. Relying on a Verified Professional Letter to the effect that the Applicant has an active current Demand Deposit Account with a Regulated Financial Institution.
+
+## 11.7. Verification of Applicant's Domain Name
+
+### 11.7.1. Verification Requirements
+
+1. For each Fully-Qualified Domain Name listed in a Certificate which is not an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section) either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements. For a Certificate issued to an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the Onion Domain Name in accordance with Appendix B of the Baseline Requirements.
+
+2. **Mixed Character Set Domain Names**: EV Certificates MAY include Domain Names containing mixed character sets only in compliance with the rules set forth by the domain registrar.  The CA MUST visually compare any Domain Names with mixed character sets with known high risk domains.  If a similarity is found, then the EV Certificate Request MUST be flagged as High Risk.  The CA must perform reasonably appropriate additional authentication and verification to be certain beyond reasonable doubt that the Applicant and the target in question are the same organization.
+
+## 11.8. Verification of Name, Title, and Authority of Contract Signer and Certificate Approver
+
+### 11.8.1. Verification Requirements
+
+For both the Contract Signer and the Certificate Approver, the CA MUST verify the following.
+
+1. **Name, Title and Agency**: The CA MUST verify the name and title of the Contract Signer and the Certificate Approver, as applicable.  The CA MUST also verify that the Contract Signer and the Certificate Approver are agents representing the Applicant.
+2. **Signing Authority of Contract Signer**: The CA MUST verify that the Contract Signer is authorized by the Applicant to enter into the Subscriber Agreement (and any other relevant contractual obligations) on behalf of the Applicant, including a contract that designates one or more Certificate Approvers on behalf of the Applicant.
+3. **EV Authority of Certificate Approver**: The CA MUST verify, through a source other than the Certificate Approver him- or herself, that the Certificate Approver is expressly authorized by the Applicant to do the following, as of the date of the EV Certificate Request:
+
+   A.  Submit, and, if applicable, authorize a Certificate Requester to submit, the EV Certificate Request on behalf of the Applicant; and
+   B.  Provide, and, if applicable, authorize a Certificate Requester to provide, the information requested from the Applicant by the CA for issuance of the EV Certificate; and
+   C.  Approve EV Certificate Requests submitted by a Certificate Requester.
+
+### 11.8.2. Acceptable Methods of Verification – Name, Title and Agency
+
+Acceptable methods of verification of the name, title, and agency status of the Contract Signer and the Certificate Approver include the following.
+
+1. **Name and Title**: The CA MAY verify the name and title of the Contract Signer and the Certificate Approver by any appropriate method designed to provide reasonable assurance that a person claiming to act in such a role is in fact the named person designated to act in such role.
+
+2. **Agency**: The CA MAY verify the agency of the Contract Signer and the Certificate Approver by:
+
+   A.  Contacting the Applicant using a Verified Method of Communication for the Applicant, and obtaining confirmation that the Contract Signer and/or the Certificate Approver, as applicable, is an employee;
+   B.  Obtaining an Independent Confirmation From the Applicant (as described in [Section 11.11.4](#11114-independent-confirmation-from-applicant)), or a Verified Professional Letter verifying that the Contract Signer and/or the Certificate Approver, as applicable, is either an employee or has otherwise been appointed as an agent of the Applicant; or
+   C.  Obtaining confirmation from a QIIS or QGIS that the Contract Signer and/or Certificate Approver is an employee of the Applicant.
+
+   The CA MAY also verify the agency of the Certificate Approver via a certification from the Contract Signer (including in a contract between the CA and the Applicant signed by the Contract Signer), provided that the employment or agency status and Signing Authority of the Contract Signer has been verified.
+
+### 11.8.3. Acceptable Methods of Verification – Authority
+
+Acceptable methods of verification of the Signing Authority of the Contract Signer, and the EV Authority of the Certificate Approver, as applicable, include:
+
+1. **Verified Professional Letter**: The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by reliance on a Verified Professional Letter;
+2. **Corporate Resolution**: The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by reliance on a properly authenticated corporate resolution that confirms that the person has been granted such Signing Authority, provided that such resolution is
+
+   i. certified by the appropriate corporate officer (e.g., secretary), and
+   ii. the CA can reliably verify that the certification was validly signed by such person, and that such person does have the requisite authority to provide such certification;
+
+3. **Independent Confirmation from Applicant**: The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by obtaining an Independent Confirmation from the Applicant (as described in [Section 11.11.4](#11114-independent-confirmation-from-applicant));
+4. **Contract between CA and Applicant**: The EV Authority of the Certificate Approver MAY be verified by reliance on a contract between the CA and the Applicant that designates the Certificate Approver with such EV Authority, provided that the contract is signed by the Contract Signer and provided that the agency and Signing Authority of the Contract Signer have been verified;
+5. **Prior Equivalent Authority**: The signing authority of the Contract Signer, and/or the EV authority of the Certificate Approver, MAY be verified by relying on a demonstration of Prior Equivalent Authority.
+
+   A.  Prior Equivalent Authority of a Contract Signer MAY be relied upon for confirmation or verification of the signing authority of the Contract Signer when the Contract Signer has executed a binding contract between the CA and the Applicant with a legally valid and enforceable seal or handwritten signature and only when the contract was executed more than 90 days prior to the EV Certificate application.  The CA MUST record sufficient details of the previous agreement to correctly identify it and associate it with the EV application.  Such details MAY include any of the following:
+
+       i. Agreement title,
+       ii. Date of Contract Signer's signature,
+       iii. Contract reference number, and
+       iv. Filing location.
+
+   B.  Prior Equivalent Authority of a Certificate Approver MAY be relied upon for confirmation or verification of the EV Authority of the Certificate Approver when the Certificate Approver has performed one or more of the following:
+
+       i. Under contract to the CA, has served (or is serving) as an Enterprise RA for the Applicant, or
+       ii. Has participated in the approval of one or more certificate requests, for certificates issued by the CA and which are currently and verifiably in use by the Applicant.  In this case the CA MUST have contacted the Certificate Approver by phone at a previously validated phone number or have accepted a signed and notarized letter approving the certificate request.
+
+6. **QIIS or QGIS**: The Signing Authority of the Contract Signer, and/or the EV Authority of the Certificate Approver, MAY be verified by a QIIS or QGIS that identifies the Contract Signer and/or the Certificate Approver as a corporate officer, sole proprietor, or other senior official of the Applicant.
+
+7. **Contract Signer's Representation/Warranty**: Provided that the CA verifies that the Contract Signer is an employee or agent of the Applicant, the CA MAY rely on the signing authority of the Contract Signer by obtaining a duly executed representation or warranty from the Contract Signer that includes the following acknowledgments:
+
+   A.  That the Applicant authorizes the Contract Signer to sign the Subscriber Agreement on the Applicant's behalf,
+   B.  That the Subscriber Agreement is a legally valid and enforceable agreement,
+   C.  That, upon execution of the Subscriber Agreement, the Applicant will be bound by all of its terms and conditions,
+   D.  That serious consequences attach to the misuse of an EV certificate, and
+   E.  The contract signer has the authority to obtain the digital equivalent of a corporate seal, stamp or officer's signature to establish the authenticity of the company's Web site.
+
+Note: An example of an acceptable representation/warranty appears in [Appendix E](#appendix-e---sample-contract-signers-representationwarranty-informative).
+
+### 11.8.4. Pre-Authorized Certificate Approver
+
+Where the CA and Applicant contemplate the submission of multiple future EV Certificate Requests, then, after the CA:
+
+1. Has verified the name and title of the Contract Signer and that he/she is an employee or agent of the Applicant; and
+
+2. Has verified the Signing Authority of such Contract Signer in accordance with one of the procedures in [Section 11.8.3](#1183-acceptable-methods-of-verification--authority).
+
+The CA and the Applicant MAY enter into a written agreement, signed by the Contract Signer on behalf of the Applicant, whereby, for a specified term, the Applicant expressly authorizes one or more Certificate Approver(s) designated in such agreement to exercise EV Authority with respect to each future EV Certificate Request submitted on behalf of the Applicant and properly authenticated as originating with, or otherwise being approved by, such Certificate Approver(s).
+
+Such an agreement MUST provide that the Applicant shall be obligated under the Subscriber Agreement for all EV Certificates issued at the request of, or approved by, such Certificate Approver(s) until such EV Authority is revoked, and MUST include mutually agreed-upon provisions for:
+
+   i. authenticating the Certificate Approver when EV Certificate Requests are approved,
+   ii. periodic re-confirmation of the EV Authority of the Certificate Approver,
+   iii. secure procedures by which the Applicant can notify the CA that the EV Authority of any such Certificate Approver is revoked, and
+   iv. such other appropriate precautions as are reasonably necessary.
+
+## 11.9. Verification of Signature on Subscriber Agreement and EV Certificate Requests
+
+Both the Subscriber Agreement and each non-pre-authorized EV Certificate Request MUST be signed.  The Subscriber Agreement MUST be signed by an authorized Contract Signer.  The EV Certificate Request MUST be signed by the Certificate Requester submitting the document, unless the Certificate Request has been pre-authorized in line with [Section 11.8.4](#1184-pre-authorized-certificate-approver).  If the Certificate Requester is not also an authorized Certificate Approver, then an authorized Certificate Approver MUST independently approve the EV Certificate Request.  In all cases, applicable signatures MUST be a legally valid and contain an enforceable seal or handwritten signature (for a paper Subscriber Agreement and/or EV Certificate Request), or a legally valid and enforceable electronic signature (for an electronic Subscriber Agreement and/or EV Certificate Request), that binds the Applicant to the terms of each respective document.
+
+### 11.9.1. Verification Requirements
+
+1. **Signature**: The CA MUST authenticate the signature of the Contract Signer on the Subscriber Agreement and the signature of the Certificate Requester on each EV Certificate Request in a manner that makes it reasonably certain that the person named as the signer in the applicable document is, in fact, the person who signed the document on behalf of the Applicant.
+
+2. **Approval Alternative**: In cases where an EV Certificate Request is signed and submitted by a Certificate Requester who does not also function as a Certificate Approver, approval and adoption of the EV Certificate Request by a Certificate Approver in accordance with the requirements of [Section 11.10](#1110-verification-of-approval-of-ev-certificate-request) can substitute for authentication of the signature of the Certificate Requester on such EV Certificate Request.
+
+### 11.9.2. Acceptable Methods of Signature Verification
+
+Acceptable methods of authenticating the signature of the Certificate Requester or Contract Signer include the following:
+
+1. Contacting the Applicant using a Verified Method of Communication for the Applicant, for the attention of the Certificate Requester or Contract Signer, as applicable, followed by a response from someone who identifies themselves as such person confirming that he/she did sign the applicable document on behalf of the Applicant;
+
+2. A letter mailed to the Applicant's or Agent's address, as verified through independent means in accordance with these Guidelines, for the attention of the Certificate Requester or Contract Signer, as applicable, followed by a response through a Verified Method of Communication from someone who identifies themselves as such person confirming that he/she did sign the applicable document on behalf of the Applicant;
+
+3. Use of a signature process that establishes the name and title of the signer in a secure manner, such as through use of an appropriately secure login process that identifies the signer before signing, or through use of a digital signature made with reference to an appropriately verified certificate; or
+
+4. Notarization by a notary, provided that the CA independently verifies that such notary is a legally qualified notary in the jurisdiction of the Certificate Requester or Contract Signer.
+
+## 11.10. Verification of Approval of EV Certificate Request
+
+### 11.10.1. Verification Requirements
+
+In cases where an EV Certificate Request is submitted by a Certificate Requester, before the CA issues the requested EV Certificate, the CA MUST verify that an authorized Certificate Approver reviewed and approved the EV Certificate Request.
+
+### 11.10.2. Acceptable Methods of Verification
+
+Acceptable methods of verifying the Certificate Approver's approval of an EV Certificate Request include:
+
+1. Contacting the Certificate Approver using a Verified Method of Communication for the Applicant and obtaining oral or written confirmation that the Certificate Approver has reviewed and approved the EV Certificate Request;
+2. Notifying the Certificate Approver that one or more new EV Certificate Requests are available for review and approval at a designated access-controlled and secure Web site, followed by a login by, and an indication of approval from, the Certificate Approver in the manner required by the Web site; or
+3. Verifying the signature of the Certificate Approver on the EV Certificate Request in accordance with [Section 11.9](#119-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests).
+
+## 11.11. Verification of Certain Information Sources
+
+### 11.11.1. Verified Legal Opinion
+
+1. **Verification Requirements**: Before relying on a legal opinion submitted to the CA, the CA MUST verify that such legal opinion meets the following requirements:
+
+   A.  **Status of Author**: The CA MUST verify that the legal opinion is authored by an independent legal practitioner retained by and representing the Applicant (or an in-house legal practitioner employed by the Applicant) (Legal Practitioner) who is either:
+
+       i. A lawyer (or solicitor, barrister, advocate, or equivalent) licensed to practice law in the country of the Applicant's Jurisdiction of Incorporation or Registration or any jurisdiction where the Applicant maintains an office or physical facility, or
+       ii. A Latin Notary who is currently commissioned or licensed to practice in the country of the Applicant's Jurisdiction of Incorporation or Registration or any jurisdiction where the Applicant maintains an office or physical facility (and that such jurisdiction recognizes the role of the Latin Notary);
+
+   B.  **Basis of Opinion**: The CA MUST verify that the Legal Practitioner is acting on behalf of the Applicant and that the conclusions of the Verified Legal Opinion are based on the Legal Practitioner's stated familiarity with the relevant facts and the exercise of the Legal Practitioner's professional judgment and expertise;
+   C.  **Authenticity**: The CA MUST confirm the authenticity of the Verified Legal Opinion.
+
+2. **Acceptable Methods of Verification**: Acceptable methods of establishing the foregoing requirements for a Verified Legal Opinion are:
+
+   A.  **Status of Author**: The CA MUST verify the professional status of the author of the legal opinion by directly contacting the authority responsible for registering or licensing such Legal Practitioner(s) in the applicable jurisdiction;
+   B.  **Basis of Opinion**: The text of the legal opinion MUST make it clear that the Legal Practitioner is acting on behalf of the Applicant and that the conclusions of the legal opinion are based on the Legal Practitioner's stated familiarity with the relevant facts and the exercise of the practitioner's professional judgment and expertise.  The legal opinion MAY also include disclaimers and other limitations customary in the Legal Practitioner's jurisdiction, provided that the scope of the disclaimed responsibility is not so great as to eliminate any substantial risk (financial, professional, and/or reputational) to the Legal Practitioner, should the legal opinion prove to be erroneous.  An acceptable form of legal opinion is attached as [Appendix B](#appendix-b---sample-attorney-opinions-confirming-specified-information);
+   C.  **Authenticity**: To confirm the authenticity of the legal opinion, the CA MUST make a telephone call or send a copy of the legal opinion back to the Legal Practitioner at the address, phone number, facsimile, or (if available) e-mail address for the Legal Practitioner listed with the authority responsible for registering or licensing such Legal Practitioner, and obtain confirmation from the Legal Practitioner or the Legal Practitioner's assistant that the legal opinion is authentic.  If a phone number is not available from the licensing authority, the CA MAY use the number listed for the Legal Practitioner in records provided by the applicable phone company, QGIS, or QIIS.
+
+       In circumstances where the opinion is digitally signed, in a manner that confirms the authenticity of the document and the identity of the signer, as verified by the CA in [Section 11.11.1](#11111-verified-legal-opinion) (2)(A), no further verification of authenticity is required.
+
+### 11.11.2. Verified Accountant Letter
+
+1. **Verification Requirements**: Before relying on an accountant letter submitted to the CA, the CA MUST verify that such accountant letter meets the following requirements:
+
+   A.  **Status of Author**: The CA MUST verify that the accountant letter is authored by an Accounting Practitioner retained or employed by the Applicant and licensed within the country of the Applicant's Jurisdiction of Incorporation, Jurisdiction of Registration, or country where the Applicant maintains an office or physical facility.  Verification of license MUST be  through the member organization or regulatory organization in the Accounting Practitioner's country or jurisdiction that is appropriate to contact when verifying an accountant's license to practice in that country or jurisdiction.  Such country or jurisdiction must have an accounting standards body that maintains full membership status with the International Federation of Accountants.
+   B.  **Basis of Opinion**: The CA MUST verify that the Accounting Practitioner is acting on behalf of the Applicant and that the conclusions of the Verified Accountant Letter are based on the Accounting Practitioner's stated familiarity with the relevant facts and the exercise of the Accounting Practitioner's professional judgment and expertise;
+   C.  **Authenticity**: The CA MUST confirm the authenticity of the Verified Accountant Letter.
+
+2. **Acceptable Methods of Verification**: Acceptable methods of establishing the foregoing requirements for a Verified Accountant Letter are listed here.
+
+   A.  **Status of Author**: The CA MUST verify the professional status of the author of the accountant letter by directly contacting the authority responsible for registering or licensing such Accounting Practitioners in the applicable jurisdiction.
+   B.  **Basis of Opinion**: The text of the Verified Accountant Letter MUST make clear that the Accounting Practitioner is acting on behalf of the Applicant and that the information in the letter is based on the Accounting Practitioner's stated familiarity with the relevant facts and the exercise of the practitioner's professional judgment and expertise.  The Verified Accountant Letter MAY also include disclaimers and other limitations customary in the Accounting Practitioner's jurisdiction, provided that the scope of the disclaimed responsibility is not so great as to eliminate any substantial risk (financial, professional, and/or reputational) to the Accounting Practitioner, should the Verified Accountant Letter prove to be erroneous.  Acceptable forms of Verified Accountant Letter are attached as [Appendix C](#appendix-c---sample-accountant-letters-confirming-specified-information).
+   C.  **Authenticity**: To confirm the authenticity of the accountant's opinion, the CA MUST make a telephone call or send a copy of the Verified Accountant Letter back to the Accounting Practitioner at the address, phone number, facsimile, or (if available) e-mail address for the Accounting Practitioner listed with the authority responsible for registering or licensing such Accounting Practitioners and obtain confirmation from the Accounting Practitioner or the Accounting Practitioner's assistant that the accountant letter is authentic.  If a phone number is not available from the licensing authority, the CA MAY use the number listed for the Accountant in records provided by the applicable phone company, QGIS, or QIIS.
+
+      In circumstances where the opinion is digitally signed, in a manner that confirms the authenticity of the document and the identity of the signer, as verified by the CA in [Section 11.11.2](#11112-verified-accountant-letter) (2)(A), no further verification of authenticity is required.
+
+### 11.11.3. Face-to-Face Validation
+
+1. **Verification Requirements**: Before relying on face-to-face vetting documents submitted to the CA, the CA MUST verify that the Third-Party Validator meets the following requirements:
+
+   A.  **Qualification of Third-Party Validator**: The CA MUST independently verify that the Third-Party Validator is a legally-qualified Latin Notary or Notary (or legal equivalent in the Applicant's jurisdiction), Lawyer, or Accountant in the jurisdiction of the individual's residency;
+   B.  **Document Chain of Custody**: The CA MUST verify that the Third-Party Validator viewed the Vetting Documents in a face-to-face meeting with the individual being validated;
+   C.  **Verification of Attestation**: If the Third-Party Validator is not a Latin Notary, then the CA MUST confirm the authenticity of the attestation and vetting documents.
+
+2. **Acceptable Methods of Verification**: Acceptable methods of establishing the foregoing requirements for vetting documents are:
+
+   A.  **Qualification of Third-Party Validator**: The CA MUST verify the professional status of the Third-Party Validator by directly contacting the authority responsible for registering or licensing such Third-Party Validators in the applicable jurisdiction;
+   B.  **Document Chain of Custody**: The Third-Party Validator MUST submit a statement to the CA which attests that they obtained the Vetting Documents submitted to the CA for the individual during a face-to-face meeting with the individual;
+   C.  **Verification of Attestation**: If the Third-Party Validator is not a Latin Notary, then the CA MUST confirm the authenticity of the vetting documents received from the Third-Party Validator.  The CA MUST make a telephone call to the Third-Party Validator and obtain confirmation from them or their assistant that they performed the face-to-face validation.  The CA MAY rely upon self-reported information obtained from the Third-Party Validator for the sole purpose of performing this verification process.  In circumstances where the attestation is digitally signed, in a manner that confirms the authenticity of the documents, and the identity of the signer as verified by the CA in [Section 11.11.3](#11113-face-to-face-validation) (1)(A), no further verification of authenticity is required.
+
+### 11.11.4. Independent Confirmation From Applicant
+
+An Independent Confirmation from the Applicant is a confirmation of a particular fact (e.g., confirmation of the employee or agency status of a Contract Signer or Certificate Approver, confirmation of the EV Authority of a Certificate Approver, etc.) that is:
+
+A.  Received by the CA from a Confirming Person (someone other than the person who is the subject of the inquiry) that has the appropriate authority to confirm such a fact, and who represents that he/she has confirmed such fact;
+B.  Received by the CA in a manner that authenticates and verifies the source of the confirmation; and
+C.  Binding on the Applicant.
+
+An Independent Confirmation from the Applicant MAY be obtained via the following procedure:
+
+1. **Confirmation Request**: The CA MUST initiate a Confirmation Request via an appropriate out-of-band communication, requesting verification or confirmation of the particular fact at issue as follows:
+
+   A.  **Addressee**: The Confirmation Request MUST be directed to:
+
+       i. A position within the Applicant's organization that qualifies as a Confirming Person (e.g., Secretary, President, CEO, CFO, COO, CIO, CSO, Director, etc.) and is identified by name and title in a current QGIS, QIIS, QTIS, Verified Legal Opinion, Verified Accountant Letter, or by contacting the Applicant using a Verified Method of Communication; or
+       ii. The Applicant's Registered Agent or Registered Office in the Jurisdiction of Incorporation as listed in the official records of the Incorporating Agency, with instructions that it be forwarded to an appropriate Confirming Person; or
+       iii. A named individual verified to be in the direct line of management above the Contract Signer or Certificate Approver by contacting the Applicant's Human Resources Department by phone or mail (at the phone number or address for the Applicant's Place of Business, verified in accordance with these Guidelines).
+
+   B.  **Means of Communication**: The Confirmation Request MUST be directed to the Confirming Person in a manner reasonably likely to reach such person.  The following options are acceptable:
+
+       i. By paper mail addressed to the Confirming Person at:
+
+          1. The address of the Applicant's Place of Business as verified by the CA in accordance with these Guidelines, or
+          2. The business address for such Confirming Person specified in a current QGIS, QTIS, QIIS, Verified Professional Letter, or
+          3. The address of the Applicant's Registered Agent or Registered Office listed in the official records of the Jurisdiction of Incorporation, or
+
+       ii. By e-mail addressed to the Confirming Person at the business e-mail address for such person listed in a current QGIS, QTIS, QIIS, Verified Legal Opinion, or Verified Accountant Letter; or
+       iii. By telephone call to the Confirming Person, where such person is contacted by calling the main phone number of the Applicant's Place of Business (verified in accordance with these Guidelines) and asking to speak to such person, and a person taking the call identifies him- or herself as such person; or
+       iv. By facsimile to the Confirming Person at the Place of Business.  The facsimile number must be listed in a current QGIS, QTIS, QIIS, Verified Legal Opinion, or Verified Accountant Letter.  The cover page must be clearly addressed to the Confirming Person.
+
+2. **Confirmation Response**: The CA MUST receive a response to the Confirmation Request from a Confirming Person that confirms the particular fact at issue.  Such response MAY be provided to the CA by telephone, by e-mail, or by paper mail, so long as the CA can reliably verify that it was provided by a Confirming Person in response to the Confirmation Request.
+
+3. The CA MAY rely on a verified Confirming Person to confirm their own contact information: email address, telephone number, and facsimile number.  The CA MAY rely on this verified contact information for future correspondence with the Confirming Person if:
+
+   A.  The domain of the e-mail address is owned by the Applicant and is the Confirming Person's own e-mail address and not a group e-mail alias;
+   B.  The Confirming Person's telephone/fax number is verified by the CA to be a telephone number that is part of the organization's telephone system, and is not the personal phone number for the person.
+
+### 11.11.5. Qualified Independent Information Source
+
+A Qualified Independent Information Source (QIIS) is a regularly-updated and publicly available database that is generally recognized as a dependable source for certain information.  A database qualifies as a QIIS if the CA determines that:
+
+1. Industries other than the certificate industry rely on the database for accurate location, contact, or other information; and
+
+2. The database provider updates its data on at least an annual basis.
+
+The CA SHALL use a documented process to check the accuracy of the database and ensure its data is acceptable, including reviewing the database provider's terms of use. The CA SHALL NOT use any data in a QIIS that the CA knows is
+
+  i. self-reported and
+  ii. not verified by the QIIS as accurate.
+
+Databases in which the CA or its owners or affiliated companies maintain a controlling interest, or in which any Registration Authorities or subcontractors to whom the CA has outsourced any portion of the vetting process (or their owners or affiliated companies) maintain any ownership or beneficial interest, do not qualify as a QIIS.
+
+### 11.11.6. Qualified Government Information Source
+
+A Qualified Government Information Source (QGIS) is a regularly-updated and current, publicly available, database designed for the purpose of accurately providing the information for which it is consulted, and which is generally recognized as a dependable source of such information provided that it is maintained by a Government Entity, the reporting of data is required by law, and false or misleading reporting is punishable with criminal or civil penalties. Nothing in these Guidelines shall prohibit the use of third-party vendors to obtain the information from the Government Entity provided that the third party obtains the information directly from the Government Entity.
+
+### 11.11.7. Qualified Government Tax Information Source
+
+A Qualified Government Tax Information Source is a Qualified Government Information Source that specifically contains tax information relating to Private Organizations, Business Entities or Individuals (e.g., the IRS in the United States).
+
+## 11.12. Other Verification Requirements
+
+### 11.12.1. High Risk Status
+
+The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirements apply equally to EV Certificates.
+
+### 11.12.2. Denied Lists and Other Legal Block Lists
+
+1. **Verification Requirements**: The CA MUST verify whether the Applicant, the Contract Signer, the Certificate Approver, the Applicant's Jurisdiction of Incorporation, Registration, or Place of Business:
+
+   A.  Is identified on any government denied list, list of prohibited persons, or other list that prohibits doing business with such organization or person under the laws of the country of the CA's jurisdiction(s) of operation; or
+   B.  Has its Jurisdiction of Incorporation, Registration, or Place of Business in any country with which the laws of the CA's jurisdiction prohibit doing business.
+
+   The CA MUST NOT issue any EV Certificate to the Applicant if either the Applicant, the Contract Signer, or Certificate Approver or if the Applicant's Jurisdiction of Incorporation or Registration or Place of Business is on any such list.
+
+2. **Acceptable Methods of Verification**  The CA MUST take reasonable steps to verify with the following lists and regulations:
+
+   A.  If the CA has operations in the U.S., the CA MUST take reasonable steps to verify with the following US Government denied lists and regulations:
+
+       i. BIS Denied Persons List - [https://www.bis.doc.gov/index.php/the-denied-persons-list](https://www.bis.doc.gov/index.php/the-denied-persons-list)
+       ii. BIS Denied Entities List - [https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list](https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern/entity-list)
+       iii. US Treasury Department List of Specially Designated Nationals and Blocked Persons - [https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx](https://www.treasury.gov/resource-center/sanctions/sdn-list/pages/default.aspx)
+       iv. US Government export regulations
+
+   B.  If the CA has operations in any other country, the CA MUST take reasonable steps to verify with all equivalent denied lists and export regulations (if any) in such other country.
+
+### 11.12.3. Parent/Subsidiary/Affiliate Relationship
+
+A CA verifying an Applicant using information of the Applicant's Parent, Subsidiary, or Affiliate, when allowed under [Section 11.4.1](#1141-address-of-applicants-place-of-business), [Section 11.5](#115-verified-method-of-communication), [Section 11.6.1](#1161-verification-requirements), or [Section 11.7.1](#1171-verification-requirements), MUST verify the Applicant's relationship to the Parent, Subsidiary, or Affiliate. Acceptable methods of verifying the Applicant's relationship to the Parent, Subsidiary, or Affiliate include the following:
+
+1. QIIS or QGIS: The relationship between the Applicant and the Parent, Subsidiary, or Affiliate is identified in a QIIS or QGIS;
+2. Independent Confirmation from the Parent, Subsidiary, or Affiliate: A CA MAY verify the relationship between an Applicant and a Parent, Subsidiary, or Affiliate by obtaining an Independent Confirmation from the appropriate Parent, Subsidiary, or Affiliate (as described in [Section 11.11.4](#11114-independent-confirmation-from-applicant));
+3. Contract between CA and Parent, Subsidiary, or Affiliate: A CA MAY verify the relationship between an Applicant and a Parent, Subsidiary, or Affiliate by relying on a contract between the CA and the Parent, Subsidiary, or Affiliate that designates the Certificate Approver with such EV Authority, provided that the contract is signed by the Contract Signer and provided that the agency and Signing Authority of the Contract Signer have been verified;
+4. Verified Professional Letter: A CA MAY verify the relationship between an Applicant and a Parent, Subsidiary, or Affiliate by relying on a Verified Professional Letter; or
+5. Corporate Resolution: A CA MAY verify the relationship between an Applicant and a Subsidiary by relying on a properly authenticated corporate resolution that approves creation of the Subsidiary or the Applicant, provided that such resolution is:
+
+   i. certified by the appropriate corporate officer (e.g., secretary), and
+   ii. the CA can reliably verify that the certification was validly signed by such person, and that such person does have the requisite authority to provide such certification.
+
+## 11.13. Final Cross-Correlation and Due Diligence
+
+1. The results of the verification processes and procedures outlined in these Guidelines are intended to be viewed both individually and as a group.  Thus, after all of the verification processes and procedures are completed, the CA MUST have a person who is not responsible for the collection of information review all of the information and documentation assembled in support of the EV Certificate application and look for discrepancies or other details requiring further explanation.
+2. The CA MUST obtain and document further explanation or clarification from the Applicant, Certificate Approver, Certificate Requester, Qualified Independent Information Sources, and/or other sources of information, as necessary, to resolve those discrepancies or details that require further explanation.
+3. The CA MUST refrain from issuing an EV Certificate until the entire corpus of information and documentation assembled in support of the EV Certificate Request is such that issuance of the EV Certificate will not communicate factual information that the CA knows, or the exercise of due diligence should discover from the assembled information and documentation, to be inaccurate,.  If satisfactory explanation and/or additional documentation are not received within a reasonable time, the CA MUST decline the EV Certificate Request and SHOULD notify the Applicant accordingly.
+4. In the case where some or all of the documentation used to support the application is in a language other than the CA's normal operating language, the CA or its Affiliate MUST perform the requirements of this Final Cross-Correlation and Due Diligence section using employees under its control and having appropriate training, experience, and judgment in confirming organizational identification and authorization and fulfilling all qualification requirements contained in [Section 14.1](#141-trustworthiness-and-competence).  When employees under the control of the CA do not possess the language skills necessary to perform the Final Cross-Correlation and Due Diligence a CA MAY:
+
+   A.  Rely on language translations of the relevant portions of the documentation, provided that the translations are received from a Translator; or
+   B.  When the CA has utilized the services of an RA, the CA MAY rely on the language skills of the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with [Section 11.13](#1113-final-cross-correlation-and-due-diligence), Subsections (1), (2) and (3).  Notwithstanding the foregoing, prior to issuing the EV Certificate, the CA MUST review the work completed by the RA and determine that all requirements have been met; or
+   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 17.5](#175-regular-self-audits) and [Section 17.6](#176-auditor-qualification).
+
+In the case of EV Certificates to be issued in compliance with the requirements of [Section 14.2](#142-delegation-of-functions-to-registration-authorities-and-subcontractors), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
+
+## 11.14. Requirements for Re-use of Existing Documentation
+
+For each EV Certificate Request, including requests to renew existing EV Certificates, the CA MUST perform all authentication and verification tasks required by these Guidelines to ensure that the request is properly authorized by the Applicant and that the information in the EV Certificate is still accurate and valid. This section sets forth the age limitations on for the use of documentation collected by the CA.
+
+### 11.14.1. Validation For Existing Subscribers
+
+If an Applicant has a currently valid EV Certificate issued by the CA, a CA MAY rely on its prior authentication and verification of:
+
+1. The Principal Individual verified under [Section 11.2.2](#1122-acceptable-method-of-verification) (4) if the individual is the same person as verified by the CA in connection with the Applicant's previously issued and currently valid EV Certificate;
+2. The Applicant's Place of Business under [Section 11.4.1](#1141-address-of-applicants-place-of-business);
+3. The Applicant's Verified Method of Communication required by [Section 11.5](#115-verified-method-of-communication) but still MUST perform the verification required by [Section 11.5.2](#1152-acceptable-methods-of-verification) (B);
+4. The Applicant's Operational Existence under [Section 11.6](#116-verification-of-applicants-operational-existence);
+5. The Name, Title, Agency and Authority of the Contract Signer, and Certificate Approver, under [Section 11.8](#118-verification-of-name-title-and-authority-of-contract-signer-and-certificate-approver); and
+6. The Applicant's right to use the specified Domain Name under [Section 11.7](#117-verification-of-applicants-domain-name), provided that the CA verifies that the WHOIS record still shows the same registrant as when the CA verified the specified Domain Name for the initial EV Certificate.
+
+### 11.14.2. Re-issuance Requests
+
+A CA may rely on a previously verified certificate request to issue a replacement certificate, so long as the certificate being referenced was not revoked due to fraud or other illegal conduct, if:
+
+1. The expiration date of the replacement certificate is the same as the expiration date of the  EV Certificate that is being replaced, and
+2. The Subject Information of the Certificate is the same as the Subject in the EV Certificate that is being replaced.
+
+### 11.14.3. Age of Validated Data
+
+1. Except for reissuance of an EV Certificate under [Section 11.14.2](#11142-re-issuance-requests) and except when permitted otherwise in [Section 11.14.1](#11141-validation-for-existing-subscribers), the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL NOT exceed the following limits:
+
+   A.  Legal existence and identity – 398 days;
+   B.  Assumed name – 398 days;
+   C.  Address of Place of Business – 398 days;
+   D.  Verified Method of Communication – 398 days;
+   E.  Operational existence – 398 days;
+   F.  Domain Name – 398 days;
+   G.  Name, Title, Agency, and Authority – 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
+
+2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
+3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 11.9](#119-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 11.10](#1110-verification-of-approval-of-ev-certificate-request).
+4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 11.14.1](#11141-validation-for-existing-subscribers).
+
+
+
+
 ### 3.2.1  Method to prove possession of private key
 ### 3.2.2  Authentication of organization identity
 ### 3.2.3  Authentication of individual identity
