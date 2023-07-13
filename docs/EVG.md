@@ -1093,7 +1093,9 @@ As specified in Section 5 of the Baseline Requirements. In addition, systems use
 1. The CA MUST enforce rigorous control procedures for the separation of validation duties to ensure that no one person can single-handedly validate and authorize the issuance of an EV Certificate.  The Final Cross-Correlation and Due Diligence steps, as outlined in [Section 3.2.13](#3213-final-cross-correlation-and-due-diligence), MAY be performed by one of the persons.  For example, one Validation Specialist MAY review and verify all the Applicant information and a second Validation Specialist MAY approve issuance of the EV Certificate.
 2. Such controls MUST be auditable.
 ## 5.3  Personnel controls
+
 ### 5.3.1  Qualifications, experience, and clearance requirements
+
 ### 5.3.2  Background check procedures
 Prior to the commencement of employment of any person by the CA for engagement in the EV Processes, whether as an employee, agent, or an independent contractor of the CA, the CA MUST:
 
@@ -1117,11 +1119,17 @@ Prior to the commencement of employment of any person by the CA for engagement i
 
 ### 5.3.3  Training requirements
 The requirements in Section 5.3.3 of the Baseline Requirements apply equally to EV Certificates and these Guidelines.  The required internal examination must relate to the EV Certificate validation criteria outlined in these Guidelines.
+
 ### 5.3.4  Retraining frequency and requirements
+
 ### 5.3.5  Job rotation frequency and sequence
+
 ### 5.3.6  Sanctions for unauthorized actions
+
 ### 5.3.7  Independent contractor requirements
+
 ### 5.3.8  Documentation supplied to personnel
+
 ## 5.4  Audit logging procedures
 As specified in Section 5.4 of the Baseline Requirements.
 
