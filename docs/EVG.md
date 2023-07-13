@@ -82,10 +82,10 @@ These Guidelines do not address the verification of information, or the issuance
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 |--|--|----------|
-| 2020-01-31 | [9.2.8](#928-subject-organization-identifier-field) | If subject:organizationIdentifier is present, the CA/Browser Forum Organization Identifier Extension MUST be present |
-| 2020-09-01 | [9.4](#94-maximum-validity-period-for-ev-certificate) & Appendix F | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
-| 2020-10-01 | [11.1.3](#1113-disclosure-of-verification-sources) | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
-| 2022-09-01 | [9.2.7](#927-subject-organizational-unit-name-field) | CAs MUST NOT include the organizationalUnitName field in the Subject |
+| 2020-01-31 | [9.2.8] | If subject:organizationIdentifier is present, the CA/Browser Forum Organization Identifier Extension MUST be present |
+| 2020-09-01 | [9.4] & Appendix F | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
+| 2020-10-01 | [11.1.3] | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
+| 2022-09-01 | [9.2.7] | CAs MUST NOT include the organizationalUnitName field in the Subject |
 
 **Implementers' Note**: Version 1.3 of these EV Guidelines was published on 20 November 2010 and supplemented through May 2012 when version 1.4 was published.  ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4.  Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines.  As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements.  We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion.  In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to questions@cabforum.org.  Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -93,9 +93,9 @@ These Guidelines do not address the verification of information, or the issuance
 ### 1.3.1  Certification authorities
 ### 1.3.2  Registration authorities
 The CA MAY delegate the performance of all or any part of a requirement of these Guidelines to an Affiliate or a Registration Authority (RA) or subcontractor, provided that the process employed by the CA fulfills all of the requirements of [Section 3.2.13](#3213-final-cross-correlation-and-due-diligence).
-Affiliates and/or RAs must comply with the qualification requirements of [Section 5.3.2](#532-trustworthiness-and-competence).
+Affiliates and/or RAs must comply with the qualification requirements of [Section 5.3.2](#532-background-check-procedures).
 
-The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of [Section 5.3](#53-employee-and-third-party-issues) and the document retention and event logging requirements of [Section 5.4](#54-data-records).
+The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of [Section 5.3](#53-personnel-controls) and the document retention and event logging requirements of [Section 5.4](#54-audit-logging-procedures).
 
 In all cases, the CA MUST contractually obligate each Affiliate, RA, subcontractor, and Enterprise RA to comply with all applicable requirements in these Guidelines and to perform them as required of the CA itself.  The CA SHALL enforce these obligations and internally audit each Affiliate's, RA's, subcontractor's, and Enterprise RA's compliance with these Requirements on an annual basis.
 #### 1.3.2.1  Enterprise Registration authorities
@@ -229,7 +229,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Private Organization**: A non-governmental legal entity (whether ownership interests are privately held or publicly traded) whose existence was created by a filing with (or an act of) the Incorporating Agency or equivalent in its Jurisdiction of Incorporation.
 
-**Qualified Auditor**: An independent public accounting firm that meets the auditing qualification requirements specified in [Section 8.3](#83-auditor-qualification).
+**Qualified Auditor**: An independent public accounting firm that meets the auditing qualification requirements specified in [Section 8.3](#83-identity/qualifications-of-assessor).
 
 **Qualified Government Information Source**: A database maintained by a Government Entity (e.g. SEC filings) that meets the requirements of [Section 3.2.11.6](#32116-qualified-government-information-source).
 
@@ -868,11 +868,11 @@ A CA verifying an Applicant using information of the Applicant's Parent, Subsidi
 1. The results of the verification processes and procedures outlined in these Guidelines are intended to be viewed both individually and as a group.  Thus, after all of the verification processes and procedures are completed, the CA MUST have a person who is not responsible for the collection of information review all of the information and documentation assembled in support of the EV Certificate application and look for discrepancies or other details requiring further explanation.
 2. The CA MUST obtain and document further explanation or clarification from the Applicant, Certificate Approver, Certificate Requester, Qualified Independent Information Sources, and/or other sources of information, as necessary, to resolve those discrepancies or details that require further explanation.
 3. The CA MUST refrain from issuing an EV Certificate until the entire corpus of information and documentation assembled in support of the EV Certificate Request is such that issuance of the EV Certificate will not communicate factual information that the CA knows, or the exercise of due diligence should discover from the assembled information and documentation, to be inaccurate,.  If satisfactory explanation and/or additional documentation are not received within a reasonable time, the CA MUST decline the EV Certificate Request and SHOULD notify the Applicant accordingly.
-4. In the case where some or all of the documentation used to support the application is in a language other than the CA's normal operating language, the CA or its Affiliate MUST perform the requirements of this Final Cross-Correlation and Due Diligence section using employees under its control and having appropriate training, experience, and judgment in confirming organizational identification and authorization and fulfilling all qualification requirements contained in [Section 5.3.2](#532-trustworthiness-and-competence).  When employees under the control of the CA do not possess the language skills necessary to perform the Final Cross-Correlation and Due Diligence a CA MAY:
+4. In the case where some or all of the documentation used to support the application is in a language other than the CA's normal operating language, the CA or its Affiliate MUST perform the requirements of this Final Cross-Correlation and Due Diligence section using employees under its control and having appropriate training, experience, and judgment in confirming organizational identification and authorization and fulfilling all qualification requirements contained in [Section 5.3.2](#532-background-check-procedures).  When employees under the control of the CA do not possess the language skills necessary to perform the Final Cross-Correlation and Due Diligence a CA MAY:
 
    A.  Rely on language translations of the relevant portions of the documentation, provided that the translations are received from a Translator; or
    B.  When the CA has utilized the services of an RA, the CA MAY rely on the language skills of the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with [Section 3.2.13](#3213-final-cross-correlation-and-due-diligence), Subsections (1), (2) and (3).  Notwithstanding the foregoing, prior to issuing the EV Certificate, the CA MUST review the work completed by the RA and determine that all requirements have been met; or
-   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 8.9](#89-regular-self-audits) and [Section 8.3](#83-auditor-qualification).
+   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 8.9](#89-regular-self-audits) and [Section 8.3](#83-Identity/qualifications-of-assessor).
 
 In the case of EV Certificates to be issued in compliance with the requirements of [Section 1.3.2](#132-delegation-of-functions-to-registration-authorities-and-subcontractors), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
 
@@ -1437,7 +1437,7 @@ A Certificate issued to a Subscriber MUST contain one or more policy identifier(
 ### 7.3.1  Version number(s)
 ### 7.3.2  OCSP extensions
 # 8.  COMPLIANCE AUDIT AND OTHER ASSESSMENTS
-## 8.1  Elegible Audit Schemes
+## 8.1  Eligible Audit Schemes
 A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following schemes:
 
 i. WebTrust Program for CAs audit and WebTrust EV Program audit,
