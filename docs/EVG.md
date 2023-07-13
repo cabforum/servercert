@@ -233,7 +233,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Private Organization**: A non-governmental legal entity (whether ownership interests are privately held or publicly traded) whose existence was created by a filing with (or an act of) the Incorporating Agency or equivalent in its Jurisdiction of Incorporation.
 
-**Qualified Auditor**: An independent public accounting firm that meets the auditing qualification requirements specified in [Section 8.3](#83--identity/qualifications-of-assessor).
+**Qualified Auditor**: An independent public accounting firm that meets the auditing qualification requirements specified in [Section 8.3](#83--identityqualifications-of-assessor).
 
 **Qualified Government Information Source**: A database maintained by a Government Entity (e.g. SEC filings) that meets the requirements of [Section 3.2.11.6](#32116-qualified-government-information-source).
 
@@ -880,7 +880,7 @@ A CA verifying an Applicant using information of the Applicant's Parent, Subsidi
 
    A.  Rely on language translations of the relevant portions of the documentation, provided that the translations are received from a Translator; or
    B.  When the CA has utilized the services of an RA, the CA MAY rely on the language skills of the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with [Section 3.2.13](#3213-final-cross-correlation-and-due-diligence), Subsections (1), (2) and (3).  Notwithstanding the foregoing, prior to issuing the EV Certificate, the CA MUST review the work completed by the RA and determine that all requirements have been met; or
-   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 8.9](#89-regular-self-audits) and [Section 8.3](#83-Identity/qualifications-of-assessor).
+   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 8.9](#89-self-audits) and [Section 8.3](#83--Identityqualifications-of-assessor).
 
 In the case of EV Certificates to be issued in compliance with the requirements of [Section 1.3.2](#132-delegation-of-functions-to-registration-authorities-and-subcontractors), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
 
