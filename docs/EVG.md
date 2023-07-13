@@ -98,6 +98,7 @@ Affiliates and/or RAs must comply with the qualification requirements of [Sectio
 The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of [Section 5.3](#53-personnel-controls) and the document retention and event logging requirements of [Section 5.4](#54-audit-logging-procedures).
 
 In all cases, the CA MUST contractually obligate each Affiliate, RA, subcontractor, and Enterprise RA to comply with all applicable requirements in these Guidelines and to perform them as required of the CA itself.  The CA SHALL enforce these obligations and internally audit each Affiliate's, RA's, subcontractor's, and Enterprise RA's compliance with these Requirements on an annual basis.
+
 #### 1.3.2.1  Enterprise Registration authorities
 The CA MAY contractually authorize a Subscriber to perform the RA function and authorize the CA to issue additional EV Certificates.  In such case, the Subscriber SHALL be considered an Enterprise RA, and the following requirements SHALL apply:
 
@@ -137,12 +138,15 @@ EV Certificates focus only on the identity of the Subject named in the Certifica
 2. That the Subject named in the EV Certificate complies with applicable laws;
 3. That the Subject named in the EV Certificate is trustworthy, honest, or reputable in its business dealings; or
 4. That it is "safe" to do business with the Subject named in the EV Certificate.
+   
 ## 1.5  Policy administration
 ### 1.5.1  Organization administering the document
 ### 1.5.2  Contact person
 ### 1.5.3  Person determining CPS suitability for the policy
 ### 1.5.4  CPS approval procedures
+
 ## 1.6  Definitions and acronyms
+
 ### 1.6.1  Definitions
 Capitalized Terms are defined in the Baseline Requirements except where provided below:
 
@@ -281,6 +285,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 **WebTrust Program for CAs**: The then-current version of the AICPA/CICA WebTrust Program for Certification Authorities.
 
 **WebTrust Seal of Assurance**: An affirmation of compliance resulting from the WebTrust Program for CAs.
+
 ### 1.6.2  Acronyms
 Abbreviations and Acronyms are defined in the Baseline Requirements except as otherwise defined herein:
 
@@ -305,8 +310,10 @@ Abbreviations and Acronyms are defined in the Baseline Requirements except as ot
 | QIIS | Qualified Independent Information Source |
 | SEC | (US Government) Securities and Exchange Commission |
 | UTC(k) | National realization of Coordinated Universal Time |
+
 ### 1.6.3  References
 See Baseline Requirements, which are available at <https://www.cabforum.org/>.
+
 ### 1.6.4  Conventions
 Terms not otherwise defined in these Guidelines shall be as defined in applicable agreements, user manuals, certification practice statements (CPS), and certificate policies (CP) of the CA issuing EV Certificates.
 
@@ -348,6 +355,7 @@ In addition, the CA MUST include (directly or by reference) the applicable requi
 ### 3.1.4  Rules for interpreting various name forms
 ### 3.1.5  Uniqueness of names
 ### 3.1.6  Recognition, authentication, and role of trademarks
+
 ## 3.2  Initial identity validation
 
 ### 3.2.1 General Overview
@@ -915,20 +923,16 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 3.2.14.1](#32141-validation-for-existing-subscribers).
 
 
-
-
-### 3.2.1  Method to prove possession of private key
-### 3.2.2  Authentication of organization identity
-### 3.2.3  Authentication of individual identity
-### 3.2.4  Non-verified subscriber information
-### 3.2.5 Validation of authority
-### 3.2.6  Criteria for interoperation
 ## 3.3  Identification and authentication for re-key requests
 ### 3.3.1  Identification and authentication for routine re-key
 ### 3.3.2  Identification and authentication for re-key after revocation
+
 ## 3.4 Identification and authentication for revocation request
+
 # 4.  CERTIFICATE LIFE-CYCLE OPERATIONAL REQUIREMENTS
+
 ## 4.1  Certificate Application
+
 ### 4.1.1  Who can submit a certificate application
 The CA MAY only issue EV Certificates to Applicants that meet the Private Organization, Government Entity, Business Entity and Non-Commercial Entity requirements specified below.
 
@@ -993,6 +997,7 @@ The documentation requirements in Section 4.1.2 of the Baseline Requirements app
 The Certificate Request requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates subject to the additional more stringent ageing and updating requirement of [Section 3.2.14](#3214-requirements-for-re-use-of-existing-documentation).
 
 ## 4.2 Certificate application processing
+
 ### 4.2.1 Performing identification and authentication functions
 The following Applicant roles are required for the issuance of an EV Certificate.
 
@@ -1011,20 +1016,25 @@ The Applicant MAY authorize one individual to occupy two or more of these roles.
 
 ### 4.2.2 Approval or rejection of certificate applications
 ### 4.2.3  Time to process certificate applications
+
 ## 4.3  Certificate issuance
+
 ### 4.3.1  CA actions during certificate issuance
 Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
 
 Root CA Private Keys MUST NOT be used to sign EV Certificates.
 
 ### 4.3.2  Notification to subscriber by the CA of issuance of certificate
+
 ## 4.4  Certificate acceptance
 ### 4.4.1  Conduct constituting certificate acceptance
 ### 4.4.2  Publication of the certificate by the CA
 ### 4.4.3  Notification of certificate issuance by the CA to other entities
+
 ## 4.5 Key pair and certificate usage
 ### 4.5.1  Subscriber private key and certificate usage
 ### 4.5.2  Relying party public key and certificate usage
+
 ## 4.6  Certificate renewal
 ### 4.6.1  Circumstance for certificate renewal
 ### 4.6.2  Who may request renewal
@@ -1033,6 +1043,7 @@ Root CA Private Keys MUST NOT be used to sign EV Certificates.
 ### 4.6.5  Conduct constituting acceptance of a renewal certificate
 ### 4.6.6  Publication of the renewal certificate by the CA
 ### 4.6.7  Notification of certificate issuance by the CA to other entities
+
 ## 4.7  Certificate re-key
 ### 4.7.1  Circumstance for certificate re-key
 ### 4.7.2  Who may request certification of a new public key
@@ -1041,6 +1052,7 @@ Root CA Private Keys MUST NOT be used to sign EV Certificates.
 ### 4.7.5  Conduct constituting acceptance of a re-keyed certificate
 ### 4.7.6  Publication of the re-keyed certificate by the CA
 ### 4.7.7  Notification of certificate issuance by the CA to other entities
+
 ## 4.8  Certificate modification
 ### 4.8.1  Circumstance for certificate modification
 ### 4.8.2  Who may request certificate modification
@@ -1049,6 +1061,7 @@ Root CA Private Keys MUST NOT be used to sign EV Certificates.
 ### 4.8.5  Conduct constituting acceptance of modified certificate
 ### 4.8.6  Publication of the modified certificate by the CA
 ### 4.8.7  Notification of certificate issuance by the CA to other entities
+
 ## 4.9  Certificate revocation and suspension
 ### 4.9.1  Circumstances for revocation
 ### 4.9.2  Who can request revocation
@@ -1066,16 +1079,21 @@ Root CA Private Keys MUST NOT be used to sign EV Certificates.
 ### 4.9.14 Who can request suspension
 ### 4.9.15 Procedure for suspension request
 ### 4.9.16 Limits on suspension period
+
 ## 4.10  Certificate status services
 ### 4.10.1 Operational characteristics
 ### 4.10.2 Service availability
 ### 4.10.3 Optional features
+
 ## 4.11  End of subscription
+
 ## 4.12  Key escrow and recovery
 ### 4.12.1 Key escrow and recovery policy and practices
 ### 4.12.2 Session key encapsulation and recovery policy and practices
+
 # 5.  FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS 
 As specified in Section 5 of the Baseline Requirements. In addition, systems used to process and approve EV Certificate Requests MUST require actions by at least two trusted persons before creating an EV Certificate.
+
 ## 5.1  Physical controls
 ### 5.1.1  Site location and construction
 ### 5.1.2  Physical access
@@ -1085,10 +1103,12 @@ As specified in Section 5 of the Baseline Requirements. In addition, systems use
 ### 5.1.6  Media storage
 ### 5.1.7  Waste disposal
 ### 5.1.8  Off-site backup
+
 ## 5.2  Procedural controls
 ### 5.2.1  Trusted roles
 ### 5.2.2  Number of persons required per task
 ### 5.2.3  Identification and authentication for each role
+
 ### 5.2.4  Roles requiring separation of duties
 1. The CA MUST enforce rigorous control procedures for the separation of validation duties to ensure that no one person can single-handedly validate and authorize the issuance of an EV Certificate.  The Final Cross-Correlation and Due Diligence steps, as outlined in [Section 3.2.13](#3213-final-cross-correlation-and-due-diligence), MAY be performed by one of the persons.  For example, one Validation Specialist MAY review and verify all the Applicant information and a second Validation Specialist MAY approve issuance of the EV Certificate.
 2. Such controls MUST be auditable.
@@ -1142,6 +1162,7 @@ As specified in Section 5.4 of the Baseline Requirements.
 ### 5.4.6  Audit collection system (internal vs. external)
 ### 5.4.7  Notification to event-causing subject
 ### 5.4.8  Vulnerability assessments
+
 ## 5.5  Records archival
 ### 5.5.1  Types of records archived
 ### 5.5.2  Retention period for archive
@@ -1150,15 +1171,21 @@ As specified in Section 5.4 of the Baseline Requirements.
 ### 5.5.5  Requirements for time-stamping of records
 ### 5.5.6  Archive collection system (internal or external)
 ### 5.5.7  Procedures to obtain and verify archive information
+
 ## 5.6  Key changeover
+
 ## 5.7  Compromise and disaster recovery
 ### 5.7.1  Incident and compromise handling procedures
 ### 5.7.2  Computing resources, software, and/or data are corrupted
 ### 5.7.3  Entity private key compromise procedures
 ### 5.7.4  Business continuity capabilities after a disaster
+
 ## 5.8  CA or RA termination
+
 # 6.  TECHNICAL SECURITY CONTROLS 
+
 ## 6.1  Key pair generation and installation
+
 ### 6.1.1  Key pair generation
 All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally to EV Certificates. However, for Root CA Key Pairs generated after the release of these Guidelines, the Root CA Key Pair generation ceremony MUST be witnessed by the CA's Qualified Auditor in order to observe the process and the controls over the integrity and confidentiality of the Root CA Key Pairs produced.  The Qualified Auditor MUST then issue a report opining that the CA, during its Root CA Key Pair and Certificate generation process:
 
@@ -1173,6 +1200,7 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 ### 6.1.5  Key sizes
 ### 6.1.6  Public key parameters generation and quality checking
 ### 6.1.7  Key usage purposes (as per X.509 v3 key usage field)
+
 ## 6.2  Private Key Protection and Cryptographic Module Engineering Controls
 ### 6.2.1  Cryptographic module standards and controls
 ### 6.2.2  Private key (n out of m) multi-person control
@@ -1185,30 +1213,40 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 ### 6.2.9  Method of deactivating private key
 ### 6.2.10 Method of destroying private key
 ### 6.2.11 Cryptographic Module Rating
+
 ## 6.3  Other aspects of key pair management
 ### 6.3.1  Public key archival
+
 ### 6.3.2  Certificate operational periods and key pair usage periods
 The Validity Period for an EV Certificate SHALL NOT exceed 398 days.
 
 It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
+
 ## 6.4  Activation data
 ### 6.4.1  Activation data generation and installation
 ### 6.4.2  Activation data protection
 ### 6.4.3  Other aspects of activation data
+
 ## 6.5  Computer security controls
 ### 6.5.1  Specific computer security technical requirements
 ### 6.5.2  Computer security rating
+
 ## 6.6  Life cycle technical controls
 ### 6.6.1  System development controls
 ### 6.6.2  Security management controls
 ### 6.6.3  Life cycle security controls
+
 ## 6.7  Network security controls
+
 ## 6.8  Time-stamping
+
 # 7.  CERTIFICATE, CRL, AND OCSP PROFILES
+
 ## 7.1  Certificate profile
 This section sets forth minimum requirements for the content of the EV Certificate as they relate to the identity of the CA and the Subject of the EV Certificate.
 
 ### 7.1.1  Version number(s)
+
 ### 7.1.2  Certificate extensions
 The extensions listed in [Section 7.1.2](#712-certificate-extensions) are recommended for maximum interoperability between certificates and browsers / applications, but are not mandatory on the CAs except where indicated as “Required”.  CAs may use other extensions that are not listed in [Section 7.1.2](#712-certificate-extensions), but are encouraged to add them to this section by ballot from time to time to help increase extension standardization across the industry.
 
@@ -1259,6 +1297,7 @@ where the subfields have the same values, meanings, and restrictions described i
 #### 7.1.4.1 Issuer Information
 
 Issuer Information listed in an EV Certificate MUST comply with Section 7.1.4.1 of the Baseline Requirements.
+
 #### 7.1.4.2 Subject Distinguished Name Fields
 
 Subject to the requirements of these Guidelines, the EV Certificate and certificates issued to Subordinate CAs that are not controlled by the same entity as the CA MUST include the following information about the Subject organization in the fields listed:
@@ -1409,6 +1448,7 @@ All provisions of the Baseline Requirements concerning Minimum Cryptographic Alg
 
 
 ### 7.1.5  Name constraints
+
 ### 7.1.6  Certificate policy object identifier
 This section sets forth minimum requirements for the contents of EV Certificates as they relate to the identification of EV Certificate Policy.
 
@@ -1437,15 +1477,21 @@ The Application Software Supplier identifies Root CAs that are approved to issue
 A Certificate issued to a Subscriber MUST contain one or more policy identifier(s), defined by the Issuing CA, in the Certificate's `certificatePolicies` extension that indicates adherence to and compliance with these Guidelines.  Each CA SHALL document in its Certificate Policy or Certification Practice Statement that the Certificates it issues containing the specified policy identifier(s) are managed in accordance with these Guidelines.
 
 ### 7.1.7  Usage of Policy Constraints extension
+
 ### 7.1.8  Policy qualifiers syntax and semantics
+
 ### 7.1.9 Processing semantics for the critical Certificate Policies extension
+
 ## 7.2  CRL profile
 ### 7.2.1  Version number(s)
 ### 7.2.2  CRL and CRL entry extensions
+
 ## 7.3  OCSP profile
 ### 7.3.1  Version number(s)
 ### 7.3.2  OCSP extensions
+
 # 8.  COMPLIANCE AUDIT AND OTHER ASSESSMENTS
+
 ## 8.1  Eligible Audit Schemes
 A CA issuing EV Certificates SHALL undergo an audit in accordance with one of the following schemes:
 
@@ -1457,13 +1503,17 @@ If the CA is a Government Entity, an audit of the CA by the appropriate internal
 
 ## 8.2  Frequency or circumstances of assessment
 CAs issuing EV Certificates MUST undergo an annual audit that meets the criteria of [Section 8.1](#81-eligible-audit-schemes).
+
 ## 8.3  Identity/qualifications of assessor
 A Qualified Auditor (as defined in Section 8.2 of the Baseline Requirements) MUST perform the CA's audit.
+
 ## 8.4  Assessor's relationship to assessed entity
 ## 8.5  Topics covered by assessment
 ## 8.6  Actions taken as a result of deficiency
+
 ## 8.7  Communication of results
 CAs SHOULD make its audit report publicly available no later than three months after the end of the audit period.  If there is a delay greater than three months and if so requested by an Application Software Supplier, the CA MUST provide an explanatory letter signed by its auditor.
+
 ## 8.8  Pre-issuance Readiness Audit
 
 1. If the CA has a currently valid WebTrust Seal of Assurance for CAs, then, before issuing EV Certificates, the CA and its Root CA MUST successfully complete a point-in-time readiness assessment audit against the WebTrust EV Program.
@@ -1477,6 +1527,7 @@ The CA MUST complete any required point-in-time readiness assessment no earlier 
 
 ## 8.9  Self audits
 During the period in which it issues EV Certificates, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least three percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.  For all EV Certificates where the Final Cross-Correlation and Due Diligence requirements of [Section 3.2.13](#3213-final-cross-correlation-and-due-diligence) is performed by an RA, the CA MUST strictly control its service quality by performing ongoing self audits against a randomly selected sample of at least six percent of the EV Certificates it has issued in the period beginning immediately after the last sample was taken.
+
 # 9.  OTHER BUSINESS AND LEGAL MATTERS
 ## 9.1  Fees
 ### 9.1.1  Certificate issuance or renewal fees
@@ -1484,7 +1535,9 @@ During the period in which it issues EV Certificates, the CA MUST strictly contr
 ### 9.1.3  Revocation or status information access fees
 ### 9.1.4  Fees for other services
 ### 9.1.5  Refund policy
+
 ## 9.2  Financial responsibility
+
 ### 9.2.1  Insurance coverage
 Each CA SHALL maintain the following insurance related to their respective performance and obligations under these Guidelines:
 
@@ -1514,6 +1567,7 @@ A CA MAY self-insure for liabilities that arise from such party's performance an
 ### 9.4.7  Other information disclosure circumstances
 ## 9.5  Intellectual property rights
 ## 9.6  Representations and warranties
+
 ### 9.6.1  CA representations and warranties
 When the CA issues an EV Certificate, the CA and its Root CA represent and warrant to the Certificate Beneficiaries listed in Section 9.6.1 of the Baseline Requirements, during the period when the EV Certificate is Valid, that the CA has followed the requirements of these Guidelines and its EV Policies in issuing and managing the EV Certificate and in verifying the accuracy of the information contained in the EV Certificate.  The EV Certificate Warranties specifically include, but are not limited to, the following:
 
@@ -1534,6 +1588,7 @@ G.  **Status**: The CA will follow the requirements of these Guidelines and main
 H.  **Revocation**: The CA will follow the requirements of these Guidelines and revoke the EV Certificate for any of the revocation reasons specified in these Guidelines.
 
 ### 9.6.2  RA representations and warranties
+
 ### 9.6.3  Subscriber representations and warranties
 Section 9.6.3 of the Baseline Requirements applies equally to EV Certificates.  In cases where the Certificate Request does not contain all necessary information about the Applicant, the CA MUST additionally confirm the data with the Certificate Approver or Contract Signer rather than the Certificate Requester.
 
@@ -1541,10 +1596,13 @@ EV Certificate Applicants make the commitments and warranties set forth in Secti
 ### 9.6.4  Relying party representations and warranties
 ### 9.6.5  Representations and warranties of other participants
 ## 9.7  Disclaimers of warranties
+
 ## 9.8  Limitations of liability
 CAs MAY limit their liability as described in Section 9.8 of the Baseline Requirements except that a CA MUST NOT limit its liability to Subscribers or Relying Parties for legally recognized and provable claims to a monetary amount less than two thousand US dollars per Subscriber or Relying Party per EV Certificate.
+
 ## 9.9  Indemnities
 A CA's indemnification obligations and a Root CA's obligations with respect to subordinate CAs are set forth in Section 9.9 of the Baseline Requirements.
+
 ## 9.10  Term and termination
 ### 9.10.1  Term
 ### 9.10.2  Termination
@@ -1560,6 +1618,7 @@ A CA's indemnification obligations and a Root CA's obligations with respect to s
 ## 9.16  Miscellaneous provisions
 ### 9.16.1  Entire agreement
 ### 9.16.2  Assignment
+
 ### 9.16.3  Severability
 The CA MAY issue EV Certificates, provided that the CA and its Root CA satisfy the requirements in these Guidelines and the Baseline Requirements.
 
