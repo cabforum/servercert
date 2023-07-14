@@ -235,7 +235,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Private Organization**: A non-governmental legal entity (whether ownership interests are privately held or publicly traded) whose existence was created by a filing with (or an act of) the Incorporating Agency or equivalent in its Jurisdiction of Incorporation.
 
-**Qualified Auditor**: An independent public accounting firm that meets the auditing qualification requirements specified in [Section 8.3](#83-identityqualifications-of-assessor).
+**Qualified Auditor**: An independent public accounting firm that meets the auditing qualification requirements specified in [Section 8.3](#83--identityqualifications-of-assessor).
 
 **Qualified Government Information Source**: A database maintained by a Government Entity (e.g. SEC filings) that meets the requirements of [Section 3.2.11.6](#32116-qualified-government-information-source).
 
@@ -882,9 +882,9 @@ A CA verifying an Applicant using information of the Applicant's Parent, Subsidi
 
    A.  Rely on language translations of the relevant portions of the documentation, provided that the translations are received from a Translator; or
    B.  When the CA has utilized the services of an RA, the CA MAY rely on the language skills of the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with [Section 3.2.13](#3213-final-cross-correlation-and-due-diligence), Subsections (1), (2) and (3).  Notwithstanding the foregoing, prior to issuing the EV Certificate, the CA MUST review the work completed by the RA and determine that all requirements have been met; or
-   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 8.9](#89-self-audits) and [Section 8.3](#83-Identityqualifications-of-assessor).
+   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 8.9](#89-self-audits) and [Section 8.3](#83--identityqualifications-of-assessor).
 
-In the case of EV Certificates to be issued in compliance with the requirements of [Section 1.3.2](#132-delegation-of-functions-to-registration-authorities-and-subcontractors), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
+In the case of EV Certificates to be issued in compliance with the requirements of [Section 1.3.2](#132--registration-authorities), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
 
 ### 3.2.14 Requirements for Re-use of Existing Documentation
 
@@ -1292,7 +1292,7 @@ CABFOrganizationIdentifier ::= SEQUENCE {
 }
 ```
 
-where the subfields have the same values, meanings, and restrictions described in [Section 7.1.4.2.1](#71421--subject-organization-identifier-field). The CA SHALL validate the contents using the requirements in [Section 7.1.4.2.1](#71421--subject-organization-identifier-field).
+where the subfields have the same values, meanings, and restrictions described in [Section 7.1.4.2.1](#71428-subject-organization-identifier-field). The CA SHALL validate the contents using the requirements in [Section 7.1.4.2.1](#71428-subject-organization-identifier-field).
 
 ### 7.1.3  Algorithm object identifiers
 ### 7.1.4  Name forms
@@ -1314,7 +1314,7 @@ When abbreviating a Subject's full legal name as allowed by this subsection, the
 
 In addition, an assumed name or DBA name used by the Subject MAY be included at the beginning of this field, provided that it is followed by the full legal organization name in parenthesis.
 
-If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with [Section 11.12.1](#11121-high-risk-status) and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the EV Certificate.
+If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with [Section 11.12.1](#32121-high-risk-status) and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the EV Certificate.
 
 ##### 7.1.4.2.2 Subject Common Name Field
 
@@ -1405,8 +1405,8 @@ Registration Schemes listed in [Appendix H](#appendix-h--registration-schemes) a
 
 The CA SHALL:
 
-1. confirm that the organization represented by the Registration Reference is the same as the organization named in the `organizationName` field as specified in [Section 7.1.4.2.1](#71421--subject-organization-name-field) within the context of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field);
-2. further verify the Registration Reference matches other information verified in accordance with [Section 3.2](#32-verification-requirements);
+1. confirm that the organization represented by the Registration Reference is the same as the organization named in the `organizationName` field as specified in [Section 7.1.4.2.1](#71421-subject-organization-name-field) within the context of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field);
+2. further verify the Registration Reference matches other information verified in accordance with [Section 3.2](#32--initial-identity-validation);
 3. take appropriate measures to disambiguate between different organizations as described in [Appendix H](#appendix-h--registration-schemes) for each Registration Scheme;
 4. Apply the validation rules relevant to the Registration Scheme as specified in [Appendix H](#appendix-h--registration-schemes).
 
@@ -1929,7 +1929,7 @@ guidelines:
   Reference allocated by the national tax authorities to a Legal Entity. This
   information shall be validated using information provided by the national tax
   authority against the organization as identified by the Subject Organization
-  Name Field (see [Section 7.1.4.2.1](#71421--subject-organization-name-field)) and
+  Name Field (see [Section 7.1.4.2.1](#71421-subject-organization-name-field)) and
   Subject Registration Number Field (see
   Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of
   the subject’s jurisdiction as specified in
@@ -1946,7 +1946,7 @@ guidelines:
   SHALL be validated by being matched directly or indirectly (for example, by
   matching a globally unique registration number) against the organization as
   identified by the Subject Organization Name Field (see
-  [Section 7.1.4.2.1](#71421--subject-organization-name-field)) and
+  [Section 7.1.4.2.1](#71421-subject-organization-name-field)) and
   Subject Registration Number Field (see
   [Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of
   the subject’s jurisdiction as specified in
