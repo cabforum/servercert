@@ -882,9 +882,9 @@ A CA verifying an Applicant using information of the Applicant's Parent, Subsidi
 
    A.  Rely on language translations of the relevant portions of the documentation, provided that the translations are received from a Translator; or
    B.  When the CA has utilized the services of an RA, the CA MAY rely on the language skills of the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with [Section 3.2.13](#3213-final-cross-correlation-and-due-diligence), Subsections (1), (2) and (3).  Notwithstanding the foregoing, prior to issuing the EV Certificate, the CA MUST review the work completed by the RA and determine that all requirements have been met; or
-   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 8.9](#89-self-audits) and [Section 8.3](#83--identityqualifications-of-assessor).
+   C.  When the CA has utilized the services of an RA, the CA MAY rely on the RA to perform the Final Cross-Correlation and Due Diligence, provided that the RA complies with this section and is subjected to the Audit Requirements of [Section 8.9](#89-self-audits) and [Section 8.3](#83-identityqualifications-of-assessor).
 
-In the case of EV Certificates to be issued in compliance with the requirements of [Section 1.3.2](#132--registration-authorities), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
+In the case of EV Certificates to be issued in compliance with the requirements of [Section 1.3.2](#132-registration-authorities), the Enterprise RA MAY perform the requirements of this Final Cross-Correlation and Due Diligence section.
 
 ### 3.2.14 Requirements for Re-use of Existing Documentation
 
@@ -1406,7 +1406,7 @@ Registration Schemes listed in [Appendix H](#appendix-h--registration-schemes) a
 The CA SHALL:
 
 1. confirm that the organization represented by the Registration Reference is the same as the organization named in the `organizationName` field as specified in [Section 7.1.4.2.1](#71421-subject-organization-name-field) within the context of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field);
-2. further verify the Registration Reference matches other information verified in accordance with [Section 3.2](#32--initial-identity-validation);
+2. further verify the Registration Reference matches other information verified in accordance with [Section 3.2](#32-initial-identity-validation);
 3. take appropriate measures to disambiguate between different organizations as described in [Appendix H](#appendix-h--registration-schemes) for each Registration Scheme;
 4. Apply the validation rules relevant to the Registration Scheme as specified in [Appendix H](#appendix-h--registration-schemes).
 
