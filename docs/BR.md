@@ -469,7 +469,7 @@ The script outputs:
 
 **Subscriber**: A natural person or Legal Entity to whom a Certificate is issued and who has accepted a Subscriber Agreement.
 
-**Subscriber Agreement**: Provisions that the Applicant/Subscriber acknowledges regarding the safekeeping and acceptable uses of the Key Pair and Certificate issued in accordance with these Requirements.
+**Subscriber Agreement**: Provisions that the Applicant/Subscriber accepts regarding the safekeeping and acceptable uses of the Key Pair and Certificate issued in accordance with these Requirements.
 
 **Subsidiary Company**: A company that is controlled by a Parent Company.
 
@@ -3358,9 +3358,12 @@ The Certificate Warranties specifically include, but are not limited to, the fol
    i. implemented a procedure to verify the identity of the Applicant in accordance with [Section 3.2](#32-initial-identity-validation) and [Section 7.1.2](#712-certificate-content-and-extensions);
    ii. followed the procedure when issuing the Certificate; and
    iii. accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
-5. **Subscriber Agreement**: That, if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative accepts the Subscriber Agreement;
-6. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
-7. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
+5. **Subscriber Agreement**: That, 
+    i. the Subscriber has been provided with the most current version of the Subscriber Agreement;
+   ii. the applicable Subscriber Agreement is the Subscriber Agreement that was accepted when the Certificate was issued; and
+   iii. if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative has accepted the Subscriber Agreement;
+8. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
+9. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
 
 The Root CA SHALL be responsible for the performance and warranties of the Subordinate CA, for the Subordinate CA's compliance with these Requirements, and for all liabilities and indemnification obligations of the Subordinate CA under these Requirements, as if the Root CA were the Subordinate CA issuing the Certificates
 
