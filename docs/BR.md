@@ -3362,8 +3362,8 @@ The Certificate Warranties specifically include, but are not limited to, the fol
     i. the Subscriber has been provided with the most current version of the Subscriber Agreement;
    ii. the applicable Subscriber Agreement is the Subscriber Agreement that was accepted when the Certificate was issued; and
    iii. if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative has accepted the Subscriber Agreement;
-8. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
-9. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
+6. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
+7. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
 
 The Root CA SHALL be responsible for the performance and warranties of the Subordinate CA, for the Subordinate CA's compliance with these Requirements, and for all liabilities and indemnification obligations of the Subordinate CA under these Requirements, as if the Root CA were the Subordinate CA issuing the Certificates
 
