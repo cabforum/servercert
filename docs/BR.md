@@ -1332,8 +1332,6 @@ For the status of Subordinate CA Certificates:
 
 If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), the responder MUST NOT respond with a "good" status for such requests.
 
-The CA SHOULD monitor the OCSP responder for requests for "unused" serial numbers as part of its security response procedures.
-
 The OCSP responder MAY provide definitive responses about "reserved" certificate serial numbers, as if there was a corresponding Certificate that matches the Precertificate [RFC6962].
 
 A certificate serial number within an OCSP request is one of the following three options:
