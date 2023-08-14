@@ -1519,13 +1519,14 @@ The CA SHALL record at least the following events:
    3. Security profile changes;
    4. Installation, update and removal of software on a Certificate System;
    5. System crashes, hardware failures, and other anomalies;
-   6. Firewall and router activities; and
-   7. Entries to and exits from the CA facility.
+   6. Router and firewal configuration changes;
+   7. Blocked firewall traffic; and
+   8. Entries to and exits from the CA facility.
 
-Log records MUST include the following elements:
+Log records MUST include at least the following elements:
 
 1. Date and time of event;
-2. Identity of the person making the journal record; and
+2. Identity of the person making the journal record (when applicable); and
 3. Description of the event.
 
 ### 5.4.2 Frequency of processing audit log
