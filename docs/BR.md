@@ -1519,7 +1519,7 @@ The CA SHALL record at least the following events:
    3. Security profile changes;
    4. Installation, update and removal of software on a Certificate System;
    5. System crashes, hardware failures, and other anomalies;
-   6. Router and firewal configuration changes;
+   6. Router and firewall configuration changes;
    7. Blocked firewall traffic; and
    8. Entries to and exits from the CA facility.
 
