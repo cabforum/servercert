@@ -3,7 +3,7 @@ title: Baseline Requirements for the Issuance and Management of Publicly-Trusted
 subtitle: Version 2.0.1
 author:
   - CA/Browser Forum
-date: [TBD]  
+date: 17-August-2023  
 
 
 copyright: |
@@ -133,7 +133,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.8.6 | SC58 | Require distributionPoint in sharded CRLs | 7-Nov-2022 |	11-Dec-2022 |
 | 1.8.7 | SC61  | New CRL entries must have a Revocation Reason Code | 1-Apr-2023 | 15-Jul-2023 |
 | 2.0.0 | SC62  | Certificate Profiles Update | 22-Apr-2023 | 15-Sep-2023 |
-| 2.0.1 | SC63  | Make OCSP optional, require CRLs, and incentivize automation | TBD | 15-Mar-2024 |
+| 2.0.1 | SC63  | Make OCSP optional, require CRLs, and incentivize automation | 17-Aug-2023 | 15-Mar-2024 |
 
 
 
