@@ -469,7 +469,7 @@ The script outputs:
 
 **Subscriber**: A natural person or Legal Entity to whom a Certificate is issued and who has accepted a Subscriber Agreement.
 
-**Subscriber Agreement**: Provisions that the Applicant/Subscriber accepts regarding the safekeeping and acceptable uses of the Key Pair and Certificate issued in accordance with these Requirements.
+**Subscriber Agreement**: A set of terms and conditions accepted by the Applicant/Subscriber that specifies the rights and responsibilities of the Applicant/Subscriber and the CA.
 
 **Subsidiary Company**: A company that is controlled by a Parent Company.
 
