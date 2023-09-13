@@ -547,7 +547,7 @@ FIPS 186-4, Federal Information Processing Standards Publication - Digital Signa
 
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
-Network and Certificate System Security Requirements, Version 1.7, available at <https://cabforum.org/wp-content/uploads/CA-Browser-Forum-Network-Security-Guidelines-v1.7.pdf>.
+Network and Certificate System Security Requirements, available at <https://cabforum.org/network-security-requirements/>
 
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-89.pdf>.
 
@@ -587,7 +587,8 @@ RFC8738, Request for Comments: 8738, Automated Certificate Management Environmen
 
 RFC8954, Request for Comments: 8954, Online Certificate Status Protocol (OCSP) Nonce Extension. M. Sahni, Ed. November 2020.
 
-WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.5, available at <https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf>.
+WebTrust for Certification Authorities, SSL Baseline with Network Security, available at 
+<https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria>
 
 X.509, Recommendation ITU-T X.509 (08/2005) \| ISO/IEC 9594-8:2005, Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
 
