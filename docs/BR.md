@@ -3159,6 +3159,8 @@ Before including such an attribute, the CA SHALL:
   * Document the attributes within Section 7.1.4 of their CP or CPS, along with the applicable validation practices.
   * Ensure that the contents contain information that has been verified by the CA, independent of the Applicant.
 
+### 7.1.5 Name constraints
+
 ### 7.1.6 Certificate policy object identifier
 
 #### 7.1.6.1 Reserved Certificate Policy Identifiers
