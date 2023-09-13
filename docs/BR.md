@@ -777,7 +777,7 @@ Confirming the Applicant's control over the FQDN by confirming that the Applican
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
-##### 3.2.2.4.10 TLS Using a Random Number
+##### 3.2.2.4.10 TLS Using a Random Value
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
@@ -854,7 +854,7 @@ Confirming the Applicant's control over the FQDN by verifying that the Request T
 1. The entire Request Token or Random Value MUST NOT appear in the request used to retrieve the file, and
 2. the CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
 
-The file containing the Request Token or Random Number:
+The file containing the Request Token or Random Value:
 
 1. MUST be located on the Authorization Domain Name, and
 2. MUST be located under the "/.well-known/pki-validation" directory, and
