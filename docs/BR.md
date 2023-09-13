@@ -222,6 +222,8 @@ The CA SHALL impose these limitations as a contractual requirement on the Enterp
 
 As defined in [Section 1.6.1](#161-definitions).
 
+In some situations, a CA acts as an Applicant or Subscriber, for instance, when it generates and protects a Private Key, requests a Certificate, demonstrates control of a Domain, or obtains a Certificate for its own use.
+
 ### 1.3.4 Relying Parties
 
 "Relying Party" and "Application Software Supplier" are defined in [Section 1.6.1](#161-definitions). Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here:  
