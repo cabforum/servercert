@@ -583,6 +583,8 @@ RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record. P. Hallam-Baker, et al. November 2019.
 
+RFC8738, Request for Comments: 8738, Automated Certificate Management Environment (ACME) IP Identifier Validation Extension. R.B.Shoemaker, Ed. February 2020.
+
 RFC8954, Request for Comments: 8954, Online Certificate Status Protocol (OCSP) Nonce Extension. M. Sahni, Ed. November 2020.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.5, available at <https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf>.
@@ -957,11 +959,11 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 ##### 3.2.2.5.6 ACME “http-01” method for IP Addresses
 
-Confirming the Applicant's control over the IP Address by performing the procedure documented for an “http-01” challenge in draft 04 of “ACME IP Identifier Validation Extension,” available at <https://tools.ietf.org/html/draft-ietf-acme-ip-04#section-4>.
+Confirming the Applicant's control over the IP Address by performing the procedure documented for an “http-01” challenge in RFC 8738.
 
 ##### 3.2.2.5.7 ACME “tls-alpn-01” method for IP Addresses
 
-Confirming the Applicant's control over the IP Address by performing the procedure documented for a “tls-alpn-01” challenge in draft 04 of “ACME IP Identifier Validation Extension,” available at <https://tools.ietf.org/html/draft-ietf-acme-ip-04#section-4>.
+Confirming the Applicant's control over the IP Address by performing the procedure documented for a “tls-alpn-01” challenge in RFC 8738.
 
 #### 3.2.2.6 Wildcard Domain Validation
 
