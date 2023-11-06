@@ -2912,16 +2912,20 @@ This section contains several fields that are common among multiple certificate 
 ##### 7.1.2.11.2 CRL Distribution Points
 
 The CRL Distribution Points extension MUST be present in:
+
 - Subordinate CA Certificates; and
 - Subscriber Certificates that 1) do not qualify as "Short-lived Subscriber Certificates" and 2) do not include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
 The CRL Distribution Points extension SHOULD NOT be present in:
+
 - Root CA Certificates.
 
 The CRL Distribution Points extension is OPTIONAL in:
+
 - Short-lived Subscriber Certificates.
 
 The CRL Distribution Points extension MUST NOT be present in:
+
 - OCSP Responder Certificates.
 
 When present, the CRL Distribution Points extension MUST contain at least one `DistributionPoint`; containing more than one is NOT RECOMMENDED. All `DistributionPoint` items must be formatted as follows:
