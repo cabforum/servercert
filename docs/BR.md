@@ -550,7 +550,7 @@ FIPS 186-4, Federal Information Processing Standards Publication - Digital Signa
 
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
-Network and Certificate System Security Requirements, available at <https://cabforum.org/network-security-requirements/>
+Network and Certificate System Security Requirements, Version 1.7, available at <https://cabforum.org/network-security-requirements/>
 
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-89.pdf>.
 
