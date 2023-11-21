@@ -763,6 +763,11 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the Cer
   i. 30 days or
   ii. if the Applicant submitted the Certificate request, the time frame permitted for reuse of validated information relevant to the Certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of these Guidelines or Section 11.14.3 of the EV Guidelines).
 
+CAs MAY operate domains for the purpose of assisting customers with this validation, and MAY instruct customers to add a CNAME redirect from an Authorization Domain Name to such a domain. If the CA does so, the CA SHALL 
+  i. ensure that each domain name is used for a unique Applicant, and not shared across multiple Applicants; and 
+  ii. consider the TTL of the CNAME record, or 8 hours, whichever is lesser; and
+  iii. restrict the DNS record types in the CA operated DNS zone to those required for confirming the Applicant’s control over the FQDN.
+
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.8 IP Address
