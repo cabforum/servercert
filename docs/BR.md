@@ -1537,15 +1537,27 @@ The CA SHALL record at least the following events:
    3. Security profile changes;
    4. Installation, update and removal of software on a Certificate System;
    5. System crashes, hardware failures, and other anomalies;
-   6. Router and firewall configuration changes;
-   7. Blocked firewall traffic; and
-   8. Entries to and exits from the CA facility.
+   6. Relevant router and firewall activities (as described in [Section 5.4.1.1](#5411-router-and-firewall-activities-logs)); and
+   7. Entries to and exits from the CA facility.
 
 Log records MUST include at least the following elements:
 
 1. Date and time of event;
 2. Identity of the person making the journal record (when applicable); and
 3. Description of the event.
+
+#### 5.4.1.1 Router and firewall activities logs
+
+Router and firewall activities is considered an unspecified term, and leaves the exact definition and scope up to the CA, however logging of router and firewall activities MUST at a minimum include: 
+
+  1. Successfull and unsuccessfull login attempts to routers and firewalls; and
+  2. Changes to the configuration of routers and firewalls;
+
+Logging of router and firewall activities SHOULD NOT include:
+
+  1. Logging of traffic (such as but not limited to OCSP and CRL HTTP requests) passing through the device;
+
+CAs are encouraged to recommend additional MUST and SHOULD NOT requirements through an email to questions@cabforum.org, for future discussion within the appropriate Working Group.
 
 ### 5.4.2 Frequency of processing audit log
 
