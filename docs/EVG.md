@@ -914,7 +914,7 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 
 ##### 3.2.2.14.3 Age of Validated Data
 
-1. Except for reissuance of an EV Certificate under [Section 3.2.2.14.2](#322142-re-issuance-requests) and except when permitted otherwise in [Section 3.2.14.1](#32141-validation-for-existing-subscribers), the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL NOT exceed the following limits:
+1. Except for reissuance of an EV Certificate under [Section 3.2.2.14.2](#322142-re-issuance-requests) and except when permitted otherwise in [Section 3.2.2.14.1](#322141-validation-for-existing-subscribers), the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL NOT exceed the following limits:
 
    A.  Legal existence and identity – 398 days;
    B.  Assumed name – 398 days;
