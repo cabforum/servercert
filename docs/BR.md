@@ -595,7 +595,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
 
-For purposes of measuring periods of time, one hour shall be defined to be exactly 3,600 seconds, and one day shall be defined to be exactly 86,400 seconds, ignoring leap-seconds. Any amount of time greater than this, including fractional seconds, shall represent an additional unit of measure, such as an additional hour or an additional day.
+For purposes of measuring periods of time, one hour is defined to be exactly 3,600 seconds, and one day is defined to be exactly 86,400 seconds, ignoring leap-seconds. Any amount of time greater than this, including fractional seconds, SHALL represent an additional unit of measure, such as an additional hour or an additional day.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
