@@ -460,7 +460,7 @@ The script outputs:
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
 
-**Short-lived Subscriber Certificate**: For Certificates issued on or after 15 March 2024 and prior to 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 10 days (864,000 seconds). For Certificates issued on or after 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 7 days (604,800 seconds).
+**Short-lived Subscriber Certificate**: For Certificates issued on or after 15 March 2024 and prior to 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 10 days. For Certificates issued on or after 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 7 days.
 
 **Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
 
@@ -594,6 +594,8 @@ X.509, Recommendation ITU-T X.509 (08/2005) \| ISO/IEC 9594-8:2005, Information 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Requirements shall be interpreted in accordance with RFC 2119.
 
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
+
+For purposes of measuring periods of time, one hour shall be defined to be exactly 3,600 seconds, and one day shall be defined to be exactly 86,400 seconds, ignoring leap-seconds. Any amount of time greater than this, including fractional seconds, shall represent an additional unit of measure, such as an additional hour or an additional day.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
@@ -1332,7 +1334,7 @@ The following SHALL apply for communicating the status of Certificates which inc
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019. The CA MAY process the Nonce extension (`1.3.6.1.5.5.7.48.1.2`) in accordance with RFC 8954.
 
-The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
+The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive.
 
 For the status of Subscriber Certificates:
 
@@ -1772,7 +1774,7 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 
 Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. 
 
-For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
+Due to the precision with which Certificate validity periods are measured, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, to prevent off-by-one-second errors.
 
 ## 6.4 Activation data
 
