@@ -490,6 +490,8 @@ The script outputs:
 
 **Validation Specialist**: Someone who performs the information verification duties specified by these Requirements.
 
+**Validity Interval**: For CRLs and OCSP Responses, the period of time from thisUpdate through nextUpdate, inclusive.
+
 **Validity Period**: From RFC 5280 (<http://tools.ietf.org/html/rfc5280>): "The period of time from notBefore through notAfter, inclusive."
 
 **WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
@@ -595,7 +597,9 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
 
-For purposes of measuring periods of time, one hour is defined to be exactly 3,600 seconds, and one day is defined to be exactly 86,400 seconds, ignoring leap-seconds. Any amount of time greater than this, including fractional seconds, SHALL represent an additional unit of measure, such as an additional hour or an additional day.
+All statements of time periods (for example, "5 days") SHALL be taken to mean the minimum period of time that a reasonable person would interpret that statement to represent (i.e. exactly 5 days, not 5 and a half days).
+
+For the purpose of computing Certificate Validity Periods and CRL and OCSP Validity Intervals, one hour is defined to be exactly 3,600 seconds, and one day is defined to be exactly 86,400 seconds, ignoring leap-seconds. Any amount of time greater than this, including fractional seconds, SHALL represent an additional unit of measure, such as an additional hour or an additional day.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
@@ -1334,14 +1338,12 @@ The following SHALL apply for communicating the status of Certificates which inc
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019. The CA MAY process the Nonce extension (`1.3.6.1.5.5.7.48.1.2`) in accordance with RFC 8954.
 
-The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive.
-
 For the status of Subscriber Certificates:
 
-1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
-2. OCSP responses MUST have a validity interval less than or equal to ten days;
-3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
-4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
+1. OCSP responses MUST have a Validity Interval greater than or equal to eight hours;
+2. OCSP responses MUST have a Validity Interval less than or equal to ten days;
+3. For OCSP responses with Validity Intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the Validity Interval before the nextUpdate.
+4. For OCSP responses with Validity Intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
 For the status of Subordinate CA Certificates:
 
