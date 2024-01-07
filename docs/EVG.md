@@ -531,7 +531,7 @@ The Registration Scheme MUST be identified using the using the following structu
 * a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8));
 * Registration Reference allocated in accordance with the identified Registration Scheme
 
-Note: Registration References MAY contain hyphens, but Registration Schemes, ISO 3166 country codes, and ISO 3166-2 identifiers do not.  Therefore if more than one hyphen appears in the structure, the leftmost hyphen is a separator, and the remaining hyphens are part of the Registration Reference.
+Note: Registration References MAY contain hyphens, but Registration Schemes, ISO 3166 country codes, and ISO 3166-2 identifiers do not. Therefore if more than one hyphen appears in the structure, the leftmost hyphen is a separator, and the remaining hyphens are part of the Registration Reference.
 
 As in [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field), the specified location information MUST match the scope of the registration being referenced.
 
@@ -1716,7 +1716,7 @@ guidelines:
   authority against the organization as identified by the Subject Organization
   Name Field (see [Section 9.2.1](#921-subject-organization-name-field)) and
   Subject Registration Number Field (see
-  Section 9.2.5](#925-subject-registration-number-field)) within the context of
+  [Section 9.2.5](#925-subject-registration-number-field)) within the context of
   the subject’s jurisdiction as specified in
   [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
 
