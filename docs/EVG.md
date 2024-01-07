@@ -1696,10 +1696,7 @@ The following Registration Schemes are currently recognized as valid under these
 
 * **NTR**:
 
-  The information carried in this field shall be the same as held in Subject Registration Number Field as specified in [Section 9.2.5](#925-subject-registration-number-field) and the country code used in the Registration Scheme identifier shall match that of the subject’s jurisdiction as specified in
-  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
-
-  Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 includes more than the country code, the additional locality information shall be included as specified in [Section 9.2.8](#928-subject-organization-identifier-field) and/or [Section 9.8.2](#982-cabrowser-forum-organization-identifier-extension).
+  The information carried in this field shall be the same as held in Subject Registration Number Field as specified in [Section 9.2.5](#925-subject-registration-number-field) and the country code used in the Registration Scheme identifier shall match that of the subject’s jurisdiction as specified in [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field). Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 includes more than the country code, the additional locality information shall be included as specified in [Section 9.2.8](#928-subject-organization-identifier-field) and/or [Section 9.8.2](#982-cabrowser-forum-organization-identifier-extension).
 
 * **VAT**:
 
