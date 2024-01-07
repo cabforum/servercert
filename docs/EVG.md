@@ -1704,7 +1704,7 @@ The following Registration Schemes are currently recognized as valid under these
 * **VAT**:
 
   Reference allocated by the national tax authorities to a Legal Entity. This information shall be validated using information provided by the national tax authority against the organization as identified by the Subject Organization Name Field (see [Section 9.2.1](#921-subject-organization-name-field)) and Subject Registration Number Field (see [Section 9.2.5](#925-subject-registration-number-field)) within the context of the subject’s jurisdiction as specified in
-  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
+  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field). For the purpose of identifying the country, especially for the "VAT" Registration Scheme, Greece MAY use the prefix "EL".
 
 * **PSD**:
 
