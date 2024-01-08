@@ -3,11 +3,11 @@ title: Baseline Requirements for the Issuance and Management of Publicly-Trusted
 subtitle: Version 2.0.2
 author:
   - CA/Browser Forum
-date: 13-September-2023  
+date: 8-January-2024  
 
 
 copyright: |
-  Copyright 2023 CA/Browser Forum
+  Copyright 2024 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -134,7 +134,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.8.7 | SC61  | New CRL entries must have a Revocation Reason Code | 1-Apr-2023 | 15-Jul-2023 |
 | 2.0.0 | SC62  | Certificate Profiles Update | 22-Apr-2023 | 15-Sep-2023 |
 | 2.0.1 | SC63  | Make OCSP optional, require CRLs, and incentivize automation | 17-Aug-2023 | 15-Mar-2024 |
-| 2.0.2 | SCXX | 2023 Cleanup | 13-Sept-2023 | 1-Nov-2023 |
+| 2.0.2 | SC66 | 2023 Cleanup | 23-Nov-2023 | 8-Jan-2024 |
 
 
 
