@@ -597,7 +597,7 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
 
-All statements of time periods (for example, "5 days") SHALL be taken to mean the minimum period of time that a reasonable person would interpret that statement to represent (i.e. exactly 5 days, not 5 and a half days).
+All statements of time periods (for example, "5 days") SHALL be taken to mean exactly that period of time, and not a fractional period more (e.g. not "5 and a half days").
 
 For the purpose of computing Certificate Validity Periods and CRL and OCSP Validity Intervals, one hour is defined to be exactly 3,600 seconds, and one day is defined to be exactly 86,400 seconds, ignoring leap-seconds. Any amount of time greater than this, including fractional seconds, SHALL represent an additional unit of measure, such as an additional hour or an additional day.
 
