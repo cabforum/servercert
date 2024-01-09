@@ -1,13 +1,13 @@
 ---
-title: Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates
-subtitle: Version 2.0.1
+title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
+subtitle: Version 2.0.2
 author:
   - CA/Browser Forum
-date: 17-August-2023  
+date: 8-January-2024  
 
 
 copyright: |
-  Copyright 2023 CA/Browser Forum
+  Copyright 2024 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -16,13 +16,13 @@ copyright: |
 
 ## 1.1 Overview
 
-This document describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of Publicly-Trusted Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software. The requirements are not mandatory for Certification Authorities unless and until they become adopted and enforced by relying-party Application Software Suppliers.
+This document describes an integrated set of technologies, protocols, identity-proofing, lifecycle management, and auditing requirements that are necessary (but not sufficient) for the issuance and management of Publicly-Trusted TLS Server Certificates; Certificates that are trusted by virtue of the fact that their corresponding Root Certificate is distributed in widely-available application software. The requirements are not mandatory for Certification Authorities unless and until they become adopted and enforced by relying-party Application Software Suppliers.
 
 **Notice to Readers**
 
-The CP for the Issuance and Management of Publicly-Trusted Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted Certificates. This document serves two purposes: to specify Baseline Requirements and to provide guidance and requirements for what a CA should include in its CPS. Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after 1 July 2012 (the original effective date of these requirements).
+The CP for the Issuance and Management of Publicly-Trusted TLS Server Certificates describe a subset of the requirements that a Certification Authority must meet in order to issue Publicly Trusted TLS Server Certificates. This document serves two purposes: to specify Baseline Requirements and to provide guidance and requirements for what a CA should include in its CPS. Except where explicitly stated otherwise, these Requirements apply only to relevant events that occur on or after 1 July 2012 (the original effective date of these requirements).
 
-These Requirements do not address all of the issues relevant to the issuance and management of Publicly-Trusted Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this document includes all sections of the RFC 3647 framework. However, rather than beginning with a "no stipulation" comment in all empty sections, the CA/Browser Forum is leaving such sections initially blank until a decision of "no stipulation" is made. The CA/Browser Forum may update these Requirements from time to time, in order to address both existing and emerging threats to online security. In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.
+These Requirements do not address all of the issues relevant to the issuance and management of Publicly-Trusted TLS Server Certificates. In accordance with RFC 3647 and to facilitate a comparison of other certificate policies and CPSs (e.g. for policy mapping), this document includes all sections of the RFC 3647 framework. However, rather than beginning with a "no stipulation" comment in all empty sections, the CA/Browser Forum is leaving such sections initially blank until a decision of "no stipulation" is made. The CA/Browser Forum may update these Requirements from time to time, in order to address both existing and emerging threats to online security. In particular, it is expected that a future version will contain more formal and comprehensive audit requirements for delegated functions.
 
 These Requirements only address Certificates intended to be used for authenticating servers accessible through the Internet. Similar requirements for code signing, S/MIME, time-stamping, VoIP, IM, Web services, etc. may be covered in future versions.
 
@@ -32,7 +32,7 @@ These Requirements are applicable to all Certification Authorities within a chai
 
 ## 1.2 Document name and identification
 
-This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted SSL certificates, as adopted by the CA/Browser Forum.
+This certificate policy (CP) contains the requirements for the issuance and management of publicly-trusted TLS Server certificates, as adopted by the CA/Browser Forum.
 
 The following Certificate Policy identifiers are reserved for use by CAs to assert compliance with this document (OID arc 2.23.140.1.2) as follows:
 
@@ -134,6 +134,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.8.7 | SC61  | New CRL entries must have a Revocation Reason Code | 1-Apr-2023 | 15-Jul-2023 |
 | 2.0.0 | SC62  | Certificate Profiles Update | 22-Apr-2023 | 15-Sep-2023 |
 | 2.0.1 | SC63  | Make OCSP optional, require CRLs, and incentivize automation | 17-Aug-2023 | 15-Mar-2024 |
+| 2.0.2 | SC66 | 2023 Cleanup | 23-Nov-2023 | 8-Jan-2024 |
 
 
 
@@ -222,6 +223,8 @@ The CA SHALL impose these limitations as a contractual requirement on the Enterp
 
 As defined in [Section 1.6.1](#161-definitions).
 
+In some situations, a CA acts as an Applicant or Subscriber, for instance, when it generates and protects a Private Key, requests a Certificate, demonstrates control of a Domain, or obtains a Certificate for its own use.
+
 ### 1.3.4 Relying Parties
 
 "Relying Party" and "Application Software Supplier" are defined in [Section 1.6.1](#161-definitions). Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here:  
@@ -243,7 +246,7 @@ No stipulation.
 
 ## 1.5 Policy administration
 
-The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates present criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted Certificates. This document may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum. Because one of the primary beneficiaries of this document is the end user, the Forum openly invites anyone to make recommendations and suggestions by email to the CA/Browser Forum at <questions@cabforum.org>. The Forum members value all input, regardless of source, and will seriously consider all such input.
+The Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates present criteria established by the CA/Browser Forum for use by Certification Authorities when issuing, maintaining, and revoking publicly-trusted TLS Server Certificates. This document may be revised from time to time, as appropriate, in accordance with procedures adopted by the CA/Browser Forum. Because one of the primary beneficiaries of this document is the end user, the Forum openly invites anyone to make recommendations and suggestions by email to the CA/Browser Forum at <questions@cabforum.org>. The Forum members value all input, regardless of source, and will seriously consider all such input.
 
 ### 1.5.1 Organization Administering the Document
 
@@ -389,17 +392,17 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Parent Company**: A company that Controls a Subsidiary Company.
 
-**P-Label**: A XN-Label that contains valid output of the Punycode algorithm (as defined in RFC 3492, Section 6.3) from the fifth and subsequent positions.
+**Pending Prohibition​​**: The use of a behavior described with this label is highly discouraged, as it is planned to be deprecated and will likely be designated as MUST NOT in the future.
 
 **Private Key**: The key of a Key Pair that is kept secret by the holder of the Key Pair, and that is used to create Digital Signatures and/or to decrypt electronic records or files that were encrypted with the corresponding Public Key.
-
-**Pending Prohibition​​**: The use of a behavior described with this label is highly discouraged, as it is planned to be deprecated and will likely be designated as MUST NOT in the future.
 
 **Public Key**: The key of a Key Pair that may be publicly disclosed by the holder of the corresponding Private Key and that is used by a Relying Party to verify Digital Signatures created with the holder's corresponding Private Key and/or to encrypt messages so that they can be decrypted only with the holder's corresponding Private Key.
 
 **Public Key Infrastructure**: A set of hardware, software, people, procedures, rules, policies, and obligations used to facilitate the trustworthy creation, issuance, management, and use of Certificates and keys based on Public Key Cryptography.
 
 **Publicly-Trusted Certificate**: A Certificate that is trusted by virtue of the fact that its corresponding Root Certificate is distributed as a trust anchor in widely-available application software.
+
+**P-Label**: A XN-Label that contains valid output of the Punycode algorithm (as defined in RFC 3492, Section 6.3) from the fifth and subsequent positions.
 
 **Qualified Auditor**: A natural person or Legal Entity that meets the requirements of [Section 8.2](#82-identityqualifications-of-assessor).
 
@@ -547,7 +550,7 @@ FIPS 186-4, Federal Information Processing Standards Publication - Digital Signa
 
 ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
 
-Network and Certificate System Security Requirements, Version 1.7, available at <https://cabforum.org/wp-content/uploads/CA-Browser-Forum-Network-Security-Guidelines-v1.7.pdf>.
+Network and Certificate System Security Requirements, Version 1.7, available at <https://cabforum.org/network-security-requirements/>
 
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-89.pdf>.
 
@@ -583,9 +586,12 @@ RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record. P. Hallam-Baker, et al. November 2019.
 
+RFC8738, Request for Comments: 8738, Automated Certificate Management Environment (ACME) IP Identifier Validation Extension. R.B.Shoemaker, Ed. February 2020.
+
 RFC8954, Request for Comments: 8954, Online Certificate Status Protocol (OCSP) Nonce Extension. M. Sahni, Ed. November 2020.
 
-WebTrust for Certification Authorities, SSL Baseline with Network Security, Version 2.5, available at <https://www.cpacanada.ca/-/media/site/operational/ms-member-services/docs/webtrust/wt100bwtbr-25-110120-finalaoda.pdf>.
+WebTrust for Certification Authorities, SSL Baseline with Network Security, available at 
+<https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria>
 
 X.509, Recommendation ITU-T X.509 (08/2005) \| ISO/IEC 9594-8:2005, Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
 
@@ -613,7 +619,7 @@ Section 4.2 of a CA's Certificate Policy and/or Certification Practice Statement
 
 The CA SHALL publicly give effect to these Requirements and represent that it will adhere to the latest published version. The CA MAY fulfill this requirement by incorporating these Requirements directly into its Certificate Policy and/or Certification Practice Statements or by incorporating them by reference using a clause such as the following (which MUST include a link to the official version of these Requirements):
 
-> [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates published at <http://www.cabforum.org>. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
+> [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates published at <http://www.cabforum.org>. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
 
 The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are
 
@@ -775,7 +781,7 @@ Confirming the Applicant's control over the FQDN by confirming that the Applican
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
-##### 3.2.2.4.10 TLS Using a Random Number
+##### 3.2.2.4.10 TLS Using a Random Value
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
@@ -852,7 +858,7 @@ Confirming the Applicant's control over the FQDN by verifying that the Request T
 1. The entire Request Token or Random Value MUST NOT appear in the request used to retrieve the file, and
 2. the CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
 
-The file containing the Request Token or Random Number:
+The file containing the Request Token or Random Value:
 
 1. MUST be located on the Authorization Domain Name, and
 2. MUST be located under the "/.well-known/pki-validation" directory, and
@@ -957,11 +963,11 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 ##### 3.2.2.5.6 ACME “http-01” method for IP Addresses
 
-Confirming the Applicant's control over the IP Address by performing the procedure documented for an “http-01” challenge in draft 04 of “ACME IP Identifier Validation Extension,” available at <https://tools.ietf.org/html/draft-ietf-acme-ip-04#section-4>.
+Confirming the Applicant's control over the IP Address by performing the procedure documented for an “http-01” challenge in RFC 8738.
 
 ##### 3.2.2.5.7 ACME “tls-alpn-01” method for IP Addresses
 
-Confirming the Applicant's control over the IP Address by performing the procedure documented for a “tls-alpn-01” challenge in draft 04 of “ACME IP Identifier Validation Extension,” available at <https://tools.ietf.org/html/draft-ietf-acme-ip-04#section-4>.
+Confirming the Applicant's control over the IP Address by performing the procedure documented for a “tls-alpn-01” challenge in RFC 8738.
 
 #### 3.2.2.6 Wildcard Domain Validation
 
@@ -1069,7 +1075,7 @@ The certificate request MAY include all factual information about the Applicant 
 
 Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name or IP address to be included in the Certificate's `subjectAltName` extension.
 
-[Section 6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in [Section 3.2](#32-initial-identity-validation) to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under [Section 3.2](#32-initial-identity-validation) or completed the validation itself no more than 825 days prior to issuing the Certificate. For validation of Domain Names and IP Addresses according to Section 3.2.2.4 and 3.2.2.5, any reused data, document, or completed validation MUST be obtained no more than 398 days prior to issuing the Certificate.
+[Section 6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in [Section 3.2](#32-initial-identity-validation) to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under [Section 3.2](#32-initial-identity-validation) or completed the validation itself no more than 825 days prior to issuing the Certificate. For validation of Domain Names and IP Addresses according to Section 3.2.2.4 and 3.2.2.5, any data, document, or completed validation used MUST be obtained no more than 398 days prior to issuing the Certificate.
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
@@ -1446,7 +1452,7 @@ The CA's security program MUST include an annual Risk Assessment that:
 
 Based on the Risk Assessment, the CA SHALL develop, implement, and maintain a security plan consisting of security procedures, measures, and products designed to achieve the objectives set forth above and to manage and control the risks identified during the Risk Assessment, commensurate with the sensitivity of the Certificate Data and Certificate Management Processes. The security plan MUST include administrative, organizational, technical, and physical safeguards appropriate to the sensitivity of the Certificate Data and Certificate Management Processes. The security plan MUST also take into account then-available technology and the cost of implementing the specific measures, and SHALL implement a reasonable level of security appropriate to the harm that might result from a breach of security and the nature of the data to be protected.
 
-## 5.1 PHYSICAL SECURITY CONTROLS
+## 5.1 Physical Security Controls
 
 ### 5.1.1 Site location and construction
 
@@ -1732,7 +1738,7 @@ Private Keys corresponding to Root Certificates MUST NOT be used to sign Certifi
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 
-The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified above MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
+The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified in [Section 6.2.7](#627-private-key-storage-on-cryptographic-module) MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
 
 ### 6.2.1 Cryptographic module standards and controls
 
@@ -2906,16 +2912,20 @@ This section contains several fields that are common among multiple certificate 
 ##### 7.1.2.11.2 CRL Distribution Points
 
 The CRL Distribution Points extension MUST be present in:
+
 - Subordinate CA Certificates; and
 - Subscriber Certificates that 1) do not qualify as "Short-lived Subscriber Certificates" and 2) do not include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
 The CRL Distribution Points extension SHOULD NOT be present in:
+
 - Root CA Certificates.
 
 The CRL Distribution Points extension is OPTIONAL in:
+
 - Short-lived Subscriber Certificates.
 
 The CRL Distribution Points extension MUST NOT be present in:
+
 - OCSP Responder Certificates.
 
 When present, the CRL Distribution Points extension MUST contain at least one `DistributionPoint`; containing more than one is NOT RECOMMENDED. All `DistributionPoint` items must be formatted as follows:
@@ -2938,7 +2948,7 @@ Each `SignedCertificateTimestamp` included within the `SignedCertificateTimestam
 
 ##### 7.1.2.11.4 Subject Key Identifier
 
-If present, the `subjectKeyIdentifier` MUST be set as defined within [RFC 5280, Section 4.2.1.2](https://tools.ietf.org/html/rfc5280#section-4.2.1.2). The CA MUST generate a `subjectKeyIdentifier` that is unique within the scope of all Certificates it has issued for each unique public key (the `subjectPublicKeyInfo` field of the `tbsCertificate`). For example, CAs may generate the subject key identifier using an algorithm derived from the public key, or may generate a sufficiently-large unique number, such by using a CSPRNG.
+If present, the `subjectKeyIdentifier` MUST be set as defined within [RFC 5280, Section 4.2.1.2](https://tools.ietf.org/html/rfc5280#section-4.2.1.2). The CA MUST generate a `subjectKeyIdentifier` that is unique within the scope of all Certificates it has issued for each unique public key (the `subjectPublicKeyInfo` field of the `tbsCertificate`). For example, CAs may generate the subject key identifier using an algorithm derived from the public key, or may generate a sufficiently-large unique number, such as by using a CSPRNG.
 
 ##### 7.1.2.11.5 Other Extensions
 
@@ -3155,6 +3165,8 @@ Before including such an attribute, the CA SHALL:
 
   * Document the attributes within Section 7.1.4 of their CP or CPS, along with the applicable validation practices.
   * Ensure that the contents contain information that has been verified by the CA, independent of the Applicant.
+
+### 7.1.5 Name constraints
 
 ### 7.1.6 Certificate policy object identifier
 
