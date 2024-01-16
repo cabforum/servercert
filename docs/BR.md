@@ -1776,7 +1776,7 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 
 Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. 
 
-Due to the precision with which Certificate validity periods are measured, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, to prevent off-by-one-second errors.
+Due to the precision with which the Certificate Validity Periods is measured, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, to prevent off-by-one-second errors.
 
 ## 6.4 Activation data
 
