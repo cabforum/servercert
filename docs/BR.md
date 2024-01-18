@@ -718,7 +718,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
 
-Confirming the Applicant's control over the FQDN by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as a Domain Contact.
+Confirming the Applicant's control over the FQDN by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as a Domain Contact. The email address, fax/SMS number, or postal mail address MUST be obtained through direct contact with the Domain Name Registrar i.e. without the use of third-party services operated outside the CA's audit scope.
 
 Each email, fax, SMS, or postal mail MAY confirm control of multiple Authorization Domain Names.
 
@@ -819,7 +819,7 @@ The Random Value SHALL be unique in each email. The email MAY be re-sent in its 
 
 ##### 3.2.2.4.15 Phone Contact with Domain Contact
 
-Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. The phone number MUST be obtained through direct contact with the Domain Name Registrar i.e. without the use of third-party services operated outside the CA's audit scope. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
 In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact.
 
@@ -931,7 +931,7 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the cer
 
 ##### 3.2.2.5.2 Email, Fax, SMS, or Postal Mail to IP Address Contact
 
-Confirming the Applicant's control over the IP Address by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as an IP Address Contact.
+Confirming the Applicant's control over the IP Address by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as an IP Address Contact. The email address, fax/SMS number, or postal mail address MUST be obtained through direct contact with the IP Address Registration Authority i.e. without the use of third-party services operated outside the CA's audit scope.
 
 Each email, fax, SMS, or postal mail MAY confirm control of multiple IP Addresses.
 
@@ -955,7 +955,7 @@ CAs SHALL NOT perform validations using this method after July 31, 2019. Complet
 
 ##### 3.2.2.5.5 Phone Contact with IP Address Contact
 
-Confirming the Applicant's control over the IP Address by calling the IP Address Contact’s phone number and obtaining a response confirming the Applicant's request for validation of the IP Address. The CA MUST place the call to a phone number identified by the IP Address Registration Authority as the IP Address Contact. Each phone call SHALL be made to a single number.
+Confirming the Applicant's control over the IP Address by calling the IP Address Contact’s phone number and obtaining a response confirming the Applicant's request for validation of the IP Address. The phone number MUST be obtained through direct contact with the IP Address Registration Authority i.e. without the use of third-party services operated outside the CA's audit scope. The CA MUST place the call to a phone number identified by the IP Address Registration Authority as the IP Address Contact. Each phone call SHALL be made to a single number.
 
 In the event that someone other than an IP Address Contact is reached, the CA MAY request to be transferred to the IP Address Contact.
 
