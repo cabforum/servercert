@@ -199,7 +199,7 @@ Certification Authority (CA) is defined in [Section 1.6](#16-definitions-and-acr
 
 ### 1.3.2 Registration Authorities
 
-With the exception of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address), the CA MAY delegate the performance of all, or any part, of [Section 3.2](#32-initial-identity-validation) requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of [Section 3.2](#32-initial-identity-validation).
+With the exception of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control), [Section 3.2.2.5](#3225-authentication-for-an-ip-address), and [Section 3.2.2.8](#3228-caa-records) the CA MAY delegate the performance of all, or any part, of [Section 3.2](#32-initial-identity-validation) requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of [Section 3.2](#32-initial-identity-validation).
 
 Before the CA authorizes a Delegated Third Party to perform a delegated function, the CA SHALL contractually require the Delegated Third Party to:
 
@@ -334,7 +334,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **DNS TXT Record Phone Contact**: The phone number defined in [Appendix A.2.2](#a22-dns-txt-record-phone-contact).
 
-**Domain Contact**: The Domain Name Registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record, or as obtained through direct contact with the Domain Name Registrar.
+**Domain Contact**: The Domain Name Registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) for a Base Domain Name.
 
 **Domain Label**: From RFC 8499 (<http://tools.ietf.org/html/rfc8499>): "An ordered list of zero or more octets that makes up a portion of a domain name. Using graph theory, a label identifies one node in a portion of the graph of all possible domain names."
 
@@ -659,6 +659,10 @@ The CA shall make its Repository publicly available in a read-only manner.
 
 If the Applicant requests a Certificate that will contain Subject Identity Information comprised only of the `countryName` field, then the CA SHALL verify the country associated with the Subject using a verification process meeting the requirements of [Section 3.2.2.3](#3223-verification-of-country) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. If the Applicant requests a Certificate that will contain the countryName field and other Subject Identity Information, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements of this [Section 3.2.2.1](#3221-identity) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. The CA SHALL inspect any document relied upon under this Section for alteration or falsification.
 
+All DNS queries conducted in the course of satisfying the requirements of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control), [Section 3.2.2.5](#3225-authentication-for-an-ip-address), and [Section 3.2.2.8](#3228-caa-records) MUST be made from the CA to authoritative nameservers, i.e. without the use of recursive resolvers operated outside the CA's audit scope.
+
+All contact information for Domain Contacts MUST come from the WHOIS record, a DNS SOA record, or direct contact with the Domain Name Registrar of the Base Domain Name, and MUST be obtained directly by the CA, i.e. without the use of third-party services operated outside the CA's audit scope. All contact information for IP Address Contacts MUST be obtained through direct contact with the IP Address Registration Authority, i.e. without the use of third-party services operated outside the CA's audit scope.
+
 #### 3.2.2.1 Identity
 
 If the Subject Identity Information is to include the name or address of an organization, the CA SHALL verify the identity and address of the organization and that the address is the Applicant's address of existence or operation. The CA SHALL verify the identity and address of the Applicant using documentation provided by, or through communication with, at least one of the following:
@@ -704,8 +708,6 @@ The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qua
 1. When the FQDN is not an Onion Domain Name, the CA SHALL validate the FQDN using at least one of the methods listed below; and
 2. When the FQDN is an Onion Domain Name, the CA SHALL validate the FQDN in accordance with Appendix B.
 
-All DNS queries conducted in the course of validation MUST be made from the CA to authoritative nameservers, i.e. without the use of recursive resolvers operated outside the CA's audit scope.
-
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
@@ -718,7 +720,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
 
-Confirming the Applicant's control over the FQDN by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as a Domain Contact. The Domain Contact's information MUST be obtained directly from the allowed source(s), i.e. without the use of third-party services operated outside the CA's audit scope.
+Confirming the Applicant's control over the FQDN by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as a Domain Contact.
 
 Each email, fax, SMS, or postal mail MAY confirm control of multiple Authorization Domain Names.
 
@@ -819,7 +821,7 @@ The Random Value SHALL be unique in each email. The email MAY be re-sent in its 
 
 ##### 3.2.2.4.15 Phone Contact with Domain Contact
 
-Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. The Domain Contact's phone number MUST be obtained directly from the allowed source(s), i.e. without the use of third-party services operated outside the CA's audit scope. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
 In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact.
 
@@ -916,8 +918,6 @@ This section defines the permitted processes and procedures for validating the A
 
 The CA SHALL confirm that prior to issuance, the CA has validated each IP Address listed in the Certificate using at least one of the methods specified in this section.
 
-All DNS queries conducted in the course of validation MUST be made from the CA to authoritative nameservers, i.e. without the use of recursive resolvers operated outside the CA's audit scope.
-
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of IP Address validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
 After July 31, 2019, CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address.
@@ -933,7 +933,7 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the cer
 
 ##### 3.2.2.5.2 Email, Fax, SMS, or Postal Mail to IP Address Contact
 
-Confirming the Applicant's control over the IP Address by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as an IP Address Contact. The IP Address Contact's information MUST be obtained through direct contact with the IP Address Registration Authority i.e. without the use of third-party services operated outside the CA's audit scope.
+Confirming the Applicant's control over the IP Address by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as an IP Address Contact.
 
 Each email, fax, SMS, or postal mail MAY confirm control of multiple IP Addresses.
 
@@ -957,7 +957,7 @@ CAs SHALL NOT perform validations using this method after July 31, 2019. Complet
 
 ##### 3.2.2.5.5 Phone Contact with IP Address Contact
 
-Confirming the Applicant's control over the IP Address by calling the IP Address Contact’s phone number and obtaining a response confirming the Applicant's request for validation of the IP Address. The phone number MUST be obtained through direct contact with the IP Address Registration Authority i.e. without the use of third-party services operated outside the CA's audit scope. The CA MUST place the call to a phone number identified by the IP Address Registration Authority as the IP Address Contact. Each phone call SHALL be made to a single number.
+Confirming the Applicant's control over the IP Address by calling the IP Address Contact’s phone number and obtaining a response confirming the Applicant's request for validation of the IP Address. The CA MUST place the call to a phone number identified by the IP Address Registration Authority as the IP Address Contact. Each phone call SHALL be made to a single number.
 
 In the event that someone other than an IP Address Contact is reached, the CA MAY request to be transferred to the IP Address Contact.
 
