@@ -1334,7 +1334,7 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 
 ### 14.2.2. Enterprise RAs
 
-The CA MAY contractually authorize a Subscriber to perform the RA function and authorize the CA to issue additional EV Certificates.  In such case, the Subscriber SHALL be considered an Enterprise RA, and the following requirements SHALL apply:
+The CA MAY contractually authorize a Subscriber to perform the RA function and authorize the CA to issue EV Certificates.  In such case, the Subscriber SHALL be considered an Enterprise RA, and the following requirements SHALL apply:
 
 1. In all cases, the Subscriber MUST be an organization verified by the CA in accordance with these Guidelines;
 2. The CA MUST impose these limitations as a contractual requirement with the Enterprise RA and monitor compliance by the Enterprise RA; and
