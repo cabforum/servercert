@@ -188,7 +188,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code |
 | 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0 |
 | 2024-03-15 | 4.9.7 | CAs MUST generate and publish CRLs. |
-| 2024-05-15 | 3.2.2 | CAA DNS queries MUST NOT use third-party recursive resolvers. |
+| 2024-05-15 | 1.3.2 and 3.2.2 | CAA DNS queries MUST NOT be delegated to third parties. |
 
 ## 1.3 PKI Participants
 
