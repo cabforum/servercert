@@ -188,6 +188,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code |
 | 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0 |
 | 2024-03-15 | 4.9.7 | CAs MUST generate and publish CRLs. |
+| 2024-05-15 | 3.2.2 | CAA DNS queries MUST NOT use third-party recursive resolvers. |
 
 ## 1.3 PKI Participants
 
@@ -659,7 +660,7 @@ The CA shall make its Repository publicly available in a read-only manner.
 
 If the Applicant requests a Certificate that will contain Subject Identity Information comprised only of the `countryName` field, then the CA SHALL verify the country associated with the Subject using a verification process meeting the requirements of [Section 3.2.2.3](#3223-verification-of-country) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. If the Applicant requests a Certificate that will contain the countryName field and other Subject Identity Information, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements of this [Section 3.2.2.1](#3221-identity) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. The CA SHALL inspect any document relied upon under this Section for alteration or falsification.
 
-All DNS queries conducted in the course of satisfying the requirements of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control), [Section 3.2.2.5](#3225-authentication-for-an-ip-address), and [Section 3.2.2.8](#3228-caa-records) MUST be made from the CA to authoritative nameservers, i.e. without the use of recursive resolvers operated outside the CA's audit scope.
+All DNS queries conducted in the course of satisfying the requirements of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control), [Section 3.2.2.5](#3225-authentication-for-an-ip-address), and (effective 2024-05-15) [Section 3.2.2.8](#3228-caa-records) MUST be made from the CA to authoritative nameservers, i.e. without the use of recursive resolvers operated outside the CA's audit scope.
 
 All contact information for Domain Contacts MUST come from the WHOIS record, a DNS SOA record, or direct contact with the Domain Name Registrar of the Base Domain Name, and MUST be obtained directly by the CA, i.e. without the use of third-party services operated outside the CA's audit scope. All contact information for IP Address Contacts MUST be obtained through direct contact with the IP Address Registration Authority, i.e. without the use of third-party services operated outside the CA's audit scope.
 
