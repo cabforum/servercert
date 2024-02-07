@@ -1548,19 +1548,12 @@ Log records MUST include at least the following elements:
 
 #### 5.4.1.1 Router and firewall activities logs
 
-"Router and firewall activities" is considered an unspecified term, and leaves the exact definition and scope up to the CA, however logging of router and firewall activities MUST at a minimum include: 
+Logging of router and firewall activities necessary to meet the requirements of Section 5.4.1, Subsection 3.6 MUST at a minimum include:
 
   1. Successful and unsuccessful login attempts to routers and firewalls; and
   2. Logging of all administrative actions performed on routers and firewalls, including configuration changes, firmware updates, and access control modifications; and
   3. Logging of all changes made to firewall rules, including additions, modifications, and deletions; and
-  4. Logging of all system events and errors, including hardware failures, software crashes, and system restarts.
-
-Logging of router and firewall activities SHOULD NOT include:
-
-  1. Logging of traffic (such as but not limited to OCSP and CRL HTTP requests) passing through the device; and
-  2. Logging of successful inbound and outbound connections, unless they are related to security incidents.
-
-CAs are encouraged to recommend additional MUST and SHOULD NOT requirements through an email to questions@cabforum.org, for future discussion within the appropriate Working Group.
+  4. Logging of all system events and errors", including hardware failures, software crashes, and system restarts.
 
 ### 5.4.2 Frequency of processing audit log
 
