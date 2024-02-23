@@ -188,6 +188,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code |
 | 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0 |
 | 2024-03-15 | 4.9.7 | CAs MUST generate and publish CRLs. |
+| 2024-05-15 | 1.3.2 and 3.2.2 | CAA DNS queries MUST NOT be delegated to third parties. |
 
 ## 1.3 PKI Participants
 
@@ -199,7 +200,7 @@ Certification Authority (CA) is defined in [Section 1.6](#16-definitions-and-acr
 
 ### 1.3.2 Registration Authorities
 
-With the exception of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address), the CA MAY delegate the performance of all, or any part, of [Section 3.2](#32-initial-identity-validation) requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of [Section 3.2](#32-initial-identity-validation).
+With the exception of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control), [Section 3.2.2.5](#3225-authentication-for-an-ip-address), and (effective 2024-05-15) [Section 3.2.2.8](#3228-caa-records) the CA MAY delegate the performance of all, or any part, of [Section 3.2](#32-initial-identity-validation) requirements to a Delegated Third Party, provided that the process as a whole fulfills all of the requirements of [Section 3.2](#32-initial-identity-validation).
 
 Before the CA authorizes a Delegated Third Party to perform a delegated function, the CA SHALL contractually require the Delegated Third Party to:
 
@@ -334,7 +335,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **DNS TXT Record Phone Contact**: The phone number defined in [Appendix A.2.2](#a22-dns-txt-record-phone-contact).
 
-**Domain Contact**: The Domain Name Registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record, or as obtained through direct contact with the Domain Name Registrar.
+**Domain Contact**: The Domain Name Registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) for a Base Domain Name.
 
 **Domain Label**: From RFC 8499 (<http://tools.ietf.org/html/rfc8499>): "An ordered list of zero or more octets that makes up a portion of a domain name. Using graph theory, a label identifies one node in a portion of the graph of all possible domain names."
 
@@ -658,6 +659,10 @@ The CA shall make its Repository publicly available in a read-only manner.
 ### 3.2.2 Authentication of Organization and Domain Identity
 
 If the Applicant requests a Certificate that will contain Subject Identity Information comprised only of the `countryName` field, then the CA SHALL verify the country associated with the Subject using a verification process meeting the requirements of [Section 3.2.2.3](#3223-verification-of-country) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. If the Applicant requests a Certificate that will contain the countryName field and other Subject Identity Information, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements of this [Section 3.2.2.1](#3221-identity) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. The CA SHALL inspect any document relied upon under this Section for alteration or falsification.
+
+All DNS queries conducted in the course of satisfying the requirements of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control), [Section 3.2.2.5](#3225-authentication-for-an-ip-address), and (effective 2024-05-15) [Section 3.2.2.8](#3228-caa-records) MUST be made from the CA to authoritative nameservers, i.e. without the use of recursive resolvers operated outside the CA's audit scope.
+
+All contact information for Domain Contacts MUST come from the WHOIS record, a DNS SOA record, or direct contact with the Domain Name Registrar of the Base Domain Name, and MUST be obtained directly by the CA, i.e. without the use of third-party services operated outside the CA's audit scope. All contact information for IP Address Contacts MUST be obtained through direct contact with the IP Address Registration Authority, i.e. without the use of third-party services operated outside the CA's audit scope.
 
 #### 3.2.2.1 Identity
 
