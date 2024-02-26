@@ -1553,7 +1553,7 @@ Logging of router and firewall activities necessary to meet the requirements of 
   1. Successful and unsuccessful login attempts to routers and firewalls; and
   2. Logging of all administrative actions performed on routers and firewalls, including configuration changes, firmware updates, and access control modifications; and
   3. Logging of all changes made to firewall rules, including additions, modifications, and deletions; and
-  4. Logging of all system events and errors", including hardware failures, software crashes, and system restarts.
+  4. Logging of all system events and errors, including hardware failures, software crashes, and system restarts.
 
 ### 5.4.2 Frequency of processing audit log
 
