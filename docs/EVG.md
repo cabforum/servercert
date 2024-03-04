@@ -1,11 +1,11 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
-subtitle: Version 1.8.0
+subtitle: Version 1.8.1
 author:
   - CA/Browser Forum
-date: 30 November, 2022
+date: 4 March, 2024
 copyright: |
-  Copyright 2022 CA/Browser Forum
+  Copyright 2024 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -70,6 +70,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.8 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 | 1.7.9 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 | 1.8.0 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
+| 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 1-Feb-2024 | 4-Mar-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -531,7 +532,7 @@ The Registration Scheme MUST be identified using the using the following structu
 * a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8));
 * Registration Reference allocated in accordance with the identified Registration Scheme
 
-Note: Registration References MAY contain hyphens, but Registration Schemes, ISO 3166 country codes, and ISO 3166-2 identifiers do not.  Therefore if more than one hyphen appears in the structure, the leftmost hyphen is a separator, and the remaining hyphens are part of the Registration Reference.
+Note: Registration References MAY contain hyphens, but Registration Schemes, ISO 3166 country codes, and ISO 3166-2 identifiers do not. Therefore if more than one hyphen appears in the structure, the leftmost hyphen is a separator, and the remaining hyphens are part of the Registration Reference.
 
 As in [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field), the specified location information MUST match the scope of the registration being referenced.
 
@@ -1692,49 +1693,16 @@ END
 
 # Appendix H – Registration Schemes
 
-The following Registration Schemes are currently recognized as valid under these
-guidelines:
+The following Registration Schemes are currently recognized as valid under these guidelines:
 
 * **NTR**:
 
-  The information carried in this field shall be the same as held in
-  Subject Registration Number Field as specified in
-  [Section 9.2.5](#925-subject-registration-number-field) and the country code
-  used in the Registration Scheme identifier shall match that of the
-  subject’s jurisdiction as specified in
-  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
-
-  Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4
-  includes more than the country code, the additional locality information shall
-  be included as specified in [Section 9.2.8](#928-subject-organization-identifier-field)
-  and/or [Section 9.8.2](#982-cabrowser-forum-organization-identifier-extension).
+  The information carried in this field shall be the same as held in Subject Registration Number Field as specified in [Section 9.2.5](#925-subject-registration-number-field) and the country code used in the Registration Scheme identifier shall match that of the subject’s jurisdiction as specified in [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field). Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 includes more than the country code, the additional locality information shall be included as specified in [Section 9.2.8](#928-subject-organization-identifier-field) and/or [Section 9.8.2](#982-cabrowser-forum-organization-identifier-extension).
 
 * **VAT**:
 
-  Reference allocated by the national tax authorities to a Legal Entity. This
-  information shall be validated using information provided by the national tax
-  authority against the organization as identified by the Subject Organization
-  Name Field (see [Section 9.2.1](#921-subject-organization-name-field)) and
-  Subject Registration Number Field (see
-  Section 9.2.5](#925-subject-registration-number-field)) within the context of
-  the subject’s jurisdiction as specified in
-  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
+  Reference allocated by the national tax authorities to a Legal Entity. This information shall be validated using information provided by the national tax authority against the organization as identified by the Subject Organization Name Field (see [Section 9.2.1](#921-subject-organization-name-field)) and Subject Registration Number Field (see [Section 9.2.5](#925-subject-registration-number-field)) within the context of the subject’s jurisdiction as specified in [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field). For the purpose of identifying tax authorities, the country prefix described in article 215 of EU Council Directive 2006/112/EC, as amended, MAY be used instead of the ISO 3166 2-letter country codes.
 
 * **PSD**:
 
-  Authorization number as specified in ETSI TS 119 495 clause 4.4
-  allocated to a payment service provider and containing the information as
-  specified in ETSI TS 119 495 clause 5.2.1.  This information SHALL be
-  obtained directly from the national competent authority register for
-  payment services or from an information source approved by a government
-  agency, regulatory body, or legislation for this purpose.  This information
-  SHALL be validated by being matched directly or indirectly (for example, by
-  matching a globally unique registration number) against the organization as
-  identified by the Subject Organization Name Field (see
-  [Section 9.2.1](#921-subject-organization-name-field)) and
-  Subject Registration Number Field (see
-  [Section 9.2.5](#925-subject-registration-number-field)) within the context of
-  the subject’s jurisdiction as specified in
-  [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field).
-  The stated address of the organization combined with the organization name
-  SHALL NOT be the only information used to disambiguate the organization.
+  Authorization number as specified in ETSI TS 119 495 clause 4.4 allocated to a payment service provider and containing the information as specified in ETSI TS 119 495 clause 5.2.1. This information SHALL be obtained directly from the national competent authority register for payment services or from an information source approved by a government agency, regulatory body, or legislation for this purpose. This information SHALL be validated by being matched directly or indirectly (for example, by matching a globally unique registration number) against the organization as identified by the Subject Organization Name Field (see [Section 9.2.1](#921-subject-organization-name-field)) and Subject Registration Number Field (see [Section 9.2.5](#925-subject-registration-number-field)) within the context of the subject’s jurisdiction as specified in [Section 9.2.4](#924-subject-jurisdiction-of-incorporation-or-registration-field). The stated address of the organization combined with the organization name SHALL NOT be the only information used to disambiguate the organization.
