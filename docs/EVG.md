@@ -3,7 +3,7 @@ title: Guidelines for the Issuance and Management of Extended Validation Certifi
 subtitle: Version 1.8.1
 author:
   - CA/Browser Forum
-date: 1 February, 2024
+date: 4 March, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -70,7 +70,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 | 1.7.8 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 | 1.7.9 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 | 1.8.0 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
-| 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 1-Feb-2024 | 1-Mar-2024 |
+| 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 1-Feb-2024 | 4-Mar-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
