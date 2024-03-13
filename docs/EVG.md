@@ -624,15 +624,17 @@ All provisions of the Baseline Requirements concerning Minimum Cryptographic Alg
 
       The Issuer's EV policy identifier
 
+4. Including `policyQualifiers` in the `certificatePolicies` extension in EV Certificates issued to Subscribers is NOT RECOMMENDED, but when included MUST include the following:
+
    * `certificatePolicies:policyQualifiers:policyQualifierId` (Required)
 
       `id-qt 1` [RFC 5280]
 
    * `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Required)
 
-      HTTP URL for the Subordinate CA's Certification Practice Statement
+      The HTTP or HTTPS URL for the Issuing CA’s Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA.
 
-4. The `cRLDistributionPoints` extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an `authorityInformationAccess` extension.
+5. The `cRLDistributionPoints` extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an `authorityInformationAccess` extension.
 
 ## 9.8. Certificate Extensions
 
