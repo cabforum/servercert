@@ -1,11 +1,13 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
+
 subtitle: Version 2.0.0
 author:
   - CA/Browser Forum
 date: 8 June, 2023
 copyright: |
-  Copyright 2023 CA/Browser Forum
+  Copyright 2024 CA/Browser Forum
+
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -75,6 +77,7 @@ These Guidelines do not address the verification of information, or the issuance
 | 1.7.8 | SC48 | Domain Name and IP Address Encoding | 22-Jul-2021 | 25-Aug-2021 |
 | 1.7.9 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 | 1.8.0 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
+| 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 1-Feb-2024 | 4-Mar-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -541,7 +544,9 @@ To verify any assumed name under which the Applicant conducts business:
 
 2. **Acceptable Methods of Verification**
 
+
    A.  **Place of Business in the Country of Incorporation or Registration**
+
 
        i. For Applicants whose Place of Business is in the same country as the Applicant's Jurisdiction of Incorporation or Registration and whose Place of Business is NOT the same as that indicated in the relevant Qualified Government Information Source used in [Section 3.2.2.2](#3222-verification-of-applicants-legal-existence-and-identity) to verify legal existence:
 
@@ -1914,8 +1919,7 @@ END
 
 # Appendix H – Registration Schemes
 
-The following Registration Schemes are currently recognized as valid under these
-guidelines:
+The following Registration Schemes are currently recognized as valid under these guidelines:
 
 * **NTR**:
 
@@ -1941,8 +1945,10 @@ guidelines:
   Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of
   the subject’s jurisdiction as specified in
   [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
+  For the purpose of identifying tax authorities, the country prefix described in article 215 of 
+  EU Council Directive 2006/112/EC, as amended, MAY be used instead of the ISO 3166 2-letter country codes.
 
-* **PSD**:
+  * **PSD**:
 
   Authorization number as specified in ETSI TS 119 495 clause 4.4
   allocated to a payment service provider and containing the information as
@@ -1960,3 +1966,12 @@ guidelines:
   [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
   The stated address of the organization combined with the organization name
   SHALL NOT be the only information used to disambiguate the organization.
+  
+
+
+
+
+
+  
+
+
