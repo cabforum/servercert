@@ -1830,9 +1830,9 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
       * Cross Certificates
         * [Section 7.1.2.2 - Cross-Certified Subordinate CA Certificate Profile](#7122-cross-certified-subordinate-ca-certificate-profile)
       * Technically Constrained CA Certificates
-        * [Section 7.1.2.3 - Technically-Constrained Non-TLS Subordinate CA Certificate Profile](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile)
-        * [Section 7.1.2.4 - Technically-Constrained Precertificate Signing CA Certificate Profile](#7124-technically-constrained-precertificate-signing-ca-certificate-profile)
-        * [Section 7.1.2.5 - Technically-Constrained TLS Subordinate CA Certificate Profile](#7125-technically-constrained-tls-subordinate-ca-certificate-profile)
+        * [Section 7.1.2.3 - Technically Constrained Non-TLS Subordinate CA Certificate Profile](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile)
+        * [Section 7.1.2.4 - Technically Constrained Precertificate Signing CA Certificate Profile](#7124-technically-constrained-precertificate-signing-ca-certificate-profile)
+        * [Section 7.1.2.5 - Technically Constrained TLS Subordinate CA Certificate Profile](#7125-technically-constrained-tls-subordinate-ca-certificate-profile)
       * [Section 7.1.2.6 - TLS Subordinate CA Certificate Profile](#7126-tls-subordinate-ca-certificate-profile)
   * [Section 7.1.2.7 - Subscriber (End-Entity) Certificate Profile](#7127-subscriber-server-certificate-profile)
   * [Section 7.1.2.8 - OCSP Responder Certificate Profile](#7128-ocsp-responder-certificate-profile)
@@ -2760,7 +2760,7 @@ The following table details the acceptable `AttributeType`s that may appear with
 | `postalCode`             | MAY             | If present, the CA's zip or postal information. | [Section 3.2.2.1](#3221-identity) |
 | `streetAddress`          | MAY             | If present, the CA's street address. Multiple instances MAY be present. | [Section 3.2.2.1](#3221-identity) |
 | `organizationName`       | MUST            | The CA's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
-| `organizationalUnitName`  | This attribute MUST NOT be included in Root CA Certificates defined in [Section 7.1.2.1](#7121-root-ca-certificate-profile) or TLS Subordinate CA Certificates defined in [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile) or Technically-Constrained TLS Subordinate CA Certificates defined in [Section 7.1.2.6](#7126-tls-subordinate-ca-certificate-profile). This attribute SHOULD NOT be included in other types of CA Certificates. | -           | -           |
+| `organizationalUnitName`  | This attribute MUST NOT be included in Root CA Certificates defined in [Section 7.1.2.1](#7121-root-ca-certificate-profile) or TLS Subordinate CA Certificates defined in [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile) or Technically Constrained TLS Subordinate CA Certificates defined in [Section 7.1.2.6](#7126-tls-subordinate-ca-certificate-profile). This attribute SHOULD NOT be included in other types of CA Certificates. | -           | -           |
 | `commonName`             | MUST            | The contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate. | |
 | Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.4](#7144-other-subject-attributes) |
 
