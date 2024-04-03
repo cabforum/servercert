@@ -608,31 +608,13 @@ All provisions of the Baseline Requirements concerning Minimum Cryptographic Alg
 
    Otherwise, it MAY contain the anyPolicy identifier.
 
-2. The following fields MUST be present if the Subordinate CA is not controlled by the entity that controls the Root CA.
-
-   * `certificatePolicies:policyQualifiers:policyQualifierId`
-
-      `id-qt 1` [RFC 5280]
-
-   * `certificatePolicies:policyQualifiers:qualifier:cPSuri`
-
-      HTTP URL for the Root CA's Certification Practice Statement
-
-3. The `certificatePolicies` extension in EV Certificates issued to Subscribers MUST include the following:
+2. The `certificatePolicies` extension in EV Certificates issued to Subscribers MUST include the following:
 
    * `certificatePolicies:policyIdentifier` (Required)
 
       The Issuer's EV policy identifier
 
-   * `certificatePolicies:policyQualifiers:policyQualifierId` (Required)
-
-      `id-qt 1` [RFC 5280]
-
-   * `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Required)
-
-      HTTP URL for the Subordinate CA's Certification Practice Statement
-
-4. The `cRLDistributionPoints` extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an `authorityInformationAccess` extension.
+3. The `cRLDistributionPoints` extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an `authorityInformationAccess` extension.
 
 ## 9.8. Certificate Extensions
 
