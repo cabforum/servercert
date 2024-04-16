@@ -1,9 +1,9 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
-subtitle: Version 2.0.2
+subtitle: Version 2.0.3
 author:
   - CA/Browser Forum
-date: 8-January-2024  
+date: 15-April-2024  
 
 
 copyright: |
@@ -135,7 +135,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.0 | SC62  | Certificate Profiles Update | 22-Apr-2023 | 15-Sep-2023 |
 | 2.0.1 | SC63  | Make OCSP optional, require CRLs, and incentivize automation | 17-Aug-2023 | 15-Mar-2024 |
 | 2.0.2 | SC66 | 2023 Cleanup | 23-Nov-2023 | 8-Jan-2024 |
-
+| 2.0.3 | SC69 | Clarify router and firewall logging requirements | 13-March-2024 | 15-April-2024 |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
@@ -1356,8 +1356,6 @@ For the status of Subordinate CA Certificates:
 
 If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), the responder MUST NOT respond with a "good" status for such requests.
 
-The CA SHOULD monitor the OCSP responder for requests for "unused" serial numbers as part of its security response procedures.
-
 The OCSP responder MAY provide definitive responses about "reserved" certificate serial numbers, as if there was a corresponding Certificate that matches the Precertificate [RFC6962].
 
 A certificate serial number within an OCSP request is one of the following three options:
@@ -1545,14 +1543,23 @@ The CA SHALL record at least the following events:
    3. Security profile changes;
    4. Installation, update and removal of software on a Certificate System;
    5. System crashes, hardware failures, and other anomalies;
-   6. Firewall and router activities; and
+   6. Relevant router and firewall activities (as described in [Section 5.4.1.1](#5411-router-and-firewall-activities-logs)); and
    7. Entries to and exits from the CA facility.
 
-Log records MUST include the following elements:
+Log records MUST include at least the following elements:
 
 1. Date and time of event;
-2. Identity of the person making the journal record; and
+2. Identity of the person making the journal record (when applicable); and
 3. Description of the event.
+
+#### 5.4.1.1 Router and firewall activities logs
+
+Logging of router and firewall activities necessary to meet the requirements of Section 5.4.1, Subsection 3.6 MUST at a minimum include:
+
+  1. Successful and unsuccessful login attempts to routers and firewalls; and
+  2. Logging of all administrative actions performed on routers and firewalls, including configuration changes, firmware updates, and access control modifications; and
+  3. Logging of all changes made to firewall rules, including additions, modifications, and deletions; and
+  4. Logging of all system events and errors, including hardware failures, software crashes, and system restarts.
 
 ### 5.4.2 Frequency of processing audit log
 
