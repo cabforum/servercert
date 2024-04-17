@@ -4,7 +4,7 @@ title: Guidelines for the Issuance and Management of Extended Validation Certifi
 subtitle: Version 2.0.0
 author:
   - CA/Browser Forum
-date: 8 June, 2023
+date: 17 April, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -79,6 +79,7 @@ These Guidelines do not address the verification of information, or the issuance
 | 1.7.9 | SC54 | Onion Cleanup | 24-Mar-2022 | 23-Apr-2022 |
 | 1.8.0 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
 | 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 1-Feb-2024 | 4-Mar-2024 |
+| 2.0.0 | SC65 | Convert EVGs into RFC 3647 format | 15-March-2024 | 15-May-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
