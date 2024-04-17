@@ -314,6 +314,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **CA Key Pair**: A Key Pair where the Public Key appears as the Subject Public Key Info in one or more Root CA Certificate(s) and/or Subordinate CA Certificate(s).
 
+**Canonical Authorization Domain Name**: The domain name found within the RDATA value of a CNAME record located at an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
+
 **Certificate**: An electronic document that uses a digital signature to bind a public key and an identity.
 
 **Certificate Data**: Certificate requests and data related thereto (whether obtained from the Applicant or otherwise) in the CA's possession or control or to which the CA has access.
@@ -786,7 +788,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.7 DNS Change
 
-Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token for either in a DNS CNAME, TXT or CAA record for either 1) an Authorization Domain Name; or 2) an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
+Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token either in a DNS CNAME, TXT or CAA record for 1) an Authorization Domain Name; or 2) an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character; or 3) a Canonical Authorization Domain Name.
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after
 
@@ -794,6 +796,11 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the Cer
   ii. if the Applicant submitted the Certificate request, the time frame permitted for reuse of validated information relevant to the Certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of these Guidelines or Section 3.2.2.14.3 of the EV Guidelines).
 
 CAs using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
+
+CAs MAY operate domains for the purpose of assisting Applicants with this validation, and MAY instruct Applicants to add a CNAME record containing a Canonical Authorization Domain Name controlled by the CA. If the CA does so, the CA SHALL 
+  i. ensure that each Canonical Authorization Domain Name is used for a unique Applicant, and not shared across multiple Applicants; and 
+  ii. complete the validation within 8 hours of performing the DNS lookup; and
+  iii. prohibit A and AAAA records in the DNS zones the CA operates for assisting Applicants with this validation.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
