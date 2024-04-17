@@ -1,10 +1,10 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
-subtitle: Version 2.0.3
+subtitle: Version 2.0.4
 author:
   - CA/Browser Forum
 
-date: 15-April-2024  
+date: 17-April-2024  
 
 
 
@@ -138,7 +138,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.1 | SC63  | Make OCSP optional, require CRLs, and incentivize automation | 17-Aug-2023 | 15-Mar-2024 |
 | 2.0.2 | SC66 | 2023 Cleanup | 23-Nov-2023 | 8-Jan-2024 |
 | 2.0.3 | SC69 | Clarify router and firewall logging requirements | 13-March-2024 | 15-April-2024 |
-
+| 2.0.4 | SC65 | Convert EVGs into RFC 3647 format | 15-March-2024 | 15-May-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
