@@ -1,9 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
-subtitle: Version 2.0.3
+subtitle: Version 2.0.4
 author:
   - CA/Browser Forum
-date: 15-April-2024  
+
+date: 17-April-2024  
+
 
 
 copyright: |
@@ -136,7 +138,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.1 | SC63  | Make OCSP optional, require CRLs, and incentivize automation | 17-Aug-2023 | 15-Mar-2024 |
 | 2.0.2 | SC66 | 2023 Cleanup | 23-Nov-2023 | 8-Jan-2024 |
 | 2.0.3 | SC69 | Clarify router and firewall logging requirements | 13-March-2024 | 15-April-2024 |
-
+| 2.0.4 | SC65 | Convert EVGs into RFC 3647 format | 15-March-2024 | 15-May-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -767,7 +769,7 @@ Confirming the Applicant's control over the FQDN by confirming the presence of a
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after
 
   i. 30 days or
-  ii. if the Applicant submitted the Certificate request, the time frame permitted for reuse of validated information relevant to the Certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of these Guidelines or Section 11.14.3 of the EV Guidelines).
+  ii. if the Applicant submitted the Certificate request, the time frame permitted for reuse of validated information relevant to the Certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of these Guidelines or Section 3.2.2.14.3 of the EV Guidelines).
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
@@ -2384,7 +2386,7 @@ For a Subscriber Certificate to be Extended Validation, it MUST comply with the 
 
 | __Field__             | __Requirements__     |
 | --                    | -------              |
-| `subject`             | See Guidelines for the Issuance and Management of Extended Validation Certificates, Section 9.2. |
+| `subject`             | See Guidelines for the Issuance and Management of Extended Validation Certificates, Section 7.1.4.2. |
 | `certificatePolicies` | MUST be present. MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.1` as a `policyIdentifier`. See [Section 7.1.2.7.9](#71279-subscriber-certificate-certificate-policies). |
 | All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) and the Guidelines for the Issuance and Management of Extended Validation Certificates. |
 
