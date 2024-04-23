@@ -3461,7 +3461,7 @@ The Certificate Warranties specifically include, but are not limited to, the fol
 5. **Subscriber Agreement**: That, 
     i. the Subscriber has access to the most current version of the Subscriber Agreement, which is posted to the CA's policy document repository or has been provided through other means;
    ii. the applicable Subscriber Agreement is the Subscriber Agreement that was in force when the Certificate was issued; and
-   iii. if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative has accepted the Subscriber Agreement;
+   iii. the Subscriber and CA (even if they are the same entity or are Affiliated) are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements;
 6. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
 7. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
 
@@ -3472,8 +3472,6 @@ The Root CA SHALL be responsible for the performance and warranties of the Subor
 No stipulation.
 
 ### 9.6.3 Subscriber representations and warranties
-
-Prior to 2025-03-15, the CA MAY continue to use the 'Terms of Use' as defined in the previous version of these Requirements. Effective 2025-03-15, the CA SHALL remove all references to 'Terms of Use' from their CP and CPS documents and processes.
 
 The CA SHALL require, as part of the Subscriber Agreement, that the Applicant make the commitments and warranties in this section for the benefit of the CA and the Certificate Beneficiaries.
 
