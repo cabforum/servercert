@@ -1,9 +1,9 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
-subtitle: Version 2.0.3
+subtitle: Version 2.0.5
 author:
   - CA/Browser Forum
-date: 22-February-2024
+date: 22-May-2024
 
 
 copyright: |
@@ -3459,8 +3459,8 @@ The Certificate Warranties specifically include, but are not limited to, the fol
    ii. followed the procedure when issuing the Certificate; and
    iii. accurately described the procedure in the CA's Certificate Policy and/or Certification Practice Statement;
 5. **Subscriber Agreement**: That, 
-    i. the Subscriber has been provided with the most current version of the Subscriber Agreement;
-   ii. the applicable Subscriber Agreement is the Subscriber Agreement that was accepted when the Certificate was issued; and
+    i. the Subscriber has access to the most current version of the Subscriber Agreement, which is posted to the CA's policy document repository or has been provided through other means;
+   ii. the applicable Subscriber Agreement is the Subscriber Agreement that was in force when the Certificate was issued; and
    iii. if the CA and Subscriber are not Affiliated, the Subscriber and CA are parties to a legally valid and enforceable Subscriber Agreement that satisfies these Requirements, or, if the CA and Subscriber are the same entity or are Affiliated, the Applicant Representative has accepted the Subscriber Agreement;
 6. **Status**: That the CA maintains a 24 x 7 publicly-accessible Repository with current information regarding the status (valid or revoked) of all unexpired Certificates; and
 7. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
@@ -3473,11 +3473,13 @@ No stipulation.
 
 ### 9.6.3 Subscriber representations and warranties
 
+Prior to 2025-03-15, the CA MAY continue to use the 'Terms of Use' as defined in the previous version of these Requirements. Effective 2025-03-15, the CA SHALL remove all references to 'Terms of Use' from their CP and CPS documents and processes.
+
 The CA SHALL require, as part of the Subscriber Agreement, that the Applicant make the commitments and warranties in this section for the benefit of the CA and the Certificate Beneficiaries.
 
 Prior to the issuance of a Certificate, the CA SHALL obtain, for the express benefit of the CA and the Certificate Beneficiaries, the Applicant's acceptance of the Subscriber Agreement with the CA.
 
-The CA SHALL implement a process to ensure that if the CA and Subscriber are not Affiliated, each such Subscriber Agreement can be legally enforced against the Applicant, or if the CA and Subscriber are the same entity or are Affiliated, that the Applicant has committed to comply with the Subscriber Agreement. The Subscriber Agreement MUST apply to the Certificate to be issued pursuant to the certificate request. The CA MAY use an electronic or "click-through" Subscriber Agreement. A separate Subscriber Agreement MAY be used for each certificate request, or a single Subscriber Agreement MAY be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement.
+The CA SHALL implement a process to ensure that if the CA and Subscriber are not Affiliated, each such Subscriber Agreement can be legally enforced against the Applicant. The CA SHALL implement a process to ensure that if the CA and Subscriber are the same entity or are Affiliated, that the Applicant has committed to comply with the Subscriber Agreement. The Subscriber Agreement MUST apply to the Certificate to be issued pursuant to the certificate request. The CA MAY use an electronic or "click-through" Subscriber Agreement. A separate Subscriber Agreement MAY be used for each certificate request, or a single Subscriber Agreement MAY be used to cover multiple future certificate requests and the resulting Certificates, so long as each Certificate that the CA issues to the Applicant is clearly covered by that Subscriber Agreement.
 
 The Subscriber Agreement MUST contain provisions imposing on the Applicant itself (or made by the Applicant on behalf of its principal or agent under a subcontractor or hosting service relationship) the following obligations and warranties:
 
