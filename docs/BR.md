@@ -139,8 +139,6 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.4 | SC65 | Convert EVGs into RFC 3647 format | 15-March-2024 | 15-May-2024 |
 | 2.0.X | SC67 | Require domain validation and CAA checks to be performed from multiple Network Perspectives | TBD | TBD |
 
-
-
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
 ### 1.2.2 Relevant Dates
