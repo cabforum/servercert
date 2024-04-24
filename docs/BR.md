@@ -1082,7 +1082,7 @@ Remote Network Perspectives performing Multi-Perspective Issuance Corroboration:
 
 MUST: 
 - Network Hardening
-   - Rely upon Internet Service Providers or network operators that implement measures to mitigate BGP routing incidents in the global Internet routing system. 
+   - Rely upon networks (e.g., Internet Service Providers) that implement measures to mitigate BGP routing incidents in the global Internet routing system. 
 
 SHOULD:
 - Facility & Service Provider Requirements
@@ -1099,7 +1099,7 @@ SHOULD:
   - Implement multi-factor authentication for all user accounts.
 - Network Hardening
   - Configure each network boundary control (firewall, switch, router, gateway, or other network control device or system) with rules that support only the services, protocols, ports, and communications identified as necessary to its operations.
-  - Rely upon Internet Service Providers or network operators that: 1) use mechanisms based on Secure Inter-Domain Routing (RFC 6480), for example, BGP Prefix Origin Validation (RFC 6811), 2) make use of other non-RPKI route-leak prevention mechanisms (such as RFC 9234), and 3) apply current best practices described in BCP 194. While It is RECOMMENDED that under normal operating conditions Network Perspectives performing Multi-Perspective Issuance Corroboration forward all Internet traffic via a network or set of networks that filter all or some RPKI-invalid BGP routes as defined by RFC 6811, it is NOT REQUIRED.
+  - Rely upon networks (e.g., Internet Service Providers) that: 1) use mechanisms based on Secure Inter-Domain Routing (RFC 6480), for example, BGP Prefix Origin Validation (RFC 6811), 2) make use of other non-RPKI route-leak prevention mechanisms (such as RFC 9234), and 3) apply current best practices described in BCP 194. While It is RECOMMENDED that under normal operating conditions Network Perspectives performing Multi-Perspective Issuance Corroboration forward all Internet traffic via a network or set of networks that filter RPKI-invalid BGP routes as defined by RFC 6811, it is NOT REQUIRED.
 
 Beyond the above considerations, computing systems performing Multi-Perspective Issuance Corroboration are considered outside of the audit scope described in Section 8 of these Requirements. 
 
