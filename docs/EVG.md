@@ -1,10 +1,10 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.0
+subtitle: Version 2.0.1
 author:
   - CA/Browser Forum
-date: 17 April, 2024
+date: 6 May, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -80,6 +80,7 @@ These Guidelines do not address the verification of information, or the issuance
 | 1.8.0 | SC56 | 2022 Cleanup | 25-Oct-2022 | 30-Nov-2022 |
 | 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 1-Feb-2024 | 4-Mar-2024 |
 | 2.0.0 | SC65 | Convert EVGs into RFC 3647 format | 15-March-2024 | 15-May-2024 |
+| 2.0.1 | SC72 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 3-April-2024 | 6-May-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -1437,32 +1438,13 @@ All provisions of the Baseline Requirements concerning Minimum Cryptographic Alg
 
    Otherwise, it MAY contain the anyPolicy identifier.
 
-2. The following fields MUST be present if the Subordinate CA is not controlled by the entity that controls the Root CA.
-
-   * `certificatePolicies:policyQualifiers:policyQualifierId`
-
-      `id-qt 1` [RFC 5280]
-
-   * `certificatePolicies:policyQualifiers:qualifier:cPSuri`
-
-      HTTP URL for the Root CA's Certification Practice Statement
-
-3. The `certificatePolicies` extension in EV Certificates issued to Subscribers MUST include the following:
+2. The `certificatePolicies` extension in EV Certificates issued to Subscribers MUST include the following:
 
    * `certificatePolicies:policyIdentifier` (Required)
 
       The Issuer's EV policy identifier
 
-   * `certificatePolicies:policyQualifiers:policyQualifierId` (Required)
-
-      `id-qt 1` [RFC 5280]
-
-   * `certificatePolicies:policyQualifiers:qualifier:cPSuri` (Required)
-
-      HTTP URL for the Subordinate CA's Certification Practice Statement
-
-4. The `cRLDistributionPoints` extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an `authorityInformationAccess` extension.
-
+3. The `cRLDistributionPoints` extension MUST be present in Subscriber Certificates if the certificate does not specify OCSP responder locations in an `authorityInformationAccess` extension.
 
 ### 7.1.5  Name constraints
 
