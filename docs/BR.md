@@ -3354,9 +3354,9 @@ The CA SHALL undergo an audit in accordance with one of the following schemes:
 2. ETSI:
   * ETSI EN 319 411-1 v1.4.1 or newer, which includes normative references to ETSI EN 319 401 (the latest version of the referenced ETSI documents should be applied); or
 3. Other:
-* If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either
-   a. encompasses all requirements of one of the above schemes or
-   b. consists of comparable criteria that are available for public review.
+  * If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either
+    a. encompasses all requirements of one of the above schemes; or
+    b. consists of comparable criteria that are available for public review.
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
