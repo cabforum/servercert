@@ -382,6 +382,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Legal Entity**: An association, corporation, partnership, proprietorship, trust, government entity or other entity with legal standing in a country's legal system.
 
+**Linting**: A process where the content of digitally signed data such as a Certificate, Certificate Revocation List, or OCSP response, or data-to-be-signed object such as a `tbsCertificate` (as described in [RFC 5280, Section 4.1.1.1](https://tools.ietf.org/doc/html/rfc5280##section-4.1.1.1)) is checked for conformance with the profiles and requirements defined in these Requirements.
+
 **Non-Reserved LDH Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "The set of valid LDH labels that do not have '`--`' in the third and fourth positions."
 
 **Object Identifier**: A unique alphanumeric or numeric identifier registered under the International Organization for Standardization's applicable standard for a specific object or object class.
@@ -1099,7 +1101,20 @@ No stipulation.
 
 ### 4.3.1 CA actions during certificate issuance
 
+#### 4.3.1.1 Manual authorization of certificate issuance for Root CAs
+
 Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
+
+#### 4.3.1.2 Linting of to-be-signed Certificate content
+
+Due to the complexity in implementing the certificate-formatting standards of these Requirements when issuing publicly-trusted Certificates, before a Certificate or Pre-certificate is issued, the CA SHOULD implement a Linting process to test the technical conformity of the Certificate to be issued with these Requirements.
+
+Methods used to produce a certificate containing to-be-signed Certificate content include, but are not limited to:
+
+1. Sign the `tbsCertificate` with a "dummy" Private Key whose Public Key component is not certified by a Certificate that chains to a publicly-trusted CA Certificate; or
+2. Specify a static value for the `signature` field of the Certificate ASN.1 SEQUENCE.
+
+CAs MAY implement their own certificate Linting tools, but CAs SHOULD use (and help improve) the Linting tools that have been widely adopted by the industry (see https://cabforum.org/resources/tools/).
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 
