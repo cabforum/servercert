@@ -1371,8 +1371,8 @@ __Contents__: For Private Organizations, this field MUST contain the Registratio
 For Government Entities, this field MUST contain a value that conforms to one of the following options:
 
 1. A Registration Number (or similar value) assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate; or
-2. If the Government Entity does not have a Registration Number: the readily verifiable date of creation of the Government Entity; or
-3. If both a Registration Number (or similar value) has not been assigned and the readily verifiable date of creation is not available: appropriate language to indicate that the Subject is a Government Entity.
+2. If a Registration Number (or similar value) assigned to the Subject is not available: the readily verifiable date of creation of the Government Entity; or
+3. If both a Registration Number (or similar value) and the readily verifiable date of creation are not available: appropriate language to indicate that the Subject is a Government Entity.
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field.  For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in any one of the common date formats.
 
