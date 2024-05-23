@@ -432,7 +432,7 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 
    A.  **Legal Existence**: Verify that the Applicant is a legally recognized Government Entity, in existence in the political subdivision in which such Government Entity operates.
    B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Registration Agency does assign a Registration Number, the CA SHALL attempt to obtain the Applicant's date of incorporation, registration, or formation that created the Government Entity.
+   C.  **Registration Number**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Registration Agency does assign a Registration Number, the CA SHALL attempt to obtain the Applicant's date of incorporation, registration, or formation.
 
 3. **Business Entity Subjects**
 
