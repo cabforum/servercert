@@ -177,6 +177,8 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Contract Signer**: A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
 
+**Date of Formation**: The date on which a Legal Entity is first recognized by the jurisdiction in which it was created.
+
 **Demand Deposit Account**: A deposit account held at a bank or other financial institution, the funds deposited in which are payable on demand.  The primary purpose of demand accounts is to facilitate cashless payments by means of check, bank draft, direct debit, electronic funds transfer, etc.  Usage varies among countries, but a demand deposit account is commonly known as a share draft account, a current account, or a checking account.
 
 **EV Authority**: A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the EV Certificate Request, to take the Request actions described in these Guidelines.
@@ -266,7 +268,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Registered Office**: The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received.
 
-**Registration Number**: A number or identifier assigned to a Legal Entity.
+**Registration Number**: The unique number assigned to a Business Entity, Private Organization, or Government Entity by the Incorporating Agency in such entity's Jurisdiction of Incorporation or Registration.
 
 **Regulated Financial Institution**: A financial institution that is regulated, supervised, and examined by governmental, national, state or provincial, or local authorities.
 
@@ -425,27 +427,27 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 
    A.  **Legal Existence**: Verify that the Applicant is a legally recognized entity, in existence and validly formed (e.g., incorporated) with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, and not designated on the records of the Incorporating or Registration Agency by labels such as "inactive", "invalid", "not current", or the equivalent.
    B.  **Organization Name**: Verify that the Applicant's formal legal name as recorded with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Incorporating or Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Incorporation or Registration.
+   C.  **Registration Number or Date of Formation**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Incorporating or Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's Date of Formation.
    D.  **Registered Agent**: Obtain the identity and address of the Applicant's Registered Agent or Registered Office (as applicable in the Applicant's Jurisdiction of Incorporation or Registration).
 
 2. **Government Entity Subjects**
 
    A.  **Legal Existence**: Verify that the Applicant is a legally recognized Government Entity, in existence in the political subdivision in which such Government Entity operates.
    B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Registration Agency does assign a Registration Number, the CA SHALL attempt to obtain the Applicant's date of incorporation, registration, or formation.
+   C.  **Registration Number or Date of Formation**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Registration Agency does not assign a Registration Number, the CA SHALL attempt to obtain the Applicant's Date of Formation.
 
 3. **Business Entity Subjects**
 
    A.  **Legal Existence**: Verify that the Applicant is engaged in business under the name submitted by the Applicant in the Application.
    B.  **Organization Name**: Verify that the Applicant's formal legal name as recognized by the Registration Agency in the Applicant's Jurisdiction of Registration matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: Attempt to obtain the specific unique Registration Number assigned to the Applicant by the Registration Agency in the Applicant's Jurisdiction of Registration.  Where the Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Registration.
+   C.  **Registration Number or Date of Formation**: Attempt to obtain the specific unique Registration Number assigned to the Applicant by the Registration Agency in the Applicant's Jurisdiction of Registration. Where the Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's Date of Formation.
    D.  **Principal Individual**: Verify the identity of the identified Principal Individual.
 
 4. **Non-Commercial Entity Subjects (International Organizations)**
 
    A.  **Legal Existence**: Verify that the Applicant is a legally recognized International Organization Entity.
    B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: Attempt to obtain the Applicant's date of formation.
+   C.  **Date of Formation**: Attempt to obtain the Applicant's Date of Formation.
 
 ##### 3.2.2.2.2 Acceptable Method of Verification
 
@@ -1366,13 +1368,13 @@ Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, t
 
 __Certificate Field__: `subject:serialNumber` (OID: 2.5.4.5)  
 __Required/Optional__: __Required__  
-__Contents__: For Private Organizations, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.A). If the Registration Number is a date of Incorporation or Registration, then the CA SHALL include that date in any one of the common date formats.
+__Contents__: For Private Organizations, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.A). If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats.
 
-For Government Entities, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.B). If the Registration Number is a date of incorporation, registration, or formation, then the CA SHALL include that date in any one of the common date formats. If no verifiable Registration Number could be obtained for the Applicant, then the CA SHALL include appropriate language to indicate that the Subject is a Government Entity.
+For Government Entities, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.B). If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats. If no verifiable Date of Formation could be obtained for the Applicant, then the CA SHALL include appropriate language to indicate that the Subject is a Government Entity (e.g., the string "Government Entity", the name or identifier of the legislative act that created the Government Entity, etc.).
 
-For Business Entities, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.C). If the Registration Number is a date of Registration, then the CA SHALL include that date in any one of the common date formats.
+For Business Entities, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.C). If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats.
 
-For Non‐Commercial Entity Subjects (International Organizations), the CA SHALL include the Registration Number as obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.D), using any one of the common date formats.
+For Non‐Commercial Entity Subjects (International Organizations), the CA SHALL include the Date of Formation as obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.D), using any one of the common date formats. If no verifiable Date of Formation could be obtained for the Applicant, then the CA SHALL include appropriate language to indicate that the Subject is a Non-Commercial Entity (e.g., the string "Non-Commercial Entity", the name or identifier of the legislative act that created the Non-Commercial Entity, etc.).
 
 If the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in [Section 3.2.2.1.3](#32213-disclosure-of-verification-sources), the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating Agency.
 
