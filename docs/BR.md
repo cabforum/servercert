@@ -193,8 +193,6 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2024-09-15     | 4.3.1.2             | the CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                      |
 | 2025-03-15     | 4.3.1.2                    | the CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                       |
 
-the CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements
-
 ## 1.3 PKI Participants
 
 The CA/Browser Forum is a voluntary organization of Certification Authorities and suppliers of Internet browser and other relying-party software applications.
