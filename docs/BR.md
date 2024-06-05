@@ -1109,7 +1109,7 @@ Certificate issuance by the Root CA SHALL require an individual authorized by th
 
 #### 4.3.1.2 Linting of to-be-signed Certificate content
 
-Due to the complexity in implementing the certificate-formatting standards of these Requirements when issuing publicly-trusted Certificates, before a Certificate or Precertificate [RFC 6962] is issued, effective 2024-09-15 the CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements. Effective 2025-03-15, the CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.
+Due to the complexity in implementing the certificate-formatting standards of these Requirements when issuing publicly-trusted Certificates, before a Certificate or Precertificate [RFC 6962] is issued, effective 2024-09-15 the CA SHOULD implement a Linting process to test the technical conformity of the to-be-signed Certificate with these Requirements. Effective 2025-03-15, the CA SHALL implement a Linting process to test the technical conformity of the to-be-signed Certificate with these Requirements.
 
 Methods used to produce a certificate containing to-be-signed Certificate content include, but are not limited to:
 
