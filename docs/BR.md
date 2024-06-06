@@ -384,7 +384,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Legal Entity**: An association, corporation, partnership, proprietorship, trust, government entity or other entity with legal standing in a country's legal system.
 
-**Linting**: A process where the content of digitally signed data such as a Precertificate [RFC 6962], Certificate, Certificate Revocation List, or OCSP response, or data-to-be-signed object such as a `tbsCertificate` (as described in [RFC 5280, Section 4.1.1.1](https://tools.ietf.org/doc/html/rfc5280##section-4.1.1.1)) is checked for conformance with the profiles and requirements defined in these Requirements.
+**Linting**: A process which the content of digitally signed data such as a Precertificate [RFC 6962], Certificate, Certificate Revocation List, or OCSP response, or data-to-be-signed object such as a `tbsCertificate` (as described in [RFC 5280, Section 4.1.1.1](https://tools.ietf.org/doc/html/rfc5280##section-4.1.1.1)) is checked for conformance with the profiles and requirements defined in these Requirements.
 
 **Non-Reserved LDH Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "The set of valid LDH labels that do not have '`--`' in the third and fourth positions."
 
@@ -1111,7 +1111,7 @@ Certificate issuance by the Root CA SHALL require an individual authorized by th
 
 Due to the complexity in implementing the certificate-formatting standards of these Requirements when issuing publicly-trusted Certificates, before a Certificate or Precertificate [RFC 6962] is issued, effective 2024-09-15 the CA SHOULD implement a Linting process to test the technical conformity of the to-be-signed Certificate with these Requirements. Effective 2025-03-15, the CA SHALL implement a Linting process to test the technical conformity of the to-be-signed Certificate with these Requirements.
 
-Methods used to produce a certificate containing to-be-signed Certificate content include, but are not limited to:
+Methods used to produce a certificate containing the to-be-signed Certificate content include, but are not limited to:
 
 1. Sign the `tbsCertificate` with a "dummy" Private Key whose Public Key component is not certified by a Certificate that chains to a publicly-trusted CA Certificate; or
 2. Specify a static value for the `signature` field of the Certificate ASN.1 SEQUENCE.
@@ -1120,22 +1120,22 @@ CAs MAY implement their own certificate Linting tools, but CAs SHOULD use the Li
 
 CAs are encouraged to contribute to open-source linting projects, such as by:
 
-- creating new or improving existing lints
-- reporting Requirements that are not covered by existing lints ("unlintable issues"), 
-- updating documentation (e.g., lint inventories), and 
-- generating test certificates.
+- creating new or improving existing lints,
+- reporting Requirements that are not covered by existing lints ("unlinted issues"), 
+- updating documentation of existing lints, and 
+- generating test certificates for positive/negative tests of specific lints.
 
 #### 4.3.1.3 Linting of issued Certificates
 
-CAs MAY use a Linting process to test each issued Certificates.
+CAs MAY use a Linting process to test each issued Certificate.
 
 CAs SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set described in [section 8.7](#87-self-audits).
 
 #### 4.3.1.4 Updates of Linting software
 
-If a CA uses third party developed software for Linting, it SHOULD monitor for updated versions of that software and plan for updates no later than three (3) months from the release of the update.
+If a CA uses Linting software developed by third parties, it SHOULD monitor for updated versions of that software and plan for updates no later than three (3) months from the release of the update.
 
-The CA MAY perform Linting on the corpus of its non-expired, non-revoked Subscriber Certificates whenever it updates the Linting software.
+The CA MAY perform Linting on the corpus of its unexpired, un-revoked Subscriber Certificates whenever it updates the Linting software.
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 
