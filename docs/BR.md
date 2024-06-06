@@ -1122,6 +1122,7 @@ CAs MAY implement their own certificate Linting tools, but CAs SHOULD use the Li
 CAs are encouraged to contribute to open-source Linting projects, such as by:
 
 - creating new or improving existing lints,
+- reporting potentially inaccurate linting results as bugs,
 - reporting Requirements that are not covered by existing lints ("unlinted issues"), 
 - updating documentation of existing lints, and 
 - generating test certificates for positive/negative tests of specific lints.
