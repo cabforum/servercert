@@ -1130,12 +1130,6 @@ CAs are encouraged to contribute to open-source Linting projects, such as by:
 
 CAs MAY use a Linting process to test each issued Certificate.
 
-#### 4.3.1.4 Updates of Linting software
-
-If a CA uses Linting software developed by third parties, it SHOULD monitor for updated versions of that software and plan for updates no later than three (3) months from the release of the update.
-
-The CA MAY perform Linting on the corpus of its unexpired, un-revoked Subscriber Certificates whenever it updates the Linting software.
-
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 
 No stipulation.
@@ -1843,6 +1837,10 @@ The CA SHALL enforce multi-factor authentication for all accounts capable of dir
 ## 6.6 Life cycle technical controls
 
 ### 6.6.1 System development controls
+
+If a CA uses Linting software developed by third parties, it SHOULD monitor for updated versions of that software and plan for updates no later than three (3) months from the release of the update.
+
+The CA MAY perform Linting on the corpus of its unexpired, un-revoked Subscriber Certificates whenever it updates the Linting software.
 
 ### 6.6.2 Security management controls
 
