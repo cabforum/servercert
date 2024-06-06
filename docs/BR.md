@@ -1118,7 +1118,7 @@ Methods used to produce a certificate containing the to-be-signed Certificate co
 
 CAs MAY implement their own certificate Linting tools, but CAs SHOULD use the Linting tools that have been widely adopted by the industry (see https://cabforum.org/resources/tools/). 
 
-CAs are encouraged to contribute to open-source linting projects, such as by:
+CAs are encouraged to contribute to open-source Linting projects, such as by:
 
 - creating new or improving existing lints,
 - reporting Requirements that are not covered by existing lints ("unlinted issues"), 
