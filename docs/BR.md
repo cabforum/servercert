@@ -1123,7 +1123,7 @@ CAs are encouraged to contribute to open-source Linting projects, such as by:
 
 - creating new or improving existing lints,
 - reporting potentially inaccurate linting results as bugs,
-- reporting Requirements that are not covered by existing lints ("unlinted issues"), 
+- notifying maintainers of Linting software of checks that are not covered by existing lints,
 - updating documentation of existing lints, and 
 - generating test certificates for positive/negative tests of specific lints.
 
@@ -3421,7 +3421,7 @@ The Audit Report MUST be available as a PDF, and SHALL be text searchable for al
 
 ## 8.7 Self-Audits
 
-During the period in which the CA issues Certificates, the CA SHALL monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken. Effective 2025-03-15 the CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against this sample set.
+During the period in which the CA issues Certificates, the CA SHALL monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken. Effective 2025-03-15, the CA SHOULD use a Linting process to verify the technical accuracy of Certificates within the selected sample set.
 
 Except for Delegated Third Parties that undergo an annual audit that meets the criteria specified in [Section 8.4](#84-topics-covered-by-assessment), the CA SHALL strictly control the service quality of Certificates issued or containing information verified by a Delegated Third Party by having a Validation Specialist employed by the CA perform ongoing quarterly audits against a randomly selected sample of at least the greater of one certificate or three percent of the Certificates verified by the Delegated Third Party in the period beginning immediately after the last sample was taken. The CA SHALL review each Delegated Third Party's practices and procedures to ensure that the Delegated Third Party is in compliance with these Requirements and the relevant Certificate Policy and/or Certification Practice Statement.
 
