@@ -466,7 +466,7 @@ The script outputs:
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
 
-**Short-lived Subscriber Certificate**: For Certificates issued on or after 15 March 2024 and prior to 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 10 days (864,000 seconds). For Certificates issued on or after 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 7 days (604,800 seconds).
+**Short-lived Subscriber Certificate**: For Certificates issued on or after 15 March 2024 and prior to 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 10 days. For Certificates issued on or after 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 7 days.
 
 **Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
 
@@ -495,6 +495,8 @@ The script outputs:
 **Valid Certificate**: A Certificate that passes the validation procedure specified in RFC 5280.
 
 **Validation Specialist**: Someone who performs the information verification duties specified by these Requirements.
+
+**Validity Interval**: For CRLs and OCSP Responses, the period of time from thisUpdate through nextUpdate, inclusive.
 
 **Validity Period**: From RFC 5280 (<http://tools.ietf.org/html/rfc5280>): "The period of time from notBefore through notAfter, inclusive."
 
@@ -603,6 +605,10 @@ X.509, Recommendation ITU-T X.509 (08/2005) \| ISO/IEC 9594-8:2005, Information 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Requirements shall be interpreted in accordance with RFC 2119.
 
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
+
+All statements of time periods (for example, "5 days") SHALL be taken to mean exactly that period of time, and not a fractional period more (e.g. not "5 and a half days").
+
+For the purpose of computing Certificate Validity Periods and CRL and OCSP Validity Intervals, one hour is defined to be exactly 3,600 seconds, and one day is defined to be exactly 86,400 seconds, ignoring leap-seconds. Any amount of time greater than this, including fractional seconds, SHALL represent an additional unit of measure, such as an additional hour or an additional day.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
 
@@ -1341,14 +1347,12 @@ The following SHALL apply for communicating the status of Certificates which inc
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019. The CA MAY process the Nonce extension (`1.3.6.1.5.5.7.48.1.2`) in accordance with RFC 8954.
 
-The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
-
 For the status of Subscriber Certificates:
 
-1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
-2. OCSP responses MUST have a validity interval less than or equal to ten days;
-3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
-4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
+1. OCSP responses MUST have a Validity Interval greater than or equal to eight hours;
+2. OCSP responses MUST have a Validity Interval less than or equal to ten days;
+3. For OCSP responses with Validity Intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the Validity Interval before the nextUpdate.
+4. For OCSP responses with Validity Intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
 For the status of Subordinate CA Certificates:
 
@@ -1793,7 +1797,7 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 
 Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. 
 
-For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
+Due to the precision with which the Certificate Validity Periods is measured, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, to prevent off-by-one-second errors.
 
 ## 6.4 Activation data
 
