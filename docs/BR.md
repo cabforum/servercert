@@ -466,6 +466,8 @@ The script outputs:
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
 
+**Scheme**: A URI Scheme that is defined by RFC 3986, section 3.1. 
+
 **Short-lived Subscriber Certificate**: For Certificates issued on or after 15 March 2024 and prior to 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 10 days (864,000 seconds). For Certificates issued on or after 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 7 days (604,800 seconds).
 
 **Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
@@ -2089,10 +2091,10 @@ Table: Policy Restricted
 
 Table: Permitted `policyQualifiers`
 
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| __policyQualifier__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | When provided, every policyQualifier SHALL have the uniformResourceIdentifier SCHEME HTTP or HTTPS for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other policyQualifier                  | MUST NOT     | -              | Other policyQualifiers SHALL NOT be present. |
 
 
 ##### 7.1.2.3.3 Technically Constrained Non-TLS Subordinate CA Extended Key Usage
@@ -2425,11 +2427,11 @@ The `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDescription`s. E
 
 The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with the same `accessMethod`, if permitted for that `accessMethod`. When multiple `AccessDescription`s are present with the same `accessMethod`, each `accessLocation` MUST be unique, and each `AccessDescription` MUST be ordered in priority for that `accessMethod`, with the most-preferred `accessLocation` being the first `AccessDescription`. No ordering requirements are given for `AccessDescription`s that contain different `accessMethod`s, provided that previous requirement is satisfied.
 
-| __Access Method__ | __OID__            | __Access Location__         | __Presence__ | __Maximum__ | __Description__ |
+| __Access Method__ | __OID__            | __Access Location__         | __Presence__ | __Maximum__ | __Access Description__ |
 | --                | --                 | ----                        | -            | -          | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
-| `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*         | A HTTP URL of the Issuing CA's certificate. |
-| Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
+| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | When provided, every accessMethod SHALL have the uniformResourceIdentifier SCHEME HTTP. <br>Other schemes SHALL NOT be present. |
+| `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*         | When provided, every accessMethod SHALL have the uniformResourceIdentifier SCHEME HTTP. <br>Other schemes SHALL NOT be present. |
+| Any other value   | -                  | -                           | MUST NOT     | -          | Other `accessMethod`s SHALL NOT be present. |
 
 ##### 7.1.2.7.8 Subscriber Certificate Basic Constraints
 
@@ -2456,10 +2458,10 @@ This Profile RECOMMENDS that the first `PolicyInformation` value within the Cert
 
 Table: Permitted `policyQualifiers`
 
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| __policyQualifier__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | When provided, every policyQualifier SHALL have the uniformResourceIdentifier SCHEME HTTP or HTTPS for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other policyQualifier                  | MUST NOT     | -              | Other policyQualifiers SHALL NOT be present. |
 
 [^first_policy_note]: Although RFC 5280 allows `PolicyInformation`s to appear in any order, several client implementations have implemented logic that considers the `policyIdentifier` that matches a given filter. As such, ensuring the Reserved Certificate Policy Identifier is the first `PolicyInformation` reduces the risk of interoperability challenges.
 
@@ -2642,10 +2644,10 @@ If present, the Certificate Policies extension MUST contain at least one `Policy
 
 Table: Permitted `policyQualifiers`
 
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| __policyQualifier__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | When provided, every policyQualifier SHALL have the uniformResourceIdentifier SCHEME HTTP or HTTPS for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other policyQualifier                  | MUST NOT     | -              | Other policyQualifiers SHALL NOT be present. |
 
 
 **Note**: See [Section 7.1.2.8.2](#71282-ocsp-responder-extensions) for applicable effective dates for when this extension may be included.
@@ -2834,10 +2836,11 @@ If the `policyQualifiers` is permitted and present within a `PolicyInformation` 
 
 Table: Permitted `policyQualifiers`
 
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| __policyQualifier__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | When provided, every policyQualifier SHALL have the uniformResourceIdentifier SCHEME HTTP or HTTPS for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other policyQualifier                  | MUST NOT     | -              | Other policyQualifiers SHALL NOT be present.
+|
 
 ##### 7.1.2.10.6 CA Certificate Extended Key Usage
 
@@ -2953,7 +2956,7 @@ Table: `DistributionPoint` profile
 | `reasons`           | MUST NOT        |                 |
 | `cRLIssuer`         | MUST NOT        |                 |
 
-A `fullName` MUST contain at least one `GeneralName`; it MAY contain more than one. All `GeneralName`s MUST be of type `uniformResourceIdentifier`, and the scheme of each MUST be "http". The first `GeneralName` must contain the HTTP URL of the Issuing CA's CRL service for this certificate.
+A `fullName` MUST contain at least one `GeneralName`; it MAY contain more than one. All `GeneralName`s MUST be of type `uniformResourceIdentifier`, and have the uniformResourceIdentifier SCHEME HTTP. Every `GeneralName` must contain the HTTP URL of the Issuing CA's CRL service for this certificate.
 
 ##### 7.1.2.11.3 Signed Certificate Timestamp List
 
