@@ -1327,6 +1327,7 @@ No stipulation.
 The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
 
 A certificate serial is "assigned" if:
+
 - a Certificate or Precertificate with that serial number has been issued by the Issuing CA, using any current or previous key associated with that CA subject; or
 - a Precertificate with that serial number has been issued by a Precertificate Signing Certificate, as defined in [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile), associated with the Issuing CA.
 
