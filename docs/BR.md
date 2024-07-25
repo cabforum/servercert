@@ -2429,8 +2429,8 @@ The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with t
 
 | __Access Method__ | __OID__            | __Access Location__         | __Presence__ | __Maximum__ | __Access Description__ |
 | --                | --                 | ----                        | -            | -          | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | When provided, every accessMethod SHALL have the uniformResourceIdentifier SCHEME HTTP. <br>Other schemes SHALL NOT be present. |
-| `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*         | When provided, every accessMethod SHALL have the uniformResourceIdentifier SCHEME HTTP. <br>Other schemes SHALL NOT be present. |
+| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | When provided, every accessMethod SHALL have the uniformResourceIdentifier SCHEME HTTP. Other schemes SHALL NOT be present. |
+| `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*         | When provided, every accessMethod SHALL have the uniformResourceIdentifier SCHEME HTTP. Other schemes SHALL NOT be present. |
 | Any other value   | -                  | -                           | MUST NOT     | -          | Other `accessMethod`s SHALL NOT be present. |
 
 ##### 7.1.2.7.8 Subscriber Certificate Basic Constraints
