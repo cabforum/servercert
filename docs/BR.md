@@ -1,10 +1,10 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
-subtitle: Version 2.0.5
+subtitle: Version 2.0.6
 author:
   - CA/Browser Forum
 
-date: 7-June-2024  
+date: 5-August-2024  
 
 
 
@@ -140,6 +140,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.3 | SC69 | Clarify router and firewall logging requirements | 13-March-2024 | 15-April-2024 |
 | 2.0.4 | SC65 | Convert EVGs into RFC 3647 format | 15-March-2024 | 15-May-2024 |
 | 2.0.5 | SC73 | Compromised and weak keys | 3-May-2024 | 1-July-2024 |
+| 2.0.6 | SC75 | Pre-sign linting | 28-June-2024 | 6-August-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
