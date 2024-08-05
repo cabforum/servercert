@@ -1,9 +1,13 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
-subtitle: Version 2.0.X
+
+subtitle: Version 2.0.6
 author:
   - CA/Browser Forum
-date: TBD  
+
+date: 5-August-2024  
+
+
 
 
 copyright: |
@@ -137,59 +141,66 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.2 | SC66 | 2023 Cleanup | 23-Nov-2023 | 8-Jan-2024 |
 | 2.0.3 | SC69 | Clarify router and firewall logging requirements | 13-March-2024 | 15-April-2024 |
 | 2.0.4 | SC65 | Convert EVGs into RFC 3647 format | 15-March-2024 | 15-May-2024 |
-| 2.0.X | SC67 | Require domain validation and CAA checks to be performed from multiple Network Perspectives | TBD | TBD |
+| 2.0.5 | SC73 | Compromised and weak keys | 3-May-2024 | 1-July-2024 |
+| 2.0.6 | SC75 | Pre-sign linting | 28-June-2024 | 6-August-2024 |
+
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
 ### 1.2.2 Relevant Dates
 
-| **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
-|--|--|----------|
-| 2013-01-01 | 6.1.6 | For RSA public keys, CAs SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. |
-| 2013-01-01 | 4.9.10 | CAs SHALL support an OCSP capability using the GET method. |
-| 2013-01-01 | 5 | CAs SHALL comply with the Network and Certificate System Security Requirements. |
-| 2013-08-01 | 4.9.10 | OCSP Responders SHALL NOT respond "Good" for Unissued Certificates. |
-| 2013-09-01 | 3.2.2.6 | CAs SHALL revoke any certificate where wildcard character occurs in the first label position immediately to the left of a "registry-controlled" label or "public suffix". |
-| 2013-12-31 | 6.1.5 | CAs SHALL confirm that the RSA Public Key is at least 2048 bits or that one of the following ECC curves is used: P-256, P-384, or P-521. A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor. |
-| 2015-01-16 | 7.1.3 | CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017. |
-| 2015-04-01 | 6.3.2 | CAs SHALL NOT issue certificates with validity periods longer than 39 months, except under certain circumstances. |
-| 2015-04-15 | 2.2 | A CA's CPS must state whether it reviews CAA Records, and if so, its policy or practice on processing CAA records for Fully-Qualified Domain Names. |
-| 2015-11-01 | 7.1.4.2.1 | Issuance of Certificates with Reserved IP Address or Internal Name prohibited. |
-| 2016-01-01 | 7.1.3 | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm. |
-| 2016-06-30 | 6.1.7 | CAs MUST NOT issue Subscriber Certificates directly from Root CAs. |
-| 2016-06-30 | 6.3.2 | CAs MUST NOT issue Subscriber Certificates with validity periods longer than 39 months, regardless of circumstance. |
-| 2016‐09‐30 | 7.1 | CAs SHALL generate Certificate serial numbers greater than zero (0) containing at least 64 bits of output from a CSPRNG |
-| 2016-10-01 | 7.1.4.2.1 | All Certificates with Reserved IP Address or Internal Name must be revoked. |
-| 2016-12-03 | 1 and 2 | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable |
-| 2017-01-01 | 7.1.3 | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred). |
-| 2017-03-01 | 3.2.2.4 | CAs MUST follow revised validation requirements in Section 3.2.2.4. |
-| 2017-09-08 | 3.2.2.8 | CAs MUST check and process CAA records |
-| 2018-03-01 | 4.2.1 and 6.3.2 | Certificates issued MUST have a Validity Period no greater than 825 days and re-use of validation information limited to 825 days |
-| 2018-05-31 | 2.2 | CP and CPS must follow RFC 3647 format |
-| 2018-08-01 | 3.2.2.4.1 and .5 | CAs must stop using domain validation methods BR 3.2.2.4.1 and 3.2.2.4.5, stop reusing validation data from those methods |
-| 2019-01-15 | 7.1.4.2.1 | All certificates containing an underscore character in any dNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019 |
-| 2019-05-01 | 7.1.4.2.1 | underscore characters ("_") MUST NOT be present in dNSName entries |
-| 2019-06-01 | 3.2.2.4.3 | CAs SHALL NOT perform validations using this method after May 31, 2019. Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.
-| 2019-08-01 | 3.2.2.5 | CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address |
-| 2019-08-01 | 3.2.2.5.4 | CAs SHALL NOT perform validations using this method after July 31, 2019. Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this Section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
-| 2020-06-03 | 3.2.2.4.6 | CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25 |
-| 2020-08-01 | 8.6 | Audit Reports for periods on-or-after 2020-08-01 MUST be structured as defined. |
-| 2020-09-01 | 6.3.2 | Certificates issued SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. |
-| 2020-09-30 | 4.9.10 | OCSP responses MUST conform to the validity period requirements specified. |
-| 2020-09-30 | 7.1.4.1 | Subject and Issuer Names for all possible certification paths MUST be byte-for-byte identical. |
-| 2020-09-30 | 7.1.6.4 | Subscriber Certificates MUST include a CA/Browser Forum Reserved Policy Identifier in the Certificate Policies extension. |
-| 2020-09-30 | 7.2 and 7.3 | All OCSP and CRL responses for Subordinate CA Certificates MUST include a meaningful reason code. |
-| 2021-07-01 | 3.2.2.8 | CAA checking is no longer optional if the CA is the DNS Operator or an Affiliate. |
-| 2021-07-01 | 3.2.2.4.18 and 3.2.2.4.19 | Redirects MUST be the result of one of the HTTP status code responses defined.  |
-| 2021-10-01 | 7.1.4.2.1 | Fully-Qualified Domain Names MUST consist solely of P-Labels and Non-Reserved LDH Labels. |
-| 2021-12-01 | 3.2.2.4 | CAs MUST NOT use methods 3.2.2.4.6, 3.2.2.4.18, or 3.2.2.4.19 to issue wildcard certificates or with Authorization Domain Names other than the FQDN. |
-| 2022-06-01 | 7.1.3.2.1 | CAs MUST NOT sign OCSP responses using the SHA-1 hash algorithm. |
-| 2022-09-01 | 7.1.4.2.2 | CAs MUST NOT include the organizationalUnitName field in the Subject |
-| 2023-01-15 | 7.2.2 | Sharded or partitioned CRLs MUST have a distributionPoint |
-| 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code |
-| 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0 |
-| 2024-03-15 | 4.9.7 | CAs MUST generate and publish CRLs. |
-| 2025-03-15 | 3.2.2.9 | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified. |
+
+| **Compliance** | **Section(s)**            | **Summary Description (See Full Text for Details)**                                                                                                                                                                                                                                                                                                                                                                                                      |
+|----------------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2013-01-01     | 6.1.6                     | For RSA public keys, CAs SHALL confirm that the value of the public exponent is an odd number equal to 3 or more.                                                                                                                                                                                                                                                                                                                                        |
+| 2013-01-01     | 4.9.10                    | CAs SHALL support an OCSP capability using the GET method.                                                                                                                                                                                                                                                                                                                                                                                               |
+| 2013-01-01     | 5                         | CAs SHALL comply with the Network and Certificate System Security Requirements.                                                                                                                                                                                                                                                                                                                                                                          |
+| 2013-08-01     | 4.9.10                    | OCSP Responders SHALL NOT respond "Good" for Unissued Certificates.                                                                                                                                                                                                                                                                                                                                                                                      |
+| 2013-09-01     | 3.2.2.6                   | CAs SHALL revoke any certificate where wildcard character occurs in the first label position immediately to the left of a "registry-controlled" label or "public suffix".                                                                                                                                                                                                                                                                                |
+| 2013-12-31     | 6.1.5                     | CAs SHALL confirm that the RSA Public Key is at least 2048 bits or that one of the following ECC curves is used: P-256, P-384, or P-521. A Root CA Certificate issued prior to 31 Dec. 2010 with an RSA key size less than 2048 bits MAY still serve as a trust anchor.                                                                                                                                                                                  |
+| 2015-01-16     | 7.1.3                     | CAs SHOULD NOT issue Subscriber Certificates utilizing the SHA-1 algorithm with an Expiry Date greater than 1 January 2017.                                                                                                                                                                                                                                                                                                                              |
+| 2015-04-01     | 6.3.2                     | CAs SHALL NOT issue certificates with validity periods longer than 39 months, except under certain circumstances.                                                                                                                                                                                                                                                                                                                                        |
+| 2015-04-15     | 2.2                       | A CA's CPS must state whether it reviews CAA Records, and if so, its policy or practice on processing CAA records for Fully-Qualified Domain Names.                                                                                                                                                                                                                                                                                                      |
+| 2015-11-01     | 7.1.4.2.1                 | Issuance of Certificates with Reserved IP Address or Internal Name prohibited.                                                                                                                                                                                                                                                                                                                                                                           |
+| 2016-01-01     | 7.1.3                     | CAs MUST NOT issue any new Subscriber certificates or Subordinate CA certificates using the SHA-1 hash algorithm.                                                                                                                                                                                                                                                                                                                                        |
+| 2016-06-30     | 6.1.7                     | CAs MUST NOT issue Subscriber Certificates directly from Root CAs.                                                                                                                                                                                                                                                                                                                                                                                       |
+| 2016-06-30     | 6.3.2                     | CAs MUST NOT issue Subscriber Certificates with validity periods longer than 39 months, regardless of circumstance.                                                                                                                                                                                                                                                                                                                                      |
+| 2016‐09‐30     | 7.1                       | CAs SHALL generate Certificate serial numbers greater than zero (0) containing at least 64 bits of output from a CSPRNG                                                                                                                                                                                                                                                                                                                                  |
+| 2016-10-01     | 7.1.4.2.1                 | All Certificates with Reserved IP Address or Internal Name must be revoked.                                                                                                                                                                                                                                                                                                                                                                              |
+| 2016-12-03     | 1 and 2                   | Ballot 156 amendments to sections 1.5.2, 2.3, and 2.4 are applicable                                                                                                                                                                                                                                                                                                                                                                                     |
+| 2017-01-01     | 7.1.3                     | CAs MUST NOT issue OCSP responder certificates using SHA-1 (inferred).                                                                                                                                                                                                                                                                                                                                                                                   |
+| 2017-03-01     | 3.2.2.4                   | CAs MUST follow revised validation requirements in Section 3.2.2.4.                                                                                                                                                                                                                                                                                                                                                                                      |
+| 2017-09-08     | 3.2.2.8                   | CAs MUST check and process CAA records                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 2018-03-01     | 4.2.1 and 6.3.2           | Certificates issued MUST have a Validity Period no greater than 825 days and re-use of validation information limited to 825 days                                                                                                                                                                                                                                                                                                                        |
+| 2018-05-31     | 2.2                       | CP and CPS must follow RFC 3647 format                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| 2018-08-01     | 3.2.2.4.1 and .5          | CAs must stop using domain validation methods BR 3.2.2.4.1 and 3.2.2.4.5, stop reusing validation data from those methods                                                                                                                                                                                                                                                                                                                                |
+| 2019-01-15     | 7.1.4.2.1                 | All certificates containing an underscore character in any dNSName entry and having a validity period of more than 30 days MUST be revoked prior to January 15, 2019                                                                                                                                                                                                                                                                                     |
+| 2019-05-01     | 7.1.4.2.1                 | underscore characters (“_”) MUST NOT be present in dNSName entries                                                                                                                                                                                                                                                                                                                                                                                       |
+| 2019-06-01     | 3.2.2.4.3                 | CAs SHALL NOT perform validations using this method after May 31, 2019. Completed validations using this method SHALL continue to be valid for subsequent issuance per the applicable certificate data reuse periods.                                                                                                                                                                                                                                    |
+| 2019-08-01     | 3.2.2.5                   | CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address                                                                                                                                                                                                                                                                                                               |
+| 2019-08-01     | 3.2.2.5.4                 | CAs SHALL NOT perform validations using this method after July 31, 2019. Completed validations using this method SHALL NOT be re-used for certificate issuance after July 31, 2019. Any certificate issued prior to August 1, 2019 containing an IP Address that was validated using any method that was permitted under the prior version of this Section 3.2.2.5 MAY continue to be used without revalidation until such certificate naturally expires |
+| 2020-06-03     | 3.2.2.4.6                 | CAs MUST NOT perform validation using this method after 3 months from the IPR review date of Ballot SC25                                                                                                                                                                                                                                                                                                                                                 |
+| 2020-08-01     | 8.6                       | Audit Reports for periods on-or-after 2020-08-01 MUST be structured as defined.                                                                                                                                                                                                                                                                                                                                                                          |
+| 2020-09-01     | 6.3.2                     | Certificates issued SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days.                                                                                                                                                                                                                                                                                                                   |
+| 2020-09-30     | 4.9.10                    | OCSP responses MUST conform to the validity period requirements specified.                                                                                                                                                                                                                                                                                                                                                                               |
+| 2020-09-30     | 7.1.4.1                   | Subject and Issuer Names for all possible certification paths MUST be byte-for-byte identical.                                                                                                                                                                                                                                                                                                                                                           |
+| 2020-09-30     | 7.1.6.4                   | Subscriber Certificates MUST include a CA/Browser Forum Reserved Policy Identifier in the Certificate Policies extension.                                                                                                                                                                                                                                                                                                                                |
+| 2020-09-30     | 7.2 and 7.3               | All OCSP and CRL responses for Subordinate CA Certificates MUST include a meaningful reason code.                                                                                                                                                                                                                                                                                                                                                        |
+| 2021-07-01     | 3.2.2.8                   | CAA checking is no longer optional if the CA is the DNS Operator or an Affiliate.                                                                                                                                                                                                                                                                                                                                                                        |
+| 2021-07-01     | 3.2.2.4.18 and 3.2.2.4.19 | Redirects MUST be the result of one of the HTTP status code responses defined.                                                                                                                                                                                                                                                                                                                                                                           |
+| 2021-10-01     | 7.1.4.2.1                 | Fully-Qualified Domain Names MUST consist solely of P-Labels and Non-Reserved LDH Labels.                                                                                                                                                                                                                                                                                                                                                                |
+| 2021-12-01     | 3.2.2.4                   | CAs MUST NOT use methods 3.2.2.4.6, 3.2.2.4.18, or 3.2.2.4.19 to issue wildcard certificates or with Authorization Domain Names other than the FQDN.                                                                                                                                                                                                                                                                                                     |
+| 2022-06-01     | 7.1.3.2.1                 | CAs MUST NOT sign OCSP responses using the SHA-1 hash algorithm.                                                                                                                                                                                                                                                                                                                                                                                         |
+| 2022-09-01     | 7.1.4.2.2                 | CAs MUST NOT include the organizationalUnitName field in the Subject                                                                                                                                                                                                                                                                                                                                                                                     |
+| 2023-01-15     | 7.2.2                     | Sharded or partitioned CRLs MUST have a distributionPoint                                                                                                                                                                                                                                                                                                                                                                                                |
+| 2023-07-15     | 4.9.1.1 and 7.2.2         | New CRL entries MUST have a revocation reason code                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 2023-09-15     | Section 7 (and others)    | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0                                                                                                                                                                                                                                                                                                                                                                                    |
+| 2024-03-15     | 4.9.7                     | CAs MUST generate and publish CRLs.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 2024-09-15     | 4.3.1.2                   | The CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                      |
+| 2025-03-15     | 4.3.1.2                   | The CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                       |
+| 2025-03-15     | 8.7                       | The CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set chosen for Self-Audits.                                                                                                                                                                                                                                                                                                         |
+| 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified. |
+
 
 ## 1.3 PKI Participants
 
@@ -381,6 +392,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 **LDH Label**: From RFC 5890 (<http://tools.ietf.org/html/rfc5890>): "A string consisting of ASCII letters, digits, and the hyphen with the further restriction that the hyphen cannot appear at the beginning or end of the string. Like all DNS labels, its total length must not exceed 63 octets."
 
 **Legal Entity**: An association, corporation, partnership, proprietorship, trust, government entity or other entity with legal standing in a country's legal system.
+
+**Linting**: A process in which the content of digitally signed data such as a Precertificate [RFC 6962], Certificate, Certificate Revocation List, or OCSP response, or data-to-be-signed object such as a `tbsCertificate` (as described in [RFC 5280, Section 4.1.1.1](https://tools.ietf.org/doc/html/rfc5280##section-4.1.1.1)) is checked for conformance with the profiles and requirements defined in these Requirements.
 
 **Multi-Perspective Issuance Corroboration**: A process by which the determinations made during domain validation and CAA checking by the Primary Network Perspective are corroborated by other Network Perspectives before Certificate issuance. 
 
@@ -1196,7 +1209,34 @@ No stipulation.
 
 ### 4.3.1 CA actions during certificate issuance
 
+#### 4.3.1.1 Manual authorization of certificate issuance for Root CAs
+
 Certificate issuance by the Root CA SHALL require an individual authorized by the CA (i.e. the CA system operator, system officer, or PKI administrator) to deliberately issue a direct command in order for the Root CA to perform a certificate signing operation.
+
+#### 4.3.1.2 Linting of to-be-signed Certificate content
+
+Due to the complexity involved in implementing Certificate Profiles that conform to these Requirements, it is considered best practice for the CA to implement a Linting process to test the technical conformity of each to-be-signed artifact prior to signing it. When a Precertificate has undergone Linting, it is not necessary for the corresponding to-be-signed Certificate to also undergo Linting, provided that the CA has a technical control to verify that the to-be-signed Certificate corresponds to the to-be-signed Precertificate in the manner described by RFC 6962, Section 3.2.
+Effective 2024-09-15, the CA SHOULD implement such a Linting process.
+Effective 2025-03-15, the CA SHALL implement such a Linting process.
+
+Methods used to produce a certificate containing the to-be-signed Certificate content include, but are not limited to:
+
+1. Sign the `tbsCertificate` with a "dummy" Private Key whose Public Key component is not certified by a Certificate that chains to a publicly-trusted CA Certificate; or
+2. Specify a static value for the `signature` field of the Certificate ASN.1 SEQUENCE.
+
+CAs MAY implement their own certificate Linting tools, but CAs SHOULD use the Linting tools that have been widely adopted by the industry (see https://cabforum.org/resources/tools/). 
+
+CAs are encouraged to contribute to open-source Linting projects, such as by:
+
+- creating new or improving existing lints,
+- reporting potentially inaccurate linting results as bugs,
+- notifying maintainers of Linting software of checks that are not covered by existing lints,
+- updating documentation of existing lints, and 
+- generating test certificates for positive/negative tests of specific lints.
+
+#### 4.3.1.3 Linting of issued Certificates
+
+CAs MAY use a Linting process to test each issued Certificate.
 
 ### 4.3.2 Notification to subscriber by the CA of issuance of certificate
 
@@ -1329,7 +1369,7 @@ With the exception of Short-lived Subscriber Certificates, the CA SHALL revoke a
 1. The Subscriber requests in writing, without specifying a CRLreason, that the CA revoke the Certificate (CRLReason "unspecified (0)" which results in no reasonCode extension being provided in the CRL);
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization (CRLReason #9, privilegeWithdrawn);
 3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise (CRLReason #1, keyCompromise);
-4. The CA is made aware of a demonstrated or proven method that can easily compute the Subscriber's Private Key based on the Public Key in the Certificate (such as a Debian weak key, see <https://wiki.debian.org/SSLkeys>) (CRLReason #1, keyCompromise);
+4. The CA is made aware of a demonstrated or proven method that can easily compute the Subscriber's Private Key based on the Public Key in the Certificate, including but not limited to those identified in [Section 6.1.1.3(5)](#6113-subscriber-key-pair-generation) (CRLReason #1, keyCompromise);
 5. The CA obtains evidence that the validation of domain authorization or control for any Fully-Qualified Domain Name or IP address in the Certificate should not be relied upon (CRLReason #4, superseded).
 
 With the exception of Short-lived Subscriber Certificates, the CA SHOULD revoke a certificate within 24 hours and MUST revoke a Certificate within 5 days and use the corresponding CRLReason (see Section 7.2.2) if one or more of the following occurs:
@@ -1804,8 +1844,13 @@ The CA SHALL reject a certificate request if one or more of the following condit
 1. The Key Pair does not meet the requirements set forth in [Section 6.1.5](#615-key-sizes) and/or [Section 6.1.6](#616-public-key-parameters-generation-and-quality-checking);
 2. There is clear evidence that the specific method used to generate the Private Key was flawed;
 3. The CA is aware of a demonstrated or proven method that exposes the Applicant's Private Key to compromise;
-4. The CA has previously been made aware that the Applicant's Private Key has suffered a Key Compromise, such as through the provisions of [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate);
-5. The CA is aware of a demonstrated or proven method to easily compute the Applicant's Private Key based on the Public Key (such as a Debian weak key, see <https://wiki.debian.org/SSLkeys>).
+4. The CA has previously been notified that the Applicant's Private Key has suffered a Key Compromise using the CA's procedure for revocation request as described in [Section 4.9.3](#493-procedure-for-revocation-request) and [Section 4.9.12](#4912-special-requirements-re-key-compromise);
+5. The Public Key corresponds to an industry-demonstrated weak Private Key. For requests submitted on or after November 15, 2024, at least the following precautions SHALL be implemented:
+    1. In the case of Debian weak keys vulnerability (https://wiki.debian.org/SSLkeys), the CA SHALL reject all keys found at https://github.com/cabforum/Debian-weak-keys/ for each key type (e.g. RSA, ECDSA) and size listed in the repository. For all other keys meeting the requirements of [Section 6.1.5](#615-key-sizes), with the exception of RSA key sizes greater than 8192 bits, the CA SHALL reject Debian weak keys.
+    2. In the case of ROCA vulnerability, the CA SHALL reject keys identified by the tools available at https://github.com/crocs-muni/roca or equivalent.
+    3. In the case of Close Primes vulnerability (https://fermatattack.secvuln.info/), the CA SHALL reject weak keys which can be factored within 100 rounds using Fermat’s factorization method.  
+
+    Suggested tools for checking for weak keys can be found here: https://cabforum.org/resources/tools/
 
 If the Subscriber Certificate will contain an `extKeyUsage` extension containing either the values `id-kp-serverAuth` [RFC5280] or `anyExtendedKeyUsage` [RFC5280], the CA SHALL NOT generate a Key Pair on behalf of a Subscriber, and SHALL NOT accept a certificate request using a Key Pair previously generated by the CA.
 
@@ -1910,6 +1955,10 @@ The CA SHALL enforce multi-factor authentication for all accounts capable of dir
 ## 6.6 Life cycle technical controls
 
 ### 6.6.1 System development controls
+
+If a CA uses Linting software developed by third parties, it SHOULD monitor for updated versions of that software and plan for updates no later than three (3) months from the release of the update.
+
+The CA MAY perform Linting on the corpus of its unexpired, un-revoked Subscriber Certificates whenever it updates the Linting software.
 
 ### 6.6.2 Security management controls
 
@@ -3489,7 +3538,11 @@ The Audit Report MUST be available as a PDF, and SHALL be text searchable for al
 
 ## 8.7 Self-Audits
 
-During the period in which the CA issues Certificates, the CA SHALL monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken. Except for Delegated Third Parties that undergo an annual audit that meets the criteria specified in [Section 8.4](#84-topics-covered-by-assessment), the CA SHALL strictly control the service quality of Certificates issued or containing information verified by a Delegated Third Party by having a Validation Specialist employed by the CA perform ongoing quarterly audits against a randomly selected sample of at least the greater of one certificate or three percent of the Certificates verified by the Delegated Third Party in the period beginning immediately after the last sample was taken. The CA SHALL review each Delegated Third Party's practices and procedures to ensure that the Delegated Third Party is in compliance with these Requirements and the relevant Certificate Policy and/or Certification Practice Statement.
+During the period in which the CA issues Certificates, the CA SHALL monitor adherence to its Certificate Policy, Certification Practice Statement and these Requirements and strictly control its service quality by performing self audits on at least a quarterly basis against a randomly selected sample of the greater of one certificate or at least three percent of the Certificates issued by it during the period commencing immediately after the previous self-audit sample was taken. 
+
+Effective 2025-03-15, the CA SHOULD use a Linting process to verify the technical accuracy of Certificates within the selected sample set independently of previous linting performed on the same Certificates.
+
+Except for Delegated Third Parties that undergo an annual audit that meets the criteria specified in [Section 8.4](#84-topics-covered-by-assessment), the CA SHALL strictly control the service quality of Certificates issued or containing information verified by a Delegated Third Party by having a Validation Specialist employed by the CA perform ongoing quarterly audits against a randomly selected sample of at least the greater of one certificate or three percent of the Certificates verified by the Delegated Third Party in the period beginning immediately after the last sample was taken. The CA SHALL review each Delegated Third Party's practices and procedures to ensure that the Delegated Third Party is in compliance with these Requirements and the relevant Certificate Policy and/or Certification Practice Statement.
 
 The CA SHALL internally audit each Delegated Third Party's compliance with these Requirements on an annual basis.
 
