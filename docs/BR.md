@@ -191,6 +191,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-07-15 | 4.9.1.1 and 7.2.2 | New CRL entries MUST have a revocation reason code |
 | 2023-09-15 | Section 7 (and others) | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0 |
 | 2024-03-15 | 4.9.7 | CAs MUST generate and publish CRLs. |
+| 2025-01-15 | 4.9.9 | Subscriber Certificate OCSP responses MUST be available 15 minutes after issuance. |
 
 ## 1.3 PKI Participants
 
@@ -1335,7 +1336,7 @@ A certificate serial is "unassigned" if it is not "assigned".
 
 The following SHALL apply for communicating the status of Certificates and Precertificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
-Authoritative OCSP responses MUST be available (i.e. the responder MUST NOT respond with the "unknown" status) starting no more than 15 minutes after the certificate signing operation occurs.
+Effective 2025-01-15, authoritative OCSP responses for Subscriber Certificates MUST be available (i.e. the responder MUST NOT respond with the "unknown" status) starting no more than 15 minutes after the certificate signing operation occurs.
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019. The CA MAY process the Nonce extension (`1.3.6.1.5.5.7.48.1.2`) in accordance with RFC 8954.
 
@@ -1344,7 +1345,7 @@ For the status of Subscriber Certificates:
 - For OCSP responses with validity intervals less than sixteen hours, the CA SHALL provide an updated OCSP response prior to one-half of the validity period before the nextUpdate.
 - For OCSP responses with validity intervals greater than or equal to sixteen hours, the CA SHALL provide an updated OCSP response at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
-For the status of Subordinate CA Certificates, the CA SHALL provide an updated OCSP response at least every twelve months, and within 24 hours after revoking the covered Subordinate CA Certificate.
+For the status of Subordinate CA Certificates, the CA SHALL provide an updated OCSP response at least every twelve months, and within 24 hours after revoking a Subordinate CA Certificate.
 
 The following SHALL apply for communicating the status of *all* Certificates for which an OCSP responder is willing or required to respond.
 
