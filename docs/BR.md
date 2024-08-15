@@ -1057,11 +1057,18 @@ RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determine
 * CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
 * CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
 
-CAs are permitted to treat a record lookup failure as permission to issue if:
+CAs MUST perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records. If a CAA record does not exist or is not covered by DNSSEC in a signed zone, CAs MUST:
+
+  1. validate the associated NSEC or NSEC3 record as having a DNSSEC validation chain to the ICANN DNSSEC root trust anchor; and
+  2. verify that the DNSSEC-signed zone does not include the CAA record's name.
+
+CAs MAY treat a record lookup failure as permission to issue if:
 
 * the failure is outside the CA's infrastructure; and
 * the lookup has been retried at least once; and
 * the domain's zone does not have a DNSSEC validation chain to the ICANN root.
+
+CAs MUST NOT treat a DNSSEC validation chain which does not validate properly as permission to issue; failed validation MUST be treated as if a CAA record forbidding issuance exists.
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
