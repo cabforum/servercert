@@ -1362,7 +1362,7 @@ The validity interval of an OCSP response is the difference in time between the 
 
 A certificate serial is "assigned" if:
 
-- a Certificate or Precertificate with that serial number has been issued by the Issuing CA, using any current or previous key associated with that CA subject; or
+- a Certificate or Precertificate with that serial number has been issued by the Issuing CA; or
 - a Precertificate with that serial number has been issued by a Precertificate Signing Certificate, as defined in [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile), associated with the Issuing CA.
 
 A certificate serial is "unassigned" if it is not "assigned".
@@ -1373,7 +1373,7 @@ OCSP responders operated by the CA SHALL support the HTTP GET method, as describ
 
 For the status of a Subscriber Certificate or its corresponding Precertificate:
 
-- Effective 2025-01-15, an authoritative OCSP response MUST be available (i.e. the responder MUST NOT respond with the "unknown" status) starting no more than 15 minutes after the Certificate or Precertificate is published or otherwise made available.
+- Effective 2025-01-15, an authoritative OCSP response MUST be available (i.e. the responder MUST NOT respond with the "unknown" status) starting no more than 15 minutes after the Certificate or Precertificate is first published or otherwise made available.
 - For OCSP responses with validity intervals less than sixteen hours, the CA SHALL provide an updated OCSP response prior to one-half of the validity period before the nextUpdate.
 - For OCSP responses with validity intervals greater than or equal to sixteen hours, the CA SHALL provide an updated OCSP response at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
