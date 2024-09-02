@@ -602,6 +602,8 @@ RFC8954, Request for Comments: 8954, Online Certificate Status Protocol (OCSP) N
 WebTrust for Certification Authorities, SSL Baseline with Network Security, available at 
 <https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria>
 
+[WebTrust Principles and Criteria for Certification Authorities – SSL Baseline](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria)
+
 X.509, Recommendation ITU-T X.509 (08/2005) \| ISO/IEC 9594-8:2005, Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
 
 ### 1.6.4 Conventions
@@ -3388,11 +3390,16 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 
 The CA SHALL undergo an audit in accordance with one of the following schemes:
 
-1. “WebTrust for CAs v2.1 or newer” AND “WebTrust for CAs SSL Baseline with Network Security v2.3 or newer”; or
-2. ETSI EN 319 411-1 v1.2.2, which includes normative references to ETSI EN 319 401 (the latest version of the referenced ETSI documents should be applied); or
-3. If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either
-   a. encompasses all requirements of one of the above schemes or
-   b. consists of comparable criteria that are available for public review.
+1. WebTrust:
+  * "Principles and Criteria for Certification Authorities" Version 2.2 or newer; and either
+    * "WebTrust Principles and Criteria for Certification Authorities – SSL Baseline with Network Security" Version 2.7 or newer; or
+    * "WebTrust Principles and Criteria for Certification Authorities – SSL Baseline" Version 2.8 or newer and "WebTrust Principles and Criteria for Certification Authorities – Network Security" Version 1.0 or newer
+2. ETSI:
+  * ETSI EN 319 411-1 v1.4.1 or newer, which includes normative references to ETSI EN 319 401 (the latest version of the referenced ETSI documents should be applied); or
+3. Other:
+  * If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either
+    a. encompasses all requirements of one of the above schemes; or
+    b. consists of comparable criteria that are available for public review.
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
