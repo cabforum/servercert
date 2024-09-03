@@ -1057,16 +1057,11 @@ RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determine
 * CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
 * CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
 
-CAs MUST perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records. If a CAA record does not exist or is not covered by DNSSEC in a signed zone, CAs MUST:
+CAs MUST perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
 
-  1. validate the associated NSEC or NSEC3 record as having a DNSSEC validation chain to the ICANN DNSSEC root trust anchor; and
-  2. verify that the DNSSEC-signed zone does not include the CAA record's name.
+If DNSSEC validation is successful and a CAA record does not exist in a DNSSEC-signed zone, CAs MUST verify that the associated NSEC or NSEC3 signed record(s) do not have CAA included in the list of types bitmap.
 
-CAs MAY treat a record lookup failure as permission to issue if:
-
-* the failure is outside the CA's infrastructure; and
-* the lookup has been retried at least once; and
-* the domain's zone does not have a DNSSEC validation chain to the ICANN root.
+If the zone associated with a queried domain is not DNSSEC-signed and does not contain a CAA record, CAs MUST use NSEC and/or NSEC3 signed records to verify that the queried domain does not have a valid DNSSEC signature chain back to the ICANN DNSSEC root trust anchor.
 
 CAs MUST NOT treat a DNSSEC validation chain which does not validate properly as permission to issue; failed validation MUST be treated as if a CAA record forbidding issuance exists.
 
@@ -1680,16 +1675,17 @@ The CA SHALL record at least the following events:
 
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
-   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-   3. Approval and rejection of certificate requests;
-   4. Issuance of Certificates; 
-   5. Generation of Certificate Revocation Lists; and 
-   6. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)).
-   7. Multi-Perspective Issuance Corroboration attempts from each Network Perspective, minimally recording the following information:
+   1. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
+   1. DNS queries, responses, and DNSSEC
+   1. Approval and rejection of certificate requests;
+   1. Issuance of Certificates;
+   1. Generation of Certificate Revocation Lists; and
+   1. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)).
+   1. Multi-Perspective Issuance Corroboration attempts from each Network Perspective, minimally recording the following information:
       - a. an identifier that uniquely identifies the Network Perspective used;
       - b. the attempted domain name and/or IP address; and
       - c. the result of the attempt (e.g., "domain validation pass/fail", "CAA permission/prohibition").
-   8. Multi-Perspective Issuance Corroboration quorum results for each attempted domain name or IP address represented in a Certificate request (i.e., "3/4" which should be interpreted as "Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
+   1. Multi-Perspective Issuance Corroboration quorum results for each attempted domain name or IP address represented in a Certificate request (i.e., "3/4" which should be interpreted as "Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
