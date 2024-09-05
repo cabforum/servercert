@@ -472,6 +472,8 @@ The script outputs:
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
 
+**URI Scheme**: A Uniform Resource Identifier (URI) Scheme that is defined by RFC 3986, section 3.1. 
+
 **Short-lived Subscriber Certificate**: For Certificates issued on or after 15 March 2024 and prior to 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 10 days (864,000 seconds). For Certificates issued on or after 15 March 2026, a Subscriber Certificate with a Validity Period less than or equal to 7 days (604,800 seconds).
 
 **Sovereign State**: A state or country that administers its own government, and is not dependent upon, or subject to, another power.
@@ -871,7 +873,7 @@ The file containing the Request Token or Random Value:
 
 1. MUST be located on the Authorization Domain Name, and
 2. MUST be located under the "/.well-known/pki-validation" directory, and
-3. MUST be retrieved via either the "http" or "https" scheme, and
+3. MUST be retrieved via either the `URI Scheme` HTTP or HTTPS, and
 4. MUST be accessed over an Authorized Port.
 
 If the CA follows redirects, the following apply:
@@ -879,7 +881,7 @@ If the CA follows redirects, the following apply:
 1. Redirects MUST be initiated at the HTTP protocol layer.
    a. For validations performed on or after July 1, 2021, redirects MUST be the result of a 301, 302, or 307 HTTP status code response, as defined in [RFC 7231, Section 6.4](https://tools.ietf.org/html/rfc7231#section-6.4), or a 308 HTTP status code response, as defined in [RFC 7538, Section 3](https://tools.ietf.org/html/rfc7538#section-3). Redirects MUST be to the final value of the Location HTTP response header, as defined in [RFC 7231, Section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2).
    b. For validations performed prior to July 1, 2021, redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in [RFC 7231, Section 6.4](https://tools.ietf.org/html/rfc7231#section-6.4). CAs SHOULD limit the accepted status codes and resource URLs to those defined within 1.a.
-2. Redirects MUST be to resource URLs with either the "http" or "https" scheme.
+2. Redirects MUST be to resource URLs with either the `URI Scheme` HTTP or HTTPS.
 3. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 If a Random Value is used, then:
@@ -903,7 +905,7 @@ If the CA follows redirects, the following apply:
 1. Redirects MUST be initiated at the HTTP protocol layer.
    a. For validations performed on or after July 1, 2021, redirects MUST be the result of a 301, 302, or 307 HTTP status code response, as defined in [RFC 7231, Section 6.4](https://tools.ietf.org/html/rfc7231#section-6.4), or a 308 HTTP status code response, as defined in [RFC 7538, Section 3](https://tools.ietf.org/html/rfc7538#section-3). Redirects MUST be to the final value of the Location HTTP response header, as defined in [RFC 7231, Section 7.1.2](https://tools.ietf.org/html/rfc7231#section-7.1.2).
    b. For validations performed prior to July 1, 2021, redirects MUST be the result of an HTTP status code result within the 3xx Redirection class of status codes, as defined in [RFC 7231, Section 6.4](https://tools.ietf.org/html/rfc7231#section-6.4). CAs SHOULD limit the accepted status codes and resource URLs to those defined within 1.a.
-2. Redirects MUST be to resource URLs with either the "http" or "https" scheme.
+2. Redirects MUST be to resource URLs with either the `URI Scheme` HTTP or HTTPS.
 3. Redirects MUST be to resource URLs accessed via Authorized Ports.
 
 **Note**:
@@ -1021,7 +1023,7 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 * the lookup has been retried at least once; and
 * the domain's zone does not have a DNSSEC validation chain to the ICANN root.
 
-CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CAB Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
+CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CAB Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support `URI Scheme`s in the iodef record other than mailto: or https:.
 
 ### 3.2.3 Authentication of individual identity
 
@@ -2126,10 +2128,10 @@ Table: Policy Restricted
 
 Table: Permitted `policyQualifiers`
 
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| __policyQualifierId__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | When provided, the `id-qt-cps` `policyQualifierId` SHALL have the `URI Scheme` HTTP or HTTPS for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other policyQualifier                  | MUST NOT     | -              | Other policyQualifiers SHALL NOT be present. |
 
 
 ##### 7.1.2.3.3 Technically Constrained Non-TLS Subordinate CA Extended Key Usage
@@ -2464,9 +2466,9 @@ The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with t
 
 | __Access Method__ | __OID__            | __Access Location__         | __Presence__ | __Maximum__ | __Description__ |
 | --                | --                 | ----                        | -            | -          | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
-| `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*         | A HTTP URL of the Issuing CA's certificate. |
-| Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
+| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | When provided, every accessMethod SHALL have the `URI Scheme` HTTP. Other `URI Scheme`s SHALL NOT be present. |
+| `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*         | When provided, every accessMethod SHALL have the `URI Scheme` HTTP. Other `URI Scheme`s SHALL NOT be present. |
+| Any other value   | -                  | -                           | MUST NOT     | -          | Other `accessMethod`s SHALL NOT be present. |
 
 ##### 7.1.2.7.8 Subscriber Certificate Basic Constraints
 
@@ -2493,10 +2495,10 @@ This Profile RECOMMENDS that the first `PolicyInformation` value within the Cert
 
 Table: Permitted `policyQualifiers`
 
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| __policyQualifierId__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | When provided, the `id-qt-cps` `policyQualifierId` SHALL have the `URI Scheme` HTTP or HTTPS for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other policyQualifier                  | MUST NOT     | -              | Other policyQualifiers SHALL NOT be present. |
 
 [^first_policy_note]: Although RFC 5280 allows `PolicyInformation`s to appear in any order, several client implementations have implemented logic that considers the `policyIdentifier` that matches a given filter. As such, ensuring the Reserved Certificate Policy Identifier is the first `PolicyInformation` reduces the risk of interoperability challenges.
 
@@ -2679,10 +2681,10 @@ If present, the Certificate Policies extension MUST contain at least one `Policy
 
 Table: Permitted `policyQualifiers`
 
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| __policyQualifierId__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | When provided, the `id-qt-cps` `policyQualifierId` SHALL have the `URI Scheme` HTTP or HTTPS for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other policyQualifier                  | MUST NOT     | -              | Other policyQualifiers SHALL NOT be present. |
 
 
 **Note**: See [Section 7.1.2.8.2](#71282-ocsp-responder-extensions) for applicable effective dates for when this extension may be included.
@@ -2871,10 +2873,11 @@ If the `policyQualifiers` is permitted and present within a `PolicyInformation` 
 
 Table: Permitted `policyQualifiers`
 
-| __Qualifier ID__                     | __Presence__ | __Field Type__ |  __Contents__ |
+| __policyQualifierId__                     | __Presence__ | __Field Type__ |  __Contents__ |
 | ---                                  | -            | -              | -----         |
-| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | The HTTP or HTTPS URL for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
-| Any other qualifier                  | MUST NOT     | -              | -             |
+| `id-qt-cps` (OID: 1.3.6.1.5.5.7.2.1) | MAY          | `IA5String`    | When provided, the `id-qt-cps` `policyQualifierId` SHALL have the `URI Scheme` HTTP or HTTPS for the Issuing CA's Certificate Policies, Certification Practice Statement, Relying Party Agreement, or other pointer to online policy information provided by the Issuing CA. |
+| Any other policyQualifier                  | MUST NOT     | -              | Other policyQualifiers SHALL NOT be present.
+|
 
 ##### 7.1.2.10.6 CA Certificate Extended Key Usage
 
@@ -2990,7 +2993,7 @@ Table: `DistributionPoint` profile
 | `reasons`           | MUST NOT        |                 |
 | `cRLIssuer`         | MUST NOT        |                 |
 
-A `fullName` MUST contain at least one `GeneralName`; it MAY contain more than one. All `GeneralName`s MUST be of type `uniformResourceIdentifier`, and the scheme of each MUST be "http". The first `GeneralName` must contain the HTTP URL of the Issuing CA's CRL service for this certificate.
+A `fullName` MUST contain at least one `GeneralName`; it MAY contain more than one. `GeneralName`s MUST be of type `uniformResourceIdentifier`, and the `URI Scheme` of each MUST be http. Each `GeneralName` MUST contain the HTTP URL of the Issuing CA's CRL service for this certificate.
 
 ##### 7.1.2.11.3 Signed Certificate Timestamp List
 
