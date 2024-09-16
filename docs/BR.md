@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.0.7
+subtitle: Version 2.0.X
 author:
   - CA/Browser Forum
 
-date: 6-September-2024  
+date: DD-MONTH-2024  
 
 
 
@@ -144,6 +144,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.5 | SC73 | Compromised and weak keys | 3-May-2024 | 1-July-2024 |
 | 2.0.6 | SC75 | Pre-sign linting | 28-June-2024 | 6-August-2024 |
 | 2.0.7 | SC67 | Require Multi-Perspective Issuance Corroboration | 2-August-2024 | 6-September-2024 |
+| 2.0.X | SCXX | Sunset use of WHOIS to identify Domain Contacts | TBD | TBD |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -197,10 +198,11 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-09-15     | Section 7 (and others)    | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0                                                                                                                                                                                                                                                                                                                                                                                    |
 | 2024-03-15     | 4.9.7                     | CAs MUST generate and publish CRLs.                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | 2024-09-15     | 4.3.1.2                   | The CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                      |
+| 2024-11-1      | 3.2.2.4                   | CAs MUST NOT rely on WHOIS to identify Domain Contacts. |
+
 | 2025-03-15     | 4.3.1.2                   | The CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                       |
 | 2025-03-15     | 8.7                       | The CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set chosen for Self-Audits.                                                                                                                                                                                                                                                                                                         |
 | 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified. |
-
 
 ## 1.3 PKI Participants
 
@@ -749,6 +751,8 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+Effective November 1, 2024, validations using this method MUST NOT rely on WHOIS to identify Domain Contact information.
+
 ##### 3.2.2.4.3 Phone Contact with Domain Contact
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
@@ -770,6 +774,8 @@ The email MAY be re-sent in its entirety, including the re-use of the Random Val
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+Effective November 1, 2024, validations using this method MUST NOT rely on WHOIS to identify Domain Contact information.
 
 ##### 3.2.2.4.5 Domain Authorization Document
 
@@ -818,6 +824,8 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+Effective November 1, 2024, validations using this method MUST NOT rely on WHOIS to identify Domain Contact information.
+
 ##### 3.2.2.4.13 Email to DNS CAA Contact
 
 Confirming the Applicant's control over the FQDN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS CAA Email Contact. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659, Section 3.
@@ -853,6 +861,8 @@ In the event of reaching voicemail, the CA may leave the Random Value and the AD
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+Effective November 1, 2024, validations using this method MUST NOT rely on WHOIS to identify Domain Contact information.
 
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 
