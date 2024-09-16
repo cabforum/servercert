@@ -751,7 +751,7 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-Effective November 1, 2024, validations using this method MUST NOT rely on WHOIS to identify Domain Contact information.
+Effective November 1, 2024, Subscriber Certificates MUST NOT be issued that rely on WHOIS to identify Domain Contact information. Prior validations using WHOIS to identify Domain Contact information MUST NOT be used to issue new Subscriber Certificates, regardless of permitted data reuse periods.
 
 ##### 3.2.2.4.3 Phone Contact with Domain Contact
 
@@ -774,8 +774,6 @@ The email MAY be re-sent in its entirety, including the re-use of the Random Val
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
-Effective November 1, 2024, validations using this method MUST NOT rely on WHOIS to identify Domain Contact information.
 
 ##### 3.2.2.4.5 Domain Authorization Document
 
@@ -824,7 +822,7 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-Effective November 1, 2024, validations using this method MUST NOT rely on WHOIS to identify Domain Contact information.
+Effective November 1, 2024, Subscriber Certificates MUST NOT be issued that rely on WHOIS to identify Domain Contact information. Prior validations using WHOIS to identify Domain Contact information MUST NOT be used to issue new Subscriber Certificates, regardless of permitted data reuse periods.
 
 ##### 3.2.2.4.13 Email to DNS CAA Contact
 
@@ -862,7 +860,7 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-Effective November 1, 2024, validations using this method MUST NOT rely on WHOIS to identify Domain Contact information.
+Effective November 1, 2024, Subscriber Certificates MUST NOT be issued that rely on WHOIS to identify Domain Contact information. Prior validations using WHOIS to identify Domain Contact information MUST NOT be used to issue new Subscriber Certificates, regardless of permitted data reuse periods.
 
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 
