@@ -2066,7 +2066,7 @@ CAs MUST NOT include additional key usage purposes unless the CA is aware of a r
 
 ##### 7.1.2.2.6 Cross-Certified Subordinate CA Certificate Certificate Policies
 
-If present, the Certificate Policies extension MUST contain at least one `PolicyInformation`. Each `PolicyInformation` MUST match the following profile:
+The Certificate Policies extension MUST contain at least one `PolicyInformation`. Each `PolicyInformation` MUST match the following profile:
 
 
 Table: No Policy Restrictions (Affiliated CA)
