@@ -1,0 +1,36 @@
+name: Reference TLS BR and EVG version upon issue creation
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  tls-evg-version:
+    name: Reference TLS BR and EVG version upon issue creation
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Read version from TLS BR
+      id: read_tlsbr_version
+      run: |
+        subtitle=$(grep -Po '(?<=subtitle:\s).*$' docs/BR.md | tr -d '\r')
+        echo "tlsbr_version=$subtitle" >> $GITHUB_OUTPUT
+
+    - name: Read version from EVG
+      id: read_evg_version
+      run: |
+        subtitle=$(grep -Po '(?<=subtitle:\s).*$' docs/EVG.md | tr -d '\r')
+        echo "evg_version=$subtitle" >> $GITHUB_OUTPUT
+        
+    - name: Add comment to issue
+      uses: peter-evans/create-or-update-comment@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          This issue was created based on:
+          - TLS BR ${{ steps.read_tlsbr_version.outputs.tlsbr_version }}
+          - EVG ${{ steps.read_evg_version.outputs.evg_version }}
+          
