@@ -756,9 +756,11 @@ Effective January 15, 2025, when issuing Subscriber Certificates…
 - The CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information using the WHOIS protocol, the CA MUST query IANA's WHOIS server and follow referrals to the appropriate gTLD WHOIS server.
 - When obtaining Domain Contact information using the Registry Data Access Protocol, the CA MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-- The CA SHOULD NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA to ensure that it relies upon up-to-date and accurate information.
+- The CA MUST NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
-Effective September 15, 2025, the CA MUST NOT rely on this method.
+Effective July 15, 2025:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue certificates.
 
 ##### 3.2.2.4.3 Phone Contact with Domain Contact
 
@@ -834,7 +836,7 @@ Effective January 15, 2025, when issuing Subscriber Certificates…
 - The CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information using the WHOIS protocol, the CA MUST query IANA's WHOIS server and follow referrals to the appropriate gTLD WHOIS server.
 - When obtaining Domain Contact information using the Registry Data Access Protocol, the CA MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-- The CA SHOULD NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA to ensure that it relies upon up-to-date and accurate information.
+- The CA MUST NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 ##### 3.2.2.4.13 Email to DNS CAA Contact
 
@@ -877,9 +879,11 @@ Effective January 15, 2025, when issuing Subscriber Certificates…
 - The CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information using the WHOIS protocol, the CA MUST query IANA's WHOIS server and follow referrals to the appropriate gTLD WHOIS server.
 - When obtaining Domain Contact information using the Registry Data Access Protocol, the CA MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-- The CA SHOULD NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA to ensure that it relies upon up-to-date and accurate information.
+- The CA MUST NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
-Effective September 15, 2025, the CA MUST NOT rely on this method.
+Effective July 15, 2025:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue certificates.
 
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 
