@@ -202,7 +202,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2025-03-15     | 4.3.1.2                   | The CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                       |
 | 2025-03-15     | 8.7                       | The CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set chosen for Self-Audits.                                                                                                                                                                                                                                                                                                         |
 | 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified. |
-| 2025-09-15     | 3.2.2.4                   | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates. |
+| 2025-07-15     | 3.2.2.4                   | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates. |
 
 ## 1.3 PKI Participants
 
@@ -751,16 +751,16 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-Effective January 15, 2025, when issuing Subscriber Certificates…
-- The CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
-- The CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
+Effective January 15, 2025:
+- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
+- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information using the WHOIS protocol, the CA MUST query IANA's WHOIS server and follow referrals to the appropriate gTLD WHOIS server.
 - When obtaining Domain Contact information using the Registry Data Access Protocol, the CA MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
 - The CA MUST NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 Effective July 15, 2025:
 - The CA MUST NOT rely on this method.
-- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue certificates.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
 ##### 3.2.2.4.3 Phone Contact with Domain Contact
 
@@ -831,9 +831,9 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-Effective January 15, 2025, when issuing Subscriber Certificates…
-- The CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
-- The CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
+Effective January 15, 2025:
+- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
+- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information using the WHOIS protocol, the CA MUST query IANA's WHOIS server and follow referrals to the appropriate gTLD WHOIS server.
 - When obtaining Domain Contact information using the Registry Data Access Protocol, the CA MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
 - The CA MUST NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
@@ -874,16 +874,16 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-Effective January 15, 2025, when issuing Subscriber Certificates…
-- The CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
-- The CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
+Effective January 15, 2025:
+- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
+- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using the WHOIS protocol (RFC 3912) or the Registry Data Access Protocol (RFC 7482) if the requested Domain Name contains a ccTLD, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information using the WHOIS protocol, the CA MUST query IANA's WHOIS server and follow referrals to the appropriate gTLD WHOIS server.
 - When obtaining Domain Contact information using the Registry Data Access Protocol, the CA MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
 - The CA MUST NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 Effective July 15, 2025:
 - The CA MUST NOT rely on this method.
-- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue certificates.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 
