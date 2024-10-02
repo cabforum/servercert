@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.0.7
+subtitle: Version 2.0.8
 author:
   - CA/Browser Forum
 
-date: 6-September-2024  
+date: 2-October-2024  
 
 
 
@@ -144,6 +144,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.5 | SC73 | Compromised and weak keys | 3-May-2024 | 1-July-2024 |
 | 2.0.6 | SC75 | Pre-sign linting | 28-June-2024 | 6-August-2024 |
 | 2.0.7 | SC67 | Require Multi-Perspective Issuance Corroboration | 2-August-2024 | 6-September-2024 |
+| 2.0.8 | SC77 | Update WebTrust Audit name in Section 8.4 and References | 2-September-2024 | 2-October-2024 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
