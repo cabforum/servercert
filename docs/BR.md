@@ -1057,11 +1057,17 @@ RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determine
 * CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
 * CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
 
+##### 3.2.2.8.1 DNSSEC Validation of CAA Records
+
 CAs MUST perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
 
-If DNSSEC validation is successful and a CAA record does not exist in a DNSSEC-signed zone, CAs MUST verify that the associated NSEC or NSEC3 signed record(s) do not have CAA included in the list of types bitmap.
+If DNSSEC validation is successful and a CAA record does not exist in a DNSSEC-signed zone:
 
-If the zone associated with a queried domain is not DNSSEC-signed and does not contain a CAA record, CAs MUST use NSEC and/or NSEC3 signed records to verify that the queried domain does not have a valid DNSSEC signature chain back to the ICANN DNSSEC root trust anchor.
+* CAs MUST verify that the associated NSEC or NSEC3 signed record(s) do not have CAA included in the list of type bit map(s) field.
+
+If a zone associated with a queried domain is not DNSSEC-signed and does not contain a CAA record:
+
+* CAs MUST use NSEC and/or NSEC3 signed records to verify that the queried domain does not have a valid DNSSEC signature chain back to the ICANN DNSSEC root trust anchor.
 
 CAs MUST NOT treat a DNSSEC validation chain which does not validate properly as permission to issue; failed validation MUST be treated as if a CAA record forbidding issuance exists.
 
