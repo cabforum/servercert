@@ -1682,7 +1682,7 @@ The CA SHALL record at least the following events:
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
    1. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-   1. DNS queries, responses, and DNSSEC
+   1. DNS queries of CAA records and associated responses (including DNSSEC validation information)
    1. Approval and rejection of certificate requests;
    1. Issuance of Certificates;
    1. Generation of Certificate Revocation Lists; and
