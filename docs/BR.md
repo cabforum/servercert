@@ -2561,11 +2561,15 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `crlDistributionPoints`           | *               | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
+| `cabf-DomainValidationMethods`    | *               | N            | See [Section 7.1.2.12.1](#712121-domain-validation-methods-extension) |
+| `cabf-IPValidationMethods`        | *               | N            | See [Section 7.1.2.12.2](#712122-ip-address-validation-methods-extension) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 **Notes**: 
 - whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
 - whether or not the CRL Distribution Points extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
+- whether or not the `cabf-DomainValidationMethods` extension must be present depends on whether the Certificate includes a `dNSName` `GeneralName` within the `subjectAltName` extension, as detailed in [Section 7.1.2.12.1]().
+- whether or not the `cabf-IPValidationMethods` extension must be present depends on whether the Certificate includes a `iPAddress` `GeneralName` within the `subjectAltName` extension, as detailed in [Section 7.1.2.12.2]()
 
 ##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
@@ -3124,6 +3128,134 @@ All extensions and extension values not directly addressed by the applicable cer
   3. MUST be DER encoded according to the relevant ASN.1 module defining the extension and extension values.
 
 CAs SHALL NOT include additional extensions or values unless the CA is aware of a reason for including the data in the Certificate.
+
+#### 7.1.2.12 Validation Methods used to issue a Certificate
+
+The validation methods defined within [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address) serve to ensure all DNS Name and IP Address values included in a Certificate have been suitably validated by the CA. Using the extensions defined in [Section 7.1.2.12.1](#712121-domain-validation-methods-extension) and [Section 7.1.2.12.2](#712122-ip-address-validation-methods-extension) the CA indicates the total set of validation methods:
+
+1. used to validate the FQDN(s), Wildcard Domain Name(s), and IP Address(es) included in a Certificate; and
+2. relied upon to issue the Certificate.
+
+These extensions do not inherently provide an explicit mapping between individual `GeneralName` values in the `subjectAltName` extension and the validation method(s) used by the CA to support inclusion of that `GeneralName` value.
+
+##### 7.1.2.12.1 Domain Validation Methods Extension
+
+This extension contains a bitmap representing the distinct domain validation method(s) defined within [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and performed by the CA to meet the requirements of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) prior to issuance of the Certificate. 
+
+For each `dNSName` `GeneralName` value in the `subjectAltName` extension, the CA MUST ensure a domain validation method used to validate the `dNSName` `GeneralName` value is included in this extension, indicating the domain validation method as having been used to issue the Certificate. A domain validation method is represented as having been used to issue a Certificate if the bit associated with that domain validation method is set to `1` in this extension.
+
+If a `dNSName` `GeneralName` value in the `subjectAltName` extension has been fully validated in accordance with the requirements of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) using multiple domain validation methods, the CA MAY assert any or all of the domain validation methods used. 
+
+This extension MUST NOT be marked critical.
+
+Bits representing the use of one or more [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) domain validation methods MUST be encoded in this extension as follows:
+
+* The leading bit in position 0 is reserved. 
+* Each subsection of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) corresponds with the bit in the same position as the subsection's number under 3.2.2.4:
+ * [Section 3.2.2.4.1](#32241-validating-the-applicant-as-a-domain-contact) corresponds with the bit in position 1.
+ * [Section 3.2.2.4.2](#32242-email-fax-sms-or-postal-mail-to-domain-contact) corresponds with the bit in position 2.
+ * [Section 3.2.2.4.3](#32243-telephone-verification-of-domain-contact) corresponds with the bit in position 3.
+ * [Section 3.2.2.4.4](#32244-automated-verification-of-domain-contact) corresponds with the bit in position 4.
+ * [Section 3.2.2.4.5](#32245-verification-of-domain-contact-through-a-third-party-service) corresponds with the bit in position 5.
+ * [Section 3.2.2.4.6](#32246-verification-of-domain-contact-through-a-domain-registration-service) corresponds with the bit in position 6.
+ * [Section 3.2.2.4.7](#32247-verification-of-domain-contact-through-a-web-hosting-service) corresponds with the bit in position 7.
+ * [Section 3.2.2.4.8](#32248-verification-of-domain-contact-through-a-dns-provider) corresponds with the bit in position 8.
+ * [Section 3.2.2.4.9](#32249-verification-of-domain-contact-through-a-certificate-authority) corresponds with the bit in position 9.
+ * [Section 3.2.2.4.10](#322410-verification-of-domain-contact-through-an-email-service) corresponds with the bit in position 10.
+ * [Section 3.2.2.4.11](#322411-verification-of-domain-contact-through-a-whois-service) corresponds with the bit in position 11.
+ * [Section 3.2.2.4.12](#322412-verification-of-domain-contact-through-a-public-key-infrastructure-pki) corresponds with the bit in position 12.
+ * [Section 3.2.2.4.13](#322413-verification-of-domain-contact-through-a-domain-control-validation-dcv) corresponds with the bit in position 13.
+ * [Section 3.2.2.4.14](#322414-verification-of-domain-contact-through-a-dns-cname-validation) corresponds with the bit in position 14.
+ * [Section 3.2.2.4.15](#322415-verification-of-domain-contact-through-a-dns-txt-validation) corresponds with the bit in position 15.
+ * [Section 3.2.2.4.16](#322416-verification-of-domain-contact-through-a-dns-mx-validation) corresponds with the bit in position 16.
+ * [Section 3.2.2.4.17](#322417-verification-of-domain-contact-through-a-dns-http-validation) corresponds with the bit in position 17.
+ * [Section 3.2.2.4.18](#322418-verification-of-domain-contact-through-a-dns-https-validation) corresponds with the bit in position 18.
+ * [Section 3.2.2.4.19](#322419-verification-of-domain-contact-through-a-dns-dnssec-validation) corresponds with the bit in position 19.
+* The bit associated with any domain validation method relied on by the CA to issue the Certificate MUST be set to `1`.
+* The bit associated with any domain validation method not relied on by the CA to issue the Certificate MUST be set to `0`.
+
+This extension has the following format:
+
+``` ASN.1
+cabf OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) }
+
+cabf-validationMethods OBJECT IDENTIFIER ::= { cabf 4 }
+
+DomainValidationMethods ::= BIT STRING {
+  unused (0),
+  method3224_1 (1),
+  method3224_2 (2),
+  method3224_3 (3),
+  method3224_4 (4),
+  method3224_5 (5),
+  method3224_6 (6),
+  method3224_7 (7),
+  method3224_8 (8),
+  method3224_9 (9),
+  method3224_10 (10),
+  method3224_11 (11),
+  method3224_12 (12),
+  method3224_13 (13),
+  method3224_14 (14),
+  method3224_15 (15),
+  method3224_16 (16),
+  method3224_17 (17),
+  method3224_18 (18),
+  method3224_19 (19),
+  method3224_20 (20) }
+
+id-cabf-DomainValidationMethods OBJECT IDENTIFIER ::= { cabf-validationMethods 1 }
+
+ext-cabf-DomainValidationMethods EXTENSION ::= { SYNTAX
+DomainValidationMethods IDENTIFIED BY id-cabf-DomainValidationMethods }
+```
+
+##### 7.1.2.12.2 IP Address Validation Methods Extension
+
+This extension contains a bitmap representing the distinct IP Address validation method(s) defined within [Section 3.2.2.5](#3225-authentication-for-an-ip-address) and performed by the CA to meet the requirements of [Section 3.2.2.5](#3225-authentication-for-an-ip-address) prior to issuance of the Certificate. 
+
+For each `iPAddress` `GeneralName` value in the `subjectAltName` extension, the CA MUST ensure an IP Address validation method used to validate the `iPAddress` `GeneralName` value is included in this extension, indicating the IP Address validation method as having been used to issue the Certificate. An IP Address validation method is represented as having been used to issue a Certificate if the bit associated with that IP Address validation method is set to `1` in this extension.
+
+If a `iPAddress` `GeneralName` value in the `subjectAltName` extension has been fully validated in accordance with the requirements of [Section 3.2.2.5](#3225-authentication-for-an-ip-address) using multiple IP Address validation methods, the CA MUST assert at least one of the IP Address validation methods used and MAY assert any or all of the IP Address validation methods used. 
+
+This extension MUST NOT be marked critical.
+
+Bits representing the use of one or more [Section 3.2.2.5](#3225-authentication-for-an-ip-address) IP Address validation methods MUST be encoded in this extension as follows:
+
+* The leading bit in position 0 is reserved. 
+* Each subsection of [Section 3.2.2.5](#3225-authentication-for-an-ip-address) corresponds with the bit in the same position as the subsection's number under 3.2.2.5:
+ * [Section 3.2.2.5.1](#32251-agreed-upon-change-to-website) corresponds with the bit in position 1.
+ * [Section 3.2.2.5.2](#32252-email-fax-sms-or-postal-mail-to-ip-address-contact) corresponds with the bit in position 2.
+ * [Section 3.2.2.5.3](#32253-reverse-address-lookup) corresponds with the bit in position 3.
+ * [Section 3.2.2.5.4](#32254-any-other-method) corresponds with the bit in position 4.
+ * [Section 3.2.2.5.5](#32255-phone-contact-with-ip-address-contact) corresponds with the bit in position 5.
+ * [Section 3.2.2.5.6](#32256-acme-http-01-method-for-ip-addresses) corresponds with the bit in position 6.
+ * [Section 3.2.2.5.7](#32257-acme-tls-alpn-01-method-for-ip-addresses) corresponds with the bit in position 7.
+* The bit associated with any IP Address validation method relied on by the CA to issue the Certificate MUST be set to `1`.
+* The bit associated with any IP Address validation method not relied on by the CA to issue the Certificate MUST be set to `0`.
+
+This extension has the following format:
+
+``` ASN.1
+cabf OBJECT IDENTIFIER ::= { joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) }
+
+cabf-validationMethods OBJECT IDENTIFIER ::= { cabf 4 }
+
+IPAddressValidationMethods ::= BIT STRING {
+  unused (0),
+  method3225_1 (1),
+  method3225_2 (2),
+  method3225_3 (3),
+  method3225_4 (4),
+  method3225_5 (5),
+  method3225_6 (6),
+  method3225_7 (7) }
+
+id-cabf-IPAddressValidationMethods OBJECT IDENTIFIER ::= { cabf-validationMethods 2 }
+
+ext-cabf-IPAddressValidationMethods EXTENSION ::= { SYNTAX
+IPAddressValidationMethods IDENTIFIED BY id-cabf-IPAddressValidationMethods }
+```
 
 ### 7.1.3 Algorithm object identifiers
 
