@@ -3170,8 +3170,6 @@ Bits representing the use of one or more [Section 3.2.2.4](#3224-validation-of-d
  * [Section 3.2.2.4.17](#322417-verification-of-domain-contact-through-a-dns-http-validation) corresponds with the bit in position 17.
  * [Section 3.2.2.4.18](#322418-verification-of-domain-contact-through-a-dns-https-validation) corresponds with the bit in position 18.
  * [Section 3.2.2.4.19](#322419-verification-of-domain-contact-through-a-dns-dnssec-validation) corresponds with the bit in position 19.
-* The bit associated with any domain validation method relied on by the CA to issue the Certificate MUST be set to `1`.
-* The bit associated with any domain validation method not relied on by the CA to issue the Certificate MUST be set to `0`.
 
 This extension has the following format:
 
@@ -3224,8 +3222,6 @@ Bits representing the use of one or more [Section 3.2.2.5](#3225-authentication-
  * [Section 3.2.2.5.5](#32255-phone-contact-with-ip-address-contact) corresponds with the bit in position 5.
  * [Section 3.2.2.5.6](#32256-acme-http-01-method-for-ip-addresses) corresponds with the bit in position 6.
  * [Section 3.2.2.5.7](#32257-acme-tls-alpn-01-method-for-ip-addresses) corresponds with the bit in position 7.
-* The bit associated with any IP Address validation method relied on by the CA to issue the Certificate MUST be set to `1`.
-* The bit associated with any IP Address validation method not relied on by the CA to issue the Certificate MUST be set to `0`.
 
 This extension has the following format:
 
