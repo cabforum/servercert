@@ -3150,18 +3150,11 @@ This extension MUST NOT be marked critical.
 Bits representing the use of one or more [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) domain validation methods MUST be encoded in this extension as follows:
 
 * The leading bit in position 0 is reserved. 
-* Each subsection of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) corresponds with the bit in the same position as the subsection's number under 3.2.2.4:
- * [Section 3.2.2.4.1](#32241-validating-the-applicant-as-a-domain-contact) corresponds with the bit in position 1.
- * [Section 3.2.2.4.2](#32242-email-fax-sms-or-postal-mail-to-domain-contact) corresponds with the bit in position 2.
- * [Section 3.2.2.4.3](#32243-telephone-verification-of-domain-contact) corresponds with the bit in position 3.
+* Each subsection of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) corresponds with the bit in the same position as the subsection's number under 3.2.2.4: 
+ * [Section 3.2.2.4.2](#32242-email-fax-sms-or-postal-mail-to-domain-contact) corresponds with the bit in position 2. 
  * [Section 3.2.2.4.4](#32244-automated-verification-of-domain-contact) corresponds with the bit in position 4.
- * [Section 3.2.2.4.5](#32245-verification-of-domain-contact-through-a-third-party-service) corresponds with the bit in position 5.
- * [Section 3.2.2.4.6](#32246-verification-of-domain-contact-through-a-domain-registration-service) corresponds with the bit in position 6.
  * [Section 3.2.2.4.7](#32247-verification-of-domain-contact-through-a-web-hosting-service) corresponds with the bit in position 7.
  * [Section 3.2.2.4.8](#32248-verification-of-domain-contact-through-a-dns-provider) corresponds with the bit in position 8.
- * [Section 3.2.2.4.9](#32249-verification-of-domain-contact-through-a-certificate-authority) corresponds with the bit in position 9.
- * [Section 3.2.2.4.10](#322410-verification-of-domain-contact-through-an-email-service) corresponds with the bit in position 10.
- * [Section 3.2.2.4.11](#322411-verification-of-domain-contact-through-a-whois-service) corresponds with the bit in position 11.
  * [Section 3.2.2.4.12](#322412-verification-of-domain-contact-through-a-public-key-infrastructure-pki) corresponds with the bit in position 12.
  * [Section 3.2.2.4.13](#322413-verification-of-domain-contact-through-a-domain-control-validation-dcv) corresponds with the bit in position 13.
  * [Section 3.2.2.4.14](#322414-verification-of-domain-contact-through-a-dns-cname-validation) corresponds with the bit in position 14.
@@ -3170,6 +3163,7 @@ Bits representing the use of one or more [Section 3.2.2.4](#3224-validation-of-d
  * [Section 3.2.2.4.17](#322417-verification-of-domain-contact-through-a-dns-http-validation) corresponds with the bit in position 17.
  * [Section 3.2.2.4.18](#322418-verification-of-domain-contact-through-a-dns-https-validation) corresponds with the bit in position 18.
  * [Section 3.2.2.4.19](#322419-verification-of-domain-contact-through-a-dns-dnssec-validation) corresponds with the bit in position 19.
+ * [Section 3.2.2.4.20](#322420-tls-using-alpn) corresponds with the bit in position 20.
 
 This extension has the following format:
 
