@@ -1966,7 +1966,7 @@ Subscriber Certificates issued on or after 15 April 2027 SHOULD NOT have a Valid
 
 Table: Reference for maximum Validity Periods of Subscriber Certificates
 
-| __Certificate issued on or after__ | __Certificate issued before__ | __Maximum number of days for data reuse__ |
+| __Certificate issued on or after__ | __Certificate issued before__ | __Maximum validity period__ |
 | --                                 | -                             | -                                         |
 | September 1, 2020                  | September 15, 2025            | 398                                       |
 | September 15, 2025                 | September 15, 2026            | 200                                       |
