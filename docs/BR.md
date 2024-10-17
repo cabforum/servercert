@@ -536,8 +536,10 @@ The script outputs:
 
 | **Acronym** | **Meaning** |
 | --- | --- |
+| ACME | Automatic Certificate Management Environment |
 | AICPA | American Institute of Certified Public Accountants |
 | ADN | Authorization Domain Name |
+| ARI | ACME Renewal Information |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
