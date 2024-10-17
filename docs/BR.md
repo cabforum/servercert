@@ -561,6 +561,8 @@ The script outputs:
 
 ### 1.6.3 References
 
+draft-ietf-acme-ari-05, Automated Certificate Management Environment (ACME) Renewal Information (ARI) Extension. A. Gable. August 2024.
+
 ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - Requirements for conformity assessment bodies assessing Trust Service Providers
 
 ETSI EN 319 411-1, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1: General requirements
@@ -608,6 +610,8 @@ RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Qu
 RFC7538, Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect). J. Reschke. April 2015.
 
 RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
+
+RFC8555, Request for Comments: 8555, Automatic Certificate Management Environment (ACME). R. Barnes et al. March 2019.
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record. P. Hallam-Baker, et al. November 2019.
 
@@ -1586,6 +1590,17 @@ No stipulation.
 ### 4.12.2 Session key encapsulation and recovery policy and practices
 
 Not applicable.
+
+## 4.13 Certificate lifecycle automation
+
+Effective INSERT DATE, the CA MUST describe in Section (?) of its CPS the support the CA provides for the ACME protocol (including the ARI extension), or equivalent, allowing client software to automate the ability to:
+
+1.	Submit an order for a Certificate to be issued;
+2.	Authenticate account holders and prove control of identifiers requested in the Certificate;
+3.	Submit a CSR;
+4.	Await issuance and download the issued Certificate; 
+5.	Request revocation; and
+6.	Receive CA requests for early renewal of the issued Certificate.
 
 # 5. MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
 
