@@ -839,7 +839,7 @@ Effective January 15, 2025:
 - When obtaining Domain Contact information for a requested Domain Name the CA:
      - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
      - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-     - MUST NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
+     - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 ##### 3.2.2.4.13 Email to DNS CAA Contact
 
@@ -882,7 +882,7 @@ Effective January 15, 2025:
 - When obtaining Domain Contact information for a requested Domain Name the CA:
      - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
      - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-     - MUST NOT rely on cached 1) WHOIS server information or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
+     - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 Effective July 15, 2025:
 - The CA MUST NOT rely on this method.
