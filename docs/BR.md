@@ -565,15 +565,13 @@ ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service 
 
 ETSI EN 319 411-1, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1: General requirements
 
-ETSI TS 102 042, Electronic Signatures and Infrastructures (ESI); Policy requirements for certification authorities issuing public key certificates.
-
 FIPS 140-2, Federal Information Processing Standards Publication - Security Requirements For Cryptographic Modules, Information Technology Laboratory, National Institute of Standards and Technology, May 25, 2001.
 
 FIPS 140-3, Federal Information Processing Standards Publication - Security Requirements For Cryptographic Modules, Information Technology Laboratory, National Institute of Standards and Technology, March 22, 2019.
 
-FIPS 186-4, Federal Information Processing Standards Publication - Digital Signature Standard (DSS), Information Technology Laboratory, National Institute of Standards and Technology, July 2013.
+FIPS 186-5, Federal Information Processing Standards Publication - Digital Signature Standard (DSS), Information Technology Laboratory, National Institute of Standards and Technology, February 2023.
 
-ISO 21188:2006, Public key infrastructure for financial services -- Practices and policy framework.
+ISO 21188:2018, Public key infrastructure for financial services -- Practices and policy framework.
 
 Network and Certificate System Security Requirements, Version 1.7, available at <https://cabforum.org/network-security-requirements/>
 
