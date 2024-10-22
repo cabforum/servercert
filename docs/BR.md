@@ -1468,7 +1468,7 @@ No stipulation.
 
 ### 4.9.7 CRL issuance frequency
 
-CRLs must be available via a publicly-accessible HTTP URL (i.e., "published").
+CRLs MUST be available via a publicly-accessible HTTP URL (i.e., "published").
 
 Within twenty-four (24) hours of issuing its first Certificate, the CA MUST generate and publish either:
 - a full and complete CRL; OR
