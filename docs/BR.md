@@ -1,11 +1,12 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.0.8
+subtitle: Version 2.0.9
 author:
   - CA/Browser Forum
 
-date: 2-October-2024  
+date: 8-November-2024  
+
 
 
 
@@ -145,6 +146,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.6 | SC75 | Pre-sign linting | 28-June-2024 | 6-August-2024 |
 | 2.0.7 | SC67 | Require Multi-Perspective Issuance Corroboration | 2-August-2024 | 6-September-2024 |
 | 2.0.8 | SC77 | Update WebTrust Audit name in Section 8.4 and References | 2-September-2024 | 2-October-2024 |
+| 2.0.9 | SC78 | Subject organizationName alignment for DBA / Assumed Name | 2-October-2024 | 8-November-2024 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -2491,7 +2493,7 @@ Table: Individual Validated `subject` Attributes
 | `localityName`                 | MUST / MAY      | MUST be present if `stateOrProvinceName` is absent, MAY be present otherwise. If present, MUST contain the Subject's locality information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `postalCode`                   | NOT RECOMMENDED | If present, MUST contain the Subject's zip or postal information. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `streetAddress`                | NOT RECOMMENDED | If present, MUST contain the Subject's street address information. Multiple instances MAY be present. | [Section 3.2.3](#323-authentication-of-individual-identity) |
-| `organizationName`             | NOT RECOMMENDED | If present, MUST contain the Subject's name or DBA. | [Section 3.2.3](#323-authentication-of-individual-identity) |
+| `organizationName`             | NOT RECOMMENDED | If present, MUST contain the Subject's name and/or DBA/tradename. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations. If both are included, the DBA/tradename SHALL appear first, followed by the Subject's name in parentheses. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `surname`                      | MUST            | The Subject's surname. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `givenName`                    | MUST            | The Subject's given name. | [Section 3.2.3](#323-authentication-of-individual-identity) |
 | `organizationalUnitName`       | MUST NOT        | -           | -           |
@@ -2524,7 +2526,7 @@ Table: Organization Validated `subject` Attributes
 | `localityName`                 | MUST / MAY      | MUST be present if `stateOrProvinceName` is absent, MAY be present otherwise. If present, MUST contain the Subject's locality information. | [Section 3.2.2.1](#3221-identity) |
 | `postalCode`                   | NOT RECOMMENDED | If present, MUST contain the Subject's zip or postal information. | [Section 3.2.2.1](#3221-identity)) |
 | `streetAddress`                | NOT RECOMMENDED | If present, MUST contain the Subject's street address information. Multiple instances MAY be present.| [Section 3.2.2.1](#3221-identity) |
-| `organizationName`             | MUST            | The Subject's name or DBA. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". | [Section 3.2.2.2](#3222-dbatradename) |
+| `organizationName`             | MUST            | The Subject's name and/or DBA/tradename. The CA MAY include information in this field that differs slightly from the verified name, such as common variations or abbreviations, provided that the CA documents the difference and any abbreviations used are locally accepted abbreviations; e.g. if the official record shows "Company Name Incorporated", the CA MAY use "Company Name Inc." or "Company Name". If both are included, the DBA/tradename SHALL appear first, followed by the Subject's name in parentheses. | [Section 3.2.2.2](#3222-dbatradename) |
 | `surname`                      | MUST NOT        | -           | -           |
 | `givenName`                    | MUST NOT        | -           | -           |
 | `organizationalUnitName`       | MUST NOT        | -           | -           |
