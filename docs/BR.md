@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.0.9
+subtitle: Version 2.1.0
 author:
   - CA/Browser Forum
 
-date: 8-November-2024  
+date: 14-November-2024  
 
 
 
@@ -146,7 +146,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.6 | SC75 | Pre-sign linting | 28-June-2024 | 6-August-2024 |
 | 2.0.7 | SC67 | Require Multi-Perspective Issuance Corroboration | 2-August-2024 | 6-September-2024 |
 | 2.0.8 | SC77 | Update WebTrust Audit name in Section 8.4 and References | 2-September-2024 | 2-October-2024 |
-| 2.0.9 | SC78 | Subject organizationName alignment for DBA / Assumed Name | 2-October-2024 | 8-November-2024 
+| 2.0.9 | SC78 | Subject organizationName alignment for DBA / Assumed Name | 2-October-2024 | 8-November-2024 |
+| 2.1.0 | SC76 | Clarify and improve OCSP requirements | 14-November-2024 | 15-January-2025 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -200,9 +201,11 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-09-15     | Section 7 (and others)    | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0                                                                                                                                                                                                                                                                                                                                                                                    |
 | 2024-03-15     | 4.9.7                     | CAs MUST generate and publish CRLs.                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | 2024-09-15     | 4.3.1.2                   | The CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                      |
+| 2025-01-15     | 4.9.9                     | Subscriber Certificate OCSP responses MUST be available 15 minutes after issuance. |
 | 2025-03-15     | 4.3.1.2                   | The CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                       |
 | 2025-03-15     | 8.7                       | The CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set chosen for Self-Audits.                                                                                                                                                                                                                                                                                                         |
 | 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified. |
+
 
 
 ## 1.3 PKI Participants
@@ -1473,50 +1476,41 @@ No stipulation.
 
 ### 4.9.9 On-line revocation/status checking availability
 
-The following SHALL apply for communicating the status of Certificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
+The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
 
-OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
+A certificate serial is "assigned" if:
 
-1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
-2. Be signed by an OCSP Responder whose Certificate is signed by the CA that issued the Certificate whose
-revocation status is being checked.
+- a Certificate or Precertificate with that serial number has been issued by the Issuing CA; or
+- a Precertificate with that serial number has been issued by a Precertificate Signing Certificate, as defined in [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile), associated with the Issuing CA.
 
-In the latter case, the OCSP signing Certificate MUST contain an extension of type `id-pkix-ocsp-nocheck`, as
-defined by RFC6960.
+A certificate serial is "unassigned" if it is not "assigned".
 
-### 4.9.10 On-line revocation checking requirements
-
-The following SHALL apply for communicating the status of Certificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
+The following SHALL apply for communicating the status of Certificates and Precertificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in RFC 6960 and/or RFC 5019. The CA MAY process the Nonce extension (`1.3.6.1.5.5.7.48.1.2`) in accordance with RFC 8954.
 
-The validity interval of an OCSP response is the difference in time between the `thisUpdate` and `nextUpdate` field, inclusive. For purposes of computing differences, a difference of 3,600 seconds shall be equal to one hour, and a difference of 86,400 seconds shall be equal to one day, ignoring leap-seconds.
+For the status of a Subscriber Certificate or its corresponding Precertificate:
 
-For the status of Subscriber Certificates:
+- Effective 2025-01-15, an authoritative OCSP response MUST be available (i.e. the responder MUST NOT respond with the "unknown" status) starting no more than 15 minutes after the Certificate or Precertificate is first published or otherwise made available.
+- For OCSP responses with validity intervals less than sixteen hours, the CA SHALL provide an updated OCSP response prior to one-half of the validity period before the nextUpdate.
+- For OCSP responses with validity intervals greater than or equal to sixteen hours, the CA SHALL provide an updated OCSP response at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
 
-1. OCSP responses MUST have a validity interval greater than or equal to eight hours;
-2. OCSP responses MUST have a validity interval less than or equal to ten days;
-3. For OCSP responses with validity intervals less than sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol prior to one-half of the validity period before the nextUpdate.
-4. For OCSP responses with validity intervals greater than or equal to sixteen hours, then the CA SHALL update the information provided via an Online Certificate Status Protocol at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
+For the status of a Subordinate CA Certificate, the CA SHALL provide an updated OCSP response at least every twelve months, and within 24 hours after revoking the Certificate.
 
-For the status of Subordinate CA Certificates:
+The following SHALL apply for communicating the status of *all* Certificates for which an OCSP responder is willing or required to respond.
 
-* The CA SHALL update information provided via an Online Certificate Status Protocol
+OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
 
-  i. at least every twelve months; and
-  ii. within 24 hours after revoking a Subordinate CA Certificate.
+1. be signed by the CA that issued the Certificates whose revocation status is being checked, or
+2. be signed by an OCSP Responder which complies with the OCSP Responder Certificate Profile in [Section 7.1.2.8](#7128-ocsp-responder-certificate-profile).
 
-If the OCSP responder receives a request for the status of a certificate serial number that is "unused", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), the responder MUST NOT respond with a "good" status for such requests.
+OCSP responses for Subscriber Certificates MUST have a validity interval greater than or equal to eight hours and less than or equal to ten days.
 
-The OCSP responder MAY provide definitive responses about "reserved" certificate serial numbers, as if there was a corresponding Certificate that matches the Precertificate [RFC6962].
+If the OCSP responder receives a request for the status of a certificate serial number that is "unassigned", then the responder SHOULD NOT respond with a "good" status. If the OCSP responder is for a CA that is not Technically Constrained in line with [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), the responder MUST NOT respond with a "good" status for such requests.
 
-A certificate serial number within an OCSP request is one of the following three options:
+### 4.9.10 On-line revocation checking requirements
 
-1. "assigned" if a Certificate with that serial number has been issued by the Issuing CA, using any current or previous key associated with that CA subject; or
-2. "reserved" if a Precertificate [RFC6962] with that serial number has been issued by
-   a. the Issuing CA; or
-   b. a Precertificate Signing Certificate, as defined in [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile), associated with the Issuing CA; or
-3. "unused" if neither of the previous conditions are met.
+No Stipulation.
 
 ### 4.9.11 Other forms of revocation advertisements available
 
