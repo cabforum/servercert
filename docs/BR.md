@@ -229,8 +229,7 @@ Before the CA authorizes a Delegated Third Party to perform a delegated function
 The CA MAY designate an Enterprise RA to verify certificate requests from the Enterprise RA's own organization.
 The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
-1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise
-RA's verified Domain Namespace.
+1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise RA's verified Domain Namespace.
 2. If the certificate request includes a Subject name of a type other than a Fully-Qualified Domain Name, the CA SHALL confirm that the name is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject. For example, the CA SHALL NOT issue a Certificate containing the Subject name "XYZ Co." on the authority of Enterprise RA "ABC Co.", unless the two companies are affiliated (see [Section 3.2](#32-initial-identity-validation)) or "ABC Co." is the agent of "XYZ Co". This requirement applies regardless of whether the accompanying requested Subject FQDN falls within the Domain Namespace of ABC Co.'s Registered Domain Name.
 
 The CA SHALL impose these limitations as a contractual requirement on the Enterprise RA and monitor compliance by the Enterprise RA.
@@ -917,6 +916,7 @@ If a Random Value is used, then:
 Except for Onion Domain Names, CAs using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
 
 **Note**:
+
   * The CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
@@ -938,6 +938,7 @@ If the CA follows redirects, the following apply:
 Except for Onion Domain Names, CAs using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
 
 **Note**:
+
   * The CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs a separate validation for that FQDN using an authorized method. This method is NOT suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.20 TLS Using ALPN
@@ -1074,6 +1075,7 @@ Multi-Perspective Issuance Corroboration attempts to corroborate the determinati
 The CA MAY use either the same set, or different sets of Network Perspectives when performing Multi-Perspective Issuance Corroboration for the required 1) Domain Authorization or Control and 2) CAA Record checks.
 
 The set of responses from the relied upon Network Perspectives MUST provide the CA with the necessary information to allow it to affirmatively assess:
+
 - a. the presence of the expected 1) Random Value, 2) Request Token, 3) IP Address, or 4) Contact Address, as required by the relied upon validation method specified in Sections 3.2.2.4 and 3.2.2.5; and
 - b. the CA's authority to issue to the requested domain(s), as specified in Section 3.2.2.8.
 
@@ -1098,11 +1100,13 @@ Table: Quorum Requirements
 
 Remote Network Perspectives performing Multi-Perspective Issuance Corroboration:
 
-MUST: 
+MUST:
+
 - Network Hardening
    - Rely upon networks (e.g., Internet Service Providers or Cloud Provider Networks) implementing measures to mitigate BGP routing incidents in the global Internet routing system for providing internet connectivity to the Network Perspective. 
 
 SHOULD:
+
 - Facility & Service Provider Requirements
   - Be hosted from an ISO/IEC 27001 certified facility or equivalent security framework independently audited and certified or reported. 
   - Rely on services covered in one of the following reports: System and Organization Controls 2 (SOC 2), IASE 3000, ENISA 715, FedRAMP Moderate, C5:2020, CSA STAR CCM, or equivalent services framework independently audited and certified or reported.
@@ -1124,6 +1128,7 @@ Beyond the above considerations, computing systems performing Multi-Perspective 
 If any of the above considerations are performed by a Delegated Third Party, the CA MAY obtain reasonable evidence from the Delegated Third Party to ascertain assurance that one or more of the above considerations are followed. As an exception to Section 1.3.2, Delegated Third Parties are not required to be within the audit scope described in Section 8 of these Requirements to satisfy the above considerations.
 
 Phased Implementation Timeline:
+
 - *Effective September 15, 2024*, the CA SHOULD implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives. 
 - *Effective March 15, 2025*, the CA MUST implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives. The CA MAY proceed with certificate issuance if the number of remote Network Perspectives that do not corroborate the determinations made by the Primary Network Perspective ("non-corroborations") is greater than allowed in the Quorum Requirements table.  
 - *Effective September 15, 2025*, the CA MUST implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives. The CA MUST NOT proceed with certificate issuance if the number of non-corroborations is greater than allowed in the Quorum Requirements table.
@@ -1441,20 +1446,24 @@ No stipulation.
 CRLs must be available via a publicly-accessible HTTP URL (i.e., "published").
 
 Within twenty-four (24) hours of issuing its first Certificate, the CA MUST generate and publish either:
+
 - a full and complete CRL; OR
 - partitioned (i.e., "sharded") CRLs that, when aggregated, represent the equivalent of a full and complete CRL.
 
-CAs issuing Subscriber Certificates:  
+CAs issuing Subscriber Certificates:
+
 1. MUST update and publish a new CRL at least every: 
      - seven (7) days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod ("AIA OCSP pointer"); or
      - four (4) days in all other cases; 
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
-CAs issuing CA Certificates:  
+CAs issuing CA Certificates:
+
 1. MUST update and publish a new CRL at least every twelve (12) months;
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
 CAs MUST continue issuing CRLs until one of the following is true:
+
 - all Subordinate CA Certificates containing the same Subject Public Key are expired or revoked; OR
 - the corresponding Subordinate CA Private Key is destroyed.
 
@@ -1470,8 +1479,7 @@ The following SHALL apply for communicating the status of Certificates which inc
 OCSP responses MUST conform to RFC6960 and/or RFC5019. OCSP responses MUST either:
 
 1. Be signed by the CA that issued the Certificates whose revocation status is being checked, or
-2. Be signed by an OCSP Responder whose Certificate is signed by the CA that issued the Certificate whose
-revocation status is being checked.
+2. Be signed by an OCSP Responder whose Certificate is signed by the CA that issued the Certificate whose revocation status is being checked.
 
 In the latter case, the OCSP signing Certificate MUST contain an extension of type `id-pkix-ocsp-nocheck`, as
 defined by RFC6960.
@@ -1747,6 +1755,7 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 The CA and each Delegated Third Party SHALL archive all audit logs (as set forth in [Section 5.4.1](#541-types-of-events-recorded)).
 
 Additionally, the CA and each Delegated Third Party SHALL archive:
+
 1. Documentation related to the security of their Certificate Systems, Certificate Management Systems, Root CA Systems, and Delegated Third Party Systems; and
 2. Documentation related to their verification, issuance, and revocation of certificate requests and Certificates.
 
@@ -1755,6 +1764,7 @@ Additionally, the CA and each Delegated Third Party SHALL archive:
 Archived audit logs (as set forth in [Section 5.5.1](#551-types-of-records-archived) SHALL be retained for a period of at least two (2) years from their record creation timestamp, or as long as they are required to be retained per [Section 5.4.3](#543-retention-period-for-audit-log), whichever is longer.
 
 Additionally, the CA and each Delegated Third Party SHALL retain, for at least two (2) years:
+
 1. All archived documentation related to the security of Certificate Systems, Certificate Management Systems, Root CA Systems and Delegated Third Party Systems (as set forth in [Section 5.5.1](#551-types-of-records-archived)); and
 2. All archived documentation relating to the verification, issuance, and revocation of certificate requests and Certificates (as set forth in [Section 5.5.1](#551-types-of-records-archived)) after the later occurrence of:
    1. such records and documentation were last relied upon in the verification, issuance, or revocation of certificate requests and Certificates; or
@@ -2111,6 +2121,7 @@ The `subject` MUST comply with the requirements of [Section 7.1.4](#714-name-for
 In addition to the above, extKeyUsage extension requirements vary based on the relationship between the Issuer and Subject organizations represented in the Cross-Certificate.
 
 The extKeyUsage extension MAY be "unrestricted" as described in the following table if:
+
 - the organizationName represented in the Issuer and Subject names of the corresponding certificate are either:
    - the same, or
    - the organizationName represented in the Subject name is an affiliate of the organizationName represented in the Issuer name
@@ -2566,6 +2577,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 **Notes**: 
+
 - whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
 - whether or not the CRL Distribution Points extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
 
@@ -3615,6 +3627,7 @@ By issuing a Certificate, the CA makes the certificate warranties listed herein 
 1. The Subscriber that is a party to the Subscriber Agreement or Terms of Use for the Certificate;
 2. All Application Software Suppliers with whom the Root CA has entered into a contract for inclusion of its Root Certificate in software distributed by such Application Software Supplier; and
 3. All Relying Parties who reasonably rely on a Valid Certificate.
+
 The CA represents and warrants to the Certificate Beneficiaries that, during the period when the Certificate is valid, the CA has complied with these Requirements and its Certificate Policy and/or Certification Practice Statement in issuing and managing the Certificate.
 
 The Certificate Warranties specifically include, but are not limited to, the following:
