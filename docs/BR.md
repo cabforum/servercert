@@ -1194,28 +1194,27 @@ Applicant information MUST include, but not be limited to, at least one Fully-Qu
 
 The CA MAY use the documents and data provided in [Section 3.2](#32-initial-identity-validation) to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under [Section 3.2](#32-initial-identity-validation) or completed the validation itself within the maximum number of days prior to issuing the Certificate, as defined in the following table:
 
-Table: Maximum Allowed Non-SAN Validation Data Reuse Period
+Table: Reference for maximum allowed Subject Validation Data Reuse Period
 
-| __Certificate issued on or after__ | __Certificate issued before__ | __Maximum number of days for data reuse__ |
-| --                                 | -                             | -                                         |
-|                                    | September 15, 2025            | 825                                       |
-| September 15, 2025                 | September 15, 2026            | 366                                       |
+| __Certificate issued on or after__ | __Certificate issued before__  | __Maximum data reuse period__  |
+| --                                 | --                             | --                             |
+|                                    | March 15, 2026                 | 825                            |
+| March 15, 2026                     |                                | 366                            |
 
-For validation of Domain Names and IP Addresses according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address), any data, document, or completed validation used MUST be obtained within the maximum number of days days prior to issuing the Certificate, as defined in the following table:
+For validation of Domain Names and IP Addresses according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address), any data, document, or completed validation used MUST be obtained within the maximum number of days prior to issuing the Certificate, as defined in the following table:
 
-Table: Maximum Allowed SAN Validation Data Reuse Period
+Table: Reference for maximum allowed Domain Name and IP Address Validation Data Reuse Period
 
-| __Certificate issued on or after__ | __Certificate issued before__ | __Maximum number of days for data reuse__ |
-| --                                 | -                             | -                                         |
-|                                    | September 15, 2025            | 398                                       |
-| September 15, 2025                 | September 15, 2026            | 200                                       |
-| September 15, 2026                 | April 15, 2027                | 100                                       |
-| April 15, 2027                     | September 15, 2027            | 45                                        |
-| September 15, 2027                 |                               | 10                                        |
+| __Certificate issued on or after__ | __Certificate issued before__  | __Maximum data reuse period__  |
+| --                                 | --                             | --                             |
+|                                    | March 15, 2026                 | 398                            |
+| March 15, 2026                     | March 15, 2027                 | 200                            |
+| March 15, 2027                     | March 15, 2028                 | 100                            |
+| March 15, 2028                     |                                | 10                             |
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
-After the change to any validation method specified in the Baseline Requirements or EV Guidelines, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in this [Section 4.2.1](#421-performing-identification-and-authentication-functions) unless otherwise specifically provided in a ballot.
+After the change to any validation method specified in the Baseline Requirements or EV Guidelines, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in [Section 4.2.1](#421-performing-identification-and-authentication-functions) unless otherwise specifically provided in a ballot.
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
@@ -1956,22 +1955,22 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
 
-Subscriber Certificates issued on or after 1 September 2020 and before 15 September 2025 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days.
+Subscriber Certificates issued on or after 1 September 2020 and before 15 March 2026 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days.
 
-Subscriber Certificates issued on or after 15 September 2025 and before 15 September 2026 SHOULD NOT have a Validity Period greater than 199 days and MUST NOT have a Validity Period greater than 200 days.
+Subscriber Certificates issued on or after 15 March 2026 and before 15 March 2027 SHOULD NOT have a Validity Period greater than 199 days and MUST NOT have a Validity Period greater than 200 days.
 
-Subscriber Certificates issued on or after 15 September 2026 and before 15 April 2027 SHOULD NOT have a Validity Period greater than 99 days and MUST NOT have a Validity Period greater than 100 days.
+Subscriber Certificates issued on or after 15 March 2027 and before 15 March 2028 SHOULD NOT have a Validity Period greater than 99 days and MUST NOT have a Validity Period greater than 100 days.
 
-Subscriber Certificates issued on or after 15 April 2027 SHOULD NOT have a Validity Period greater than 44 days and MUST NOT have a Validity Period greater than 45 days.
+Subscriber Certificates issued on or after 15 March 2028 SHOULD NOT have a Validity Period greater than 46 days and MUST NOT have a Validity Period greater than 47 days.
 
 Table: Reference for maximum Validity Periods of Subscriber Certificates
 
-| __Certificate issued on or after__ | __Certificate issued before__ | __Maximum validity period__ |
-| --                                 | -                             | -                                         |
-| September 1, 2020                  | September 15, 2025            | 398                                       |
-| September 15, 2025                 | September 15, 2026            | 200                                       |
-| September 15, 2026                 | April 15, 2027                | 100                                       |
-| April 15, 2027                     |                               | 45                                        |
+| __Certificate issued on or after__ | __Certificate issued before__  | __Maximum Validity Period__  |
+| --                                 | --                             | --                           |
+|                                    | March 15, 2026                 | 398                          |
+| March 15, 2026                     | March 15, 2027                 | 200                          |
+| March 15, 2027                     | March 15, 2028                 | 100                          |
+| March 15, 2028                     |                                | 47                           |
 
 For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
 
