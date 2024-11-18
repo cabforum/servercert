@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.0
+subtitle: Version 2.1.1
 author:
   - CA/Browser Forum
 
-date: 14-November-2024  
+date: 18-November-2024  
 
 
 
