@@ -141,6 +141,11 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.4 | SC65 | Convert EVGs into RFC 3647 format | 15-March-2024 | 15-May-2024 |
 | 2.0.5 | SC73 | Compromised and weak keys | 3-May-2024 | 1-July-2024 |
 | 2.0.6 | SC75 | Pre-sign linting | 28-June-2024 | 6-August-2024 |
+| 2.0.7 | SC67 | Require Multi-Perspective Issuance Corroboration | 2-August-2024 | 6-September-2024 |
+| 2.0.8 | SC77 | Update WebTrust Audit name in Section 8.4 and References | 2-September-2024 | 2-October-2024 |
+| 2.0.9 | SC78 | Subject organizationName alignment for DBA / Assumed Name | 2-October-2024 | 8-November-2024 |
+| 2.1.0 | SC76 | Clarify and improve OCSP requirements | 14-November-2024 | 15-January-2025 |
+| 2.1.1 | SC79 | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 18-November-2024 | 15-January-2025 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -191,10 +196,12 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-01-15     | 7.2.2                     | Sharded or partitioned CRLs MUST have a distributionPoint                                                                                                                                                                                                                                                                                                                                                                                                |
 | 2023-07-15     | 4.9.1.1 and 7.2.2         | New CRL entries MUST have a revocation reason code                                                                                                                                                                                                                                                                                                                                                                                                       |
 | 2023-09-15     | Section 7 (and others)    | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0                                                                                                                                                                                                                                                                                                                                                                                    |
-| 2024-03-15     | 4.9.7                     | CAs MUST generate and publish CRLs.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| 2024-03-15     | 4.9.7                     | CAs MUST generate and publish CRLs.                                                                                         
+| 2025-01-15     | 4.9.9                     | Subscriber Certificate OCSP responses MUST be available 15 minutes after issuance. ||
 | 2024-09-15     | 4.3.1.2                   | The CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                      |
 | 2025-03-15     | 4.3.1.2                   | The CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                       |
 | 2025-03-15     | 8.7                       | The CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set chosen for Self-Audits.                                                                                                                                                                                                                                                                                                         |
+| 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified. |
 
 ## 1.3 PKI Participants
 
