@@ -2745,7 +2745,7 @@ Table: `GeneralName` within a `subjectAltName` extension
 | `iPAddress`                 | Y             | The entry MUST contain the IPv4 or IPv6 address that the CA has confirmed the Applicant controls or has been granted the right to use through a method specified in [Section 3.2.2.5](#3225-authentication-for-an-ip-address). The entry MUST NOT contain a Reserved IP Address. |
 | `registeredID`              | N             | -              |
 
-**Note**: The allowance for including P-Labels that do not conform to IDNA 2003 is an exception to best practice as defined in RFC 5280. These Requirements allow for the inclusion of P-Labels that do not conform with IDNA 2003 to support newer versions of the Unicode character repertoire, among other improvements to the various IDNA standards.
+**Note**: As an explicit exception from RFC 5280, P-Labels are permitted to not conform to IDNA 2003. These Requirements allow for the inclusion of P-Labels that do not conform with IDNA 2003 to support newer versions of the Unicode character repertoire, among other improvements to the various IDNA standards.
 
 #### 7.1.2.8 OCSP Responder Certificate Profile
 
