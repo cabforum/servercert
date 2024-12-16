@@ -66,40 +66,40 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 1.1.3    | 97         | Prevention of Unknown Certificate Contents                                             | 21-Feb-13        | 21-Feb-13                         |
 | 1.1.4    | 99         | Add DSA Keys (BR v.1.1.4)                                                              | 3-May-2013       | 3-May-2013                        |
 | 1.1.5    | 102        | Revision to subject domainComponent language in Section 9.2.3                          | 31-May-2013      | 31-May-2013                       |
-| 1.1.6    | 105        | Technical Constraints for Subordinate Certificate Authorities                          | 29-July-2013     | 29-July-2013                      |
-| 1.1.7    | 112        | Replace Definition of "Internal Server Name" with "Internal Name"                      | 3-April-2014     | 3-April-2014                      |
-| 1.1.8    | 120        | Affiliate Authority to Verify Domain                                                   | 5-June-2014      | 5-June-2014                       |
+| 1.1.6    | 105        | Technical Constraints for Subordinate Certificate Authorities                          | 29-Jul-2013     | 29-Jul-2013                      |
+| 1.1.7    | 112        | Replace Definition of "Internal Server Name" with "Internal Name"                      | 3-Apr-2014     | 3-Apr-2014                      |
+| 1.1.8    | 120        | Affiliate Authority to Verify Domain                                                   | 5-Jun-2014      | 5-Jun-2014                       |
 | 1.1.9    | 129        | Clarification of PSL mentioned in Section 11.1.3                                       | 4-Aug-2014       | 4-Aug-2014                        |
 | 1.2.0    | 125        | CAA Records                                                                            | 14-Oct-2014      | 15-Apr-2015                       |
 | 1.2.1    | 118        | SHA-1 Sunset                                                                           | 16-Oct-2014      | 16-Jan-2015 1-Jan-2016 1-Jan-2017 |
 | 1.2.2    | 134        | Application of RFC 5280 to Pre-certificates                                            | 16-Oct-2014      | 16-Oct-2014                       |
 | 1.2.3    | 135        | ETSI Auditor Qualifications                                                            | 16-Oct-2014      | 16-Oct-2014                       |
 | 1.2.4    | 144        | Validation Rules for .onion Names                                                      | 18-Feb-2015      | 18-Feb-2015                       |
-| 1.2.5    | 148        | Issuer Field Correction                                                                | 2-April-2015     | 2-April-2015                      |
+| 1.2.5    | 148        | Issuer Field Correction                                                                | 2-Apr-2015     | 2-Apr-2015                      |
 | 1.3.0    | 146        | Convert Baseline Requirements to RFC 3647 Framework                                    | 16-Apr-2015      | 16-Apr-2015                       |
 | 1.3.1    | 151        | Addition of Optional OIDs for Indicating Level of Validation                           | 28-Sep-2015      | 28-Sep-2015                       |
 | 1.3.2    | 156        | Amend Sections 1 and 2 of Baseline Requirements                                        | 3-Dec-2015       | 3-Dec-2016                        |
 | 1.3.3    | 160        | Amend Section 4 of Baseline Requirements                                               | 4-Feb-2016       | 4-Feb-2016                        |
 | 1.3.4    | 162        | Sunset of Exceptions                                                                   | 15-Mar-2016      | 15-Mar-2016                       |
 | 1.3.5    | 168        | Baseline Requirements Corrections (Revised)                                            | 10-May-2016      | 10-May-2016                       |
-| 1.3.6    | 171        | Updating ETSI Standards in CABF documents                                              | 1-July-2016      | 1-July-2016                       |
-| 1.3.7    | 164        | Certificate Serial Number Entropy                                                      | 8-July-2016      | 30-Sep-2016                       |
+| 1.3.6    | 171        | Updating ETSI Standards in CABF documents                                              | 1-Jul-2016      | 1-Jul-2016                       |
+| 1.3.7    | 164        | Certificate Serial Number Entropy                                                      | 8-Jul-2016      | 30-Sep-2016                       |
 | 1.3.8    | 169        | Revised Validation Requirements                                                        | 5-Aug-2016       | 1-Mar-2017                        |
 | 1.3.9    | 174        | Reform of Requirements Relating to Conflicts with Local Law                            | 29-Aug-2016      | 27-Nov-2016                       |
-| 1.4.0    | 173        | Removal of requirement to cease use of public key due to incorrect info                | 28-July-2016     | 11-Sept-2016                      |
-| 1.4.1    | 175        | Addition of givenName and surname                                                      | 7-Sept-2016      | 7-Sept-2016                       |
+| 1.4.0    | 173        | Removal of requirement to cease use of public key due to incorrect info                | 28-Jul-2016     | 11-Sep-2016                      |
+| 1.4.1    | 175        | Addition of givenName and surname                                                      | 7-Sep-2016      | 7-Sep-2016                       |
 | 1.4.2    | 181        | Removal of some validation methods listed in Section 3.2.2.4                           | 7-Jan-2017       | 7-Jan-2017                        |
 | 1.4.3    | 187        | Make CAA Checking Mandatory                                                            | 8-Mar-2017       | 8-Sep-2017                        |
 | 1.4.4    | 193        | 825-day Certificate Lifetimes                                                          | 17-Mar-2017      | 1-Mar-2018                        |
 | 1.4.5    | 189        | Amend Section 6.1.7 of Baseline Requirements                                           | 14-Apr-2017      | 14-May-2017                       |
 | 1.4.6    | 195        | CAA Fixup                                                                              | 17-Apr-2017      | 18-May-2017                       |
 | 1.4.7    | 196        | Define "Audit Period"                                                                  | 17-Apr-2017      | 18-May-2017                       |
-| 1.4.8    | 199        | Require commonName in Root and Intermediate Certificates                               | 9-May-2017       | 8-June-2017                       |
-| 1.4.9    | 204        | Forbid DTPs from doing Domain/IP Ownership                                             | 11-July-2017     | 11-Aug-2017                       |
-| 1.5.0    | 212        | Canonicalise formal name of the Baseline Requirements                                  | 1-Sept-2017      | 1-Oct-2017                        |
-| 1.5.1    | 197        | Effective Date of Ballot 193 Provisions                                                | 1-May-2017       | 2-June-2017                       |
-| 1.5.2    | 190        | Add Validation Methods with Minor Corrections                                          | 19-Sept-2017     | 19-Oct-2017                       |
-| 1.5.3    | 214        | CAA Discovery CNAME Errata                                                             | 27-Sept-2017     | 27-Oct-2017                       |
+| 1.4.8    | 199        | Require commonName in Root and Intermediate Certificates                               | 9-May-2017       | 8-Jun-2017                       |
+| 1.4.9    | 204        | Forbid DTPs from doing Domain/IP Ownership                                             | 11-Jul-2017     | 11-Aug-2017                       |
+| 1.5.0    | 212        | Canonicalise formal name of the Baseline Requirements                                  | 1-Sep-2017      | 1-Oct-2017                        |
+| 1.5.1    | 197        | Effective Date of Ballot 193 Provisions                                                | 1-May-2017       | 2-Jun-2017                       |
+| 1.5.2    | 190        | Add Validation Methods with Minor Corrections                                          | 19-Sep-2017     | 19-Oct-2017                       |
+| 1.5.3    | 214        | CAA Discovery CNAME Errata                                                             | 27-Sep-2017     | 27-Oct-2017                       |
 | 1.5.4    | 215        | Fix Ballot 190 Errata                                                                  | 4‐Oct‐2017       | 5‐Nov‐2017                        |
 | 1.5.5    | 217        | Sunset RFC 2527                                                                        | 21‐Dec‐2017      | 9‐Mar‐2018                        |
 | 1.5.6    | 218        | Remove validation methods #1 and #5                                                    | 5‐Feb‐2018       | 9‐Mar‐2018                        |
@@ -142,15 +142,15 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.0.0    | SC62       | Certificate Profiles Update                                                            | 22-Apr-2023      | 15-Sep-2023                       |
 | 2.0.1    | SC63       | Make OCSP optional, require CRLs, and incentivize automation                           | 17-Aug-2023      | 15-Mar-2024                       |
 | 2.0.2    | SC66       | 2023 Cleanup                                                                           | 23-Nov-2023      | 8-Jan-2024                        |
-| 2.0.3    | SC69       | Clarify router and firewall logging requirements                                       | 13-March-2024    | 15-April-2024                     |
-| 2.0.4    | SC65       | Convert EVGs into RFC 3647 format                                                      | 15-March-2024    | 15-May-2024                       |
-| 2.0.5    | SC73       | Compromised and weak keys                                                              | 3-May-2024       | 1-July-2024                       |
-| 2.0.6    | SC75       | Pre-sign linting                                                                       | 28-June-2024     | 6-August-2024                     |
-| 2.0.7    | SC67       | Require Multi-Perspective Issuance Corroboration                                       | 2-August-2024    | 6-September-2024                  |
-| 2.0.8    | SC77       | Update WebTrust Audit name in Section 8.4 and References                               | 2-September-2024 | 2-October-2024                    |
-| 2.0.9    | SC78       | Subject organizationName alignment for DBA / Assumed Name                              | 2-October-2024   | 8-November-2024                   |
-| 2.1.0    | SC76       | Clarify and improve OCSP requirements                                                  | 14-November-2024 | 15-January-2025                   |
-| 2.1.1    | SC79       | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 18-November-2024 | 15-January-2025                   |
+| 2.0.3    | SC69       | Clarify router and firewall logging requirements                                       | 13-Mar-2024      | 15-Apr-2024                     |
+| 2.0.4    | SC65       | Convert EVGs into RFC 3647 format                                                      | 15-Mar-2024      | 15-May-2024                       |
+| 2.0.5    | SC73       | Compromised and weak keys                                                              | 3-May-2024       | 1-Jul-2024                       |
+| 2.0.6    | SC75       | Pre-sign linting                                                                       | 28-Jun-2024      | 6-Aug-2024                     |
+| 2.0.7    | SC67       | Require Multi-Perspective Issuance Corroboration                                       | 2-Aug-2024      | 6-Sep-2024                  |
+| 2.0.8    | SC77       | Update WebTrust Audit name in Section 8.4 and References                               | 2-Sep-2024 | 2-Oct-2024                    |
+| 2.0.9    | SC78       | Subject organizationName alignment for DBA / Assumed Name                              | 2-Oct-2024       | 8-Nov-2024                   |
+| 2.1.0    | SC76       | Clarify and improve OCSP requirements                                                  | 14-Nov-2024      | 15-Jan-2025                   |
+| 2.1.1    | SC79       | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 18-Nov-2024      | 15-Jan-2025                   |
 | 2.1.2    | SC80       | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15                   | 7-Nov-2024       | 16-Dec-224                        |
 =======
 
