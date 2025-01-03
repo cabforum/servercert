@@ -1082,10 +1082,9 @@ CAs MAY check CAA records at any other time.
 
 When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 8659, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property tag with this flag set.
 
-EFFECTIVE DD-MM-YYY:
-When processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657. In addition:
-* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the recognized format of the accounturi in their CPS.
-* The CA MUST define each recognized validationmethods label, along with the corresponding 3.2.2.4 subsection number, in their CPS.
+*Effective September 15, 2025*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657. In addition:
+* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the recognized format of the accounturi in this section 3.2.2.8 of their CPS.
+* The CA MUST define each recognized validationmethods label, along with the corresponding 3.2.2.4 subsection number, in this section 3.2.2.8 of their CPS. Labels MUST comply with section 4 of RFC 8657.
 
 If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 
