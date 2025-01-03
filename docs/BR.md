@@ -1085,7 +1085,7 @@ When processing CAA records, CAs MUST process the issue, issuewild, and iodef pr
 EFFECTIVE DD-MM-YYY:
 When processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657. In addition:
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the recognized format of the accounturi in their CPS.
-* The CA MUST only recognize validationmethods parameters in the format "tlsbr-" + the 3.2.2.4 subsection number that defines the permitted validation method, e.g. "tlsbr-18" represents Agreed-Upon Change to Website v2.
+* The CA MUST define each recognized validationmethods label, along with the corresponding 3.2.2.4 subsection number, in their CPS.
 
 If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 
