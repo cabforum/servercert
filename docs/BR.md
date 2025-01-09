@@ -1599,14 +1599,16 @@ Not applicable.
 
 ## 4.13 Certificate lifecycle automation
 
-Effective INSERT DATE, the CA MUST describe in Section (?) of its CPS the support the CA provides for the ACME protocol (including the ARI extension), or equivalent, allowing client software to automate the ability to:
+Effective 2025-07-15, the CA MUST describe in Section 4.13 of its CPS the support the CA provides for the ACME protocol (including the ARI extension), or equivalent, allowing client software to automate the ability to:
 
 1.	Submit an order for a Certificate to be issued;
 2.	Authenticate account holders and prove control of identifiers requested in the Certificate;
 3.	Submit a CSR;
 4.	Await issuance and download the issued Certificate; 
 5.	Request revocation; and
-6.	Receive CA requests for early renewal of the issued Certificate.
+6.	Receive CA requests for early replacement of the issued Certificate.
+
+Alternative automation implementations with features equivalent to ACME MAY be used by the CA (such as CMP, EST, etc.), but the capabilities of the alternative implementation MUST be described.
 
 # 5. MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
 
