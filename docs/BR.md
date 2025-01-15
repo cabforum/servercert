@@ -1,14 +1,17 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.2
+subtitle: Version 2.1.X
 author:
   - CA/Browser Forum
 
-date: 16-December-2024  
+date: TBD  
+
+
+
 
 copyright: |
-  Copyright 2024 CA/Browser Forum
+  Copyright 2025 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -146,6 +149,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.0    | SC76       | Clarify and improve OCSP requirements                                                  | 26-Sep-2024 | 14-Nov-2024                       |
 | 2.1.1    | SC79       | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 30-Sep-2024 | 14-Nov-2024                       |
 | 2.1.2    | SC80       | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15                   | 7-Nov-2024  | 16-Dec-2024                       |
+| 2.1.X    | TBD        | Require disclosure of automation support                                               | TBD         | TBD                               |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -204,7 +208,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2025-03-15     | 4.3.1.2                   | The CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                       |
 | 2025-03-15     | 8.7                       | The CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set chosen for Self-Audits.                                                                                                                                                                                                                                                                                                         |
 | 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified.                                                                                                                                                                                                                                                                                                                                 |
-| 2025-07-15     | 3.2.2.4                   | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates.                                                                                                                                                                                                                                                                                                                                                                  |
+| 2025-07-15     | 3.2.2.4                   | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates.                                                                                                                                                                                                                                  |
+| 2025-07-15     | 4.13                      | CAs MUST document their support for ACME or equivalent automation in CPS.                                                                                                                                                                                                                                  |
 
 ## 1.3 PKI Participants
 
@@ -532,8 +537,10 @@ The script outputs:
 
 | **Acronym** | **Meaning** |
 | --- | --- |
+| ACME | Automatic Certificate Management Environment |
 | AICPA | American Institute of Certified Public Accountants |
 | ADN | Authorization Domain Name |
+| ARI | ACME Renewal Information |
 | CA | Certification Authority |
 | CAA | Certification Authority Authorization |
 | ccTLD | Country Code Top-Level Domain |
@@ -560,6 +567,8 @@ The script outputs:
 | VoIP | Voice Over Internet Protocol |
 
 ### 1.6.3 References
+
+draft-ietf-acme-ari-07, Automated Certificate Management Environment (ACME) Renewal Information (ARI) Extension. A. Gable. August 2024.
 
 ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - Requirements for conformity assessment bodies assessing Trust Service Providers
 
@@ -608,6 +617,8 @@ RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Qu
 RFC7538, Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect). J. Reschke. April 2015.
 
 RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
+
+RFC8555, Request for Comments: 8555, Automatic Certificate Management Environment (ACME). R. Barnes et al. March 2019.
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record. P. Hallam-Baker, et al. November 2019.
 
@@ -1586,6 +1597,19 @@ No stipulation.
 ### 4.12.2 Session key encapsulation and recovery policy and practices
 
 Not applicable.
+
+## 4.13 Certificate lifecycle automation
+
+Effective 2025-07-15, the CA MUST describe in Section 4.13 of its CPS the support the CA provides for the ACME protocol (including the ARI extension), or equivalent, allowing client software to automate the ability to:
+
+1.	Submit an order for a Certificate to be issued;
+2.	Authenticate account holders and prove control of identifiers requested in the Certificate;
+3.	Submit a CSR;
+4.	Await issuance and download the issued Certificate; 
+5.	Request revocation; and
+6.	Receive CA requests for early replacement of the issued Certificate.
+
+Alternative automation implementations with features equivalent to ACME MAY be used by the CA (such as CMP, EST, etc.), but the capabilities of the alternative implementation MUST be described.
 
 # 5. MANAGEMENT, OPERATIONAL, AND PHYSICAL CONTROLS
 
