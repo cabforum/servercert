@@ -568,7 +568,7 @@ The script outputs:
 
 ### 1.6.3 References
 
-draft-ietf-acme-ari-05, Automated Certificate Management Environment (ACME) Renewal Information (ARI) Extension. A. Gable. August 2024.
+draft-ietf-acme-ari-07, Automated Certificate Management Environment (ACME) Renewal Information (ARI) Extension. A. Gable. August 2024.
 
 ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - Requirements for conformity assessment bodies assessing Trust Service Providers
 
