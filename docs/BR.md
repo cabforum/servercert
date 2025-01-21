@@ -1558,7 +1558,7 @@ Not applicable.
 
 Effective 2025-05-15, for a certificate to be considered revoked:
 1. If the CA publishes a CRL, the CRL containing the certificate serial number MUST have been published to the Repository and be available for consumption for Relying Parties; and
-2. If the certificate contains a HTTP URL of the Issuing CA's OCSP responder, at least one (1) OCSP response containing a `certStatus` value of `revoked` MUST have been published to the Repository and be available for consumption for Relying Parties;
+2. If the certificate contains a HTTP URL of the Issuing CA's OCSP responder, at least one (1) OCSP response containing a `certStatus` value of `revoked` MUST have been published to the Repository and be available for consumption for Relying Parties.
 
 ## 4.10 Certificate status services
 
