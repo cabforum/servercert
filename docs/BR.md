@@ -1484,10 +1484,9 @@ CAs issuing CA Certificates:
 1. MUST update and publish a new CRL at least every twelve (12) months;
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
-CAs MUST continue issuing CRLs until one of the following is true:
-- all Subordinate CA Certificates containing the same Subject Public Key are expired or revoked; OR
-- the corresponding Subordinate CA Private Key is destroyed.
-
+CA Certificates MUST continue issuing CRLs until one of the following is true:
+- all certificates issued by the CA Certificate(s) are expired; or
+- all certificates issued by the CA Certificate(s) are expired or revoked and the corresponding CA Certificate(s) Private Key is destroyed.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
@@ -1554,6 +1553,12 @@ Not applicable.
 ### 4.9.16 Limits on suspension period
 
 Not applicable.
+
+### 4.9.17 Authoritative certificate status
+
+Effective 2025-05-15, for a certificate to be considered revoked:
+1. If the CA publishes a CRL, the CRL containing the certificate serial number MUST have been published to the Repository and be available for consumption for Relying Parties; and
+2. If the certificate contains a HTTP URL of the Issuing CA's OCSP responder, at least one (1) OCSP response containing a `certStatus` value of `revoked` MUST have been published to the Repository and be available for consumption for Relying Parties;
 
 ## 4.10 Certificate status services
 
