@@ -1086,7 +1086,7 @@ CAs MAY check CAA records at any other time.
 
 When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 8659, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property tag with this flag set.
 
-*Effective September 15, 2025*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657. In addition:
+*Effective March 15, 2026*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657. In addition:
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the recognized format of the accounturi in this [Section 3.2.2.8](#3228-caa-records) of their CPS.
 * The CA MUST define each recognized validationmethods label, along with the corresponding Section 3.2.2.4 subsection number, in this [Section 3.2.2.8](#3228-caa-records) of their CPS. Labels MUST comply with Section 4 of RFC 8657.
 
@@ -1097,11 +1097,19 @@ RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determine
 * CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
 * CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
 
-CAs are permitted to treat a record lookup failure as permission to issue if:
+##### 3.2.2.8.1 DNSSEC Validation of CAA Records
 
-* the failure is outside the CA's infrastructure; and
-* the lookup has been retried at least once; and
-* the domain's zone does not have a DNSSEC validation chain to the ICANN root.
+*Effective March 15, 2026*, CAs MUST perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
+
+If DNSSEC validation is successful and a CAA record does not exist in a DNSSEC-signed zone:
+
+* CAs MUST verify that the associated NSEC or NSEC3 signed record(s) do not have CAA included in the list of type bit map(s) field.
+
+If a zone associated with a queried domain is not DNSSEC-signed and does not contain a CAA record:
+
+* CAs MUST use NSEC and/or NSEC3 signed records to verify that the queried domain does not have a valid DNSSEC signature chain back to the ICANN DNSSEC root trust anchor.
+
+CAs MUST NOT treat a DNSSEC validation chain which does not validate properly as permission to issue; failed validation MUST be treated as if a CAA record forbidding issuance exists.
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
