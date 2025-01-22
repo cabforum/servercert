@@ -1088,7 +1088,7 @@ When processing CAA records, CAs MUST process the issue, issuewild, and iodef pr
 
 *Effective March 15, 2026*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657. In addition:
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the recognized format of the accounturi in this [Section 3.2.2.8](#3228-caa-records) of their CPS.
-* The CA MUST define each recognized validationmethods label, along with the corresponding Section 3.2.2.4 subsection number, in this [Section 3.2.2.8](#3228-caa-records) of their CPS. Labels MUST comply with Section 4 of RFC 8657.
+* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST recognize validationmethods labels formed by concatenating the string ‘ca-dv-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-dv-7’ represents the DNS method described in TLS BR 3.2.2.4.7.
 
 If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 
