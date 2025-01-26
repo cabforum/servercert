@@ -1082,9 +1082,7 @@ As part of the Certificate issuance process, the CA MUST retrieve and process CA
 
 When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 8659, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property tag with this flag set.
 
-If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
-
-CAs MAY check CAA records at any other time.
+If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater. CAs MAY check CAA records at any other time.
 
 RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determines that either (1) the certificate request is consistent with the applicable CAA RRset or (2) an exception specified in the relevant CP or CPS applies." For issuances conforming to these Baseline Requirements, CAs MUST NOT rely on any exceptions specified in their CP or CPS unless they are one of the following:
 
@@ -1099,13 +1097,11 @@ Some methods relied upon for validating the Applicant's ownership or control of 
 
 ##### 3.2.2.8.2 CAA Parameters
 
-Wwhen processing CAA records, CAs SHOULD process the accounturi and validationmethods parameters as specified in RFC 8657.
+Wwhen processing CAA records, CAs SHOULD process the accounturi and validationmethods parameters as specified in RFC 8657. *Effective March 15, 2027*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657.
 
-*Effective March 15, 2027*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657.
-
-In addition:
-* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the supported format of the accounturi in this [Section 3.2.2.8](#3228-caa-records) of their CPS.
-* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST interpret and process validationmethods labels formed by concatenating the string ‘ca-dv-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-dv-7’ represents the DNS method described in TLS BR 3.2.2.4.7.
+In addition, if the CA processes the accounturi and validationmethods parameters:
+* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the supported format of the accounturi in [Section 3.2.2.8](#3228-caa-records) of their CPS.
+* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST interpret and process validationmethods labels formed by concatenating the string ‘ca-dv-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-dv-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a performs domain validation using a mechanism that can be represented by multiple label (e.g. 'dns-01' and 'ca-dv-7', the CA SHOULD accept any of the labels as granting permission to issue.
 
 ##### 3.2.2.8.3 DNSSEC Validation of CAA Records
 
