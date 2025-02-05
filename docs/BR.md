@@ -1243,7 +1243,7 @@ Table: Subject Identity Information validation data reuse periods
 | __Certificate issued on or after__ | __Certificate issued before__  | __Maximum data reuse period__  |
 | --                                 | --                             | --                             |
 |                                    | March 15, 2026                 | 825 days                       |
-| March 15, 2026                     |                                | 366 days                       |
+| March 15, 2026                     |                                | 398 days                       |
 
 For validation of Domain Names and IP Addresses according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address), any data, document, or completed validation used MUST be obtained within the maximum number of days prior to issuing the Certificate, as defined in the following table:
 
