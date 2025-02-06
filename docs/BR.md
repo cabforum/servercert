@@ -1101,7 +1101,7 @@ Wwhen processing CAA records, CAs SHOULD process the accounturi and validationme
 
 In addition, if the CA processes the accounturi and validationmethods parameters:
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the supported format of the accounturi in [Section 3.2.2.8](#3228-caa-records) of their CPS.
-* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST interpret and process validationmethods labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'dns-01' and 'ca-dv-7'), the CA SHOULD accept any of the labels as granting permission to issue.
+* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST interpret and process validationmethods labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'dns-01' and 'ca-tbr-7'), the CA SHOULD accept any of the labels as granting permission to issue.
 
 ##### 3.2.2.8.3 DNSSEC Validation of CAA Records
 
