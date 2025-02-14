@@ -2004,8 +2004,8 @@ Table: Reference for maximum Validity Periods of Subscriber Certificates
 | --                                 | --                             | --                           |
 |                                    | March 15, 2026                 | 398 days                     |
 | March 15, 2026                     | March 15, 2027                 | 200 days                     |
-| March 15, 2027                     | March 15, 2028                 | 100 days                     |
-| March 15, 2028                     |                                | 47 days                      |
+| March 15, 2027                     | March 15, 2029                 | 100 days                     |
+| March 15, 2029                     |                                | 47 days                      |
 
 For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
 
