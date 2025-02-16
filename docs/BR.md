@@ -1959,9 +1959,9 @@ Subscriber Certificates issued before 15 March 2026 SHOULD NOT have a Validity P
 
 Subscriber Certificates issued on or after 15 March 2026 and before 15 March 2027 SHOULD NOT have a Validity Period greater than 199 days and MUST NOT have a Validity Period greater than 200 days.
 
-Subscriber Certificates issued on or after 15 March 2027 and before 15 March 2028 SHOULD NOT have a Validity Period greater than 99 days and MUST NOT have a Validity Period greater than 100 days.
+Subscriber Certificates issued on or after 15 March 2027 and before 15 March 2029 SHOULD NOT have a Validity Period greater than 99 days and MUST NOT have a Validity Period greater than 100 days.
 
-Subscriber Certificates issued on or after 15 March 2028 SHOULD NOT have a Validity Period greater than 46 days and MUST NOT have a Validity Period greater than 47 days.
+Subscriber Certificates issued on or after 15 March 2029 SHOULD NOT have a Validity Period greater than 46 days and MUST NOT have a Validity Period greater than 47 days.
 
 Table: Reference for maximum Validity Periods of Subscriber Certificates
 
