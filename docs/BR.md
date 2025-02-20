@@ -731,6 +731,8 @@ The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qua
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
+DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4) and MUST be compliant with [RFC 6840](https://datatracker.ietf.org/doc/html/rfc6840).
+
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
 
 **Note**: FQDNs may be listed in Subscriber Certificates using `dNSName`s in the `subjectAltName` extension or in Subordinate CA Certificates via `dNSName`s in `permittedSubtrees` within the Name Constraints extension.
@@ -1091,17 +1093,7 @@ RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determine
 
 ##### 3.2.2.8.1 DNSSEC Validation of CAA Records
 
-CAs MUST perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
-
-If DNSSEC validation is successful and a CAA record does not exist in a DNSSEC-signed zone:
-
-* CAs MUST verify that the associated NSEC or NSEC3 signed record(s) do not have CAA included in the list of type bit map(s) field.
-
-If a zone associated with a queried domain is not DNSSEC-signed and does not contain a CAA record:
-
-* CAs MUST use NSEC and/or NSEC3 signed records to verify that the queried domain does not have a valid DNSSEC signature chain back to the ICANN DNSSEC root trust anchor.
-
-CAs MUST NOT treat a DNSSEC validation chain which does not validate properly as permission to issue; failed validation MUST be treated as if a CAA record forbidding issuance exists.
+DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA lookups. The DNS resolver used for all DNS queries associated with CAA record lookups MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4) and MUST be compliant with [RFC 6840](https://datatracker.ietf.org/doc/html/rfc6840).
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
