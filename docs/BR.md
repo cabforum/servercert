@@ -1,14 +1,14 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.2
+subtitle: Version 2.1.3
 author:
   - CA/Browser Forum
 
-date: 16-December-2024  
+date: 24-February-2025
 
 copyright: |
-  Copyright 2024 CA/Browser Forum
+  Copyright 2025 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -146,6 +146,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.0    | SC76       | Clarify and improve OCSP requirements                                                  | 26-Sep-2024 | 14-Nov-2024                       |
 | 2.1.1    | SC79       | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 30-Sep-2024 | 14-Nov-2024                       |
 | 2.1.2    | SC80       | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15                   | 7-Nov-2024  | 16-Dec-2024                       |
+| 2.1.3    | SC83       | Winter 2024-2025 Cleanup Ballot                                                        | 23-Jan-2025 | 24-Feb-2025                       |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
