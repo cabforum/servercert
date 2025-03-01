@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.3
+subtitle: Version 2.1.4
 author:
   - CA/Browser Forum
 
-date: 24-February-2025
+date: 1-March-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -147,6 +147,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.1    | SC79       | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 30-Sep-2024 | 14-Nov-2024                       |
 | 2.1.2    | SC80       | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15                   | 7-Nov-2024  | 16-Dec-2024                       |
 | 2.1.3    | SC83       | Winter 2024-2025 Cleanup Ballot                                                        | 23-Jan-2025 | 24-Feb-2025                       |
+| 2.1.4    | SC84       | DNS Labeled with ACME Account ID Validation Method                                     | 28-Jan-2025 | 1-Mar-2025                       |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -980,6 +981,16 @@ The token (as defined in RFC 8737, Section 3) MUST NOT be used for more than 30 
 Except for Onion Domain Names, CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
 
 **Note**: Once the FQDN has been validated using this method, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs separate validations for each of those other FQDNs using authorized methods. This method is NOT suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.21 DNS Labeled with Account ID - ACME
+
+Confirming the Applicant's control over the FQDN by performing the procedure documented for a “dns-account-01” challenge in draft 00 of “Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge,” available at [https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/](https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/).
+
+The token (as defined in draft 00 of “Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge,” Section 3.1) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
+
+CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same token as the Primary Network Perspective.
+
+**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 
