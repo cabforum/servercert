@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.3
+subtitle: Version 2.1.4
 author:
   - CA/Browser Forum
 
-date: 24-February-2025
+date: 27-February-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -147,6 +147,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.1    | SC79       | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 30-Sep-2024 | 14-Nov-2024                       |
 | 2.1.2    | SC80       | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15                   | 7-Nov-2024  | 16-Dec-2024                       |
 | 2.1.3    | SC83       | Winter 2024-2025 Cleanup Ballot                                                        | 23-Jan-2025 | 24-Feb-2025                       |
+| 2.1.4    | SC84       | DNS Labeled with ACME Account ID Validation Method                                     | 28-Jan-2025 | 27-Feb-2025                       |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
