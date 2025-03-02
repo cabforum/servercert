@@ -148,7 +148,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.2    | SC80       | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15                   | 7-Nov-2024  | 16-Dec-2024                       |
 | 2.1.3    | SC83       | Winter 2024-2025 Cleanup Ballot                                                        | 23-Jan-2025 | 24-Feb-2025                       |
 | 2.1.4    | SC84       | DNS Labeled with ACME Account ID Validation Method                                     | 28-Jan-2025 | 1-Mar-2025                       |
-| 2.1.X    | SCXX       | Sunset inclusion of Address and Routing Parameter Area Names                           | XX-YY-2025 | XX-YY-2025                       |
+| 2.1.X    | SCXX       | Sunset the Inclusion of Address and Routing Parameter Area Names                       | XX-YYY-2025 | XX-YY-2025                       |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
