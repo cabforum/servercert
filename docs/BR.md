@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.4
+subtitle: Version 2.1.X
 author:
   - CA/Browser Forum
 
-date: 1-March-2025
+date: X-Y-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -148,6 +148,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.2    | SC80       | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15                   | 7-Nov-2024  | 16-Dec-2024                       |
 | 2.1.3    | SC83       | Winter 2024-2025 Cleanup Ballot                                                        | 23-Jan-2025 | 24-Feb-2025                       |
 | 2.1.4    | SC84       | DNS Labeled with ACME Account ID Validation Method                                     | 28-Jan-2025 | 1-Mar-2025                       |
+| 2.1.X    | SCXX       | Sunset inclusion of Address and Routing Parameter Area Names                           | XX-YY-2025 | XX-YY-2025                       |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -207,6 +208,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2025-03-15     | 8.7                       | The CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set chosen for Self-Audits.                                                                                                                                                                                                                                                                                                         |
 | 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified.                                                                                                                                                                                                                                                                                                                                 |
 | 2025-07-15     | 3.2.2.4                   | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates.                                                                                                                                                                                                                                                                                                                                                                  |
+
+| 2025-09-15     | 4.2.2                     | CAs SHALL NOT issue Certificates containing Address and Routing Parameter Area Names.                                                                                                                                                                                                                                                                                                                                                                         |
 
 ## 1.3 PKI Participants
 
@@ -301,6 +304,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Application Software Supplier**: A supplier of Internet browser software or other relying-party application software that displays or uses Certificates and incorporates Root Certificates.
 
+**Address and Routing Parameter Area Name**: A Domain Name whose Top-Level Domain is "arpa". Example: `1.1.168.192.in-addr.arpa`.
+
 **Attestation Letter**: A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
 
 **Audit Period**: In a period-of-time audit, the period between the first day (start) and the last day of operations (end) covered by the auditors in their engagement. (This is not the same as the period of time when the auditors are on-site at the CA.) The coverage rules and maximum length of audit periods are defined in [Section 8.1](#81-frequency-or-circumstances-of-assessment).
@@ -379,7 +384,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **High Risk Certificate Request**: A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
 
-**Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
+**Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top-Level Domain registered in IANA's Root Zone Database.
 
 **IP Address**: A 32-bit or 128-bit number assigned to a device that uses the Internet Protocol for communication.
 
@@ -511,6 +516,8 @@ The script outputs:
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
 
 **Test Certificate**: This term is no longer used in these Baseline Requirements.
+
+**Top-Level Domain**: From RFC 8499 (https://tools.ietf.org/html/rfc8499): "A Top-Level Domain is a zone that is one layer below the root, such as "com" or "jp"."
 
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
 
@@ -1246,7 +1253,9 @@ If a Delegated Third Party fulfills any of the CA's obligations under this secti
 
 ### 4.2.2 Approval or rejection of certificate applications
 
-CAs SHALL NOT issue certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
+CAs SHALL NOT issue Certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
+
+Effective 2025-09-15, CAs SHALL NOT issue Certificates containing Address and Routing Parameter Area Names.
 
 ### 4.2.3 Time to process certificate applications
 
@@ -2749,7 +2758,7 @@ Table: `GeneralName` within a `subjectAltName` extension
 | ---                         | -             | ------         |
 | `otherName`                 | N             | -              |
 | `rfc822Name`                | N             | -              |
-| `dNSName`                   | Y             | The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT contain an Internal Name. The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be composed entirely of P-Labels or Non-Reserved LDH Labels joined together by a U+002E FULL STOP (".") character. The zero-length Domain Label representing the root zone of the Internet Domain Name System MUST NOT be included (e.g. "example.com" MUST be encoded as "example.com" and MUST NOT be encoded as "example.com."). |
+| `dNSName`                   | Y             | The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT contain an Internal Name. Effective 2025-09-15, the entry MUST NOT contain an Address and Routing Parameter Area Name. The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be composed entirely of P-Labels or Non-Reserved LDH Labels joined together by a U+002E FULL STOP (".") character. The zero-length Domain Label representing the root zone of the Internet Domain Name System MUST NOT be included (e.g. "example.com" MUST be encoded as "example.com" and MUST NOT be encoded as "example.com."). |
 | `x400Address`               | N             | -              |
 | `directoryName`             | N             | -              |
 | `ediPartyName`              | N             | -              |
