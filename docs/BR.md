@@ -292,6 +292,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 ### 1.6.1 Definitions
 
+**Address and Routing Parameter Area Name**: A Domain Name whose Top-Level Domain is "arpa". Example: `1.2.0.192.in-addr.arpa`.
+
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
 **Applicant**: The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate is issued, the Applicant is referred to as the Subscriber. For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
@@ -303,8 +305,6 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
   iii. who acknowledges the Terms of Use on behalf of the Applicant when the Applicant is an Affiliate of the CA or is the CA.
 
 **Application Software Supplier**: A supplier of Internet browser software or other relying-party application software that displays or uses Certificates and incorporates Root Certificates.
-
-**Address and Routing Parameter Area Name**: A Domain Name whose Top-Level Domain is "arpa". Example: `1.1.168.192.in-addr.arpa`.
 
 **Attestation Letter**: A letter attesting that Subject Information is correct written by an accountant, lawyer, government official, or other reliable third party customarily relied upon for such information.
 
