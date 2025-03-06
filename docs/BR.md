@@ -1228,6 +1228,12 @@ RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determine
 * CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
 * CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
 
+CAs are permitted to treat a record lookup failure as permission to issue if:
+
+* the failure is outside the CA's infrastructure; and
+* the lookup has been retried at least once; and
+* the domain's zone does not have a DNSSEC validation chain to the ICANN root.
+
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
 ##### 4.2.1.1.1 CAA Multi-Perspective Issuance Corroboration
@@ -1236,7 +1242,7 @@ Some methods relied upon for validating the Applicant's ownership or control of 
 
 ##### 4.2.1.1.2 CAA Parameters
 
-Wwhen processing CAA records, CAs SHOULD process the accounturi and validationmethods parameters as specified in RFC 8657. *Effective March 15, 2027*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657.
+When processing CAA records, CAs SHOULD process the accounturi and validationmethods parameters as specified in RFC 8657. *Effective March 15, 2027*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657.
 
 In addition, *Effective March 15, 2026*, if the CA processes the accounturi and validationmethods parameters:
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the supported format(s) of the accounturi in Section 4.2 of their CP and/or CPS.
@@ -1244,17 +1250,7 @@ In addition, *Effective March 15, 2026*, if the CA processes the accounturi and 
 
 ##### 4.2.1.1.3 DNSSEC Validation of CAA Records
 
-*Effective March 15, 2026*, CAs MUST perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
-
-If DNSSEC validation is successful and a CAA record does not exist in a DNSSEC-signed zone:
-
-* CAs MUST verify that the associated NSEC or NSEC3 signed record(s) do not have CAA included in the list of type bit map(s) field.
-
-If a zone associated with a queried domain is not DNSSEC-signed and does not contain a CAA record:
-
-* CAs MUST use NSEC and/or NSEC3 signed records to verify that the queried domain does not have a valid DNSSEC signature chain back to the ICANN DNSSEC root trust anchor.
-
-CAs MUST NOT treat a DNSSEC validation chain which does not validate properly as permission to issue; failed validation MUST be treated as if a CAA record forbidding issuance exists.
+As an explicit exception to RFC 8657, CAs SHOULD perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
 
 ### 4.2.2 Approval or rejection of certificate applications
 
