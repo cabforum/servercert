@@ -1236,11 +1236,11 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
-##### 4.2.1.1.1 CAA Multi-Perspective Issuance Corroboration
+###### 4.2.1.1.1 CAA Multi-Perspective Issuance Corroboration
 
 Some methods relied upon for validating the Applicant's ownership or control of the subject domain(s) (see [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control)) or IP address(es) (see [Section 3.2.2.5](#3225-authentication-for-an-ip-address)) to be listed in a certificate require CAA records to be retrieved and processed from additional remote Network Perspectives before Certificate issuance (see [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration)). To corroborate the Primary Network Perspective, a remote Network Perspective's CAA check response MUST be interpreted as permission to issue, regardless of whether the responses from both Perspectives are byte-for-byte identical. Additionally, a CA MAY consider the response from a remote Network Perspective as corroborating if one or both of the Perspectives experience an acceptable CAA record lookup failure, as defined in this section.
 
-##### 4.2.1.1.2 CAA Parameters
+###### 4.2.1.1.2 CAA Parameters
 
 When processing CAA records, CAs SHOULD process the accounturi and validationmethods parameters as specified in RFC 8657. *Effective March 15, 2027*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657.
 
@@ -1248,7 +1248,7 @@ In addition, *Effective March 15, 2026*, if the CA processes the accounturi and 
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the supported format(s) of the accounturi in Section 4.2 of their CP and/or CPS.
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST interpret and process validationmethods labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'dns-01' and 'ca-tbr-7'), the CA SHOULD accept any of the labels as granting permission to issue.
 
-##### 4.2.1.1.3 DNSSEC Validation of CAA Records
+###### 4.2.1.1.3 DNSSEC Validation of CAA Records
 
 As an explicit exception to RFC 8657, CAs SHOULD perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
 
