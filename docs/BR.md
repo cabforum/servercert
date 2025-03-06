@@ -1209,8 +1209,8 @@ Table: Domain Name and IP Address validation data reuse periods
 | --                                 | --                             | --                             |
 |                                    | March 15, 2026                 | 398 days                       |
 | March 15, 2026                     | March 15, 2027                 | 200 days                       |
-| March 15, 2027                     | March 15, 2028                 | 100 days                       |
-| March 15, 2028                     |                                | 10 days                        |
+| March 15, 2027                     | March 15, 2029                 | 100 days                       |
+| March 15, 2029                     |                                | 10 days                        |
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
