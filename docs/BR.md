@@ -1078,7 +1078,7 @@ Databases maintained by the CA, its owner, or its affiliated companies do not qu
 
 #### 3.2.2.8 CAA Records
 
-Refer to [Section 4.2.1.1](#4211-caa-record-processing) for CAA record processing requirements.
+Refer to [Section 4.2.2.1](#4221-caa-record-processing) for CAA record processing requirements.
 
 #### 3.2.2.9 Multi-Perspective Issuance Corroboration
 
@@ -1088,7 +1088,7 @@ The CA MAY use either the same set, or different sets of Network Perspectives wh
 
 The set of responses from the relied upon Network Perspectives MUST provide the CA with the necessary information to allow it to affirmatively assess:
 - a. the presence of the expected 1) Random Value, 2) Request Token, 3) IP Address, or 4) Contact Address, as required by the relied upon validation method specified in Sections 3.2.2.4 and 3.2.2.5; and
-- b. the CA's authority to issue to the requested domain(s), as specified in Section 4.2.1.1.
+- b. the CA's authority to issue to the requested domain(s), as specified in Section 4.2.2.1.
 
 [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address) describe the validation methods that require the use of Multi-Perspective Issuance Corroboration and how a Network Perspective can corroborate the outcomes determined by the Primary Network Perspective. 
 
@@ -1215,7 +1215,11 @@ The CA SHALL develop, maintain, and implement documented procedures that identif
 
 If a Delegated Third Party fulfills any of the CA's obligations under this section , the CA SHALL verify that the process used by the Delegated Third Party to identify and further verify High Risk Certificate Requests provides at least the same level of assurance as the CA's own processes.
 
-#### 4.2.1.1 CAA Record Processing
+### 4.2.2 Approval or rejection of certificate applications
+
+CAs SHALL NOT issue certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
+
+#### 4.2.2.1 CAA Record Processing
 
 As part of the Certificate issuance process, the CA MUST retrieve and process CAA records in accordance with RFC 8659 for each `dNSName` in the `subjectAltName` extension that does not contain an Onion Domain Name. These practices MUST be described in Section 4.2 of the CA's Certificate Policy and/or Certification Practice Statement, including specifying the set of Issuer Domain Names that the CA recognizes in CAA "issue" or "issuewild" records as permitting it to issue.
 
@@ -1236,11 +1240,11 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
-###### 4.2.1.1.1 CAA Multi-Perspective Issuance Corroboration
+###### 4.2.2.1.1 CAA Multi-Perspective Issuance Corroboration
 
 Some methods relied upon for validating the Applicant's ownership or control of the subject domain(s) (see [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control)) or IP address(es) (see [Section 3.2.2.5](#3225-authentication-for-an-ip-address)) to be listed in a certificate require CAA records to be retrieved and processed from additional remote Network Perspectives before Certificate issuance (see [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration)). To corroborate the Primary Network Perspective, a remote Network Perspective's CAA check response MUST be interpreted as permission to issue, regardless of whether the responses from both Perspectives are byte-for-byte identical. Additionally, a CA MAY consider the response from a remote Network Perspective as corroborating if one or both of the Perspectives experience an acceptable CAA record lookup failure, as defined in this section.
 
-###### 4.2.1.1.2 CAA Parameters
+###### 4.2.2.1.2 CAA Parameters
 
 When processing CAA records, CAs SHOULD process the accounturi and validationmethods parameters as specified in RFC 8657. *Effective March 15, 2027*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657.
 
@@ -1248,13 +1252,9 @@ In addition, *Effective March 15, 2026*, if the CA processes the accounturi and 
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the supported format(s) of the accounturi in Section 4.2 of their CP and/or CPS.
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST interpret and process validationmethods labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'dns-01' and 'ca-tbr-7'), the CA SHOULD accept any of the labels as granting permission to issue.
 
-###### 4.2.1.1.3 DNSSEC Validation of CAA Records
+###### 4.2.2.1.3 DNSSEC Validation of CAA Records
 
 As an explicit exception to RFC 8657, CAs SHOULD perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
-
-### 4.2.2 Approval or rejection of certificate applications
-
-CAs SHALL NOT issue certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
 
 ### 4.2.3 Time to process certificate applications
 
