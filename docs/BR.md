@@ -731,6 +731,10 @@ The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qua
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
+DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4) and MUST be compliant with [RFC 6840](https://datatracker.ietf.org/doc/html/rfc6840).
+
+DNSSEC validation back to the ICANN DNSSEC root trust anchor SHOULD be performed on all DNS queries associated with the validation of domain authorization or control by Remote Network Perspectives used for Multi-Perspective Issuance Corroboration, but it is not required.
+
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
 
 **Note**: FQDNs may be listed in Subscriber Certificates using `dNSName`s in the `subjectAltName` extension or in Subordinate CA Certificates via `dNSName`s in `permittedSubtrees` within the Name Constraints extension.
@@ -1105,9 +1109,17 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 
 * the failure is outside the CA's infrastructure; and
 * the lookup has been retried at least once; and
-* the domain's zone does not have a DNSSEC validation chain to the ICANN root.
+* the CA has confirmed that the domain is "Insecure" as defined in [RFC 4035 Section 4.3](https://datatracker.ietf.org/doc/html/rfc4035#section-4.3).
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
+
+##### 3.2.2.8.1 DNSSEC Validation of CAA Records
+
+DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4) and MUST be compliant with [RFC 6840](https://datatracker.ietf.org/doc/html/rfc6840).
+
+DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
+
+DNSSEC validation back to the ICANN DNSSEC root trust anchor SHOULD be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration, but it is not required.
 
 #### 3.2.2.9 Multi-Perspective Issuance Corroboration
 
