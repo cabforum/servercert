@@ -2639,6 +2639,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `cabf-DomainValidationMethods`    | See [Section 7.1.2.12.1](#712121-domain-validation-methods-extension)               | N            | See [Section 7.1.2.12.1](#712121-domain-validation-methods-extension) |
 | `cabf-IPValidationMethods`        | See [Section 7.1.2.12.2](#712122-ip-address-validation-methods-extension)               | N            | See [Section 7.1.2.12.2](#712122-ip-address-validation-methods-extension) |
+| `cabf-OnionValidationMethods`    | See [Section 7.1.2.12.3](#712123-onion-domain-name-validation-method-extension)               | N            | See [Section 7.1.2.12.3](#712123-onion-domain-name-validation-method-extension) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 **Notes**:
