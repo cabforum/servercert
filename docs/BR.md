@@ -1119,7 +1119,7 @@ DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed o
 
 DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
 
-DNSSEC validation back to the ICANN DNSSEC root trust anchor SHOULD be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration, but it is not required.
+DNSSEC validation back to the ICANN DNSSEC root trust anchor MAY be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration.
 
 #### 3.2.2.9 Multi-Perspective Issuance Corroboration
 
