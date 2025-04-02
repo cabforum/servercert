@@ -735,13 +735,13 @@ The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qua
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
-DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective:
+Effective November 15th, 2025: DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective:
 
 * MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4); and
 * MUST support NSEC3 and SHA-2 as defined in [RFC 6840 Section 2](https://datatracker.ietf.org/doc/html/rfc6840#section-2); and
 * MUST properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4)
 
-DNSSEC validation back to the ICANN DNSSEC root trust anchor SHOULD be performed on all DNS queries associated with the validation of domain authorization or control by Remote Network Perspectives used for Multi-Perspective Issuance Corroboration, but it is not required.
+DNSSEC validation back to the ICANN DNSSEC root trust anchor MAY be performed on all DNS queries associated with the validation of domain authorization or control by Remote Network Perspectives used for Multi-Perspective Issuance Corroboration.
 
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
 
@@ -1123,13 +1123,13 @@ CAs MUST document potential issuances that were prevented by a CAA record in suf
 
 ##### 3.2.2.8.1 DNSSEC Validation of CAA Records
 
-DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective:
+Effective November 15th, 2025: DNSSEC validation back to the ICANN DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective:
 
 * MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4); and
 * MUST support NSEC3 and SHA-2 as defined in [RFC 6840 Section 2](https://datatracker.ietf.org/doc/html/rfc6840#section-2); and
 * MUST properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4)
 
-DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
+Effective November 15th, 2025: DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
 
 DNSSEC validation back to the ICANN DNSSEC root trust anchor MAY be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration.
 
