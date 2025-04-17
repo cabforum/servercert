@@ -591,9 +591,15 @@ RFC3986, Request for Comments: 3986, Uniform Resource Identifier (URI): Generic 
 
 RFC4035, Request for Comments: 4035, Protocol Modifications for the DNS Security Extensions. R. Arends, et al. March 2005.
 
+RFC4509, Request for Comments: 4509, Use of SHA-256 in DNSSEC Delegation Signer (DS) Resource Records (RRs). W. Hardaker. May 2006.
+
 RFC5019, Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments. A. Deacon, et al. September 2007.
 
+RFC5155, Request for Comments: 5155, DNS Security (DNSSEC) Hashed Authenticated Denial of Existence. B. Laurie, et al. March 2008.
+
 RFC5280, Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile. D. Cooper, et al. May 2008.
+
+RFC5702, Request for Comments: 5702, Use of SHA-2 Algorithms with RSA in DNSKEY and RRSIG Resource Records for DNSSEC. J. Jansen. October 2009.
 
 RFC5890, Request for Comments: 5890, Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework. J. Klensin. August 2010.
 
@@ -737,9 +743,13 @@ Completed validations of Applicant authority may be valid for the issuance of mu
 
 Effective November 15th, 2025: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective:
 
-* MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4); and
-* MUST support NSEC3 and SHA-2 as defined in [RFC 6840 Section 2](https://datatracker.ietf.org/doc/html/rfc6840#section-2); and
+* MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4) with the exception that the resolver does not need to distinguish between the Bogus and Indeterminate sates defined in [RFC 4035 Section 4.3](https://datatracker.ietf.org/doc/html/rfc4035#section-4.3); and
+* MUST support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and 
+* MUST support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
 * MUST properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4)
+* SHOULD have the Extension Mechanisms for DNS (EDNS) buffer size set to 1232 bytes.
+
+Effective November 15th, 2025: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control.
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor MAY be performed on all DNS queries associated with the validation of domain authorization or control by Remote Network Perspectives used for Multi-Perspective Issuance Corroboration.
 
@@ -1125,9 +1135,13 @@ CAs MUST document potential issuances that were prevented by a CAA record in suf
 
 Effective November 15th, 2025: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective:
 
-* MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4); and
-* MUST support NSEC3 and SHA-2 as defined in [RFC 6840 Section 2](https://datatracker.ietf.org/doc/html/rfc6840#section-2); and
+* MUST be a "security-aware resolver" as defined in [RFC 4035 Section 4](https://datatracker.ietf.org/doc/html/rfc4035#section-4) with the exception that the resolver does not need to distinguish between the Bogus and Indeterminate sates defined in [RFC 4035 Section 4.3](https://datatracker.ietf.org/doc/html/rfc4035#section-4.3); and
+* MUST support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and 
+* MUST support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
 * MUST properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4)
+* SHOULD have the Extension Mechanisms for DNS (EDNS) buffer size set to 1232 bytes.
+
+Effective November 15th, 2025: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups.
 
 Effective November 15th, 2025: DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
 
