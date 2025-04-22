@@ -292,7 +292,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 ### 1.6.1 Definitions
 
-**Address and Routing Parameter Area Name**: A Domain Name whose Top-Level Domain is "arpa". Example: `1.2.0.192.in-addr.arpa`.
+**Address and Routing Parameter Area Name**: A Domain Name whose Top-Level Domain is "arpa". Examples: `1.2.0.192.in-addr.arpa` (IP version 4) and `6.4.0.0.1.0.0.0.7.0.2.0.5.5.1.0.1.0.0.0.0.0.8.2.8.4.6.0.1.0.0.2.ip6.arpa` (IP version 6).
 
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
