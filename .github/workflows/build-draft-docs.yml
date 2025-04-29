@@ -9,7 +9,7 @@ jobs:
           - 'EVG'
           - 'NSR'
     name: Build ${{ matrix.document }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
         uses: actions/checkout@v3
