@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.4
+subtitle: Version 2.1.5
 author:
   - CA/Browser Forum
 
-date: 1-March-2025
+date: 16-May-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -147,7 +147,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.1    | SC79       | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 30-Sep-2024 | 14-Nov-2024                       |
 | 2.1.2    | SC80       | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15                   | 7-Nov-2024  | 16-Dec-2024                       |
 | 2.1.3    | SC83       | Winter 2024-2025 Cleanup Ballot                                                        | 23-Jan-2025 | 24-Feb-2025                       |
-| 2.1.4    | SC84       | DNS Labeled with ACME Account ID Validation Method                                     | 28-Jan-2025 | 1-Mar-2025                       |
+| 2.1.4    | SC84       | DNS Labeled with ACME Account ID Validation Method                                     | 28-Jan-2025 | 1-Mar-2025                        |
+| 2.1.5    | SC81       | Introduce Schedule of Reducing Validity and Data Reuse Periods                                     | 11-Apr-2025 | 16-May-2025                         |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -199,7 +200,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2023-01-15     | 7.2.2                     | Sharded or partitioned CRLs MUST have a distributionPoint                                                                                                                                                                                                                                                                                                                                                                                                |
 | 2023-07-15     | 4.9.1.1 and 7.2.2         | New CRL entries MUST have a revocation reason code                                                                                                                                                                                                                                                                                                                                                                                                       |
 | 2023-09-15     | Section 7 (and others)    | CAs MUST use the updated Certificate Profiles passed in Version 2.0.0                                                                                                                                                                                                                                                                                                                                                                                    |
-| 2024-03-15     | 4.9.7                     | CAs MUST generate and publish CRLs.                                                                                         
+| 2024-03-15     | 4.9.7                     | CAs MUST generate and publish CRLs.                                                                                                                                                                                                                                                                                                                                                                                                                      
 | 2024-09-15     | 4.3.1.2                   | The CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements.                                                                                                                                                                                                                                                                                                                      |
 | 2025-01-15     | 4.9.9                     | Subscriber Certificate OCSP responses MUST be available 15 minutes after issuance.                                                                                                                                                                                                                                                                                                                                                                       |
 | 2025-01-15     | 3.2.2.4                   | CAs MUST NOT rely on HTTPS websites to identify Domain Contact information. CAs MUST rely on IANA resources for identifying Domain Contact information.                                                                                                                                                                                                                                                                                                  |
@@ -207,6 +208,13 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2025-03-15     | 8.7                       | The CA SHOULD use a Linting process to test the technical accuracy of already issued Certificates against the sample set chosen for Self-Audits.                                                                                                                                                                                                                                                                                                         |
 | 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified.                                                                                                                                                                                                                                                                                                                                 |
 | 2025-07-15     | 3.2.2.4                   | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates.                                                                                                                                                                                                                                                                                                                                                                  |
+| 2026-03-15     | 4.2.1                     | Subject Identity Information validation maximum data reuse period is 398 days.                                                                                                                                                                                                                                                                                                                                                                           |
+| 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.                                                                                                                                                                                                                                                                                                                                                                             |
+| 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.                                                                                                                                                                                                                                                                                                                                                                                          |
+| 2027-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 100 days.                                                                                                                                                                                                                                                                                                                                                                             |
+| 2027-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 100 days.                                                                                                                                                                                                                                                                                                                                                                                          |
+| 2029-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 10 days.                                                                                                                                                                                                                                                                                                                                                                              |
+| 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 47 days.                                                                                                                                                                                                                                                                                                                                                                                           |
 
 ## 1.3 PKI Participants
 
@@ -1234,15 +1242,35 @@ The certificate request MAY include all factual information about the Applicant 
 
 Applicant information MUST include, but not be limited to, at least one Fully-Qualified Domain Name or IP address to be included in the Certificate's `subjectAltName` extension.
 
-[Section 6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) limits the validity period of Subscriber Certificates. The CA MAY use the documents and data provided in [Section 3.2](#32-initial-identity-validation) to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under [Section 3.2](#32-initial-identity-validation) or completed the validation itself no more than 825 days prior to issuing the Certificate. For validation of Domain Names and IP Addresses according to Section 3.2.2.4 and 3.2.2.5, any data, document, or completed validation used MUST be obtained no more than 398 days prior to issuing the Certificate.
+[Section 6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) limits the validity period of Subscriber Certificates.
+
+The CA MAY use the documents and data provided in [Section 3.2](#32-initial-identity-validation) to verify certificate information, or may reuse previous validations themselves, provided that the CA obtained the data or document from a source specified under [Section 3.2](#32-initial-identity-validation) or completed the validation itself within the maximum number of days prior to issuing the Certificate, as defined in the following table:
+
+Table: Subject Identity Information validation data reuse periods
+
+| __Certificate issued on or after__ | __Certificate issued before__  | __Maximum data reuse period__  |
+| --                                 | --                             | --                             |
+|                                    | March 15, 2026                 | 825 days                       |
+| March 15, 2026                     |                                | 398 days                       |
+
+For validation of Domain Names and IP Addresses according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address), any data, document, or completed validation used MUST be obtained within the maximum number of days prior to issuing the Certificate, as defined in the following table:
+
+Table: Domain Name and IP Address validation data reuse periods
+
+| __Certificate issued on or after__ | __Certificate issued before__  | __Maximum data reuse period__  |
+| --                                 | --                             | --                             |
+|                                    | March 15, 2026                 | 398 days                       |
+| March 15, 2026                     | March 15, 2027                 | 200 days                       |
+| March 15, 2027                     | March 15, 2029                 | 100 days                       |
+| March 15, 2029                     |                                | 10 days                        |
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
-After the change to any validation method specified in the Baseline Requirements or EV Guidelines, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in this BR 4.2.1 unless otherwise specifically provided in a ballot.
+After the change to any validation method specified in the Baseline Requirements or EV Guidelines, a CA may continue to reuse validation data or documents collected prior to the change, or the validation itself, for the period stated in [Section 4.2.1](#421-performing-identification-and-authentication-functions) unless otherwise specifically provided in a ballot.
 
 The CA SHALL develop, maintain, and implement documented procedures that identify and require additional verification activity for High Risk Certificate Requests prior to the Certificate's approval, as reasonably necessary to ensure that such requests are properly verified under these Requirements.
 
-If a Delegated Third Party fulfills any of the CA's obligations under this section , the CA SHALL verify that the process used by the Delegated Third Party to identify and further verify High Risk Certificate Requests provides at least the same level of assurance as the CA's own processes.
+If a Delegated Third Party fulfills any of the CA's obligations under this section, the CA SHALL verify that the process used by the Delegated Third Party to identify and further verify High Risk Certificate Requests provides at least the same level of assurance as the CA's own processes.
 
 ### 4.2.2 Approval or rejection of certificate applications
 
@@ -1970,7 +1998,22 @@ The CA SHALL protect its Private Key in a system or device that has been validat
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
 
-Subscriber Certificates issued on or after 1 September 2020 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days. 
+Subscriber Certificates issued before 15 March 2026 SHOULD NOT have a Validity Period greater than 397 days and MUST NOT have a Validity Period greater than 398 days.
+
+Subscriber Certificates issued on or after 15 March 2026 and before 15 March 2027 SHOULD NOT have a Validity Period greater than 199 days and MUST NOT have a Validity Period greater than 200 days.
+
+Subscriber Certificates issued on or after 15 March 2027 and before 15 March 2029 SHOULD NOT have a Validity Period greater than 99 days and MUST NOT have a Validity Period greater than 100 days.
+
+Subscriber Certificates issued on or after 15 March 2029 SHOULD NOT have a Validity Period greater than 46 days and MUST NOT have a Validity Period greater than 47 days.
+
+Table: Reference for maximum Validity Periods of Subscriber Certificates
+
+| __Certificate issued on or after__ | __Certificate issued before__  | __Maximum Validity Period__  |
+| --                                 | --                             | --                           |
+|                                    | March 15, 2026                 | 398 days                     |
+| March 15, 2026                     | March 15, 2027                 | 200 days                     |
+| March 15, 2027                     | March 15, 2029                 | 100 days                     |
+| March 15, 2029                     |                                | 47 days                      |
 
 For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
 
