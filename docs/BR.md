@@ -541,7 +541,7 @@ The script outputs:
 ### 1.6.2 Acronyms
 
 | **Acronym** | **Meaning** |
-| -------- | --------------------------------------------------------------------------------------------|
+| --- | -------             |
 | AICPA | American Institute of Certified Public Accountants |
 | ADN | Authorization Domain Name |
 | CA | Certification Authority |
