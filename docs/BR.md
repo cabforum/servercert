@@ -46,7 +46,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 ### 1.2.1 Revisions
 
 | **Ver.** | **Ballot** | **Description**                                                                        | **Adopted** | **Effective\***         |
-|--------|--------|----------------------------------------------------|---------------|-----------------|
+|--------|---------|---------------------------------------------------|---------------|-----------------|
 | 1.0.0    | 62         | Version 1.0 of the Baseline Requirements Adopted                                       | 22-Nov-11   | 01-Jul-12                         |
 | 1.0.1    | 71         | Revised Auditor Qualifications                                                         | 08-May-12   | 01-Jan-13                         |
 | 1.0.2    | 75         | Non-critical Name Constraints allowed as exception to RFC 5280                         | 08-Jun-12   | 08-Jun-12                         |
@@ -156,7 +156,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 
 
 | **Compliance** | **Section(s)**      | **Summary Description (See Full Text for Details)**                                                                 |
-|----------------|---------------------|---------------------------------------------------------------------------------------------------------------------|
+|---------------|---------------|----------------------------------------------------------------------|
 | 2013-01-01     | 6.1.6                     | For RSA public keys, CAs SHALL confirm that the value of the public exponent is an odd number equal to 3 or more.   |
 | 2013-01-01     | 4.9.10                    | CAs SHALL support an OCSP capability using the GET method.                                                          |
 | 2013-01-01     | 5                         | CAs SHALL comply with the Network and Certificate System Security Requirements.                                     |
