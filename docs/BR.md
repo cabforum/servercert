@@ -1513,8 +1513,8 @@ The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscri
 Prior to 2025-05-15, for Section 4.9.3 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.3 of the Baseline Requirements for TLS Server Certificates. Effective 2025-05-15, the CA SHALL adhere to these Requirements.
 
 The CA’s Certificate Policy or Certification Practice Statement MUST describe:
-     - a process for Subscribers to request revocation of their own Certificates; and
-     - when the revocation reason is "Key Compromise", the circumstances that necessitate the CA to (1) reject subsequent certificate requests containing the same public key and (2) perform a cascading revocation of all time-valid certificates containing the same public key.
+- a process for Subscribers to request revocation of their own Certificates; and
+- when the revocation reason is "Key Compromise", the circumstances that necessitate the CA to (1) reject subsequent certificate requests containing the same public key and (2) perform a cascading revocation of all time-valid certificates containing the same public key.
 
 The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests.
 
