@@ -1843,6 +1843,8 @@ Note: While these Requirements set the minimum retention period, the CA MAY choo
 
 ### 5.7.1 Incident and compromise handling procedures
 
+#### 5.7.1.1 Incident Response and Disaster Recovery Plans
+
 CA organizations shall have an Incident Response Plan and a Disaster Recovery Plan.
 
 The CA SHALL document a business continuity and disaster recovery procedures designed to notify and reasonably protect Application Software Suppliers, Subscribers, and Relying Parties in the event of a disaster, security compromise, or business failure. The CA is not required to publicly disclose its business continuity plans but SHALL make its business continuity plan and security plans available to the CA's auditors upon request. The CA SHALL annually test, review, and update these procedures.
@@ -1864,6 +1866,24 @@ The business continuity plan MUST include:
 13. How frequently backup copies of essential business information and software are taken;
 14. The distance of recovery facilities to the CA's main site; and
 15. Procedures for securing its facility to the extent possible during the period of time following a disaster and prior to restoring a secure environment either at the original or a remote site.
+
+#### 5.7.1.2 Mass Revocation Plans
+
+CA organizations MUST have a mass revocation plan, and as of [Effective Date], they SHALL assert in section 5.7.1 of their CPS or combined CP/CPS that they maintain a comprehensive and actionable plan for mass revocation events, that they perform annual testing of the mass revocation plan, and that they incorporate lessons learned into such plan in order to continually improve their preparedness for mass revocation events over time.
+
+The CA's mass revocation plan MUST include clearly defined, actionable, and comprehensive procedures designed to ensure rapid, consistent, and reliable response to large-scale certificate revocation scenarios. The CA is not required to publicly disclose its mass revocation plan or procedures but MUST make them available to its auditors upon request. The CA SHALL annually test, review, and update its plan and such procedures. The CA's mass revocation plan MAY be integrated into the CA's incident response, business continuity, disaster recovery, or other similar plans or procedures, provided that provisions governing mass revocation events remain clearly identifiable and satisfy these requirements.
+
+Mass revocation provisions MUST include:
+
+1. Activation criteria – specific, objective, and measurable thresholds at which the mass revocation plan is triggered based on the CA’s risk profile, issuance volumes, and operational capabilities;
+2. Customer contact information – how subscriber and customer contact details are stored, maintained, and kept up to date;
+3. Automation points – processes that are automated or could be automated, and those processes that require manual intervention;
+4. Targets and timelines – for incident triage, revocation initiation, certificate replacement, and post-event review;
+5. Subscriber notification methods – mechanisms for notifying impacted Subscribers;
+6. Role assignments – roles and responsibilities of personnel responsible for initiating, coordinating, and executing the plan;
+7. Training and education – training, awareness, and readiness activities for personnel responsible for, or supporting, the plan;
+8. Plan testing – annual operational testing to assess readiness and demonstrate implementation feasibility, using one or more of tabletop exercises, simulations, parallel testing, or controlled test environments that DO NOT involve the revocation of active Subscriber Certificates; and
+9. Post-test analysis and update schedule – how lessons learned from testing or live incidents are incorporated into the plan, and how often it is reviewed and updated.
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 
