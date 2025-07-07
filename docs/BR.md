@@ -1869,7 +1869,7 @@ The business continuity plan MUST include:
 
 #### 5.7.1.2 Mass Revocation Plans
 
-CA organizations MUST have a mass revocation plan, and as of [Effective Date], they SHALL assert in section 5.7.1 of their CPS or combined CP/CPS that they maintain a comprehensive and actionable plan for mass revocation events, that they perform annual testing of the mass revocation plan, and that they incorporate lessons learned into such plan in order to continually improve their preparedness for mass revocation events over time.
+CA organizations MUST have a mass revocation plan, and as of December 1, 2025, they SHALL assert in section 5.7.1 of their CPS or combined CP/CPS that they maintain a comprehensive and actionable plan for mass revocation events, that they perform annual testing of the mass revocation plan, and that they incorporate lessons learned into such plan in order to continually improve their preparedness for mass revocation events over time.
 
 The CA's mass revocation plan MUST include clearly defined, actionable, and comprehensive procedures designed to ensure rapid, consistent, and reliable response to large-scale certificate revocation scenarios. The CA is not required to publicly disclose its mass revocation plan or procedures but MUST make them available to its auditors upon request. The CA SHALL annually test, review, and update its plan and such procedures. The CA's mass revocation plan MAY be integrated into the CA's incident response, business continuity, disaster recovery, or other similar plans or procedures, provided that provisions governing mass revocation events remain clearly identifiable and satisfy these requirements.
 
