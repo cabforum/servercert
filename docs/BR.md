@@ -149,7 +149,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.3       | SC83        | Winter 2024-2025 Cleanup Ballot                                                        | 23-Jan-2025 | 24-Feb-2025                       |
 | 2.1.4       | SC84        | DNS Labeled with ACME Account ID Validation Method                                     | 28-Jan-2025 | 1-Mar-2025                        |
 | 2.1.5       | SC81        | Introduce Schedule of Reducing Validity and Data Reuse Periods                         | 11-Apr-2025 | 16-May-2025                       |
-| 2.1.5       | SC85        | Require Validation of DNSSEC (when present) for CAA and DCV Lookups
+| 2.1.6       | SC85        | Require Validation of DNSSEC (when present) for CAA and DCV Lookups
 | 19-Jun-2025 | 21-Jul-2025 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
