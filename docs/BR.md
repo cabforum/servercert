@@ -149,7 +149,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.3    | SC83       | Winter 2024-2025 Cleanup Ballot                                                        | 23-Jan-2025 | 24-Feb-2025                       |
 | 2.1.4    | SC84       | DNS Labeled with ACME Account ID Validation Method                                     | 28-Jan-2025 | 1-Mar-2025                        |
 | 2.1.5    | SC81       | Introduce Schedule of Reducing Validity and Data Reuse Periods                         | 11-Apr-2025 | 16-May-2025                       |
-| 2.1.X    | SCXX       | Sunset remaining email and phone-based methods in 3.2.2.4 and 3.2.2.5                  | TBD         | TBD                               |
+| 2.1.X    | SCXX       | Sunset remaining email, phone-based, and 'crossover' methods in 3.2.2.4 and 3.2.2.5    | TBD         | TBD                               |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
@@ -213,6 +213,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15     | 4.2.1                     | Subject Identity Information validation maximum data reuse period is 398 days.                                                                                                                                                                                                                                                                                                                                                                           |
 | 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.                                                                                                                                                                                                                                                                                                                                                                             |
 | 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.                                                                                                                                                                                                                                                                                                                                                                                          |
+| 2026-03-15     | 3.2.2.4 and 3.2.2.5       | CAs MUST NOT rely on Methods 3.2.2.4.8 and 3.2.2.5.3 to issue Subscriber Certificates.                                                                                                                                                                                                                                                                                                                                                                   |
 | 2027-03-15     | 3.2.2.4 and 3.2.2.5       | CAs MUST NOT rely on Methods 3.2.2.4.16, 3.2.2.4.17, 3.2.2.5.2, and 3.2.2.5.5 to issue Subscriber Certificates.                                                                                                                                                                                                                                                                                                                                          |
 | 2027-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 100 days.                                                                                                                                                                                                                                                                                                                                                                             |
 | 2027-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 100 days.                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -812,6 +813,10 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 **Note**: Once the FQDN has been validated using this method, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs separate validations for each of those other FQDNs using authorized methods. This method is NOT suitable for validating Wildcard Domain Names.
 
+Effective March 15, 2026:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
 ##### 3.2.2.4.9 Test Certificate
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
@@ -1026,6 +1031,10 @@ Effective March 15, 2027:
 Confirming the Applicant’s control over the IP Address by obtaining a Domain Name associated with the IP Address through a reverse-IP lookup on the IP Address and then verifying control over the FQDN using a method permitted under [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control).
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same FQDN as the Primary Network Perspective.
+
+Effective March 15, 2026:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
 ##### 3.2.2.5.4 Any Other Method
 
