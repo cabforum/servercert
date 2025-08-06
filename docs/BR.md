@@ -368,6 +368,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **DNS TXT Record Phone Contact**: The phone number defined in [Appendix A.2.2](#a22-dns-txt-record-phone-contact).
 
+**DNS TXT Record Persistent DCV Domain Label**: The Domain Label defined in [Appendix A.2.3](#a23-dns-txt-record-persistent-dcv-domain-label).
+
 **Domain Contact**: The Domain Name Registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record, or as obtained through direct contact with the Domain Name Registrar.
 
 **Domain Label**: From RFC 8499 (<https://tools.ietf.org/html/rfc8499>): "An ordered list of zero or more octets that makes up a portion of a domain name. Using graph theory, a label identifies one node in a portion of the graph of all possible domain names."
@@ -846,6 +848,8 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the Cer
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
 
+If the CA or an Affiliate of the CA operates a DNS zone to which Applicants can delegate (via CNAME) their underscore-prefixed Domain Label, the CA MUST ensure that each Applicant delegates to a unique FQDN within that zone. A CA or Affiliate of a CA SHOULD NOT operate such a service, and SHOULD direct any Applicants using such a service to use the method described in [Section 3.2.2.4.22](#322422-dns-change-with-persistent-value) instead.
+
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 ##### 3.2.2.4.8 IP Address
@@ -1028,6 +1032,47 @@ The token (as defined in draft 00 of “Automated Certificate Management Environ
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same token as the Primary Network Perspective.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+##### 3.2.2.4.22 DNS TXT Record with Persistent Value
+
+Confirming the Applicant's control over a FQDN by confirming the presence of a persistent record identifying the Applicant in a DNS TXT record for an Authorization Domain Name that is prefixed with one DNS TXT Record Persistent DCV Domain Label.
+
+The CA MUST confirm the presence of a TXT record whose RDATA value fulfills the following requirements:
+
+1. The RDATA value MUST conform to the `issue-value` syntax as defined in RFC 8659, section 4.2; and
+2. The `issuer-domain-name` value MUST be an Issuer Domain Name disclosed by the CA in Section 4.2 of the CA's Certificate Policy and/or Certification Practices Statement; and
+3. The `issue-value` MUST contain an `accounturi` parameter, where the parameter value is a unique URI (as described by RFC 8657, Section 3) identifying the account of the Applicant which requested validation for this FQDN; and
+4. The `issue-value` MAY contain a `persistUntil` parameter. If present, the parameter value MUST be a base-10 encoded integer representing a UNIX timestamp (the number of seconds since 1970-01-01T00:00:00Z ignoring leap seconds).
+
+If the `persistUntil` parameter is present, the CA MUST evaluate its value. If the time of the check is after the time specified in the `persistUntil` parameter value, the CA MUST NOT use the record as evidence of the Applicant's control over the FQDN.
+For example, the DNS TXT record might look like:
+_validation-persist.example.com IN TXT "authority.example; accounturi=https://authority.example/acct/123; persistUntil=1782424856"
+
+CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information as the Primary Network Perspective.
+
+If the DNS TXT record has a TTL less than the validation data reuse period (see [Section 4.2.1](#421-performing-identification-and-authentication-functions)), then the CA MUST consider the validation data reuse period to be equal to the TTL or 8 hours, whichever is greater.
+
+The following table shows how the `persistUntil` parameter affects whether a DNS record can be used for validation at different points in time:
+
+Table: Examples of how the `persistUntil` parameter affects validation
+
+| __Date/time of validation__ | __persistUntil__ | __Usable for validation__ | __Explanation__ |
+|----------------------------|------------------|--------------------------|----------------|
+| 2025-06-15T12:00:00Z | 2026-01-01T00:00:00Z (1767225600) | Yes | Validation time is before persistUntil timestamp, so record is usable |
+| 2025-06-15T12:00:00Z | 2025-01-01T00:00:00Z (1735689600) | No | Validation time is after persistUntil timestamp, so record is not usable |
+| 2025-06-15T12:00:00Z | (not present) | Yes | No persistUntil parameter present, so no time restriction applies |
+
+The following table shows how the DNS TXT record TTL affects the validation data reuse period:
+
+Table: Examples of how the TTL affects the validation data reuse period
+
+| __Record TTL__ | __Maximum data reuse period ([Section 4.2.1](#421-performing-identification-and-authentication-functions))__ | __Effective validation data reuse period__ | __Explanation__ |
+|---------------|------------------------------------------------------------------------------------------------------------------------|------------------------------------------|----------------|
+| 14400 (4 hours) | 200 days | 28800 seconds (8 hours) | TTL is below 8-hour minimum, so minimum 8 hours applies |
+| 86400 (24 hours) | 200 days | 86400 seconds (24 hours) | TTL is greater than minimum but less than maximum, so TTL applies |
+| 20736000 (240 days) | 200 days | 17280000 seconds (200 days) | TTL exceeds 200-day maximum, so maximum 200 days applies |
+
+**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names. 
 
 #### 3.2.2.5 Authentication for an IP Address
 
@@ -3946,6 +3991,10 @@ The DNS TXT record MUST be placed on the "`_validation-contactemail`" subdomain 
 ### A.2.2. DNS TXT Record Phone Contact
 
 The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain of the domain being validated. The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966, Section 5.1.4, or it cannot be used.
+
+### A.2.3. DNS TXT Record Persistent DCV Domain Label
+
+The DNS TXT record MUST be placed at the "_validation-persist" label prepended to the Authorization Domain Name being validated.
 
 # APPENDIX B – Issuance of Certificates for Onion Domain Names
 
