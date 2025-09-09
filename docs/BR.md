@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.7
+subtitle: Version 2.1.X
 author:
   - CA/Browser Forum
 
-date: 25-August-2025
+date: DD-MONTH-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -151,6 +151,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.5       | SC81        | Introduce Schedule of Reducing Validity and Data Reuse Periods                         | 11-Apr-2025 | 16-May-2025                       |
 | 2.1.6       | SC85        | Require Validation of DNSSEC (when present) for CAA and DCV Lookups                    | 19-Jun-2025 | 21-Jul-2025                       |
 | 2.1.7       | SC089       | Mass Revocation Planning                                                               | 23-Jul-2025 | 25-Aug-2025                       |
+| 2.1.X       | SC0XX       | Sunset Precertificate Signing CAs                                                      | DD-MMM-YYYY | DD-MMM-YYYY                       |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -211,6 +212,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified.                                                                                                                                                                                                                                                                                                                                 |
 | 2025-07-15     | 3.2.2.4                   | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates.                                                                                                                                                                                                                                                                                                                                                                  |
 | 2025-12-01     | 5.7.1.2                   | CAs SHALL assert in section 5.7.1 of their CPS or combined CP/CPS their mass revocation plan, testing, and continuous improvements.                                                                                                                                                                                                                                                                                                                      |
+| 2026-01-15     | 7.1.2.4                   | CAs MUST NOT use Precertificate Signing CAs to issue precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | 2026-03-15     | 4.2.1                     | Subject Identity Information validation maximum data reuse period is 398 days.                                                                                                                                                                                                                                                                                                                                                                           |
 | 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.                                                                                                                                                                                                                                                                                                                                                                             |
 | 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -2468,6 +2470,10 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 |     `extensions`           | See [Section 7.1.2.4.1](#71241-technically-constrained-precertificate-signing-ca-extensions) |
 | `signatureAlgorithm`       | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                | |
+
+Effective January 15, 2025:
+- This Certificate Profile MUST NOT be used.
+- Precertificate Signing CAs MUST NOT be used to issue precertificates.
 
 ##### 7.1.2.4.1 Technically Constrained Precertificate Signing CA Extensions
 
