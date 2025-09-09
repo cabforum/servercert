@@ -2471,7 +2471,7 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | `signatureAlgorithm`       | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
 | `signature`                | |
 
-Effective January 15, 2025:
+Effective January 15, 2026:
 - This Certificate Profile MUST NOT be used.
 - Precertificate Signing CAs MUST NOT be used to issue precertificates.
 
