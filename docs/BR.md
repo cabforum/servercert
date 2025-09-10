@@ -1041,7 +1041,7 @@ Confirming the Applicant's control over a FQDN by verifying the presence of a Pe
 
 The CA MUST confirm the Persistent DCV TXT Record’s RDATA value fulfills the following requirements:
 
-1. The RDATA value MUST conform to the `issue-value` syntax as defined in RFC 8659, section 4.2; and
+1. The RDATA value MUST conform to the `issue-value` syntax as defined in RFC 8659, Section 4.2; and
 2. The `issuer-domain-name` value MUST be an Issuer Domain Name disclosed by the CA in Section 4.2 of the CA's Certificate Policy and/or Certification Practices Statement; and
 3. The `issue-value` MUST contain an `accounturi` parameter, where the parameter value is a unique URI (as described by RFC 8657, Section 3) identifying the account of the Applicant which requested validation for this FQDN; and
 4. The `issue-value` MAY contain a `persistUntil` parameter. If present, the parameter value MUST be a base-10 encoded integer representing a UNIX timestamp (the number of seconds since 1970-01-01T00:00:00Z ignoring leap seconds); and
