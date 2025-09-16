@@ -209,7 +209,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2025-03-15     | 3.2.2.9                   | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified.                                                                                                                                                                                                                                                                                                                                 |
 | 2025-07-15     | 3.2.2.4                   | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates.                                                                                                                                                                                                                                                                                                                                                                  |
 
-| 2025-09-15     | 4.2.2                     | CAs SHALL NOT issue Certificates containing Address and Routing Parameter Area Names.                                                                                                                                                                                                                                                                                                                                                                         |
+| 2026-03-15     | 4.2.2                     | CAs SHALL NOT issue Certificates containing Address and Routing Parameter Area Names.                                                                                                                                                                                                                                                                                                                                                                         |
 
 ## 1.3 PKI Participants
 
@@ -292,7 +292,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 ### 1.6.1 Definitions
 
-**Address and Routing Parameter Area Name**: A Domain Name whose Top-Level Domain is "arpa". Examples: `1.2.0.192.in-addr.arpa` (IP version 4) and `1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa` (IP version 6).
+**Address and Routing Parameter Area Name**: A Domain Name whose Top-Level Domain ends with the labels "in-addr.arpa" or "ip6.arpa". Examples: `1.2.0.192.in-addr.arpa` (IP version 4) and `1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa` (IP version 6).
 
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
@@ -1255,7 +1255,7 @@ If a Delegated Third Party fulfills any of the CA's obligations under this secti
 
 CAs SHALL NOT issue Certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
 
-Effective 2025-09-15, CAs SHALL NOT issue Certificates containing Address and Routing Parameter Area Names.
+Effective 2026-03-15, CAs SHALL NOT issue Certificates containing Address and Routing Parameter Area Names.
 
 ### 4.2.3 Time to process certificate applications
 
