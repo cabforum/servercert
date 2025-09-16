@@ -151,7 +151,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.5       | SC81        | Introduce Schedule of Reducing Validity and Data Reuse Periods                         | 11-Apr-2025 | 16-May-2025                       |
 | 2.1.6       | SC85        | Require Validation of DNSSEC (when present) for CAA and DCV Lookups                    | 19-Jun-2025 | 21-Jul-2025                       |
 | 2.1.7       | SC089       | Mass Revocation Planning                                                               | 23-Jul-2025 | 25-Aug-2025                       |
-| 2.1.X       | SCXXX       | Sunset Method 3.2.2.5.3, Introduce Persistent DCV TXT Record Method for IP Addresses   | TBD | TBD                       |
+| 2.1.X       | SCXXX       | Sunset Method 3.2.2.5.3, Introduce Persistent DCV TXT Record Method for IP Addresses   | TBD         | TBD                               |
 
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
