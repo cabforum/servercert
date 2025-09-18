@@ -306,8 +306,6 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 ### 1.6.1 Definitions
 
-**IP Reverse Address Domain Name**: A Domain Name whose Top-Level Domain ends with the labels "in-addr.arpa" or "ip6.arpa". Examples: `1.2.0.192.in-addr.arpa` (IP version 4) and `1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa` (IP version 6).
-
 **Affiliate**: A corporation, partnership, joint venture or other entity controlling, controlled by, or under common control with another entity, or an agency, department, political subdivision, or any entity operating under the direct control of a Government Entity.
 
 **Applicant**: The natural person or Legal Entity that applies for (or seeks renewal of) a Certificate. Once the Certificate is issued, the Applicant is referred to as the Subscriber. For Certificates issued to devices, the Applicant is the entity that controls or operates the device named in the Certificate, even if the device is sending the actual certificate request.
@@ -405,6 +403,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 **IP Address Contact**: The person(s) or entity(ies) registered with an IP Address Registration Authority as having the right to control how one or more IP Addresses are used.
 
 **IP Address Registration Authority**: The Internet Assigned Numbers Authority (IANA) or a Regional Internet Registry (RIPE, APNIC, ARIN, AfriNIC, LACNIC).
+
+**IP Reverse Address Domain Name**: A Domain Name that ends with the Domain Labels "in-addr.arpa" or "ip6.arpa". Examples: `1.2.0.192.in-addr.arpa` (IP version 4) and `1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa` (IP version 6).
 
 **Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
 
