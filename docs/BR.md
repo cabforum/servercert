@@ -1037,7 +1037,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 ##### 3.2.2.4.22 DNS TXT Record with Persistent Value
 
-Confirming the Applicant's control over a FQDN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`").
+Confirming the Applicant's control over a FQDN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`"). For this method, the CA MUST NOT use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. This prohibition overrides the Authorization Domain Name definition. CNAME records MAY be followed when resolving the Persistent DCV TXT Record.
 
 The CA MUST confirm the Persistent DCV TXT Record’s RDATA value fulfills the following requirements:
 
@@ -1052,9 +1052,7 @@ If the `persistUntil` parameter is present, the CA MUST evaluate its value. If t
 For example, the Persistent DCV TXT Record might look like:
 `_validation-persist.example.com IN TXT "authority.example; accounturi=https://authority.example/acct/123; persistUntil=1782424856"`
 
-CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e., Persistent DCV TXT Record) as the Primary Network Perspective.
-
-If the Persistent DCV TXT Record has a TTL less than the validation data reuse period (see [Section 4.2.1](#421-performing-identification-and-authentication-functions)), then the CA MUST consider the validation data reuse period to be equal to the TTL or 8 hours, whichever is greater.
+For the purposes of [Section 4.2.1](#421-performing-identification-and-authentication-functions), CAs MUST consider 10 days as the maximum validation data reuse period for validations completed using this method.
 
 The following table shows how the `persistUntil` parameter affects whether a DNS record can be used for validation at different points in time:
 
@@ -1066,15 +1064,7 @@ Table: Examples of how the `persistUntil` parameter affects validation
 | 2025-06-15T12:00:00Z | 2025-01-01T00:00:00Z (1735689600) | No | Validation time is after persistUntil timestamp, so record is not usable |
 | 2025-06-15T12:00:00Z | (not present) | Yes | No persistUntil parameter present, so no time restriction applies |
 
-The following table shows how the Persistent DCV TXT Record's TTL affects the validation data reuse period:
-
-Table: Examples of how the TTL affects the validation data reuse period
-
-| __Record TTL__ | __Maximum data reuse period ([Section 4.2.1](#421-performing-identification-and-authentication-functions))__ | __Effective validation data reuse period__ | __Explanation__ |
-|---------------|------------------------------------------------------------------------------------------------------------------------|------------------------------------------|----------------|
-| 14400 (4 hours) | 200 days | 28800 seconds (8 hours) | TTL is below 8-hour minimum, so minimum 8 hours applies |
-| 86400 (24 hours) | 200 days | 86400 seconds (24 hours) | TTL is greater than minimum but less than maximum, so TTL applies |
-| 20736000 (240 days) | 200 days | 17280000 seconds (200 days) | TTL exceeds 200-day maximum, so maximum 200 days applies |
+CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe a Persistent DCV TXT Record that demonstrates the Applicant's control over the domain and contains the same `accounturi` parameter as the Primary Network Perspective.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names. 
 
