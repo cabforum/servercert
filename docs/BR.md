@@ -801,7 +801,7 @@ The email MAY be re-sent in its entirety, including the re-use of the Random Val
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
-The CA MUST NOT use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method. 
+The CA MUST NOT use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method. 
 
 **Note**: Once the  FQDN has been validated using this method, the CA MAY also issue Certificates for other  FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
@@ -824,7 +824,7 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the Cer
   1. 30 days; or
   2. if the Applicant submitted the Certificate request, the time frame permitted for reuse of validated information relevant to the Certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of these Guidelines or Section 3.2.2.14.3 of the EV Guidelines).
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
 
@@ -834,7 +834,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 Confirming the Applicant's control over the FQDN by confirming that the Applicant controls an IP address returned from a DNS lookup for A or AAAA records for the FQDN in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same IP address as the Primary Network Perspective.
 
@@ -856,7 +856,7 @@ This method has been retired and MUST NOT be used.
 
 Confirming the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
 
-The CA MUST NOT use FQDNs returned from DNS CNAME lookups to calculate the ADN or Base Domain Name for the purposes of domain validation under this method.
+The CA MUST NOT use FQDNs returned from DNS CNAME lookups to determine the ADN or Base Domain Name for the purposes of domain validation under this method.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
@@ -875,7 +875,7 @@ Each email MAY confirm control of multiple FQDNs, provided that each email addre
 
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
@@ -887,7 +887,7 @@ Confirming the Applicant's control over the FQDN by sending a Random Value via e
 
 Each email MAY confirm control of multiple FQDNs, provided that each email address is DNS TXT Record Email Contact for each Authorization Domain Name being validated. The same email MAY be sent to multiple recipients as long as all recipients are DNS TXT Record Email Contacts for each Authorization Domain Name being validated.
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
@@ -909,6 +909,8 @@ In the event of reaching voicemail, the CA may leave the Random Value and the AD
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
+
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
@@ -923,7 +925,7 @@ In the event of reaching voicemail, the CA may leave the Random Value and the AD
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
@@ -943,7 +945,7 @@ The file containing the Request Token or Random Value:
 3. MUST be retrieved via either the "http" or "https" scheme, and
 4. MUST be accessed over an Authorized Port.
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 If the CA follows redirects, the following apply:
 
@@ -971,7 +973,7 @@ The CA MUST receive a successful HTTP response from the request (meaning a 2xx H
 
 The token (as defined in RFC 8555, Section 8.3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 If the CA follows redirects, the following apply:
 
@@ -992,7 +994,7 @@ Confirming the Applicant's control over a FQDN by validating domain control of t
 
 The token (as defined in RFC 8737, Section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 Except for Onion Domain Names, CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
 
@@ -1004,7 +1006,7 @@ Confirming the Applicant's control over the FQDN by performing the procedure doc
 
 The token (as defined in draft 00 of “Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge,” Section 3.1) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
-The CA MAY use FQDNs returned from DNS CNAME lookups to calculate the ADN for the purposes of domain validation under this method.
+The CA MAY use FQDNs returned from DNS CNAME lookups to determine the ADN for the purposes of domain validation under this method.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same token as the Primary Network Perspective.
 
