@@ -1382,6 +1382,32 @@ No stipulation.
 
 No stipulation.
 
+### 4.4.4 Problem reports
+Prior to 2025-05-15, the CA SHALL adhere to these Requirements or Version 2.1.3 of the Baseline Requirements for TLS Server Certificates. Effective 2025-05-15, the CA SHALL adhere to these Requirements.
+
+The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in Section 1.5.2 of their CPS.
+
+Within twenty four (24) hours after receiving a Certificate Problem Report, the CA SHALL investigate the facts and circumstances related to the report and determine if it's "actionable."
+
+A Certificate Problem Report is considered actionable if it includes:
+1. at least one serial number or hash of a time-valid and unrevoked Certificate issued by the CA, either directly or transitively (e.g., by attaching a Certificate file); and
+2. a description of either:
+    - how the Certificate(s) in question violates these Requirements or a CA's own policies; or
+    - a reason for Certificate revocation (e.g., a demonstration of key compromise, or a Subscriber request aligned with [Section 4.9.1](#491-circumstances-for-revocation)).
+
+A CA MAY take measures to prevent submission of non-actionable Certificate Problem Reports (e.g., input control validation on a form used to collect Certificate Problem Reports), but MUST be able to receive actionable Certificate Problem Reports.
+
+Within twenty four (24) hours after determining a Certificate Problem Report is actionable:
+1. The CA SHALL provide a report on its findings to the entity who filed the Certificate Problem Report.
+2. The CA SHOULD provide a report on its findings to Subscriber(s).
+3. If the Certificate Problem Report requires an action of revocation for the Certificate(s) specified within, the CA SHALL work with the Subscriber to determine the date and time which the CA will revoke the Certificate. The period from the time the Certificate Problem Report was determined actionable to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
+
+Within one hundred and twenty (120) hours after determining a Certificate Problem Report is actionable, the CA SHALL have evaluated all time-valid and unrevoked Certificates issued by the CA to detect additional instances of the non-compliance described in the report. The period from the time the additional affected Certificates were first identified to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
+
+Within twenty four (24) hours after determining a Certificate Problem Report is not actionable, the CA MUST provide a report on its findings to the entity who filed the Certificate Problem Report and request the information necessary to satisfy the above requirements of an actionable Certificate Problem Report.
+
+**Note**: If a non-actionable Certificate Problem Report is later amended by the reporter to satisfy the requirements of an actionable report described above, the time of receipt of the requested missing information is the basis for subsequent revocation timelines, if determined necessary.
+
 ## 4.5 Key pair and certificate usage
 
 ### 4.5.1 Subscriber private key and certificate usage
@@ -1531,23 +1557,26 @@ The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days i
 The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
 
 ### 4.9.3 Procedure for revocation request
+Prior to 2025-05-15, for Section 4.9.3 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.3 of the Baseline Requirements for TLS Server Certificates. Effective 2025-05-15, the CA SHALL adhere to these Requirements.
 
-The CA SHALL provide a process for Subscribers to request revocation of their own Certificates. The process MUST be described in the CA's Certificate Policy or Certification Practice Statement. The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests and Certificate Problem Reports.
+The CA’s Certificate Policy or Certification Practice Statement MUST describe:
+- a process for Subscribers to request revocation of their own Certificates; and
+- when the revocation reason is "Key Compromise", the circumstances that necessitate the CA to (1) reject subsequent certificate requests containing the same public key and (2) perform a cascading revocation of all time-valid certificates containing the same public key.
 
-The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in Section 1.5.2 of their CPS.
+The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests.
 
 ### 4.9.4 Revocation request grace period
 
 No stipulation.
 
 ### 4.9.5 Time within which CA must process the revocation request
+Prior to 2025-05-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.3 of the Baseline Requirements for TLS Server Certificates. Effective 2025-05-15, the CA SHALL adhere to these Requirements.
 
-Within 24 hours after receiving a Certificate Problem Report, the CA SHALL investigate the facts and circumstances related to a Certificate Problem Report and provide a preliminary report on its findings to both the Subscriber and the entity who filed the Certificate Problem Report.
-After reviewing the facts and circumstances, the CA SHALL work with the Subscriber and any entity reporting the Certificate Problem Report or other revocation-related notice to establish whether or not the certificate will be revoked, and if so, a date which the CA will revoke the certificate. The period from receipt of the Certificate Problem Report or revocation-related notice to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). The date selected by the CA SHOULD consider the following criteria:
+The period from the time from receipt of the revocation request to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). The date selected by the CA SHOULD consider the following criteria:
 
 1. The nature of the alleged problem (scope, context, severity, magnitude, risk of harm);
 2. The consequences of revocation (direct and collateral impacts to Subscribers and Relying Parties);
-3. The number of Certificate Problem Reports received about a particular Certificate or Subscriber;
+3. The number of revocation requests or Certificate Problem Reports received about a particular Certificate or Subscriber;
 4. The entity making the complaint (for example, a complaint from a law enforcement official that a Web site is engaged in illegal activities should carry more weight than a complaint from a consumer alleging that they didn't receive the goods they ordered); and
 5. Relevant legislation.
 
@@ -1575,10 +1604,9 @@ CAs issuing CA Certificates:
 1. MUST update and publish a new CRL at least every twelve (12) months;
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
-CAs MUST continue issuing CRLs until one of the following is true:
-- all Subordinate CA Certificates containing the same Subject Public Key are expired or revoked; OR
-- the corresponding Subordinate CA Private Key is destroyed.
-
+CA Certificates MUST continue issuing CRLs until one of the following is true:
+- all certificates issued by the CA Certificate(s) are expired; or
+- all certificates issued by the CA Certificate(s) are expired or revoked and the corresponding CA Certificate(s) Private Key is destroyed.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
@@ -1645,6 +1673,12 @@ Not applicable.
 ### 4.9.16 Limits on suspension period
 
 Not applicable.
+
+### 4.9.17 Authoritative certificate status
+
+Effective 2025-05-15, for a certificate to be considered revoked:
+1. If the CA publishes a CRL, the CRL containing the certificate serial number MUST have been published to the Repository and be available for consumption for Relying Parties; and
+2. If the certificate contains a HTTP URL of the Issuing CA's OCSP responder, at least one (1) OCSP response containing a `certStatus` value of `revoked` MUST have been published to the Repository and be available for consumption for Relying Parties.
 
 ## 4.10 Certificate status services
 
