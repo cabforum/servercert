@@ -1383,7 +1383,7 @@ No stipulation.
 No stipulation.
 
 ### 4.4.4 Problem reports
-Prior to 2025-05-15, the CA SHALL adhere to these Requirements or Version 2.1.3 of the Baseline Requirements for TLS Server Certificates. Effective 2025-05-15, the CA SHALL adhere to these Requirements.
+For this section, prior to 2026-05-15, the CA SHALL adhere to these Requirements or Version 2.1.7 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
 
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in Section 1.5.2 of their CPS.
 
@@ -1400,7 +1400,7 @@ A CA MAY take measures to prevent submission of non-actionable Certificate Probl
 Within twenty four (24) hours after determining a Certificate Problem Report is actionable:
 1. The CA SHALL provide a report on its findings to the entity who filed the Certificate Problem Report.
 2. The CA SHOULD provide a report on its findings to Subscriber(s).
-3. If the Certificate Problem Report requires an action of revocation for the Certificate(s) specified within, the CA SHALL work with the Subscriber to determine the date and time which the CA will revoke the Certificate. The period from the time the Certificate Problem Report was determined actionable to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
+3. If the CA determines the Certificate Problem Report requires an action of revocation for the Certificate(s) specified within, the CA SHOULD work with the Subscriber to determine the date and time which the CA will revoke the Certificate. The period from the time the Certificate Problem Report was determined actionable to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
 
 Within one hundred and twenty (120) hours after determining a Certificate Problem Report is actionable, the CA SHALL have evaluated all time-valid and unrevoked Certificates issued by the CA to detect additional instances of the non-compliance described in the report. The period from the time the additional affected Certificates were first identified to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
 
@@ -1557,7 +1557,7 @@ The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days i
 The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third parties may submit Certificate Problem Reports informing the issuing CA of reasonable cause to revoke the certificate.
 
 ### 4.9.3 Procedure for revocation request
-Prior to 2025-05-15, for Section 4.9.3 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.3 of the Baseline Requirements for TLS Server Certificates. Effective 2025-05-15, the CA SHALL adhere to these Requirements.
+Prior to 2026-05-15, for Section 4.9.3 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.7 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
 
 The CA’s Certificate Policy or Certification Practice Statement MUST describe:
 - a process for Subscribers to request revocation of their own Certificates; and
@@ -1570,7 +1570,7 @@ The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocat
 No stipulation.
 
 ### 4.9.5 Time within which CA must process the revocation request
-Prior to 2025-05-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.3 of the Baseline Requirements for TLS Server Certificates. Effective 2025-05-15, the CA SHALL adhere to these Requirements.
+Prior to 2026-05-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.7 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
 
 The period from the time from receipt of the revocation request to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). The date selected by the CA SHOULD consider the following criteria:
 
@@ -1676,7 +1676,7 @@ Not applicable.
 
 ### 4.9.17 Authoritative certificate status
 
-Effective 2025-05-15, for a certificate to be considered revoked:
+Effective 2026-05-15, for a certificate to be considered revoked:
 1. If the CA publishes a CRL, the CRL containing the certificate serial number MUST have been published to the Repository and be available for consumption for Relying Parties; and
 2. If the certificate contains a HTTP URL of the Issuing CA's OCSP responder, at least one (1) OCSP response containing a `certStatus` value of `revoked` MUST have been published to the Repository and be available for consumption for Relying Parties.
 
