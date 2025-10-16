@@ -2012,6 +2012,11 @@ For ECDSA key pairs, the CA SHALL:
 
 * Ensure that the key represents a valid point on the NIST P-256, NIST P-384 or NIST P-521 elliptic curve.
 
+For ML-DSA key pairs, the CA SHALL:
+
+* Ensure the Key uses one of the following parameter sets:
+  * ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
+
 No other algorithms or key sizes are permitted.
 
 ### 6.1.6 Public key parameters generation and quality checking
@@ -2019,6 +2024,8 @@ No other algorithms or key sizes are permitted.
 RSA: The CA SHALL confirm that the value of the public exponent is an odd number equal to 3 or more. Additionally, the public exponent SHOULD be in the range between 2^16 + 1 and 2^256 - 1. The modulus SHOULD also have the following characteristics: an odd number, not the power of a prime, and have no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89]
 
 ECDSA: The CA SHOULD confirm the validity of all keys using either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
+
+For ML-DSA key pairs: no stipulation.
 
 ### 6.1.7 Key usage purposes (as per X.509 v3 key usage field)
 
@@ -2817,7 +2824,7 @@ Table: Permitted `policyQualifiers`
 
 ##### 7.1.2.7.11 Subscriber Certificate Key Usage
 
-The acceptable Key Usage values vary based on whether the Certificate's `subjectPublicKeyInfo` identifies an RSA public key or an ECC public key. CAs MUST ensure the Key Usage is appropriate for the Certificate Public Key.
+The acceptable Key Usage values vary based on whether the Certificate's `subjectPublicKeyInfo` identifies an RSA public key, an ECC public key, or ML-DSA public key. CAs MUST ensure the Key Usage is appropriate for the Certificate Public Key.
 
 Table: Key Usage for RSA Public Keys
 
@@ -2850,6 +2857,20 @@ Table: Key Usage for ECC Public Keys
 | `decipherOnly`     | N             | --               |
 
 **Note**: The `keyAgreement` bit is currently permitted, although setting it is NOT RECOMMENDED, as it is a Pending Prohibition (https://github.com/cabforum/servercert/issues/384).
+
+Table: Key Usage for ML-DSA Public Keys
+
+| __Key Usage__      | __Permitted__ | __Required__     |
+| -----              | --            | ---              |
+| `digitalSignature` | Y             | MUST             |
+| `nonRepudiation`   | N             | --               |
+| `keyEncipherment`  | N             | --               |
+| `dataEncipherment` | N             | --               |
+| `keyAgreement`     | N             | --               |
+| `keyCertSign`      | N             | --               |
+| `cRLSign`          | N             | --               |
+| `encipherOnly`     | N             | --               |
+| `decipherOnly`     | N             | --               |
 
 ##### 7.1.2.7.12 Subscriber Certificate Subject Alternative Name
 
@@ -3344,6 +3365,19 @@ When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte ide
 * For P-384 keys, `301006072a8648ce3d020106052b81040022`.
 * For P-521 keys, `301006072a8648ce3d020106052b81040023`.
 
+
+##### 7.1.3.2.4 ML-DSA
+
+The CA SHALL indicate an ML-DSA key using one of the following algorithm identifiers below:
+
+  * ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
+
+The parameters for ML-DSA keys SHALL be absent. The CA MUST NOT use HashML-DSA; only "pure" ML-DSA is permitted.
+
+When encoded, the AlgorithmIdentifier for ML-DSA keys SHALL be byte-for-byte identical with the following hex-encoded bytes:
+
+* For ML-DSA-87, `300b0609608648016503040313`.
+
 #### 7.1.3.2 Signature AlgorithmIdentifier
 
 All objects signed by a CA Private Key MUST conform to these requirements on the use of the `AlgorithmIdentifier` or `AlgorithmIdentifier`-derived type in the context of signatures.
@@ -3441,6 +3475,13 @@ If the signing key is P-256, the signature MUST use ECDSA with SHA-256. When enc
 If the signing key is P-384, the signature MUST use ECDSA with SHA-384. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the following hex-encoded bytes: `300a06082a8648ce3d040303`.
 
 If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the following hex-encoded bytes: `300a06082a8648ce3d040304`.
+
+##### 7.1.3.2.4 ML-DSA
+
+The CA SHALL use the appropriate signature algorithm and encoding based upon the signing key used.
+
+If the signing key is ML-DSA-87, the signature algorithm SHALL be id-ml-dsa-87 (OID: 2.16.840.1.101.3.4.3.19). When encoded, the `AlgorithmIdentifier` SHALL be byte-for-byte identical with the following hex-encoded bytes: `300b0609608648016503040313`.
+
 
 ### 7.1.4 Name Forms
 
