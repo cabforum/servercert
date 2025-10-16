@@ -750,7 +750,7 @@ The CA SHOULD implement a process to screen proxy servers in order to prevent re
 
 This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
 
-The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate as follows:
+The CA SHALL confirm that prior to issuance, the CA has validated each FQDN or Wildcard Domain Name listed in the Certificate as follows:
 
 1. When the FQDN is not an Onion Domain Name, the CA SHALL validate the FQDN using at least one of the methods listed below; and
 2. When the FQDN is an Onion Domain Name, the CA SHALL validate the FQDN in accordance with Appendix B.
