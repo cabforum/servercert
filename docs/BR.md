@@ -3366,7 +3366,7 @@ When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte ide
 * For P-521 keys, `301006072a8648ce3d020106052b81040023`.
 
 
-##### 7.1.3.2.4 ML-DSA
+##### 7.1.3.1.3 ML-DSA
 
 The CA SHALL indicate an ML-DSA key using one of the following algorithm identifiers below:
 
