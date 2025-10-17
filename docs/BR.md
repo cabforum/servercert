@@ -3478,7 +3478,7 @@ If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When enc
 
 ##### 7.1.3.2.4 ML-DSA
 
-The CA SHALL use the appropriate signature algorithm and encoding based upon the signing key used.
+The CA SHALL use the appropriate signature algorithm and encoding based upon the signing key used. Additionally, the CA SHALL NOT use this signature algorithm if the algorithm identifier of the public key being certified is not id-ml-dsa-87 (OID: 2.16.840.1.101.3.4.3.19).
 
 If the signing key is ML-DSA-87, the signature algorithm SHALL be id-ml-dsa-87 (OID: 2.16.840.1.101.3.4.3.19). When encoded, the `AlgorithmIdentifier` SHALL be byte-for-byte identical with the following hex-encoded bytes: `300b0609608648016503040313`.
 
