@@ -3372,7 +3372,7 @@ The CA SHALL indicate an ML-DSA key using one of the following algorithm identif
 
   * ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
 
-The parameters for ML-DSA keys SHALL be absent. The CA MUST NOT use HashML-DSA; only "pure" ML-DSA is permitted.
+The parameters for ML-DSA keys SHALL be absent. The CA MUST NOT use HashML-DSA; only "pure" ML-DSA is permitted. Additionally, the CA SHALL NOT use this algorithm if the algorithm identifier of the Certificate's signature algorithm is not ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
 
 When encoded, the AlgorithmIdentifier for ML-DSA keys SHALL be byte-for-byte identical with the following hex-encoded bytes:
 
