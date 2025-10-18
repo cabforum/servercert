@@ -2824,7 +2824,7 @@ Table: Permitted `policyQualifiers`
 
 ##### 7.1.2.7.11 Subscriber Certificate Key Usage
 
-The acceptable Key Usage values vary based on whether the Certificate's `subjectPublicKeyInfo` identifies an RSA public key, an ECC public key, or ML-DSA public key. CAs MUST ensure the Key Usage is appropriate for the Certificate Public Key.
+The acceptable Key Usage values vary based on whether the Certificate's `subjectPublicKeyInfo` identifies an RSA public key, an ECC public key, or an ML-DSA public key. CAs MUST ensure the Key Usage is appropriate for the Certificate Public Key.
 
 Table: Key Usage for RSA Public Keys
 
