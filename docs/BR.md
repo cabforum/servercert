@@ -1332,7 +1332,7 @@ If a Delegated Third Party fulfills any of the CA's obligations under this secti
 
 CAs SHALL NOT issue Certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
 
-Effective 2026-03-15, CAs SHALL NOT issue Certificates containing Domain Names that end in a IP Reverse Zone Suffix.
+Effective 2026-03-15, CAs SHALL NOT issue Certificates containing Domain Names that end in an IP Reverse Zone Suffix.
 
 ### 4.2.3 Time to process certificate applications
 
