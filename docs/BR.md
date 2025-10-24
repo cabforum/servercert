@@ -778,6 +778,8 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
 Effective March 15, 2028:
 - The CA MUST NOT rely on this method.
 - Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
@@ -854,6 +856,8 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
 Effective March 15, 2028:
 - The CA MUST NOT rely on this method.
 - Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
@@ -869,6 +873,8 @@ The Random Value SHALL be unique in each email. The email MAY be re-sent in its 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
 
 Effective March 15, 2028:
 - The CA MUST NOT rely on this method.
@@ -892,6 +898,8 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
 Effective March 15, 2027:
 - The CA MUST NOT rely on this method.
 - Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
@@ -909,6 +917,8 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
 
 Effective March 15, 2027:
 - The CA MUST NOT rely on this method.
@@ -1022,6 +1032,8 @@ The CA MAY resend the email, fax, SMS, or postal mail in its entirety, including
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
 Effective March 15, 2027:
 - The CA MUST NOT rely on this method.
 - Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
@@ -1047,6 +1059,8 @@ In the event that someone other than an IP Address Contact is reached, the CA MA
 In the event of reaching voicemail, the CA may leave the Random Value and the IP Address(es) being validated. The Random Value MUST be returned to the CA to approve the request.
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
+
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
 
 Effective March 15, 2027:
 - The CA MUST NOT rely on this method.
