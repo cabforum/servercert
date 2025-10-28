@@ -3322,7 +3322,6 @@ DomainValidationMethods ::= BIT STRING {
   method3224_20 (20),
   method3224_21 (21),
   method3224_22 (22),
-  ...
   }
 
 id-cabf-DomainValidationMethods OBJECT IDENTIFIER ::= { cabf-validationMethods 1 }
