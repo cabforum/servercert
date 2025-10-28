@@ -3297,6 +3297,8 @@ When including this extension in a Certificate, the bits representing the use of
  * [Section 3.2.2.4.21](#322421-dns-labeled-with-account-id---acme) corresponds with the bit in position 21.
  * [Section 3.2.2.4.22](#322422-dns-txt-record-with-persistent-value) corresponds with the bit in position 22.
 
+Bit positions that do not correspond to a validation method listed above MUST NOT be asserted.
+
 This extension has the following format:
 
 ``` ASN.1
