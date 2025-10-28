@@ -3279,7 +3279,7 @@ This extension MUST NOT be marked critical.
 
 When including this extension in a Certificate, the bits representing the use of one or more [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) domain validation methods MUST be encoded in this extension as follows:
 
-* The leading bit in position 0 is reserved. 
+* The leading bit in position 0 is reserved. This bit MUST NOT be asserted.
 * Each subsection of [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) corresponds with the bit in the same position as the subsection's number under 3.2.2.4: 
  * [Section 3.2.2.4.2](#32242-email-fax-sms-or-postal-mail-to-domain-contact) corresponds with the bit in position 2. 
  * [Section 3.2.2.4.4](#32244-automated-verification-of-domain-contact) corresponds with the bit in position 4.
