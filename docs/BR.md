@@ -876,7 +876,7 @@ This method does not allow CNAME lookups when choosing the ADN.
 
 Effective January 15, 2025:
 - When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
-- When obtaining Domain Contact information for a requested ADN the CA:
+- When obtaining Domain Contact information for the ADN the CA:
      - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
      - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
      - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
@@ -885,7 +885,7 @@ Effective January 15, 2025:
 
 Confirming the Applicant's control over the ADN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS CAA Email Contact. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659, Section 3.
 
-The same email MAY be sent to multiple recipients as long as all recipients are DNS CAA Email Contacts for the Authorization Domain Name being validated.
+Each email MAY confirm control of multiple ADNs, provided that each email address is a DNS CAA Email Contact for each ADN being validated. The same email MAY be sent to multiple recipients, provided that each email address is a DNS CAA Email Contact for each ADN being validated.
 
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
