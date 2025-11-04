@@ -1162,7 +1162,7 @@ SHOULD:
 
 - Facility & Service Provider Requirements
   - Be hosted from an ISO/IEC 27001 certified facility or equivalent security framework independently audited and certified or reported. 
-  - Rely on services covered in one of the following reports: System and Organization Controls 2 (SOC 2), IASE 3000, ENISA 715, FedRAMP Moderate, C5:2020, CSA STAR CCM, or equivalent services framework independently audited and certified or reported.
+  - Rely on services covered in one of the following reports: System and Organization Controls 2 (SOC 2), ISAE 3000, ENISA 715, FedRAMP Moderate, C5:2020, CSA STAR CCM, or equivalent services framework independently audited and certified or reported.
 - Vulnerability Detection and Patch Management
   - Implement intrusion detection and prevention controls to protect against common network and system threats.
   - Document and follow a vulnerability correction process that addresses the identification, review, response, and remediation of vulnerabilities.
