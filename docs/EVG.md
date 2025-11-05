@@ -1402,7 +1402,7 @@ The Registration Scheme MUST be identified using the using the following structu
 
 * 3 character Registration Scheme identifier;
 * 2 character ISO 3166 country code for the nation in which the Registration Scheme is operated, or if the scheme is operated globally ISO 3166 code "XG" shall be used;
-* For the NTR Registration Scheme identifier, if required under [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field), a 2 character ISO 3166-2 identifier for the subdivision (state or province) of the nation in which the Registration Scheme is operated, preceded by plus "+" (0x2B (ASCII), U+002B (UTF-8));
+* For the NTR Registration Scheme identifier, where registrations are administrated at the subdivision (state or province) level, if required under [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field), a plus "+" (0x2B (ASCII), U+002B (UTF-8)) followed by an up-to-three alphanumeric character ISO 3166-2 identifier for the subdivision of the nation in which the Registration Scheme is operated;
 * a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8));
 * Registration Reference allocated in accordance with the identified Registration Scheme
 
