@@ -765,7 +765,7 @@ Effective July 15, 2025:
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
-##### 3.2.2.4.4 Constructed Email to Domain Contact
+##### 3.2.2.4.4 Email to a Constructed Address
 
 Confirm the Applicant's control over the FQDN by
 
