@@ -1366,7 +1366,7 @@ Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, t
 
 __Certificate Field__: `subject:serialNumber` (OID: 2.5.4.5)  
 __Required/Optional__: __Required__  
-__Contents__: For Private Organizations, this field MUST contain the Registration (or similar) Number assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate.  If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the date of Incorporation or Registration SHALL be entered into this field in any one of the common date formats.
+__Contents__: For Private Organizations, this field MUST contain the Registration (or similar) Number assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate.  If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the date of Incorporation or Registration SHALL be entered into this field using the ISO 8601 Complete Date format (YYYY-MM-DD, e.g., 2025-01-23).
 
 For Government Entities that do not have a Registration Number or readily verifiable date of creation, the CA SHALL enter appropriate language to indicate that the Subject is a Government Entity.
 
