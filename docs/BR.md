@@ -494,7 +494,7 @@ The script outputs:
 
 **Validity Period**: From RFC 5280 (<https://tools.ietf.org/html/rfc5280>): "The period of time from notBefore through notAfter, inclusive."
 
-**WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
+**WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 9082, or an HTTPS website.
 
 **Wildcard Certificate**: A Certificate containing at least one Wildcard Domain Name in the Subject Alternative Names in the Certificate.
 
