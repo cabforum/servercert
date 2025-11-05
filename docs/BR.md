@@ -863,7 +863,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.15 Phone Contact with Domain Contact
+##### 3.2.2.4.15 Phone Contact with Domain Contact v2
 
 Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
