@@ -1303,7 +1303,7 @@ CABFOrganizationIdentifier ::= SEQUENCE {
     registrationSchemeIdentifier PrintableString (SIZE(3)),
     registrationCountry          PrintableString (SIZE(2)),
     registrationStateOrProvince  [0] IMPLICIT PrintableString
-                                  (SIZE(0..128)) OPTIONAL,
+                                  (SIZE(1..128)) OPTIONAL,
     registrationReference        UTF8String
 }
 ```
