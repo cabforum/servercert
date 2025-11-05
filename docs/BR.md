@@ -2869,7 +2869,7 @@ If the Issuing CA does not directly sign OCSP responses, it MAY make use of an O
 | `subjectAltName`                  | MUST NOT        | -            | - |
 | `subjectKeyIdentifier`            | SHOULD          | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
 | `authorityInformationAccess`      | NOT RECOMMENDED | N            | See [Section 7.1.2.8.3](#71283-ocsp-responder-authority-information-access) |
-| `certificatePolicies`             | MUST NOT        | N            | See [Section 7.1.2.8.8](#71288-ocsp-responder-certificate-policies) |
+| `certificatePolicies`             | SHOULD NOT      | N            | See [Section 7.1.2.8.8](#71288-ocsp-responder-certificate-policies) |
 | `crlDistributionPoints`           | MUST NOT        | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
