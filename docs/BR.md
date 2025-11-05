@@ -3909,7 +3909,7 @@ The following is an example where the holder of the domain specified the contact
 
 ```DNS Zone
 $ORIGIN example.com.
-               CAA 0 contactphone "+1 (555) 123-4567"
+               CAA 0 contactphone "+1 555 123 4567"
 ```
 
 The contactphone property MAY be critical if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
