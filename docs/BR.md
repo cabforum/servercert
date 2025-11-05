@@ -3875,7 +3875,7 @@ Any modification to CA practice enabled under this section MUST be discontinued 
 
 ## 9.17 Other provisions
 
-# APPENDIX A – CAA Contact Tag
+# Appendix A – CAA Contact Tag
 
 These methods allow domain owners to publish contact information in DNS for the purpose of validating domain control.
 
@@ -3921,7 +3921,7 @@ The DNS TXT record MUST be placed on the "`_validation-contactemail`" subdomain 
 
 The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain of the domain being validated. The entire RDATA value of this TXT record MUST be a valid Global Number as defined in RFC 3966, Section 5.1.4, or it cannot be used.
 
-# APPENDIX B – Issuance of Certificates for Onion Domain Names
+# Appendix B – Issuance of Certificates for Onion Domain Names
 
 This appendix defines permissible verification procedures for including one or more Onion Domain Names in a Certificate.
 
