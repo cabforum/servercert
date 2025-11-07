@@ -750,13 +750,18 @@ This section defines the permitted processes and procedures for validating the A
 
 The CA MUST follow this process when choosing the Authorization Domain Name "ADN" for validation of each applied-for FQDN or Wildcard Domain Name:
 
-1. Choose a validation method. If the applied-for FQDN or Wildcard Domain Name is a Wildcard Domain Name, the CA MUST choose a validation method that allows wildcard issuance. If the applied-for FQDN or Wildcard Domain Name is an Onion Domain Name, the CA MUST choose a validation method that allows Onion Domain Name issuance.
-2. Initialize `A` to the applied-for FQDN or Wildcard Domain Name.
-3. Remove "\*." from the left-most portion of `A`, if present.
-4. Optionally, if the validation method allows CNAME lookups when choosing the ADN, replace `A` with the result of a DNS CNAME lookup of `A`.
-5. Initialize `B` to the Base Domain Name of `A`.
-6. Optionally, if the validation method allows pruning domain labels when choosing the ADN, prune `N` Domain Labels from `A`, from left to right. The CA MUST choose a positive value of N such that `B` is either a suffix of or equal to the resulting `A`.
-7. Use `A` as the ADN for this validation.
+1. Initialize `A` to the applied-for FQDN or Wildcard Domain Name.
+2. Choose a validation method. If `A` is a Wildcard Domain Name, the CA MUST choose a validation method that allows wildcard issuance. If `A` is an Onion Domain Name, the CA MUST choose a validation method that allows Onion Domain Name issuance.
+3. If `A` is an FQDN:
+  a. Optionally, if the validation method allows CNAME lookups when choosing the ADN, replace `A` with the result of a DNS CNAME lookup of `A`.
+  b. Initialize `B` to the Base Domain Name of `A`.
+  c. Optionally, if the validation method allows pruning domain labels when choosing the ADN, prune `N` Domain Labels from `A`, from left to right. The CA MUST choose a positive value of N such that `B` is either a suffix of or equal to the resulting `A`.
+  d. Use `A` as the ADN for this validation.
+4. If `A` is a Wildcard Domain Name:
+  a. Remove "\*." from the left-most portion of `A`.
+  b. Initialize `B` to the Base Domain Name of `A`.
+  c. Optionally, if the validation method allows pruning domain labels when choosing the ADN, prune `N` Domain Labels from `A`, from left to right. The CA MUST choose a positive value of N such that `B` is either a suffix of or equal to the resulting `A`.
+  d. Use `A` as the ADN for this validation.
 
 When the FQDN or Wildcard Domain Name is an Onion Domain Name, the CA SHALL validate it in accordance with Appendix B.
 
