@@ -759,7 +759,7 @@ The CA MUST follow this process when choosing the Authorization Domain Name "ADN
   a. Remove "\*." from the left-most portion of `A`.
   b. If the validation method allows pruning domain labels when choosing the ADN, prune zero or more Domain Labels of `A` from left to right until encountering the Base Domain Name of `A` or the CA chooses to stop pruning, whichever comes first.
 
-When the FQDN or Wildcard Domain Name is an Onion Domain Name, the CA SHALL validate it in accordance with Appendix B.
+When the ADN is an Onion Domain Name, the CA SHALL validate it in accordance with Appendix B.
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
