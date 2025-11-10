@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.8
+subtitle: Version 2.1.9
 author:
   - CA/Browser Forum
 
-date: DD-MONTH-2025
+date: 10-November-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -151,7 +151,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.5       | SC81        | Introduce Schedule of Reducing Validity and Data Reuse Periods                         | 11-Apr-2025 | 16-May-2025                       |
 | 2.1.6       | SC85        | Require Validation of DNSSEC (when present) for CAA and DCV Lookups                    | 19-Jun-2025 | 21-Jul-2025                       |
 | 2.1.7       | SC089       | Mass Revocation Planning                                                               | 23-Jul-2025 | 25-Aug-2025                       |
-| 2.1.8       | SC088       | DNS TXT Record with Persistent Value DCV Method                                        | DD-MON-2025 | DD-MON-2025                       |
+| 2.1.9       | SC088       | DNS TXT Record with Persistent Value DCV Method                                        | 09-Oct-2025 | 10-Nov-2025                       |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
