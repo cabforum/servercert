@@ -1571,6 +1571,7 @@ The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocat
 No stipulation.
 
 ### 4.9.5 Time within which CA must process the revocation request
+
 Prior to 2026-05-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.7 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
 
 The period from the time from receipt of the revocation request to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). The date selected by the CA SHOULD consider the following criteria:
