@@ -1383,7 +1383,7 @@ No stipulation.
 No stipulation.
 
 ### 4.4.4 Problem reports
-For this section, prior to 2026-05-15, the CA SHALL adhere to these Requirements or Version 2.1.7 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
+Prior to 2026-05-15, the CA SHALL adhere to this section of these Requirements or this section of Version 2.1.7 of these Requirements. Effective 2026-05-15, the CA SHALL adhere to this section of these Requirements.
 
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions through a readily accessible online means and in Section 1.5.2 of their CPS.
 
