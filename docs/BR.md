@@ -1398,7 +1398,7 @@ A Certificate Problem Report is considered actionable if it includes:
 A CA MAY take measures to prevent submission of non-actionable Certificate Problem Reports (e.g., input control validation on a form used to collect Certificate Problem Reports), but MUST be able to receive actionable Certificate Problem Reports.
 
 Within twenty four (24) hours after determining a Certificate Problem Report is actionable:
-1. The CA SHALL provide a report on its findings to the entity who filed the Certificate Problem Report.
+1. The CA SHALL provide a report on its findings to the entity who filed the Certificate Problem Report, if contact details have been provided.
 2. The CA SHOULD provide a report on its findings to applicable Subscriber(s).
 3. If the CA determines the Certificate Problem Report requires an action of revocation for the Certificate(s) specified within, the CA SHOULD work with the applicable Subscriber to determine the date and time which the CA will revoke the Certificate. The period from the time the Certificate Problem Report was determined actionable to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
 
