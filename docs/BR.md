@@ -1393,7 +1393,7 @@ A Certificate Problem Report is considered actionable if it includes:
 1. at least one serial number or hash of a time-valid and unrevoked Certificate issued by the CA, either directly or transitively (e.g., by attaching a Certificate file); and
 2. a description of either:
     - how the Certificate(s) in question violates these Requirements or a CA's own policies; or
-    - a reason for Certificate revocation (e.g., a demonstration of key compromise, or a Subscriber request aligned with [Section 4.9.1](#491-circumstances-for-revocation)).
+    - a reason for Certificate revocation (e.g., a demonstration of Key Compromise, or a Subscriber request aligned with [Section 4.9.1](#491-circumstances-for-revocation)).
 
 A CA MAY take measures to prevent submission of non-actionable Certificate Problem Reports (e.g., input control validation on a form used to collect Certificate Problem Reports), but MUST be able to receive actionable Certificate Problem Reports.
 
