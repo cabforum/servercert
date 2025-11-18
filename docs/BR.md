@@ -1608,7 +1608,7 @@ CAs issuing CA Certificates:
 
 CA Certificates MUST continue issuing CRLs until one of the following is true:
 - all certificates issued by the CA Certificate(s) are expired; or
-- all certificates issued by the CA Certificate(s) are expired or revoked and the corresponding CA Certificate(s) Private Key is destroyed.
+- the Private Key for the CA has been destroyed.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
