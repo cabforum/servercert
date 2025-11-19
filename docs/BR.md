@@ -751,13 +751,30 @@ This section defines the permitted processes and procedures for validating the A
 The CA MUST follow this process when choosing the Authorization Domain Name "ADN" for validation of each applied-for FQDN or Wildcard Domain Name:
 
 1. Initialize `A` to the applied-for FQDN or Wildcard Domain Name.
-2. Choose a validation method. If `A` is a Wildcard Domain Name, the CA MUST choose a validation method that allows wildcard issuance. If `A` is an Onion Domain Name, the CA MUST choose a validation method that allows Onion Domain Name issuance.
+2. Choose a validation method. If `A` is a Wildcard Domain Name, the CA MUST choose a validation method with a check in the Wildcard column below. If `A` is an Onion Domain Name, the CA MUST choose a validation method with a check in the Onion column below.
 3. If `A` is an FQDN:
-    1. Optionally, if the validation method allows CNAME lookups when choosing the ADN, replace `A` with the result of a DNS CNAME lookup of `A`.
-    2. If the validation method allows pruning domain labels when choosing the ADN, prune zero or more Domain Labels of `A` from left to right until `A` is equal to the Base Domain Name of `A`, or the CA chooses to stop pruning, whichever comes first.
+    1. Optionally, if the validation method has a check in the CNAME column below, replace `A` with the result of a DNS CNAME lookup of `A`.
+    2. If the validation method has a check in the Prune column below, prune zero or more Domain Labels of `A` from left to right until `A` is equal to the Base Domain Name of `A`, or the CA chooses to stop pruning, whichever comes first.
 4. If `A` is a Wildcard Domain Name:
     1. Remove "\*." from the left-most portion of `A`.
-    2. If the validation method allows pruning domain labels when choosing the ADN, prune zero or more Domain Labels of `A` from left to right until `A` is equal to the Base Domain Name of `A`, or the CA chooses to stop pruning, whichever comes first.
+    2. If the validation method has a check in the Prune column below, prune zero or more Domain Labels of `A` from left to right until `A` is equal to the Base Domain Name of `A`, or the CA chooses to stop pruning, whichever comes first.
+5. Use `A` as the ADN.
+
+| Method                                         | Wildcard | Prune | CNAME | Onion |
+| --------                                                    | - | - | - | - |
+| 3.2.2.4.4 Constructed Email to Domain Contact               | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.7 DNS Change                                        | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.8 IP Address                                        | - | - | - | - |
+| 3.2.2.4.12 Validating Applicant as a Domain Contact         | ✔️ | ✔️ | - | - |
+| 3.2.2.4.13 Email to DNS CAA Contact                         | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.14 Email to DNS TXT Contact                         | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact  | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact         | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.18 Agreed-Upon Change to Website v2                 | - | - | - | ✔️ |
+| 3.2.2.4.19 Agreed-Upon Change to Website - ACME             | - | - | - | ✔️ |
+| 3.2.2.4.20 TLS Using ALPN                                   | - | - | - | ✔️ |
+| 3.2.2.4.21 DNS Labeled with Account ID - ACME               | ✔️ | ✔️ | - | - |
+| Appendix B.2.b                                              | ✔️ | ✔️ | - | ✔️ |
 
 When the ADN is an Onion Domain Name, the CA SHALL validate it in accordance with Appendix B.
 
@@ -806,12 +823,6 @@ The email MAY be re-sent in its entirety, including the re-use of the Random Val
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
-This method allows wildcard issuance.
-
-This method allows pruning domain labels when choosing the ADN.
-
-This method allows CNAME lookups when choosing the ADN.
-
 ##### 3.2.2.4.5 Domain Authorization Document
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
@@ -833,23 +844,11 @@ If a Random Value is used, the CA SHALL provide a Random Value unique to the Cer
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
 
-This method allows wildcard issuance.
-
-This method allows pruning domain labels when choosing the ADN.
-
-This method does not allow CNAME lookups when choosing the ADN. Note: Domain name resolution includes processing of CNAMEs, so validation under this method naturally includes processing CNAMES, even when the DNS query type is TXT or CAA.
-
 ##### 3.2.2.4.8 IP Address
 
 Confirming the Applicant's control over the ADN by confirming that the Applicant controls an IP address returned from a DNS lookup for A or AAAA records for the ADN in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same IP address as the Primary Network Perspective.
-
-This method MUST NOT be used for wildcard issuance.
-
-This method does not allow pruning domain labels when choosing the ADN.
-
-This method does not allow CNAME lookups when choosing the ADN.
 
 ##### 3.2.2.4.9 Test Certificate
 
@@ -869,12 +868,6 @@ Confirming the Applicant's control over the ADN by validating the Applicant is t
 
 The Domain Contact for an ADN is: The registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) as listed in the WHOIS record of the ADN or as obtained through direct contact with the Domain Name Registrar, or the holder of the email address in an SOA record for the ADN.
 
-This method allows wildcard issuance.
-
-This method allows pruning domain labels when choosing the ADN.
-
-This method does not allow CNAME lookups when choosing the ADN.
-
 Effective January 15, 2025:
 - When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information for the ADN the CA:
@@ -892,12 +885,6 @@ The Random Value SHALL be unique in each email. The email MAY be re-sent in its 
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
-This method allows wildcard issuance.
-
-This method allows pruning domain labels when choosing the ADN.
-
-This method allows CNAME lookups when choosing the ADN.
-
 ##### 3.2.2.4.14 Email to DNS TXT Contact
 
 Confirming the Applicant's control over the ADN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS TXT Record Email Contact for the Authorization Domain Name.
@@ -907,12 +894,6 @@ The same email MAY be sent to multiple recipients as long as all recipients are 
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
-
-This method allows wildcard issuance.
-
-This method allows pruning domain labels when choosing the ADN.
-
-This method allows CNAME lookups when choosing the ADN.
 
 ##### 3.2.2.4.15 Phone Contact with Domain Contact
 
@@ -930,12 +911,6 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
-This method allows wildcard issuance.
-
-This method allows pruning domain labels when choosing the ADN.
-
-This method allows CNAME lookups when choosing the ADN.
-
 ##### 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
 
 Confirm the Applicant's control over the ADN by calling the DNS CAA Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and the recipient of the phone call provides a confirming response for each ADN. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659 Section 3.
@@ -947,12 +922,6 @@ In the event of reaching voicemail, the CA may leave the Random Value and the AD
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
-
-This method allows wildcard issuance.
-
-This method allows pruning domain labels when choosing the ADN.
-
-This method allows CNAME lookups when choosing the ADN.
 
 ##### 3.2.2.4.18 Agreed-Upon Change to Website v2
 
@@ -983,14 +952,6 @@ If a Random Value is used, then:
 
 Except for Onion Domain Names, CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
 
-This method MUST NOT be used for wildcard issuance.
-
-This method does not allow pruning domain labels when choosing the ADN.
-
-This method does not allow CNAME lookups when choosing the ADN.
-
-This method allows Onion Domain Name issuance.
-
 ##### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
 
 Confirming the Applicant's control over the ADN by validating domain control of the ADN using the ACME HTTP Challenge method defined in Section 8.3 of RFC 8555. The following are additive requirements to RFC 8555.
@@ -1009,14 +970,6 @@ If the CA follows redirects, the following apply:
 
 Except for Onion Domain Names, CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
 
-This method MUST NOT be used for wildcard issuance.
-
-This method does not allow pruning domain labels when choosing the ADN.
-
-This method does not allow CNAME lookups when choosing the ADN.
-
-This method allows Onion Domain Name issuance.
-
 ##### 3.2.2.4.20 TLS Using ALPN
 
 Confirming the Applicant's control over the ADN by validating domain control of the ADN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC7301] as defined in RFC 8737. The following are additive requirements to RFC 8737.
@@ -1025,14 +978,6 @@ The token (as defined in RFC 8737, Section 3) MUST NOT be used for more than 30 
 
 Except for Onion Domain Names, CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
 
-This method MUST NOT be used for wildcard issuance.
-
-This method does not allow pruning domain labels when choosing the ADN.
-
-This method does not allow CNAME lookups when choosing the ADN.
-
-This method allows Onion Domain Name issuance.
-
 ##### 3.2.2.4.21 DNS Labeled with Account ID - ACME
 
 Confirming the Applicant's control over the ADN by performing the procedure documented for a “dns-account-01” challenge in draft 00 of “Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge,” available at [https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/](https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/).
@@ -1040,12 +985,6 @@ Confirming the Applicant's control over the ADN by performing the procedure docu
 The token (as defined in draft 00 of “Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge,” Section 3.1) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same token as the Primary Network Perspective.
-
-This method allows wildcard issuance.
-
-This method allows pruning domain labels when choosing the ADN.
-
-This method does not allow CNAME lookups when choosing the ADN.
 
 #### 3.2.2.5 Authentication for an IP Address
 
@@ -4029,13 +3968,5 @@ This appendix defines permissible verification procedures for including one or m
       ```
 
       The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
-
-      This method allows wildcard issuance.
-
-      This method allows pruning domain labels when choosing the ADN.
-
-      This method does not allow CNAME lookups when choosing the ADN.
-
-      This method allows Onion Domain Name issuance.
 
 3. When a Certificate includes an Onion Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names).
