@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.9
+subtitle: Version 2.1.X
 author:
   - CA/Browser Forum
 
-date: 10-November-2025
+date: DD-MONTH-YYYY
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -153,6 +153,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.7    | SC089      | Mass Revocation Planning                                                               | 23-Jul-2025 | 25-Aug-2025                       |
 | 2.1.8    | SC092      | Sunset Precertificate Signing CAs                                                      | 03-Oct-2025 | 04-Nov-2025                       |
 | 2.1.9    | SC088      | DNS TXT Record with Persistent Value DCV Method                                        | 09-Oct-2025 | 10-Nov-2025                       |
+| 2.1.X    | SC0XX      | Sunset all remaining use of SHA-1 in Certificates and CRLs                             | DD-MON-YEAR | DD-MON-YEAR                       |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -221,6 +222,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.     |
 | 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.   |
 | 2026-03-15     | 7.1.2.4                   | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4.    |
+| 2026-09-15     | 7.1.3.2.1                 | Sunset all remaining use of SHA-1 in Certificates and CRLs |
 | 2027-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 100 days.    |
 | 2027-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 100 days.   |
 | 2029-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 10 days. |
@@ -3449,7 +3451,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
   0500a203020140
   ```
 
-In addition, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
+Until 2026-09-15, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
 
 * If used within a Certificate, such as the `signatureAlgorithm` field of a Certificate or the `signature` field of a TBSCertificate:
   * The new Certificate is a Root CA Certificate or Subordinate CA Certificate that is a Cross-Certificate; and,
@@ -3473,6 +3475,8 @@ In addition, the CA MAY use the following signature algorithm and encoding if al
 
   Encoding:
   `300d06092a864886f70d0101050500`
+
+Prior to 2026‐09‐15, the CA SHALL revoke any unexpired Subordinate CA Certificate that contains `RSASSA-PKCS1-v1_5 with SHA-1` within the Certificate. 
 
 ##### 7.1.3.2.2 ECDSA
 
