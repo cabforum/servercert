@@ -278,7 +278,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Suspect code**: Code that contains malicious functionality or serious vulnerabilities, including spyware, malware and other code that installs without the user's consent and/or resists its own removal, and code that can be exploited in ways not intended by its designers to compromise the trustworthiness of the platforms on which it executes.
 
-**Translator**: An individual or Business Entity that possesses the requisite knowledge and expertise to accurately translate the words of a document written in one language to the native language of the CA.
+**Translator**: A Natural Person or a Legal Entity that possesses the requisite knowledge and expertise to accurately translate the words of a document written in one language to the native language of the CA.
 
 **Verified Accountant Letter**: A document meeting the requirements specified in [Section 3.2.2.11.2](#322112-verified-accountant-letter).
 
