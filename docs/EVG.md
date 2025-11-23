@@ -158,7 +158,7 @@ EV Certificates focus only on the identity of the Subject named in the Certifica
 2. That the Subject named in the EV Certificate complies with applicable laws;
 3. That the Subject named in the EV Certificate is trustworthy, honest, or reputable in its business dealings; or
 4. That it is "safe" to do business with the Subject named in the EV Certificate.
-   
+
 ## 1.5 Policy administration
 
 ### 1.5.1 Organization administering the document
@@ -968,9 +968,9 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 3.2.2.9](#3229-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 3.2.2.10](#32210-verification-of-approval-of-ev-certificate-request).
 4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 3.2.2.14.1](#322141-validation-for-existing-subscribers).
 
-### 3.2.3 Authentication of individual identity 
+### 3.2.3 Authentication of individual identity
 
-### 3.2.4 Non-verified subscriber information 
+### 3.2.4 Non-verified subscriber information
 
 ### 3.2.5 Validation of authority
 
@@ -1198,7 +1198,7 @@ Root CA Private Keys MUST NOT be used to sign EV Certificates.
 
 ### 4.12.2 Session key encapsulation and recovery policy and practices
 
-# 5. FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS 
+# 5. FACILITY, MANAGEMENT, AND OPERATIONAL CONTROLS
 
 As specified in Section 5 of the Baseline Requirements. In addition, systems used to process and approve EV Certificate Requests MUST require actions by at least two trusted persons before creating an EV Certificate.
 
@@ -1232,7 +1232,7 @@ As specified in Section 5 of the Baseline Requirements. In addition, systems use
 
 1. The CA MUST enforce rigorous control procedures for the separation of validation duties to ensure that no one person can single-handedly validate and authorize the issuance of an EV Certificate.  The Final Cross-Correlation and Due Diligence steps, as outlined in [Section 3.2.2.13](#32213-final-cross-correlation-and-due-diligence), MAY be performed by one of the persons.  For example, one Validation Specialist MAY review and verify all the Applicant information and a second Validation Specialist MAY approve issuance of the EV Certificate.
 2. Such controls MUST be auditable.
-   
+
 ## 5.3 Personnel controls
 
 ### 5.3.1 Qualifications, experience, and clearance requirements
@@ -1323,7 +1323,7 @@ As specified in Section 5.4 of the Baseline Requirements.
 
 ## 5.8 CA or RA termination
 
-# 6. TECHNICAL SECURITY CONTROLS 
+# 6. TECHNICAL SECURITY CONTROLS
 
 ## 6.1 Key pair generation and installation
 
@@ -1541,7 +1541,7 @@ Effective as of 1 October 2020, if the CA has disclosed a set of acceptable form
 ##### 7.1.4.2.7 Subject Organizational Unit Name Field
 
 **Certificate Field**: `subject:organizationalUnitName` (OID: 2.5.4.11)  
-**Required/Optional/Prohibited**: **Prohibited**. 
+**Required/Optional/Prohibited**: **Prohibited**.
 
 ##### 7.1.4.2.8 Subject Organization Identifier Field
 
@@ -2140,7 +2140,7 @@ The following Registration Schemes are currently recognized as valid under these
   Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of
   the subject’s jurisdiction as specified in
   [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
-  For the purpose of identifying tax authorities, the country prefix described in article 215 of 
+  For the purpose of identifying tax authorities, the country prefix described in article 215 of
   EU Council Directive 2006/112/EC, as amended, MAY be used instead of the ISO 3166 2-letter country codes.
 
   * **PSD**:
