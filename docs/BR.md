@@ -3472,6 +3472,7 @@ Before including such an attribute, the CA SHALL:
   * Ensure that the contents contain information that has been verified by the CA, independent of the Applicant.
 
 ### 7.1.5 Name constraints
+See Sections [7.1.2.5.2 Technically Constrained TLS Subordinate CA Name Constraints](#71252-technically-constrained-tls-subordinate-ca-name-constraints) and [7.1.2.10.8 CA Certificate Name Constraints](#712108-ca-certificate-name-constraints).
 
 ### 7.1.6 Certificate policy object identifier
 
