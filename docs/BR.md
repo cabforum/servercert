@@ -389,7 +389,9 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Parent Company**: A company that Controls a Subsidiary Company.
 
-**Pending Prohibition​​**: The use of a behavior described with this label is highly discouraged, as it is planned to be deprecated and will likely be designated as MUST NOT in the future.
+**Pending Prohibition**: The use of a behavior described with this label is highly discouraged, as it is planned to be deprecated and will likely be designated as MUST NOT in the future.
+
+**Precertificate**: A Precertificate is a signed data structure that can be submitted to a Certificate Transparency log, as defined by RFC 6962 and containing the critical poison extension (OID 1.3.6.1.4.1.11129.2.4.3).
 
 **Primary Network Perspective**: The Network Perspective used by the CA to make the determination of 1) the CA's authority to issue a Certificate for the requested domain(s) or IP address(es) and 2) the Applicant's authority and/or domain authorization or control of the requested domain(s) or IP address(es).
 
