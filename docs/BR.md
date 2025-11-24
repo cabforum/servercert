@@ -45,8 +45,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 
 ### 1.2.1 Revisions
 
-| Ver. | Ballot | **Description** | Adopted | Effective\* |
-| :---: | --- | --- | --- | --- |
+| **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
+| - | - | ----- | -- | -- |
 | 1.0.0 | 62 | Version 1.0 of the Baseline Requirements Adopted | 22-Nov-11 | 01-Jul-12 |
 | 1.0.1 | 71 | Revised Auditor Qualifications | 08-May-12 | 01-Jan-13 |
 | 1.0.2 | 75 | Non-critical Name Constraints allowed as exception to RFC 5280 | 08-Jun-12 | 08-Jun-12 |
@@ -157,7 +157,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 ### 1.2.2 Relevant Dates
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
-| --- | --- | --- |
+| -- | -- | ----------|
 | 2024-03-15 | 4.9.7 | CAs MUST generate and publish CRLs. |
 | 2024-09-15 | 4.3.1.2 | The CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements. |
 | 2025-01-15 | 4.9.9 | Subscriber Certificate OCSP responses MUST be available 15 minutes after issuance. |
@@ -507,7 +507,7 @@ The script outputs:
 ### 1.6.2 Acronyms
 
 | **Acronym** | **Meaning** |
-| --- | --- |
+| - | --- |
 | AICPA | American Institute of Certified Public Accountants |
 | ADN | Authorization Domain Name |
 | CA | Certification Authority |
