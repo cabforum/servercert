@@ -836,11 +836,12 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 Effective January 15, 2025:
+
 - When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information for a requested Domain Name the CA:
-     - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
-     - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-     - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
+  - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
+  - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
+  - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 ##### 3.2.2.4.13 Email to DNS CAA Contact
 
@@ -879,13 +880,15 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 Effective January 15, 2025:
+
 - When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information for a requested Domain Name the CA:
-     - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
-     - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-     - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
+   - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
+   - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
+   - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 Effective July 15, 2025:
+
 - The CA MUST NOT rely on this method.
 - Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
@@ -1519,6 +1522,7 @@ No stipulation.
 CRLs MUST be available via a publicly-accessible HTTP URL (i.e., "published").
 
 Within twenty-four (24) hours of issuing its first Certificate, the CA MUST generate and publish either:
+
 - a full and complete CRL; OR
 - partitioned (i.e., "sharded") CRLs that, when aggregated, represent the equivalent of a full and complete CRL.
 
@@ -1533,9 +1537,9 @@ CAs issuing CA Certificates:
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
 CAs MUST continue issuing CRLs until one of the following is true:
+
 - all Subordinate CA Certificates containing the same Subject Public Key are expired or revoked; OR
 - the corresponding Subordinate CA Private Key is destroyed.
-
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
 
@@ -2215,9 +2219,10 @@ The `subject` MUST comply with the requirements of [Section 7.1.4](#714-name-for
 In addition to the above, extKeyUsage extension requirements vary based on the relationship between the Issuer and Subject organizations represented in the Cross-Certificate.
 
 The extKeyUsage extension MAY be "unrestricted" as described in the following table if:
+
 - the organizationName represented in the Issuer and Subject names of the corresponding certificate are either:
-   - the same, or
-   - the organizationName represented in the Subject name is an affiliate of the organizationName represented in the Issuer name
+  - the same, or
+  - the organizationName represented in the Subject name is an affiliate of the organizationName represented in the Issuer name
 - the corresponding CA represented by the Subject of the Cross-Certificate is operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA organization.
 
 Table: Cross-Certified Subordinate CA with Unrestricted EKU
@@ -2711,6 +2716,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 **Notes**:
+
 - whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
 - whether or not the CRL Distribution Points extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
 
