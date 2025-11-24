@@ -846,13 +846,13 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record for either
 
-   1. an Authorization Domain Name; or
-   2. an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
+1. an Authorization Domain Name; or
+2. an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after
 
-  1. 30 days; or
-  2. if the Applicant submitted the Certificate request, the time frame permitted for reuse of validated information relevant to the Certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of these Guidelines or Section 3.2.2.14.3 of the EV Guidelines).
+1. 30 days; or
+2. if the Applicant submitted the Certificate request, the time frame permitted for reuse of validated information relevant to the Certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of these Guidelines or Section 3.2.2.14.3 of the EV Guidelines).
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
 
@@ -1862,10 +1862,10 @@ Log records MUST include at least the following elements:
 
 Logging of router and firewall activities necessary to meet the requirements of Section 5.4.1, Subsection 3.6 MUST at a minimum include:
 
-  1. Successful and unsuccessful login attempts to routers and firewalls; and
-  2. Logging of all administrative actions performed on routers and firewalls, including configuration changes, firmware updates, and access control modifications; and
-  3. Logging of all changes made to firewall rules, including additions, modifications, and deletions; and
-  4. Logging of all system events and errors, including hardware failures, software crashes, and system restarts.
+1. Successful and unsuccessful login attempts to routers and firewalls; and
+2. Logging of all administrative actions performed on routers and firewalls, including configuration changes, firmware updates, and access control modifications; and
+3. Logging of all changes made to firewall rules, including additions, modifications, and deletions; and
+4. Logging of all system events and errors, including hardware failures, software crashes, and system restarts.
 
 ### 5.4.2 Frequency of processing audit log
 
@@ -1873,11 +1873,11 @@ Logging of router and firewall activities necessary to meet the requirements of 
 
 The CA and each Delegated Third Party SHALL retain, for at least two (2) years:
 
-  1. CA certificate and key lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (1)) after the later occurrence of:
-     1. the destruction of the CA Private Key; or
-     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
-  2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the expiration of the Subscriber Certificate;
-  3. Any security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred.
+1. CA certificate and key lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (1)) after the later occurrence of:
+   1. the destruction of the CA Private Key; or
+   2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
+2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the expiration of the Subscriber Certificate;
+3. Any security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred.
 
 Note: While these Requirements set the minimum retention period, the CA MAY choose a greater value as more appropriate in order to be able to investigate possible security or other types of incidents that will require retrospection and examination of past audit log events.
 
@@ -2030,9 +2030,9 @@ The CA SHALL reject a certificate request if one or more of the following condit
 3. The CA is aware of a demonstrated or proven method that exposes the Applicant's Private Key to compromise;
 4. The CA has previously been notified that the Applicant's Private Key has suffered a Key Compromise using the CA's procedure for revocation request as described in [Section 4.9.3](#493-procedure-for-revocation-request) and [Section 4.9.12](#4912-special-requirements-re-key-compromise);
 5. The Public Key corresponds to an industry-demonstrated weak Private Key. For requests submitted on or after November 15, 2024, at least the following precautions SHALL be implemented:
-    1. In the case of Debian weak keys vulnerability (https://wiki.debian.org/SSLkeys), the CA SHALL reject all keys found at https://github.com/cabforum/Debian-weak-keys/ for each key type (e.g. RSA, ECDSA) and size listed in the repository. For all other keys meeting the requirements of [Section 6.1.5](#615-key-sizes), with the exception of RSA key sizes greater than 8192 bits, the CA SHALL reject Debian weak keys.
-    2. In the case of ROCA vulnerability, the CA SHALL reject keys identified by the tools available at https://github.com/crocs-muni/roca or equivalent.
-    3. In the case of Close Primes vulnerability (https://fermatattack.secvuln.info/), the CA SHALL reject weak keys which can be factored within 100 rounds using Fermat’s factorization method.  
+   1. In the case of Debian weak keys vulnerability (https://wiki.debian.org/SSLkeys), the CA SHALL reject all keys found at https://github.com/cabforum/Debian-weak-keys/ for each key type (e.g. RSA, ECDSA) and size listed in the repository. For all other keys meeting the requirements of [Section 6.1.5](#615-key-sizes), with the exception of RSA key sizes greater than 8192 bits, the CA SHALL reject Debian weak keys.
+   2. In the case of ROCA vulnerability, the CA SHALL reject keys identified by the tools available at https://github.com/crocs-muni/roca or equivalent.
+   3. In the case of Close Primes vulnerability (https://fermatattack.secvuln.info/), the CA SHALL reject weak keys which can be factored within 100 rounds using Fermat’s factorization method.  
 
     Suggested tools for checking for weak keys can be found here: https://cabforum.org/resources/tools/
 
@@ -2364,11 +2364,11 @@ Table: Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purp
 
 Each included Extended Key Usage key usage purpose:
 
-  1. MUST apply in the context of the public Internet (e.g. MUST NOT be for a service that is only valid in a privately managed network), unless:
-     a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
-     b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
-  2. MUST NOT include semantics that will mislead the Relying Party about the certificate information verified by the CA, such as including a key usage purpose asserting storage on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance.
-  3. MUST be verified by the Issuing CA (i.e. the Issuing CA MUST verify the Cross-Certified Subordinate CA is authorized to assert the key usage purpose).
+1. MUST apply in the context of the public Internet (e.g. MUST NOT be for a service that is only valid in a privately managed network), unless:
+   a. the key usage purpose falls within an OID arc for which the Applicant demonstrates ownership; or,
+   b. the Applicant can otherwise demonstrate the right to assert the key usage purpose in a public context.
+2. MUST NOT include semantics that will mislead the Relying Party about the certificate information verified by the CA, such as including a key usage purpose asserting storage on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance.
+3. MUST be verified by the Issuing CA (i.e. the Issuing CA MUST verify the Cross-Certified Subordinate CA is authorized to assert the key usage purpose).
 
 CAs MUST NOT include additional key usage purposes unless the CA is aware of a reason for including the key usage purpose in the Certificate.
 
@@ -2605,11 +2605,11 @@ Table: `GeneralName` requirements for the `base` field
 
 Any `otherName`, if present:
 
-  1. MUST apply in the context of the public Internet, unless:
-     a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
-     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
-  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
-  3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
+1. MUST apply in the context of the public Internet, unless:
+   a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
+   b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
+2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
+3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
 
 CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
 
@@ -3272,11 +3272,11 @@ Table: `GeneralName` requirements for the `base` field
 
 Any `otherName`, if present:
 
-  1. MUST apply in the context of the public Internet, unless:
-     a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
-     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
-  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
-  3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
+1. MUST apply in the context of the public Internet, unless:
+   a. the `type-id` falls within an OID arc for which the Applicant demonstrates ownership, or,
+   b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
+2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA.
+3. MUST be DER encoded according to the relevant ASN.1 module defining the `otherName` `type-id` and `value`.
 
 CAs SHALL NOT include additional names unless the CA is aware of a reason for including the data in the Certificate.
 
@@ -3337,11 +3337,11 @@ If present, the `subjectKeyIdentifier` MUST be set as defined within [RFC 5280, 
 
 All extensions and extension values not directly addressed by the applicable certificate profile:
 
-  1. MUST apply in the context of the public Internet, unless:
-     a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
-     b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
-  2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA (such as including an extension that indicates a Private Key is stored on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
-  3. MUST be DER encoded according to the relevant ASN.1 module defining the extension and extension values.
+1. MUST apply in the context of the public Internet, unless:
+   a. the extension OID falls within an OID arc for which the Applicant demonstrates ownership, or,
+   b. the Applicant can otherwise demonstrate the right to assert the data in a public context.
+2. MUST NOT include semantics that will mislead the Relying Party about certificate information verified by the CA (such as including an extension that indicates a Private Key is stored on a smart card, where the CA is not able to verify that the corresponding Private Key is confined to such hardware due to remote issuance).
+3. MUST be DER encoded according to the relevant ASN.1 module defining the extension and extension values.
 
 CAs SHALL NOT include additional extensions or values unless the CA is aware of a reason for including the data in the Certificate.
 
