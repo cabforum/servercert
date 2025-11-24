@@ -1065,7 +1065,7 @@ The following table shows how the `persistUntil` parameter affects whether a DNS
 
 Table: Examples of how the `persistUntil` parameter affects validation
 
-| __Date/time of validation__ | __persistUntil__ | __Usable for validation__ | __Explanation__ |
+| **Date/time of validation** | **persistUntil** | **Usable for validation** | **Explanation** |
 |----------------------------|------------------|--------------------------|----------------|
 | 2025-06-15T12:00:00Z | 2026-01-01T00:00:00Z (1767225600) | Yes | Validation time is before persistUntil timestamp, so record is usable |
 | 2025-06-15T12:00:00Z | 2025-01-01T00:00:00Z (1735689600) | No | Validation time is after persistUntil timestamp, so record is not usable |
