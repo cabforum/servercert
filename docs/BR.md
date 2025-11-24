@@ -765,10 +765,10 @@ Completed validations of Applicant authority may be valid for the issuance of mu
 
 Effective March 15th, 2026: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective MUST:
 
-* perform DNSSEC validation using the algorithm defined in [RFC 4035 Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
-* support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
-* support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
-* properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
+- perform DNSSEC validation using the algorithm defined in [RFC 4035 Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
+- support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
+- support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
+- properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
 
 Effective March 15th, 2026: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control.
 
@@ -845,6 +845,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 ##### 3.2.2.4.7 DNS Change
 
 Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record for either
+
    1. an Authorization Domain Name; or
    2. an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
 
@@ -933,9 +934,9 @@ Effective January 15, 2025:
 
 - When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
 - When obtaining Domain Contact information for a requested Domain Name the CA:
-   - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
-   - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-   - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
+  - if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
+  - if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
+  - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 Effective July 15, 2025:
 
@@ -1182,14 +1183,14 @@ If the CA issues a certificate after processing a CAA record, it MUST do so with
 
 RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determines that either (1) the certificate request is consistent with the applicable CAA RRset or (2) an exception specified in the relevant CP or CPS applies." For issuances conforming to these Baseline Requirements, CAs MUST NOT rely on any exceptions specified in their CP or CPS unless they are one of the following:
 
-* CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
-* CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
+- CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
+- CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
 
 CAs are permitted to treat a record lookup failure as permission to issue if:
 
-* the failure is outside the CA's infrastructure; and
-* the lookup has been retried at least once; and
-* the CA has confirmed that the domain is "Insecure" as defined in [RFC 4035 Section 4.3](https://datatracker.ietf.org/doc/html/rfc4035#section-4.3).
+- the failure is outside the CA's infrastructure; and
+- the lookup has been retried at least once; and
+- the CA has confirmed that the domain is "Insecure" as defined in [RFC 4035 Section 4.3](https://datatracker.ietf.org/doc/html/rfc4035#section-4.3).
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
@@ -1197,10 +1198,10 @@ CAs MUST document potential issuances that were prevented by a CAA record in suf
 
 Effective March 15th, 2026: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective MUST:
 
-* perform DNSSEC validation using the algorithm defined in [RFC 4035 Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
-* support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
-* support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
-* properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
+- perform DNSSEC validation using the algorithm defined in [RFC 4035 Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
+- support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
+- support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
+- properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
 
 Effective March 15th, 2026: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups.
 
@@ -1245,7 +1246,7 @@ Remote Network Perspectives performing Multi-Perspective Issuance Corroboration:
 MUST:
 
 - Network Hardening
-   - Rely upon networks (e.g., Internet Service Providers or Cloud Provider Networks) implementing measures to mitigate BGP routing incidents in the global Internet routing system for providing internet connectivity to the Network Perspective.
+  - Rely upon networks (e.g., Internet Service Providers or Cloud Provider Networks) implementing measures to mitigate BGP routing incidents in the global Internet routing system for providing internet connectivity to the Network Perspective.
 
 SHOULD:
 
@@ -1609,13 +1610,15 @@ Within twenty-four (24) hours of issuing its first Certificate, the CA MUST gene
 - a full and complete CRL; OR
 - partitioned (i.e., "sharded") CRLs that, when aggregated, represent the equivalent of a full and complete CRL.
 
-CAs issuing Subscriber Certificates:  
+CAs issuing Subscriber Certificates:
+
 1. MUST update and publish a new CRL at least every:
-     - seven (7) days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod ("AIA OCSP pointer"); or
-     - four (4) days in all other cases;
+    - seven (7) days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod ("AIA OCSP pointer"); or
+    - four (4) days in all other cases;
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
-CAs issuing CA Certificates:  
+CAs issuing CA Certificates:
+
 1. MUST update and publish a new CRL at least every twelve (12) months;
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
@@ -1903,6 +1906,7 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 The CA and each Delegated Third Party SHALL archive all audit logs (as set forth in [Section 5.4.1](#541-types-of-events-recorded)).
 
 Additionally, the CA and each Delegated Third Party SHALL archive:
+
 1. Documentation related to the security of their Certificate Systems, Certificate Management Systems, Root CA Systems, and Delegated Third Party Systems; and
 2. Documentation related to their verification, issuance, and revocation of certificate requests and Certificates.
 
@@ -1911,6 +1915,7 @@ Additionally, the CA and each Delegated Third Party SHALL archive:
 Archived audit logs (as set forth in [Section 5.5.1](#551-types-of-records-archived) SHALL be retained for a period of at least two (2) years from their record creation timestamp, or as long as they are required to be retained per [Section 5.4.3](#543-retention-period-for-audit-log), whichever is longer.
 
 Additionally, the CA and each Delegated Third Party SHALL retain, for at least two (2) years:
+
 1. All archived documentation related to the security of Certificate Systems, Certificate Management Systems, Root CA Systems and Delegated Third Party Systems (as set forth in [Section 5.5.1](#551-types-of-records-archived)); and
 2. All archived documentation relating to the verification, issuance, and revocation of certificate requests and Certificates (as set forth in [Section 5.5.1](#551-types-of-records-archived)) after the later occurrence of:
    1. such records and documentation were last relied upon in the verification, issuance, or revocation of certificate requests and Certificates; or
@@ -2049,12 +2054,12 @@ If the CA or any of its designated RAs become aware that a Subscriber's Private 
 
 For RSA key pairs the CA SHALL:
 
-* Ensure that the modulus size, when encoded, is at least 2048 bits, and;
-* Ensure that the modulus size, in bits, is evenly divisible by 8.
+- Ensure that the modulus size, when encoded, is at least 2048 bits, and;
+- Ensure that the modulus size, in bits, is evenly divisible by 8.
 
 For ECDSA key pairs, the CA SHALL:
 
-* Ensure that the key represents a valid point on the NIST P-256, NIST P-384 or NIST P-521 elliptic curve.
+- Ensure that the key represents a valid point on the NIST P-256, NIST P-384 or NIST P-521 elliptic curve.
 
 No other algorithms or key sizes are permitted.
 
@@ -2180,19 +2185,19 @@ Certificates MUST be of type X.509 v3.
 
 If the CA asserts compliance with these Baseline Requirements, all certificates that it issues MUST comply with one of the following certificate profiles, which incorporate, and are derived from [RFC 5280](https://tools.ietf.org/html/rfc5280). Except as explicitly noted, all normative requirements imposed by RFC 5280 shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://tools.ietf.org/html/rfc5280#appendix-B) for further issues to be aware of.
 
-  * CA Certificates
-    * [Section 7.1.2.1 - Root CA Certificate Profile](#7121-root-ca-certificate-profile)
-    * Subordinate CA Certificates
-      * Cross Certificates
-        * [Section 7.1.2.2 - Cross-Certified Subordinate CA Certificate Profile](#7122-cross-certified-subordinate-ca-certificate-profile)
-      * Technically Constrained CA Certificates
-        * [Section 7.1.2.3 - Technically-Constrained Non-TLS Subordinate CA Certificate Profile](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile)
-        * [Section 7.1.2.4 - Technically-Constrained Precertificate Signing CA Certificate Profile](#7124-technically-constrained-precertificate-signing-ca-certificate-profile)
-        * [Section 7.1.2.5 - Technically-Constrained TLS Subordinate CA Certificate Profile](#7125-technically-constrained-tls-subordinate-ca-certificate-profile)
-      * [Section 7.1.2.6 - TLS Subordinate CA Certificate Profile](#7126-tls-subordinate-ca-certificate-profile)
-  * [Section 7.1.2.7 - Subscriber (End-Entity) Certificate Profile](#7127-subscriber-server-certificate-profile)
-  * [Section 7.1.2.8 - OCSP Responder Certificate Profile](#7128-ocsp-responder-certificate-profile)
-  * [Section 7.1.2.9 - Precertificate Profile](#7129-precertificate-profile)
+- CA Certificates
+  - [Section 7.1.2.1 - Root CA Certificate Profile](#7121-root-ca-certificate-profile)
+  - Subordinate CA Certificates
+    - Cross Certificates
+      - [Section 7.1.2.2 - Cross-Certified Subordinate CA Certificate Profile](#7122-cross-certified-subordinate-ca-certificate-profile)
+    - Technically Constrained CA Certificates
+      - [Section 7.1.2.3 - Technically-Constrained Non-TLS Subordinate CA Certificate Profile](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile)
+      - [Section 7.1.2.4 - Technically-Constrained Precertificate Signing CA Certificate Profile](#7124-technically-constrained-precertificate-signing-ca-certificate-profile)
+      - [Section 7.1.2.5 - Technically-Constrained TLS Subordinate CA Certificate Profile](#7125-technically-constrained-tls-subordinate-ca-certificate-profile)
+    - [Section 7.1.2.6 - TLS Subordinate CA Certificate Profile](#7126-tls-subordinate-ca-certificate-profile)
+- [Section 7.1.2.7 - Subscriber (End-Entity) Certificate Profile](#7127-subscriber-server-certificate-profile)
+- [Section 7.1.2.8 - OCSP Responder Certificate Profile](#7128-ocsp-responder-certificate-profile)
+- [Section 7.1.2.9 - Precertificate Profile](#7129-precertificate-profile)
 
 #### 7.1.2.1 Root CA Certificate Profile
 
@@ -2515,6 +2520,7 @@ As noted in RFC 6962, Section 3.2, the `signature` field of a Precertificate is 
 | `signature`                | |
 
 Effective March 15, 2026:
+
 - This Certificate Profile MUST NOT be used.
 - Precertificate Signing CAs MUST NOT be used to issue Precertificates.
 
@@ -3380,15 +3386,15 @@ When encoded, the `AlgorithmIdentifier` for RSA keys MUST be byte-for-byte ident
 
 The CA SHALL indicate an ECDSA key using the id-ecPublicKey (OID: 1.2.840.10045.2.1) algorithm identifier. The parameters MUST use the `namedCurve` encoding.
 
-* For P-256 keys, the `namedCurve` MUST be secp256r1 (OID: 1.2.840.10045.3.1.7).
-* For P-384 keys, the `namedCurve` MUST be secp384r1 (OID: 1.3.132.0.34).
-* For P-521 keys, the `namedCurve` MUST be secp521r1 (OID: 1.3.132.0.35).
+- For P-256 keys, the `namedCurve` MUST be secp256r1 (OID: 1.2.840.10045.3.1.7).
+- For P-384 keys, the `namedCurve` MUST be secp384r1 (OID: 1.3.132.0.34).
+- For P-521 keys, the `namedCurve` MUST be secp521r1 (OID: 1.3.132.0.35).
 
 When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte identical with the following hex-encoded bytes:
 
-* For P-256 keys, `301306072a8648ce3d020106082a8648ce3d030107`.
-* For P-384 keys, `301006072a8648ce3d020106052b81040022`.
-* For P-521 keys, `301006072a8648ce3d020106052b81040023`.
+- For P-256 keys, `301306072a8648ce3d020106082a8648ce3d030107`.
+- For P-384 keys, `301006072a8648ce3d020106052b81040022`.
+- For P-521 keys, `301006072a8648ce3d020106052b81040023`.
 
 #### 7.1.3.2 Signature AlgorithmIdentifier
 
@@ -3396,11 +3402,11 @@ All objects signed by a CA Private Key MUST conform to these requirements on the
 
 In particular, it applies to all of the following objects and fields:
 
-* The `signatureAlgorithm` field of a Certificate or Precertificate.
-* The `signature` field of a TBSCertificate (for example, as used by either a Certificate or Precertificate).
-* The `signatureAlgorithm` field of a CertificateList
-* The `signature` field of a TBSCertList
-* The `signatureAlgorithm` field of a BasicOCSPResponse.
+- The `signatureAlgorithm` field of a Certificate or Precertificate.
+- The `signature` field of a TBSCertificate (for example, as used by either a Certificate or Precertificate).
+- The `signatureAlgorithm` field of a CertificateList
+- The `signature` field of a TBSCertList
+- The `signatureAlgorithm` field of a BasicOCSPResponse.
 
 No other encodings are permitted for these fields.
 
@@ -3408,22 +3414,22 @@ No other encodings are permitted for these fields.
 
 The CA SHALL use one of the following signature algorithms and encodings. When encoded, the `AlgorithmIdentifier` MUST be byte-for-byte identical with the specified hex-encoded bytes.
 
-* RSASSA-PKCS1-v1_5 with SHA-256:
+- RSASSA-PKCS1-v1_5 with SHA-256:
 
   Encoding:
   `300d06092a864886f70d01010b0500`.
 
-* RSASSA-PKCS1-v1_5 with SHA-384:
+- RSASSA-PKCS1-v1_5 with SHA-384:
 
   Encoding:
   `300d06092a864886f70d01010c0500`.
 
-* RSASSA-PKCS1-v1_5 with SHA-512:
+- RSASSA-PKCS1-v1_5 with SHA-512:
 
   Encoding:
   `300d06092a864886f70d01010d0500`.
 
-* RSASSA-PSS with SHA-256, MGF-1 with SHA-256, and a salt length of 32 bytes:
+- RSASSA-PSS with SHA-256, MGF-1 with SHA-256, and a salt length of 32 bytes:
 
   Encoding:
 
@@ -3433,7 +3439,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
   0500a203020120
   ```
 
-* RSASSA-PSS with SHA-384, MGF-1 with SHA-384, and a salt length of 48 bytes:
+- RSASSA-PSS with SHA-384, MGF-1 with SHA-384, and a salt length of 48 bytes:
 
   Encoding:
 
@@ -3443,7 +3449,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
   0500a203020130
   ```
 
-* RSASSA-PSS with SHA-512, MGF-1 with SHA-512, and a salt length of 64 bytes:
+- RSASSA-PSS with SHA-512, MGF-1 with SHA-512, and a salt length of 64 bytes:
 
   Encoding:
 
@@ -3455,25 +3461,25 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
 
 In addition, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
 
-* If used within a Certificate, such as the `signatureAlgorithm` field of a Certificate or the `signature` field of a TBSCertificate:
-  * The new Certificate is a Root CA Certificate or Subordinate CA Certificate that is a Cross-Certificate; and,
-  * There is an existing Certificate, issued by the same issuing CA Certificate, using the following encoding for the signature algorithm; and,
-  * The existing Certificate has a `serialNumber` that is at least 64-bits long; and,
-  * The only differences between the new Certificate and existing Certificate are one of the following:
-    * A new `subjectPublicKey` within the `subjectPublicKeyInfo`, using the same algorithm and key size; and/or,
-    * A new `serialNumber`, of the same encoded length as the existing Certificate; and/or
-    * The new Certificate's `extKeyUsage` extension is present, has at least one key purpose specified, and none of the key purposes specified are the id-kp-serverAuth (OID: 1.3.6.1.5.5.7.3.1) or the anyExtendedKeyUsage (OID: 2.5.29.37.0) key purposes; and/or
-    * The new Certificate's `basicConstraints` extension has a pathLenConstraint that is zero.
-* If used within an OCSP response, such as the `signatureAlgorithm` of a BasicOCSPResponse:
-  * The `producedAt` field value of the ResponseData MUST be earlier than 2022-06-01 00:00:00 UTC; and,
-  * All unexpired, un-revoked Certificates that contain the Public Key of the CA Key Pair and that have the same Subject Name MUST also contain an `extKeyUsage` extension with the only key usage present being the id-kp-ocspSigning (OID: 1.3.6.1.5.5.7.3.9) key usage.
-* If used within a CRL, such as the `signatureAlgorithm` field of a CertificateList or the `signature` field of a TBSCertList:
-  * The CRL is referenced by one or more Root CA or Subordinate CA Certificates; and,
-  * The Root CA or Subordinate CA Certificate has issued one or more Certificates using the following encoding for the signature algorithm.
+- If used within a Certificate, such as the `signatureAlgorithm` field of a Certificate or the `signature` field of a TBSCertificate:
+  - The new Certificate is a Root CA Certificate or Subordinate CA Certificate that is a Cross-Certificate; and,
+  - There is an existing Certificate, issued by the same issuing CA Certificate, using the following encoding for the signature algorithm; and,
+  - The existing Certificate has a `serialNumber` that is at least 64-bits long; and,
+  - The only differences between the new Certificate and existing Certificate are one of the following:
+    - A new `subjectPublicKey` within the `subjectPublicKeyInfo`, using the same algorithm and key size; and/or,
+    - A new `serialNumber`, of the same encoded length as the existing Certificate; and/or
+    - The new Certificate's `extKeyUsage` extension is present, has at least one key purpose specified, and none of the key purposes specified are the id-kp-serverAuth (OID: 1.3.6.1.5.5.7.3.1) or the anyExtendedKeyUsage (OID: 2.5.29.37.0) key purposes; and/or
+    - The new Certificate's `basicConstraints` extension has a pathLenConstraint that is zero.
+- If used within an OCSP response, such as the `signatureAlgorithm` of a BasicOCSPResponse:
+  - The `producedAt` field value of the ResponseData MUST be earlier than 2022-06-01 00:00:00 UTC; and,
+  - All unexpired, un-revoked Certificates that contain the Public Key of the CA Key Pair and that have the same Subject Name MUST also contain an `extKeyUsage` extension with the only key usage present being the id-kp-ocspSigning (OID: 1.3.6.1.5.5.7.3.9) key usage.
+- If used within a CRL, such as the `signatureAlgorithm` field of a CertificateList or the `signature` field of a TBSCertList:
+  - The CRL is referenced by one or more Root CA or Subordinate CA Certificates; and,
+  - The Root CA or Subordinate CA Certificate has issued one or more Certificates using the following encoding for the signature algorithm.
 
 **Note**: The above requirements do not permit a CA to sign a Precertificate with this encoding.
 
-* RSASSA-PKCS1-v1_5 with SHA-1:
+- RSASSA-PKCS1-v1_5 with SHA-1:
 
   Encoding:
   `300d06092a864886f70d0101050500`
@@ -3498,16 +3504,16 @@ The following requirements apply to all Certificates listed in [Section 7.1.2](#
 
 For every valid Certification Path (as defined by [RFC 5280, Section 6](https://tools.ietf.org/html/rfc5280#section-6)):
 
-* For each Certificate in the Certification Path, the encoded content of the Issuer Distinguished Name field of a Certificate SHALL be byte-for-byte identical with the encoded form of the Subject Distinguished Name field of the Issuing CA certificate.
-* For each CA Certificate in the Certification Path, the encoded content of the Subject Distinguished Name field of a Certificate SHALL be byte-for-byte identical among all Certificates whose Subject Distinguished Names can be compared as equal according to [RFC 5280, Section 7.1](https://tools.ietf.org/html/rfc5280#section-7.1), and including expired and revoked Certificates.
+- For each Certificate in the Certification Path, the encoded content of the Issuer Distinguished Name field of a Certificate SHALL be byte-for-byte identical with the encoded form of the Subject Distinguished Name field of the Issuing CA certificate.
+- For each CA Certificate in the Certification Path, the encoded content of the Subject Distinguished Name field of a Certificate SHALL be byte-for-byte identical among all Certificates whose Subject Distinguished Names can be compared as equal according to [RFC 5280, Section 7.1](https://tools.ietf.org/html/rfc5280#section-7.1), and including expired and revoked Certificates.
 
 When encoding a `Name`, the CA SHALL ensure that:
 
-  * Each `Name` MUST contain an `RDNSequence`.
-  * Each `RelativeDistinguishedName` MUST contain exactly one `AttributeTypeAndValue`.
-  * Each `RelativeDistinguishedName`, if present, is encoded within the `RDNSequence` in the order that it appears in [Section 7.1.4.2](#7142-subject-attribute-encoding).
-    * For example, a `RelativeDistinguishedName` that contains a `countryName` `AttributeTypeAndValue` pair MUST be encoded within the `RDNSequence` before a `RelativeDistinguishedName` that contains a `stateOrProvinceName` `AttributeTypeAndValue`.
-  * Each `Name` MUST NOT contain more than one instance of a given `AttributeTypeAndValue` across all `RelativeDistinguishedName`s unless explicitly allowed in these Requirements.
+- Each `Name` MUST contain an `RDNSequence`.
+- Each `RelativeDistinguishedName` MUST contain exactly one `AttributeTypeAndValue`.
+- Each `RelativeDistinguishedName`, if present, is encoded within the `RDNSequence` in the order that it appears in [Section 7.1.4.2](#7142-subject-attribute-encoding).
+  - For example, a `RelativeDistinguishedName` that contains a `countryName` `AttributeTypeAndValue` pair MUST be encoded within the `RDNSequence` before a `RelativeDistinguishedName` that contains a `stateOrProvinceName` `AttributeTypeAndValue`.
+- Each `Name` MUST NOT contain more than one instance of a given `AttributeTypeAndValue` across all `RelativeDistinguishedName`s unless explicitly allowed in these Requirements.
 
 **Note**: [Section 7.1.2.2.2](#71222-cross-certified-subordinate-ca-naming) provides an exception to the above `Name` encoding requirements when issuing a [Cross-Certified Subordinate CA Certificate](#7122-cross-certified-subordinate-ca-certificate-profile), as described within that section.
 
@@ -3554,9 +3560,9 @@ Table: Encoding Requirements for Selected Attributes
 
 If present, this attribute MUST contain exactly one entry that is one of the values contained in the Certificate's `subjectAltName` extension (see [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name)). The value of the field MUST be encoded as follows:
 
-  * If the value is an IPv4 address, then the value MUST be encoded as an IPv4Address as specified in RFC 3986, Section 3.2.2.
-  * If the value is an IPv6 address, then the value MUST be encoded in the text representation specified in RFC 5952, Section 4.
-  * If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, all Domain Labels of the Fully-Qualified Domain Name or FQDN portion of the Wildcard Domain Name must be encoded as LDH Labels, and P-Labels MUST NOT be converted to their Unicode representation.
+- If the value is an IPv4 address, then the value MUST be encoded as an IPv4Address as specified in RFC 3986, Section 3.2.2.
+- If the value is an IPv6 address, then the value MUST be encoded in the text representation specified in RFC 5952, Section 4.
+- If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, all Domain Labels of the Fully-Qualified Domain Name or FQDN portion of the Wildcard Domain Name must be encoded as LDH Labels, and P-Labels MUST NOT be converted to their Unicode representation.
 
 #### 7.1.4.4 Other Subject Attributes
 
@@ -3564,8 +3570,8 @@ When explicitly stated as permitted by the relevant certificate profile specifie
 
 Before including such an attribute, the CA SHALL:
 
-  * Document the attributes within Section 7.1.4 of their CP or CPS, along with the applicable validation practices.
-  * Ensure that the contents contain information that has been verified by the CA, independent of the Applicant.
+- Document the attributes within Section 7.1.4 of their CP or CPS, along with the applicable validation practices.
+- Ensure that the contents contain information that has been verified by the CA, independent of the Applicant.
 
 ### 7.1.5 Name constraints
 
@@ -3736,15 +3742,15 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 The CA SHALL undergo an audit in accordance with one of the following schemes:
 
 1. WebTrust:
-  * "Principles and Criteria for Certification Authorities" Version 2.2 or newer; and either
-    * "WebTrust Principles and Criteria for Certification Authorities – SSL Baseline with Network Security" Version 2.7 or newer; or
-    * "WebTrust Principles and Criteria for Certification Authorities – SSL Baseline" Version 2.8 or newer and "WebTrust Principles and Criteria for Certification Authorities – Network Security" Version 1.0 or newer
+    - "Principles and Criteria for Certification Authorities" Version 2.2 or newer; and either
+      - "WebTrust Principles and Criteria for Certification Authorities – SSL Baseline with Network Security" Version 2.7 or newer; or
+      - "WebTrust Principles and Criteria for Certification Authorities – SSL Baseline" Version 2.8 or newer and "WebTrust Principles and Criteria for Certification Authorities – Network Security" Version 1.0 or newer
 2. ETSI:
-  * ETSI EN 319 411-1 v1.4.1 or newer, which includes normative references to ETSI EN 319 401 (the latest version of the referenced ETSI documents should be applied); or
+    - ETSI EN 319 411-1 v1.4.1 or newer, which includes normative references to ETSI EN 319 401 (the latest version of the referenced ETSI documents should be applied); or
 3. Other:
-  * If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either
-    a. encompasses all requirements of one of the above schemes; or
-    b. consists of comparable criteria that are available for public review.
+    - If a Government CA is required by its Certificate Policy to use a different internal audit scheme, it MAY use such scheme provided that the audit either
+       a. encompasses all requirements of one of the above schemes; or
+       b. consists of comparable criteria that are available for public review.
 
 Whichever scheme is chosen, it MUST incorporate periodic monitoring and/or accountability procedures to ensure that its audits continue to be conducted in accordance with the requirements of the scheme.
 
