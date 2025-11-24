@@ -579,9 +579,7 @@ To verify any assumed name under which the Applicant conducts business:
 
 2. **Acceptable Methods of Verification**
 
-
    A.  **Place of Business in the Country of Incorporation or Registration**
-
 
        i. For Applicants whose Place of Business is in the same country as the Applicant's Jurisdiction of Incorporation or Registration and whose Place of Business is NOT the same as that indicated in the relevant Qualified Government Information Source used in [Section 3.2.2.2](#3222-verification-of-applicants-legal-existence-and-identity) to verify legal existence:
 
@@ -2161,12 +2159,3 @@ The following Registration Schemes are currently recognized as valid under these
   [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
   The stated address of the organization combined with the organization name
   SHALL NOT be the only information used to disambiguate the organization.
-  
-
-
-
-
-
-  
-
-
