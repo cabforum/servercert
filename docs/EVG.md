@@ -1533,8 +1533,14 @@ Effective as of 1 October 2020, if the CA has disclosed a set of acceptable form
     State or province (where applicable): `subject:stateOrProvinceName` (OID: 2.5.4.8)  
     Country: `subject:countryName` (OID: 2.5.4.6)  
     Postal code: `subject:postalCode` (OID: 2.5.4.17)  
-**Required/Optional**: As stated in Section 7.1.4.2.2 d, e, f, g and h of the Baseline Requirements.  
-**Contents**: This field MUST contain the address of the physical location of the Subject's Place of Business.
+**Required/Optional**: Required/Optional  
+**Contents**: These fields MUST contain the verified physical address of the Subject’s Place of Business.
+
+The `countryName` field MUST be present and MUST contain the applicable two-letter ISO 3166-1 country code. If the country is not represented by an official ISO 3166-1 code, the ISO 3166-1 user-assigned code "XX" MUST be used.  
+
+The `localityName` and `stateOrProvinceName` fields are OPTIONAL, but at least one of them MUST be present. When included, these fields MUST accurately represent the locality and/or state or province information verified in accordance with Section 3.2.2.1 of the Baseline Requirements.  
+
+The `streetAddress` and `postalCode` fields are OPTIONAL. If present, they MUST contain the verified street address and postal information of the Subject’s Place of Business as required by Section 3.2.2.1 of the Baseline Requirements. Multiple `streetAddress` attributes MAY be present.
 
 ##### 7.1.4.2.7 Subject Organizational Unit Name Field
 
