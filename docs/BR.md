@@ -220,7 +220,7 @@ In some situations, a CA acts as an Applicant or Subscriber, for instance, when 
 
 ### 1.3.4 Relying Parties
 
-"Relying Party" and "Application Software Supplier" are defined in [Section 1.6.1](#161-definitions). Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here:  
+"Relying Party" and "Application Software Supplier" are defined in [Section 1.6.1](#161-definitions). Current Members of the CA/Browser Forum who are Application Software Suppliers are listed here:
 <https://cabforum.org/members>.
 
 ### 1.3.5 Other Participants
@@ -617,7 +617,6 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
 
 # 2. PUBLICATION AND REPOSITORY RESPONSIBILITIES
-
 
 ## 2.1 Repositories
 
@@ -1227,7 +1226,7 @@ If any of the above considerations are performed by a Delegated Third Party, the
 Phased Implementation Timeline:
 
 - *Effective September 15, 2024*, the CA SHOULD implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives.
-- *Effective March 15, 2025*, the CA MUST implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives. The CA MAY proceed with certificate issuance if the number of remote Network Perspectives that do not corroborate the determinations made by the Primary Network Perspective ("non-corroborations") is greater than allowed in the Quorum Requirements table.  
+- *Effective March 15, 2025*, the CA MUST implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives. The CA MAY proceed with certificate issuance if the number of remote Network Perspectives that do not corroborate the determinations made by the Primary Network Perspective ("non-corroborations") is greater than allowed in the Quorum Requirements table.
 - *Effective September 15, 2025*, the CA MUST implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives. The CA MUST ensure that the requirements defined in Quorum Requirements Table are satisfied. If the requirements are not satisfied, then the CA MUST NOT proceed with issuance of the Certificate.
 - *Effective March 15, 2026*, the CA MUST implement Multi-Perspective Issuance Corroboration using at least three (3) remote Network Perspectives. The CA MUST ensure that the requirements defined in Quorum Requirements Table are satisfied, and the remote Network Perspectives that corroborate the Primary Network Perspective fall within the service regions of at least two (2) distinct Regional Internet Registries. If the requirements are not satisfied, then the CA MUST NOT proceed with issuance of the Certificate.
 - *Effective June 15, 2026*, the CA MUST implement Multi-Perspective Issuance Corroboration using at least four (4) remote Network Perspectives. The CA MUST ensure that the requirements defined in Quorum Requirements Table are satisfied, and the remote Network Perspectives that corroborate the Primary Network Perspective fall within the service regions of at least two (2) distinct Regional Internet Registries. If the requirements are not satisfied, then the CA MUST NOT proceed with issuance of the Certificate.
@@ -1503,7 +1502,7 @@ With the exception of Short-lived Subscriber Certificates, the CA SHOULD revoke 
 6. The Certificate no longer complies with the requirements of [Section 6.1.5](#615-key-sizes) and [Section 6.1.6](#616-public-key-parameters-generation-and-quality-checking) (CRLReason #4, superseded);
 7. The CA obtains evidence that the Certificate was misused (CRLReason #9, privilegeWithdrawn);
 8. The CA is made aware that a Subscriber has violated one or more of its material obligations under the Subscriber Agreement or Terms of Use (CRLReason #9, privilegeWithdrawn);
-9. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name) (CRLReason # 5, cessationOfOperation);
+9. The CA is made aware of any circumstance indicating that use of a Fully-Qualified Domain Name or IP address in the Certificate is no longer legally permitted (e.g. a court or arbitrator has revoked a Domain Name Registrant's right to use the Domain Name) (CRLReason #5, cessationOfOperation);
 10. The CA is made aware that a Wildcard Certificate has been used to authenticate a fraudulently misleading subordinate Fully-Qualified Domain Name (CRLReason #9, privilegeWithdrawn);
 11. The CA is made aware of a material change in the information contained in the Certificate (CRLReason #9, privilegeWithdrawn);
 12. The CA is made aware that the Certificate was not issued in accordance with these Requirements or the CA's Certificate Policy or Certification Practice Statement (CRLReason #4, superseded);
@@ -1990,7 +1989,7 @@ The CA SHALL reject a certificate request if one or more of the following condit
 5. The Public Key corresponds to an industry-demonstrated weak Private Key. For requests submitted on or after November 15, 2024, at least the following precautions SHALL be implemented:
    1. In the case of Debian weak keys vulnerability (<https://wiki.debian.org/SSLkeys>), the CA SHALL reject all keys found at <https://github.com/cabforum/Debian-weak-keys/> for each key type (e.g. RSA, ECDSA) and size listed in the repository. For all other keys meeting the requirements of [Section 6.1.5](#615-key-sizes), with the exception of RSA key sizes greater than 8192 bits, the CA SHALL reject Debian weak keys.
    2. In the case of ROCA vulnerability, the CA SHALL reject keys identified by the tools available at <https://github.com/crocs-muni/roca> or equivalent.
-   3. In the case of Close Primes vulnerability (<https://fermatattack.secvuln.info/>), the CA SHALL reject weak keys which can be factored within 100 rounds using Fermat’s factorization method.  
+   3. In the case of Close Primes vulnerability (<https://fermatattack.secvuln.info/>), the CA SHALL reject weak keys which can be factored within 100 rounds using Fermat’s factorization method.
 
     Suggested tools for checking for weak keys can be found here: <https://cabforum.org/resources/tools/>
 
