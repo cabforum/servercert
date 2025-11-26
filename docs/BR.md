@@ -1607,7 +1607,7 @@ CAs issuing CA Certificates:
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
 CA Certificates MUST continue issuing CRLs until one of the following is true:
-- all certificates issued by the CA Certificate(s) are expired; or
+- all CA Certificates containing the same Subject Public Key are expired or revoked; OR
 - the Private Key for the CA has been destroyed.
 
 ### 4.9.8 Maximum latency for CRLs (if applicable)
