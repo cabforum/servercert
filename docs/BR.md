@@ -2315,25 +2315,29 @@ Alternatively, if the Issuing CA does not use this form, then the Extended Key U
 
 ##### 7.1.2.2.5 Cross-Certified Subordinate CA Extended Key Usage - Restricted
 
-Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs issuing TLS certificates directly or transitively)
+Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs issuing TLS certificates directly or transitively).
 
-| **Key Purpose** | **Description** |
-| --- | -------- |
-| `id-kp-serverAuth` | MUST be present. |
-| `id-kp-clientAuth` | MAY be present. |
-| `id-kp-emailProtection` | MUST NOT be present. |
-| `id-kp-codeSigning` | MUST NOT be present. |
-| `id-kp-timeStamping` | MUST NOT be present. |
-| `anyExtendedKeyUsage` | MUST NOT be present. |
-| Any other value | NOT RECOMMENDED. |
+Table: TLS Cross-Certified Subordinate CA EKU
 
-Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs not issuing TLS certificates directly or transitively)
+| **Key Purpose**        | **Description** |
+| ---                    | -------         |
+| `id-kp-serverAuth`     | MUST be present. |
+| `id-kp-clientAuth`     | MAY be present. |
+| `id-kp-emailProtection`| MUST NOT be present. |
+| `id-kp-codeSigning`    | MUST NOT be present. |
+| `id-kp-timeStamping`   | MUST NOT be present. |
+| `anyExtendedKeyUsage`  | MUST NOT be present. |
+| Any other value        | NOT RECOMMENDED. |
 
-| **Key Purpose** | **Description** |
-| - | -------- |
-| `id-kp-serverAuth` | MUST NOT be present. |
-| `anyExtendedKeyUsage` | MUST NOT be present. |
-| Any other value | MAY be present. |
+Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs not issuing TLS certificates directly or transitively).
+
+Table: Non-TLS Cross-Certified Subordinate CA EKU
+
+| **Key Purpose**        | **Description** |
+| ---                    | -------         |
+| `id-kp-serverAuth`     | MUST NOT be present. |
+| `anyExtendedKeyUsage`  | MUST NOT be present. |
+| Any other value        | MAY be present. |
 
 Each included Extended Key Usage key usage purpose:
 
