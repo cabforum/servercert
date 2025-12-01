@@ -345,7 +345,7 @@ See Baseline Requirements, which are available at <https://www.cabforum.org/>.
 
 Terms not otherwise defined in these Guidelines shall be as defined in applicable agreements, user manuals, certification practice statements (CPS), and certificate policies (CP) of the CA issuing EV Certificates.
 
-The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Guidelines shall be interpreted in accordance with RFC 2119.
+The key words "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in these Guidelines shall be interpreted in accordance with [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).
 
 By convention, this document omits time and timezones when listing effective requirements such as dates. Except when explicitly specified, the associated time with a date shall be 00:00:00 UTC.
 
@@ -368,7 +368,7 @@ C.  Specify the CA's and its Root CA's entire root certificate hierarchy includi
 
 Each CA MUST publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see [Section 8](#8-compliance-audit-and-other-assessments)).
 
-The CA's Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with RFC 3647. The Certificate Policy and/or Certification Practice Statement MUST include all material required by RFC 3647.
+The CA's Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with [RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647). The Certificate Policy and/or Certification Practice Statement MUST include all material required by [RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647).
 
 Each CA SHALL publicly give effect to these Guidelines and represent that they will adhere to the latest published version by incorporating them into their respective EV Policies, using a clause such as the following (which must include a link to the official version of these Guidelines):
 
