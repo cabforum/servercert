@@ -491,29 +491,29 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 
       i. A Personal Statement that includes the following information:
 
-         1. Full name or names by which a person is, or has been, known (including all other names used);
-         2. Residential Address at which he/she can be located;
-         3. Date of birth; and
-         4. An affirmation that all of the information contained in the Certificate Request is true and correct.
+          1. Full name or names by which a person is, or has been, known (including all other names used);
+          2. Residential Address at which he/she can be located;
+          3. Date of birth; and
+          4. An affirmation that all of the information contained in the Certificate Request is true and correct.
 
       ii. A current signed government-issued identification document that includes a photo of the Individual and is signed by the Individual such as:
 
-         1. A passport;
-         2. A driver's license;
-         3. A personal identification card;
-         4. A concealed weapons permit; or
-         5. A military ID.
+          1. A passport;
+          2. A driver's license;
+          3. A personal identification card;
+          4. A concealed weapons permit; or
+          5. A military ID.
 
       iii. At least two secondary documentary evidences to establish his/her identity that include the name of the Individual, one of which MUST be from a financial institution.
 
-         1. Acceptable financial institution documents include:
+          1. Acceptable financial institution documents include:
 
             a. A major credit card, provided that it contains an expiration date and it has not expired'
             b. A debit card from a regulated financial institution, provided that it contains an expiration date and it has not expired,
             c. A mortgage statement from a recognizable lender that is less than six months old,
             d. A bank statement from a regulated financial institution that is less than six months old.
 
-         2. Acceptable non-financial documents include:
+          2. Acceptable non-financial documents include:
 
             a. Recent original utility bills or certificates from a utility company confirming the arrangement to pay for the services at a fixed address (not a mobile/cellular telephone bill),
             b. A copy of a statement for payment of a lease, provided that the statement is dated within the past six months,
