@@ -2315,7 +2315,7 @@ Alternatively, if the Issuing CA does not use this form, then the Extended Key U
 
 ##### 7.1.2.2.5 Cross-Certified Subordinate CA Extended Key Usage - Restricted
 
-Table: Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs issuing TLS certificates directly or transitively)
+Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs issuing TLS certificates directly or transitively)
 
 | **Key Purpose** | **Description** |
 | --- | -------- |
@@ -2327,7 +2327,7 @@ Table: Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes
 | `anyExtendedKeyUsage` | MUST NOT be present. |
 | Any other value | NOT RECOMMENDED. |
 
-Table: Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs not issuing TLS certificates directly or transitively)
+Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs not issuing TLS certificates directly or transitively)
 
 | **Key Purpose** | **Description** |
 | - | -------- |
