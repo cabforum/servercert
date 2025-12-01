@@ -2330,7 +2330,7 @@ Table: Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes
 Table: Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs not issuing TLS certificates directly or transitively)
 
 | **Key Purpose** | **Description** |
-| --- | -------- |
+| - | -------- |
 | `id-kp-serverAuth` | MUST NOT be present. |
 | `anyExtendedKeyUsage` | MUST NOT be present. |
 | Any other value | MAY be present. |
