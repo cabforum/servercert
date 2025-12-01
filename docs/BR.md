@@ -2785,11 +2785,11 @@ The `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDescription`s. E
 
 The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with the same `accessMethod`, if permitted for that `accessMethod`. When multiple `AccessDescription`s are present with the same `accessMethod`, each `accessLocation` MUST be unique, and each `AccessDescription` MUST be ordered in priority for that `accessMethod`, with the most-preferred `accessLocation` being the first `AccessDescription`. No ordering requirements are given for `AccessDescription`s that contain different `accessMethod`s, provided that previous requirement is satisfied.
 
-| **Access Method** | **OID**            | **Access Location**         | **Presence** | **Max** | **Description** |
-| --                | --                 | ---                         | --           | -          | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*          | A HTTP URL of the Issuing CA's OCSP responder. |
-| `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | SHOULD       | \*          | A HTTP URL of the Issuing CA's certificate. |
-| Any other value   | -                  | -                           | MUST NOT     | -           | No other `accessMethod`s may be used. |
+| **Access Method**                          | **Access Location**         | **Presence** | **Maximum** | **Description** |
+| --                | --                     | ---                         | --           | --          | ---             |
+| `id-ad-ocsp` OID (1.3.6.1.5.5.7.48.1)      | `uniformResourceIdentifier` | MAY          | \*          | A HTTP URL of the Issuing CA's OCSP responder. |
+| `id-ad-caIssuers` OID (1.3.6.1.5.5.7.48.2) | `uniformResourceIdentifier` | SHOULD       | \*          | A HTTP URL of the Issuing CA's certificate. |
+| Any other value                            | -                           | MUST NOT     | -           | No other `accessMethod`s may be used. |
 
 ##### 7.1.2.7.8 Subscriber Certificate Basic Constraints
 
@@ -2944,10 +2944,10 @@ For OCSP Responder certificates, this extension is NOT RECOMMENDED, as the Relyi
 
 If present, the `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDescription`s. Each `AccessDescription` MUST only contain a permitted `accessMethod`, as detailed below, and each `AuthorityInfoAccessSyntax` MUST contain all required `AccessDescription`s.
 
-| **Access Method** | **OID**            | **Access Location**         | **Presence**    | **Max** | **Description** |
-| -                 | -                  | --                          | --              | -           | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | NOT RECOMMENDED | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
-| Any other value   | -                  | -                           | MUST NOT        | -          | No other `accessMethod`s may be used. |
+| **Access Method**                      | **Access Location**         | **Presence**    | **Maximum** | **Description** |
+| -                                      | --                          | --              | -           | ---             |
+| `id-ad-ocsp` (OID: 1.3.6.1.5.5.7.48.1) | `uniformResourceIdentifier` | NOT RECOMMENDED | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
+| Any other value                        | -                           | MUST NOT        | -          | No other `accessMethod`s may be used. |
 
 ##### 7.1.2.8.4 OCSP Responder Basic Constraints
 
@@ -3137,11 +3137,11 @@ If present, the `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDesc
 
 The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with the same `accessMethod`, if permitted for that `accessMethod`. When multiple `AccessDescription`s are present with the same `accessMethod`, each `accessLocation` MUST be unique, and each `AccessDescription` MUST be ordered in priority for that `accessMethod`, with the most-preferred `accessLocation` being the first `AccessDescription`. No ordering requirements are given for `AccessDescription`s that contain different `accessMethod`s, provided that previous requirement is satisfied.
 
-| **Access Method** | **OID**            | **Access Location**         | **Presence** | **Max** | **Description** |
-| -                 | -                  | ---                         | -            | -          | ---             |
-| `id-ad-ocsp`      | 1.3.6.1.5.5.7.48.1 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
-| `id-ad-caIssuers` | 1.3.6.1.5.5.7.48.2 | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's certificate. |
-| Any other value   | -                  | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
+| **Access Method**                           | **Access Location**         | **Presence** | **Maximum** | **Description** |
+| -                                           | ---                         | -            | -          | ---             |
+| `id-ad-ocsp` (OID: 1.3.6.1.5.5.7.48.1)      | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's OCSP responder. |
+| `id-ad-caIssuers` (OID: 1.3.6.1.5.5.7.48.2) | `uniformResourceIdentifier` | MAY          | \*         | A HTTP URL of the Issuing CA's certificate. |
+| Any other value                             | -                           | MUST NOT     | -          | No other `accessMethod`s may be used. |
 
 ##### 7.1.2.10.4 CA Certificate Basic Constraints
 
