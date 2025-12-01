@@ -2317,23 +2317,23 @@ Alternatively, if the Issuing CA does not use this form, then the Extended Key U
 
 Table: Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs issuing TLS certificates directly or transitively)
 
-| **Key Purpose**        | **Description** |
-| ---                    | -------         |
-| `id-kp-serverAuth`     | MUST be present. |
-| `id-kp-clientAuth`     | MAY be present. |
-| `id-kp-emailProtection`| MUST NOT be present. |
-| `id-kp-codeSigning`    | MUST NOT be present. |
-| `id-kp-timeStamping`   | MUST NOT be present. |
-| `anyExtendedKeyUsage`  | MUST NOT be present. |
-| Any other value        | NOT RECOMMENDED. |
+| **Key Purpose** | **Description** |
+| --- | -------- |
+| `id-kp-serverAuth` | MUST be present. |
+| `id-kp-clientAuth` | MAY be present. |
+| `id-kp-emailProtection` | MUST NOT be present. |
+| `id-kp-codeSigning` | MUST NOT be present. |
+| `id-kp-timeStamping` | MUST NOT be present. |
+| `anyExtendedKeyUsage` | MUST NOT be present. |
+| Any other value | NOT RECOMMENDED. |
 
 Table: Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs not issuing TLS certificates directly or transitively)
 
-| **Key Purpose**        | **Description** |
-| ---                    | -------         |
-| `id-kp-serverAuth`     | MUST NOT be present. |
-| `anyExtendedKeyUsage`  | MUST NOT be present. |
-| Any other value        | MAY be present. |
+| **Key Purpose** | **Description** |
+| --- | -------- |
+| `id-kp-serverAuth` | MUST NOT be present. |
+| `anyExtendedKeyUsage` | MUST NOT be present. |
+| Any other value | MAY be present. |
 
 Each included Extended Key Usage key usage purpose:
 
