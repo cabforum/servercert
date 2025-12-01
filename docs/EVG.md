@@ -1522,13 +1522,13 @@ State or province (where applicable): `subject:stateOrProvinceName` (OID: 2.5.4.
 Country: `subject:countryName` (OID: 2.5.4.6)  
 Postal code: `subject:postalCode` (OID: 2.5.4.17)  
 **Required/Optional**: Required/Optional  
-**Contents**: These fields MUST contain the verified physical address of the Subject’s Place of Business.
+**Contents**: These fields MUST contain the verified physical address of the Subject's Place of Business.
 
 The `countryName` field MUST be present and MUST contain the applicable two-letter ISO 3166-1 country code. If the country is not represented by an official ISO 3166-1 code, the ISO 3166-1 user-assigned code "XX" MUST be used.
 
 The `localityName` and `stateOrProvinceName` fields are OPTIONAL, but at least one of them MUST be present. When included, these fields MUST accurately represent the locality and/or state or province information verified in accordance with Section 3.2.2.1 of the Baseline Requirements.
 
-The `streetAddress` and `postalCode` fields are OPTIONAL. If present, they MUST contain the verified street address and postal information of the Subject’s Place of Business as required by Section 3.2.2.1 of the Baseline Requirements. Multiple `streetAddress` attributes MAY be present.
+The `streetAddress` and `postalCode` fields are OPTIONAL. If present, they MUST contain the verified street address and postal information of the Subject's Place of Business as required by Section 3.2.2.1 of the Baseline Requirements. Multiple `streetAddress` attributes MAY be present.
 
 ##### 7.1.4.2.7 Subject Organizational Unit Name Field
 
@@ -1566,7 +1566,7 @@ Registration Schemes listed in [Appendix H](#appendix-h--registration-schemes) a
 
 The CA SHALL:
 
-1. confirm that the organization represented by the Registration Reference is the same as the organization named in the `organizationName` field as specified in [Section 7.1.4.2.1](#71421-subject-organization-name-field) within the context of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field);
+1. confirm that the organization represented by the Registration Reference is the same as the organization named in the `organizationName` field as specified in [Section 7.1.4.2.1](#71421-subject-organization-name-field) within the context of the subject's jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field);
 2. further verify the Registration Reference matches other information verified in accordance with [Section 3.2](#32-initial-identity-validation);
 3. take appropriate measures to disambiguate between different organizations as described in [Appendix H](#appendix-h--registration-schemes) for each Registration Scheme;
 4. Apply the validation rules relevant to the Registration Scheme as specified in [Appendix H](#appendix-h--registration-schemes).
@@ -1603,9 +1603,9 @@ Each EV Certificate issued by the CA to a Subscriber MUST contain a policy ident
 
 1. indicates which CA policy statement relates to that Certificate,
 2. asserts the CA's adherence to and compliance with these Guidelines, and
-3. is either the CA/Browser Forum’s EV policy identifier or a policy identifier that, by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
+3. is either the CA/Browser Forum's EV policy identifier or a policy identifier that, by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
 
-The following Certificate Policy identifier is the CA/Browser Forum’s EV policy identifier:
+The following Certificate Policy identifier is the CA/Browser Forum's EV policy identifier:
 `{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines (1) } (2.23.140.1.1)`, if the Certificate complies with these Guidelines.
 
 #### 7.1.6.2 Root CA Certificates
@@ -2110,14 +2110,14 @@ The following Registration Schemes are currently recognized as valid under these
 
 - **NTR**:
 
-  The information carried in this field shall be the same as held in Subject Registration Number Field as specified in [Section 7.1.4.2.5](#71425-subject-registration-number-field) and the country code used in the Registration Scheme identifier shall match that of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
+  The information carried in this field shall be the same as held in Subject Registration Number Field as specified in [Section 7.1.4.2.5](#71425-subject-registration-number-field) and the country code used in the Registration Scheme identifier shall match that of the subject's jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
 
   Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 includes more than the country code, the additional locality information shall be included as specified in [Section 7.1.4.2.8](#71428-subject-organization-identifier-field) and/or [Section 7.1.2.2](#7122-cabrowser-forum-organization-identifier-extension).
 
 - **VAT**:
 
-  Reference allocated by the national tax authorities to a Legal Entity. This information shall be validated using information provided by the national tax authority against the organization as identified by the Subject Organization Name Field (see [Section 7.1.4.2.1](#71421-subject-organization-name-field)) and Subject Registration Number Field (see [Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field). For the purpose of identifying tax authorities, the country prefix described in article 215 of EU Council Directive 2006/112/EC, as amended, MAY be used instead of the ISO 3166 2-letter country codes.
+  Reference allocated by the national tax authorities to a Legal Entity. This information shall be validated using information provided by the national tax authority against the organization as identified by the Subject Organization Name Field (see [Section 7.1.4.2.1](#71421-subject-organization-name-field)) and Subject Registration Number Field (see [Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of the subject's jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field). For the purpose of identifying tax authorities, the country prefix described in article 215 of EU Council Directive 2006/112/EC, as amended, MAY be used instead of the ISO 3166 2-letter country codes.
 
 - **PSD**:
 
-  Authorization number as specified in ETSI TS 119 495 clause 4.4 allocated to a payment service provider and containing the information as specified in ETSI TS 119 495 clause 5.2.1. This information SHALL be obtained directly from the national competent authority register for payment services or from an information source approved by a government agency, regulatory body, or legislation for this purpose. This information SHALL be validated by being matched directly or indirectly (for example, by matching a globally unique registration number) against the organization as identified by the Subject Organization Name Field (see [Section 7.1.4.2.1](#71421-subject-organization-name-field)) and Subject Registration Number Field (see [Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field). The stated address of the organization combined with the organization name SHALL NOT be the only information used to disambiguate the organization.
+  Authorization number as specified in ETSI TS 119 495 clause 4.4 allocated to a payment service provider and containing the information as specified in ETSI TS 119 495 clause 5.2.1. This information SHALL be obtained directly from the national competent authority register for payment services or from an information source approved by a government agency, regulatory body, or legislation for this purpose. This information SHALL be validated by being matched directly or indirectly (for example, by matching a globally unique registration number) against the organization as identified by the Subject Organization Name Field (see [Section 7.1.4.2.1](#71421-subject-organization-name-field)) and Subject Registration Number Field (see [Section 7.1.4.2.5](#71425-subject-registration-number-field)) within the context of the subject's jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field). The stated address of the organization combined with the organization name SHALL NOT be the only information used to disambiguate the organization.

@@ -301,7 +301,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Certificate Problem Report**: Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates.
 
-**Certificate Profile**: A set of documents or files that defines requirements for Certificate content and Certificate extensions in accordance with [Section 7](#7-certificate-crl-and-ocsp-profiles), e.g. a Section in a CA’s CPS or a certificate template file used by CA software.
+**Certificate Profile**: A set of documents or files that defines requirements for Certificate content and Certificate extensions in accordance with [Section 7](#7-certificate-crl-and-ocsp-profiles), e.g. a Section in a CA's CPS or a certificate template file used by CA software.
 
 **Certificate Revocation List**: A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
@@ -875,7 +875,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 ##### 3.2.2.4.15 Phone Contact with Domain Contact v2
 
-Confirm the Applicant's control over the FQDN by calling the Domain Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+Confirm the Applicant's control over the FQDN by calling the Domain Contact's phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
 In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact.
 
@@ -900,7 +900,7 @@ Effective July 15, 2025:
 
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 
-Confirm the Applicant's control over the FQDN by calling the DNS TXT Record Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS TXT Record Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+Confirm the Applicant's control over the FQDN by calling the DNS TXT Record Phone Contact's phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS TXT Record Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
 
 The CA MUST NOT knowingly be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation.
 
@@ -914,7 +914,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 ##### 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
 
-Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659 Section 3.
+Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Contact's phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659 Section 3.
 
 The CA MUST NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation.
 
@@ -1001,7 +1001,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 Confirming the Applicant's control over a FQDN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`"). For this method, the CA MUST NOT use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. This prohibition overrides the Authorization Domain Name definition. CNAME records MAY be followed when resolving the Persistent DCV TXT Record.
 
-The CA MUST confirm the Persistent DCV TXT Record’s RDATA value fulfills the following requirements:
+The CA MUST confirm the Persistent DCV TXT Record's RDATA value fulfills the following requirements:
 
 1. The RDATA value MUST conform to the `issue-value` syntax as defined in RFC 8659, Section 4.2; and
 2. The `issuer-domain-name` value MUST be an Issuer Domain Name disclosed by the CA in Section 4.2 of the CA's Certificate Policy and/or Certification Practices Statement; and
@@ -1032,7 +1032,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 #### 3.2.2.5 Authentication for an IP Address
 
-This section defines the permitted processes and procedures for validating the Applicant’s ownership or control of an IP Address listed in a Certificate.
+This section defines the permitted processes and procedures for validating the Applicant's ownership or control of an IP Address listed in a Certificate.
 
 The CA SHALL confirm that prior to issuance, the CA has validated each IP Address listed in the Certificate using at least one of the methods specified in this section.
 
@@ -1067,7 +1067,7 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 ##### 3.2.2.5.3 Reverse Address Lookup
 
-Confirming the Applicant’s control over the IP Address by obtaining a Domain Name associated with the IP Address through a reverse-IP lookup on the IP Address and then verifying control over the FQDN using a method permitted under [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control).
+Confirming the Applicant's control over the IP Address by obtaining a Domain Name associated with the IP Address through a reverse-IP lookup on the IP Address and then verifying control over the FQDN using a method permitted under [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control).
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same FQDN as the Primary Network Perspective.
 
@@ -1079,7 +1079,7 @@ CAs SHALL NOT perform validations using this method after July 31, 2019. Complet
 
 ##### 3.2.2.5.5 Phone Contact with IP Address Contact
 
-Confirming the Applicant's control over the IP Address by calling the IP Address Contact’s phone number and obtaining a response confirming the Applicant's request for validation of the IP Address. The CA MUST place the call to a phone number identified by the IP Address Registration Authority as the IP Address Contact. Each phone call SHALL be made to a single number.
+Confirming the Applicant's control over the IP Address by calling the IP Address Contact's phone number and obtaining a response confirming the Applicant's request for validation of the IP Address. The CA MUST place the call to a phone number identified by the IP Address Registration Authority as the IP Address Contact. Each phone call SHALL be made to a single number.
 
 In the event that someone other than an IP Address Contact is reached, the CA MAY request to be transferred to the IP Address Contact.
 
@@ -1787,7 +1787,7 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 
 ### 5.4.1 Types of events recorded
 
-The CA and each Delegated Third Party SHALL record events related to the security of their Certificate Systems, Certificate Management Systems, Root CA Systems, and Delegated Third Party Systems. The CA and each Delegated Third Party SHALL record events related to their actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA’s compliance with these Requirements.
+The CA and each Delegated Third Party SHALL record events related to the security of their Certificate Systems, Certificate Management Systems, Root CA Systems, and Delegated Third Party Systems. The CA and each Delegated Third Party SHALL record events related to their actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA's compliance with these Requirements.
 
 The CA SHALL record at least the following events:
 
@@ -1942,7 +1942,7 @@ The CA's mass revocation plan MUST include clearly defined, actionable, and comp
 
 Mass revocation provisions MUST include:
 
-1. Activation criteria – specific, objective, and measurable thresholds at which the mass revocation plan is triggered based on the CA’s risk profile, issuance volumes, and operational capabilities;
+1. Activation criteria – specific, objective, and measurable thresholds at which the mass revocation plan is triggered based on the CA's risk profile, issuance volumes, and operational capabilities;
 2. Customer contact information – how subscriber and customer contact details are stored, maintained, and kept up to date;
 3. Automation points – processes that are automated or could be automated, and those processes that require manual intervention;
 4. Targets and timelines – for incident triage, revocation initiation, certificate replacement, and post-event review;
@@ -2005,7 +2005,7 @@ The CA SHALL reject a certificate request if one or more of the following condit
 5. The Public Key corresponds to an industry-demonstrated weak Private Key. For requests submitted on or after November 15, 2024, at least the following precautions SHALL be implemented:
    1. In the case of Debian weak keys vulnerability (<https://wiki.debian.org/SSLkeys>), the CA SHALL reject all keys found at <https://github.com/cabforum/Debian-weak-keys/> for each key type (e.g. RSA, ECDSA) and size listed in the repository. For all other keys meeting the requirements of [Section 6.1.5](#615-key-sizes), with the exception of RSA key sizes greater than 8192 bits, the CA SHALL reject Debian weak keys.
    2. In the case of ROCA vulnerability, the CA SHALL reject keys identified by the tools available at <https://github.com/crocs-muni/roca> or equivalent.
-   3. In the case of Close Primes vulnerability (<https://fermatattack.secvuln.info/>), the CA SHALL reject weak keys which can be factored within 100 rounds using Fermat’s factorization method.
+   3. In the case of Close Primes vulnerability (<https://fermatattack.secvuln.info/>), the CA SHALL reject weak keys which can be factored within 100 rounds using Fermat's factorization method.
 
     Suggested tools for checking for weak keys can be found here: <https://cabforum.org/resources/tools/>
 
@@ -3619,7 +3619,7 @@ Table: CRLReasons
 | **RFC 5280 reasonCode**   | **RFC 5280 reasonCode value** | **Description** |
 | ---                       | -    | ------                                   |
 | unspecified               | 0    | Represented by the omission of a reasonCode. MUST be omitted if the CRL entry is for a Certificate not technically capable of causing issuance unless the CRL entry is for a Subscriber Certificate subject to these Requirements revoked prior to July 15, 2023. |
-| keyCompromise             | 1    | Indicates that it is known or suspected that the Subscriber’s Private Key has been compromised. |
+| keyCompromise             | 1    | Indicates that it is known or suspected that the Subscriber's Private Key has been compromised. |
 | affiliationChanged        | 3    | Indicates that the Subject's name or other Subject Identity Information in the Certificate has changed, but there is no cause to suspect that the Certificate's Private Key has been compromised. |
 | superseded                | 4    | Indicates that the Certificate is being replaced because: the Subscriber has requested a new Certificate, the CA has reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the Certificate should not be relied upon, or the CA has revoked the Certificate for compliance reasons such as the Certificate does not comply with these Baseline Requirements or the CA's CP or CPS. |
 | cessationOfOperation      | 5    | Indicates that the website with the Certificate is shut down prior to the expiration of the Certificate, or if the Subscriber no longer owns or controls the Domain Name in the Certificate prior to the expiration of the Certificate. |
@@ -3873,7 +3873,7 @@ The Subscriber Agreement or Terms of Use MUST contain provisions imposing on the
 
 5. **Reporting and Revocation**: An obligation and warranty to:
 
-   a. promptly request revocation of the Certificate, and cease using it and its associated Private Key, if there is any actual or suspected misuse or compromise of the Subscriber’s Private Key associated with the Public Key included in the Certificate, and
+   a. promptly request revocation of the Certificate, and cease using it and its associated Private Key, if there is any actual or suspected misuse or compromise of the Subscriber's Private Key associated with the Public Key included in the Certificate, and
    b. promptly request revocation of the Certificate, and cease using it, if any information in the Certificate is or becomes incorrect or inaccurate;
 
 6. **Termination of Use of Certificate**: An obligation and warranty to promptly cease all use of the Private Key corresponding to the Public Key included in the Certificate upon revocation of that Certificate for reasons of Key Compromise.
@@ -3996,7 +3996,7 @@ This appendix defines permissible verification procedures for including one or m
 
 1. The Domain Name MUST contain at least two Domain Labels, where the rightmost Domain Label is "onion", and the Domain Label immediately preceding the rightmost "onion" Domain Label is a valid Version 3 Onion Address, as defined in Section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
 
-2. The CA MUST verify the Applicant’s control over the Onion Domain Name using at least one of the methods listed below:
+2. The CA MUST verify the Applicant's control over the Onion Domain Name using at least one of the methods listed below:
 
    a. The CA MAY verify the Applicant's control over the .onion service by using one of the following methods from [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control):
 
