@@ -30,7 +30,7 @@ The CA/Browser Forum is a voluntary open organization of certification authoriti
 
 These Guidelines for the issuance and management of Extended Validation Certificates describe certain of the minimum requirements that a Certification Authority must meet in order to issue Extended Validation Certificates. Subject Organization information from Valid EV Certificates may be displayed in a special manner by certain relying-party software applications (e.g., browser software) in order to provide users with a trustworthy confirmation of the identity of the entity that controls the Web site they are accessing. These Guidelines incorporate the Baseline Requirements established by the CA/Browser Forum by reference. A copy of the Baseline Requirements is available on the CA/Browser Forum's website at <https://www.cabforum.org/>.
 
-These Guidelines address the basic issue of validating Subject identity information in EV Certificates and some related matters. They do not address all of the related matters, such as certain technical and operational ones. This version of the Guidelines addresses only requirements for EV Certificates intended to be used for SSL/TLS authentication on the Internet. However, the Working Group encourages the re-use of these guidelines as a basis for similar requirements for S/MIME, time-stamping, VoIP, IM, Web services, etc.
+These Guidelines address the basic issue of validating Subject identity information in EV Certificates and some related matters.  They do not address all of the related matters, such as certain technical and operational ones. This version of the Guidelines addresses only requirements for EV Certificates intended to be used for SSL/TLS authentication on the Internet. However, the Working Group encourages the re-use of these guidelines as a basis for similar requirements for S/MIME, time-stamping, VoIP, IM, Web services, etc.
 
 These Guidelines do not address the verification of information, or the issuance, use, maintenance, or revocation of EV Certificates by enterprises that operate their own Public Key Infrastructure for internal purposes only, where its Root CA Certificate is not distributed by any Application Software Supplier.
 
@@ -60,8 +60,8 @@ These Guidelines do not address the verification of information, or the issuance
 | 1.5.7 | 151 | Addition of Optional OIDs for Indicating Level of Validation | 28 Sept 2015 | 28 Sept 2015 |
 | 1.5.8 | 162 | Sunset of Exceptions | 15 Mar 2016 | 15 Mar 2016 |
 | 1.5.9 | 163 | Fix Errata in EV Guidelines 11.2.1 | 18 Mar 2016 | 18 Mar 2016 |
-| 1.6.0 | 171 | Updating ETSI Standards | 1 July 2016 | 1 July 2016 |
-| 1.6.1 | 180 | In EV 11.7.1, removed outdated cross-reference to BR 3.2.2.4(7) | 7 Jan. 2017 | 7 Jan. 2017 |
+| 1.6.0 | 171 | Updating ETSI Standards | 1 July 2016  | 1 July 2016   |
+| 1.6.1 | 180 | In EV 11.7.1, removed outdated cross-reference to BR 3.2.2.4(7)  | 7 Jan. 2017  | 7 Jan. 2017   |
 | 1.6.2 | 103 | 825-day Certificate Lifetimes | 17 Mar. 2017 | 17 Mar. 2017 |
 | 1.6.3 | 198 | .Onion Revisions (declared invalid) | 7 May 2017 | 8 June 2017 |
 | 1.6.4 | 191 | Clarify Place of Business Information | 23 May 2017 | 23 June 2017 |
@@ -215,7 +215,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
   i. indicates which CA policy statement relates to that certificate, and
   ii. is either the CA/Browser Forum EV policy identifier or a policy identifier that, by pre-agreement with one or more Application Software Supplier, marks the certificate as being an EV Certificate.
 
-**EV Policies**: Auditable EV Certificate practices, policies and procedures, such as a certification practice statement and certificate policy, that are developed, implemented, and enforced by the CA and its Root CA.
+**EV Policies**: Auditable EV Certificate practices, policies and procedures, such as a certification practice statement  and certificate policy, that are developed, implemented, and enforced by the CA and its Root CA.
 
 **EV Processes**: The keys, software, processes, and procedures by which the CA verifies Certificate Data under this Guideline, issues EV Certificates, maintains a Repository, and revokes EV Certificates.
 
@@ -413,7 +413,9 @@ Before issuing an EV Certificate, the CA MUST ensure that all Subject organizati
 1. Verify Applicant's existence and identity, including;
 
    A.  Verify the Applicant's legal existence and identity (as more fully set forth in [Section 3.2.2.2](#3222-verification-of-applicants-legal-existence-and-identity)),
+
    B.  Verify the Applicant's physical existence (business presence at a physical address), and
+
    C.  Verify the Applicant's operational existence (business activity).
 
 2. Verify the Applicant is a registered holder, or has control, of the Domain Name(s) to be included in the EV Certificate;
@@ -423,7 +425,9 @@ Before issuing an EV Certificate, the CA MUST ensure that all Subject organizati
 4. Verify the Applicant's authorization for the EV Certificate, including;
 
    A.  Verify the name, title, and authority of the Contract Signer, Certificate Approver, and Certificate Requester,
+
    B.  Verify that a Contract Signer signed the Subscriber Agreement or that a duly authorized Applicant Representative acknowledged and agreed to the Terms of Use; and
+
    C.  Verify that a Certificate Approver has signed or otherwise approved the EV Certificate Request.
 
 ##### 3.2.2.1.2 Acceptable Methods of Verification – Overview
@@ -565,7 +569,7 @@ To verify any assumed name under which the Applicant conducts business:
 
 1. The CA MAY verify the assumed name through use of a Qualified Government Information Source operated by, or on behalf of, an appropriate government agency in the jurisdiction of the Applicant's Place of Business, or by direct contact with such government agency in person or via mail, e-mail, Web address, or telephone; or
 2. The CA MAY verify the assumed name through use of a Qualified Independent Information Source provided that the QIIS has verified the assumed name with the appropriate government agency.
-3. The CA MAY rely on a Verified Professional Letter that indicates the assumed name under which the Applicant conducts business, the government agency with which the assumed name is registered, and that such filing continues to be valid.
+3. The CA MAY rely on a Verified Professional Letter  that indicates the assumed name under which the Applicant conducts business, the government agency with which the assumed name is registered, and that such filing continues to be valid.
 
 #### 3.2.2.4 Verification of Applicant's Physical Existence
 
@@ -609,9 +613,9 @@ To verify a Verified Method of Communication with the Applicant, the CA MUST:
 
 A.  Verify that the Verified Method of Communication belongs to the Applicant, or a Parent/Subsidiary or Affiliate of the Applicant, by matching it with one of the Applicant's Parent/Subsidiary or Affiliate's Places of Business in:
 
-    i. records provided by the applicable phone company;
-    ii. a QGIS, QTIS, or QIIS; or
-    iii. a Verified Professional Letter; and
+  i. records provided by the applicable phone company;
+  ii. a QGIS, QTIS, or QIIS; or
+  iii. a Verified Professional Letter; and
 
 B.  Confirm the Verified Method of Communication by using it to obtain an affirmative response sufficient to enable a reasonable person to conclude that the Applicant, or a Parent/Subsidiary or Affiliate of Applicant, can be contacted reliably by using the Verified Method of Communication.
 
@@ -712,6 +716,7 @@ Note: An example of an acceptable representation/warranty appears in [Appendix E
 Where the CA and Applicant contemplate the submission of multiple future EV Certificate Requests, then, after the CA:
 
 1. Has verified the name and title of the Contract Signer and that he/she is an employee or agent of the Applicant; and
+
 2. Has verified the Signing Authority of such Contract Signer in accordance with one of the procedures in [Section 3.2.2.8.3](#32283-acceptable-methods-of-verification--authority).
 
 The CA and the Applicant MAY enter into a written agreement, signed by the Contract Signer on behalf of the Applicant, whereby, for a specified term, the Applicant expressly authorizes one or more Certificate Approver(s) designated in such agreement to exercise EV Authority with respect to each future EV Certificate Request submitted on behalf of the Applicant and properly authenticated as originating with, or otherwise being approved by, such Certificate Approver(s).
@@ -785,7 +790,7 @@ Acceptable methods of verifying the Certificate Approver's approval of an EV Cer
 
 1. **Verification Requirements**: Before relying on an accountant letter submitted to the CA, the CA MUST verify that such accountant letter meets the following requirements:
 
-   A.  **Status of Author**: The CA MUST verify that the accountant letter is authored by an Accounting Practitioner retained or employed by the Applicant and licensed within the country of the Applicant's Jurisdiction of Incorporation, Jurisdiction of Registration, or country where the Applicant maintains an office or physical facility. Verification of license MUST be through the member organization or regulatory organization in the Accounting Practitioner's country or jurisdiction that is appropriate to contact when verifying an accountant's license to practice in that country or jurisdiction. Such country or jurisdiction must have an accounting standards body that maintains full membership status with the International Federation of Accountants.
+   A.  **Status of Author**: The CA MUST verify that the accountant letter is authored by an Accounting Practitioner retained or employed by the Applicant and licensed within the country of the Applicant's Jurisdiction of Incorporation, Jurisdiction of Registration, or country where the Applicant maintains an office or physical facility. Verification of license MUST be  through the member organization or regulatory organization in the Accounting Practitioner's country or jurisdiction that is appropriate to contact when verifying an accountant's license to practice in that country or jurisdiction. Such country or jurisdiction must have an accounting standards body that maintains full membership status with the International Federation of Accountants.
    B.  **Basis of Opinion**: The CA MUST verify that the Accounting Practitioner is acting on behalf of the Applicant and that the conclusions of the Verified Accountant Letter are based on the Accounting Practitioner's stated familiarity with the relevant facts and the exercise of the Accounting Practitioner's professional judgment and expertise;
    C.  **Authenticity**: The CA MUST confirm the authenticity of the Verified Accountant Letter.
 
@@ -853,6 +858,7 @@ An Independent Confirmation from the Applicant MAY be obtained via the following
 A Qualified Independent Information Source (QIIS) is a regularly-updated and publicly available database that is generally recognized as a dependable source for certain information. A database qualifies as a QIIS if the CA determines that:
 
 1. Industries other than the certificate industry rely on the database for accurate location, contact, or other information; and
+
 2. The database provider updates its data on at least an annual basis.
 
 The CA SHALL use a documented process to check the accuracy of the database and ensure its data is acceptable, including reviewing the database provider's terms of use. The CA SHALL NOT use any data in a QIIS that the CA knows is
@@ -885,7 +891,7 @@ The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirem
 
    The CA MUST NOT issue any EV Certificate to the Applicant if either the Applicant, the Contract Signer, or Certificate Approver or if the Applicant's Jurisdiction of Incorporation or Registration or Place of Business is on any such list.
 
-2. **Acceptable Methods of Verification** The CA MUST take reasonable steps to verify with the following lists and regulations:
+2. **Acceptable Methods of Verification**  The CA MUST take reasonable steps to verify with the following lists and regulations:
 
    A.  If the CA has operations in the U.S., the CA MUST take reasonable steps to verify with the following US Government denied lists and regulations:
 
@@ -1223,7 +1229,6 @@ As specified in Section 5 of the Baseline Requirements. In addition, systems use
 ### 5.2.4 Roles requiring separation of duties
 
 1. The CA MUST enforce rigorous control procedures for the separation of validation duties to ensure that no one person can single-handedly validate and authorize the issuance of an EV Certificate. The Final Cross-Correlation and Due Diligence steps, as outlined in [Section 3.2.2.13](#32213-final-cross-correlation-and-due-diligence), MAY be performed by one of the persons. For example, one Validation Specialist MAY review and verify all the Applicant information and a second Validation Specialist MAY approve issuance of the EV Certificate.
-
 2. Such controls MUST be auditable.
 
 ## 5.3 Personnel controls
@@ -1417,20 +1422,15 @@ If a CA includes an extension in a certificate that has a Certificate field whic
 
 #### 7.1.2.1 Subject Alternative Name Extension
 
-**Certificate Field**: `subjectAltName:dNSName`
-
-**Required/Optional**: **Required**
-
+**Certificate Field**: `subjectAltName:dNSName`  
+**Required/Optional**: **Required**  
 **Contents**: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server. Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This extension MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 #### 7.1.2.2 CA/Browser Forum Organization Identifier Extension
 
-**Extension Name**: `cabfOrganizationIdentifier` (OID: 2.23.140.3.1)
-
-**Verbose OID**: `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }`
-
-**Required/Optional**: **Optional (but see below)**
-
+**Extension Name**: `cabfOrganizationIdentifier` (OID: 2.23.140.3.1)  
+**Verbose OID**: `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }`  
+**Required/Optional**: **Optional (but see below)**  
 **Contents**: If the subject:organizationIdentifier is present, this field MUST be present.
 
 If present, this extension MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
@@ -1474,10 +1474,8 @@ Subject to the requirements of these Guidelines, the EV Certificate and certific
 
 ##### 7.1.4.2.1 Subject Organization Name Field
 
-**Certificate Field**: `subject:organizationName` (OID 2.5.4.10)
-
-**Required/Optional**: Required
-
+**Certificate Field**: `subject:organizationName` (OID 2.5.4.10)  
+**Required/Optional**: Required  
 **Contents**: This field MUST contain the Subject's full legal organization name as listed in the official records of the Incorporating or Registration Agency in the Subject's Jurisdiction of Incorporation or Registration or as otherwise verified by the CA as provided herein. A CA MAY abbreviate the organization prefixes or suffixes in the organization name, e.g., if the official record shows "Company Name Incorporated" the CA MAY include "Company Name, Inc."
 
 When abbreviating a Subject's full legal name as allowed by this subsection, the CA MUST use abbreviations that are not misleading in the Jurisdiction of Incorporation or Registration.
@@ -1488,42 +1486,38 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 ##### 7.1.4.2.2 Subject Common Name Field
 
-**Certificate Field**: `subject:commonName` (OID: 2.5.4.3)
-
-**Required/Optional**: Deprecated (Discouraged, but not prohibited)
-
+**Certificate Field**: `subject:commonName` (OID: 2.5.4.3)  
+**Required/Optional**: Deprecated (Discouraged, but not prohibited)  
 **Contents**: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server. Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This field MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 ##### 7.1.4.2.3 Subject Business Category Field
 
-**Certificate Field**: `subject:businessCategory` (OID: 2.5.4.15)
-
-**Required/Optional**: Required
-
+**Certificate Field**: `subject:businessCategory` (OID: 2.5.4.15)  
+**Required/Optional**: Required  
 **Contents**: This field MUST contain one of the following strings: "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity" depending upon whether the Subject qualifies under the terms of [Section 4.1.1.1](#4111-private-organization-subjects), [Section 4.1.1.2](#4112-government-entity-subjects), [Section 4.1.1.3](#4113-business-entity-subjects) or [Section 4.1.1.4](#4114-non-commercial-entity-subjects), respectively.
 
 ##### 7.1.4.2.4 Subject Jurisdiction of Incorporation or Registration Field
 
 **Certificate Fields**:
 
-Locality (if required): `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1)
+Locality (if required):  
+  `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1)
 
-State or province (if required): `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2)
+State or province (if required):  
+  `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2)
 
-Country: `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3)
+Country:  
+  `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3)
 
-**Required/Optional**: Required
-
+**Required/Optional**: Required  
 **Contents**: These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency. For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information. Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information. And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information. Country information MUST be specified using the applicable ISO country code. State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
 Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, the values within these fields have been disclosed within the latest publicly-available disclosure, as described in [Section 3.2.2.1.3](#32213-disclosure-of-verification-sources), as acceptable values for the applicable Incorporating Agency or Registration Agency.
 
 ##### 7.1.4.2.5 Subject Registration Number Field
 
-**Certificate Field**: `subject:serialNumber` (OID: 2.5.4.5)
-
-**Required/Optional**: **Required**
-
+**Certificate Field**: `subject:serialNumber` (OID: 2.5.4.5)  
+**Required/Optional**: **Required**  
 **Contents**: For Private Organizations, this field MUST contain the Registration (or similar) Number assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate. If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the date of Incorporation or Registration SHALL be entered into this field using the ISO 8601 Complete Date format (YYYY-MM-DD, e.g., 2025-01-23).
 For Government Entities that do not have a Registration Number or readily verifiable date of creation, the CA SHALL enter appropriate language to indicate that the Subject is a Government Entity.
 
@@ -1533,20 +1527,13 @@ Effective as of 1 October 2020, if the CA has disclosed a set of acceptable form
 
 ##### 7.1.4.2.6 Subject Physical Address of Place of Business Field
 
-**Certificate Fields**:
-
-    Number and street: `subject:streetAddress` (OID: 2.5.4.9)
-
-    City or town: `subject:localityName` (OID: 2.5.4.7)
-
-    State or province (where applicable): `subject:stateOrProvinceName` (OID: 2.5.4.8)
-
-    Country: `subject:countryName` (OID: 2.5.4.6)
-
-    Postal code: `subject:postalCode` (OID: 2.5.4.17)
-
-**Required/Optional**: Required/Optional
-
+**Certificate Fields**:  
+    Number and street: `subject:streetAddress` (OID: 2.5.4.9)  
+    City or town: `subject:localityName` (OID: 2.5.4.7)  
+    State or province (where applicable): `subject:stateOrProvinceName` (OID: 2.5.4.8)  
+    Country: `subject:countryName` (OID: 2.5.4.6)  
+    Postal code: `subject:postalCode` (OID: 2.5.4.17)  
+**Required/Optional**: Required/Optional  
 **Contents**: These fields MUST contain the verified physical address of the Subject’s Place of Business.
 
 The `countryName` field MUST be present and MUST contain the applicable two-letter ISO 3166-1 country code. If the country is not represented by an official ISO 3166-1 code, the ISO 3166-1 user-assigned code "XX" MUST be used.
@@ -1557,16 +1544,13 @@ The `streetAddress` and `postalCode` fields are OPTIONAL. If present, they MUST 
 
 ##### 7.1.4.2.7 Subject Organizational Unit Name Field
 
-**Certificate Field**: `subject:organizationalUnitName` (OID: 2.5.4.11)
-
+**Certificate Field**: `subject:organizationalUnitName` (OID: 2.5.4.11)  
 **Required/Optional/Prohibited**: **Prohibited**.
 
 ##### 7.1.4.2.8 Subject Organization Identifier Field
 
-**Certificate Field**: `subject:organizationIdentifier` (OID: 2.5.4.97)
-
-**Required/Optional**: Optional
-
+**Certificate Field**: `subject:organizationIdentifier` (OID: 2.5.4.97)  
+**Required/Optional**: Optional  
 **Contents**: If present, this field MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
 
 The organizationIdentifier MUST be encoded as a PrintableString or UTF8String.
@@ -1889,7 +1873,7 @@ On this basis, we hereby offer the following opinion:
 
 2. That Company conducts business under the assumed name or "DBA"_[assumed name of the Applicant]_ and has registered such name with the appropriate government agency in the jurisdiction of its place of business below.
 
-3. That _[name of Client's Representative]_[^2] has authority to act on behalf of Company to: [_select as appropriate_] (a) provide the information about Company required for issuance of the EV Certificates as contained in the attached Application, (b) request one or more EV Certificates and to designate other persons to request EV Certificates, and (c) agree to the relevant contractual obligations contained in the Subscriber Agreement on behalf of Company.
+3. That _[name of Client's Representative]_[^2]  has authority to act on behalf of Company to: [_select as appropriate_] (a) provide the information about Company required for issuance of the EV Certificates as contained in the attached Application, (b) request one or more EV Certificates and to designate other persons to request EV Certificates, and (c) agree to the relevant contractual obligations contained in the Subscriber Agreement on behalf of Company.
 
 4. That Company has a physical presence and its place of business is at the following location:
 
@@ -2015,7 +1999,7 @@ NOTE: This appendix provides alternative interpretations of the EV Guidelines fo
 
 3. Translated Name
 
-   In order to include a Latin character name in the EV certificate that is not a direct Romanization of the registered name (e.g. an English Name) the CA MUST verify that the Latin character name is:
+   In order to include a Latin character name in the EV certificate that is not a direct Romanization of the registered name (e.g. an English Name)  the CA MUST verify that the Latin character name is:
 
    A.  Included in the Articles of Incorporation (or equivalent document) filed as part of the organization registration; or
    B.  Recognized by a QTIS in the Applicant's Jurisdiction of Incorporation as the Applicant's recognized name for tax filings; or
@@ -2138,7 +2122,7 @@ The following Registration Schemes are currently recognized as valid under these
 
 - **NTR**:
 
-  The information carried in this field shall be the same as held in Subject Registration Number Field as specified in [Section 7.1.4.2.5](#71425-subject-registration-number-field) and the country code used in the Registration Scheme identifier shall match that of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
+ The information carried in this field shall be the same as held in Subject Registration Number Field as specified in [Section 7.1.4.2.5](#71425-subject-registration-number-field) and the country code used in the Registration Scheme identifier shall match that of the subject’s jurisdiction as specified in [Section 7.1.4.2.4](#71424-subject-jurisdiction-of-incorporation-or-registration-field).
 
   Where the Subject Jurisdiction of Incorporation or Registration Field in 9.2.4 includes more than the country code, the additional locality information shall be included as specified in [Section 7.1.4.2.8](#71428-subject-organization-identifier-field) and/or [Section 7.1.2.2](#7122-cabrowser-forum-organization-identifier-extension).
 
