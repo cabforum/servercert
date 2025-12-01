@@ -3471,7 +3471,7 @@ CAs that include attributes in the Certificate `subject` field that are listed i
 
 Table: Encoding and Order Requirements for Selected Attributes
 
-| **Attribute**            | **OID**    | **Specification**                               | **Encoding Requirements**                  | **Max Length[^maxlength]** |
+| **Attribute**            | **OID**    | **Specification**                               | **Encoding Requirements**                  | **Max Length\*** |
 | ----                     | --         | ---                                             | ----                                       | - |
 | `domainComponent`        | `0.9.2342.19200300.100.1.25` | [RFC 4519](https://tools.ietf.org/html/rfc4519) | MUST use `IA5String`     | 63 |
 | `countryName`            | `2.5.4.6`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `PrintableString`                 | 2 |
@@ -3485,7 +3485,7 @@ Table: Encoding and Order Requirements for Selected Attributes
 | `organizationalUnitName` | `2.5.4.11` | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 64 |
 | `commonName`             | `2.5.4.3`  | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `UTF8String` or `PrintableString` | 64 |
 
-[^maxlength]: **Note**: ASN.1 length limits for DirectoryString are expressed as character limits, not byte limits.
+\* **Note**: ASN.1 length limits for DirectoryString are expressed as character limits, not byte limits.
 
 [^surname_givenname]: **Note**: Although RFC 5280 specifies the upper bound as 32,768 characters, this was a transcription error from X.520 (08/2005). The effective (interoperable) upper bound is 64 characters.
 
@@ -3493,7 +3493,7 @@ CAs that include attributes in the Certificate `subject` field that are listed i
 
 Table: Encoding Requirements for Selected Attributes
 
-| **Attribute**            | **OID**    | **Specification**                               | **Encoding Requirements**                  | **Max Length[^maxlength]** |
+| **Attribute**            | **OID**    | **Specification**                               | **Encoding Requirements**                  | **Max Length\*** |
 | ----                     | --         | ---                                             | ----                                       | - |
 | `businessCategory`       | `2.5.4.15` | X.520                                           | MUST use `UTF8String` or `PrintableString` | 128 |
 | `jurisdictionCountry`    | `1.3.6.1.4.1.311.60.2.1.3` | Guidelines for the Issuance and Management of Extended Validation Certificates | MUST use `PrintableString` | 2 |
@@ -3502,6 +3502,7 @@ Table: Encoding Requirements for Selected Attributes
 | `serialNumber`    | `2.5.4.5` | [RFC 5280](https://tools.ietf.org/html/rfc5280) | MUST use `PrintableString` | 64 |
 | `organizationIdentifier` | `2.5.4.97` | X.520 | MUST use `UTF8String` or `PrintableString` | None |
 
+\* **Note**: ASN.1 length limits for DirectoryString are expressed as character limits, not byte limits.
 
 #### 7.1.4.3 Subscriber Certificate Common Name Attribute
 
