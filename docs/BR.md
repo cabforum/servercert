@@ -1792,6 +1792,7 @@ The CA and each Delegated Third Party SHALL record events related to the securit
 The CA SHALL record at least the following events:
 
 1. CA certificate and key lifecycle events, including:
+
    1. Key generation, backup, storage, recovery, archival, and destruction;
    2. Certificate requests, renewal, and re-key requests, and revocation;
    3. Approval and rejection of certificate requests;
@@ -1801,6 +1802,7 @@ The CA SHALL record at least the following events:
    7. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
 
 2. Subscriber Certificate lifecycle management events, including:
+
    1. Certificate requests, renewal, and re-key requests, and revocation;
    2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
    3. Approval and rejection of certificate requests;
@@ -1814,6 +1816,7 @@ The CA SHALL record at least the following events:
    8. Multi-Perspective Issuance Corroboration quorum results for each attempted domain name or IP address represented in a Certificate request (i.e., "3/4" which should be interpreted as "Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
 
 3. Security events, including:
+
    1. Successful and unsuccessful PKI system access attempts;
    2. PKI and security system actions performed;
    3. Security profile changes;
@@ -2316,21 +2319,21 @@ Table: Restricted TLS Cross-Certified Subordinate CA Extended Key Usage Purposes
 
 | **Key Purpose**        | **Description** |
 | ---                    | -------         |
-| `id-kp-serverAuth`     | MUST be present.|
-| `id-kp-clientAuth`     | MAY be present.|
-| `id-kp-emailProtection`| MUST NOT be present.|
-| `id-kp-codeSigning`    | MUST NOT be present.|
-| `id-kp-timeStamping`   | MUST NOT be present.|
-| `anyExtendedKeyUsage`  | MUST NOT be present.|
-| Any other value        | NOT RECOMMENDED.|
+| `id-kp-serverAuth`     | MUST be present. |
+| `id-kp-clientAuth`     | MAY be present. |
+| `id-kp-emailProtection`| MUST NOT be present. |
+| `id-kp-codeSigning`    | MUST NOT be present. |
+| `id-kp-timeStamping`   | MUST NOT be present. |
+| `anyExtendedKeyUsage`  | MUST NOT be present. |
+| Any other value        | NOT RECOMMENDED. |
 
 Table: Restricted Non-TLS Cross-Certified Subordinate CA Extended Key Usage Purposes (i.e., for restricted Cross-Certified Subordinate CAs not issuing TLS certificates directly or transitively)
 
 | **Key Purpose**        | **Description** |
 | ---                    | -------         |
-| `id-kp-serverAuth`     | MUST NOT be present.|
-| `anyExtendedKeyUsage`  | MUST NOT be present.|
-| Any other value        | MAY be present.|
+| `id-kp-serverAuth`     | MUST NOT be present. |
+| `anyExtendedKeyUsage`  | MUST NOT be present. |
+| Any other value        | MAY be present. |
 
 Each included Extended Key Usage key usage purpose:
 
