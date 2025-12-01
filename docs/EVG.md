@@ -1417,20 +1417,15 @@ If a CA includes an extension in a certificate that has a Certificate field whic
 
 #### 7.1.2.1 Subject Alternative Name Extension
 
-**Certificate Field**: `subjectAltName:dNSName`
-
-**Required/Optional**: **Required**
-
+**Certificate Field**: `subjectAltName:dNSName`  
+**Required/Optional**: **Required**  
 **Contents**: This extension MUST contain one or more host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server. Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This extension MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 #### 7.1.2.2 CA/Browser Forum Organization Identifier Extension
 
-**Extension Name**: `cabfOrganizationIdentifier` (OID: 2.23.140.3.1)
-
-**Verbose OID**: `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }`
-
-**Required/Optional**: **Optional (but see below)**
-
+**Extension Name**: `cabfOrganizationIdentifier` (OID: 2.23.140.3.1)  
+**Verbose OID**: `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }`  
+**Required/Optional**: **Optional (but see below)**  
 **Contents**: If the subject:organizationIdentifier is present, this field MUST be present.
 
 If present, this extension MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
@@ -1474,10 +1469,8 @@ Subject to the requirements of these Guidelines, the EV Certificate and certific
 
 ##### 7.1.4.2.1 Subject Organization Name Field
 
-**Certificate Field**: `subject:organizationName` (OID 2.5.4.10)
-
-**Required/Optional**: Required
-
+**Certificate Field**: `subject:organizationName` (OID 2.5.4.10)  
+**Required/Optional**: Required  
 **Contents**: This field MUST contain the Subject's full legal organization name as listed in the official records of the Incorporating or Registration Agency in the Subject's Jurisdiction of Incorporation or Registration or as otherwise verified by the CA as provided herein. A CA MAY abbreviate the organization prefixes or suffixes in the organization name, e.g., if the official record shows "Company Name Incorporated" the CA MAY include "Company Name, Inc."
 
 When abbreviating a Subject's full legal name as allowed by this subsection, the CA MUST use abbreviations that are not misleading in the Jurisdiction of Incorporation or Registration.
@@ -1488,42 +1481,31 @@ If the combination of names or the organization name by itself exceeds 64 charac
 
 ##### 7.1.4.2.2 Subject Common Name Field
 
-**Certificate Field**: `subject:commonName` (OID: 2.5.4.3)
-
-**Required/Optional**: Deprecated (Discouraged, but not prohibited)
-
+**Certificate Field**: `subject:commonName` (OID: 2.5.4.3)  
+**Required/Optional**: Deprecated (Discouraged, but not prohibited)  
 **Contents**: If present, this field MUST contain a single Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server. Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service). This field MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with Appendix B of the Baseline Requirements.
 
 ##### 7.1.4.2.3 Subject Business Category Field
 
-**Certificate Field**: `subject:businessCategory` (OID: 2.5.4.15)
-
-**Required/Optional**: Required
-
+**Certificate Field**: `subject:businessCategory` (OID: 2.5.4.15)  
+**Required/Optional**: Required  
 **Contents**: This field MUST contain one of the following strings: "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity" depending upon whether the Subject qualifies under the terms of [Section 4.1.1.1](#4111-private-organization-subjects), [Section 4.1.1.2](#4112-government-entity-subjects), [Section 4.1.1.3](#4113-business-entity-subjects) or [Section 4.1.1.4](#4114-non-commercial-entity-subjects), respectively.
 
 ##### 7.1.4.2.4 Subject Jurisdiction of Incorporation or Registration Field
 
-**Certificate Fields**:
-
-Locality (if required): `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1)
-
-State or province (if required): `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2)
-
-Country: `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3)
-
-**Required/Optional**: Required
-
+**Certificate Fields**:  
+Locality (if required): `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1)  
+State or province (if required): `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2)  
+Country: `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3)  
+**Required/Optional**: Required  
 **Contents**: These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency. For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information. Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information. And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information. Country information MUST be specified using the applicable ISO country code. State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
 
 Effective as of 1 October 2020, the CA SHALL ensure that, at time of issuance, the values within these fields have been disclosed within the latest publicly-available disclosure, as described in [Section 3.2.2.1.3](#32213-disclosure-of-verification-sources), as acceptable values for the applicable Incorporating Agency or Registration Agency.
 
 ##### 7.1.4.2.5 Subject Registration Number Field
 
-**Certificate Field**: `subject:serialNumber` (OID: 2.5.4.5)
-
-**Required/Optional**: **Required**
-
+**Certificate Field**: `subject:serialNumber` (OID: 2.5.4.5)  
+**Required/Optional**: **Required**  
 **Contents**: For Private Organizations, this field MUST contain the Registration (or similar) Number assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate. If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the date of Incorporation or Registration SHALL be entered into this field using the ISO 8601 Complete Date format (YYYY-MM-DD, e.g., 2025-01-23).
 For Government Entities that do not have a Registration Number or readily verifiable date of creation, the CA SHALL enter appropriate language to indicate that the Subject is a Government Entity.
 
@@ -1533,20 +1515,13 @@ Effective as of 1 October 2020, if the CA has disclosed a set of acceptable form
 
 ##### 7.1.4.2.6 Subject Physical Address of Place of Business Field
 
-**Certificate Fields**:
-
-Number and street: `subject:streetAddress` (OID: 2.5.4.9)
-
-City or town: `subject:localityName` (OID: 2.5.4.7)
-
-State or province (where applicable): `subject:stateOrProvinceName` (OID: 2.5.4.8)
-
-Country: `subject:countryName` (OID: 2.5.4.6)
-
-Postal code: `subject:postalCode` (OID: 2.5.4.17)
-
-**Required/Optional**: Required/Optional
-
+**Certificate Fields**:  
+Number and street: `subject:streetAddress` (OID: 2.5.4.9)  
+City or town: `subject:localityName` (OID: 2.5.4.7)  
+State or province (where applicable): `subject:stateOrProvinceName` (OID: 2.5.4.8)  
+Country: `subject:countryName` (OID: 2.5.4.6)  
+Postal code: `subject:postalCode` (OID: 2.5.4.17)  
+**Required/Optional**: Required/Optional  
 **Contents**: These fields MUST contain the verified physical address of the Subject’s Place of Business.
 
 The `countryName` field MUST be present and MUST contain the applicable two-letter ISO 3166-1 country code. If the country is not represented by an official ISO 3166-1 code, the ISO 3166-1 user-assigned code "XX" MUST be used.
@@ -1557,16 +1532,13 @@ The `streetAddress` and `postalCode` fields are OPTIONAL. If present, they MUST 
 
 ##### 7.1.4.2.7 Subject Organizational Unit Name Field
 
-**Certificate Field**: `subject:organizationalUnitName` (OID: 2.5.4.11)
-
-**Required/Optional/Prohibited**: **Prohibited**.
+**Certificate Field**: `subject:organizationalUnitName` (OID: 2.5.4.11)  
+**Required/Optional/Prohibited**: **Prohibited**  
 
 ##### 7.1.4.2.8 Subject Organization Identifier Field
 
-**Certificate Field**: `subject:organizationIdentifier` (OID: 2.5.4.97)
-
-**Required/Optional**: Optional
-
+**Certificate Field**: `subject:organizationIdentifier` (OID: 2.5.4.97)  
+**Required/Optional**: Optional  
 **Contents**: If present, this field MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
 
 The organizationIdentifier MUST be encoded as a PrintableString or UTF8String.
