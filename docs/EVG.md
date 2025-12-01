@@ -411,13 +411,18 @@ This part of the Guidelines sets forth Verification Requirements and Acceptable 
 Before issuing an EV Certificate, the CA MUST ensure that all Subject organization information to be included in the EV Certificate conforms to the requirements of, and is verified in accordance with, these Guidelines and matches the information confirmed and documented by the CA pursuant to its verification processes.  Such verification processes are intended to accomplish the following:
 
 1. Verify Applicant's existence and identity, including;
+
    a. Verify the Applicant's legal existence and identity (as more fully set forth in [Section 3.2.2.2](#3222-verification-of-applicants-legal-existence-and-identity)),
    a. Verify the Applicant's physical existence (business presence at a physical address), and
    c. Verify the Applicant's operational existence (business activity).
+
 2. Verify the Applicant is a registered holder, or has control, of the Domain Name(s) to be included in the EV Certificate;
+
 3. Verify a reliable means of communication with the entity to be named as the Subject in the Certificate;
+
 4. Verify the Applicant's authorization for the EV Certificate, including;
-   a  Verify the name, title, and authority of the Contract Signer, Certificate Approver, and Certificate Requester,
+
+   a. Verify the name, title, and authority of the Contract Signer, Certificate Approver, and Certificate Requester,
    b. Verify that a Contract Signer signed the Subscriber Agreement or that a duly authorized Applicant Representative acknowledged and agreed to the Terms of Use; and
    c. Verify that a Certificate Approver has signed or otherwise approved the EV Certificate Request.
 
@@ -475,6 +480,7 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 1. **Private Organization Subjects**: Unless verified under subsection (6), all items listed in [Section 3.2.2.2.1](#32221-verification-requirements) (1) MUST be verified directly with, or obtained directly from, the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Such verification MAY be through use of a Qualified Government Information Source operated by, or on behalf of, the Incorporating or Registration Agency, or by direct contact with the Incorporating or Registration Agency in person or via mail, e-mail, Web address, or telephone, using an address or phone number obtained directly from the Qualified Government Information Source, Incorporating or Registration Agency, or from a Qualified Independent Information Source.
 
 2. **Government Entity Subjects**: Unless verified under subsection (6), all items listed in [Section 3.2.2.2.1](#32221-verification-requirements) (2) MUST either be verified directly with, or obtained directly from, one of the following:
+
    i. a Qualified Government Information Source in the political subdivision in which such Government Entity operates;
    ii. a superior governing Government Entity in the same political subdivision as the Applicant (e.g. a Secretary of State may verify the legal existence of a specific State Department), or
    iii. from a judge that is an active member of the federal, state or local judiciary within that political subdivision.
@@ -559,7 +565,9 @@ If, in addition to the Applicant's formal legal name, as recorded with the appli
 To verify any assumed name under which the Applicant conducts business:
 
 1. The CA MAY verify the assumed name through use of a Qualified Government Information Source operated by, or on behalf of, an appropriate government agency in the jurisdiction of the Applicant's Place of Business, or by direct contact with such government agency in person or via mail, e-mail, Web address, or telephone; or
+
 2. The CA MAY verify the assumed name through use of a Qualified Independent Information Source provided that the QIIS has verified the assumed name with the appropriate government agency.
+
 3. The CA MAY rely on a Verified Professional Letter  that indicates the assumed name under which the Applicant conducts business, the government agency with which the assumed name is registered, and that such filing continues to be valid.
 
 #### 3.2.2.4 Verification of Applicant's Physical Existence
@@ -602,13 +610,13 @@ To assist in communicating with the Applicant and confirming that the Applicant 
 
 To verify a Verified Method of Communication with the Applicant, the CA MUST:
 
-   A. Verify that the Verified Method of Communication belongs to the Applicant, or a Parent/Subsidiary or Affiliate of the Applicant, by matching it with one of the Applicant's Parent/Subsidiary or Affiliate's Places of Business in:
+A. Verify that the Verified Method of Communication belongs to the Applicant, or a Parent/Subsidiary or Affiliate of the Applicant, by matching it with one of the Applicant's Parent/Subsidiary or Affiliate's Places of Business in:
 
-      i. records provided by the applicable phone company;
-      ii. a QGIS, QTIS, or QIIS; or
-      iii. a Verified Professional Letter; and
+   i. records provided by the applicable phone company;
+   ii. a QGIS, QTIS, or QIIS; or
+   iii. a Verified Professional Letter; and
 
-   B. Confirm the Verified Method of Communication by using it to obtain an affirmative response sufficient to enable a reasonable person to conclude that the Applicant, or a Parent/Subsidiary or Affiliate of Applicant, can be contacted reliably by using the Verified Method of Communication.
+B. Confirm the Verified Method of Communication by using it to obtain an affirmative response sufficient to enable a reasonable person to conclude that the Applicant, or a Parent/Subsidiary or Affiliate of Applicant, can be contacted reliably by using the Verified Method of Communication.
 
 #### 3.2.2.6 Verification of Applicant's Operational Existence
 
