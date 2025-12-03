@@ -105,8 +105,7 @@ These Guidelines do not address the verification of information, or the issuance
 
 ### 1.3.2 Registration authorities
 
-The CA MAY delegate the performance of all or any part of a requirement of these Guidelines to an Affiliate or a Registration Authority (RA) or subcontractor, provided that the process employed by the CA fulfills all of the requirements of [Section 3.2.2.13](#32213-final-cross-correlation-and-due-diligence).
-Affiliates and/or RAs must comply with the qualification requirements of [Section 5.3.2](#532-background-check-procedures).
+The CA MAY delegate the performance of all or any part of a requirement of these Guidelines to an Affiliate or a Registration Authority (RA) or subcontractor, provided that the process employed by the CA fulfills all of the requirements of [Section 3.2.2.13](#32213-final-cross-correlation-and-due-diligence). Affiliates and/or RAs must comply with the qualification requirements of [Section 5.3.2](#532-background-check-procedures).
 
 The CA SHALL verify that the Delegated Third Party's personnel involved in the issuance of a Certificate meet the training and skills requirements of [Section 5.3](#53-personnel-controls) and the document retention and event logging requirements of [Section 5.4](#54-audit-logging-procedures).
 
@@ -948,13 +947,13 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 
 1. Except for reissuance of an EV Certificate under [Section 3.2.2.14.2](#322142-re-issuance-requests) and except when permitted otherwise in [Section 3.2.2.14.1](#322141-validation-for-existing-subscribers), the age of all data used to support issuance of an EV Certificate (before revalidation is required) SHALL NOT exceed the following limits:
 
-   A.  Legal existence and identity – 398 days;
-   B.  Assumed name – 398 days;
-   C.  Address of Place of Business – 398 days;
-   D.  Verified Method of Communication – 398 days;
-   E.  Operational existence – 398 days;
-   F.  Domain Name – 398 days;
-   G.  Name, Title, Agency, and Authority – 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls. For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
+   A.  Legal existence and identity - 398 days;
+   B.  Assumed name - 398 days;
+   C.  Address of Place of Business - 398 days;
+   D.  Verified Method of Communication - 398 days;
+   E.  Operational existence - 398 days;
+   F.  Domain Name - 398 days;
+   G.  Name, Title, Agency, and Authority - 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls. For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
 2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
 3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 3.2.2.9](#3229-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 3.2.2.10](#32210-verification-of-approval-of-ev-certificate-request).
@@ -1042,8 +1041,7 @@ Subsidiary organizations or agencies of an entity that qualifies as a Non-Commer
 
 ### 4.1.2 Enrollment process and responsibilities
 
-The documentation requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates.
-The Certificate Request requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates subject to the additional more stringent ageing and updating requirement of [Section 3.2.2.14](#32214-requirements-for-re-use-of-existing-documentation).
+The documentation requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates. The Certificate Request requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates subject to the additional more stringent ageing and updating requirement of [Section 3.2.2.14](#32214-requirements-for-re-use-of-existing-documentation).
 
 ## 4.2 Certificate application processing
 
@@ -1507,6 +1505,7 @@ Effective as of 2020-10-01, the CA SHALL ensure that, at time of issuance, the v
 **Certificate Field**: `subject:serialNumber` (OID: 2.5.4.5)  
 **Required/Optional**: **Required**  
 **Contents**: For Private Organizations, this field MUST contain the Registration (or similar) Number assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate. If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the date of Incorporation or Registration SHALL be entered into this field using the ISO 8601 Complete Date format (YYYY-MM-DD, e.g., 2025-01-23).
+
 For Government Entities that do not have a Registration Number or readily verifiable date of creation, the CA SHALL enter appropriate language to indicate that the Subject is a Government Entity.
 
 For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field. For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in using the ISO 8601 Complete Date format (YYYY-MM-DD, e.g., 2025-01-23).
@@ -1606,7 +1605,7 @@ Each EV Certificate issued by the CA to a Subscriber MUST contain a policy ident
 3. is either the CA/Browser Forum's EV policy identifier or a policy identifier that, by pre-agreement with the Application Software Supplier, marks the Certificate as being an EV Certificate.
 
 The following Certificate Policy identifier is the CA/Browser Forum's EV policy identifier:
-`{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines (1) } (2.23.140.1.1)`, if the Certificate complies with these Guidelines.
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) ev-guidelines (1) } (2.23.140.1.1)`, if the Certificate complies with these Guidelines.
 
 #### 7.1.6.2 Root CA Certificates
 
@@ -1851,7 +1850,7 @@ The CA MUST host test Web pages that allow Application Software Suppliers to tes
 | Client Representative: | **(Exact name of Client Representative who signed the Application – see footnote 2)** |
 | Application Date: | **(Insert date of Client's Application to the Issuing CA)** |
 
-This firm represents _[**exact** company name of Client]_ [^1] ("Client"), who has submitted the Application to you dated as of the Application Date shown above ("Application"). We have been asked by our Client to present you with our opinion as stated in this letter.
+This firm represents *[**exact** company name of Client]* [^1] ("Client"), who has submitted the Application to you dated as of the Application Date shown above ("Application"). We have been asked by our Client to present you with our opinion as stated in this letter.
 
 [Insert customary preliminary matters for opinion letters in your jurisdiction.]
 
@@ -1859,9 +1858,9 @@ On this basis, we hereby offer the following opinion:
 
 1. That [exact company name of Client] ("Company") is a duly formed [corporation, LLC, etc.] that is "active," "valid," "current," or the equivalent under the laws of the state/province of [name of governing jurisdiction where Client is incorporated or registered] and is not under any legal disability known to the author of this letter.
 
-2. That Company conducts business under the assumed name or "DBA"_[assumed name of the Applicant]_ and has registered such name with the appropriate government agency in the jurisdiction of its place of business below.
+2. That Company conducts business under the assumed name or "DBA" *[assumed name of the Applicant]* and has registered such name with the appropriate government agency in the jurisdiction of its place of business below.
 
-3. That _[name of Client's Representative]_[^2] has authority to act on behalf of Company to: [_select as appropriate_] (a) provide the information about Company required for issuance of the EV Certificates as contained in the attached Application, (b) request one or more EV Certificates and to designate other persons to request EV Certificates, and (c) agree to the relevant contractual obligations contained in the Subscriber Agreement on behalf of Company.
+3. That *[name of Client's Representative]*[^2] has authority to act on behalf of Company to: *[select as appropriate]* (a) provide the information about Company required for issuance of the EV Certificates as contained in the attached Application, (b) request one or more EV Certificates and to designate other persons to request EV Certificates, and (c) agree to the relevant contractual obligations contained in the Subscriber Agreement on behalf of Company.
 
 4. That Company has a physical presence and its place of business is at the following location:
 
@@ -1883,9 +1882,9 @@ Insert customary limitations and disclaimers for opinion letters in your jurisdi
 
 (Name and signature)
 
-_[Jurisdiction(s) in which attorney / Latin notary is admitted to practice]_[^3]
+*[Jurisdiction(s) in which attorney / Latin notary is admitted to practice]*[^3]
 
-cc: [Send copy to Client_]_
+cc: *[Send copy to Client]*
 
 [^1]: This must be the Client's exact corporate name, as registered with the relevant Incorporating Agency in the Client's Jurisdiction of Incorporation. This is the name that will be included in the EV Certificate.
 
@@ -1973,7 +1972,7 @@ NOTE: This appendix provides alternative interpretations of the EV Guidelines fo
 
 1. Non-Latin Organization Name
 
-   Where an EV Applicant's organization name is not registered with a QGIS in _Latin_ characters and the Applicant's foreign character organization name and registration have been verified with a QGIS in accordance with these Guidelines, a CA MAY include a Latin character organization name in the EV Certificate. In such a case, the CA MUST follow the procedures laid down in this section.
+   Where an EV Applicant's organization name is not registered with a QGIS in *Latin* characters and the Applicant's foreign character organization name and registration have been verified with a QGIS in accordance with these Guidelines, a CA MAY include a Latin character organization name in the EV Certificate. In such a case, the CA MUST follow the procedures laid down in this section.
 
 2. Romanized Names
 
@@ -2040,7 +2039,7 @@ As interpretation of the procedures set out above:
 
 A CA may rely on the Contract Signer's authority to enter into the Subscriber Agreement using a representation/warranty executed by the Contract Signer. An example of an acceptable warranty is as follows:
 
-[CA] and Applicant are entering into a legally valid and enforceable Subscriber Agreement that creates extensive obligations on Applicant. An EV Certificate serves as a form of digital identity for Applicant. The loss or misuse of this identity can result in great harm to the Applicant. By signing this Subscriber Agreement, the contract signer acknowledges that they have the authority to obtain the digital equivalent of a company stamp, seal, or (where applicable) officer's signature to establish the authenticity of the company's website, and that [Applicant name] is responsible for all uses of its EV Certificate. By signing this Agreement on behalf of [Applicant name], the contract signer represents that the contract signer
+CA and Applicant are entering into a legally valid and enforceable Subscriber Agreement that creates extensive obligations on Applicant. An EV Certificate serves as a form of digital identity for Applicant. The loss or misuse of this identity can result in great harm to the Applicant. By signing this Subscriber Agreement, the contract signer acknowledges that they have the authority to obtain the digital equivalent of a company stamp, seal, or (where applicable) officer's signature to establish the authenticity of the company's website, and that [Applicant name] is responsible for all uses of its EV Certificate. By signing this Agreement on behalf of [Applicant name], the contract signer represents that the contract signer
 
    i. is acting as an authorized representative of [Applicant name],
    ii. is expressly authorized by [Applicant name] to sign Subscriber Agreements and approve EV Certificate requests on Applicant's behalf, and
@@ -2054,8 +2053,8 @@ This appendix is intentionally left blank.
 
 ```ASN.1
 CABFSelectedAttributeTypes {
-    joint‐iso‐itu‐t(2) international‐organizations(23)
-    ca‐browser‐forum(140) module(4)
+    joint-iso-itu-t(2) international-organizations(23)
+    ca-browser-forum(140) module(4)
     cabfSelectedAttributeTypes(1) 1 }
 DEFINITIONS ::=
 BEGIN
