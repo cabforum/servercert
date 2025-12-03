@@ -541,9 +541,9 @@ The script outputs:
 
 ### 1.6.3 References
 
-ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - Requirements for conformity assessment bodies assessing Trust Service Providers
+ETSI EN 319 403, Electronic Signatures and Infrastructures (ESI); Trust Service Provider Conformity Assessment - Requirements for conformity assessment bodies assessing Trust Service Providers.
 
-ETSI EN 319 411-1, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1: General requirements
+ETSI EN 319 411-1, Electronic Signatures and Infrastructures (ESI); Policy and security requirements for Trust Service Providers issuing certificates; Part 1: General requirements.
 
 FIPS 140-2, Federal Information Processing Standards Publication - Security Requirements For Cryptographic Modules, Information Technology Laboratory, National Institute of Standards and Technology, May 25, 2001.
 
@@ -604,9 +604,9 @@ NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Ap
 [RFC8954](https://datatracker.ietf.org/doc/html/rfc8954), Request for Comments: 8954, Online Certificate Status Protocol (OCSP) Nonce Extension. M. Sahni, Ed. November 2020.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, available at
-<https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria>
+<https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria>.
 
-[WebTrust Principles and Criteria for Certification Authorities – SSL Baseline](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria)
+[WebTrust Principles and Criteria for Certification Authorities – SSL Baseline](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria).
 
 X.509, Recommendation ITU-T X.509 (08/2005) \| ISO/IEC 9594-8:2005, Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
 
@@ -634,7 +634,7 @@ The CA SHALL publicly give effect to these Requirements and represent that it wi
 
 > [Name of CA] conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates published at <https://www.cabforum.org>. In the event of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
 
-The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are
+The CA SHALL host test Web pages that allow Application Software Suppliers to test their software with Subscriber Certificates that chain up to each publicly trusted Root Certificate. At a minimum, the CA SHALL host separate Web pages using Subscriber Certificates that are:
 
   i. valid,
   ii. revoked, and
@@ -775,7 +775,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.4 Email to a Constructed Address
 
-Confirm the Applicant's control over the FQDN by
+Confirm the Applicant's control over the FQDN by:
 
 1. Sending an email to one or more addresses created by using 'admin', 'administrator', 'webmaster', 'hostmaster', or 'postmaster' as the local part, followed by the at-sign ("@"), followed by an Authorization Domain Name; and
 2. including a Random Value in the email; and
@@ -801,12 +801,12 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.7 DNS Change
 
-Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record for either
+Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record for either:
 
 1. an Authorization Domain Name; or
 2. an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
 
-If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after
+If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after:
 
 1. 30 days; or
 2. if the Applicant submitted the Certificate request, the time frame permitted for reuse of validated information relevant to the Certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of these Guidelines or Section 3.2.2.14.3 of the EV Guidelines).
@@ -1046,7 +1046,7 @@ After 2019-07-31, CAs SHALL maintain a record of which IP validation method, inc
 
 Confirming the Applicant's control over the requested IP Address by confirming the presence of a Request Token or Random Value contained in the content of a file or webpage in the form of a meta tag under the "/.well-known/pki-validation" directory, or another path registered with IANA for the purpose of validating control of IP Addresses, on the IP Address that is accessible by the CA via HTTP/HTTPS over an Authorized Port. The Request Token or Random Value MUST NOT appear in the request.
 
-If a Random Value is used, the CA SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of
+If a Random Value is used, the CA SHALL provide a Random Value unique to the certificate request and SHALL not use the Random Value after the longer of:
 
   i. 30 days or
   ii. if the Applicant submitted the certificate request, the time frame permitted for reuse of validated information relevant to the certificate (such as in [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document).
@@ -1971,7 +1971,7 @@ Mass revocation provisions MUST include:
 
 #### 6.1.1.1 CA Key Pair Generation
 
-For CA Key Pairs that are either
+For CA Key Pairs that are either:
 
   i. used as a CA Key Pair for a Root Certificate or
   ii. used as a CA Key Pair for a Subordinate CA Certificate, where the Subordinate CA is not the operator of the Root CA or an Affiliate of the Root CA,
@@ -3700,7 +3700,7 @@ The CA's audit SHALL be performed by a Qualified Auditor. A Qualified Auditor me
 4. (For audits conducted in accordance with any one of the ETSI standards) accredited in accordance with ISO 17065 applying the requirements specified in ETSI EN 319 403;
 5. (For audits conducted in accordance with the WebTrust standard) licensed by WebTrust;
 6. Bound by law, government regulation, or professional code of ethics; and
-7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage
+7. Except in the case of an Internal Government Auditing Agency, maintains Professional Liability/Errors & Omissions insurance with policy limits of at least one million US dollars in coverage.
 
 ## 8.3 Assessor's relationship to assessed entity
 
@@ -3857,7 +3857,7 @@ The Certificate Warranties specifically include, but are not limited to, the fol
 
 7. **Revocation**: That the CA will revoke the Certificate for any of the reasons specified in these Requirements.
 
-The Root CA SHALL be responsible for the performance and warranties of the Subordinate CA, for the Subordinate CA's compliance with these Requirements, and for all liabilities and indemnification obligations of the Subordinate CA under these Requirements, as if the Root CA were the Subordinate CA issuing the Certificates
+The Root CA SHALL be responsible for the performance and warranties of the Subordinate CA, for the Subordinate CA's compliance with these Requirements, and for all liabilities and indemnification obligations of the Subordinate CA under these Requirements, as if the Root CA were the Subordinate CA issuing the Certificates.
 
 ### 9.6.2 RA representations and warranties
 
