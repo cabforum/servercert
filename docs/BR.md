@@ -503,7 +503,7 @@ The script outputs:
 [https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml)
 
 **Revoked**: Effective 2026-05-15, a Certificate is considered revoked if:
-- a CRL Distribution Point URI is present and the referenced CRL contains the Certificate's serial number; and
+- a CRL Distribution Point URI is present and the referenced CRL contains the Certificate's serial number; or
 - an Authority Information Access OCSP URI is present and an OCSP response for the Certificate's serial number indicates a `certStatus` value of `revoked`.
 
 **Root CA**: The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
