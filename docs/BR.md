@@ -1554,12 +1554,12 @@ A Certificate Problem Report is considered actionable if it includes:
 
 A CA MAY take measures to prevent submission of non-actionable Certificate Problem Reports (e.g., input control validation on a form used to collect Certificate Problem Reports), but MUST be able to receive actionable Certificate Problem Reports.
 
-Within twenty four (24) hours after determining a Certificate Problem Report is actionable:
+Within twenty-four (24) hours after determining a Certificate Problem Report is actionable:
 1. The CA SHALL provide a report on its findings to the entity who filed the Certificate Problem Report, if contact details have been provided.
 2. The CA SHOULD provide a report on its findings to applicable Subscriber(s).
 3. If the CA determines the Certificate Problem Report requires an action of revocation for the Certificate(s) specified within, the CA SHOULD work with the applicable Subscriber to determine the date and time which the CA will revoke the Certificate. The period from the time the Certificate Problem Report was determined actionable to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
 
-Within one hundred and twenty (120) hours after determining a Certificate Problem Report is actionable, the CA MUST evaluate all time-valid and unrevoked Certificates issued by the CA to detect additional instances of the non-compliance described in the report. The period from the time the additional affected Certificates were first identified to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
+Within one hundred twenty (120) hours after determining a Certificate Problem Report is actionable, the CA MUST evaluate all time-valid and unrevoked Certificates issued by the CA to detect additional instances of the non-compliance described in the report. The period from the time the additional affected Certificates were first identified to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
 
 Within twenty-four (24) hours after determining a Certificate Problem Report is not actionable, the CA MUST provide a report on its findings to the entity who filed the Certificate Problem Report and request the information necessary to satisfy the above requirements of an actionable Certificate Problem Report.
 
@@ -1571,11 +1571,11 @@ No stipulation.
 
 ### 4.9.5 Time within which CA must process the revocation request
 
-Prior to 2026-05-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.7 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
+Prior to 2026-05-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.9 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
 
-The period from the time from receipt of a revocation request by the Subscriber to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). 
+The period between receipt of a revocation request from the Subscriber and published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). 
 
-The period from the time from determining a Certificate Problem Report is actionable to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). 
+The period between the determination that a Certificate Problem Report is actionable and published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). 
 
 The date selected by the CA SHOULD consider the following criteria:
 
