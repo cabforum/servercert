@@ -1945,15 +1945,15 @@ The CA's mass revocation plan MUST include clearly defined, actionable, and comp
 
 Mass revocation provisions MUST include:
 
-1. Activation criteria – specific, objective, and measurable thresholds at which the mass revocation plan is triggered based on the CA's risk profile, issuance volumes, and operational capabilities;
-2. Customer contact information – how subscriber and customer contact details are stored, maintained, and kept up to date;
-3. Automation points – processes that are automated or could be automated, and those processes that require manual intervention;
-4. Targets and timelines – for incident triage, revocation initiation, certificate replacement, and post-event review;
-5. Subscriber notification methods – mechanisms for notifying impacted Subscribers;
-6. Role assignments – roles and responsibilities of personnel responsible for initiating, coordinating, and executing the plan;
-7. Training and education – training, awareness, and readiness activities for personnel responsible for, or supporting, the plan;
-8. Plan testing – annual operational testing to assess readiness and demonstrate implementation feasibility, using one or more of tabletop exercises, simulations, parallel testing, or controlled test environments that DO NOT involve the revocation of active Subscriber Certificates; and
-9. Post-test analysis and update schedule – how lessons learned from testing or live incidents are incorporated into the plan, and how often it is reviewed and updated.
+1. Activation criteria - specific, objective, and measurable thresholds at which the mass revocation plan is triggered based on the CA's risk profile, issuance volumes, and operational capabilities;
+2. Customer contact information - how subscriber and customer contact details are stored, maintained, and kept up to date;
+3. Automation points - processes that are automated or could be automated, and those processes that require manual intervention;
+4. Targets and timelines - for incident triage, revocation initiation, certificate replacement, and post-event review;
+5. Subscriber notification methods - mechanisms for notifying impacted Subscribers;
+6. Role assignments - roles and responsibilities of personnel responsible for initiating, coordinating, and executing the plan;
+7. Training and education - training, awareness, and readiness activities for personnel responsible for, or supporting, the plan;
+8. Plan testing - annual operational testing to assess readiness and demonstrate implementation feasibility, using one or more of tabletop exercises, simulations, parallel testing, or controlled test environments that DO NOT involve the revocation of active Subscriber Certificates; and
+9. Post-test analysis and update schedule - how lessons learned from testing or live incidents are incorporated into the plan, and how often it is reviewed and updated.
 
 ### 5.7.2 Recovery Procedures if Computing resources, software, and/or data are corrupted
 
@@ -3556,7 +3556,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) baseline-requirements(2) individual-validated(3)} (2.23.140.1.2.3)`
 
-`{joint‐iso‐itu‐t(2) international‐organizations(23) ca‐browser‐forum(140) certificate‐policies(1) ev-guidelines(1)} (2.23.140.1.1)`
+`{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-policies(1) ev-guidelines(1)} (2.23.140.1.1)`
 
 ### 7.1.7 Usage of Policy Constraints extension
 
@@ -3566,7 +3566,7 @@ The following Certificate Policy identifiers are reserved for use by CAs as an o
 
 ## 7.2 CRL profile
 
-Prior to 2024‐03‐15, the CA SHALL issue CRLs in accordance with the profile specified in these Requirements or the profile specified in Version 1.8.7 of the Baseline Requirements for the Issuance and Management of Publicly‐Trusted Certificates. Effective 2024‐03‐15, the CA SHALL issue CRLs in accordance with the profile specified in these Requirements.
+Prior to 2024-03-15, the CA SHALL issue CRLs in accordance with the profile specified in these Requirements or the profile specified in Version 1.8.7 of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates. Effective 2024-03-15, the CA SHALL issue CRLs in accordance with the profile specified in these Requirements.
 
 If the CA asserts compliance with these Baseline Requirements, all CRLs that it issues MUST comply with the following CRL profile, which incorporates, and is derived from [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280). Except as explicitly noted, all normative requirements imposed by [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://datatracker.ietf.org/doc/html/rfc5280#appendix-B) for further issues to be aware of.
 
@@ -3633,7 +3633,7 @@ Table: CRLReasons
 | unspecified               | 0    | Represented by the omission of a reasonCode. MUST be omitted if the CRL entry is for a Certificate not technically capable of causing issuance unless the CRL entry is for a Subscriber Certificate subject to these Requirements revoked prior to 2023-07-15. |
 | keyCompromise             | 1    | Indicates that it is known or suspected that the Subscriber's Private Key has been compromised. |
 | affiliationChanged        | 3    | Indicates that the Subject's name or other Subject Identity Information in the Certificate has changed, but there is no cause to suspect that the Certificate's Private Key has been compromised. |
-| superseded                | 4    | Indicates that the Certificate is being replaced because: the Subscriber has requested a new Certificate, the CA has reasonable evidence that the validation of domain authorization or control for any fully‐qualified domain name or IP address in the Certificate should not be relied upon, or the CA has revoked the Certificate for compliance reasons such as the Certificate does not comply with these Baseline Requirements or the CA's CP or CPS. |
+| superseded                | 4    | Indicates that the Certificate is being replaced because: the Subscriber has requested a new Certificate, the CA has reasonable evidence that the validation of domain authorization or control for any fully-qualified domain name or IP address in the Certificate should not be relied upon, or the CA has revoked the Certificate for compliance reasons such as the Certificate does not comply with these Baseline Requirements or the CA's CP or CPS. |
 | cessationOfOperation      | 5    | Indicates that the website with the Certificate is shut down prior to the expiration of the Certificate, or if the Subscriber no longer owns or controls the Domain Name in the Certificate prior to the expiration of the Certificate. |
 | certificateHold           | 6    | MUST NOT be included if the CRL entry is for 1) a Certificate subject to these Requirements, or 2) a Certificate not subject to these Requirements and was either A) issued on-or-after 2020-09-30 or B) has a `notBefore` on-or-after 2020-09-30. |
 | privilegeWithdrawn        | 9    | Indicates that there has been a subscriber-side infraction that has not resulted in keyCompromise, such as the Certificate Subscriber provided misleading information in their Certificate Request or has not upheld their material obligations under the Subscriber Agreement or Terms of Use. |
