@@ -1615,7 +1615,7 @@ A certificate serial is "unassigned" if it is not "assigned".
 
 The following SHALL apply for communicating the status of Certificates and Precertificates which include an Authority Information Access extension with an `id-ad-ocsp` accessMethod.
 
-OCSP responders operated by the CA SHALL support the HTTP GET method, as described in [RFC 6960](https://datatracker.ietf.org/doc/html/rfc6960) and/or [RFC 5019](https://datatracker.ietf.org/doc/html/rfc5019). The CA MAY process the Nonce extension (`1.3.6.1.5.5.7.48.1.2`) in accordance with [RFC 8954](https://datatracker.ietf.org/doc/html/rfc8954).
+OCSP responders operated by the CA SHALL support the HTTP GET method, as described in [RFC 6960](https://datatracker.ietf.org/doc/html/rfc6960) and/or [RFC 5019](https://datatracker.ietf.org/doc/html/rfc5019). The CA MAY process the Nonce extension (1.3.6.1.5.5.7.48.1.2) in accordance with [RFC 8954](https://datatracker.ietf.org/doc/html/rfc8954).
 
 For the status of a Subscriber Certificate or its corresponding Precertificate:
 
@@ -3975,10 +3975,10 @@ The CAA contactemail property takes an email address as its parameter. The entir
 
 The following is an example where the holder of the domain specified the contact property using an email address.
 
-```DNS Zone
-$ORIGIN example.com .
-CAA 0 contactemail "domainowner@example.com"
-```
+   ```DNS Zone
+   $ORIGIN example.com .
+   CAA 0 contactemail "domainowner@example.com"
+   ```
 
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
@@ -3990,10 +3990,10 @@ The CAA contactphone property takes a phone number as its parameter. The entire 
 
 The following is an example where the holder of the domain specified the contact property using a phone number.
 
-```DNS Zone
-$ORIGIN example.com .
-CAA 0 contactphone "+1 555 123 4567"
-```
+   ```DNS Zone
+   $ORIGIN example.com .
+   CAA 0 contactphone "+1 555 123 4567"
+  ```
 
 The contactphone property MAY be critical if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
 
