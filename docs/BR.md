@@ -1174,7 +1174,7 @@ The CA MAY use either the same set, or different sets of Network Perspectives wh
 The set of responses from the relied upon Network Perspectives MUST provide the CA with the necessary information to allow it to affirmatively assess:
 
 a. the presence of the expected 1) Random Value, 2) Request Token, 3) IP Address, 4) Contact Address, or 5) Persistent DCV TXT Record, as required by the relied upon validation method specified in [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address); and
-b. the CA's authority to issue to the requested domain(s), as specified in [Section 3.2.2.8](#3228-caa-record-checks).
+b. the CA's authority to issue to the requested domain(s), as specified in [Section 3.2.2.8](#3228-caa-records).
 
 [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address) describe the validation methods that require the use of Multi-Perspective Issuance Corroboration and how a Network Perspective can corroborate the outcomes determined by the Primary Network Perspective.
 
@@ -1228,9 +1228,9 @@ SHOULD:
   - Configure each network boundary control (firewall, switch, router, gateway, or other network control device or system) with rules that support only the services, protocols, ports, and communications identified as necessary to its operations.
   - Rely upon networks (e.g., Internet Service Providers) that: 1) use mechanisms based on Secure Inter-Domain Routing ([RFC 6480](https://datatracker.ietf.org/doc/html/rfc6480)), for example, BGP Prefix Origin Validation ([RFC 6811](https://datatracker.ietf.org/doc/html/rfc6811)), 2) make use of other non-RPKI route-leak prevention mechanisms (such as [RFC 9234](https://datatracker.ietf.org/doc/html/rfc9234)), and 3) apply current best practices described in [BCP 194](https://datatracker.ietf.org/doc/html/bcp194). While It is RECOMMENDED that under normal operating conditions Network Perspectives performing Multi-Perspective Issuance Corroboration forward all Internet traffic via a network or set of networks that filter RPKI-invalid BGP routes as defined by [RFC 6811](https://datatracker.ietf.org/doc/html/rfc6811), it is NOT REQUIRED.
 
-Beyond the above considerations, computing systems performing Multi-Perspective Issuance Corroboration are considered outside of the audit scope described in [Section 8](#8-audit-requirements) of these Requirements.
+Beyond the above considerations, computing systems performing Multi-Perspective Issuance Corroboration are considered outside of the audit scope described in [Section 8](#8-compliance-audit-and-other-assessments) of these Requirements.
 
-If any of the above considerations are performed by a Delegated Third Party, the CA MAY obtain reasonable evidence from the Delegated Third Party to ascertain assurance that one or more of the above considerations are followed. As an exception to [Section 1.3.2](#132-delegated-third-parties), Delegated Third Parties are not required to be within the audit scope described in [Section 8](#8-audit-requirements) of these Requirements to satisfy the above considerations.
+If any of the above considerations are performed by a Delegated Third Party, the CA MAY obtain reasonable evidence from the Delegated Third Party to ascertain assurance that one or more of the above considerations are followed. As an exception to [Section 1.3.2](#132-registration-authorities), Delegated Third Parties are not required to be within the audit scope described in [Section 8](#8-compliance-audit-and-other-assessments) of these Requirements to satisfy the above considerations.
 
 Phased Implementation Timeline:
 
