@@ -204,10 +204,10 @@ Before the CA authorizes a Delegated Third Party to perform a delegated function
    b. the Delegated Third Party's practice statement that the CA has verified complies with these Requirements.
 
 The CA MAY designate an Enterprise RA to verify certificate requests from the Enterprise RA's own organization.
+
 The CA SHALL NOT accept certificate requests authorized by an Enterprise RA unless the following requirements are satisfied:
 
-1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise
-RA's verified Domain Namespace.
+1. The CA SHALL confirm that the requested Fully-Qualified Domain Name(s) are within the Enterprise RA's verified Domain Namespace.
 2. If the certificate request includes a Subject name of a type other than a Fully-Qualified Domain Name, the CA SHALL confirm that the name is either that of the delegated enterprise, or an Affiliate of the delegated enterprise, or that the delegated enterprise is an agent of the named Subject. For example, the CA SHALL NOT issue a Certificate containing the Subject name "XYZ Co." on the authority of Enterprise RA "ABC Co.", unless the two companies are affiliated (see [Section 3.2](#32-initial-identity-validation)) or "ABC Co." is the agent of "XYZ Co". This requirement applies regardless of whether the accompanying requested Subject FQDN falls within the Domain Namespace of ABC Co.'s Registered Domain Name.
 
 The CA SHALL impose these limitations as a contractual requirement on the Enterprise RA and monitor compliance by the Enterprise RA.
@@ -281,7 +281,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
 
-**Authorization Domain Name**: The FQDN used to obtain authorization for a given FQDN to be included in a Certificate. The CA may use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. If a Wildcard Domain Name is to be included in a Certificate, then the CA MUST remove "`*.`" from the left-most portion of the Wildcard Domain Name to yield the corresponding FQDN. The CA may prune zero or more Domain Labels of the FQDN from left to right until encountering a Base Domain Name and may use any one of the values that were yielded by pruning (including the Base Domain Name itself) for the purpose of domain validation.
+**Authorization Domain Name**: The FQDN used to obtain authorization for a given FQDN to be included in a Certificate. The CA may use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. If a Wildcard Domain Name is to be included in a Certificate, then the CA MUST remove "\*." from the left-most portion of the Wildcard Domain Name to yield the corresponding FQDN. The CA may prune zero or more Domain Labels of the FQDN from left to right until encountering a Base Domain Name and may use any one of the values that were yielded by pruning (including the Base Domain Name itself) for the purpose of domain validation.
 
 **Authorized Ports**: One of the following ports: 80 (http), 443 (https), 25 (smtp), 22 (ssh).
 
@@ -393,9 +393,9 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Pending Prohibition**: The use of a behavior described with this label is highly discouraged, as it is planned to be deprecated and will likely be designated as MUST NOT in the future.
 
-**Persistent DCV TXT Record:** A DNS TXT record identifying an Applicant in accordance with [Section 3.2.2.4.22](#322422-dns-txt-record-with-persistent-value).
+**Persistent DCV TXT Record**: A DNS TXT record identifying an Applicant in accordance with [Section 3.2.2.4.22](#322422-dns-txt-record-with-persistent-value).
 
-**Precertificate**: A Precertificate is a signed data structure that can be submitted to a Certificate Transparency log, as defined by [RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962) and containing the critical poison extension (OID 1.3.6.1.4.1.11129.2.4.3).
+**Precertificate**: A Precertificate is a signed data structure that can be submitted to a Certificate Transparency log, as defined by [RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962) and containing the critical poison extension (OID: 1.3.6.1.4.1.11129.2.4.3).
 
 **Primary Network Perspective**: The Network Perspective used by the CA to make the determination of 1) the CA's authority to issue a Certificate for the requested domain(s) or IP address(es) and 2) the Applicant's authority and/or domain authorization or control of the requested domain(s) or IP address(es).
 
@@ -444,7 +444,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 **Note**: Examples of Request Tokens include, but are not limited to:
 
   i. a hash of the public key; or
-  ii. a hash of the Subject Public Key Info [X.509]; or
+  ii. a hash of the Subject Public Key Info X.509; or
   iii. a hash of a PKCS#10 CSR.
 
 A Request Token may also be concatenated with a timestamp or other data. If a CA wanted to always use a hash of a PKCS#10 CSR as a Request Token and did not want to incorporate a timestamp and did want to allow certificate key re-use then the applicant might use the challenge password in the creation of a CSR with OpenSSL to ensure uniqueness even if the subject and key are identical between subsequent requests.
@@ -452,7 +452,7 @@ A Request Token may also be concatenated with a timestamp or other data. If a CA
 **Note**: This simplistic shell command produces a Request Token which has a timestamp and a hash of a CSR.
   ``echo `date -u +%Y%m%d%H%M` `sha256sum <r2.csr` \| sed "s/[ -]//g"``
 The script outputs:
-  201602251811c9c863405fe7675a3988b97664ea6baf442019e4e52fa335f406f7c5f26cf14f
+  `201602251811c9c863405fe7675a3988b97664ea6baf442019e4e52fa335f406f7c5f26cf14f`
 
 **Required Website Content**: Either a Random Value or a Request Token, together with additional information that uniquely identifies the Subscriber, as specified by the CA.
 
@@ -498,7 +498,7 @@ The script outputs:
 
 **Validation Specialist**: Someone who performs the information verification duties specified by these Requirements.
 
-**Validity Period**: From [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280): "The period of time from notBefore through notAfter, inclusive."
+**Validity Period**: From [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280): "The period of time from `notBefore` through `notAfter`, inclusive."
 
 **WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in [RFC 3912](https://datatracker.ietf.org/doc/html/rfc3912), the Registry Data Access Protocol defined in [RFC 9082](https://datatracker.ietf.org/doc/html/rfc9082), or an HTTPS website.
 
@@ -608,7 +608,7 @@ WebTrust for Certification Authorities, SSL Baseline with Network Security, avai
 
 [WebTrust Principles and Criteria for Certification Authorities – SSL Baseline](https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria)
 
-[X.509](https://www.itu.int/rec/T-REC-X.509), Recommendation ITU-T X.509 (08/2005) \| ISO/IEC 9594-8:2005, Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
+X.509, Recommendation ITU-T X.509 (08/2005) \| ISO/IEC 9594-8:2005, Information technology – Open Systems Interconnection – The Directory: Public-key and attribute certificate frameworks.
 
 ### 1.6.4 Conventions
 
@@ -625,6 +625,7 @@ The CA SHALL make revocation information for Subordinate Certificates and Subscr
 ## 2.2 Publication of information
 
 The CA SHALL publicly disclose its Certificate Policy and/or Certification Practice Statement through an appropriate and readily accessible online means that is available on a 24x7 basis. The CA SHALL publicly disclose its CA business practices to the extent required by the CA's selected audit scheme (see [Section 8.4](#84-topics-covered-by-assessment)).
+
 The CA SHALL develop, implement, enforce, and at least once every 366 days update a Certificate Policy and/or Certification Practice Statement that describes in detail how the CA implements the latest version of these Requirements.
 
 The Certificate Policy and/or Certification Practice Statement MUST be structured in accordance with [RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647) and MUST include all material required by [RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647).
@@ -669,7 +670,7 @@ The CA shall make its Repository publicly available in a read-only manner.
 
 ### 3.2.2 Authentication of Organization and Domain Identity
 
-If the Applicant requests a Certificate that will contain Subject Identity Information comprised only of the `countryName` field, then the CA SHALL verify the country associated with the Subject using a verification process meeting the requirements of [Section 3.2.2.3](#3223-verification-of-country) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. If the Applicant requests a Certificate that will contain the countryName field and other Subject Identity Information, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements of this [Section 3.2.2.1](#3221-identity) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. The CA SHALL inspect any document relied upon under this Section for alteration or falsification.
+If the Applicant requests a Certificate that will contain Subject Identity Information comprised only of the `countryName` field, then the CA SHALL verify the country associated with the Subject using a verification process meeting the requirements of [Section 3.2.2.3](#3223-verification-of-country) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. If the Applicant requests a Certificate that will contain the `countryName` field and other Subject Identity Information, then the CA SHALL verify the identity of the Applicant, and the authenticity of the Applicant Representative's certificate request using a verification process meeting the requirements of this [Section 3.2.2.1](#3221-identity) and that is described in the CA's Certificate Policy and/or Certification Practice Statement. The CA SHALL inspect any document relied upon under this Section for alteration or falsification.
 
 #### 3.2.2.1 Identity
 
@@ -720,16 +721,17 @@ Completed validations of Applicant authority may be valid for the issuance of mu
 
 Effective 2026-03-15: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective MUST:
 
-- perform DNSSEC validation using the algorithm defined in [RFC 4035 Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
+- perform DNSSEC validation using the algorithm defined in [RFC 4035, Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
 - support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
 - support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
-- properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
+- properly handle the security concerns enumerated in [RFC 6840, Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
 
 Effective 2026-03-15: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control.
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor MAY be performed on all DNS queries associated with the validation of domain authorization or control by Remote Network Perspectives used for Multi-Perspective Issuance Corroboration.
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
+
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
 
 **Note**: FQDNs may be listed in Subscriber Certificates using `dNSName`s in the `subjectAltName` extension or in Subordinate CA Certificates via `dNSName`s in `permittedSubtrees` within the Name Constraints extension.
@@ -779,7 +781,7 @@ Confirm the Applicant's control over the FQDN by
 2. including a Random Value in the email; and
 3. receiving a confirming response utilizing the Random Value.
 
-Each email MAY confirm control of multiple FQDNs, provided the Authorization Domain Name used in the email is an Authorization Domain Name for each FQDN being confirmed
+Each email MAY confirm control of multiple FQDNs, provided the Authorization Domain Name used in the email is an Authorization Domain Name for each FQDN being confirmed.
 
 The Random Value SHALL be unique in each email.
 
@@ -1101,8 +1103,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 #### 3.2.2.6 Wildcard Domain Validation
 
-Before issuing a Wildcard Certificate, the CA MUST establish and follow a documented procedure that determines if the FQDN portion of any
-Wildcard Domain Name in the Certificate is "registry-controlled" or is a "public suffix" (e.g. "\*.com", "\*.co.uk", see [RFC 6454 Section 8.2](https://datatracker.ietf.org/doc/html/rfc6454#section-8.2) for further explanation).
+Before issuing a Wildcard Certificate, the CA MUST establish and follow a documented procedure that determines if the FQDN portion of any Wildcard Domain Name in the Certificate is "registry-controlled" or is a "public suffix" (e.g. "\*.com", "\*.co.uk", see [RFC 6454, Section 8.2](https://datatracker.ietf.org/doc/html/rfc6454#section-8.2) for further explanation).
 
 If the FQDN portion of any Wildcard Domain Name is "registry-controlled" or is a "public suffix", CAs MUST refuse issuance unless the Applicant proves its rightful control of the entire Domain Namespace. (e.g. CAs MUST NOT issue "\*.co.uk" or "\*.local", but MAY issue "\*.example.com" to Example Co.).
 
@@ -1172,8 +1173,8 @@ The CA MAY use either the same set, or different sets of Network Perspectives wh
 
 The set of responses from the relied upon Network Perspectives MUST provide the CA with the necessary information to allow it to affirmatively assess:
 
-a. the presence of the expected 1) Random Value, 2) Request Token, 3) IP Address, 4) Contact Address, or 5) Persistent DCV TXT Record, as required by the relied upon validation method specified in Sections 3.2.2.4 and 3.2.2.5; and
-b. the CA's authority to issue to the requested domain(s), as specified in Section 3.2.2.8.
+a. the presence of the expected 1) Random Value, 2) Request Token, 3) IP Address, 4) Contact Address, or 5) Persistent DCV TXT Record, as required by the relied upon validation method specified in [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address); and
+b. the CA's authority to issue to the requested domain(s), as specified in [Section 3.2.2.8](#3228-caa-record-checks).
 
 [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address) describe the validation methods that require the use of Multi-Perspective Issuance Corroboration and how a Network Perspective can corroborate the outcomes determined by the Primary Network Perspective.
 
@@ -1225,11 +1226,11 @@ SHOULD:
 - Network Hardening
 
   - Configure each network boundary control (firewall, switch, router, gateway, or other network control device or system) with rules that support only the services, protocols, ports, and communications identified as necessary to its operations.
-  - Rely upon networks (e.g., Internet Service Providers) that: 1) use mechanisms based on Secure Inter-Domain Routing ([RFC 6480](https://datatracker.ietf.org/doc/html/rfc6480)), for example, BGP Prefix Origin Validation ([RFC 6811](https://datatracker.ietf.org/doc/html/rfc6811)), 2) make use of other non-RPKI route-leak prevention mechanisms (such as [RFC 9234](https://datatracker.ietf.org/doc/html/rfc9234)), and 3) apply current best practices described in BCP 194. While It is RECOMMENDED that under normal operating conditions Network Perspectives performing Multi-Perspective Issuance Corroboration forward all Internet traffic via a network or set of networks that filter RPKI-invalid BGP routes as defined by [RFC 6811](https://datatracker.ietf.org/doc/html/rfc6811), it is NOT REQUIRED.
+  - Rely upon networks (e.g., Internet Service Providers) that: 1) use mechanisms based on Secure Inter-Domain Routing ([RFC 6480](https://datatracker.ietf.org/doc/html/rfc6480)), for example, BGP Prefix Origin Validation ([RFC 6811](https://datatracker.ietf.org/doc/html/rfc6811)), 2) make use of other non-RPKI route-leak prevention mechanisms (such as [RFC 9234](https://datatracker.ietf.org/doc/html/rfc9234)), and 3) apply current best practices described in [BCP 194](https://datatracker.ietf.org/doc/html/bcp194). While It is RECOMMENDED that under normal operating conditions Network Perspectives performing Multi-Perspective Issuance Corroboration forward all Internet traffic via a network or set of networks that filter RPKI-invalid BGP routes as defined by [RFC 6811](https://datatracker.ietf.org/doc/html/rfc6811), it is NOT REQUIRED.
 
-Beyond the above considerations, computing systems performing Multi-Perspective Issuance Corroboration are considered outside of the audit scope described in Section 8 of these Requirements.
+Beyond the above considerations, computing systems performing Multi-Perspective Issuance Corroboration are considered outside of the audit scope described in [Section 8](#8-audit-requirements) of these Requirements.
 
-If any of the above considerations are performed by a Delegated Third Party, the CA MAY obtain reasonable evidence from the Delegated Third Party to ascertain assurance that one or more of the above considerations are followed. As an exception to Section 1.3.2, Delegated Third Parties are not required to be within the audit scope described in Section 8 of these Requirements to satisfy the above considerations.
+If any of the above considerations are performed by a Delegated Third Party, the CA MAY obtain reasonable evidence from the Delegated Third Party to ascertain assurance that one or more of the above considerations are followed. As an exception to [Section 1.3.2](#132-delegated-third-parties), Delegated Third Parties are not required to be within the audit scope described in [Section 8](#8-audit-requirements) of these Requirements to satisfy the above considerations.
 
 Phased Implementation Timeline:
 
@@ -1312,21 +1313,21 @@ The CA MAY use the documents and data provided in [Section 3.2](#32-initial-iden
 
 Table: Subject Identity Information validation data reuse periods
 
-| **Certificate issued on or after** | **Certificate issued before**  | **Maximum data reuse period**  |
-| --                                 | --                             | --                             |
-|                                    | 2026-03-15                 | 825 days                       |
-| 2026-03-15                     |                                | 398 days                       |
+| **Certificate issued on or after** | **Certificate issued before** | **Maximum data reuse period** |
+| --         | --         | --       |
+|            | 2026-03-15 | 825 days |
+| 2026-03-15 |            | 398 days |
 
 For validation of Domain Names and IP Addresses according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [Section 3.2.2.5](#3225-authentication-for-an-ip-address), any data, document, or completed validation used MUST be obtained within the maximum number of days prior to issuing the Certificate, as defined in the following table:
 
 Table: Domain Name and IP Address validation data reuse periods
 
-| **Certificate issued on or after** | **Certificate issued before**  | **Maximum data reuse period**  |
-| --                                 | --                             | --                             |
-|                                    | 2026-03-15                 | 398 days                       |
-| 2026-03-15                     | 2027-03-15                 | 200 days                       |
-| 2027-03-15                     | 2029-03-15                 | 100 days                       |
-| 2029-03-15                     |                                | 10 days                        |
+| **Certificate issued on or after** | **Certificate issued before** | **Maximum data reuse period** |
+| --         | --         | --       |
+|            | 2026-03-15 | 398 days |
+| 2026-03-15 | 2027-03-15 | 200 days |
+| 2027-03-15 | 2029-03-15 | 100 days |
+| 2029-03-15 |            | 10 days  |
 
 In no case may a prior validation be reused if any data or document used in the prior validation was obtained more than the maximum time permitted for reuse of the data or document prior to issuing the Certificate.
 
@@ -1355,6 +1356,7 @@ Certificate issuance by the Root CA SHALL require an individual authorized by th
 #### 4.3.1.2 Linting of to-be-signed Certificate content
 
 Due to the complexity involved in implementing Certificate Profiles that conform to these Requirements, it is considered best practice for the CA to implement a Linting process to test the technical conformity of each to-be-signed artifact prior to signing it. When a Precertificate has undergone Linting, it is not necessary for the corresponding to-be-signed Certificate to also undergo Linting, provided that the CA has a technical control to verify that the to-be-signed Certificate corresponds to the to-be-signed Precertificate in the manner described by [RFC 6962, Section 3.2](https://datatracker.ietf.org/doc/html/rfc6962#section-3.2).
+
 Effective 2025-03-15, the CA SHALL implement such a Linting process.
 
 Methods used to produce a certificate containing the to-be-signed Certificate content include, but are not limited to:
@@ -1508,7 +1510,7 @@ With the exception of Short-lived Subscriber Certificates, the CA SHALL revoke a
 2. The Subscriber notifies the CA that the original certificate request was not authorized and does not retroactively grant authorization (CRLReason #9, privilegeWithdrawn);
 3. The CA obtains evidence that the Subscriber's Private Key corresponding to the Public Key in the Certificate suffered a Key Compromise (CRLReason #1, keyCompromise);
 4. The CA is made aware of a demonstrated or proven method that can easily compute the Subscriber's Private Key based on the Public Key in the Certificate, including but not limited to those identified in [Section 6.1.1.3(5)](#6113-subscriber-key-pair-generation) (CRLReason #1, keyCompromise);
-5. The CA obtains evidence that the validation of domain authorization or control for any Fully-Qualified Domain Name or IP address in the Certificate should not be relied upon, including cases where the CA failed to perform CAA checking correctly or where issuance was not permitted according to Section [3.2.2.8](#3228-caa-records) (CAA Records) (CRLReason '#'4, superseded).
+5. The CA obtains evidence that the validation of domain authorization or control for any Fully-Qualified Domain Name or IP address in the Certificate should not be relied upon, including cases where the CA failed to perform CAA checking correctly or where issuance was not permitted according to Section [3.2.2.8](#3228-caa-records) (CAA Records) (CRLReason #4, superseded).
 
 With the exception of Short-lived Subscriber Certificates, the CA SHOULD revoke a certificate within 24 hours and MUST revoke a Certificate within 5 days and use the corresponding CRLReason (see [Section 7.2.2](#722-crl-and-crl-entry-extensions)) if one or more of the following occurs:
 
@@ -1555,6 +1557,7 @@ No stipulation.
 ### 4.9.5 Time within which CA must process the revocation request
 
 Within 24 hours after receiving a Certificate Problem Report, the CA SHALL investigate the facts and circumstances related to a Certificate Problem Report and provide a preliminary report on its findings to both the Subscriber and the entity who filed the Certificate Problem Report.
+
 After reviewing the facts and circumstances, the CA SHALL work with the Subscriber and any entity reporting the Certificate Problem Report or other revocation-related notice to establish whether or not the certificate will be revoked, and if so, a date which the CA will revoke the certificate. The period from receipt of the Certificate Problem Report or revocation-related notice to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). The date selected by the CA SHOULD consider the following criteria:
 
 1. The nature of the alleged problem (scope, context, severity, magnitude, risk of harm);
@@ -1581,7 +1584,7 @@ Within twenty-four (24) hours of issuing its first Certificate, the CA MUST gene
 CAs issuing Subscriber Certificates:
 
 1. MUST update and publish a new CRL at least every:
-    - seven (7) days if all Certificates include an Authority Information Access extension with an id-ad-ocsp accessMethod ("AIA OCSP pointer"); or
+    - seven (7) days if all Certificates include an Authority Information Access extension with an `id-ad-ocsp` accessMethod ("AIA OCSP pointer"); or
     - four (4) days in all other cases;
 2. MUST update and publish a new CRL within twenty-four (24) hours after recording a Certificate as revoked.
 
@@ -1610,15 +1613,15 @@ A certificate serial is "assigned" if:
 
 A certificate serial is "unassigned" if it is not "assigned".
 
-The following SHALL apply for communicating the status of Certificates and Precertificates which include an Authority Information Access extension with an id-ad-ocsp accessMethod.
+The following SHALL apply for communicating the status of Certificates and Precertificates which include an Authority Information Access extension with an `id-ad-ocsp` accessMethod.
 
 OCSP responders operated by the CA SHALL support the HTTP GET method, as described in [RFC 6960](https://datatracker.ietf.org/doc/html/rfc6960) and/or [RFC 5019](https://datatracker.ietf.org/doc/html/rfc5019). The CA MAY process the Nonce extension (`1.3.6.1.5.5.7.48.1.2`) in accordance with [RFC 8954](https://datatracker.ietf.org/doc/html/rfc8954).
 
 For the status of a Subscriber Certificate or its corresponding Precertificate:
 
 - Effective 2025-01-15, an authoritative OCSP response MUST be available (i.e. the responder MUST NOT respond with the "unknown" status) starting no more than 15 minutes after the Certificate or Precertificate is first published or otherwise made available.
-- For OCSP responses with validity intervals less than sixteen hours, the CA SHALL provide an updated OCSP response prior to one-half of the validity period before the nextUpdate.
-- For OCSP responses with validity intervals greater than or equal to sixteen hours, the CA SHALL provide an updated OCSP response at least eight hours prior to the nextUpdate, and no later than four days after the thisUpdate.
+- For OCSP responses with validity intervals less than sixteen hours, the CA SHALL provide an updated OCSP response prior to one-half of the validity period before the `nextUpdate`.
+- For OCSP responses with validity intervals greater than or equal to sixteen hours, the CA SHALL provide an updated OCSP response at least eight hours prior to the `nextUpdate`, and no later than four days after the `thisUpdate`.
 
 For the status of a Subordinate CA Certificate, the CA SHALL provide an updated OCSP response at least every twelve months, and within 24 hours after revoking the Certificate.
 
@@ -1833,7 +1836,7 @@ Log records MUST include at least the following elements:
 
 #### 5.4.1.1 Router and firewall activities logs
 
-Logging of router and firewall activities necessary to meet the requirements of Section 5.4.1, Subsection 3.6 MUST at a minimum include:
+Logging of router and firewall activities necessary to meet the requirements of [Section 5.4.1](#541-types-of-events-recorded), Subsection 3.6 MUST at a minimum include:
 
 1. Successful and unsuccessful login attempts to routers and firewalls; and
 2. Logging of all administrative actions performed on routers and firewalls, including configuration changes, firmware updates, and access control modifications; and
@@ -1848,11 +1851,11 @@ The CA and each Delegated Third Party SHALL retain, for at least two (2) years:
 
 1. CA certificate and key lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (1)) after the later occurrence of:
    1. the destruction of the CA Private Key; or
-   2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
+   2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to TRUE and which share a common Public Key corresponding to the CA Private Key;
 2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the expiration of the Subscriber Certificate;
 3. Any security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred.
 
-Note: While these Requirements set the minimum retention period, the CA MAY choose a greater value as more appropriate in order to be able to investigate possible security or other types of incidents that will require retrospection and examination of past audit log events.
+**Note**: While these Requirements set the minimum retention period, the CA MAY choose a greater value as more appropriate in order to be able to investigate possible security or other types of incidents that will require retrospection and examination of past audit log events.
 
 ### 5.4.4 Protection of audit log
 
@@ -1892,7 +1895,7 @@ Additionally, the CA and each Delegated Third Party SHALL retain, for at least t
    1. such records and documentation were last relied upon in the verification, issuance, or revocation of certificate requests and Certificates; or
    2. the expiration of the Subscriber Certificates relying upon such records and documentation.
 
-Note: While these Requirements set the minimum retention period, the CA MAY choose a greater value as more appropriate in order to be able to investigate possible security or other types of incidents that will require retrospection and examination of past records archived.
+**Note**: While these Requirements set the minimum retention period, the CA MAY choose a greater value as more appropriate in order to be able to investigate possible security or other types of incidents that will require retrospection and examination of past records archived.
 
 ### 5.5.3 Protection of archive
 
@@ -2094,16 +2097,17 @@ Subscriber Certificates issued before 2026-03-15 SHOULD NOT have a Validity Peri
 Subscriber Certificates issued on or after 2026-03-15 and before 2027-03-15 SHOULD NOT have a Validity Period greater than 199 days and MUST NOT have a Validity Period greater than 200 days.
 
 Subscriber Certificates issued on or after 2027-03-15 and before 2029-03-15 SHOULD NOT have a Validity Period greater than 99 days and MUST NOT have a Validity Period greater than 100 days.
+
 Subscriber Certificates issued on or after 2029-03-15 SHOULD NOT have a Validity Period greater than 46 days and MUST NOT have a Validity Period greater than 47 days.
 
 Table: Reference for maximum Validity Periods of Subscriber Certificates
 
 | **Certificate issued on or after** | **Certificate issued before**  | **Maximum Validity Period**  |
-| --                                 | --                             | --                           |
-|                                    | 2026-03-15                 | 398 days                     |
-| 2026-03-15                     | 2027-03-15                 | 200 days                     |
-| 2027-03-15                     | 2029-03-15                 | 100 days                     |
-| 2029-03-15                     |                                | 47 days                      |
+| --         | --         | --       |
+|            | 2026-03-15 | 398 days |
+| 2026-03-15 | 2027-03-15 | 200 days |
+| 2027-03-15 | 2029-03-15 | 100 days |
+| 2029-03-15 |            | 47 days  |
 
 For the purpose of calculations, a day is measured as 86,400 seconds. Any amount of time greater than this, including fractional seconds and/or leap seconds, shall represent an additional day. For this reason, Subscriber Certificates SHOULD NOT be issued for the maximum permissible time by default, in order to account for such adjustments.
 
@@ -2143,7 +2147,7 @@ The CA MAY perform Linting on the corpus of its unexpired, un-revoked Subscriber
 
 ## 7.1 Certificate profile
 
-The CA SHALL meet the technical requirements set forth in [Section 6.1.5 - Key Sizes](#615-key-sizes), and [Section 6.1.6 - Public Key Parameters Generation and Quality Checking](#616-public-key-parameters-generation-and-quality-checking).
+The CA SHALL meet the technical requirements set forth in [Section 6.1.5](#615-key-sizes) - Key Sizes, and [Section 6.1.6](#616-public-key-parameters-generation-and-quality-checking) - Public Key Parameters Generation and Quality Checking.
 
 The CA SHALL issue Certificates in accordance with the profile specified in these Requirements.
 
@@ -2156,18 +2160,18 @@ Certificates MUST be of type X.509 v3.
 If the CA asserts compliance with these Baseline Requirements, all certificates that it issues MUST comply with one of the following certificate profiles, which incorporate, and are derived from [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280). Except as explicitly noted, all normative requirements imposed by [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://datatracker.ietf.org/doc/html/rfc5280#appendix-B) for further issues to be aware of.
 
 - CA Certificates
-  - [Section 7.1.2.1 - Root CA Certificate Profile](#7121-root-ca-certificate-profile)
+  - [Section 7.1.2.1](#7121-root-ca-certificate-profile) - Root CA Certificate Profile
   - Subordinate CA Certificates
     - Cross Certificates
-      - [Section 7.1.2.2 - Cross-Certified Subordinate CA Certificate Profile](#7122-cross-certified-subordinate-ca-certificate-profile)
+      - [Section 7.1.2.2](#7122-cross-certified-subordinate-ca-certificate-profile) - Cross-Certified Subordinate CA Certificate Profile
     - Technically Constrained CA Certificates
-      - [Section 7.1.2.3 - Technically-Constrained Non-TLS Subordinate CA Certificate Profile](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile)
-      - [Section 7.1.2.4 - Technically-Constrained Precertificate Signing CA Certificate Profile](#7124-technically-constrained-precertificate-signing-ca-certificate-profile)
-      - [Section 7.1.2.5 - Technically-Constrained TLS Subordinate CA Certificate Profile](#7125-technically-constrained-tls-subordinate-ca-certificate-profile)
-    - [Section 7.1.2.6 - TLS Subordinate CA Certificate Profile](#7126-tls-subordinate-ca-certificate-profile)
-- [Section 7.1.2.7 - Subscriber (End-Entity) Certificate Profile](#7127-subscriber-server-certificate-profile)
-- [Section 7.1.2.8 - OCSP Responder Certificate Profile](#7128-ocsp-responder-certificate-profile)
-- [Section 7.1.2.9 - Precertificate Profile](#7129-precertificate-profile)
+      - [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) - Technically-Constrained Non-TLS Subordinate CA Certificate Profile
+      - [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile) - Technically-Constrained Precertificate Signing CA Certificate Profile
+      - [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile) - Technically-Constrained TLS Subordinate CA Certificate Profile
+    - [Section 7.1.2.6](#7126-tls-subordinate-ca-certificate-profile) - TLS Subordinate CA Certificate Profile
+- [Section 7.1.2.7](#7127-subscriber-server-certificate-profile) - Subscriber (End-Entity) Certificate Profile
+- [Section 7.1.2.8](#7128-ocsp-responder-certificate-profile) - OCSP Responder Certificate Profile
+- [Section 7.1.2.9](#7129-precertificate-profile) - Precertificate Profile
 
 #### 7.1.2.1 Root CA Certificate Profile
 
@@ -2184,15 +2188,15 @@ If the CA asserts compliance with these Baseline Requirements, all certificates 
 |     `issuerUniqueID`       | MUST NOT be present |
 |     `subjectUniqueID`      | MUST NOT be present |
 |     `extensions`           | See [Section 7.1.2.1.2](#71212-root-ca-extensions) |
-| `signatureAlgorithm`       | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature`. |
+| `signatureAlgorithm`       | Encoded value MUST be byte-for-byte identical to the `tbsCertificate.signature` |
 | `signature`                | |
 
 ##### 7.1.2.1.1 Root CA Validity
 
 | **Field**   | **Minimum** | **Maximum** |
-| --           | ----        | ----        |
+| --          | ----        | ----        |
 | `notBefore` | One day prior to the time of signing | The time of signing |
-| `notAfter`  | 2922 days (approx. 8 years)  | 9132 days (approx. 25 years) |
+| `notAfter`  | 2922 days (approx. 8 years) | 9132 days (approx. 25 years) |
 
 **Note**: This restriction applies even in the event of generating a new Root CA Certificate for an existing `subject` and `subjectPublicKeyInfo` (e.g. reissuance). The new CA Certificate MUST conform to these rules.
 
@@ -2274,13 +2278,13 @@ The `subject` MUST comply with the requirements of [Section 7.1.4](#714-name-for
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
-In addition to the above, extKeyUsage extension requirements vary based on the relationship between the Issuer and Subject organizations represented in the Cross-Certificate.
+In addition to the above, `extKeyUsage` extension requirements vary based on the relationship between the Issuer and Subject organizations represented in the Cross-Certificate.
 
-The extKeyUsage extension MAY be "unrestricted" as described in the following table if:
+The `extKeyUsage` extension MAY be "unrestricted" as described in the following table if:
 
-- the organizationName represented in the Issuer and Subject names of the corresponding certificate are either:
+- the `organizationName` represented in the Issuer and Subject names of the corresponding certificate are either:
   - the same, or
-  - the organizationName represented in the Subject name is an affiliate of the organizationName represented in the Issuer name
+  - the `organizationName` represented in the Subject name is an affiliate of the `organizationName` represented in the Issuer name
 - the corresponding CA represented by the Subject of the Cross-Certificate is operated by the same organization as the Issuing CA or an Affiliate of the Issuing CA organization.
 
 Table: Cross-Certified Subordinate CA with Unrestricted EKU
@@ -2289,7 +2293,7 @@ Table: Cross-Certified Subordinate CA with Unrestricted EKU
 | ---                               | --              | --                    | --- |
 | `extKeyUsage`                     | SHOULD[^eku_ca] | N                     | See [Section 7.1.2.2.4](#71224-cross-certified-subordinate-ca-extended-key-usage---unrestricted) |
 
-In all other cases, the extKeyUsage extension MUST be "restricted" as described in the following table:
+In all other cases, the `extKeyUsage` extension MUST be "restricted" as described in the following table:
 
 Table: Cross-Certified Subordinate CA with Restricted EKU
 
@@ -2372,7 +2376,7 @@ Table: Policy Restricted
 
 This Profile RECOMMENDS that the first `PolicyInformation` value within the Certificate Policies extension contains the Reserved Certificate Policy Identifier (see [7.1.6.1](#7161-reserved-certificate-policy-identifiers))[^first_policy_note]. Regardless of the order of `PolicyInformation` values, the Certificate Policies extension MUST include at least one Reserved Certificate Policy Identifier. If any Subscriber Certificates will chain up directly to the Certificate issued under this Certificate Profile, this Cross-Certified Subordinate CA Certificate MUST contain exactly one Reserved Certificate Policy Identifier.
 
-**Note**: policyQualifiers is NOT RECOMMENDED to be present in any Certificate issued under this Certificate Profile because this information increases the size of the Certificate without providing any value to a typical Relying Party, and the information may be obtained by other means when necessary.
+**Note**: `policyQualifiers` is NOT RECOMMENDED to be present in any Certificate issued under this Certificate Profile because this information increases the size of the Certificate without providing any value to a typical Relying Party, and the information may be obtained by other means when necessary.
 
 If the `policyQualifiers` is permitted and present within a `PolicyInformation` field, it MUST be formatted as follows:
 
@@ -2746,7 +2750,8 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 ##### 7.1.2.7.5 Extended Validation
 
 For a Subscriber Certificate to be Extended Validation, it MUST comply with the Certificate Profile specified in the then-current version of the Guidelines for the Issuance and Management of Extended Validation Certificates.
- In addition, it MUST meet the following profile:
+
+In addition, it MUST meet the following profile:
 
 | **Field**             | **Requirements**     |
 | ---                   | -------              |
@@ -2776,7 +2781,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 **Notes**:
 
 - whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
-- whether or not the CRL Distribution Points extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an id-ad-ocsp accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
+- whether or not the CRL Distribution Points extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an `id-ad-ocsp` accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
 
 ##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
@@ -3009,7 +3014,7 @@ Table: Permitted `policyQualifiers`
 
 #### 7.1.2.9 Precertificate Profile
 
-A Precertificate is a signed data structure that can be submitted to a Certificate Transparency log, as defined by [RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962). A Precertificate appears structurally identical to a Certificate, with the exception of a special critical poison extension in the `extensions` field, with the OID of `1.3.6.1.4.1.11129.2.4.3`. This extension ensures that the Precertificate will not be accepted as a Certificate by clients conforming to [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280). The existence of a signed Precertificate can be treated as evidence of a corresponding Certificate also existing, as the signature represents a binding commitment by the CA that it may issue such a Certificate.
+A Precertificate is a signed data structure that can be submitted to a Certificate Transparency log, as defined by [RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962). A Precertificate appears structurally identical to a Certificate, with the exception of a special critical poison extension in the `extensions` field, with the OID of 1.3.6.1.4.1.11129.2.4.3. This extension ensures that the Precertificate will not be accepted as a Certificate by clients conforming to [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280). The existence of a signed Precertificate can be treated as evidence of a corresponding Certificate also existing, as the signature represents a binding commitment by the CA that it may issue such a Certificate.
 
 A Precertificate is created after a CA has decided to issue a Certificate, but prior to the actual signing of the Certificate. The CA MAY construct and sign a Precertificate corresponding to the Certificate, for purposes of submitting to Certificate Transparency Logs. The CA MAY use the returned Signed Certificate Timestamps to then alter the Certificate's `extensions` field, adding a Signed Certificate Timestamp List, as defined in [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) and as permitted by the relevant profile, prior to signing the Certificate.
 
@@ -3017,7 +3022,7 @@ Once a Precertificate is signed, relying parties are permitted to treat this as 
 
 This profile describes the transformations that are permitted to a Certificate to construct a Precertificate. CAs MUST NOT issue a Precertificate unless they are willing to issue a corresponding Certificate, regardless of whether they have done so. Similarly, a CA MUST NOT issue a Precertificate unless the corresponding Certificate conforms to these Baseline Requirements, regardless of whether the CA signs the corresponding Certificate.
 
-A Precertificate may be issued either directly by the Issuing CA or, when issued prior to 2026-03-15, by a Technically Constrained Precertificate Signing CA, as defined in [Section 7.1.2.4](https://github.com/cabforum/servercert/blob/main/docs/BR.md#7124-technically-constrained-precertificate-signing-ca-certificate-profile). If issued by a Precertificate Signing CA, then in addition to the precertificate poison and signed certificate timestamp list extensions, the Precertificate issuer field and, if present, authorityKeyIdentifier extension, may differ from the Certificate, as described below.
+A Precertificate may be issued either directly by the Issuing CA or, when issued prior to 2026-03-15, by a Technically Constrained Precertificate Signing CA, as defined in [Section 7.1.2.4](https://github.com/cabforum/servercert/blob/main/docs/BR.md#7124-technically-constrained-precertificate-signing-ca-certificate-profile). If issued by a Precertificate Signing CA, then in addition to the precertificate poison and signed certificate timestamp list extensions, the Precertificate issuer field and, if present, `authorityKeyIdentifier` extension, may differ from the Certificate, as described below.
 
 Table: When the Precertificate is issued directly by the Issuing CA
 
@@ -3173,7 +3178,7 @@ Table: Policy Restricted
 
 The Policy Restricted profile RECOMMENDS that the first `PolicyInformation` value within the Certificate Policies extension contains the Reserved Certificate Policy Identifier (see [7.1.6.1](#7161-reserved-certificate-policy-identifiers))[^first_policy_note]. Regardless of the order of `PolicyInformation` values, the Certificate Policies extension MUST contain exactly one Reserved Certificate Policy Identifier.
 
-**Note**: policyQualifiers is NOT RECOMMENDED to be present in any Certificate issued under this Certificate Profile because this information increases the size of the Certificate without providing any value to a typical Relying Party, and the information may be obtained by other means when necessary.
+**Note**: `policyQualifiers` is NOT RECOMMENDED to be present in any Certificate issued under this Certificate Profile because this information increases the size of the Certificate without providing any value to a typical Relying Party, and the information may be obtained by other means when necessary.
 
 If the `policyQualifiers` is permitted and present within a `PolicyInformation` field, it MUST be formatted as follows:
 
@@ -3273,7 +3278,7 @@ This section contains several fields that are common among multiple certificate 
 The CRL Distribution Points extension MUST be present in:
 
 - Subordinate CA Certificates; and
-- Subscriber Certificates that 1) do not qualify as "Short-lived Subscriber Certificates" and 2) do not include an Authority Information Access extension with an id-ad-ocsp accessMethod.
+- Subscriber Certificates that 1) do not qualify as "Short-lived Subscriber Certificates" and 2) do not include an Authority Information Access extension with an `id-ad-ocsp` accessMethod.
 
 The CRL Distribution Points extension SHOULD NOT be present in:
 
@@ -3329,18 +3334,18 @@ The following requirements apply to the `subjectPublicKeyInfo` field within a Ce
 
 ##### 7.1.3.1.1 RSA
 
-The CA SHALL indicate an RSA key using the rsaEncryption (OID: 1.2.840.113549.1.1.1) algorithm identifier. The parameters MUST be present, and MUST be an explicit NULL.
-The CA SHALL NOT use a different algorithm, such as the id-RSASSA-PSS (OID: 1.2.840.113549.1.1.10) algorithm identifier, to indicate an RSA key.
+The CA SHALL indicate an RSA key using the `rsaEncryption` (OID: 1.2.840.113549.1.1.1) algorithm identifier. The parameters MUST be present, and MUST be an explicit NULL.
+The CA SHALL NOT use a different algorithm, such as the `id-RSASSA-PSS` (OID: 1.2.840.113549.1.1.10) algorithm identifier, to indicate an RSA key.
 
 When encoded, the `AlgorithmIdentifier` for RSA keys MUST be byte-for-byte identical with the following hex-encoded bytes: `300d06092a864886f70d0101010500`
 
 ##### 7.1.3.1.2 ECDSA
 
-The CA SHALL indicate an ECDSA key using the id-ecPublicKey (OID: 1.2.840.10045.2.1) algorithm identifier. The parameters MUST use the `namedCurve` encoding.
+The CA SHALL indicate an ECDSA key using the `id-ecPublicKey` (OID: 1.2.840.10045.2.1) algorithm identifier. The parameters MUST use the `namedCurve` encoding.
 
-- For P-256 keys, the `namedCurve` MUST be secp256r1 (OID: 1.2.840.10045.3.1.7).
-- For P-384 keys, the `namedCurve` MUST be secp384r1 (OID: 1.3.132.0.34).
-- For P-521 keys, the `namedCurve` MUST be secp521r1 (OID: 1.3.132.0.35).
+- For P-256 keys, the `namedCurve` MUST be `secp256r1` (OID: 1.2.840.10045.3.1.7).
+- For P-384 keys, the `namedCurve` MUST be `secp384r1` (OID: 1.3.132.0.34).
+- For P-521 keys, the `namedCurve` MUST be `secp521r1` (OID: 1.3.132.0.35).
 
 When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte identical with the following hex-encoded bytes:
 
@@ -3369,16 +3374,19 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
 - RSASSA-PKCS1-v1_5 with SHA-256:
 
   Encoding:
+
   `300d06092a864886f70d01010b0500`.
 
 - RSASSA-PKCS1-v1_5 with SHA-384:
 
   Encoding:
+
   `300d06092a864886f70d01010c0500`.
 
 - RSASSA-PKCS1-v1_5 with SHA-512:
 
   Encoding:
+
   `300d06092a864886f70d01010d0500`.
 
 - RSASSA-PSS with SHA-256, MGF-1 with SHA-256, and a salt length of 32 bytes:
@@ -3414,18 +3422,23 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
 In addition, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
 
 - If used within a Certificate, such as the `signatureAlgorithm` field of a Certificate or the `signature` field of a TBSCertificate:
+
   - The new Certificate is a Root CA Certificate or Subordinate CA Certificate that is a Cross-Certificate; and,
   - There is an existing Certificate, issued by the same issuing CA Certificate, using the following encoding for the signature algorithm; and,
   - The existing Certificate has a `serialNumber` that is at least 64-bits long; and,
   - The only differences between the new Certificate and existing Certificate are one of the following:
     - A new `subjectPublicKey` within the `subjectPublicKeyInfo`, using the same algorithm and key size; and/or,
     - A new `serialNumber`, of the same encoded length as the existing Certificate; and/or
-    - The new Certificate's `extKeyUsage` extension is present, has at least one key purpose specified, and none of the key purposes specified are the id-kp-serverAuth (OID: 1.3.6.1.5.5.7.3.1) or the anyExtendedKeyUsage (OID: 2.5.29.37.0) key purposes; and/or
+    - The new Certificate's `extKeyUsage` extension is present, has at least one key purpose specified, and none of the key purposes specified are the `id-kp-serverAuth` (OID: 1.3.6.1.5.5.7.3.1) or the `anyExtendedKeyUsage` (OID: 2.5.29.37.0) key purposes; and/or
     - The new Certificate's `basicConstraints` extension has a pathLenConstraint that is zero.
+
 - If used within an OCSP response, such as the `signatureAlgorithm` of a BasicOCSPResponse:
+
   - The `producedAt` field value of the ResponseData MUST be earlier than 2022-06-01 00:00:00 UTC; and,
-  - All unexpired, un-revoked Certificates that contain the Public Key of the CA Key Pair and that have the same Subject Name MUST also contain an `extKeyUsage` extension with the only key usage present being the id-kp-ocspSigning (OID: 1.3.6.1.5.5.7.3.9) key usage.
+  - All unexpired, un-revoked Certificates that contain the Public Key of the CA Key Pair and that have the same Subject Name MUST also contain an `extKeyUsage` extension with the only key usage present being the `id-kp-ocspSigning` (OID: 1.3.6.1.5.5.7.3.9) key usage.
+
 - If used within a CRL, such as the `signatureAlgorithm` field of a CertificateList or the `signature` field of a TBSCertList:
+
   - The CRL is referenced by one or more Root CA or Subordinate CA Certificates; and,
   - The Root CA or Subordinate CA Certificate has issued one or more Certificates using the following encoding for the signature algorithm.
 
@@ -3600,17 +3613,17 @@ Table: revokedCertificates Component
 
 | **Component**        | **Presence** | **Description** |
 | ----                 | -            | ----- |
-| `serialNumber`       | MUST         | MUST be byte-for-byte identical to the serialNumber contained in the revoked Certificate. |
+| `serialNumber`       | MUST         | MUST be byte-for-byte identical to the `serialNumber` contained in the revoked Certificate. |
 | `revocationDate`     | MUST         | Normally, the date and time revocation occurred. See the footnote following this table for circumstances where backdating is permitted. |
 | `crlEntryExtensions` | *            | See the "crlEntryExtensions Component" table for additional requirements. |
 
-**Note:** The CA SHOULD update the revocation date in a CRL entry when it is determined that the private key of the Certificate was compromised prior to the revocation date that is indicated in the CRL entry for that Certificate. Backdating the revocationDate field is an exception to best practice described in [RFC 5280, Section 5.3.2](https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
+**Note**: The CA SHOULD update the revocation date in a CRL entry when it is determined that the private key of the Certificate was compromised prior to the revocation date that is indicated in the CRL entry for that Certificate. Backdating the revocationDate field is an exception to best practice described in [RFC 5280, Section 5.3.2](https://datatracker.ietf.org/doc/html/rfc5280#section-5.3.2); however, these requirements specify the use of the revocationDate field to support TLS implementations that process the revocationDate field as the date when the Certificate is first considered to be compromised.
 
 Table: crlEntryExtensions Component
 
 | **CRL Entry Extension**   | **Presence**    | **Description** |
 | ---                       | --              | -----           |
-| `reasonCode`              | *               | When present (OID 2.5.29.21), MUST NOT be marked critical and MUST indicate the most appropriate reason for revocation of the Certificate. <br><br> MUST be present unless the CRL entry is for a Certificate not technically capable of causing issuance and either 1) the CRL entry is for a Subscriber Certificate subject to these Requirements revoked prior to 2023-07-15 or 2) the reason for revocation (i.e., reasonCode) is unspecified (0). <br><br>See the "CRLReasons" table for additional requirements. |
+| `reasonCode`              | *               | When present (OID 2.5.29.21), MUST NOT be marked critical and MUST indicate the most appropriate reason for revocation of the Certificate.<br><br>MUST be present unless the CRL entry is for a Certificate not technically capable of causing issuance and either 1) the CRL entry is for a Subscriber Certificate subject to these Requirements revoked prior to 2023-07-15 or 2) the reason for revocation (i.e., reasonCode) is unspecified (0).<br><br>See the "CRLReasons" table for additional requirements. |
 | Any other value           | NOT RECOMMENDED | - |
 
 Table: CRLReasons
@@ -3633,15 +3646,15 @@ When a CA obtains verifiable evidence of Key Compromise for a Certificate whose 
 
 #### 7.2.2.1 CRL Issuing Distribution Point
 
-Partitioned CRLs MUST contain an Issuing Distribution Point extension. The `distributionPoint` field of the Issuing Distribution Point extension MUST be present. Additionally, the `fullName` field of the DistributionPointName value MUST be present, and its value MUST conform to the following requirements:
+Partitioned CRLs MUST contain an Issuing Distribution Point extension. The `distributionPoint` field of the Issuing Distribution Point extension MUST be present. Additionally, the `fullName` field of the `DistributionPointName` value MUST be present, and its value MUST conform to the following requirements:
 
 1. If a Certificate within the scope of the CRL contains a CRL Distribution Points extension, then at least one of the `uniformResourceIdentifiers` in the CRL Distribution Points's `fullName` field MUST be included in the `fullName` field of the CRL's Issuing Distribution Point extension. The encoding of the `uniformResourceIdentifier` value in the Issuing Distribution Point extension SHALL be byte-for-byte identical to the encoding used in the Certificate's CRL Distribution Points extension.
 2. Other GeneralNames of type `uniformResourceIdentifier` MAY be included.
 3. Non-`uniformResourceIdentifier` GeneralName types MUST NOT be included.
 
-The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to `FALSE` (i.e., not asserted).
+The `indirectCRL` and `onlyContainsAttributeCerts` fields MUST be set to FALSE (i.e., not asserted).
 
-The CA MAY set either of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields to `TRUE`, depending on the scope of the CRL.
+The CA MAY set either of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields to TRUE, depending on the scope of the CRL.
 
 The CA MUST NOT assert both of the `onlyContainsUserCerts` and `onlyContainsCACerts` fields.
 
@@ -3671,7 +3684,7 @@ The CA SHALL at all times:
 
 ## 8.1 Frequency or circumstances of assessment
 
-Certificates that are capable of being used to issue new certificates MUST either be Technically Constrained in line with [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile), [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile), or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), as well as audited in line with [Section 8.7](#87-self-audits) only, or Unconstrained and fully audited in line with all remaining requirements from this section. A Certificate is deemed as capable of being used to issue new certificates if it contains an X.509v3 `basicConstraints` extension, with the `cA` boolean set to true and is therefore by definition a Root CA Certificate or a Subordinate CA Certificate.
+Certificates that are capable of being used to issue new certificates MUST either be Technically Constrained in line with [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile), [Section 7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile), or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), as well as audited in line with [Section 8.7](#87-self-audits) only, or Unconstrained and fully audited in line with all remaining requirements from this section. A Certificate is deemed as capable of being used to issue new certificates if it contains an X.509v3 `basicConstraints` extension, with the `cA` boolean set to TRUE and is therefore by definition a Root CA Certificate or a Subordinate CA Certificate.
 
 The period during which the CA issues Certificates SHALL be divided into an unbroken sequence of audit periods. An audit period MUST NOT exceed one year in duration.
 
@@ -3809,6 +3822,7 @@ By issuing a Certificate, the CA makes the certificate warranties listed herein 
 1. The Subscriber that is a party to the Subscriber Agreement or Terms of Use for the Certificate;
 2. All Application Software Suppliers with whom the Root CA has entered into a contract for inclusion of its Root Certificate in software distributed by such Application Software Supplier; and
 3. All Relying Parties who reasonably rely on a Valid Certificate.
+
 The CA represents and warrants to the Certificate Beneficiaries that, during the period when the Certificate is valid, the CA has complied with these Requirements and its Certificate Policy and/or Certification Practice Statement in issuing and managing the Certificate.
 
 The Certificate Warranties specifically include, but are not limited to, the following:
@@ -3891,7 +3905,11 @@ The Subscriber Agreement or Terms of Use MUST contain provisions imposing on the
 
 For delegated tasks, the CA and any Delegated Third Party MAY allocate liability between themselves contractually as they determine, but the CA SHALL remain fully responsible for the performance of all parties in accordance with these Requirements, as if the tasks had not been delegated.
 
-If the CA has issued and managed the Certificate in compliance with these Requirements and its Certificate Policy and/or Certification Practice Statement, the CA MAY disclaim liability to the Certificate Beneficiaries or any other third parties for any losses suffered as a result of use or reliance on such Certificate beyond those specified in the CA's Certificate Policy and/or Certification Practice Statement. If the CA has not issued or managed the Certificate in compliance with these Requirements and its Certificate Policy and/or Certification Practice Statement, the CA MAY seek to limit its liability to the Subscriber and to Relying Parties, regardless of the cause of action or legal theory involved, for any and all claims, losses or damages suffered as a result of the use or reliance on such Certificate by any appropriate means that the CA desires. If the CA chooses to limit its liability for Certificates that are not issued or managed in compliance with these Requirements or its Certificate Policy and/or Certification Practice Statement, then the CA SHALL include the limitations on liability in the CA's Certificate Policy and/or Certification Practice Statement.
+If the CA has issued and managed the Certificate in compliance with these Requirements and its Certificate Policy and/or Certification Practice Statement, the CA MAY disclaim liability to the Certificate Beneficiaries or any other third parties for any losses suffered as a result of use or reliance on such Certificate beyond those specified in the CA's Certificate Policy and/or Certification Practice Statement.
+
+If the CA has not issued or managed the Certificate in compliance with these Requirements and its Certificate Policy and/or Certification Practice Statement, the CA MAY seek to limit its liability to the Subscriber and to Relying Parties, regardless of the cause of action or legal theory involved, for any and all claims, losses or damages suffered as a result of the use or reliance on such Certificate by any appropriate means that the CA desires.
+
+If the CA chooses to limit its liability for Certificates that are not issued or managed in compliance with these Requirements or its Certificate Policy and/or Certification Practice Statement, then the CA SHALL include the limitations on liability in the CA's Certificate Policy and/or Certification Practice Statement.
 
 ## 9.9 Indemnities
 
@@ -3958,8 +3976,8 @@ The CAA contactemail property takes an email address as its parameter. The entir
 The following is an example where the holder of the domain specified the contact property using an email address.
 
 ```DNS Zone
-$ORIGIN example.com.
-               CAA 0 contactemail "domainowner@example.com"
+$ORIGIN example.com .
+CAA 0 contactemail "domainowner@example.com"
 ```
 
 The contactemail property MAY be critical, if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
@@ -3973,8 +3991,8 @@ The CAA contactphone property takes a phone number as its parameter. The entire 
 The following is an example where the holder of the domain specified the contact property using a phone number.
 
 ```DNS Zone
-$ORIGIN example.com.
-               CAA 0 contactphone "+1 555 123 4567"
+$ORIGIN example.com .
+CAA 0 contactphone "+1 555 123 4567"
 ```
 
 The contactphone property MAY be critical if the domain owner does not want CAs who do not understand it to issue certificates for the domain.
@@ -3999,9 +4017,9 @@ This appendix defines permissible verification procedures for including one or m
 
    a. The CA MAY verify the Applicant's control over the .onion service by using one of the following methods from [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control):
 
-      i. [Section 3.2.2.4.18 - Agreed-Upon Change to Website v2](#322418-agreed-upon-change-to-website-v2)
-      ii. [Section 3.2.2.4.19 - Agreed-Upon Change to Website - ACME](#322419-agreed-upon-change-to-website---acme)
-      iii. [Section 3.2.2.4.20 - TLS Using ALPN](#322420-tls-using-alpn)
+      i. [Section 3.2.2.4.18](#322418-agreed-upon-change-to-website-v2) - Agreed-Upon Change to Website v2
+      ii. [Section 3.2.2.4.19](#322419-agreed-upon-change-to-website---acme) - Agreed-Upon Change to Website - ACME
+      iii. [Section 3.2.2.4.20](#322420-tls-using-alpn) - TLS Using ALPN
 
       When these methods are used to verify the Applicant's control over the .onion service, the CA MUST use Tor protocol to establish a connection to the .onion hidden service. The CA MUST NOT delegate or rely on a third-party to establish the connection, such as by using Tor2Web.
 
