@@ -3976,7 +3976,7 @@ The CAA contactemail property takes an email address as its parameter. The entir
 The following is an example where the holder of the domain specified the contact property using an email address.
 
 ```DNSZone
-$ORIGIN example.com .  
+$ORIGIN example.com .
 CAA 0 contactemail "domainowner@example.com"
 ```
 
@@ -3991,7 +3991,7 @@ The CAA contactphone property takes a phone number as its parameter. The entire 
 The following is an example where the holder of the domain specified the contact property using a phone number.
 
 ```DNSZone
-$ORIGIN example.com .  
+$ORIGIN example.com .
 CAA 0 contactphone "+1 555 123 4567"
 ```
 
