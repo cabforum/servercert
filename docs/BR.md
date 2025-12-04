@@ -1561,7 +1561,7 @@ Within twenty-four (24) hours after determining a Certificate Problem Report is 
 
 Within one hundred twenty (120) hours after determining a Certificate Problem Report is actionable, the CA MUST evaluate all time-valid and unrevoked Certificates issued by the CA to detect additional instances of the non-compliance described in the report. The period from the time the additional affected Certificates were first identified to published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate).
 
-Within twenty-four (24) hours after determining a Certificate Problem Report is not actionable, the CA MUST provide a report on its findings to the entity who filed the Certificate Problem Report and request the information necessary to satisfy the above requirements of an actionable Certificate Problem Report.
+Within twenty four (24) hours after determining a Certificate Problem Report is not actionable, the CA MUST provide a report on its findings to the entity who filed the Certificate Problem Report if contact details have been provided and request the information necessary to satisfy the above requirements of an actionable Certificate Problem Report.
 
 **Note**: If a non-actionable Certificate Problem Report is later amended by the reporter to satisfy the requirements of an actionable report described above, the time of receipt of the requested missing information is the basis for subsequent revocation timelines, if determined necessary.
 
