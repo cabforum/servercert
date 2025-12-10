@@ -774,7 +774,7 @@ DNSSEC validation back to the IANA DNSSEC root trust anchor MAY be performed on 
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
 
-DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of the logging requirements to fulfill the requirements in [Section 5.4.1](#541-types-of-events-recorded).
+DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of the logging requirements of [Section 5.4.1](#541-types-of-events-recorded).
 
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
 
