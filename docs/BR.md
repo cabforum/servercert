@@ -301,7 +301,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Certificate Problem Report**: Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates.
 
-**Certificate Profile**: A set of documents or files that defines requirements for Certificate content and Certificate extensions in accordance with [Section 7](#7-certificate-crl-and-ocsp-profiles), e.g. a Section in a CA's CPS or a certificate template file used by CA software.
+**Certificate Profile**: A set of documents or files that defines Certificate content and Certificate extensions, e.g. a Section in a CA's CPS or a certificate template file used by CA software.
 
 **Certificate Revocation List**: A regularly updated time-stamped list of revoked Certificates that is created and digitally signed by the CA that issued the Certificates.
 
@@ -2157,7 +2157,7 @@ Certificates MUST be of type X.509 v3.
 
 ### 7.1.2 Certificate Content and Extensions
 
-If the CA asserts compliance with these Baseline Requirements, all certificates that it issues MUST comply with one of the following certificate profiles, which incorporate, and are derived from [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280). Except as explicitly noted, all normative requirements imposed by [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://datatracker.ietf.org/doc/html/rfc5280#appendix-B) for further issues to be aware of.
+If the CA asserts compliance with these Baseline Requirements, all certificates that it issues MUST comply with one of the following Certificate Profiles, which incorporate, and are derived from [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280). Except as explicitly noted, all normative requirements imposed by [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) shall apply, in addition to the normative requirements imposed by this document. CAs SHOULD examine [RFC 5280, Appendix B](https://datatracker.ietf.org/doc/html/rfc5280#appendix-B) for further issues to be aware of.
 
 - CA Certificates
   - [Section 7.1.2.1](#7121-root-ca-certificate-profile) - Root CA Certificate Profile
