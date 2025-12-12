@@ -557,51 +557,51 @@ Network and Certificate System Security Requirements, Version 1.7, available at 
 
 NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Applications, <https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-89.pdf>.
 
-[RFC2119](https://datatracker.ietf.org/doc/html/rfc2119), Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels. S. Bradner. March 1997.
+[RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119), Request for Comments: 2119, Key words for use in RFCs to Indicate Requirement Levels. S. Bradner. March 1997.
 
-[RFC3492](https://datatracker.ietf.org/doc/html/rfc3492), Request for Comments: 3492, Punycode: A Bootstring encoding of Unicode for Internationalized Domain Names in Applications (IDNA). A. Costello. March 2003.
+[RFC 3492](https://datatracker.ietf.org/doc/html/rfc3492), Request for Comments: 3492, Punycode: A Bootstring encoding of Unicode for Internationalized Domain Names in Applications (IDNA). A. Costello. March 2003.
 
-[RFC3647](https://datatracker.ietf.org/doc/html/rfc3647), Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework. S. Chokhani, et al. November 2003.
+[RFC 3647](https://datatracker.ietf.org/doc/html/rfc3647), Request for Comments: 3647, Internet X.509 Public Key Infrastructure: Certificate Policy and Certification Practices Framework. S. Chokhani, et al. November 2003.
 
-[RFC3912](https://datatracker.ietf.org/doc/html/rfc3912), Request for Comments: 3912, WHOIS Protocol Specification. L. Daigle. September 2004.
+[RFC 3912](https://datatracker.ietf.org/doc/html/rfc3912), Request for Comments: 3912, WHOIS Protocol Specification. L. Daigle. September 2004.
 
-[RFC3986](https://datatracker.ietf.org/doc/html/rfc3986), Request for Comments: 3986, Uniform Resource Identifier (URI): Generic Syntax. T. Berners-Lee, et al. January 2005.
+[RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986), Request for Comments: 3986, Uniform Resource Identifier (URI): Generic Syntax. T. Berners-Lee, et al. January 2005.
 
-[RFC4035](https://datatracker.ietf.org/doc/html/rfc4035), Request for Comments: 4035, Protocol Modifications for the DNS Security Extensions. R. Arends, et al. March 2005.
+[RFC 4035](https://datatracker.ietf.org/doc/html/rfc4035), Request for Comments: 4035, Protocol Modifications for the DNS Security Extensions. R. Arends, et al. March 2005.
 
-[RFC4509](https://datatracker.ietf.org/doc/html/rfc4509), Request for Comments: 4509, Use of SHA-256 in DNSSEC Delegation Signer (DS) Resource Records (RRs). W. Hardaker. May 2006.
+[RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509), Request for Comments: 4509, Use of SHA-256 in DNSSEC Delegation Signer (DS) Resource Records (RRs). W. Hardaker. May 2006.
 
-[RFC5019](https://datatracker.ietf.org/doc/html/rfc5019), Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments. A. Deacon, et al. September 2007.
+[RFC 5019](https://datatracker.ietf.org/doc/html/rfc5019), Request for Comments: 5019, The Lightweight Online Certificate Status Protocol (OCSP) Profile for High-Volume Environments. A. Deacon, et al. September 2007.
 
-[RFC5155](https://datatracker.ietf.org/doc/html/rfc5155), Request for Comments: 5155, DNS Security (DNSSEC) Hashed Authenticated Denial of Existence. B. Laurie, et al. March 2008.
+[RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155), Request for Comments: 5155, DNS Security (DNSSEC) Hashed Authenticated Denial of Existence. B. Laurie, et al. March 2008.
 
-[RFC5280](https://datatracker.ietf.org/doc/html/rfc5280), Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile. D. Cooper, et al. May 2008.
+[RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280), Request for Comments: 5280, Internet X.509 Public Key Infrastructure: Certificate and Certificate Revocation List (CRL) Profile. D. Cooper, et al. May 2008.
 
-[RFC5702](https://datatracker.ietf.org/doc/html/rfc5702), Request for Comments: 5702, Use of SHA-2 Algorithms with RSA in DNSKEY and RRSIG Resource Records for DNSSEC. J. Jansen. October 2009.
+[RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702), Request for Comments: 5702, Use of SHA-2 Algorithms with RSA in DNSKEY and RRSIG Resource Records for DNSSEC. J. Jansen. October 2009.
 
-[RFC5890](https://datatracker.ietf.org/doc/html/rfc5890), Request for Comments: 5890, Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework. J. Klensin. August 2010.
+[RFC 5890](https://datatracker.ietf.org/doc/html/rfc5890), Request for Comments: 5890, Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework. J. Klensin. August 2010.
 
-[RFC5952](https://datatracker.ietf.org/doc/html/rfc5952), Request for Comments: 5952, A Recommendation for IPv6 Address Text Representation. S. Kawamura, et al. August 2010.
+[RFC 5952](https://datatracker.ietf.org/doc/html/rfc5952), Request for Comments: 5952, A Recommendation for IPv6 Address Text Representation. S. Kawamura, et al. August 2010.
 
-[RFC6840](https://datatracker.ietf.org/doc/html/rfc6840), Request for Comments: 6840, Clarifications and Implementation Notes for DNS Security (DNSSEC). S. Weiler, et al. February 2013.
+[RFC 6840](https://datatracker.ietf.org/doc/html/rfc6840), Request for Comments: 6840, Clarifications and Implementation Notes for DNS Security (DNSSEC). S. Weiler, et al. February 2013.
 
-[RFC6960](https://datatracker.ietf.org/doc/html/rfc6960), Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. S. Santesson, et al. June 2013.
+[RFC 6960](https://datatracker.ietf.org/doc/html/rfc6960), Request for Comments: 6960, X.509 Internet Public Key Infrastructure Online Certificate Status Protocol - OCSP. S. Santesson, et al. June 2013.
 
-[RFC6962](https://datatracker.ietf.org/doc/html/rfc6962), Request for Comments: 6962, Certificate Transparency. B. Laurie, et al. June 2013.
+[RFC 6962](https://datatracker.ietf.org/doc/html/rfc6962), Request for Comments: 6962, Certificate Transparency. B. Laurie, et al. June 2013.
 
-[RFC7231](https://datatracker.ietf.org/doc/html/rfc7231), Request For Comments: 7231, Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content. R. Fielding, et al. June 2014.
+[RFC 7231](https://datatracker.ietf.org/doc/html/rfc7231), Request For Comments: 7231, Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content. R. Fielding, et al. June 2014.
 
-[RFC7538](https://datatracker.ietf.org/doc/html/rfc7538), Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect). J. Reschke. April 2015.
+[RFC 7538](https://datatracker.ietf.org/doc/html/rfc7538), Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect). J. Reschke. April 2015.
 
-[RFC8499](https://datatracker.ietf.org/doc/html/rfc8499), Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
+[RFC 8499](https://datatracker.ietf.org/doc/html/rfc8499), Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
 
-[RFC8659](https://datatracker.ietf.org/doc/html/rfc8659), Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record. P. Hallam-Baker, et al. November 2019.
+[RFC 8659](https://datatracker.ietf.org/doc/html/rfc8659), Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record. P. Hallam-Baker, et al. November 2019.
 
-[RFC8738](https://datatracker.ietf.org/doc/html/rfc8738), Request for Comments: 8738, Automated Certificate Management Environment (ACME) IP Identifier Validation Extension. R.B.Shoemaker, Ed. February 2020.
+[RFC 8738](https://datatracker.ietf.org/doc/html/rfc8738), Request for Comments: 8738, Automated Certificate Management Environment (ACME) IP Identifier Validation Extension. R.B.Shoemaker, Ed. February 2020.
 
-[RFC8954](https://datatracker.ietf.org/doc/html/rfc8954), Request for Comments: 8954, Online Certificate Status Protocol (OCSP) Nonce Extension. M. Sahni, Ed. November 2020.
+[RFC 8954](https://datatracker.ietf.org/doc/html/rfc8954), Request for Comments: 8954, Online Certificate Status Protocol (OCSP) Nonce Extension. M. Sahni, Ed. November 2020.
 
-[RFC9082](https://datatracker.ietf.org/doc/html/rfc9082), Request for Comments: 9082, Registration Data Access Protocol (RDAP) Query Format. S. Hollenbeck, A. Newton, et al. June 2021.
+[RFC 9082](https://datatracker.ietf.org/doc/html/rfc9082), Request for Comments: 9082, Registration Data Access Protocol (RDAP) Query Format. S. Hollenbeck, A. Newton, et al. June 2021.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, available at
 <https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria>.
@@ -981,7 +981,7 @@ Except for Onion Domain Names, CAs performing validations using this method MUST
 
 ##### 3.2.2.4.20 TLS Using ALPN
 
-Confirming the Applicant's control over a FQDN by validating domain control of the FQDN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC7301](https://datatracker.ietf.org/doc/html/rfc7301) as defined in [RFC 8737](https://datatracker.ietf.org/doc/html/rfc8737). The following are additive requirements to [RFC 8737](https://datatracker.ietf.org/doc/html/rfc8737).
+Confirming the Applicant's control over a FQDN by validating domain control of the FQDN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC 7301](https://datatracker.ietf.org/doc/html/rfc7301) as defined in [RFC 8737](https://datatracker.ietf.org/doc/html/rfc8737). The following are additive requirements to [RFC 8737](https://datatracker.ietf.org/doc/html/rfc8737).
 
 The token (as defined in [RFC 8737, Section 3](https://datatracker.ietf.org/doc/html/rfc8737#section-3)) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
