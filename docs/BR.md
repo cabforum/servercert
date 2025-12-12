@@ -591,8 +591,6 @@ NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Ap
 
 [RFC7231](https://datatracker.ietf.org/doc/html/rfc7231), Request For Comments: 7231, Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content. R. Fielding, et al. June 2014.
 
-[RFC7482](https://datatracker.ietf.org/doc/html/rfc7482), Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format. A. Newton, et al. March 2015.
-
 [RFC7538](https://datatracker.ietf.org/doc/html/rfc7538), Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect). J. Reschke. April 2015.
 
 [RFC8499](https://datatracker.ietf.org/doc/html/rfc8499), Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
@@ -602,6 +600,8 @@ NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Ap
 [RFC8738](https://datatracker.ietf.org/doc/html/rfc8738), Request for Comments: 8738, Automated Certificate Management Environment (ACME) IP Identifier Validation Extension. R.B.Shoemaker, Ed. February 2020.
 
 [RFC8954](https://datatracker.ietf.org/doc/html/rfc8954), Request for Comments: 8954, Online Certificate Status Protocol (OCSP) Nonce Extension. M. Sahni, Ed. November 2020.
+
+[RFC9082](https://datatracker.ietf.org/doc/html/rfc9082), Request for Comments: 9082, Registration Data Access Protocol (RDAP) Query Format. S. Hollenbeck, A. Newton, et al. June 2021.
 
 WebTrust for Certification Authorities, SSL Baseline with Network Security, available at
 <https://www.cpacanada.ca/en/business-and-accounting-resources/audit-and-assurance/overview-of-webtrust-services/principles-and-criteria>.
