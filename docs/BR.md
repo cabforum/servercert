@@ -444,7 +444,7 @@ The binding SHALL use a digital signature algorithm or a cryptographic hash algo
 **Note**: Examples of Request Tokens include, but are not limited to:
 
   i. a hash of the public key; or
-  ii. a hash of the Subject Public Key Info X.509; or
+  ii. a hash of the Subject Public Key Info [X.509]; or
   iii. a hash of a PKCS#10 CSR.
 
 A Request Token may also be concatenated with a timestamp or other data. If a CA wanted to always use a hash of a PKCS#10 CSR as a Request Token and did not want to incorporate a timestamp and did want to allow certificate key re-use then the applicant might use the challenge password in the creation of a CSR with OpenSSL to ensure uniqueness even if the subject and key are identical between subsequent requests.
@@ -1493,7 +1493,7 @@ No stipulation.
 No stipulation.
 
 ### 4.8.7 Notification of certificate issuance by the CA to other entities
-
+2
 No stipulation.
 
 ## 4.9 Certificate revocation and suspension
