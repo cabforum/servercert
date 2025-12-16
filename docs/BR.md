@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.0
+subtitle: Version 2.2.1
 author:
   - CA/Browser Forum
 
-date: 15-December-2025
+date: 16-December-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -154,6 +154,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.8    | SC092      | Sunset Precertificate Signing CAs                                                      | 03-Oct-2025 | 04-Nov-2025                       |
 | 2.1.9    | SC088      | DNS TXT Record with Persistent Value DCV Method                                        | 09-Oct-2025 | 10-Nov-2025                       |
 | 2.2.0    | SC086      | Sunset the Inclusion of Address and Routing Parameter Area Names                       | 2025-11-13  | 2026-12-15                        |
+| 2.2.1    | SC091      | Sunset 3.2.2.5.3 Reverse Address Lookup Validation,                                    | 2025-11-13  | 2026-12-16                        |
+| 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2026-12-16                        |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -223,6 +225,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.     |
 | 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.   |
 | 2026-03-15     | 7.1.2.4                   | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4.    |
+| 2027-03-15     | 3.2.2.5.3                 | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates.    |
 | 2027-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 100 days.    |
 | 2027-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 100 days.   |
 | 2029-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 10 days. |
@@ -509,6 +512,8 @@ The script outputs:
 [https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml)
 
 [https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml)
+
+**Reverse Zone Domain Name**: the FQDN in the `.arpa` namespace that corresponds to an IP address. This FQDN is constructed by converting the IP address to a sequence of labels followed by the applicable IP Reverse Zone Suffix, as specified in RFC 1035 (for IPv4 addresses) and RFC 3596 (for IPv6 addresses).
 
 **Root CA**: The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
 
@@ -1116,6 +1121,10 @@ Confirming the Applicant’s control over the IP Address by obtaining a Domain N
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same FQDN as the Primary Network Perspective.
 
+Effective March 15, 2027:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
 ##### 3.2.2.5.4 Any Other Method
 
 Using any other method of confirmation, including variations of the methods defined in [Section 3.2.2.5](#3225-authentication-for-an-ip-address), provided that the CA maintains documented evidence that the method of confirmation establishes that the Applicant has control over the IP Address to at least the same level of assurance as the methods previously described in version 1.6.2 of these Requirements.
@@ -1143,6 +1152,10 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 Confirming the Applicant's control over the IP Address by performing the procedure documented for a "tls-alpn-01" challenge in RFC 8738.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
+
+##### 3.2.2.5.8 DNS TXT Record with Persistent Value in the Reverse Namespace
+
+Confirming the Applicant’s control over the IP Address by converting the IP address to a Reverse Zone Domain Name and then verifying the presence of a Persistent DCV TXT Record identifying the Applicant as defined in [Section 3.2.2.4.22](#322422-dns-txt-record-with-persistent-value). The record MUST be placed at the "`_ip-validation-persist`" label prepended to the Reverse Zone Domain Name of the IP address being validated (i.e., "`_ip-validation-persist.[Reverse Zone Domain Name]`").
 
 #### 3.2.2.6 Wildcard Domain Validation
 
