@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.0
+subtitle: Version 2.2.1
 author:
   - CA/Browser Forum
 
-date: 15-December-2025
+date: 16-December-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -154,6 +154,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.8    | SC092      | Sunset Precertificate Signing CAs                                                      | 03-Oct-2025 | 04-Nov-2025                       |
 | 2.1.9    | SC088      | DNS TXT Record with Persistent Value DCV Method                                        | 09-Oct-2025 | 10-Nov-2025                       |
 | 2.2.0    | SC086      | Sunset the Inclusion of Address and Routing Parameter Area Names                       | 2025-11-13  | 2026-12-15                        |
+| 2.2.1    | SC091      | Sunset 3.2.2.5.3 Reverse Address Lookup Validation,                                    | 2025-11-13  | 2026-12-16                        |
+| 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2026-12-16                        |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
