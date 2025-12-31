@@ -1187,45 +1187,10 @@ Databases maintained by the CA, its owner, or its affiliated companies do not qu
 #### 3.2.2.8 CAA Records
 
 Refer to [Section 4.2.2.1](#4221-caa-record-processing) for CAA record processing requirements.
-As part of the Certificate issuance process, the CA MUST retrieve and process CAA records in accordance with RFC 8659 for each `dNSName` in the `subjectAltName` extension that does not contain an Onion Domain Name. These practices MUST be described in Section 4.2 of the CA's Certificate Policy and/or Certification Practice Statement, including specifying the set of Issuer Domain Names that the CA recognizes in CAA "issue" or "issuewild" records as permitting it to issue.
-
-Some methods relied upon for validating the Applicant's ownership or control of the subject domain(s) (see [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control)) or IP address(es) (see [Section 3.2.2.5](#3225-authentication-for-an-ip-address)) to be listed in a certificate require CAA records to be retrieved and processed from additional remote Network Perspectives before Certificate issuance (see [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration)). To corroborate the Primary Network Perspective, a remote Network Perspective's CAA check response MUST be interpreted as permission to issue, regardless of whether the responses from both Perspectives are byte-for-byte identical. Additionally, a CA MAY consider the response from a remote Network Perspective as corroborating if one or both of the Perspectives experience an acceptable CAA record lookup failure, as defined in this section.
-
-CAs MAY check CAA records at any other time.
-
-When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 8659, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property tag with this flag set.
-
-If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
-
-RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determines that either (1) the certificate request is consistent with the applicable CAA RRset or (2) an exception specified in the relevant CP or CPS applies." For issuances conforming to these Baseline Requirements, CAs MUST NOT rely on any exceptions specified in their CP or CPS unless they are one of the following:
-
-* CAA checking is optional for certificates for which a Certificate Transparency Precertificate (see [Section 7.1.2.9](#7129-precertificate-profile)) was created and logged in at least two public logs, and for which CAA was checked at time of Precertificate issuance.
-* CAA checking is optional for certificates issued by a Technically Constrained Subordinate CA Certificate as set out in [Section 7.1.2.3](#7123-technically-constrained-non-tls-subordinate-ca-certificate-profile) or [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile), where the lack of CAA checking is an explicit contractual provision in the contract with the Applicant.
-
-CAs are permitted to treat a record lookup failure as permission to issue if:
-
-* the failure is outside the CA's infrastructure; and
-* the lookup has been retried at least once; and
-* the CA has confirmed that the domain is "Insecure" as defined in [RFC 4035 Section 4.3](https://datatracker.ietf.org/doc/html/rfc4035#section-4.3).
-
-CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
 ##### 3.2.2.8.1 DNSSEC Validation of CAA Records
 
-Effective March 15th, 2026: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective MUST:
-
-* perform DNSSEC validation using the algorithm defined in [RFC 4035 Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
-* support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and 
-* support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
-* properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
-
-Effective March 15th, 2026: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups.
-
-Effective March 15th, 2026: DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
-
-DNSSEC validation back to the IANA DNSSEC root trust anchor MAY be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration.
-
-DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
+Refer to [Section 4.2.2.1.4](#42214-dnssec-validation-of-caa-records) for DNSSEC validation of CAA record processing requirements.
 
 #### 3.2.2.9 Multi-Perspective Issuance Corroboration
 
@@ -1395,9 +1360,13 @@ Effective 2026-03-15, CAs SHALL NOT issue Certificates containing Domain Names t
 
 As part of the Certificate issuance process, the CA MUST retrieve and process CAA records in accordance with RFC 8659 for each `dNSName` in the `subjectAltName` extension that does not contain an Onion Domain Name. These practices MUST be described in Section 4.2 of the CA's Certificate Policy and/or Certification Practice Statement, including specifying the set of Issuer Domain Names that the CA recognizes in CAA "issue" or "issuewild" records as permitting it to issue.
 
+Some methods relied upon for validating the Applicant's ownership or control of the subject domain(s) (see [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control)) or IP address(es) (see [Section 3.2.2.5](#3225-authentication-for-an-ip-address)) to be listed in a certificate require CAA records to be retrieved and processed from additional remote Network Perspectives before Certificate issuance (see [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration)). To corroborate the Primary Network Perspective, a remote Network Perspective's CAA check response MUST be interpreted as permission to issue, regardless of whether the responses from both Perspectives are byte-for-byte identical. Additionally, a CA MAY consider the response from a remote Network Perspective as corroborating if one or both of the Perspectives experience an acceptable CAA record lookup failure, as defined in this section.
+
+CAs MAY check CAA records at any other time.
+
 When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 8659, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property tag with this flag set.
 
-If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater. CAs MAY check CAA records at any other time.
+If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 
 RFC 8659 requires that CAs "MUST NOT issue a certificate unless the CA determines that either (1) the certificate request is consistent with the applicable CAA RRset or (2) an exception specified in the relevant CP or CPS applies." For issuances conforming to these Baseline Requirements, CAs MUST NOT rely on any exceptions specified in their CP or CPS unless they are one of the following:
 
@@ -1412,13 +1381,11 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
 
-TODO: Move 3.2.2.8.1 DNSSEC ballot language here!
-
-###### 4.2.2.1.1 CAA Multi-Perspective Issuance Corroboration
+###### 4.2.2.1.2 CAA Multi-Perspective Issuance Corroboration
 
 Some methods relied upon for validating the Applicant's ownership or control of the subject domain(s) (see [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control)) or IP address(es) (see [Section 3.2.2.5](#3225-authentication-for-an-ip-address)) to be listed in a certificate require CAA records to be retrieved and processed from additional remote Network Perspectives before Certificate issuance (see [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration)). To corroborate the Primary Network Perspective, a remote Network Perspective's CAA check response MUST be interpreted as permission to issue, regardless of whether the responses from both Perspectives are byte-for-byte identical. Additionally, a CA MAY consider the response from a remote Network Perspective as corroborating if one or both of the Perspectives experience an acceptable CAA record lookup failure, as defined in this section.
 
-###### 4.2.2.1.2 CAA Parameters
+###### 4.2.2.1.3 CAA Parameters
 
 When processing CAA records, CAs SHOULD process the accounturi and validationmethods parameters as specified in RFC 8657. *Effective March 15, 2027*, when processing CAA records, CAs MUST process the accounturi and validationmethods parameters as specified in RFC 8657.
 
@@ -1426,9 +1393,22 @@ In addition, *Effective March 15, 2026*, if the CA processes the accounturi and 
 * If the CA accepts certificate requests via any protocol other than the ACME protocol, the CA MUST define the supported format(s) of the accounturi in Section 4.2 of their CP and/or CPS.
 * If the CA accepts certificate requests via any protocol other than the ACME protocol, the CA MUST interpret and process validationmethods labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'dns-01' and 'ca-tbr-7'), the CA SHOULD accept any of the labels as granting permission to issue.
 
-###### 4.2.2.1.3 DNSSEC Validation of CAA Records
+###### 4.2.2.1.4 DNSSEC Validation of CAA Records
 
-As an explicit exception to RFC 8657, CAs SHOULD perform DNSSEC validation to the ICANN DNSSEC root trust anchor when querying for and processing CAA records.
+Effective March 15th, 2026: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective MUST:
+
+* perform DNSSEC validation using the algorithm defined in [RFC 4035 Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
+* support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and 
+* support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
+* properly handle the security concerns enumerated in [RFC 6840 Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
+
+Effective March 15th, 2026: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups.
+
+Effective March 15th, 2026: DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
+
+DNSSEC validation back to the IANA DNSSEC root trust anchor MAY be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration.
+
+DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
 
 ### 4.2.3 Time to process certificate applications
 
