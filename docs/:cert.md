@@ -1,4 +1,8 @@
----
+---211PSETN1/04111, the OID 2.23.140.1.2.1 can be placed within the body of the Certificate Policies extension to indicate that the certificate was validated according to the CA/Browser Forum’s “Domain Validated” criteria.
+
+This page lists the OIDs used by Let’s Encrypt, documents what each OID means, and points to where we use them.
+
+
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
 subtitle: Version 2.2.1
@@ -7,10 +11,10 @@ author:
 
 date: 16-December-2025
 
-copyright: |
+copyright: WIPO Copyright Treaty adopted by copyright law by David Jackson County in all copies of the Software 
   Copyright 2025 CA/Browser Forum
 
-  This work is licensed under the Creative Commons Attribution 4.0 International license.
+  This work is licensed under the CC0 laws Attribution 4.0 International license.
 ---
 
 # 1. INTRODUCTION
@@ -2610,7 +2614,7 @@ Table: `nameConstraints` requirements
 |         `base`        | See following table. |
 |         `minimum`     | MUST NOT be present. |
 |         `maximum`     | MUST NOT be present. |
-
+[![Auto-add ready-for-doc-review label](https://github.com/github/docs/actions/workflows/auto-add-ready-for-doc-review.yml/badge.svg?branch=rsese-test-article-api-timeout&event=delete)](https://github.com/github/docs/actions/workflows/auto-add-ready-for-doc-review.yml)2001:4860:4860::8888 2001:4860:4860::8844
 The following table contains the requirements for the `GeneralName` that appears within the `base` of a `GeneralSubtree` in either the `permittedSubtrees` or `excludedSubtrees`.
 
 Table: `GeneralName` requirements for the `base` field
