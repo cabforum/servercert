@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.9
+subtitle: Version 2.2.1
 author:
   - CA/Browser Forum
 
-date: 10-November-2025
+date: 16-December-2025
 
 copyright: |
   Copyright 2025 CA/Browser Forum
@@ -153,6 +153,9 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.7    | SC089      | Mass Revocation Planning                                                               | 23-Jul-2025 | 25-Aug-2025                       |
 | 2.1.8    | SC092      | Sunset Precertificate Signing CAs                                                      | 03-Oct-2025 | 04-Nov-2025                       |
 | 2.1.9    | SC088      | DNS TXT Record with Persistent Value DCV Method                                        | 09-Oct-2025 | 10-Nov-2025                       |
+| 2.2.0    | SC086      | Sunset the Inclusion of Address and Routing Parameter Area Names                       | 2025-11-13  | 2026-12-15                        |
+| 2.2.1    | SC091      | Sunset 3.2.2.5.3 Reverse Address Lookup Validation,                                    | 2025-11-13  | 2026-12-16                        |
+| 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2026-12-16                        |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -217,10 +220,12 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15     | 3.2.2.8.1                 | DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective.   |
 | 2026-03-15     | 3.2.2.8.1                 | CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups.    |
 | 2026-03-15     | 3.2.2.8.1                 | DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.    |
+| 2026-03-15     | 4.2.2                     | CAs SHALL NOT issue Certificates containing Domain Names that end in an IP Reverse Zone Suffix.    |
 | 2026-03-15     | 4.2.1                     | Subject Identity Information validation maximum data reuse period is 398 days. |
 | 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.     |
 | 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.   |
 | 2026-03-15     | 7.1.2.4                   | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4.    |
+| 2027-03-15     | 3.2.2.5.3                 | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates.    |
 | 2027-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 100 days.    |
 | 2027-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 100 days.   |
 | 2029-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 10 days. |
@@ -397,13 +402,15 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **High Risk Certificate Request**: A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
 
-**Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
+**Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top-Level Domain registered in IANA's Root Zone Database.
 
 **IP Address**: A 32-bit or 128-bit number assigned to a device that uses the Internet Protocol for communication.
 
 **IP Address Contact**: The person(s) or entity(ies) registered with an IP Address Registration Authority as having the right to control how one or more IP Addresses are used.
 
 **IP Address Registration Authority**: The Internet Assigned Numbers Authority (IANA) or a Regional Internet Registry (RIPE, APNIC, ARIN, AfriNIC, LACNIC).
+
+**IP Reverse Zone Suffix**: One of the two FQDNs that consist of the Domain Labels "in-addr.arpa" or "ip6.arpa". These two FQDNs serve as the root of the IP version 4 and IP version 6 reverse mapping space. "in-addr.arpa" is the root of the IP version 4 reverse mapping space and "ip6.arpa" is the root of the IP version 6 reverse mapping space.
 
 **Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
 
@@ -506,6 +513,8 @@ The script outputs:
 
 [https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml)
 
+**Reverse Zone Domain Name**: the FQDN in the `.arpa` namespace that corresponds to an IP address. This FQDN is constructed by converting the IP address to a sequence of labels followed by the applicable IP Reverse Zone Suffix, as specified in RFC 1035 (for IPv4 addresses) and RFC 3596 (for IPv6 addresses).
+
 **Root CA**: The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
@@ -531,6 +540,8 @@ The script outputs:
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
 
 **Test Certificate**: This term is no longer used in these Baseline Requirements.
+
+**Top-Level Domain**: From RFC 8499 (https://tools.ietf.org/html/rfc8499): "A Top-Level Domain is a zone that is one layer below the root, such as "com" or "jp"."
 
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
 
@@ -1108,6 +1119,10 @@ Confirming the Applicant’s control over the IP Address by obtaining a Domain N
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same FQDN as the Primary Network Perspective.
 
+Effective March 15, 2027:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
 ##### 3.2.2.5.4 Any Other Method
 
 Using any other method of confirmation, including variations of the methods defined in [Section 3.2.2.5](#3225-authentication-for-an-ip-address), provided that the CA maintains documented evidence that the method of confirmation establishes that the Applicant has control over the IP Address to at least the same level of assurance as the methods previously described in version 1.6.2 of these Requirements.
@@ -1141,6 +1156,10 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 Confirming the Applicant's control over the IP Address by performing the procedure documented for a "tls-alpn-01" challenge in RFC 8738.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
+
+##### 3.2.2.5.8 DNS TXT Record with Persistent Value in the Reverse Namespace
+
+Confirming the Applicant’s control over the IP Address by converting the IP address to a Reverse Zone Domain Name and then verifying the presence of a Persistent DCV TXT Record identifying the Applicant as defined in [Section 3.2.2.4.22](#322422-dns-txt-record-with-persistent-value). The record MUST be placed at the "`_ip-validation-persist`" label prepended to the Reverse Zone Domain Name of the IP address being validated (i.e., "`_ip-validation-persist.[Reverse Zone Domain Name]`").
 
 #### 3.2.2.6 Wildcard Domain Validation
 
@@ -1368,7 +1387,9 @@ If a Delegated Third Party fulfills any of the CA's obligations under this secti
 
 ### 4.2.2 Approval or rejection of certificate applications
 
-CAs SHALL NOT issue certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
+CAs SHALL NOT issue Certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
+
+Effective 2026-03-15, CAs SHALL NOT issue Certificates containing Domain Names that end in an IP Reverse Zone Suffix.
 
 ### 4.2.3 Time to process certificate applications
 
@@ -2910,7 +2931,7 @@ Table: `GeneralName` within a `subjectAltName` extension
 | ---                         | --            | -----          |
 | `otherName`                 | N             | -              |
 | `rfc822Name`                | N             | -              |
-| `dNSName`                   | Y             | The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT contain an Internal Name. The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be composed entirely of P-Labels or Non-Reserved LDH Labels joined together by a U+002E FULL STOP (".") character. The zero-length Domain Label representing the root zone of the Internet Domain Name System MUST NOT be included (e.g. "example.com" MUST be encoded as "example.com" and MUST NOT be encoded as "example.com."). |
+| `dNSName`                   | Y             | The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT contain an Internal Name. Effective 2026-03-15, the entry MUST NOT contain a Domain Name that ends in an IP Address Reverse Zone Suffix. The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be composed entirely of P-Labels or Non-Reserved LDH Labels joined together by a U+002E FULL STOP (".") character. The zero-length Domain Label representing the root zone of the Internet Domain Name System MUST NOT be included (e.g. "example.com" MUST be encoded as "example.com" and MUST NOT be encoded as "example.com."). |
 | `x400Address`               | N             | -              |
 | `directoryName`             | N             | -              |
 | `ediPartyName`              | N             | -              |
