@@ -1,14 +1,14 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.1
+subtitle: Version 2.2.2
 author:
   - CA/Browser Forum
 
-date: 16-December-2025
+date: 12-January-2026
 
 copyright: |
-  Copyright 2025 CA/Browser Forum
+  Copyright 2026 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -153,9 +153,10 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.1.7    | SC089      | Mass Revocation Planning                                                               | 23-Jul-2025 | 25-Aug-2025                       |
 | 2.1.8    | SC092      | Sunset Precertificate Signing CAs                                                      | 03-Oct-2025 | 04-Nov-2025                       |
 | 2.1.9    | SC088      | DNS TXT Record with Persistent Value DCV Method                                        | 09-Oct-2025 | 10-Nov-2025                       |
-| 2.2.0    | SC086      | Sunset the Inclusion of Address and Routing Parameter Area Names                       | 2025-11-13  | 2026-12-15                        |
-| 2.2.1    | SC091      | Sunset 3.2.2.5.3 Reverse Address Lookup Validation,                                    | 2025-11-13  | 2026-12-16                        |
-| 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2026-12-16                        |
+| 2.2.0    | SC086      | Sunset the Inclusion of Address and Routing Parameter Area Names                       | 2025-11-13  | 2025-12-15                        |
+| 2.2.1    | SC091      | Sunset 3.2.2.5.3 Reverse Address Lookup Validation,                                    | 2025-11-13  | 2025-12-16                        |
+| 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2025-12-16                        |
+| 2.2.2    | SC090      | Gradually sunset remaining email-based, phone-based, and 'crossover' validation methods | 2025-11-20 | 2026-01-12                        |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -217,6 +218,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2025-12-01     | 5.7.1.2                   | CAs SHALL assert in section 5.7.1 of their CPS or combined CP/CPS their mass revocation plan, testing, and continuous improvements.    |
 | 2026-03-15     | 3.2.2.4                   | DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network  |
 | 2026-03-15     | 3.2.2.4                   | CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control. |
+| 2026-03-15     | 3.2.2.4                   | CAs MUST NOT rely on Method 3.2.2.4.8 to issue Subscriber Certificates. |
 | 2026-03-15     | 3.2.2.8.1                 | DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective.   |
 | 2026-03-15     | 3.2.2.8.1                 | CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups.    |
 | 2026-03-15     | 3.2.2.8.1                 | DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.    |
@@ -225,9 +227,11 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.     |
 | 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.   |
 | 2026-03-15     | 7.1.2.4                   | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4.    |
+| 2027-03-15     | 3.2.2.4 and 3.2.2.5       | CAs MUST NOT rely on Methods 3.2.2.4.16, 3.2.2.4.17, 3.2.2.5.2, and 3.2.2.5.5 to issue Subscriber Certificates.    |
 | 2027-03-15     | 3.2.2.5.3                 | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates.    |
 | 2027-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 100 days.    |
 | 2027-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 100 days.   |
+| 2028-03-15     | 3.2.2.4 and 3.2.2.5       | CAs MUST NOT rely on Methods 3.2.2.4.4, 3.2.2.4.13, and 3.2.2.4.14 to issue Subscriber Certificates.    |
 | 2029-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 10 days. |
 | 2029-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 47 days.    |
 
