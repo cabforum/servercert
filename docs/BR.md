@@ -1034,7 +1034,7 @@ The CA SHALL confirm that prior to issuance, the CA has validated each IP Addres
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of IP Address validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
-After 2019-07-31, CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address.
+CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address.
 
 ##### 3.2.2.5.1 Agreed-Upon Change to Website
 
@@ -1069,9 +1069,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 ##### 3.2.2.5.4 Any Other Method
 
-Using any other method of confirmation, including variations of the methods defined in [Section 3.2.2.5](#3225-authentication-for-an-ip-address), provided that the CA maintains documented evidence that the method of confirmation establishes that the Applicant has control over the IP Address to at least the same level of assurance as the methods previously described in version 1.6.2 of these Requirements.
-
-CAs SHALL NOT perform validations using this method after 2019-07-31. Completed validations using this method SHALL NOT be re-used for certificate issuance after 2019-07-31. Any certificate issued prior to 2019-08-01 containing an IP Address that was validated using any method that was permitted under the prior version of this [Section 3.2.2.5](#3225-authentication-for-an-ip-address) MAY continue to be used without revalidation until such certificate naturally expires.
+This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
 ##### 3.2.2.5.5 Phone Contact with IP Address Contact
 
@@ -1227,8 +1225,6 @@ Beyond the above considerations, computing systems performing Multi-Perspective 
 If any of the above considerations are performed by a Delegated Third Party, the CA MAY obtain reasonable evidence from the Delegated Third Party to ascertain assurance that one or more of the above considerations are followed. As an exception to [Section 1.3.2](#132-registration-authorities), Delegated Third Parties are not required to be within the audit scope described in [Section 8](#8-compliance-audit-and-other-assessments) of these Requirements to satisfy the above considerations.
 
 Phased Implementation Timeline:
-
-- Effective 2024-09-15, the CA SHOULD implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives.
 
 - Effective 2025-03-15, the CA MUST implement Multi-Perspective Issuance Corroboration using at least two (2) remote Network Perspectives. The CA MAY proceed with certificate issuance if the number of remote Network Perspectives that do not corroborate the determinations made by the Primary Network Perspective ("non-corroborations") is greater than allowed in the Quorum Requirements table.
 
@@ -1999,7 +1995,7 @@ The CA SHALL reject a certificate request if one or more of the following condit
 2. There is clear evidence that the specific method used to generate the Private Key was flawed;
 3. The CA is aware of a demonstrated or proven method that exposes the Applicant's Private Key to compromise;
 4. The CA has previously been notified that the Applicant's Private Key has suffered a Key Compromise using the CA's procedure for revocation request as described in [Section 4.9.3](#493-procedure-for-revocation-request) and [Section 4.9.12](#4912-special-requirements-re-key-compromise);
-5. The Public Key corresponds to an industry-demonstrated weak Private Key. For requests submitted on or after 2024-11-15, at least the following precautions SHALL be implemented:
+5. The Public Key corresponds to an industry-demonstrated weak Private Key. At least the following precautions SHALL be implemented:
    1. In the case of Debian weak keys vulnerability (<https://wiki.debian.org/SSLkeys>), the CA SHALL reject all keys found at <https://github.com/cabforum/Debian-weak-keys/> for each key type (e.g. RSA, ECDSA) and size listed in the repository. For all other keys meeting the requirements of [Section 6.1.5](#615-key-sizes), with the exception of RSA key sizes greater than 8192 bits, the CA SHALL reject Debian weak keys.
    2. In the case of ROCA vulnerability, the CA SHALL reject keys identified by the tools available at <https://github.com/crocs-muni/roca> or equivalent.
    3. In the case of Close Primes vulnerability (<https://fermatattack.secvuln.info/>), the CA SHALL reject weak keys which can be factored within 100 rounds using Fermat's factorization method.
