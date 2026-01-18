@@ -160,8 +160,6 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 | -- | - | -------- |
-| 2024-03-15 | [4.9.7](#497-crl-issuance-frequency) | CAs MUST generate and publish CRLs. |
-| 2024-09-15 | [4.3.1.2](#4312-linting-of-to-be-signed-certificate-content) | The CA SHOULD implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements. |
 | 2025-01-15 | [4.9.9](#499-on-line-revocationstatus-checking-availability) | Subscriber Certificate OCSP responses MUST be available 15 minutes after issuance. |
 | 2025-01-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | CAs MUST NOT rely on HTTPS websites to identify Domain Contact information. CAs MUST rely on IANA resources for identifying Domain Contact information. |
 | 2025-03-15 | [4.3.1.2](#4312-linting-of-to-be-signed-certificate-content) | The CA SHALL implement a Linting process to test the technical conformity of the to-be-issued Certificate with these Requirements. |
