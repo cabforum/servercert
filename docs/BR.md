@@ -989,7 +989,7 @@ Except for Onion Domain Names, CAs performing validations using this method MUST
 
 ##### 3.2.2.4.21 DNS Labeled with Account ID - ACME
 
-Confirming the Applicant's control over the FQDN by performing the procedure documented for a |"dns-account-01" challenge in draft 00 of "Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge," available at [https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/](https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/).
+Confirming the Applicant's control over the FQDN by performing the procedure documented for a "dns-account-01" challenge in draft 00 of "Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge," available at [https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/](https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/).
 
 The token (as defined in draft 00 of "Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge," Section 3.1) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
@@ -1491,7 +1491,7 @@ No stipulation.
 No stipulation.
 
 ### 4.8.7 Notification of certificate issuance by the CA to other entities
-2
+
 No stipulation.
 
 ## 4.9 Certificate revocation and suspension
