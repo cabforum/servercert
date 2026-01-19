@@ -518,7 +518,7 @@ The script outputs:
 [https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml)
 
 **Revoked**: Effective 2026-05-15, the following conditions must be met for a Certificate to be considered revoked:
-- if the certificate contains a CRL Distribution Point URI: a CRL containing the certificate serial number is available for consumption by Relying Parties at that URI; and
+- if the certificate contains a CRL Distribution Point URI: a CRL containing the certificate serial number is available for consumption by Relying Parties at that URI.
 - if the certificate contains an Authority Information Access OCSP URI: an OCSP request to that URI for the certificate serial number results in a response with a `certStatus` value of `revoked`.
 
 **Reverse Zone Domain Name**: the FQDN in the `.arpa` namespace that corresponds to an IP address. This FQDN is constructed by converting the IP address to a sequence of labels followed by the applicable IP Reverse Zone Suffix, as specified in RFC 1035 (for IPv4 addresses) and RFC 3596 (for IPv6 addresses).
