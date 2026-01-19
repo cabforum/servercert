@@ -1573,7 +1573,7 @@ No stipulation.
 
 Prior to 2026-05-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.9 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
 
-The period between receipt of a revocation request from the Subscriber and published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). 
+The period between receipt of a revocation request from the Subscriber and published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). If the request is not authenticated upon receipt, the CA SHALL within 24 hours of receipt work with the requester to authenticate the request, and the period listed above will be measured from the time of authentication.
 
 The period between the determination that a Certificate Problem Report is actionable and published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). 
 
