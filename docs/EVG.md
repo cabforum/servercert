@@ -84,7 +84,7 @@ These Guidelines do not address the verification of information, or the issuance
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
-## Relevant Dates
+### 1.2.2 Relevant Dates
 
 | **Compliance** | **Section(s)** | **Summary Description (See Full Text for Details)** |
 |--|--|----------|
