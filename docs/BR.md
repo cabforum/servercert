@@ -757,7 +757,7 @@ The CA MUST follow this process when choosing the Authorization Domain Name "ADN
 1. Initialize `A` to the applied-for FQDN or Wildcard Domain Name.
 2. Choose a validation method. If `A` is a Wildcard Domain Name, the CA MUST choose a validation method with a check in the Wildcard column below. If `A` is an Onion Domain Name, the CA MUST choose a validation method with a check in the Onion column below.
 3. If `A` is an FQDN:
-    1. Optionally, if the validation method has a check in the CNAME column below, replace `A` with the result of a DNS CNAME lookup of `A`.
+    1. Optionally, if the validation method has a check in the CNAME column below, replace `A` with the result of a DNS CNAME lookup of `A`. This step may be repeated.
     2. If the validation method has a check in the Prune column below, prune zero or more Domain Labels of `A` from left to right until `A` is equal to the Base Domain Name of `A`, or the CA chooses to stop pruning, whichever comes first.
 4. If `A` is a Wildcard Domain Name:
     1. Remove "\*." from the left-most portion of `A`.
