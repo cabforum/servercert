@@ -1038,7 +1038,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 ##### 3.2.2.4.22 DNS TXT Record with Persistent Value
 
-Confirming the Applicant's control over the ADN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`"). This prohibition overrides the Authorization Domain Name definition.
+Confirming the Applicant's control over the ADN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`").
 
 1. The RDATA value MUST conform to the `issue-value` syntax as defined in RFC 8659, Section 4.2; and
 2. The `issuer-domain-name` value MUST be an Issuer Domain Name disclosed by the CA in Section 4.2 of the CA's Certificate Policy and/or Certification Practices Statement; and
