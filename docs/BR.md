@@ -157,7 +157,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.1    | SC091      | Sunset 3.2.2.5.3 Reverse Address Lookup Validation,                                    | 2025-11-13  | 2025-12-16                        |
 | 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2025-12-16                        |
 | 2.2.2    | SC090      | Gradually sunset remaining email-based, phone-based, and 'crossover' validation methods | 2025-11-20 | 2026-01-12                        |
-| 2.2.X    | SC0XX      | Gradually sunset remaining email-based, phone-based, and 'crossover' validation methods | TBD | TBD                        |
+| 2.2.X    | SC0XX      | Certificate URI availability                                                            | TBD        | TBD                               |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
