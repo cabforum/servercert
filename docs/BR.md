@@ -704,7 +704,7 @@ The CA SHALL develop, implement, enforce, and annually update a Certificate Poli
 
 ## 2.4 Access controls on repositories
 
-The CA shall make its Repository publicly available in a read-only manner.
+The CA SHALL make its Repository publicly available in a read-only manner. The CA MAY limit access to its Repository in accordance with its Risk Assessment.
 
 # 3. IDENTIFICATION AND AUTHENTICATION
 
