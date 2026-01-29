@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.2
+subtitle: Version 2.2.X
 author:
   - CA/Browser Forum
 
-date: 12-January-2026
+date: XX-XX-2026
 
 copyright: |
   Copyright 2026 CA/Browser Forum
@@ -157,6 +157,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.1    | SC091      | Sunset 3.2.2.5.3 Reverse Address Lookup Validation,                                    | 2025-11-13  | 2025-12-16                        |
 | 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2025-12-16                        |
 | 2.2.2    | SC090      | Gradually sunset remaining email-based, phone-based, and 'crossover' validation methods | 2025-11-20 | 2026-01-12                        |
+| 2.2.X    | SC0XX      | Certificate URI availability                                                            | TBD        | TBD                               |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -679,7 +680,7 @@ The CA SHALL develop, implement, enforce, and at least once every 366 days updat
 
 ## 2.1 Repositories
 
-The CA SHALL make revocation information for Subordinate Certificates and Subscriber Certificates available in accordance with this Policy.
+The CA SHALL make resources specified in `uniformResourceIdentifier`s included in Certificates, as well as revocation information for Subordinate Certificates and Subscriber Certificates, available in accordance with this Policy.
 
 ## 2.2 Publication of information
 
@@ -703,7 +704,7 @@ The CA SHALL develop, implement, enforce, and annually update a Certificate Poli
 
 ## 2.4 Access controls on repositories
 
-The CA shall make its Repository publicly available in a read-only manner.
+The CA SHALL make its Repository publicly available in a read-only manner. The CA MAY limit access to its Repository in accordance with its Risk Assessment.
 
 # 3. IDENTIFICATION AND AUTHENTICATION
 
