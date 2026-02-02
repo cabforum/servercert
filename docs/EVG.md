@@ -1,10 +1,10 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.X
+subtitle: Version 2.0.1
 author:
   - CA/Browser Forum
-date: X YY, 2024
+date: 6 May, 2024
 copyright: |
   Copyright 2024 CA/Browser Forum
 
@@ -221,7 +221,6 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **International Organization**: An organization founded by a constituent document, e.g., a charter, treaty, convention or similar document, signed by, or on behalf of, a minimum of two Sovereign State governments.
 
-
 **Jurisdiction of Incorporation**: In the context of a Private Organization, the country and (where applicable) the state or province or locality where the organization's legal existence was established by a filing with (or an act of) an appropriate government agency or entity (e.g., where it was incorporated).  In the context of a Government Entity, the country and (where applicable) the state or province where the Entity's legal existence was created by law.
 
 **Jurisdiction of Registration**: In the case of a Business Entity, the state, province, or locality where the organization has registered its business presence by means of filings by a Principal Individual involved in the business.
@@ -410,7 +409,7 @@ As a general rule, the CA is responsible for taking all verification steps reaso
 
 ##### 3.2.2.1.3 Disclosure of Verification Sources
 
-Prior to the use of an Incorporating Agency or Registration Agency to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency or Registration Agency. This disclosure SHALL be through an appropriate and readily accessible online means.
+Effective as of 1 October 2020, prior to the use of an Incorporating Agency or Registration Agency to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency or Registration Agency. This disclosure SHALL be through an appropriate and readily accessible online means.
 
 This Agency Information SHALL include at least the following:
 
