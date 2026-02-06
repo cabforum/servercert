@@ -589,6 +589,8 @@ NIST SP 800-89, Recommendation for Obtaining Assurances for Digital Signature Ap
 
 [RFC 7231](https://datatracker.ietf.org/doc/html/rfc7231), Request For Comments: 7231, Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content. R. Fielding, et al. June 2014.
 
+[RFC7482](https://datatracker.ietf.org/doc/html/rfc7482), Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format. A. Newton, et al. March 2015.
+
 [RFC 7538](https://datatracker.ietf.org/doc/html/rfc7538), Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect). J. Reschke. April 2015.
 
 [RFC 8499](https://datatracker.ietf.org/doc/html/rfc8499), Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
