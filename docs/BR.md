@@ -1386,10 +1386,9 @@ Some methods relied upon for validating the Applicant's ownership or control of 
 ###### 4.2.2.1.3 CAA Parameters
 
 When processing CAA records, CAs SHOULD process the `accounturi` and `validationmethods` parameters as specified in RFC 8657.
-*Effective September 15, 2026*, when processing CAA records, if a CA does not process the `accounturi` and `validationmethods` parameters as specified in RFC 8657 and it encounters a CAA record whose `issue` or `issuewild` property tag grants issuance permission to that CA and contains either of these parameters during a CAA check at any Network Perspective, the CA MUST NOT treat the CAA check as permission to issue.
-*Effective September 15, 2027*, when processing CAA records, CAs MUST process the `accounturi` and `validationmethod`s parameters as specified in RFC 8657.
+*Effective March 15, 2027*, when processing CAA records, CAs MUST process the `accounturi` and `validationmethod`s parameters as specified in RFC 8657.
 
-In addition, *Effective September 15, 2026*, if the CA processes the `accounturi` and `validationmethods` parameters:
+In addition, *Effective March 15, 2027*:
 * If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS.
 * If the CA accepts certificate requests via any protocol other than the ACME protocol, the CA MUST interpret and process `validationmethods` labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'dns-01' and 'ca-tbr-7'), the CA SHOULD accept any of the labels as granting permission to issue.
 
