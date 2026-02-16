@@ -5,7 +5,7 @@ subtitle: Version 2.2.4
 author:
   - CA/Browser Forum
 
-date: 16-February-2026
+date: 17-February-2026
 
 copyright: |
   Copyright 2026 CA/Browser Forum
@@ -158,7 +158,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2025-12-16                        |
 | 2.2.2    | SC090      | Gradually sunset remaining email-based, phone-based, and 'crossover' validation methods | 2025-11-20 | 2026-01-12                        |
 | 2.2.3    | SC094      | DNSSEC exception in email DCV methods                                                  | 2026-01-15  | 2026-02-16                        |
-| 2.2.4    | SC096      | Carve-out for DNSSEC verification logging requirements                                 | 2026-01-14  | 2026-02-16                        |
+| 2.2.4    | SC096      | Carve-out for DNSSEC verification logging requirements                                 | 2026-01-14  | 2026-02-17                        |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
