@@ -335,11 +335,11 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Audit Report**: A report from a Qualified Auditor stating the Qualified Auditor's opinion on whether an entity's processes and controls comply with the mandatory provisions of these Requirements.
 
-**Authorization Domain Name**: The FQDN used to obtain authorization for a given FQDN to be included in a Certificate. The CA may use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. If a Wildcard Domain Name is to be included in a Certificate, then the CA MUST remove "`*.`" from the left-most portion of the Wildcard Domain Name to yield the corresponding FQDN. The CA may prune zero or more Domain Labels of the FQDN from left to right until encountering a Base Domain Name and may use any one of the values that were yielded by pruning (including the Base Domain Name itself) for the purpose of domain validation.
+**Authorization Domain Name**: The FQDN used to perform validation of domain authorization or control for a given FQDN or Wildcard Domain Name.
 
 **Authorized Ports**: One of the following ports: 80 (http), 443 (https), 25 (smtp), 22 (ssh).
 
-**Base Domain Name**: The portion of an applied-for FQDN that is the first Domain Name node left of a registry-controlled or public suffix plus the registry-controlled or public suffix (e.g. "example.co.uk" or "example.com"). For FQDNs where the right-most Domain Name node is a gTLD having ICANN Specification 13 in its registry agreement, the gTLD itself may be used as the Base Domain Name.
+**Base Domain Name**: The portion of a given FQDN that is the first Domain Name node left of a registry-controlled or public suffix plus the registry-controlled or public suffix (e.g. "example.co.uk" or "example.com"). For FQDNs where the right-most Domain Name node is a gTLD having ICANN Specification 13 in its registry agreement, the gTLD itself may be used as the Base Domain Name.
 
 **CAA**: From RFC 8659 (<https://tools.ietf.org/html/rfc8659>): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify one or more Certification Authorities (CAs) authorized to issue certificates for that domain name. CAA Resource Records allow a public CA to implement additional controls to reduce the risk of unintended certificate mis-issue."
 
@@ -380,8 +380,6 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 **DNS TXT Record Email Contact**: The email address defined in [Appendix A.2.1](#a21-dns-txt-record-email-contact).
 
 **DNS TXT Record Phone Contact**: The phone number defined in [Appendix A.2.2](#a22-dns-txt-record-phone-contact).
-
-**Domain Contact**: The Domain Name Registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) as listed in the WHOIS record of the Base Domain Name or in a DNS SOA record, or as obtained through direct contact with the Domain Name Registrar.
 
 **Domain Label**: From RFC 8499 (<https://tools.ietf.org/html/rfc8499>): "An ordered list of zero or more octets that makes up a portion of a domain name. Using graph theory, a label identifies one node in a portion of the graph of all possible domain names."
 
@@ -770,14 +768,40 @@ The CA SHOULD implement a process to screen proxy servers in order to prevent re
 
 This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
 
-The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qualified Domain Name (FQDN) listed in the Certificate as follows:
+The CA MUST follow this process when choosing the Authorization Domain Name "ADN" for validation of each applied-for FQDN or Wildcard Domain Name:
 
-1. When the FQDN is not an Onion Domain Name, the CA SHALL validate the FQDN using at least one of the methods listed below; and
-2. When the FQDN is an Onion Domain Name, the CA SHALL validate the FQDN in accordance with Appendix B.
+1. Initialize `A` to the applied-for FQDN or Wildcard Domain Name.
+2. Choose a validation method. If `A` is a Wildcard Domain Name, the CA MUST choose a validation method with a check in the Wildcard column below. If `A` is an Onion Domain Name, the CA MUST choose a validation method with a check in the Onion column below.
+3. If `A` is an FQDN:
+    1. Optionally, if the validation method has a check in the CNAME column below, replace `A` with the result of a DNS CNAME lookup of `A`. This step may be repeated.
+    2. If the validation method has a check in the Prune column below, prune zero or more Domain Labels of `A` from left to right until `A` is equal to the Base Domain Name of `A`, or the CA chooses to stop pruning, whichever comes first.
+4. If `A` is a Wildcard Domain Name:
+    1. Remove "\*." from the left-most portion of `A`.
+    2. If the validation method has a check in the Prune column below, prune zero or more Domain Labels of `A` from left to right until `A` is equal to the Base Domain Name of `A`, or the CA chooses to stop pruning, whichever comes first.
+5. Use `A` as the ADN.
+
+| Method                                         | Wildcard | Prune | CNAME | Onion |
+| --------                                                    | - | - | - | - |
+| 3.2.2.4.4 Constructed Email to Domain Contact               | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.7 DNS Change                                        | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.8 IP Address                                        | - | - | - | - |
+| 3.2.2.4.12 Validating Applicant as a Domain Contact         | ✔️ | ✔️ | - | - |
+| 3.2.2.4.13 Email to DNS CAA Contact                         | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.14 Email to DNS TXT Contact                         | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact  | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact         | ✔️ | ✔️ | ✔️ | - |
+| 3.2.2.4.18 Agreed-Upon Change to Website v2                 | - | - | - | ✔️ |
+| 3.2.2.4.19 Agreed-Upon Change to Website - ACME             | - | - | - | ✔️ |
+| 3.2.2.4.20 TLS Using ALPN                                   | - | - | - | ✔️ |
+| 3.2.2.4.21 DNS Labeled with Account ID - ACME               | ✔️ | ✔️ | - | - |
+| 3.2.2.4.22 DNS TXT Record with Persistent Value             | ✔️ | ✔️ | - | - |
+| Appendix B.2.b                                              | ✔️ | ✔️ | - | ✔️ |
+
+When the ADN is an Onion Domain Name, the CA SHALL validate it in accordance with Appendix B.
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
-Effective March 15th, 2026: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective MUST:
+Effective March 15th, 2026: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective, including CNAME lookups performed while choosing the ADN. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective MUST:
 
 * perform DNSSEC validation using the algorithm defined in [RFC 4035 Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
 * support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and 
@@ -791,7 +815,8 @@ For e-mail Domain Validation methods described in sections 3.2.2.4.4, 3.2.2.4.13
 For all other Domain Validation methods, DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective and CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control.
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
-CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
+
+CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate each ADN. CAs SHALL maintain a record of which ADN was used for validation of each FQDN or Wildcard Domain Name.
 
 **Note**: FQDNs may be listed in Subscriber Certificates using `dNSName`s in the `subjectAltName` extension or in Subordinate CA Certificates via `dNSName`s in `permittedSubtrees` within the Name Constraints extension.
 
@@ -809,21 +834,17 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.4 Constructed Email to Domain Contact
 
-Confirm the Applicant's control over the FQDN by
+Confirm the Applicant's control over the ADN by
 
-1. Sending an email to one or more addresses created by using 'admin', 'administrator', 'webmaster', 'hostmaster', or 'postmaster' as the local part, followed by the at-sign ("@"), followed by an Authorization Domain Name; and
+1. Sending an email to one or more addresses created by using 'admin', 'administrator', 'webmaster', 'hostmaster', or 'postmaster' as the local part, followed by the at-sign ("@"), followed by the Authorization Domain Name; and
 2. including a Random Value in the email; and
 3. receiving a confirming response utilizing the Random Value.
-
-Each email MAY confirm control of multiple FQDNs, provided the Authorization Domain Name used in the email is an Authorization Domain Name for each FQDN being confirmed
 
 The Random Value SHALL be unique in each email.
 
 The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient SHALL remain unchanged.
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
-
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
 
@@ -841,9 +862,9 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.7 DNS Change
 
-Confirming the Applicant's control over the FQDN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record for either 
-   1. an Authorization Domain Name; or 
-   2. an Authorization Domain Name that is prefixed with a Domain Label that begins with an underscore character.
+Confirming the Applicant's control over the ADN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record returned in a query for either 
+   1. the Authorization Domain Name; or 
+   2. the Authorization Domain Name prefixed with a Domain Label that begins with an underscore character.
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after
 
@@ -854,15 +875,11 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 If the CA or an Affiliate of the CA operates a DNS zone to which Applicants can delegate (via CNAME) their underscore-prefixed Domain Label, the CA MUST ensure that each Applicant delegates to a unique FQDN within that zone. A CA or Affiliate of a CA SHOULD NOT operate such a service, and SHOULD direct any Applicants using such a service to use the method described in [Section 3.2.2.4.22](#322422-dns-txt-record-with-persistent-value) instead.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
 ##### 3.2.2.4.8 IP Address
 
-Confirming the Applicant's control over the FQDN by confirming that the Applicant controls an IP address returned from a DNS lookup for A or AAAA records for the FQDN in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
+Confirming the Applicant's control over the ADN by confirming that the Applicant controls an IP address returned from a DNS lookup for A or AAAA records for the ADN in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same IP address as the Primary Network Perspective.
-
-**Note**: Once the FQDN has been validated using this method, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs separate validations for each of those other FQDNs using authorized methods. This method is NOT suitable for validating Wildcard Domain Names.
 
 Effective March 15, 2026:
 - The CA MUST NOT rely on this method.
@@ -882,9 +899,9 @@ This method has been retired and MUST NOT be used.
 
 ##### 3.2.2.4.12 Validating Applicant as a Domain Contact
 
-Confirming the Applicant's control over the FQDN by validating the Applicant is the Domain Contact. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the Base Domain Name.
+Confirming the Applicant's control over the ADN by validating the Applicant is the Domain Contact for the ADN. This method may only be used if the ADN's Base Domain Name is equal to the ADN. This method may only be used if the CA is also the Domain Name Registrar, or an Affiliate of the Registrar, of the ADN.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+The Domain Contact for an ADN is: The registrant, technical contact, or administrative contact (or the equivalent under a ccTLD) as listed in the WHOIS record of the ADN or as obtained through direct contact with the Domain Name Registrar, or the holder of the email address in an SOA record for the ADN.
 
 When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
 
@@ -895,15 +912,13 @@ When obtaining Domain Contact information for a requested Domain Name the CA:
 
 ##### 3.2.2.4.13 Email to DNS CAA Contact
 
-Confirming the Applicant's control over the FQDN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS CAA Email Contact. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659, Section 3.
+Confirming the Applicant's control over the ADN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS CAA Email Contact. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659, Section 3.
 
-Each email MAY confirm control of multiple FQDNs, provided that each email address is a DNS CAA Email Contact for each Authorization Domain Name being validated. The same email MAY be sent to multiple recipients as long as all recipients are DNS CAA Email Contacts for each Authorization Domain Name being validated.
+Each email MAY confirm control of multiple ADNs, provided that each email address is a DNS CAA Email Contact for each ADN being validated. The same email MAY be sent to multiple recipients, provided that each email address is a DNS CAA Email Contact for each ADN being validated.
 
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
-
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
 
@@ -913,21 +928,13 @@ Effective March 15, 2028:
 
 ##### 3.2.2.4.14 Email to DNS TXT Contact
 
-Confirming the Applicant's control over the FQDN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS TXT Record Email Contact for the Authorization Domain Name selected to validate the FQDN.
+Confirming the Applicant's control over the ADN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS TXT Record Email Contact for the Authorization Domain Name.
 
-Each email MAY confirm control of multiple FQDNs, provided that each email address is DNS TXT Record Email Contact for each Authorization Domain Name being validated. The same email MAY be sent to multiple recipients as long as all recipients are DNS TXT Record Email Contacts for each Authorization Domain Name being validated.
+The same email MAY be sent to multiple recipients as long as all recipients are DNS TXT Record Email Contacts for the Authorization Domain Name being validated.
 
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
-
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
-Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
-
-Effective March 15, 2028:
-- The CA MUST NOT rely on this method.
-- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
 ##### 3.2.2.4.15 Phone Contact with Domain Contact
 
@@ -935,7 +942,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 
-Confirm the Applicant's control over the FQDN by calling the DNS TXT Record Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS TXT Record Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
+Confirm the Applicant's control over the ADN by calling the DNS TXT Record Phone Contact’s phone number and obtain a confirming response. Each phone call MAY confirm control of multiple ADNs provided that the same DNS TXT Record Phone Contact phone number is listed for each ADN being verified and the recipient of the phone call provides a confirming response for each ADN.
 
 The CA MUST NOT knowingly be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation.
 
@@ -945,8 +952,6 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
 Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
 
 Effective March 15, 2027:
@@ -955,7 +960,7 @@ Effective March 15, 2027:
 
 ##### 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
 
-Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659 Section 3.
+Confirm the Applicant's control over the ADN by calling the DNS CAA Phone Contact’s phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and the recipient of the phone call provides a confirming response for each ADN. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in RFC 8659 Section 3.
 
 The CA MUST NOT be transferred or request to be transferred as this phone number has been specifically listed for the purposes of Domain Validation.
 
@@ -965,8 +970,6 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
 Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
 
 Effective March 15, 2027:
@@ -975,7 +978,7 @@ Effective March 15, 2027:
 
 ##### 3.2.2.4.18 Agreed-Upon Change to Website v2
 
-Confirming the Applicant's control over the FQDN by verifying that the Request Token or Random Value is contained in the contents of a file.
+Confirming the Applicant's control over the ADN by verifying that the Request Token or Random Value is contained in the contents of a file.
 
 1. The entire Request Token or Random Value MUST NOT appear in the request used to retrieve the file, and
 2. the CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
@@ -1002,12 +1005,9 @@ If a Random Value is used, then:
 
 Except for Onion Domain Names, CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. Random Value or Request Token) as the Primary Network Perspective.
 
-**Note**:
-  * The CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs separate validations for each of those other FQDNs using authorized methods. This method is NOT suitable for validating Wildcard Domain Names.
-
 ##### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
 
-Confirming the Applicant's control over a FQDN by validating domain control of the FQDN using the ACME HTTP Challenge method defined in Section 8.3 of RFC 8555. The following are additive requirements to RFC 8555.
+Confirming the Applicant's control over the ADN by validating domain control of the ADN using the ACME HTTP Challenge method defined in Section 8.3 of RFC 8555. The following are additive requirements to RFC 8555.
 
 The CA MUST receive a successful HTTP response from the request (meaning a 2xx HTTP status code must be received).
 
@@ -1023,34 +1023,25 @@ If the CA follows redirects, the following apply:
 
 Except for Onion Domain Names, CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
 
-**Note**:
-  * The CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs separate validations for each of those other FQDNs using authorized methods. This method is NOT suitable for validating Wildcard Domain Names.
-
 ##### 3.2.2.4.20 TLS Using ALPN
 
-Confirming the Applicant's control over a FQDN by validating domain control of the FQDN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC7301] as defined in RFC 8737. The following are additive requirements to RFC 8737.
+Confirming the Applicant's control over the ADN by validating domain control of the ADN by negotiating a new application layer protocol using the TLS Application-Layer Protocol Negotiation (ALPN) Extension [RFC7301] as defined in RFC 8737. The following are additive requirements to RFC 8737.
 
 The token (as defined in RFC 8737, Section 3) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
 Except for Onion Domain Names, CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
 
-**Note**: Once the FQDN has been validated using this method, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs separate validations for each of those other FQDNs using authorized methods. This method is NOT suitable for validating Wildcard Domain Names.
-
 ##### 3.2.2.4.21 DNS Labeled with Account ID - ACME
 
-Confirming the Applicant's control over the FQDN by performing the procedure documented for a “dns-account-01” challenge in draft 00 of “Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge,” available at [https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/](https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/).
+Confirming the Applicant's control over the ADN by performing the procedure documented for a “dns-account-01” challenge in draft 00 of “Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge,” available at [https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/](https://datatracker.ietf.org/doc/draft-ietf-acme-dns-account-label/).
 
 The token (as defined in draft 00 of “Automated Certificate Management Environment (ACME) DNS Labeled With ACME Account ID Challenge,” Section 3.1) MUST NOT be used for more than 30 days from its creation. The CPS MAY specify a shorter validity period for the token, in which case the CA MUST follow its CPS.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same token as the Primary Network Perspective.
 
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
 ##### 3.2.2.4.22 DNS TXT Record with Persistent Value
 
-Confirming the Applicant's control over a FQDN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`"). For this method, the CA MUST NOT use the FQDN returned from a DNS CNAME lookup as the FQDN for the purposes of domain validation. This prohibition overrides the Authorization Domain Name definition. CNAME records MAY be followed when resolving the Persistent DCV TXT Record.
-
-The CA MUST confirm the Persistent DCV TXT Record’s RDATA value fulfills the following requirements:
+Confirming the Applicant's control over the ADN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`").
 
 1. The RDATA value MUST conform to the `issue-value` syntax as defined in RFC 8659, Section 4.2; and
 2. The `issuer-domain-name` value MUST be an Issuer Domain Name disclosed by the CA in Section 4.2 of the CA's Certificate Policy and/or Certification Practices Statement; and
@@ -1076,8 +1067,6 @@ Table: Examples of how the `persistUntil` parameter affects validation
 | 2025-06-15T12:00:00Z | (not present) | Yes | No persistUntil parameter present, so no time restriction applies |
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe a Persistent DCV TXT Record that demonstrates the Applicant's control over the domain and contains the same `accounturi` parameter as the Primary Network Perspective.
-
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 #### 3.2.2.5 Authentication for an IP Address
 
@@ -1122,7 +1111,7 @@ Effective March 15, 2027:
 
 ##### 3.2.2.5.3 Reverse Address Lookup
 
-Confirming the Applicant’s control over the IP Address by obtaining a Domain Name associated with the IP Address through a reverse-IP lookup on the IP Address and then verifying control over the FQDN using a method permitted under [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control).
+Confirming the Applicant’s control over the IP Address by obtaining an FQDN associated with the IP Address through a reverse-IP lookup on the IP Address and then using that FQDN as an ADN and performing validation using a method permitted under [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). The ADN for this method MUST be exactly the FQDN returned from the reverse-IP lookup. The ADN selection algorithm in section 3.2.2.4 does not apply.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same FQDN as the Primary Network Perspective.
 
@@ -4046,21 +4035,17 @@ The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain 
 
 This appendix defines permissible verification procedures for including one or more Onion Domain Names in a Certificate.
 
-1. The Domain Name MUST contain at least two Domain Labels, where the rightmost Domain Label is "onion", and the Domain Label immediately preceding the rightmost "onion" Domain Label is a valid Version 3 Onion Address, as defined in Section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
+1. The Authorization Domain Name MUST contain at least two Domain Labels, where the rightmost Domain Label is "onion", and the Domain Label immediately preceding the rightmost "onion" Domain Label is a valid Version 3 Onion Address, as defined in Section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
 
-2. The CA MUST verify the Applicant’s control over the Onion Domain Name using at least one of the methods listed below:
+2. The CA MUST verify the Applicant’s control over the Authorization Domain Name using at least one of the methods listed below:
 
-   a. The CA MAY verify the Applicant's control over the .onion service by using one of the following methods from [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control):
+   a. The CA MAY verify the Applicant's control over the ADN by using any method from [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) that says "This method allows Onion Domain Name issuance", with this modification:
 
-      i. [Section 3.2.2.4.18 - Agreed-Upon Change to Website v2](#322418-agreed-upon-change-to-website-v2)
-      ii. [Section 3.2.2.4.19 - Agreed-Upon Change to Website - ACME](#322419-agreed-upon-change-to-website---acme)
-      iii. [Section 3.2.2.4.20 - TLS Using ALPN](#322420-tls-using-alpn)
+      When these methods are used to verify the Applicant's control over an Onion Domain Name, the CA MUST use Tor protocol to establish a connection to the Authorization Domain Name. The CA MUST NOT delegate or rely on a third-party to establish the connection, such as by using Tor2Web.
 
-      When these methods are used to verify the Applicant's control over the .onion service, the CA MUST use Tor protocol to establish a connection to the .onion hidden service. The CA MUST NOT delegate or rely on a third-party to establish the connection, such as by using Tor2Web.
+      **Note**: This section does not override or supersede any provisions specified within the respective methods. The CA MUST only use a method if it is still permitted within that section.
 
-      **Note**: This section does not override or supersede any provisions specified within the respective methods. The CA MUST only use a method if it is still permitted within that section and MUST NOT issue Wildcard Certificates or use it as an Authorization Domain Name, except as specified by that method.
-
-   b. The CA MAY verify the Applicant's control over the .onion service by having the Applicant provide a Certificate Request signed using the .onion service's private key if the Attributes section of the certificationRequestInfo contains:
+   b. The CA MAY verify the Applicant's control over the .onion service corresponding to the Authorization Domain Name by having the Applicant provide a Certificate Request signed using the .onion service's private key if the Attributes section of the certificationRequestInfo contains:
 
       i. A caSigningNonce attribute that contains a Random Value that is generated by the CA; and
       ii. An applicantSigningNonce attribute that contains a single value. The CA MUST recommend to Applicants that the applicantSigningNonce value should contain at least 64 bits of entropy.
@@ -4090,7 +4075,5 @@ This appendix defines permissible verification procedures for including one or m
       ```
 
       The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
-
-      Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
 3. When a Certificate includes an Onion Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names).
