@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.3
+subtitle: Version 2.2.4
 author:
   - CA/Browser Forum
 
-date: 16-February-2026
+date: 17-February-2026
 
 copyright: |
   Copyright 2026 CA/Browser Forum
@@ -158,6 +158,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.1    | SC091      | new DNS-based validation using Persistent DCV TXT Record for IP addresses              | 2025-11-13  | 2025-12-16                        |
 | 2.2.2    | SC090      | Gradually sunset remaining email-based, phone-based, and 'crossover' validation methods | 2025-11-20 | 2026-01-12                        |
 | 2.2.3    | SC094      | DNSSEC exception in email DCV methods                                                  | 2026-01-15  | 2026-02-16                        |
+| 2.2.4    | SC096      | Carve-out for DNSSEC verification logging requirements                                 | 2026-01-14  | 2026-02-17                        |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -791,6 +792,9 @@ For e-mail Domain Validation methods described in sections 3.2.2.4.4, 3.2.2.4.13
 For all other Domain Validation methods, DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective and CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control.
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
+
+DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of the logging requirements of [Section 5.4.1](#541-types-of-events-recorded).
+
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
 
 **Note**: FQDNs may be listed in Subscriber Certificates using `dNSName`s in the `subjectAltName` extension or in Subordinate CA Certificates via `dNSName`s in `permittedSubtrees` within the Name Constraints extension.
