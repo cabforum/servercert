@@ -229,6 +229,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.     |
 | 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.   |
 | 2026-03-15     | 7.1.2.4                   | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4.    |
+| 2026-09-15     | 7.1.3.2.1                 | Sunset all remaining use of SHA-1 in Certificates and CRLs.   |
 | 2027-03-15     | 3.2.2.4 and 3.2.2.5       | CAs MUST NOT rely on Methods 3.2.2.4.16, 3.2.2.4.17, 3.2.2.5.2, and 3.2.2.5.5 to issue Subscriber Certificates.    |
 | 2027-03-15     | 3.2.2.5.3                 | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates.    |
 | 2027-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 100 days.    |
@@ -3485,7 +3486,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
   0500a203020140
   ```
 
-In addition, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
+Until 2026-09-15, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
 
 * If used within a Certificate, such as the `signatureAlgorithm` field of a Certificate or the `signature` field of a TBSCertificate:
   * The new Certificate is a Root CA Certificate or Subordinate CA Certificate that is a Cross-Certificate; and,
@@ -3509,6 +3510,8 @@ In addition, the CA MAY use the following signature algorithm and encoding if al
 
   Encoding:
   `300d06092a864886f70d0101050500`
+
+Prior to 2026‐09‐15, the CA SHALL revoke any unexpired Subordinate CA Certificate that contains `RSASSA-PKCS1-v1_5 with SHA-1` within the Certificate.
 
 ##### 7.1.3.2.2 ECDSA
 
