@@ -656,9 +656,9 @@ RFC7538, Request For Comments: 7538, The Hypertext Transfer Protocol Status Code
 
 RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
 
-RFC8555, Request for Comments: 8555, Automatic Certificate Management Environment (ACME). R. Barnes, et al. March 2019.
+RFC8555, Request for Comments: [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), Automatic Certificate Management Environment (ACME). R. Barnes, et al. March 2019.
 
-RFC8657, Request for Comments: 8657, Certification Authority Authorization (CAA) Record Extensions for Account URI and Automatic Certificate Management Environment (ACME) Method Binding. H. Landau, et al. November 2019.
+RFC8657, Request for Comments: [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657), Certification Authority Authorization (CAA) Record Extensions for Account URI and Automatic Certificate Management Environment (ACME) Method Binding. H. Landau, et al. November 2019.
 
 RFC8659, Request for Comments: 8659, DNS Certification Authority Authorization (CAA) Resource Record. P. Hallam-Baker, et al. November 2019.
 
@@ -1373,11 +1373,11 @@ Effective 2026-03-15, CAs SHALL NOT issue Certificates containing Domain Names t
 
 #### 4.2.2.1 CAA Record Processing
 
-As part of the Certificate issuance process, the CA MUST retrieve and process CAA records in accordance with RFC 8659 for each `dNSName` in the `subjectAltName` extension that does not contain an Onion Domain Name. These practices MUST be described in Section 4.2 of the CA's Certificate Policy and/or Certification Practice Statement, including specifying the set of Issuer Domain Names that the CA recognizes in CAA "issue" or "issuewild" records as permitting it to issue.
+As part of the Certificate issuance process, the CA MUST retrieve and process CAA records in accordance with [RFC 8659](https://datatracker.ietf.org/doc/html/rfc8659) for each `dNSName` in the `subjectAltName` extension that does not contain an Onion Domain Name. These practices MUST be described in Section 4.2 of the CA's Certificate Policy and/or Certification Practice Statement, including specifying the set of Issuer Domain Names that the CA recognizes in CAA "issue" or "issuewild" records as permitting it to issue.
 
 CAs MAY check CAA records at any other time.
 
-When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in RFC 8659, although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property tag with this flag set.
+When processing CAA records, CAs MUST process the issue, issuewild, and iodef property tags as specified in [RFC 8659](https://datatracker.ietf.org/doc/html/rfc8659), although they are not required to act on the contents of the iodef property tag. Additional property tags MAY be supported, but MUST NOT conflict with or supersede the mandatory property tags set out in this document. CAs MUST respect the critical flag and not issue a certificate if they encounter an unrecognized property tag with this flag set.
 
 If the CA issues a certificate after processing a CAA record, it MUST do so within the TTL of the CAA record, or 8 hours, whichever is greater.
 
@@ -1400,11 +1400,11 @@ Some methods relied upon for validating the Applicant's ownership or control of 
 
 ###### 4.2.2.1.3 CAA Parameters
 
-When processing CAA records, CAs SHOULD process the `accounturi` and `validationmethods` parameters as specified in RFC 8657.
-*Effective March 15, 2027*, when processing CAA records, CAs MUST process the `accounturi` and `validationmethod`s parameters as specified in RFC 8657.
+When processing CAA records, CAs SHOULD process the `accounturi` and `validationmethods` parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657).
+*Effective 2027-03-15*, when processing CAA records, CAs MUST process the `accounturi` and `validationmethod`s parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657).
 
-In addition, *Effective March 15, 2027*:
-* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in RFC 8555, the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS.
+In addition, *Effective 2027-03-15*:
+* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS.
 * If the CA accepts certificate requests via any protocol other than the ACME protocol, the CA MUST interpret and process `validationmethods` labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'dns-01' and 'ca-tbr-7'), the CA SHOULD accept any of the labels as granting permission to issue.
 
 ###### 4.2.2.1.4 DNSSEC Validation of CAA Records
