@@ -1615,7 +1615,7 @@ The CA SHALL provide Subscribers, Relying Parties, Application Software Supplier
 Within twenty-four (24) hours after receiving a Certificate Problem Report, the CA SHALL investigate the facts and circumstances related to the report and determine if it's "actionable."
 
 A Certificate Problem Report is considered actionable if it includes:
-1. at least one serial number or SHA-256 fingerprint of a time-valid and unrevoked Certificate issued by the CA; and
+1. at least one valid identifier for a time-valid and unrevoked Certificate issued by the CA. The CA MUST support the use of a serial number and SHOULD support the use of a SHA-256 fingerprint of the Certificate and/or Precertificate as an identifier; and"
 2. information about either:
     - how the Certificate(s) in question violates these Requirements or a CA's own policies; or
     - a reason for Certificate revocation (e.g., a demonstration of Key Compromise, or a Subscriber request aligned with [Section 4.9.1](#491-circumstances-for-revocation)).
