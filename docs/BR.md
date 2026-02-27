@@ -1,14 +1,14 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.1.9
+subtitle: Version 2.2.5
 author:
   - CA/Browser Forum
 
-date: 10-November-2025
+date: 25-February-2026
 
 copyright: |
-  Copyright 2025 CA/Browser Forum
+  Copyright 2026 CA/Browser Forum
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
 ---
@@ -47,112 +47,119 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 
 | **Ver.** | **Ballot** | **Description** | **Adopted** | **Effective\*** |
 |-|-|-----|--|--|
-| 1.0.0 | 62 | Version 1.0 of the Baseline Requirements Adopted | 2011-11-22 | 2012-07-01 |
-| 1.0.1 | 71 | Revised Auditor Qualifications | 2012-05-08 | 2013-01-01 |
-| 1.0.2 | 75 | Non-critical Name Constraints allowed as exception to RFC 5280 | 2012-06-08 | 2012-06-08 |
-| 1.0.3 | 78 | Revised Domain/IP Address Validation, High Risk Requests, and Data Sources | 2012-06-22 | 2012-06-22 |
-| 1.0.4 | 80 | OCSP responses for non-issued certificates | 2012-08-02 | 2013-02-01 2013-08-01 |
-| -- | 83 | Network and Certificate System Security Requirements adopted | 2013-08-03 | 2013-01-01 |
-| 1.0.5 | 88 | User-assigned country code of XX allowed | 2012-09-12 | 2012-09-12 |
-| 1.1.0 | -- | Published as Version 1.1 with no changes from 1.0.5 | 2012-09-14 | 2012-09-14 |
-| 1.1.1 | 93 | Reasons for Revocation and Public Key Parameter checking | 2012-11-07 | 2012-11-07 2013-01-01 |
-| 1.1.2 | 96 | Wildcard certificates and new gTLDs | 2013-02-20 | 2013-02-20 2013-09-01 |
-| 1.1.3 | 97 | Prevention of Unknown Certificate Contents | 2013-02-21 | 2013-02-21 |
-| 1.1.4 | 99 | Add DSA Keys (BR v.1.1.4) | 2013-05-03 | 2013-05-03 |
-| 1.1.5 | 102 | Revision to subject domainComponent language in Section 9.2.3 | 2013-05-31 | 2013-05-31 |
-| 1.1.6 | 105 | Technical Constraints for Subordinate Certificate Authorities | 2013-07-29 | 2013-07-29 |
-| 1.1.7 | 112 | Replace Definition of "Internal Server Name" with "Internal Name" | 2014-04-03 | 2014-04-03 |
-| 1.1.8 | 120 | Affiliate Authority to Verify Domain | 2014-06-05 | 2014-06-05 |
-| 1.1.9 | 129 | Clarification of PSL mentioned in Section 11.1.3 | 2014-08-04 | 2014-08-04 |
-| 1.2.0 | 125 | CAA Records | 2014-10-14 | 2015-04-15 |
-| 1.2.1 | 118 | SHA-1 Sunset | 2014-10-16 | 2015-01-16 2016-01-01 2017-01-01 |
-| 1.2.2 | 134 | Application of RFC 5280 to Pre-certificates | 2014-10-16 | 2014-10-16 |
-| 1.2.3 | 135 | ETSI Auditor Qualifications | 2014-10-16 | 2014-10-16 |
-| 1.2.4 | 144 | Validation Rules for .onion Names | 2015-02-18 | 2015-02-18 |
-| 1.2.5 | 148 | Issuer Field Correction | 2015-04-02 | 2015-04-02 |
-| 1.3.0 | 146 | Convert Baseline Requirements to RFC 3647 Framework | 2015-04-16 | 2015-04-16 |
-| 1.3.1 | 151 | Addition of Optional OIDs for Indicating Level of Validation | 2015-09-28 | 2015-09-28 |
-| 1.3.2 | 156 | Amend Sections 1 and 2 of Baseline Requirements | 2015-12-03 | 2016-12-03 |
-| 1.3.3 | 160 | Amend Section 4 of Baseline Requirements | 2016-02-04 | 2016-02-04 |
-| 1.3.4 | 162 | Sunset of Exceptions | 2016-03-15 | 2016-03-15 |
-| 1.3.5 | 168 | Baseline Requirements Corrections (Revised) | 2016-05-10 | 2016-05-10 |
-| 1.3.6 | 171 | Updating ETSI Standards in CABF documents | 2016-07-01 | 2016-07-01 |
-| 1.3.7 | 164 | Certificate Serial Number Entropy | 2016-07-08 | 2016-09-30 |
-| 1.3.8 | 169 | Revised Validation Requirements | 2016-08-05 | 2017-03-01 |
-| 1.3.9 | 174 | Reform of Requirements Relating to Conflicts with Local Law | 2016-08-29 | 2016-11-27 |
-| 1.4.0 | 173 | Removal of requirement to cease use of public key due to incorrect info | 2016-07-28 | 2016-09-11 |
-| 1.4.1 | 175 | Addition of givenName and surname | 2016-09-07 | 2016-09-07 |
-| 1.4.2 | 181 | Removal of some validation methods listed in Section 3.2.2.4 | 2017-01-07 | 2017-01-07 |
-| 1.4.3 | 187 | Make CAA Checking Mandatory | 2017-03-08 | 2017-09-08 |
-| 1.4.4 | 193 | 825-day Certificate Lifetimes | 2017-03-17 | 2018-03-01 |
-| 1.4.5 | 189 | Amend Section 6.1.7 of Baseline Requirements | 2017-04-14 | 2017-05-14 |
-| 1.4.6 | 195 | CAA Fixup | 2017-04-17 | 2017-05-18 |
-| 1.4.7 | 196 | Define "Audit Period" | 2017-04-17 | 2017-05-18 |
-| 1.4.8 | 199 | Require commonName in Root and Intermediate Certificates | 2017-05-09 | 2017-06-08 |
-| 1.4.9 | 204 | Forbid DTPs from doing Domain/IP Ownership | 2017-07-11 | 2017-08-11 |
-| 1.5.0 | 212 | Canonicalise formal name of the Baseline Requirements | 2017-09-01 | 2017-10-01 |
-| 1.5.1 | 197 | Effective Date of Ballot 193 Provisions | 2017-05-01 | 2017-06-02 |
-| 1.5.2 | 190 | Add Validation Methods with Minor Corrections | 2017-09-19 | 2017-10-19 |
-| 1.5.3 | 214 | CAA Discovery CNAME Errata | 2017-09-27 | 2017-10-27 |
-| 1.5.4 | 215 | Fix Ballot 190 Errata | 2017-10-04 | 2017-11-05 |
-| 1.5.5 | 217 | Sunset RFC 2527 | 2017-12-21 | 2018-03-09 |
-| 1.5.6 | 218 | Remove validation methods #1 and #5 | 2018-02-05 | 2018-03-09 |
-| 1.5.7 | 220 | Minor Cleanups (Spring 2018) | 2018-03-30 | 2018-04-29 |
-| 1.5.8 | 219 | Clarify handling of CAA Record Sets with no "issue"/"issuewild" property tag | 2018-04-10 | 2018-05-10 |
-| 1.5.9 | 223 | Update BR Section 8.4 for CA audit criteria | 2018-05-15 | 2018-06-14 |
-| 1.6.0 | 224 | WhoIs and RDAP | 2018-05-22 | 2018-06-22 |
-| 1.6.1 | SC006 | Revocation Timeline Extension | 2018-09-14 | 2018-10-14 |
-| 1.6.2 | SC012 | Sunset of Underscores in dNSNames | 2018-11-09 | 2018-12-10 |
-| 1.6.3 | SC013 | CAA Contact Property and Associated E-mail Validation Methods | 2018-12-25 | 2019-02-01 |
-| 1.6.4 | SC014 | Updated Phone Validation Methods | 2019-01-31 | 2019-03-16 |
-| 1.6.4 | SC015 | Remove Validation Method Number 9 | 2019-02-05 | 2019-03-16 |
-| 1.6.4 | SC007 | Update IP Address Validation Methods | 2019-02-08 | 2019-03-16 |
-| 1.6.5 | SC016 | Other Subject Attributes | 2019-03-15 | 2019-04-16 |
-| 1.6.6 | SC019 | Phone Contact with DNS CAA Phone Contact v2 | 2019-05-20 | 2019-09-09 |
-| 1.6.7 | SC023 | Precertificates | 2019-11-14 | 2019-12-19 |
-| 1.6.7 | SC024 | Fall Cleanup v2 | 2019-11-12 | 2019-12-19 |
-| 1.6.8 | SC025 | Define New HTTP Domain Validation Methods v2 | 2020-01-31 | 2020-03-03 |
-| 1.6.9 | SC027 | Version 3 Onion Certificates | 2020-02-19 | 2020-03-27 |
-| 1.7.0 | SC029 | Pandoc-Friendly Markdown Formatting Changes | 2020-03-20 | 2020-05-04 |
-| 1.7.1 | SC030 | Disclosure of Registration / Incorporating Agency | 2020-07-13 | 2020-08-20 |
-| 1.7.1 | SC031 | Browser Alignment | 2020-07-16 | 2020-08-20 |
-| 1.7.2 | SC033 | TLS Using ALPN Method | 2020-08-14 | 2020-09-22 |
-| 1.7.3 | SC028 | Logging and Log Retention | 2020-09-10 | 2020-10-19 |
-| 1.7.3 | SC035 | Cleanups and Clarifications | 2020-09-09 | 2020-10-19 |
-| 1.7.4 | SC041 | Reformat the BRs, EVGs, and NCSSRs | 2021-02-24 | 2021-04-05 |
-| 1.7.5 | SC042 | 398-day Re-use Period | 2021-04-22 | 2021-06-02 |
-| 1.7.6 | SC044 | Clarify Acceptable Status Codes | 2021-04-30 | 2021-06-03 |
-| 1.7.7 | SC046 | Sunset the CAA Exception for DNS Operator | 2021-06-02 | 2021-07-12 |
-| 1.7.8 | SC045 | Wildcard Domain Validation | 2021-06-02 | 2021-07-13 |
-| 1.7.9 | SC047 | Sunset subject:organizationalUnitName | 2021-06-30 | 2021-08-16 |
-| 1.8.0 | SC048 | Domain Name and IP Address Encoding | 2021-07-22 | 2021-08-25 |
-| 1.8.1 | SC050 | Remove the requirements of 4.1.1 | 2021-11-22 | 2021-12-23 |
-| 1.8.2 | SC053 | Sunset for SHA-1 OCSP Signing | 2022-01-26 | 2022-03-04 |
-| 1.8.3 | SC051 | Reduce and Clarify Log and Records Archival Retention Requirements | 2022-03-01 | 2022-04-15 |
-| 1.8.4 | SC054 | Onion Cleanup | 2022-03-24 | 2022-04-23 |
-| 1.8.5 | SC056 | 2022 Cleanup | 2022-10-25 | 2022-11-30 |
-| 1.8.6 | SC058 | Require distributionPoint in sharded CRLs | 2022-11-07 | 2022-12-11 |
-| 1.8.7 | SC061 | New CRL entries must have a Revocation Reason Code | 2023-04-01 | 2023-07-15 |
-| 2.0.0 | SC062 | Certificate Profiles Update | 2023-04-22 | 2023-09-15 |
-| 2.0.1 | SC063 | Make OCSP optional, require CRLs, and incentivize automation | 2023-08-17 | 2024-03-15 |
-| 2.0.2 | SC066 | 2023 Cleanup | 2023-11-23 | 2024-01-08 |
-| 2.0.3 | SC069 | Clarify router and firewall logging requirements | 2024-03-13 | 2024-04-15 |
-| 2.0.4 | SC065 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
-| 2.0.5 | SC073 | Compromised and weak keys | 2024-05-03 | 2024-07-01 |
-| 2.0.6 | SC075 | Pre-sign linting | 2024-06-28 | 2024-08-06 |
-| 2.0.7 | SC067 | Require Multi-Perspective Issuance Corroboration | 2024-08-02 | 2024-09-06 |
-| 2.0.8 | SC077 | Update WebTrust Audit name in Section 8.4 and References | 2024-09-02 | 2024-10-02 |
-| 2.0.9 | SC078 | Subject organizationName alignment for DBA / Assumed Name | 2024-10-02 | 2024-11-08 |
-| 2.1.0 | SC076 | Clarify and improve OCSP requirements | 2024-09-26 | 2024-11-14 |
-| 2.1.1 | SC079 | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate | 2024-09-30 | 2024-11-14 |
-| 2.1.2 | SC080 | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15 | 2024-11-07 | 2024-12-16 |
-| 2.1.3 | SC083 | Winter 2024-2025 Cleanup Ballot | 2025-01-23 | 2025-02-24 |
-| 2.1.4 | SC084 | DNS Labeled with ACME Account ID Validation Method | 2025-01-28 | 2025-03-01 |
-| 2.1.5 | SC081 | Introduce Schedule of Reducing Validity and Data Reuse Periods | 2025-04-11 | 2025-05-16 |
-| 2.1.6 | SC085 | Require Validation of DNSSEC (when present) for CAA and DCV Lookups | 2025-06-19 | 2025-07-21 |
-| 2.1.7 | SC089 | Mass Revocation Planning | 2025-07-23 | 2025-08-25 |
-| 2.1.8 | SC092 | Sunset Precertificate Signing CAs | 2025-10-03 | 2025-11-04 |
-| 2.1.9 | SC088 | DNS TXT Record with Persistent Value DCV Method | 2025-10-09 | 2025-11-10 |
+| 1.0.0 | 62    | Version 1.0 of the Baseline Requirements Adopted 										  | 2011-11-22 | 2012-07-01 |
+| 1.0.1 | 71    | Revised Auditor Qualifications 														  | 2012-05-08 | 2013-01-01 |
+| 1.0.2 | 75    | Non-critical Name Constraints allowed as exception to RFC 5280 						  | 2012-06-08 | 2012-06-08 |
+| 1.0.3 | 78    | Revised Domain/IP Address Validation, High Risk Requests, and Data Sources 			  | 2012-06-22 | 2012-06-22 |
+| 1.0.4 | 80    | OCSP responses for non-issued certificates 											  | 2012-08-02 | 2013-08-02 |
+| --    | 83    | Network and Certificate System Security Requirements adopted 							  | 2013-08-03 | 2013-01-01 |
+| 1.0.5 | 88    | User-assigned country code of XX allowed 												  | 2012-09-12 | 2012-09-12 |
+| 1.1.0 | --    | Published as Version 1.1 with no changes from 1.0.5 									  | 2012-09-14 | 2012-09-14 |
+| 1.1.1 | 93    | Reasons for Revocation and Public Key Parameter checking 								  | 2012-11-07 | 2012-11-07 |
+| 1.1.2 | 96    | Wildcard certificates and new gTLDs 													  | 2013-02-20 | 2013-02-20 |
+| 1.1.3 | 97    | Prevention of Unknown Certificate Contents 											  | 2013-02-21 | 2013-02-21 |
+| 1.1.4 | 99    | Add DSA Keys (BR v.1.1.4) 															  | 2013-05-03 | 2013-05-03 |
+| 1.1.5 | 102   | Revision to subject domainComponent language in Section 9.2.3 						  | 2013-05-31 | 2013-05-31 |
+| 1.1.6 | 105   | Technical Constraints for Subordinate Certificate Authorities 						  | 2013-07-29 | 2013-07-29 |
+| 1.1.7 | 112   | Replace Definition of "Internal Server Name" with "Internal Name"  					  | 2014-04-03 | 2014-04-03 |
+| 1.1.8 | 120   | Affiliate Authority to Verify Domain 													  | 2014-06-05 | 2014-06-05 |
+| 1.1.9 | 129   | Clarification of PSL mentioned in Section 11.1.3 										  | 2014-08-04 | 2014-08-04 |
+| 1.2.0 | 125   | CAA Records 																			  | 2014-10-14 | 2015-04-15 |
+| 1.2.1 | 118   | SHA-1 Sunset 																   			  | 2014-10-16 | 2014-11-16 |
+| 1.2.2 | 134   | Application of RFC 5280 to Pre-certificates 											  | 2014-10-16 | 2014-10-16 |
+| 1.2.3 | 135   | ETSI Auditor Qualifications 															  | 2014-10-16 | 2014-10-16 |
+| 1.2.4 | 144   | Validation Rules for .onion Names 													  | 2015-02-18 | 2015-02-18 |
+| 1.2.5 | 148   | Issuer Field Correction 																  | 2015-04-02 | 2015-04-02 |
+| 1.3.0 | 146   | Convert Baseline Requirements to RFC 3647 Framework 									  | 2015-04-16 | 2015-04-16 |
+| 1.3.1 | 151   | Addition of Optional OIDs for Indicating Level of Validation 							  | 2015-09-28 | 2015-09-28 |
+| 1.3.2 | 156   | Amend Sections 1 and 2 of Baseline Requirements										  | 2015-12-03 | 2016-12-03 |
+| 1.3.3 | 160   | Amend Section 4 of Baseline Requirements												  | 2016-02-04 | 2016-02-04 |
+| 1.3.4 | 162   | Sunset of Exceptions 																 	  | 2016-03-15 | 2016-03-15 |
+| 1.3.5 | 168   | Baseline Requirements Corrections (Revised) 											  | 2016-05-10 | 2016-05-10 |
+| 1.3.6 | 171   | Updating ETSI Standards in CABF documents 											  | 2016-07-01 | 2016-07-01 |
+| 1.3.7 | 164   | Certificate Serial Number Entropy 													  | 2016-07-08 | 2016-09-30 |
+| 1.3.8 | 169   | Revised Validation Requirements 														  | 2016-08-05 | 2017-03-01 |
+| 1.3.9 | 174   | Reform of Requirements Relating to Conflicts with Local Law 							  | 2016-08-29 | 2016-11-27 |
+| 1.4.0 | 173   | Removal of requirement to cease use of public key due to incorrect info 				  | 2016-07-28 | 2016-09-11 |
+| 1.4.1 | 175   | Addition of givenName and surname 													  | 2016-09-07 | 2016-09-07 |
+| 1.4.2 | 181   | Removal of some validation methods listed in Section 3.2.2.4 							  | 2017-01-07 | 2017-01-07 |
+| 1.4.3 | 187   | Make CAA Checking Mandatory 															  | 2017-03-08 | 2017-09-08 |
+| 1.4.4 | 193   | 825-day Certificate Lifetimes 														  | 2017-03-17 | 2018-03-01 |
+| 1.4.5 | 189   | Amend Section 6.1.7 of Baseline Requirements 											  | 2017-04-14 | 2017-05-14 |
+| 1.4.6 | 195   | CAA Fixup 																			  | 2017-04-17 | 2017-05-18 |
+| 1.4.7 | 196   | Define "Audit Period" 																  | 2017-04-17 | 2017-05-18 |
+| 1.4.8 | 199   | Require commonName in Root and Intermediate Certificates 								  | 2017-05-09 | 2017-06-08 |
+| 1.4.9 | 204   | Forbid DTPs from doing Domain/IP Ownership 											  | 2017-07-11 | 2017-08-11 |
+| 1.5.0 | 212   | Canonicalise formal name of the Baseline Requirements 								  | 2017-09-01 | 2017-10-01 |
+| 1.5.1 | 197   | Effective Date of Ballot 193 Provisions 												  | 2017-05-01 | 2017-06-02 |
+| 1.5.2 | 190   | Add Validation Methods with Minor Corrections 										  | 2017-09-19 | 2017-10-19 |
+| 1.5.3 | 214   | CAA Discovery CNAME Errata 															  | 2017-09-27 | 2017-10-27 |
+| 1.5.4 | 215   | Fix Ballot 190 Errata 																  | 2017-10-04 | 2017-11-05 |
+| 1.5.5 | 217   | Sunset RFC 2527 																		  | 2017-12-21 | 2018-03-09 |
+| 1.5.6 | 218   | Remove validation methods #1 and #5 													  | 2018-02-05 | 2018-03-09 |
+| 1.5.7 | 220   | Minor Cleanups (Spring 2018) 															  | 2018-03-30 | 2018-04-29 |
+| 1.5.8 | 219   | Clarify handling of CAA Record Sets with no "issue"/"issuewild" property tag 			  | 2018-04-10 | 2018-05-10 |
+| 1.5.9 | 223   | Update BR Section 8.4 for CA audit criteria 											  | 2018-05-15 | 2018-06-14 |
+| 1.6.0 | 224   | WhoIs and RDAP 																		  | 2018-05-22 | 2018-06-22 |
+| 1.6.1 | SC006 | Revocation Timeline Extension 														  | 2018-09-14 | 2018-10-14 |
+| 1.6.2 | SC012 | Sunset of Underscores in dNSNames 													  | 2018-11-09 | 2018-12-10 |
+| 1.6.3 | SC013 | CAA Contact Property and Associated E-mail Validation Methods 						  | 2018-12-25 | 2019-02-01 |
+| 1.6.4 | SC014 | Updated Phone Validation Methods 														  | 2019-01-31 | 2019-03-16 |
+| 1.6.4 | SC015 | Remove Validation Method Number 9 													  | 2019-02-05 | 2019-03-16 |
+| 1.6.4 | SC007 | Update IP Address Validation Methods 													  | 2019-02-08 | 2019-03-16 |
+| 1.6.5 | SC016 | Other Subject Attributes 																  | 2019-03-15 | 2019-04-16 |
+| 1.6.6 | SC019 | Phone Contact with DNS CAA Phone Contact v2 											  | 2019-05-20 | 2019-09-09 |
+| 1.6.7 | SC023 | Precertificates 																		  | 2019-11-14 | 2019-12-19 |
+| 1.6.7 | SC024 | Fall Cleanup v2 																		  | 2019-11-12 | 2019-12-19 |
+| 1.6.8 | SC025 | Define New HTTP Domain Validation Methods v2 											  | 2020-01-31 | 2020-03-03 |
+| 1.6.9 | SC027 | Version 3 Onion Certificates 															  | 2020-02-19 | 2020-03-27 |
+| 1.7.0 | SC029 | Pandoc-Friendly Markdown Formatting Changes 											  | 2020-03-20 | 2020-05-04 |
+| 1.7.1 | SC030 | Disclosure of Registration / Incorporating Agency 									  | 2020-07-13 | 2020-08-20 |
+| 1.7.1 | SC031 | Browser Alignment 																	  | 2020-07-16 | 2020-08-20 |
+| 1.7.2 | SC033 | TLS Using ALPN Method 																  | 2020-08-14 | 2020-09-22 |
+| 1.7.3 | SC028 | Logging and Log Retention 															  | 2020-09-10 | 2020-10-19 |
+| 1.7.3 | SC035 | Cleanups and Clarifications 															  | 2020-09-09 | 2020-10-19 |
+| 1.7.4 | SC041 | Reformat the BRs, EVGs, and NCSSRs 													  | 2021-02-24 | 2021-04-05 |
+| 1.7.5 | SC042 | 398-day Re-use Period 																  | 2021-04-22 | 2021-06-02 |
+| 1.7.6 | SC044 | Clarify Acceptable Status Codes 														  | 2021-04-30 | 2021-06-03 |
+| 1.7.7 | SC046 | Sunset the CAA Exception for DNS Operator 											  | 2021-06-02 | 2021-07-12 |
+| 1.7.8 | SC045 | Wildcard Domain Validation 															  | 2021-06-02 | 2021-07-13 |
+| 1.7.9 | SC047 | Sunset subject:organizationalUnitName 												  | 2021-06-30 | 2021-08-16 |
+| 1.8.0 | SC048 | Domain Name and IP Address Encoding 													  | 2021-07-22 | 2021-08-25 |
+| 1.8.1 | SC050 | Remove the requirements of 4.1.1 														  | 2021-11-22 | 2021-12-23 |
+| 1.8.2 | SC053 | Sunset for SHA-1 OCSP Signing 														  | 2022-01-26 | 2022-03-04 |
+| 1.8.3 | SC051 | Reduce and Clarify Log and Records Archival Retention Requirements 					  | 2022-03-01 | 2022-04-15 |
+| 1.8.4 | SC054 | Onion Cleanup 																		  | 2022-03-24 | 2022-04-23 |
+| 1.8.5 | SC056 | 2022 Cleanup 																			  | 2022-10-25 | 2022-11-30 |
+| 1.8.6 | SC058 | Require distributionPoint in sharded CRLs 											  | 2022-11-07 | 2022-12-11 |
+| 1.8.7 | SC061 | New CRL entries must have a Revocation Reason Code 									  | 2023-04-01 | 2023-07-15 |
+| 2.0.0 | SC062 | Certificate Profiles Update 															  | 2023-04-22 | 2023-09-15 |
+| 2.0.1 | SC063 | Make OCSP optional, require CRLs, and incentivize automation 							  | 2023-08-17 | 2024-03-15 |
+| 2.0.2 | SC066 | 2023 Cleanup 																			  | 2023-11-23 | 2024-01-08 |
+| 2.0.3 | SC069 | Clarify router and firewall logging requirements 										  | 2024-03-13 | 2024-04-15 |
+| 2.0.4 | SC065 | Convert EVGs into RFC 3647 format 													  | 2024-03-15 | 2024-05-15 |
+| 2.0.5 | SC073 | Compromised and weak keys 															  | 2024-05-03 | 2024-07-01 |
+| 2.0.6 | SC075 | Pre-sign linting 																		  | 2024-06-28 | 2024-08-06 |
+| 2.0.7 | SC067 | Require Multi-Perspective Issuance Corroboration 										  | 2024-08-02 | 2024-09-06 |
+| 2.0.8 | SC077 | Update WebTrust Audit name in Section 8.4 and References 								  | 2024-09-02 | 2024-10-02 |
+| 2.0.9 | SC078 | Subject organizationName alignment for DBA / Assumed Name 							  | 2024-10-02 | 2024-11-08 |
+| 2.1.0 | SC076 | Clarify and improve OCSP requirements 												  | 2024-09-26 | 2024-11-14 |
+| 2.1.1 | SC079 | Allow more than one Certificate Policy in a Cross-Certified Subordinate CA Certificate  | 2024-09-30 | 2024-11-14 |
+| 2.1.2 | SC080 | Strengthen WHOIS lookups and Sunset Methods 3.2.2.4.2 and 3.2.2.4.15 					  | 2024-11-07 | 2024-12-16 |
+| 2.1.3 | SC083 | Winter 2024-2025 Cleanup Ballot 													 	  | 2025-01-23 | 2025-02-24 |
+| 2.1.4 | SC084 | DNS Labeled with ACME Account ID Validation Method 									  | 2025-01-28 | 2025-03-01 |
+| 2.1.5 | SC081 | Introduce Schedule of Reducing Validity and Data Reuse Periods 						  | 2025-04-11 | 2025-05-16 |
+| 2.1.6 | SC085 | Require Validation of DNSSEC (when present) for CAA and DCV Lookups 					  | 2025-06-19 | 2025-07-21 |
+| 2.1.7 | SC089 | Mass Revocation Planning 																  | 2025-07-23 | 2025-08-25 |
+| 2.1.8 | SC092 | Sunset Precertificate Signing CAs 													  | 2025-10-03 | 2025-11-04 |
+| 2.1.9 | SC088 | DNS TXT Record with Persistent Value DCV Method                                         | 2025-10-09 | 2025-11-10 |
+| 2.2.0 | SC086 | Sunset the Inclusion of Address and Routing Parameter Area Names                        | 2025-11-13 | 2025-12-15 |
+| 2.2.1 | SC091 | Sunset 3.2.2.5.3 Reverse Address Lookup Validation,                                     | 2025-11-13 | 2025-12-16 |
+| 2.2.1 | SC091 | new DNS-based validation using Persistent DCV TXT Record for IP addresses               | 2025-11-13 | 2025-12-16 |
+| 2.2.2 | SC090 | Gradually sunset remaining email-based, phone-based, and 'crossover' validation methods | 2025-11-20 | 2026-01-12 |
+| 2.2.3 | SC094 | DNSSEC exception in email DCV methods                                                   | 2026-01-15 | 2026-02-16 |
+| 2.2.4 | SC096 | Carve-out for DNSSEC verification logging requirements                                  | 2026-01-14 | 2026-02-17 |
+| 2.2.5 | SC097 | Sunset all remaining use of SHA-1 signatures in Certificates and CRLs                   | 2026-02-24 | 2026-02-25 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -167,16 +174,23 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2025-03-15 | [3.2.2.9](#3229-multi-perspective-issuance-corroboration) | CAs MUST corroborate the results of domain validation and CAA checks from multiple Network Perspectives where specified. |
 | 2025-07-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | CAs MUST NOT rely on Methods 3.2.2.4.2 and 3.2.2.4.15 to issue Subscriber Certificates. |
 | 2025-12-01 | [5.7.1.2](#5712-mass-revocation-plans) | CAs SHALL assert in section 5.7.1 of their CPS or combined CP/CPS their mass revocation plan, testing, and continuous improvements. |
-| 2026-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Subject Identity Information validation maximum data reuse period is 398 days. |
-| 2026-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 200 days. |
-| 2026-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 200 days. |
 | 2026-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. |
 | 2026-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control. |
+| 2026-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | CAs MUST NOT rely on Method 3.2.2.4.8 to issue Subscriber Certificates. |
 | 2026-03-15 | [3.2.2.8.1](#32281-dnssec-validation-of-caa-records) | DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. |
 | 2026-03-15 | [3.2.2.8.1](#32281-dnssec-validation-of-caa-records) | CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups. |
 | 2026-03-15 | [3.2.2.8.1](#32281-dnssec-validation-of-caa-records) | DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue. |
+| 2026-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Subject Identity Information validation maximum data reuse period is 398 days. |
+| 2026-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 200 days. |
+| 2026-03-15 | [4.2.2](#422-approval-or-rejection-of-certificate-applications) | CAs SHALL NOT issue Certificates containing Domain Names that end in an IP Reverse Zone Suffix. |
+| 2026-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 200 days. |
+| 2026-03-15 | [7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile) | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4. |
+| 2026-09-15 | [7.1.3.2.1](#71321-rsa) | Sunset all remaining use of SHA-1 in Certificates and CRLs. |
+| 2027-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.16, 3.2.2.4.17, 3.2.2.5.2, and 3.2.2.5.5 to issue Subscriber Certificates. |
+| 2027-03-15 | [3.2.2.5.3](#32253-reverse-address-lookup) | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates. |
 | 2027-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 100 days. |
 | 2027-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 100 days. |
+| 2028-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.4, 3.2.2.4.13, and 3.2.2.4.14 to issue Subscriber Certificates. |
 | 2029-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 10 days. |
 | 2029-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 47 days. |
 
@@ -351,13 +365,15 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **High Risk Certificate Request**: A Request that the CA flags for additional scrutiny by reference to internal criteria and databases maintained by the CA, which may include names at higher risk for phishing or other fraudulent usage, names contained in previously rejected certificate requests or revoked Certificates, names listed on the Miller Smiles phishing list or the Google Safe Browsing list, or names that the CA identifies using its own risk-mitigation criteria.
 
-**Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top Level Domain registered in IANA's Root Zone Database.
+**Internal Name**: A string of characters (not an IP address) in a Common Name or Subject Alternative Name field of a Certificate that cannot be verified as globally unique within the public DNS at the time of certificate issuance because it does not end with a Top-Level Domain registered in IANA's Root Zone Database.
 
 **IP Address**: A 32-bit or 128-bit number assigned to a device that uses the Internet Protocol for communication.
 
 **IP Address Contact**: The person(s) or entity(ies) registered with an IP Address Registration Authority as having the right to control how one or more IP Addresses are used.
 
 **IP Address Registration Authority**: The Internet Assigned Numbers Authority (IANA) or a Regional Internet Registry (RIPE, APNIC, ARIN, AfriNIC, LACNIC).
+
+**IP Reverse Zone Suffix**: One of the two FQDNs that consist of the Domain Labels "in-addr.arpa" or "ip6.arpa". These two FQDNs serve as the root of the IP version 4 and IP version 6 reverse mapping space. "in-addr.arpa" is the root of the IP version 4 reverse mapping space and "ip6.arpa" is the root of the IP version 6 reverse mapping space.
 
 **Issuing CA**: In relation to a particular Certificate, the CA that issued the Certificate. This could be either a Root CA or a Subordinate CA.
 
@@ -462,6 +478,8 @@ The script outputs:
 
 [https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml)
 
+**Reverse Zone Domain Name**: the FQDN in the `.arpa` namespace that corresponds to an IP address. This FQDN is constructed by converting the IP address to a sequence of labels followed by the applicable IP Reverse Zone Suffix, as specified in RFC 1035 (for IPv4 addresses) and RFC 3596 (for IPv6 addresses).
+
 **Root CA**: The top level Certification Authority whose Root Certificate is distributed by Application Software Suppliers and that issues Subordinate CA Certificates.
 
 **Root Certificate**: The self-signed Certificate issued by the Root CA to identify itself and to facilitate verification of Certificates issued to its Subordinate CAs.
@@ -487,6 +505,8 @@ The script outputs:
 **Terms of Use**: Provisions regarding the safekeeping and acceptable uses of a Certificate issued in accordance with these Requirements when the Applicant/Subscriber is an Affiliate of the CA or is the CA.
 
 **Test Certificate**: This term is no longer used in these Baseline Requirements.
+
+**Top-Level Domain**: From RFC 8499 (https://tools.ietf.org/html/rfc8499): "A Top-Level Domain is a zone that is one layer below the root, such as "com" or "jp"."
 
 **Trustworthy System**: Computer hardware, software, and procedures that are: reasonably secure from intrusion and misuse; provide a reasonable level of availability, reliability, and correct operation; are reasonably suited to performing their intended functions; and enforce the applicable security policy.
 
@@ -726,11 +746,15 @@ Effective 2026-03-15: DNSSEC validation back to the IANA DNSSEC root trust ancho
 - support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
 - properly handle the security concerns enumerated in [RFC 6840, Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
 
-Effective 2026-03-15: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control.
+Effective 2026-03-15: 
 
-DNSSEC validation back to the IANA DNSSEC root trust anchor MAY be performed on all DNS queries associated with the validation of domain authorization or control by Remote Network Perspectives used for Multi-Perspective Issuance Corroboration.
+For e-mail Domain Validation methods described in sections 3.2.2.4.4, 3.2.2.4.13, 3.2.2.4.14, DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS CNAME, CAA, TXT queries attempting to obtain the Authorization Domain Name associated with the validation of domain authorization or control by the Primary Network Perspective and CAs MUST NOT use local policy to disable DNSSEC validation. For all other DNS queries, DNSSEC validation back to the IANA DNSSEC root trust anchor SHOULD be performed and CAs SHOULD NOT use local policy to disable DNSSEC validation.
+
+For all other Domain Validation methods, DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective and CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control.
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
+
+DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of the logging requirements of [Section 5.4.1](#541-types-of-events-recorded).
 
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
 
@@ -742,32 +766,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 ##### 3.2.2.4.2 Email, Fax, SMS, or Postal Mail to Domain Contact
 
-Confirming the Applicant's control over the FQDN by sending a Random Value via email, fax, SMS, or postal mail and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to an email address, fax/SMS number, or postal mail address identified as a Domain Contact.
-
-Each email, fax, SMS, or postal mail MAY confirm control of multiple Authorization Domain Names.
-
-The CA MAY send the email, fax, SMS, or postal mail identified under this section to more than one recipient provided that every recipient is identified by the Domain Name Registrar as representing the Domain Name Registrant for every FQDN being verified using the email, fax, SMS, or postal mail.
-
-The Random Value SHALL be unique in each email, fax, SMS, or postal mail.
-
-The CA MAY resend the email, fax, SMS, or postal mail in its entirety, including re-use of the Random Value, provided that the communication's entire contents and recipient(s) remain unchanged.
-
-The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
-
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
-Effective 2025-01-15:
-
-- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
-- When obtaining Domain Contact information for a requested Domain Name the CA:
-  - if using the WHOIS protocol ([RFC 3912](https://datatracker.ietf.org/doc/html/rfc3912)), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
-  - if using the Registry Data Access Protocol ([RFC 7482](https://datatracker.ietf.org/doc/html/rfc7482)), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-  - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
-
-Effective 2025-07-15:
-
-- The CA MUST NOT rely on this method.
-- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
 ##### 3.2.2.4.3 Phone Contact with Domain Contact
 
@@ -790,6 +789,12 @@ The email MAY be re-sent in its entirety, including the re-use of the Random Val
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
+Effective March 15, 2028:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
 ##### 3.2.2.4.5 Domain Authorization Document
 
@@ -825,6 +830,10 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 **Note**: Once the FQDN has been validated using this method, the CA MUST NOT issue Certificates for other FQDNs that end with all the labels of the validated FQDN unless the CA performs separate validations for each of those other FQDNs using authorized methods. This method is NOT suitable for validating Wildcard Domain Names.
 
+Effective March 15, 2026:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
 ##### 3.2.2.4.9 Test Certificate
 
 This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
@@ -843,13 +852,12 @@ Confirming the Applicant's control over the FQDN by validating the Applicant is 
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-Effective 2025-01-15:
+When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
 
-- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
-- When obtaining Domain Contact information for a requested Domain Name the CA:
-  - if using the WHOIS protocol ([RFC 3912](https://datatracker.ietf.org/doc/html/rfc3912)), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
-  - if using the Registry Data Access Protocol ([RFC 7482](https://datatracker.ietf.org/doc/html/rfc7482)), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-  - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
+When obtaining Domain Contact information for a requested Domain Name the CA:
+- if using the WHOIS protocol (RFC 3912), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
+- if using the Registry Data Access Protocol (RFC 7482), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
+- MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
 
 ##### 3.2.2.4.13 Email to DNS CAA Contact
 
@@ -863,6 +871,12 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
+Effective March 15, 2028:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
 ##### 3.2.2.4.14 Email to DNS TXT Contact
 
 Confirming the Applicant's control over the FQDN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS TXT Record Email Contact for the Authorization Domain Name selected to validate the FQDN.
@@ -875,30 +889,15 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
-##### 3.2.2.4.15 Phone Contact with Domain Contact v2
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
 
-Confirm the Applicant's control over the FQDN by calling the Domain Contact's phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same Domain Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN.
-
-In the event that someone other than a Domain Contact is reached, the CA MAY request to be transferred to the Domain Contact.
-
-In the event of reaching voicemail, the CA may leave the Random Value and the ADN(s) being validated. The Random Value MUST be returned to the CA to approve the request.
-
-The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
-
-**Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
-
-Effective 2025-01-15:
-
-- When issuing Subscriber Certificates, the CA MUST NOT rely on Domain Contact information obtained using an HTTPS website, regardless of whether previously obtained information is within the allowed reuse period.
-- When obtaining Domain Contact information for a requested Domain Name the CA:
-  - if using the WHOIS protocol ([RFC 3912](https://datatracker.ietf.org/doc/html/rfc3912)), MUST query IANA's WHOIS server and follow referrals to the appropriate WHOIS server.
-  - if using the Registry Data Access Protocol ([RFC 7482](https://datatracker.ietf.org/doc/html/rfc7482)), MUST utilize IANA's bootstrap file to identify and query the correct RDAP server for the domain.
-  - MUST NOT rely on cached 1) WHOIS server information that is more than 48 hours old, or 2) RDAP bootstrap data from IANA that is more than 48 hours old, to ensure that it relies upon up-to-date and accurate information.
-
-Effective 2025-07-15:
-
+Effective March 15, 2028:
 - The CA MUST NOT rely on this method.
 - Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
+##### 3.2.2.4.15 Phone Contact with Domain Contact
+
+This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
 ##### 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact
 
@@ -914,6 +913,12 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
 
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
+Effective March 15, 2027:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
 ##### 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact
 
 Confirm the Applicant's control over the FQDN by calling the DNS CAA Phone Contact's phone number and obtain a confirming response to validate the ADN. Each phone call MAY confirm control of multiple ADNs provided that the same DNS CAA Phone Contact phone number is listed for each ADN being verified and they provide a confirming response for each ADN. The relevant CAA Resource Record Set MUST be found using the search algorithm defined in [RFC 8659, Section 3](https://datatracker.ietf.org/doc/html/rfc8659#section-3).
@@ -927,6 +932,12 @@ The Random Value SHALL remain valid for use in a confirming response for no more
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
 
 **Note**: Once the FQDN has been validated using this method, the CA MAY also issue Certificates for other FQDNs that end with all the Domain Labels of the validated FQDN. This method is suitable for validating Wildcard Domain Names.
+
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
+Effective March 15, 2027:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
 ##### 3.2.2.4.18 Agreed-Upon Change to Website v2
 
@@ -1063,11 +1074,21 @@ The CA MAY resend the email, fax, SMS, or postal mail in its entirety, including
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values, in which case the CA MUST follow its CPS.
 
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
+Effective March 15, 2027:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
 ##### 3.2.2.5.3 Reverse Address Lookup
 
 Confirming the Applicant's control over the IP Address by obtaining a Domain Name associated with the IP Address through a reverse-IP lookup on the IP Address and then verifying control over the FQDN using a method permitted under [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control).
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same FQDN as the Primary Network Perspective.
+
+Effective March 15, 2027:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
 ##### 3.2.2.5.4 Any Other Method
 
@@ -1083,6 +1104,12 @@ In the event of reaching voicemail, the CA may leave the Random Value and the IP
 
 The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
+Effective March 15, 2027:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+
 ##### 3.2.2.5.6 ACME "http-01" method for IP Addresses
 
 Confirming the Applicant's control over the IP Address by performing the procedure documented for an "http-01" challenge in [RFC 8738](https://datatracker.ietf.org/doc/html/rfc8738).
@@ -1094,6 +1121,10 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 Confirming the Applicant's control over the IP Address by performing the procedure documented for a "tls-alpn-01" challenge in [RFC 8738](https://datatracker.ietf.org/doc/html/rfc8738).
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same challenge information (i.e. token) as the Primary Network Perspective.
+
+##### 3.2.2.5.8 DNS TXT Record with Persistent Value in the Reverse Namespace
+
+Confirming the Applicant’s control over the IP Address by converting the IP address to a Reverse Zone Domain Name and then verifying the presence of a Persistent DCV TXT Record identifying the Applicant as defined in [Section 3.2.2.4.22](#322422-dns-txt-record-with-persistent-value). The record MUST be placed at the "`_ip-validation-persist`" label prepended to the Reverse Zone Domain Name of the IP address being validated (i.e., "`_ip-validation-persist.[Reverse Zone Domain Name]`").
 
 #### 3.2.2.6 Wildcard Domain Validation
 
@@ -1331,7 +1362,9 @@ If a Delegated Third Party fulfills any of the CA's obligations under this secti
 
 ### 4.2.2 Approval or rejection of certificate applications
 
-CAs SHALL NOT issue certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
+CAs SHALL NOT issue Certificates containing Internal Names or Reserved IP Addresses, as such names cannot be validated according to [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) or [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
+
+Effective 2026-03-15, CAs SHALL NOT issue Certificates containing Domain Names that end in an IP Reverse Zone Suffix.
 
 ### 4.2.3 Time to process certificate applications
 
@@ -2879,7 +2912,7 @@ Table: `GeneralName` within a `subjectAltName` extension
 | ---                         | --            | -----          |
 | `otherName`                 | N             | -              |
 | `rfc822Name`                | N             | -              |
-| `dNSName`                   | Y             | The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT contain an Internal Name. The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be composed entirely of P-Labels or Non-Reserved LDH Labels joined together by a U+002E FULL STOP (".") character. The zero-length Domain Label representing the root zone of the Internet Domain Name System MUST NOT be included (e.g. "example.com" MUST be encoded as "example.com" and MUST NOT be encoded as "example.com."). |
+| `dNSName`                   | Y             | The entry MUST contain either a Fully-Qualified Domain Name or Wildcard Domain Name that the CA has validated in accordance with [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Wildcard Domain Names MUST be validated for consistency with [Section 3.2.2.6](#3226-wildcard-domain-validation). The entry MUST NOT contain an Internal Name. Effective 2026-03-15, the entry MUST NOT contain a Domain Name that ends in an IP Address Reverse Zone Suffix. The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name contained in the entry MUST be composed entirely of P-Labels or Non-Reserved LDH Labels joined together by a U+002E FULL STOP (".") character. The zero-length Domain Label representing the root zone of the Internet Domain Name System MUST NOT be included (e.g. "example.com" MUST be encoded as "example.com" and MUST NOT be encoded as "example.com."). |
 | `x400Address`               | N             | -              |
 | `directoryName`             | N             | -              |
 | `ediPartyName`              | N             | -              |
@@ -3411,7 +3444,7 @@ The CA SHALL use one of the following signature algorithms and encodings. When e
   0500a203020140
   ```
 
-In addition, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
+Until 2026-09-15, the CA MAY use the following signature algorithm and encoding if all of the following conditions are met:
 
 - If used within a Certificate, such as the `signatureAlgorithm` field of a Certificate or the `signature` field of a TBSCertificate:
 
@@ -3440,6 +3473,8 @@ In addition, the CA MAY use the following signature algorithm and encoding if al
 
   Encoding:
   `300d06092a864886f70d0101050500`
+
+Prior to 2026‐09‐15, the CA SHALL revoke any unexpired Subordinate CA Certificate that contains `RSASSA-PKCS1-v1_5 with SHA-1` within the Certificate.
 
 ##### 7.1.3.2.2 ECDSA
 
