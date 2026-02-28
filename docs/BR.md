@@ -561,7 +561,7 @@ The script outputs:
 
 **Validity Period**: From RFC 5280 (<https://tools.ietf.org/html/rfc5280>): "The period of time from notBefore through notAfter, inclusive."
 
-**WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 7482, or an HTTPS website.
+**WHOIS**: Information retrieved directly from the Domain Name Registrar or registry operator via the protocol defined in RFC 3912, the Registry Data Access Protocol defined in RFC 9082, or an HTTPS website.
 
 **Wildcard Certificate**: A Certificate containing at least one Wildcard Domain Name in the Subject Alternative Names in the Certificate.
 
@@ -652,7 +652,7 @@ RFC6962, Request for Comments: 6962, Certificate Transparency. B. Laurie, et al.
 
 RFC7231, Request For Comments: 7231, Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content. R. Fielding, et al. June 2014.
 
-RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Query Format. A. Newton, et al. March 2015.
+RFC9082, Request for Comments: 9082, Registration Data Access Protocol (RDAP) Query Format. S. Hollenbeck, et al. June 2021.
 
 RFC7538, Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect). J. Reschke. April 2015.
 
