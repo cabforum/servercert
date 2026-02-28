@@ -3069,8 +3069,6 @@ Table: Permitted `policyQualifiers`
 | Any other qualifier                  | MUST NOT     | -              | -             |
 
 
-**Note**: See [Section 7.1.2.8.2](#71282-ocsp-responder-extensions) for applicable effective dates for when this extension may be included.
-
 **Note**: Because the Certificate Policies extension may be used to restrict the applicable usages for a Certificate, incorrect policies may result in OCSP Responder Certificates that fail to successfully validate, resulting in invalid OCSP Responses. Including the `anyPolicy` policy can reduce this risk, but add to client processing complexity and interoperability issues.
 
 #### 7.1.2.9 Precertificate Profile
