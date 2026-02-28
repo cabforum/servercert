@@ -216,9 +216,9 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **International Organization**: An organization founded by a constituent document, e.g., a charter, treaty, convention or similar document, signed by, or on behalf of, a minimum of two Sovereign State governments.
 
-**Jurisdiction of Incorporation**: In the context of a Private Organization, the country and (where applicable) the state or province or locality where the organization's legal existence was established by a filing with (or an act of) an appropriate government agency or entity (e.g., where it was incorporated).  In the context of a Government Entity, the country and (where applicable) the state or province where the Entity's legal existence was created by law.
+**Jurisdiction of Incorporation**: The country and (where applicable) the state or province or locality where the organization's legal existence was established by a filing with (or an act of) an appropriate government agency or entity (e.g., where it was incorporated).
 
-**Jurisdiction of Registration**: In the case of a Business Entity, the state, province, or locality where the organization has registered its business presence by means of filings by a Principal Individual involved in the business.
+**Jurisdiction of Registration**: The country and (where applicable) the state, province, or locality where the organization has registered its business presence by means of filings by a government agency, entity or Principal Individual involved in the business.
 
 **Latin Notary**: A person with legal training whose commission under applicable law not only includes authority to authenticate the execution of a signature on a document but also responsibility for the correctness and content of the document. A Latin Notary is sometimes referred to as a Civil Law Notary.
 
@@ -404,7 +404,7 @@ As a general rule, the CA is responsible for taking all verification steps reaso
 
 ##### 3.2.2.1.3 Disclosure of Verification Sources
 
-Effective as of 1 October 2020, prior to the use of an Incorporating Agency or Registration Agency to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency or Registration Agency. This disclosure SHALL be through an appropriate and readily accessible online means.
+Effective as of 1 October 2020, prior to the use of an Incorporating Agency or Registration Agency or QGIS to fulfill these verification requirements, the CA MUST publicly disclose Agency Information about the Incorporating Agency or Registration Agency. This disclosure SHALL be through an appropriate and readily accessible online means.
 
 This Agency Information SHALL include at least the following:
 
@@ -412,6 +412,12 @@ This Agency Information SHALL include at least the following:
 * The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisdiction(s) that the Agency is appropriate for; and,
 * The acceptable form or syntax of Registration Numbers used by the Incorporating Agency or Registration Agency, if the CA restricts such Numbers to an acceptable form or syntax; and,
 * A revision history that includes a unique version number and date of publication for any additions, modifications, and/or removals from this list.
+
+When using a QGIS, the CA MUST ensure that the following conditions are met:
+* The QGIS informs of:
+   - The name of the Incorporating Agency or Registration Agency where the applicant is incorporated/registered, and
+   - The registration number assigned by the Agency to the Applicant
+* The Jurisdiction of Incorporation or Registration of the subscriber to be included in the certificate MUST match the accepted values listed for the Agency informed by the QGIS
 
 The CA MUST document where to obtain this information within Section 3.2 of the CA's Certificate Policy and/or Certification Practice Statement.
 
@@ -446,6 +452,8 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
    A.  **Legal Existence**: Verify that the Applicant is a legally recognized International Organization Entity.
    B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
    C.  **Registration Number**: The CA MUST attempt to obtain the Applicant's date of formation, or the identifier for the legislative act that created the International Organization Entity.  In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is an International Organization Entity.
+
+For the above requirements (1 to 4), when necessary, it's allowed the use of QGIS that consolidate and publish official information of one or more Incorporating or Registration Agencies.
 
 ##### 3.2.2.2.2 Acceptable Method of Verification
 
@@ -521,6 +529,8 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 
    i. the Verified Professional Letter includes a copy of supporting documentation used to establish the Applicant's legal existence, such as a certificate of registration, articles of incorporation, operating agreement, statute, or regulatory act, and
    ii. the CA confirms the Applicant's organization name specified in the Verified Professional Letter with a QIIS or QGIS.
+
+For the above requirements (1 to 5), when necessary, it's allowed the use of QGIS that consolidate and publish official information of one or more Incorporating or Registration Agencies.
 
 #### 3.2.2.3 Verification of Applicant's Legal Existence and Identity – Assumed Name
 
@@ -1324,7 +1334,7 @@ Subject to the requirements of these Guidelines, the EV Certificate and certific
 
 __Certificate Field__: `subject:organizationName` (OID 2.5.4.10)  
 __Required/Optional__: Required  
-__Contents__: This field MUST contain the Subject's full legal organization name as listed in the official records of the Incorporating or Registration Agency in the Subject's Jurisdiction of Incorporation or Registration or as otherwise verified by the CA as provided herein. A CA MAY abbreviate the organization prefixes or suffixes in the organization name, e.g., if the official record shows "Company Name Incorporated" the CA MAY include "Company Name, Inc."
+__Contents__: This field MUST contain the Subject's full legal organization name as listed in the official records of the Incorporating or Registration Agency or QGIS in the Subject's Jurisdiction of Incorporation or Registration or as otherwise verified by the CA as provided herein. A CA MAY abbreviate the organization prefixes or suffixes in the organization name, e.g., if the official record shows "Company Name Incorporated" the CA MAY include "Company Name, Inc."
 
 When abbreviating a Subject's full legal name as allowed by this subsection, the CA MUST use abbreviations that are not misleading in the Jurisdiction of Incorporation or Registration.
 
