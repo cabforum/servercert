@@ -654,6 +654,8 @@ RFC7482, Request for Comments: 7482, Registration Data Access Protocol (RDAP) Qu
 
 RFC7538, Request For Comments: 7538, The Hypertext Transfer Protocol Status Code 308 (Permanent Redirect). J. Reschke. April 2015.
 
+RFC7565, Request for Comments: 7565, The 'acct' URI Scheme. P. Saint-Andre. May 2015.
+
 RFC8499, Request for Comments: 8499, DNS Terminology. P. Hoffman, et al. January 2019.
 
 RFC8555, Request for Comments: [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), Automatic Certificate Management Environment (ACME). R. Barnes, et al. March 2019.
@@ -1404,7 +1406,7 @@ When processing CAA records, CAs SHOULD process the `accounturi` and `validation
 *Effective 2027-03-15*, when processing CAA records, CAs MUST process the `accounturi` and `validationmethod`s parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657).
 
 In addition, *Effective 2027-03-15*:
-* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS.
+* If the CA accepts certificate requests via any protocol other than the ACME protocol defined in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the 'acct' URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565).
 * If the CA accepts certificate requests via any protocol other than the ACME protocol, the CA MUST interpret and process `validationmethods` labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'dns-01' and 'ca-tbr-7'), the CA SHOULD accept any of the labels as granting permission to issue.
 
 ###### 4.2.2.1.4 DNSSEC Validation of CAA Records
