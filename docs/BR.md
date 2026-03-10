@@ -797,8 +797,6 @@ DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outsid
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of the logging requirements of [Section 5.4.1](#541-types-of-events-recorded).
 
-CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
-
 **Note**: FQDNs may be listed in Subscriber Certificates using `dNSName`s in the `subjectAltName` extension or in Subordinate CA Certificates via `dNSName`s in `permittedSubtrees` within the Name Constraints extension.
 
 ##### 3.2.2.4.1 Validating the Applicant as a Domain Contact
@@ -1092,8 +1090,6 @@ This section defines the permitted processes and procedures for validating the A
 The CA SHALL confirm that prior to issuance, the CA has validated each IP Address listed in the Certificate using at least one of the methods specified in this section.
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of IP Address validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
-
-After July 31, 2019, CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address.
 
 ##### 3.2.2.5.1 Agreed-Upon Change to Website
 
@@ -1864,16 +1860,19 @@ The CA SHALL record at least the following events:
 
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
-   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-   3. Approval and rejection of certificate requests;
-   4. Issuance of Certificates; 
-   5. Generation of Certificate Revocation Lists; and 
-   6. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)).
-   7. Multi-Perspective Issuance Corroboration attempts from each Network Perspective, minimally recording the following information:
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement, minimally recording the following information:
+      1. the information being validated (e.g., the applied-for FQDN or the organization name);
+      2. the ADN used (if applicable and different from the applied-for FQDN); and
+      3. the validation method used (e.g., the BRs section number or the registered label of an ACME validation method);
+   4. Approval and rejection of certificate requests;
+   5. Issuance of Certificates; 
+   6. Generation of Certificate Revocation Lists; and 
+   7. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)).
+   8. Multi-Perspective Issuance Corroboration attempts from each Network Perspective, minimally recording the following information:
       1. an identifier that uniquely identifies the Network Perspective used;
       2. the attempted domain name and/or IP address; and
       3. the result of the attempt (e.g., "domain validation pass/fail", "CAA permission/prohibition").
-   8. Multi-Perspective Issuance Corroboration quorum results for each attempted domain name or IP address represented in a Certificate request (i.e., "3/4" which should be interpreted as "Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
+   9. Multi-Perspective Issuance Corroboration quorum results for each attempted domain name or IP address represented in a Certificate request (i.e., "3/4" which should be interpreted as "Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
