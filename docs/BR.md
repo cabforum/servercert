@@ -1864,15 +1864,15 @@ The CA SHALL record at least the following events:
       1. the information being validated (e.g., the applied-for FQDN or the organization name);
       2. the ADN used (if applicable and different from the applied-for FQDN); and
       3. the validation method used (e.g., the BRs section number or the registered label of an ACME validation method);
-   4. Approval and rejection of certificate requests;
-   5. Issuance of Certificates; 
-   6. Generation of Certificate Revocation Lists; and 
-   7. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)).
-   8. Multi-Perspective Issuance Corroboration attempts from each Network Perspective, minimally recording the following information:
+   3. Approval and rejection of certificate requests;
+   4. Issuance of Certificates; 
+   5. Generation of Certificate Revocation Lists; and 
+   6. Signing of OCSP Responses (as described in [Section 4.9](#49-certificate-revocation-and-suspension) and [Section 4.10](#410-certificate-status-services)).
+   7. Multi-Perspective Issuance Corroboration attempts from each Network Perspective, minimally recording the following information:
       1. an identifier that uniquely identifies the Network Perspective used;
       2. the attempted domain name and/or IP address; and
       3. the result of the attempt (e.g., "domain validation pass/fail", "CAA permission/prohibition").
-   9. Multi-Perspective Issuance Corroboration quorum results for each attempted domain name or IP address represented in a Certificate request (i.e., "3/4" which should be interpreted as "Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
+   8. Multi-Perspective Issuance Corroboration quorum results for each attempted domain name or IP address represented in a Certificate request (i.e., "3/4" which should be interpreted as "Three (3) out of four (4) attempted Network Perspectives corroborated the determinations made by the Primary Network Perspective).
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
