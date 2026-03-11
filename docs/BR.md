@@ -230,6 +230,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15     | 4.2.1                     | Domain Name and IP Address validation maximum data reuse period is 200 days.     |
 | 2026-03-15     | 6.3.2                     | Maximum validity period of Subscriber Certificates is 200 days.   |
 | 2026-03-15     | 7.1.2.4                   | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4.    |
+| 2026-07-15     | 5.4.1                     | Audit logged validation records MUST include specific information.    |
 | 2026-09-15     | 7.1.3.2.1                 | Sunset all remaining use of SHA-1 in Certificates and CRLs.   |
 | 2027-03-15     | 3.2.2.4 and 3.2.2.5       | CAs MUST NOT rely on Methods 3.2.2.4.16, 3.2.2.4.17, 3.2.2.5.2, and 3.2.2.5.5 to issue Subscriber Certificates.    |
 | 2027-03-15     | 3.2.2.5.3                 | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates.    |
@@ -1860,7 +1861,7 @@ The CA SHALL record at least the following events:
 
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
-   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement, minimally recording the following information:
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement. Effective 2026-07-15, records MUST include at a minimum:
       1. the information being validated (e.g., the applied-for FQDN or the organization name);
       2. the ADN used (if applicable and different from the applied-for FQDN); and
       3. the validation method used (e.g., the BRs section number or the registered label of an ACME validation method);
