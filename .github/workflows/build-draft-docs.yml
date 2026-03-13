@@ -37,4 +37,5 @@ jobs:
             ${{ steps.build_doc.outputs.pdf_file }}
             ${{ steps.build_doc.outputs.docx_file }}
             ${{ steps.build_doc.outputs.pdf_redline_file }}
+            ${{ steps.build_doc.outputs.docx_redline_file }}
           if-no-files-found: 'error'
