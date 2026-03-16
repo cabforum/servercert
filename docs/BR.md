@@ -517,7 +517,7 @@ The script outputs:
 
 [https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml](https://www.iana.org/assignments/iana-ipv6-special-registry/iana-ipv6-special-registry.xhtml)
 
-**Revoked**: Effective 2026-05-15, the following conditions must be met for a Certificate to be considered revoked:
+**Revoked**: Effective 2026-09-15, the following conditions must be met for a Certificate to be considered revoked:
 - if the certificate contains a CRL Distribution Point URI: a CRL containing the certificate serial number is available for consumption by Relying Parties at that URI.
 - if the certificate contains an Authority Information Access OCSP URI: an OCSP request to that URI for the certificate serial number results in a response with a `certStatus` value of `revoked`.
 
@@ -1604,7 +1604,7 @@ The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscri
 
 ### 4.9.3 Procedure for revocation request
 
-Prior to 2026-05-15, for Section 4.9.3 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.9 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
+Prior to 2026-09-15, for Section 4.9.3 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.9 of the Baseline Requirements for TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to these Requirements.
 
 The CA's Certificate Policy or Certification Practice Statement MUST describe a process for Subscribers to request revocation of their own Certificates.
 
@@ -1639,7 +1639,7 @@ No stipulation.
 
 ### 4.9.5 Time within which CA must process the revocation request
 
-Prior to 2026-05-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.9 of the Baseline Requirements for TLS Server Certificates. Effective 2026-05-15, the CA SHALL adhere to these Requirements.
+Prior to 2026-09-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.9 of the Baseline Requirements for TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to these Requirements.
 
 The period between receipt of a revocation request from the Subscriber and published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). If the request is not authenticated upon receipt, the CA SHALL within 24 hours of receipt work with the requester to authenticate the request, and the period listed above will be measured from the time of authentication.
 
@@ -1731,7 +1731,7 @@ No Stipulation.
 
 See [Section 4.9.1](#491-circumstances-for-revocation).
 
-Effective 2026-05-15, the CA's Certificate Policy or Certification Practice Statement MUST describe the circumstances that necessitate the CA to (1) reject subsequent certificate requests containing the same public key and (2) perform a cascading revocation of all time-valid certificates containing the same public key when the revocation reason of a revocation is "Key Compromise",
+Effective 2026-09-15, the CA's Certificate Policy or Certification Practice Statement MUST describe the circumstances that necessitate the CA to (1) reject subsequent certificate requests containing the same public key and (2) perform a cascading revocation of all time-valid certificates containing the same public key when the revocation reason of a revocation is "Key Compromise",
 
 ### 4.9.13 Circumstances for suspension
 
