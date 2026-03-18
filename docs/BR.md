@@ -1604,7 +1604,7 @@ The Subscriber, RA, or Issuing CA can initiate revocation. Additionally, Subscri
 
 ### 4.9.3 Procedure for revocation request
 
-Prior to 2026-09-15, for Section 4.9.3 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.9 of the Baseline Requirements for TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to these Requirements.
+Prior to 2026-09-15, for Section 4.9.3 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.2.5 of the Baseline Requirements for TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to these Requirements.
 
 The CA's Certificate Policy or Certification Practice Statement MUST describe a process for Subscribers to request revocation of their own Certificates.
 
@@ -1639,7 +1639,7 @@ No stipulation.
 
 ### 4.9.5 Time within which CA must process the revocation request
 
-Prior to 2026-09-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.1.9 of the Baseline Requirements for TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to these Requirements.
+Prior to 2026-09-15, for Section 4.9.5 of these Requirements, the CA SHALL adhere to these Requirements or Version 2.2.5 of the Baseline Requirements for TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to these Requirements.
 
 The period between receipt of a revocation request from the Subscriber and published revocation MUST NOT exceed the time frame set forth in [Section 4.9.1.1](#4911-reasons-for-revoking-a-subscriber-certificate). If the request is not authenticated upon receipt, the CA SHALL within 24 hours of receipt work with the requester to authenticate the request, and the period listed above will be measured from the time of authentication.
 
