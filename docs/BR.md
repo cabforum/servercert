@@ -1731,7 +1731,7 @@ No Stipulation.
 
 See [Section 4.9.1](#491-circumstances-for-revocation).
 
-Effective 2026-09-15, the CA's Certificate Policy or Certification Practice Statement MUST describe the circumstances that necessitate the CA to (1) reject subsequent certificate requests containing the same public key and (2) perform a cascading revocation of all time-valid certificates containing the same public key when the revocation reason of a revocation is "Key Compromise",
+Effective 2026-09-15, the CA's Certificate Policy or Certification Practice Statement MUST describe the circumstances that necessitate the CA to (1) reject subsequent certificate requests containing a known compromised public key and (2) perform a cascading revocation of all time-valid certificates containing the same compromised public key when the revocation reason of a revocation is "Key Compromise",
 
 ### 4.9.13 Circumstances for suspension
 
