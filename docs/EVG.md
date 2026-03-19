@@ -911,7 +911,7 @@ If an Applicant has a currently valid EV Certificate issued by the CA, a CA MAY 
 3. The Applicant's Verified Method of Communication required by [Section 3.2.2.5](#3225-verified-method-of-communication) but still MUST perform the verification required by [Section 3.2.2.5.2](#32252-acceptable-methods-of-verification) (B);
 4. The Applicant's Operational Existence under [Section 3.2.2.6](#3226-verification-of-applicants-operational-existence);
 5. The Name, Title, Agency and Authority of the Contract Signer, and Certificate Approver, under [Section 3.2.2.8](#3228-verification-of-name-title-and-authority-of-contract-signer-and-certificate-approver); and
-6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), provided that the CA confirms that the Domain Name remains registered to the same entity using domain registration data consistent with [Section 3.2.2.7](#3227-verification-of-applicants-domain-name).
+6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), provided that the CA confirms, using domain registration data consistent with [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), that the Domain Name remains registered to the same Legal Entity previously validated for the EV Certificate.
 
 ##### 3.2.2.14.2 Re-issuance Requests
 
