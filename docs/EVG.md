@@ -1,12 +1,12 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.1
+subtitle: Version 2.0.2
 author:
   - CA/Browser Forum
-date: 6 May, 2024
+date: 31 March, 2026
 copyright: |
-  Copyright 2024 CA/Browser Forum
+  Copyright 2026 CA/Browser Forum
 
 
   This work is licensed under the Creative Commons Attribution 4.0 International license.
@@ -85,6 +85,7 @@ These Guidelines do not address the verification of information, or the issuance
 | 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 2024-02-01 | 2024-03-04 |
 | 2.0.0 | SC65 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
 | 2.0.1 | SC72 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 2024-04-03 | 2024-05-06 |
+| 2.0.2 | SC95 | Clean-up 2025                                                                            | 2026-02-27 | 2026-03-31 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
