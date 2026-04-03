@@ -186,6 +186,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15 | [4.2.2](#422-approval-or-rejection-of-certificate-applications) | CAs SHALL NOT issue Certificates containing Domain Names that end in an IP Reverse Zone Suffix. |
 | 2026-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 200 days. |
 | 2026-03-15 | [7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile) | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4. |
+| 2026-07-15  | [5.4.1](#541-types-of-events-recorded) | Audit logs of verification activity MUST include specific information. |
 | 2026-09-15 | [7.1.3.2.1](#71321-rsa) | Sunset all remaining use of SHA-1 in Certificates and CRLs. |
 | 2027-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.16, 3.2.2.4.17, 3.2.2.5.2, and 3.2.2.5.5 to issue Subscriber Certificates. |
 | 2027-03-15 | [3.2.2.5.3](#32253-reverse-address-lookup) | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates. |
@@ -757,8 +758,6 @@ DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outsid
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of the logging requirements of [Section 5.4.1](#541-types-of-events-recorded).
 
-CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
-
 **Note**: FQDNs may be listed in Subscriber Certificates using `dNSName`s in the `subjectAltName` extension or in Subordinate CA Certificates via `dNSName`s in `permittedSubtrees` within the Name Constraints extension.
 
 ##### 3.2.2.4.1 Validating the Applicant as a Domain Contact
@@ -1047,8 +1046,6 @@ This section defines the permitted processes and procedures for validating the A
 The CA SHALL confirm that prior to issuance, the CA has validated each IP Address listed in the Certificate using at least one of the methods specified in this section.
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of IP Address validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
-
-CAs SHALL maintain a record of which IP validation method, including the relevant BR version number, was used to validate every IP Address.
 
 ##### 3.2.2.5.1 Agreed-Upon Change to Website
 
@@ -1833,7 +1830,10 @@ The CA SHALL record at least the following events:
 2. Subscriber Certificate lifecycle management events, including:
 
    1. Certificate requests, renewal, and re-key requests, and revocation;
-   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement. Effective 2026-07-15, records MUST include at a minimum:
+      1. the information being validated (e.g., the applied-for FQDN or the organization name);
+      2. the ADN used (if applicable and different from the applied-for FQDN); and
+      3. the validation method used (e.g., the BRs section number or the registered label of an ACME validation method);
    3. Approval and rejection of certificate requests;
    4. Issuance of Certificates;
    5. Generation of Certificate Revocation Lists; and
