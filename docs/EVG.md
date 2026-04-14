@@ -911,7 +911,12 @@ If an Applicant has a currently valid EV Certificate issued by the CA, a CA MAY 
 3. The Applicant's Verified Method of Communication required by [Section 3.2.2.5](#3225-verified-method-of-communication) but still MUST perform the verification required by [Section 3.2.2.5.2](#32252-acceptable-methods-of-verification) (B);
 4. The Applicant's Operational Existence under [Section 3.2.2.6](#3226-verification-of-applicants-operational-existence);
 5. The Name, Title, Agency and Authority of the Contract Signer, and Certificate Approver, under [Section 3.2.2.8](#3228-verification-of-name-title-and-authority-of-contract-signer-and-certificate-approver); and
-6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), provided that the CA confirms, using domain registration data consistent with [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), that the Domain Name remains registered to the same Legal Entity previously validated for the EV Certificate.
+6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), provided that the CA confirms the Domain Name remains registered to the same Legal Entity. This confirmation SHALL be performed using the first of the following methods that is successful:
+
+A. Verifying the domain registration data via an authenticated channel with the domain registrar or registry;
+B. Relying on a domain control validation, performed in accordance with Baseline Requirements Section 3.2.2.4, that is less than 48 hours old;
+C. Performing a new domain control validation in accordance with Baseline Requirements Section 3.2.2.4.
+
 
 ##### 3.2.2.14.2 Re-issuance Requests
 
@@ -929,7 +934,7 @@ A CA may rely on a previously verified certificate request to issue a replacemen
    C.  Address of Place of Business – 398 days;
    D.  Verified Method of Communication – 398 days;
    E.  Operational existence – 398 days;
-   F.  Domain Name – 398 days;
+   F.  Domain Name – 200 days;
    G.  Name, Title, Agency, and Authority – 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
 2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
