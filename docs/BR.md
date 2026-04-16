@@ -731,7 +731,7 @@ The CA SHOULD implement a process to screen proxy servers in order to prevent re
 
 This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
 
-The CA MUST follow this process when choosing the Authorization Domain Name "ADN" for validation of each applied-for FQDN or Wildcard Domain Name:
+The CA MUST follow this process when choosing the Authorization Domain Name (ADN) for validation of each applied-for FQDN or Wildcard Domain Name:
 
 1. Initialize `A` to the applied-for FQDN or Wildcard Domain Name.
 2. Choose a validation method. If `A` is a Wildcard Domain Name, the CA MUST choose a validation method with a check in the Wildcard column below. If `A` is an Onion Domain Name, the CA MUST choose a validation method with a check in the Onion column below.
@@ -743,22 +743,22 @@ The CA MUST follow this process when choosing the Authorization Domain Name "ADN
     2. If the validation method has a check in the Prune column below, prune zero or more Domain Labels of `A` from left to right until `A` is equal to the Base Domain Name of `A`, or the CA chooses to stop pruning, whichever comes first.
 5. Use `A` as the ADN.
 
-| Method                                         | Wildcard | Prune | CNAME | Onion |
-| --------                                                    | - | - | - | - |
-| 3.2.2.4.4 Constructed Email to Domain Contact               | ✔️ | ✔️ | ✔️ | - |
-| 3.2.2.4.7 DNS Change                                        | ✔️ | ✔️ | ✔️ | - |
-| 3.2.2.4.8 IP Address                                        | - | - | - | - |
-| 3.2.2.4.12 Validating Applicant as a Domain Contact         | ✔️ | ✔️ | - | - |
-| 3.2.2.4.13 Email to DNS CAA Contact                         | ✔️ | ✔️ | ✔️ | - |
-| 3.2.2.4.14 Email to DNS TXT Contact                         | ✔️ | ✔️ | ✔️ | - |
-| 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact  | ✔️ | ✔️ | ✔️ | - |
-| 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact         | ✔️ | ✔️ | ✔️ | - |
-| 3.2.2.4.18 Agreed-Upon Change to Website v2                 | - | - | - | ✔️ |
-| 3.2.2.4.19 Agreed-Upon Change to Website - ACME             | - | - | - | ✔️ |
-| 3.2.2.4.20 TLS Using ALPN                                   | - | - | - | ✔️ |
-| 3.2.2.4.21 DNS Labeled with Account ID - ACME               | ✔️ | ✔️ | - | - |
-| 3.2.2.4.22 DNS TXT Record with Persistent Value             | ✔️ | ✔️ | - | - |
-| Appendix B.2.b                                              | ✔️ | ✔️ | - | ✔️ |
+| Method | Wildcard | Prune | CNAME | Onion |
+| --------                                                   | - | - | - | - |
+| 3.2.2.4.4 Constructed Email to Domain Contact              | ✔ | ✔ | ✔ | - |
+| 3.2.2.4.7 DNS Change                                       | ✔ | ✔ | ✔ | - |
+| 3.2.2.4.8 IP Address                                       | - | - | - | - |
+| 3.2.2.4.12 Validating Applicant as a Domain Contact        | ✔ | ✔ | - | - |
+| 3.2.2.4.13 Email to DNS CAA Contact                        | ✔ | ✔ | ✔ | - |
+| 3.2.2.4.14 Email to DNS TXT Contact                        | ✔ | ✔ | ✔ | - |
+| 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact | ✔ | ✔ | ✔ | - |
+| 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact        | ✔ | ✔ | ✔ | - |
+| 3.2.2.4.18 Agreed-Upon Change to Website v2                | - | - | - | ✔ |
+| 3.2.2.4.19 Agreed-Upon Change to Website - ACME            | - | - | - | ✔ |
+| 3.2.2.4.20 TLS Using ALPN                                  | - | - | - | ✔ |
+| 3.2.2.4.21 DNS Labeled with Account ID - ACME              | ✔ | ✔ | - | - |
+| 3.2.2.4.22 DNS TXT Record with Persistent Value            | ✔ | ✔ | - | - |
+| Appendix B.2.b                                             | ✔ | ✔ | - | ✔ |
 
 When the ADN is an Onion Domain Name, the CA SHALL validate it in accordance with Appendix B.
 
@@ -1003,7 +1003,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 ##### 3.2.2.4.22 DNS TXT Record with Persistent Value
 
-Confirming the Applicant's control over the ADN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`"). 
+Confirming the Applicant's control over the ADN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`").
 
 The CA MUST confirm the Persistent DCV TXT Record's RDATA value fulfills the following requirements:
 
