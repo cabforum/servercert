@@ -958,7 +958,7 @@ A CA may rely on a previously verified certificate request to issue a replacemen
    D.  Verified Method of Communication - 398 days;
    E.  Operational existence - 398 days;
    F.  Domain Name – the maximum reuse period specified for Domain Names in Section 4.2.1 of the Baseline Requirements;
-  G.  Name, Title, Agency, and Authority - 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls. For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
+   G.  Name, Title, Agency, and Authority - 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls. For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
 2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
 3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 3.2.2.9](#3229-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 3.2.2.10](#32210-verification-of-approval-of-ev-certificate-request).
