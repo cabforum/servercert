@@ -1372,6 +1372,7 @@ When processing CAA records, CAs SHOULD process the `accounturi` and `validation
 In addition, *Effective 2027-03-15*:
 - If the CA accepts certificate requests via any protocol other than the ACME protocol defined in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the 'acct' URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565).
 - If the CA accepts certificate requests via any protocol other than the ACME protocol, the CA MUST interpret and process `validationmethods` labels formed by concatenating the string ‘ca-tbr-’ with the BR 3.2.2.4 subsection number, e.g. ‘ca-tbr-7’ represents the DNS method described in TLS BR 3.2.2.4.7. If a CA performs domain validation using a mechanism that can be represented by multiple labels (e.g. 'http-01' and 'ca-tbr-19'), the CA SHOULD accept any of the labels as granting permission to issue.
+- The CA MAY perform case insensitive matching of labels. If the CA does perform case insensitive matching of labels, this practice MUST be documenetd in their CP and/or CPS.
 
 ###### 4.2.2.1.4 DNSSEC Validation of CAA Records
 
