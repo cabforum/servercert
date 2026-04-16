@@ -934,7 +934,7 @@ A CA may rely on a previously verified certificate request to issue a replacemen
    C.  Address of Place of Business – 398 days;
    D.  Verified Method of Communication – 398 days;
    E.  Operational existence – 398 days;
-   F.  Domain Name – 200 days;
+   F.  Domain Name – the maximum reuse period specified for Domain Names in Section 4.2.1 of the Baseline Requirements;
    G.  Name, Title, Agency, and Authority – 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls.  For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
 2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
@@ -1239,11 +1239,7 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 
 ## 6.3  Other aspects of key pair management
 ### 6.3.1  Public key archival
-
 ### 6.3.2  Certificate operational periods and key pair usage periods
-The Validity Period for an EV Certificate SHALL NOT exceed 398 days.
-
-It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
 
 ## 6.4  Activation data
 ### 6.4.1  Activation data generation and installation
