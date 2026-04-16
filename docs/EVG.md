@@ -917,7 +917,6 @@ A. Verifying the domain registration data via an authenticated channel with the 
 B. Relying on a domain control validation, performed in accordance with Baseline Requirements Section 3.2.2.4, that is less than 48 hours old;
 C. Performing a new domain control validation in accordance with Baseline Requirements Section 3.2.2.4.
 
-
 ##### 3.2.2.14.2 Re-issuance Requests
 
 A CA may rely on a previously verified certificate request to issue a replacement certificate, so long as the certificate being referenced was not revoked due to fraud or other illegal conduct, if:
