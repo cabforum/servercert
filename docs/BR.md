@@ -730,7 +730,7 @@ The CA SHOULD implement a process to screen proxy servers in order to prevent re
 
 #### 3.2.2.4 Validation of Domain Authorization or Control
 
-Prior to 2026-09-15, the CA SHALL adhere to Section 3.2.2.4 (and its subsections) of these requirements or Section 3.2.2.4 of Version 2.2.7 of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to Section 3.2.2.4 of these requirements.
+Prior to 2026-09-15, the CA SHALL adhere to Section 3.2.2.4 (and its subsections) of these Requirements or Section 3.2.2.4 of Version 2.2.7 of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to Section 3.2.2.4 of these Requirements.
 
 This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
 
@@ -750,7 +750,6 @@ The CA MUST follow this process when choosing the Authorization Domain Name (ADN
 | --------                                                   | - | - | - | - |
 | 3.2.2.4.4 Constructed Email to Domain Contact              | ✔ | ✔ | ✔ | - |
 | 3.2.2.4.7 DNS Change                                       | ✔ | ✔ | ✔ | - |
-| 3.2.2.4.8 IP Address                                       | - | - | - | - |
 | 3.2.2.4.12 Validating Applicant as a Domain Contact        | ✔ | ✔ | - | - |
 | 3.2.2.4.13 Email to DNS CAA Contact                        | ✔ | ✔ | ✔ | - |
 | 3.2.2.4.14 Email to DNS TXT Contact                        | ✔ | ✔ | ✔ | - |
@@ -767,14 +766,12 @@ When the ADN is an Onion Domain Name, the CA SHALL validate it in accordance wit
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
-Effective 2026-03-15: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective, including CNAME lookups performed while choosing the ADN. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective MUST:
+DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective, including CNAME lookups performed while choosing the ADN. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective MUST:
 
 - perform DNSSEC validation using the algorithm defined in [RFC 4035, Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
 - support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
 - support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
 - properly handle the security concerns enumerated in [RFC 6840, Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
-
-Effective 2026-03-15: 
 
 For e-mail Domain Validation methods described in sections 3.2.2.4.4, 3.2.2.4.13, 3.2.2.4.14, DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS CNAME, CAA, TXT queries attempting to obtain the Authorization Domain Name associated with the validation of domain authorization or control by the Primary Network Perspective and CAs MUST NOT use local policy to disable DNSSEC validation. For all other DNS queries, DNSSEC validation back to the IANA DNSSEC root trust anchor SHOULD be performed and CAs SHOULD NOT use local policy to disable DNSSEC validation.
 
@@ -832,7 +829,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 Confirming the Applicant's control over the ADN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record returned in a query for either:
 
-1. the Authorization Domain Name; or 
+1. the Authorization Domain Name; or
 2. the Authorization Domain Name prefixed with a Domain Label that begins with an underscore character.
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after:
@@ -846,13 +843,7 @@ If the CA or an Affiliate of the CA operates a DNS zone to which Applicants can 
 
 ##### 3.2.2.4.8 IP Address
 
-Confirming the Applicant's control over the ADN by confirming that the Applicant controls an IP address returned from a DNS lookup for A or AAAA records for the ADN in accordance with [Section 3.2.2.5](#3225-authentication-for-an-ip-address).
-
-CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same IP address as the Primary Network Perspective.
-
-Effective March 15, 2026:
-- The CA MUST NOT rely on this method.
-- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
+This method has been retired and MUST NOT be used. Prior validations using this method and validation data gathered according to this method SHALL NOT be used to issue certificates.
 
 ##### 3.2.2.4.9 Test Certificate
 
@@ -899,11 +890,17 @@ Effective March 15, 2028:
 
 Confirming the Applicant's control over the ADN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS TXT Record Email Contact for the Authorization Domain Name.
 
-The same email MAY be sent to multiple recipients as long as all recipients are DNS TXT Record Email Contacts for the Authorization Domain Name being validated.
+Each email MAY confirm control of multiple ADNs, provided that each email address is a DNS TXT Record Email Contact for each ADN being validated. The same email MAY be sent to multiple recipients, provided that each email address is a DNS TXT Record Email Contact for each ADN being validated.
 
 The Random Value SHALL be unique in each email. The email MAY be re-sent in its entirety, including the re-use of the Random Value, provided that its entire contents and recipient(s) SHALL remain unchanged. The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same selected contact address used for domain validation as the Primary Network Perspective.
+
+Effective March 15, 2026, this method SHOULD NOT be used to issue Subscriber Certificates.
+
+Effective March 15, 2028:
+- The CA MUST NOT rely on this method.
+- Prior validations using this method and validation data gathered according to this method MUST NOT be used to issue Subscriber Certificates.
 
 ##### 3.2.2.4.15 Phone Contact with Domain Contact
 
