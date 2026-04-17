@@ -963,6 +963,7 @@ A CA may rely on a previously verified certificate request to issue a replacemen
 2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
 3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 3.2.2.9](#3229-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 3.2.2.10](#32210-verification-of-approval-of-ev-certificate-request).
 4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 3.2.2.14.1](#322141-validation-for-existing-subscribers).
+5. Where a CA relies on Section 3.2.2.14.1 for any item listed in that section, the CA SHALL also comply with Section 3.2.2.14.1(6) for verification of the Applicant's right to use any Domain Name included in the EV Certificate.
 
 ### 3.2.3 Authentication of individual identity
 
