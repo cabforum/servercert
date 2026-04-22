@@ -161,7 +161,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.4 | SC096 | Carve-out for DNSSEC verification logging requirements                                  | 2026-01-14 | 2026-02-17 |
 | 2.2.5 | SC097 | Sunset all remaining use of SHA-1 signatures in Certificates and CRLs                   | 2026-02-24 | 2026-02-25 |
 | 2.2.6 | SC095 | Clean-up 2025                                                                           | 2026-02-27 | 2026-03-31 |
-| 2.2.X | SCXXX | Permit ML-DSA-87 public keys in Certificates                                            | 2026-XX-XX | 2026-XX-XX |
+| 2.2.X | SCXXX | Permit ML-DSA public keys in Certificates                                               | 2026-XX-XX | 2026-XX-XX |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -2064,7 +2064,11 @@ For ECDSA key pairs, the CA SHALL:
 
 For ML-DSA key pairs, the CA SHALL:
 
-- Ensure that the key uses the ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19) parameter set.
+- If the key pair is a CA Key Pair, ensure that the key uses the ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19) parameter set.
+- If the key pair is not a CA Key Pair, ensure that the key uses one of the following parameter sets:
+  - ML-DSA-44 (OID: 2.16.840.1.101.3.4.3.17), or
+  - ML-DSA-65 (OID: 2.16.840.1.101.3.4.3.18), or
+  - ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
 
 No other algorithms or key sizes are permitted.
 
@@ -3402,15 +3406,19 @@ When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte ide
 
 ##### 7.1.3.1.3 ML-DSA
 
-The CA SHALL indicate an ML-DSA key using the following algorithm identifier:
+The CA SHALL indicate an ML-DSA key using one of the following algorithm identifiers below:
 
-  * ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
+- ML-DSA-44 (OID: 2.16.840.1.101.3.4.3.17), or
+- ML-DSA-65 (OID: 2.16.840.1.101.3.4.3.18), or
+- ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
 
 The parameters for ML-DSA keys SHALL be absent. The CA MUST NOT use HashML-DSA; only "pure" ML-DSA is permitted.
 
 When encoded, the AlgorithmIdentifier for ML-DSA keys SHALL be byte-for-byte identical with the following hex-encoded bytes:
 
-* For ML-DSA-87, `300b0609608648016503040313`.
+- For ML-DSA-44, `300b0609608648016503040311`.
+- For ML-DSA-65, `300b0609608648016503040312`.
+- For ML-DSA-87, `300b0609608648016503040313`.
 
 #### 7.1.3.2 Signature AlgorithmIdentifier
 
@@ -3523,6 +3531,10 @@ If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When enc
 ##### 7.1.3.2.3 ML-DSA
 
 The CA SHALL use the appropriate signature algorithm and encoding based upon the signing key used.
+
+If the signing key is ML-DSA-44, the signature algorithm SHALL be id-ml-dsa-44 (OID: 2.16.840.1.101.3.4.3.17). When encoded, the `AlgorithmIdentifier` SHALL be byte-for-byte identical with the following hex-encoded bytes: `300b0609608648016503040311`.
+
+If the signing key is ML-DSA-65, the signature algorithm SHALL be id-ml-dsa-65 (OID: 2.16.840.1.101.3.4.3.18). When encoded, the `AlgorithmIdentifier` SHALL be byte-for-byte identical with the following hex-encoded bytes: `300b0609608648016503040312`.
 
 If the signing key is ML-DSA-87, the signature algorithm SHALL be id-ml-dsa-87 (OID: 2.16.840.1.101.3.4.3.19). When encoded, the `AlgorithmIdentifier` SHALL be byte-for-byte identical with the following hex-encoded bytes: `300b0609608648016503040313`.
 
