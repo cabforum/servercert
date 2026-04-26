@@ -1370,7 +1370,7 @@ When processing CAA records, CAs SHOULD process the `accounturi` and `validation
 *Effective 2027-03-15*, when processing CAA records, CAs MUST process the `accounturi` and `validationmethod`s parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657).
 
 In addition, *Effective 2027-03-15*:
-- If the CA accepts certificate requests via any protocol other than the ACME protocol defined in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the 'acct' URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565).
+- If the CA does not identify the Subscriber account via an ACME Account URL as described in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the 'acct' URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565).
 - For certificate requests made using the ACME protocol, the CA MAY permit the 'accounturi' parameter to identify a primary organizational account (the "Parent Account"). As an explicit exception to Section 3 of RFC 8657, the CA MAY issue a certificate requested by a different account (the "Subordinate ACME Account") if and only if the CA ensures all of the following:
 1. The CA maintains an internal, auditable mapping that binds the Subordinate ACME Account to the Parent Account identified by the 'accounturi'.
 2. The CA has cryptographically or administratively verified that the Parent Account explicitly authorized the Subordinate ACME Account to obtain certificates under this mapping.
