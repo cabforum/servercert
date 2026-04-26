@@ -1369,7 +1369,7 @@ Some methods relied upon for validating the Applicant's ownership or control of 
 ###### 4.2.2.1.3 CAA Parameters
 
 When processing CAA records, CAs SHOULD process the `accounturi` and `validationmethods` parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657).
-*Effective 2027-03-15*, when processing CAA records, CAs MUST process the `accounturi` and `validationmethod`s parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657).
+*Effective 2027-03-15*, when processing CAA records, CAs MUST process the `accounturi` and `validationmethods` parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657).
 
 In addition, *Effective 2027-03-15*:
 - If the CA does not identify the Subscriber account via an ACME Account URL as described in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the 'acct' URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565).
