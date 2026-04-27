@@ -1,10 +1,10 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.2
+subtitle: Version 2.0.3
 author:
   - CA/Browser Forum
-date: 31 March, 2026
+date: TBD May, 2026
 copyright: |
   Copyright 2026 CA/Browser Forum
 
@@ -935,7 +935,13 @@ If an Applicant has a currently valid EV Certificate issued by the CA, a CA MAY 
 3. The Applicant's Verified Method of Communication required by [Section 3.2.2.5](#3225-verified-method-of-communication) but still MUST perform the verification required by [Section 3.2.2.5.2](#32252-acceptable-methods-of-verification) (B);
 4. The Applicant's Operational Existence under [Section 3.2.2.6](#3226-verification-of-applicants-operational-existence);
 5. The Name, Title, Agency and Authority of the Contract Signer, and Certificate Approver, under [Section 3.2.2.8](#3228-verification-of-name-title-and-authority-of-contract-signer-and-certificate-approver); and
-6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), provided that the CA verifies that the WHOIS record or RDAP registry data still shows the same registrant as when the CA verified the specified Domain Name for the initial EV Certificate.
+6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), provided that the CA confirms the Domain Name remains registered to the same Legal Entity. This confirmation SHALL be performed using one of the following methods:
+
+A. Verifying the domain registration data via an authenticated channel with the domain registrar or registry;
+B. Relying on a domain control validation, performed in accordance with Baseline Requirements Section 3.2.2.4, that is less than 10 days old;
+C. Performing a new domain control validation in accordance with Baseline Requirements Section 3.2.2.4.
+
+A CA SHALL NOT rely on prior authentication and verification under this section if more than the maximum reuse period specified for Domain Names in Section 4.2.1 of the Baseline Requirements has elapsed since the CA last performed a complete verification of all items listed in this section without reliance on this section.
 
 ##### 3.2.2.14.2 Re-issuance Requests
 
@@ -953,12 +959,13 @@ A CA may rely on a previously verified certificate request to issue a replacemen
    C.  Address of Place of Business - 398 days;
    D.  Verified Method of Communication - 398 days;
    E.  Operational existence - 398 days;
-   F.  Domain Name - 398 days;
+   F.  Domain Name – the maximum reuse period specified for Domain Names in Section 4.2.1 of the Baseline Requirements; additionally, prior to each reuse, the CA SHALL confirm that the Domain Name remains registered to the same Legal Entity using one of the methods specified in Section 3.2.2.14.1(6)(A), (B), or (C);
    G.  Name, Title, Agency, and Authority - 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls. For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
 2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
 3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 3.2.2.9](#3229-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 3.2.2.10](#32210-verification-of-approval-of-ev-certificate-request).
 4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 3.2.2.14.1](#322141-validation-for-existing-subscribers).
+5. Where a CA relies on Section 3.2.2.14.1 for any item listed in that section, the CA SHALL also comply with Section 3.2.2.14.1(6) for verification of the Applicant's right to use any Domain Name included in the EV Certificate.
 
 ### 3.2.3 Authentication of individual identity
 
@@ -1369,10 +1376,6 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 ### 6.3.1 Public key archival
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
-
-The Validity Period for an EV Certificate SHALL NOT exceed 398 days.
-
-It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
 
 ## 6.4 Activation data
 
