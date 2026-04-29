@@ -938,7 +938,7 @@ If an Applicant has a currently valid EV Certificate issued by the CA, a CA MAY 
 6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), provided that the CA confirms the Domain Name remains registered to the same Legal Entity. This confirmation SHALL be performed using one of the following methods:
 
 A. Verifying the domain registration data via an authenticated channel with the domain registrar or registry;
-B. Relying on a domain control validation, performed in accordance with Baseline Requirements Section 3.2.2.4, that is less than 10 days old;
+B. Relying on a domain control validation, performed in accordance with Baseline Requirements Section 3.2.2.4, that is less than 10 days old; or
 C. Performing a new domain control validation in accordance with Baseline Requirements Section 3.2.2.4.
 
 A CA SHALL NOT rely on prior authentication and verification under this section if more than the maximum reuse period specified for Domain Names in Section 4.2.1 of the Baseline Requirements has elapsed since the CA last performed a complete verification of all items listed in this section without reliance on this section.
