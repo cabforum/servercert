@@ -199,8 +199,6 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Date of Formation**: The date on which a Legal Entity is first recognized by the jurisdiction in which it was created or formed.
 
-**Date of Formation**: The date on which a Legal Entity is first recognized by the jurisdiction in which it was created or formed.
-
 **Demand Deposit Account**: A deposit account held at a bank or other financial institution, the funds deposited in which are payable on demand. The primary purpose of demand accounts is to facilitate cashless payments by means of check, bank draft, direct debit, electronic funds transfer, etc. Usage varies among countries, but a demand deposit account is commonly known as a share draft account, a current account, or a checking account.
 
 **EV Authority**: A source other than the Certificate Approver, through which verification occurs that the Certificate Approver is expressly authorized by the Applicant, as of the date of the EV Certificate Request, to take the Request actions described in these Guidelines.
