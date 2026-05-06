@@ -2299,7 +2299,7 @@ The `subject` MUST comply with the requirements of [Section 7.1.4](#714-name-for
 | `crlDistributionPoints`           | MUST            | N                     | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | `keyUsage`                        | MUST            | Y                     | See [Section 7.1.2.10.7](#712107-ca-certificate-key-usage) |
 | `subjectKeyIdentifier`            | MUST            | N                     | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
-| `authorityInformationAccess`      | SHOULD          | N                     | See [Section 7.1.2.10.3](#712103-ca-certificate-authority-information-access) |
+| `authorityInformationAccess`      | MAY             | N                     | See [Section 7.1.2.10.3](#712103-ca-certificate-authority-information-access) |
 | `nameConstraints`                 | MAY             | \*[^name_constraints] | See [Section 7.1.2.10.8](#712108-ca-certificate-name-constraints) |
 | Signed Certificate Timestamp List | MAY             | N                     | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | Any other extension               | NOT RECOMMENDED | -                     | See [Section 7.1.2.11.5](#712115-other-extensions) |
@@ -2811,14 +2811,14 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 
 ##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
-The `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDescription`s. Each `AccessDescription` MUST only contain a permitted `accessMethod`, as detailed below, and each `accessLocation` MUST be encoded as the specified `GeneralName` type.
+If the Authority Information Access extension is present, the `AuthorityInfoAccessSyntax` MUST contain one or more `AccessDescription`s. Each `AccessDescription` MUST only contain a permitted `accessMethod`, as detailed below, and each `accessLocation` MUST be encoded as the specified `GeneralName` type.
 
 The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with the same `accessMethod`, if permitted for that `accessMethod`. When multiple `AccessDescription`s are present with the same `accessMethod`, each `accessLocation` MUST be unique, and each `AccessDescription` MUST be ordered in priority for that `accessMethod`, with the most-preferred `accessLocation` being the first `AccessDescription`. No ordering requirements are given for `AccessDescription`s that contain different `accessMethod`s, provided that previous requirement is satisfied.
 
 | **Access Method**                           | **Access Location**         | **Presence** | **Maximum** | **Description** |
 | ---                                         | ----                        | -            | -           | ---             |
 | `id-ad-ocsp` (OID: 1.3.6.1.5.5.7.48.1)      | `uniformResourceIdentifier` | MAY          | \*          | A HTTP URL of the Issuing CA's OCSP responder. |
-| `id-ad-caIssuers` (OID: 1.3.6.1.5.5.7.48.2) | `uniformResourceIdentifier` | SHOULD       | \*          | A HTTP URL of the Issuing CA's certificate. |
+| `id-ad-caIssuers` (OID: 1.3.6.1.5.5.7.48.2) | `uniformResourceIdentifier` | MAY          | \*          | A HTTP URL of the Issuing CA's certificate. |
 | Any other value                             | -                           | MUST NOT     | -           | No other `accessMethod`s may be used. |
 
 ##### 7.1.2.7.8 Subscriber Certificate Basic Constraints
