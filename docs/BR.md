@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.6
+subtitle: Version 2.2.x
 author:
   - CA/Browser Forum
 
-date: 31-March-2026
+date: xx-xx-2026
 
 copyright: |
   Copyright 2026 CA/Browser Forum
@@ -161,6 +161,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.4 | SC096 | Carve-out for DNSSEC verification logging requirements                                  | 2026-01-14 | 2026-02-17 |
 | 2.2.5 | SC097 | Sunset all remaining use of SHA-1 signatures in Certificates and CRLs                   | 2026-02-24 | 2026-02-25 |
 | 2.2.6 | SC095 | Clean-up 2025                                                                           | 2026-02-27 | 2026-03-31 |
+| 2.2.x | SC100 | DNSSEC Clarification and Consolidation                                                  | 2026-XX-XX | 2026-XX-XX |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -178,9 +179,9 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. |
 | 2026-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control. |
 | 2026-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | CAs MUST NOT rely on Method 3.2.2.4.8 to issue Subscriber Certificates. |
-| 2026-03-15 | [3.2.2.8.1](#32281-dnssec-validation-of-caa-records) | DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. |
-| 2026-03-15 | [3.2.2.8.1](#32281-dnssec-validation-of-caa-records) | CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups. |
-| 2026-03-15 | [3.2.2.8.1](#32281-dnssec-validation-of-caa-records) | DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue. |
+| 2026-03-15 | [3.2.2.10.2](#322102-applicability-and-scope) | DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. |
+| 2026-03-15 | [3.2.2.10.4](#322104-prohibition-on-disabling-dnssec-validation) | CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups. |
+| 2026-03-15 | [3.2.2.10.5](#322105-dnssec-validation-errors) | DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue. |
 | 2026-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Subject Identity Information validation maximum data reuse period is 398 days. |
 | 2026-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 200 days. |
 | 2026-03-15 | [4.2.2](#422-approval-or-rejection-of-certificate-applications) | CAs SHALL NOT issue Certificates containing Domain Names that end in an IP Reverse Zone Suffix. |
@@ -740,22 +741,7 @@ The CA SHALL confirm that prior to issuance, the CA has validated each Fully-Qua
 
 Completed validations of Applicant authority may be valid for the issuance of multiple Certificates over time. In all cases, the validation must have been initiated within the time period specified in the relevant requirement (such as [Section 4.2.1](#421-performing-identification-and-authentication-functions) of this document) prior to Certificate issuance. For purposes of domain validation, the term Applicant includes the Applicant's Parent Company, Subsidiary Company, or Affiliate.
 
-Effective 2026-03-15: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective MUST:
-
-- perform DNSSEC validation using the algorithm defined in [RFC 4035, Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
-- support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
-- support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
-- properly handle the security concerns enumerated in [RFC 6840, Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
-
-Effective 2026-03-15: 
-
-For e-mail Domain Validation methods described in sections 3.2.2.4.4, 3.2.2.4.13, 3.2.2.4.14, DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS CNAME, CAA, TXT queries attempting to obtain the Authorization Domain Name associated with the validation of domain authorization or control by the Primary Network Perspective and CAs MUST NOT use local policy to disable DNSSEC validation. For all other DNS queries, DNSSEC validation back to the IANA DNSSEC root trust anchor SHOULD be performed and CAs SHOULD NOT use local policy to disable DNSSEC validation.
-
-For all other Domain Validation methods, DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control by the Primary Network Perspective and CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control.
-
-DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
-
-DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of the logging requirements of [Section 5.4.1](#541-types-of-events-recorded).
+DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with the validation of domain authorization or control, and CAA record lookups by the Primary Network Perspective in accordance with [Section 3.2.2.10](#32210-dnssec-validation-requirements).
 
 CAs SHALL maintain a record of which domain validation method, including relevant BR version number, they used to validate every domain.
 
@@ -1172,24 +1158,9 @@ CAs are permitted to treat a record lookup failure as permission to issue if:
 - the lookup has been retried at least once; and
 - the CA has confirmed that the domain is "Insecure" as defined in [RFC 4035, Section 4.3](https://datatracker.ietf.org/doc/html/rfc4035#section-4.3).
 
+See also [Section 3.2.2.10](#32210-dnssec-validation-requirements) for DNSSEC validation requirements applicable to CAA record lookups.
+
 CAs MUST document potential issuances that were prevented by a CAA record in sufficient detail to provide feedback to the CA/Browser Forum on the circumstances, and SHOULD dispatch reports of such issuance requests to the contact(s) stipulated in the CAA iodef record(s), if present. CAs are not expected to support URL schemes in the iodef record other than mailto: or https:.
-
-##### 3.2.2.8.1 DNSSEC Validation of CAA Records
-
-Effective 2026-03-15: DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS queries associated with CAA record lookups performed by the Primary Network Perspective. The DNS resolver used for all DNS queries associated with CAA record lookups performed by the Primary Network Perspective MUST:
-
-- perform DNSSEC validation using the algorithm defined in [RFC 4035, Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
-- support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
-- support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
-- properly handle the security concerns enumerated in [RFC 6840, Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
-
-Effective 2026-03-15: CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated CAA record lookups.
-
-Effective 2026-03-15: DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
-
-DNSSEC validation back to the IANA DNSSEC root trust anchor MAY be performed on all DNS queries associated with CAA record lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration.
-
-DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits).
 
 #### 3.2.2.9 Multi-Perspective Issuance Corroboration
 
@@ -1269,6 +1240,52 @@ Phased Implementation Timeline:
 - Effective 2026-06-15, the CA MUST implement Multi-Perspective Issuance Corroboration using at least four (4) remote Network Perspectives. The CA MUST ensure that the requirements defined in Quorum Requirements Table are satisfied, and the remote Network Perspectives that corroborate the Primary Network Perspective fall within the service regions of at least two (2) distinct Regional Internet Registries. If the requirements are not satisfied, then the CA MUST NOT proceed with issuance of the Certificate.
 
 - Effective 2026-12-15, the CA MUST implement Multi-Perspective Issuance Corroboration using at least five (5) remote Network Perspectives. The CA MUST ensure that the requirements defined in Quorum Requirements Table are satisfied, and the remote Network Perspectives that corroborate the Primary Network Perspective fall within the service regions of at least two (2) distinct Regional Internet Registries. If the requirements are not satisfied, then the CA MUST NOT proceed with issuance of the Certificate.
+
+#### 3.2.2.10 DNSSEC Validation Requirements
+
+This section consolidates all DNSSEC validation requirements applicable to DNS queries performed during domain validation ([Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control)) and CAA record processing ([Section 3.2.2.8](#3228-caa-records)).
+
+##### 3.2.2.10.1 DNS Resolver Requirements
+
+The DNS resolver used by the Primary Network Perspective for all DNS queries associated with the validation of domain authorization or control and for CAA record lookups MUST:
+
+- perform DNSSEC validation using the algorithm defined in [RFC 4035, Section 5](https://datatracker.ietf.org/doc/html/rfc4035#section-5); and
+- support NSEC3 as defined in [RFC 5155](https://datatracker.ietf.org/doc/html/rfc5155); and
+- support SHA-2 as defined in [RFC 4509](https://datatracker.ietf.org/doc/html/rfc4509) and [RFC 5702](https://datatracker.ietf.org/doc/html/rfc5702); and
+- properly handle the security concerns enumerated in [RFC 6840, Section 4](https://datatracker.ietf.org/doc/html/rfc6840#section-4).
+
+##### 3.2.2.10.2 Applicability and Scope
+
+DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed by the Primary Network Perspective on all DNS queries associated with:
+
+1. the validation of domain authorization or control as described in [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control); and
+2. CAA record lookups as described in [Section 3.2.2.8](#3228-caa-records).
+
+##### 3.2.2.10.3 Email Domain Validation Methods - Partial Exception
+
+For the e-mail-based Domain Validation methods described in sections 3.2.2.4.4, 3.2.2.4.13, and 3.2.2.4.14:
+
+- DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS CNAME, CAA, and TXT queries performed by the Primary Network Perspective used to obtain the Authorization Domain Name, and CAs MUST NOT use local policy to disable DNSSEC validation on those queries.
+- For all other DNS queries associated with these methods performed by the Primary Network Perspective, DNSSEC validation back to the IANA DNSSEC root trust anchor SHOULD be performed and CAs SHOULD NOT use local policy to disable DNSSEC validation.
+
+##### 3.2.2.10.4 Prohibition on Disabling DNSSEC Validation
+
+For all Domain Validation methods other than those listed in [Section 3.2.2.10.3](#322103-email-domain-validation-methods---partial-exception), and for all CAA record lookups, CAs MUST NOT use local policy to disable DNSSEC validation on any DNS query associated with the validation of domain authorization or control or with CAA record lookups performed by the Primary Network Perspective.
+
+##### 3.2.2.10.5 DNSSEC Validation Errors
+
+Except as may be allowed for in section 3.2.2.10.3, DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
+
+##### 3.2.2.10.6 Remote Network Perspectives
+
+DNSSEC validation back to the IANA DNSSEC root trust anchor MAY be performed on all DNS queries associated with the validation of domain authorization or control and for CAA record lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration.
+
+##### 3.2.2.10.7 Exclusions
+
+The full set of DNS lookup information related to DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope of:
+
+1. self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits); and
+2. the logging requirements of [Section 5.4.1](#541-types-of-events-recorded).
 
 ### 3.2.3 Authentication of individual identity
 
