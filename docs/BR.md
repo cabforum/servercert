@@ -1274,7 +1274,7 @@ For all Domain Validation methods other than those listed in [Section 3.2.2.10.3
 
 ##### 3.2.2.10.5 DNSSEC Validation Errors
 
-DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
+Except as may be allowed for in section 3.2.2.10.3, DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
 
 ##### 3.2.2.10.6 Remote Network Perspectives
 
