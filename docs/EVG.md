@@ -182,7 +182,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Business Entity**: Any entity that is not a Private Organization, Government Entity, or Non-Commercial Entity as defined herein. Examples include, but are not limited to, general partnerships, unincorporated associations, sole proprietorships, etc.
 
-**Canonical Date Representation**: A date that is formatted as YYYY-MM-DD, where "YYYY" is the four-digit year, "MM" is the two-digit month, and "DD" is the two-digit day of the month. Each element of the date is separated with a single hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)). Each element is padded with leading zeroes as needed to ensure that year values consist of four digits and month and day of the month values consist of two digits. Example dates in this representation: "0748-04-02", "2024-10-14".
+**Canonical Date Representation**: A date that is formatted as YYYY-MM-DD, where "YYYY" is the four-digit year on the Gregorian calendar, "MM" is the two-digit month, and "DD" is the two-digit day of the month. Each element of the date is separated with a single hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)). Each element is padded with leading zeroes as needed to ensure that year values consist of four digits and month and day of the month values consist of two digits. Example dates in this representation: "0748-04-02", "2024-10-14".
 
 **Certificate Approver**: A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to:
 
