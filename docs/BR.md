@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.6
+subtitle: Version 2.2.7
 author:
   - CA/Browser Forum
 
-date: 31-March-2026
+date: 19-May-2026
 
 copyright: |
   Copyright 2026 CA/Browser Forum
@@ -161,6 +161,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.4 | SC096 | Carve-out for DNSSEC verification logging requirements                                  | 2026-01-14 | 2026-02-17 |
 | 2.2.5 | SC097 | Sunset all remaining use of SHA-1 signatures in Certificates and CRLs                   | 2026-02-24 | 2026-02-25 |
 | 2.2.6 | SC095 | Clean-up 2025                                                                           | 2026-02-27 | 2026-03-31 |
+| 2.2.7 | SC099 | Improve Recording of Validation Method                                                  | 2026-04-18 | 2026-05-19 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
