@@ -1608,7 +1608,7 @@ Prior to 2026-09-15, for Section 4.9.3 of these Requirements, the CA SHALL adher
 
 The CA's Certificate Policy or Certification Practice Statement MUST describe a process for Subscribers to request revocation of their own Certificates.
 
-The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests.
+The CA SHALL maintain highly available systems to accept revocation requests and Certificate Problem Reports, and the personnel and procedures to meet the response deadlines specified in these Requirements.
 
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for submitting Certificate Problem Reports. The CA SHALL publicly disclose the instructions in Section 1.5.2 of their CPS and SHOULD additionally disclose the instructions through readily accessible online means (e.g. a KB article, dedicated webpage, FAQ).
 
