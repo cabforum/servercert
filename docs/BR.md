@@ -1610,7 +1610,7 @@ The CA's Certificate Policy or Certification Practice Statement MUST describe a 
 
 The CA SHALL maintain a continuous 24x7 ability to accept and respond to revocation requests.
 
-The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for reporting suspected Private Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, inappropriate conduct, or any other matter related to Certificates. The CA SHALL publicly disclose the instructions in Section 1.5.2 of their CPS and SHOULD additionally disclose the instructions through readily accessible online means (e.g. a KB article, dedicated webpage, FAQ).
+The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for submitting Certificate Problem Reports. The CA SHALL publicly disclose the instructions in Section 1.5.2 of their CPS and SHOULD additionally disclose the instructions through readily accessible online means (e.g. a KB article, dedicated webpage, FAQ).
 
 Within twenty-four (24) hours after receiving a Certificate Problem Report, the CA SHALL investigate the facts and circumstances related to the report and determine if it's "actionable."
 
