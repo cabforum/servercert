@@ -801,7 +801,7 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 Confirm the Applicant's control over the ADN by:
 
-1. Sending an email to one or more addresses created by using 'admin', 'administrator', 'webmaster', 'hostmaster', or 'postmaster' as the local part, followed by the at-sign ("@"), followed by the Authorization Domain Name; and
+1. Sending an email to one or more addresses created by using 'admin', 'administrator', 'webmaster', 'hostmaster', or 'postmaster' as the local part, followed by the at-sign ("@"), followed by the ADN; and
 2. including a Random Value in the email; and
 3. receiving a confirming response utilizing the Random Value.
 
@@ -829,8 +829,8 @@ This method has been retired and MUST NOT be used. Prior validations using this 
 
 Confirming the Applicant's control over the ADN by confirming the presence of a Random Value or Request Token in a DNS CNAME, TXT or CAA record returned in a query for either:
 
-1. the Authorization Domain Name; or
-2. the Authorization Domain Name prefixed with a Domain Label that begins with an underscore character.
+1. the ADN; or
+2. the ADN prefixed with a Domain Label that begins with an underscore character.
 
 If a Random Value is used, the CA SHALL provide a Random Value unique to the Certificate request and SHALL not use the Random Value after:
 
@@ -888,7 +888,7 @@ Effective March 15, 2028:
 
 ##### 3.2.2.4.14 Email to DNS TXT Contact
 
-Confirming the Applicant's control over the ADN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS TXT Record Email Contact for the Authorization Domain Name.
+Confirming the Applicant's control over the ADN by sending a Random Value via email and then receiving a confirming response utilizing the Random Value. The Random Value MUST be sent to a DNS TXT Record Email Contact for the ADN.
 
 Each email MAY confirm control of multiple ADNs, provided that each email address is a DNS TXT Record Email Contact for each ADN being validated. The same email MAY be sent to multiple recipients, provided that each email address is a DNS TXT Record Email Contact for each ADN being validated.
 
@@ -951,7 +951,7 @@ Confirming the Applicant's control over the ADN by verifying that the Request To
 
 The file containing the Request Token or Random Value:
 
-1. MUST be located on the Authorization Domain Name, and
+1. MUST be located on the ADN, and
 2. MUST be located under the "/.well-known/pki-validation" directory, and
 3. MUST be retrieved via either the "http" or "https" scheme, and
 4. MUST be accessed over an Authorized Port.
@@ -1003,7 +1003,7 @@ CAs performing validations using this method MUST implement Multi-Perspective Is
 
 ##### 3.2.2.4.22 DNS TXT Record with Persistent Value
 
-Confirming the Applicant's control over the ADN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the Authorization Domain Name being validated (i.e., "`_validation-persist.[Authorization Domain Name]`").
+Confirming the Applicant's control over the ADN by verifying the presence of a Persistent DCV TXT Record identifying the Applicant. The record MUST be placed at the "`_validation-persist`" label prepended to the ADN being validated (i.e., "`_validation-persist.[Authorization Domain Name]`").
 
 The CA MUST confirm the Persistent DCV TXT Record's RDATA value fulfills the following requirements:
 
@@ -4031,17 +4031,17 @@ The DNS TXT record MUST be placed on the "`_validation-contactphone`" subdomain 
 
 This appendix defines permissible verification procedures for including one or more Onion Domain Names in a Certificate.
 
-1. The Authorization Domain Name MUST contain at least two Domain Labels, where the rightmost Domain Label is "onion", and the Domain Label immediately preceding the rightmost "onion" Domain Label is a valid Version 3 Onion Address, as defined in Section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
+1. The ADN MUST contain at least two Domain Labels, where the rightmost Domain Label is "onion", and the Domain Label immediately preceding the rightmost "onion" Domain Label is a valid Version 3 Onion Address, as defined in Section 6 of the Tor Rendezvous Specification - Version 3 located at <https://spec.torproject.org/rend-spec-v3>.
 
-2. The CA MUST verify the Applicant's control over the Authorization Domain Name using at least one of the methods listed below:
+2. The CA MUST verify the Applicant's control over the ADN using at least one of the methods listed below:
 
    a. The CA MAY verify the Applicant's control over the ADN by using any method from [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control) that says "This method allows Onion Domain Name issuance", with this modification:
 
-      When these methods are used to verify the Applicant's control over an Onion Domain Name, the CA MUST use Tor protocol to establish a connection to the Authorization Domain Name. The CA MUST NOT delegate or rely on a third-party to establish the connection, such as by using Tor2Web.
+      When these methods are used to verify the Applicant's control over an Onion Domain Name, the CA MUST use Tor protocol to establish a connection to the ADN. The CA MUST NOT delegate or rely on a third-party to establish the connection, such as by using Tor2Web.
 
       **Note**: This section does not override or supersede any provisions specified within the respective methods. The CA MUST only use a method if it is still permitted within that section.
 
-   b. The CA MAY verify the Applicant's control over the .onion service corresponding to the Authorization Domain Name by having the Applicant provide a Certificate Request signed using the .onion service's private key if the Attributes section of the certificationRequestInfo contains:
+   b. The CA MAY verify the Applicant's control over the .onion service corresponding to the ADN by having the Applicant provide a Certificate Request signed using the .onion service's private key if the Attributes section of the certificationRequestInfo contains:
 
       i. A caSigningNonce attribute that contains a Random Value that is generated by the CA; and
       ii. An applicantSigningNonce attribute that contains a single value. The CA MUST recommend to Applicants that the applicantSigningNonce value should contain at least 64 bits of entropy.
