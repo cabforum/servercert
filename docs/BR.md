@@ -732,7 +732,7 @@ The CA SHOULD implement a process to screen proxy servers in order to prevent re
 
 #### 3.2.2.4 Validation of Domain Authorization or Control
 
-Prior to 2026-09-15, the CA SHALL adhere to Section 3.2.2.4 (and its subsections) of these Requirements or Section 3.2.2.4 of Version 2.2.7 of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates. Effective 2026-09-15, the CA SHALL adhere to Section 3.2.2.4 of these Requirements.
+Prior to 2026-11-15, the CA SHALL adhere to Section 3.2.2.4 (and its subsections) of these Requirements *or* Section 3.2.2.4 of Version 2.2.7 of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates. Effective 2026-11-15, the CA SHALL adhere to Section 3.2.2.4 of these Requirements.
 
 This section defines the permitted processes and procedures for validating the Applicant's ownership or control of the domain.
 
