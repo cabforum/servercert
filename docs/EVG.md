@@ -1,10 +1,10 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.2
+subtitle: Version 2.0.3
 author:
   - CA/Browser Forum
-date: 4 May, 2026
+date: TBD July, 2026
 copyright: |
   Copyright 2026 CA/Browser Forum
 
@@ -956,9 +956,9 @@ A CA may rely on a previously verified certificate request to issue a replacemen
    F.  Domain Name - the maximum data reuse period specified for Domain Names in Section 4.2.1 of the Baseline Requirements;
    G.  Name, Title, Agency, and Authority - 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls. For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
-1. Each period set forth above SHALL begin to run on the date the relevant information was collected by the CA.
-2. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 3.2.2.9](#3229-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 3.2.2.10](#32210-verification-of-approval-of-ev-certificate-request).
-3. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 3.2.2.14.1](#322141-validation-for-existing-subscribers).
+2. Each period set forth above SHALL begin to run on the date the relevant information was collected by the CA.
+3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 3.2.2.9](#3229-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 3.2.2.10](#32210-verification-of-approval-of-ev-certificate-request).
+4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 3.2.2.14.1](#322141-validation-for-existing-subscribers).
 
 ### 3.2.3 Authentication of individual identity
 
@@ -1370,7 +1370,7 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
 
-EV Certificates are subject to the Validity Period requirements of [Section 6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) of the Baseline Requirements.
+EV Certificates are subject to the Validity Period requirements of Section 6.3.2 of the Baseline Requirements.
 
 ## 6.4 Activation data
 
