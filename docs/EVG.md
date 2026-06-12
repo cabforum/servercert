@@ -86,6 +86,7 @@ These Guidelines do not address the verification of information, or the issuance
 | 2.0.0 | SC65 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
 | 2.0.1 | SC72 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 2024-04-03 | 2024-05-06 |
 | 2.0.2 | SC95 | Clean-up 2025                                                                            | 2026-02-27 | 2026-05-04 |
+| 2.0.3 | SC102 | Domain Reuse and Validity Alignment | TBD | TBD |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
