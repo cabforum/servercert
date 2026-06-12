@@ -1073,7 +1073,7 @@ Effective March 15, 2027:
 
 ##### 3.2.2.5.3 Reverse Address Lookup
 
-Confirming the Applicant's control over the IP Address by obtaining an FQDN associated with the IP Address through a reverse-IP lookup on the IP Address and then using that FQDN as an ADN and performing validation using a method permitted under [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). The ADN for this method MUST be exactly the FQDN returned from the reverse-IP lookup. The ADN selection algorithm in section 3.2.2.4 does not apply.
+Confirming the Applicant's control over the IP Address by obtaining an FQDN associated with the IP Address through a reverse-IP lookup on the IP Address and then using that FQDN as an ADN and performing validation using a method permitted under [Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control). Effective 2026-11-15, the ADN for this method MUST be exactly the FQDN returned from the reverse-IP lookup; the ADN selection algorithm in section 3.2.2.4 does not apply.
 
 CAs performing validations using this method MUST implement Multi-Perspective Issuance Corroboration as specified in [Section 3.2.2.9](#3229-multi-perspective-issuance-corroboration). To count as corroborating, a Network Perspective MUST observe the same FQDN as the Primary Network Perspective.
 
