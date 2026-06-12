@@ -189,7 +189,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-03-15 | [7.1.2.4](#7124-technically-constrained-precertificate-signing-ca-certificate-profile) | CAs MUST NOT use Precertificate Signing CAs to issue Precertificates. CAs MUST NOT issue certificates using the Technically Constrained Precertificate Signing CA Certificate Profile specified in Section 7.1.2.4. |
 | 2026-07-15  | [5.4.1](#541-types-of-events-recorded) | Audit logs of verification activity MUST include specific information. |
 | 2026-09-15 | [7.1.3.2.1](#71321-rsa) | Sunset all remaining use of SHA-1 in Certificates and CRLs. |
-| 2026-09-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | Authorization Domain Names must be derived based on the validation method to be used. |
+| 2026-11-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | Authorization Domain Names must be derived based on the validation method to be used. |
 | 2027-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.16, 3.2.2.4.17, 3.2.2.5.2, and 3.2.2.5.5 to issue Subscriber Certificates. |
 | 2027-03-15 | [3.2.2.5.3](#32253-reverse-address-lookup) | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates. |
 | 2027-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 100 days. |
