@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.7
+subtitle: Version 2.2.8
 author:
   - CA/Browser Forum
 
-date: 19-May-2026
+date: 16-Jun-2026
 
 copyright: |
   Copyright 2026 CA/Browser Forum
@@ -162,6 +162,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.5 | SC097 | Sunset all remaining use of SHA-1 signatures in Certificates and CRLs                   | 2026-02-24 | 2026-02-25 |
 | 2.2.6 | SC095 | Clean-up 2025                                                                           | 2026-02-27 | 2026-03-31 |
 | 2.2.7 | SC099 | Improve Recording of Validation Method                                                  | 2026-04-18 | 2026-05-19 |
+| 2.2.8 | SC098 | Process RFC 8657 CAA Parameters                                                         | 2026-05-13 | 2026-06-16 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -193,6 +194,8 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2027-03-15 | [3.2.2.5.3](#32253-reverse-address-lookup) | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates. |
 | 2027-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 100 days. |
 | 2027-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 100 days. |
+| 2027-03-15 | [4.2.2.1.2](#42212-caa-parameters) | CAs MUST process the `accounturi` and `validationmethods` parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657). |
+| 2027-03-15 | [4.2.2.1.2](#42212-caa-parameters) | If the CA does not identify the Subscriber account via an ACME Account URL as described in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the `acct` URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565) |
 | 2028-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.4, 3.2.2.4.13, and 3.2.2.4.14 to issue Subscriber Certificates. |
 | 2029-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 10 days. |
 | 2029-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 47 days. |
