@@ -1371,7 +1371,7 @@ In addition, *Effective 2027-03-15*:
 
 #### 4.2.2.2 DNSSEC Validation Requirements
 
-This section consolidates all DNSSEC validation requirements applicable to DNS queries performed during domain validation ([Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control)) and CAA record processing ([Section 3.2.2.8](#3228-caa-records)).
+This section consolidates all DNSSEC validation requirements applicable to DNS queries performed during domain validation ([Section 3.2.2.4](#3224-validation-of-domain-authorization-or-control)) and CAA record processing ([Section 4.2.2.1](#4221-caa-record-processing)).
 
 ##### 4.2.2.2.1 DNS Resolver Requirements
 
@@ -1391,7 +1391,7 @@ DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed by
 
 ##### 4.2.2.2.3 Email Domain Validation Methods - Partial Exception
 
-For the e-mail-based Domain Validation methods described in sections 3.2.2.4.4, 3.2.2.4.13, and 3.2.2.4.14:
+For the e-mail-based Domain Validation methods described in sections [3.2.2.4.4](#32244-email-to-a-constructed-address), [3.2.2.4.13](#322413-email-to-dns-caa-contact), and [3.2.2.4.14](#322414-email-to-dns-txt-contact):
 
 - DNSSEC validation back to the IANA DNSSEC root trust anchor MUST be performed on all DNS CNAME, CAA, and TXT queries performed by the Primary Network Perspective used to obtain the Authorization Domain Name, and CAs MUST NOT use local policy to disable DNSSEC validation on those queries.
 - For all other DNS queries associated with these methods performed by the Primary Network Perspective, DNSSEC validation back to the IANA DNSSEC root trust anchor SHOULD be performed and CAs SHOULD NOT use local policy to disable DNSSEC validation.
@@ -1402,7 +1402,7 @@ For all Domain Validation methods other than those listed in [Section 4.2.2.2.3]
 
 ##### 4.2.2.2.5 DNSSEC Validation Errors
 
-Except as may be allowed for in section 4.2.2.2.3, DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
+Except as may be allowed for in section [4.2.2.2.3](#42223-email-domain-validation-methods---partial-exception), DNSSEC-validation errors observed by the Primary Network Perspective (e.g., SERVFAIL) MUST NOT be treated as permission to issue.
 
 ##### 4.2.2.2.6 Remote Network Perspectives
 
