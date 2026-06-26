@@ -2099,7 +2099,6 @@ For ML-DSA key pairs, the CA SHALL:
 
 - Ensure that the key uses one of the following parameter sets:
   - ML-DSA-44 (OID: 2.16.840.1.101.3.4.3.17), or
-  - ML-DSA-65 (OID: 2.16.840.1.101.3.4.3.18), or
   - ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
 
 No other algorithms or key sizes are permitted.
@@ -3440,17 +3439,13 @@ When encoded, the `AlgorithmIdentifier` for ECDSA keys MUST be byte-for-byte ide
 
 The CA SHALL indicate an ML-DSA key using one of the following algorithm identifiers below:
 
-- ML-DSA-44 (OID: 2.16.840.1.101.3.4.3.17), or
-- ML-DSA-65 (OID: 2.16.840.1.101.3.4.3.18), or
-- ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19).
+- ML-DSA-44 (OID: 2.16.840.1.101.3.4.3.17).
 
-The parameters for ML-DSA keys SHALL be absent. The CA MUST NOT use HashML-DSA; only "pure" ML-DSA is permitted.
+The parameters for ML-DSA keys SHALL be absent. The CA MUST NOT use HashML-DSA; only "pure" ML-DSA is permitted. Additionally, the CA SHALL NOT use this algorithm if the algorithm identifier of the Certificate's signature algorithm is not ML-DSA-87 (OID: 2.16.840.1.101.3.4.3.19) or ML-DSA-44 (OID: 2.16.840.1.101.3.4.3.17).
 
 When encoded, the AlgorithmIdentifier for ML-DSA keys SHALL be byte-for-byte identical with the following hex-encoded bytes:
 
 - For ML-DSA-44, `300b0609608648016503040311`.
-- For ML-DSA-65, `300b0609608648016503040312`.
-- For ML-DSA-87, `300b0609608648016503040313`.
 
 #### 7.1.3.2 Signature AlgorithmIdentifier
 
@@ -3562,11 +3557,9 @@ If the signing key is P-521, the signature MUST use ECDSA with SHA-512. When enc
 
 ##### 7.1.3.2.3 ML-DSA
 
-The CA SHALL use the appropriate signature algorithm and encoding based upon the signing key used.
+The CA SHALL use the appropriate signature algorithm and encoding based upon the signing key used. Additionally, the CA SHALL NOT use this signature algorithm if the algorithm identifier of the public key being certified is not id-ml-dsa-44 (OID: 2.16.840.1.101.3.4.3.17).
 
 If the signing key is ML-DSA-44, the signature algorithm SHALL be id-ml-dsa-44 (OID: 2.16.840.1.101.3.4.3.17). When encoded, the `AlgorithmIdentifier` SHALL be byte-for-byte identical with the following hex-encoded bytes: `300b0609608648016503040311`.
-
-If the signing key is ML-DSA-65, the signature algorithm SHALL be id-ml-dsa-65 (OID: 2.16.840.1.101.3.4.3.18). When encoded, the `AlgorithmIdentifier` SHALL be byte-for-byte identical with the following hex-encoded bytes: `300b0609608648016503040312`.
 
 If the signing key is ML-DSA-87, the signature algorithm SHALL be id-ml-dsa-87 (OID: 2.16.840.1.101.3.4.3.19). When encoded, the `AlgorithmIdentifier` SHALL be byte-for-byte identical with the following hex-encoded bytes: `300b0609608648016503040313`.
 
