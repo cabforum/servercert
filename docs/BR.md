@@ -2791,7 +2791,7 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 
 | **Extension**                     | **Presence**    | **Critical** | **Description** |
 | --------------------------------- | -----------     | ------------ | -------------------------------------- |
-| `authorityInformationAccess`      | MAY             | N            | See [Section 7.1.2.7.7](#71277-subscriber-certificate-authority-information-access) |
+| `authorityInformationAccess`      | SHOULD          | N            | See [Section 7.1.2.7.7](#71277-subscriber-certificate-authority-information-access) |
 | `authorityKeyIdentifier`          | MUST            | N            | See [Section 7.1.2.11.1](#712111-authority-key-identifier) |
 | `certificatePolicies`             | MUST            | N            | See [Section 7.1.2.7.9](#71279-subscriber-certificate-certificate-policies) |
 | `extKeyUsage`                     | MUST            | N            | See [Section 7.1.2.7.10](#712710-subscriber-certificate-extended-key-usage) |
@@ -2818,7 +2818,7 @@ The `AuthorityInfoAccessSyntax` MAY contain multiple `AccessDescription`s with t
 | **Access Method**                           | **Access Location**         | **Presence** | **Maximum** | **Description** |
 | ---                                         | ----                        | -            | -           | ---             |
 | `id-ad-ocsp` (OID: 1.3.6.1.5.5.7.48.1)      | `uniformResourceIdentifier` | MAY          | \*          | A HTTP URL of the Issuing CA's OCSP responder. |
-| `id-ad-caIssuers` (OID: 1.3.6.1.5.5.7.48.2) | `uniformResourceIdentifier` | MAY          | \*          | A HTTP URL of the Issuing CA's certificate. |
+| `id-ad-caIssuers` (OID: 1.3.6.1.5.5.7.48.2) | `uniformResourceIdentifier` | SHOULD       | \*          | A HTTP URL of the Issuing CA's certificate. |
 | Any other value                             | -                           | MUST NOT     | -           | No other `accessMethod`s may be used. |
 
 ##### 7.1.2.7.8 Subscriber Certificate Basic Constraints
