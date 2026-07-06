@@ -1,10 +1,10 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.2
+subtitle: Version 2.0.3
 author:
   - CA/Browser Forum
-date: 4 May, 2026
+date: 6 July, 2026
 copyright: |
   Copyright 2026 CA/Browser Forum
 
@@ -69,23 +69,24 @@ These Guidelines do not address the verification of information, or the issuance
 | 1.6.6 | 192 | Notary revision | 2017-06-28 | 2017-07-28 |
 | 1.6.7 | 207 | ASN.1 Jurisdiction | 2017-10-23 | 2017-11-23 |
 | 1.6.8 | 217 | Sunset RFC 2527 | 2017-12-21 | 2018-03-09 |
-| 1.6.9 | SC16 | Other Subject Attributes | 2019-03-15 | 2019-04-16 |
-| 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 2019-05-21 | 2019-06-21 |
-| 1.7.1 | SC24 | Fall cleanup v2 | 2019-11-12 | 2019-12-19 |
-| 1.7.2 | SC27 | Version 3 Onion Certificates | 2020-02-19 | 2020-03-27 |
-| 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 2020-07-13 | 2020-08-20 |
-| 1.7.3 | SC31 | Browser Alignment | 2020-07-16 | 2020-08-20 |
-| 1.7.4 | SC35 | Cleanups and Clarifications | 2020-09-09 | 2020-10-19 |
-| 1.7.5 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 2021-02-24 | 2021-04-05 |
-| 1.7.6 | SC42 | 398-day Re-use Period | 2021-04-22 | 2021-06-02 |
-| 1.7.7 | SC47 | Sunset subject:organizationalUnitName | 2021-06-30 | 2021-08-16 |
-| 1.7.8 | SC48 | Domain Name and IP Address Encoding | 2021-07-22 | 2021-08-25 |
-| 1.7.9 | SC54 | Onion Cleanup | 2022-03-24 | 2022-04-23 |
-| 1.8.0 | SC56 | 2022 Cleanup | 2022-10-25 | 2022-11-30 |
-| 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 2024-02-01 | 2024-03-04 |
-| 2.0.0 | SC65 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
-| 2.0.1 | SC72 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 2024-04-03 | 2024-05-06 |
-| 2.0.2 | SC95 | Clean-up 2025                                                                            | 2026-02-27 | 2026-05-04 |
+| 1.6.9 | SC016 | Other Subject Attributes | 2019-03-15 | 2019-04-16 |
+| 1.7.0 | SC017 | Alternative registration numbers for EV certificates | 2019-05-21 | 2019-06-21 |
+| 1.7.1 | SC024 | Fall cleanup v2 | 2019-11-12 | 2019-12-19 |
+| 1.7.2 | SC027 | Version 3 Onion Certificates | 2020-02-19 | 2020-03-27 |
+| 1.7.3 | SC030 | Disclosure of Registration / Incorporating Agency | 2020-07-13 | 2020-08-20 |
+| 1.7.3 | SC031 | Browser Alignment | 2020-07-16 | 2020-08-20 |
+| 1.7.4 | SC035 | Cleanups and Clarifications | 2020-09-09 | 2020-10-19 |
+| 1.7.5 | SC041 | Reformatting the BRs, EVGs, and NCSSRs | 2021-02-24 | 2021-04-05 |
+| 1.7.6 | SC042 | 398-day Re-use Period | 2021-04-22 | 2021-06-02 |
+| 1.7.7 | SC047 | Sunset subject:organizationalUnitName | 2021-06-30 | 2021-08-16 |
+| 1.7.8 | SC048 | Domain Name and IP Address Encoding | 2021-07-22 | 2021-08-25 |
+| 1.7.9 | SC054 | Onion Cleanup | 2022-03-24 | 2022-04-23 |
+| 1.8.0 | SC056 | 2022 Cleanup | 2022-10-25 | 2022-11-30 |
+| 1.8.1 | SC068 | Allow VATEL and VATXI for organizationIdentifier | 2024-02-01 | 2024-03-04 |
+| 2.0.0 | SC065 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
+| 2.0.1 | SC072 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 2024-04-03 | 2024-05-06 |
+| 2.0.2 | SC095 | Clean-up 2025                                                                            | 2026-02-27 | 2026-05-04 |
+| 2.0.3 | SC087 | Registration Number Improvement for EV Certificates                                     | 2026-06-03 | 2026-07-06 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
