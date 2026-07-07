@@ -1,10 +1,10 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.2
+subtitle: Version 2.0.3
 author:
   - CA/Browser Forum
-date: 4 May, 2026
+date: 6 July, 2026
 copyright: |
   Copyright 2026 CA/Browser Forum
 
@@ -69,23 +69,24 @@ These Guidelines do not address the verification of information, or the issuance
 | 1.6.6 | 192 | Notary revision | 2017-06-28 | 2017-07-28 |
 | 1.6.7 | 207 | ASN.1 Jurisdiction | 2017-10-23 | 2017-11-23 |
 | 1.6.8 | 217 | Sunset RFC 2527 | 2017-12-21 | 2018-03-09 |
-| 1.6.9 | SC16 | Other Subject Attributes | 2019-03-15 | 2019-04-16 |
-| 1.7.0 | SC17 | Alternative registration numbers for EV certificates | 2019-05-21 | 2019-06-21 |
-| 1.7.1 | SC24 | Fall cleanup v2 | 2019-11-12 | 2019-12-19 |
-| 1.7.2 | SC27 | Version 3 Onion Certificates | 2020-02-19 | 2020-03-27 |
-| 1.7.3 | SC30 | Disclosure of Registration / Incorporating Agency | 2020-07-13 | 2020-08-20 |
-| 1.7.3 | SC31 | Browser Alignment | 2020-07-16 | 2020-08-20 |
-| 1.7.4 | SC35 | Cleanups and Clarifications | 2020-09-09 | 2020-10-19 |
-| 1.7.5 | SC41 | Reformatting the BRs, EVGs, and NCSSRs | 2021-02-24 | 2021-04-05 |
-| 1.7.6 | SC42 | 398-day Re-use Period | 2021-04-22 | 2021-06-02 |
-| 1.7.7 | SC47 | Sunset subject:organizationalUnitName | 2021-06-30 | 2021-08-16 |
-| 1.7.8 | SC48 | Domain Name and IP Address Encoding | 2021-07-22 | 2021-08-25 |
-| 1.7.9 | SC54 | Onion Cleanup | 2022-03-24 | 2022-04-23 |
-| 1.8.0 | SC56 | 2022 Cleanup | 2022-10-25 | 2022-11-30 |
-| 1.8.1 | SC68 | Allow VATEL and VATXI for organizationIdentifier | 2024-02-01 | 2024-03-04 |
-| 2.0.0 | SC65 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
-| 2.0.1 | SC72 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 2024-04-03 | 2024-05-06 |
-| 2.0.2 | SC95 | Clean-up 2025                                                                            | 2026-02-27 | 2026-05-04 |
+| 1.6.9 | SC016 | Other Subject Attributes | 2019-03-15 | 2019-04-16 |
+| 1.7.0 | SC017 | Alternative registration numbers for EV certificates | 2019-05-21 | 2019-06-21 |
+| 1.7.1 | SC024 | Fall cleanup v2 | 2019-11-12 | 2019-12-19 |
+| 1.7.2 | SC027 | Version 3 Onion Certificates | 2020-02-19 | 2020-03-27 |
+| 1.7.3 | SC030 | Disclosure of Registration / Incorporating Agency | 2020-07-13 | 2020-08-20 |
+| 1.7.3 | SC031 | Browser Alignment | 2020-07-16 | 2020-08-20 |
+| 1.7.4 | SC035 | Cleanups and Clarifications | 2020-09-09 | 2020-10-19 |
+| 1.7.5 | SC041 | Reformatting the BRs, EVGs, and NCSSRs | 2021-02-24 | 2021-04-05 |
+| 1.7.6 | SC042 | 398-day Re-use Period | 2021-04-22 | 2021-06-02 |
+| 1.7.7 | SC047 | Sunset subject:organizationalUnitName | 2021-06-30 | 2021-08-16 |
+| 1.7.8 | SC048 | Domain Name and IP Address Encoding | 2021-07-22 | 2021-08-25 |
+| 1.7.9 | SC054 | Onion Cleanup | 2022-03-24 | 2022-04-23 |
+| 1.8.0 | SC056 | 2022 Cleanup | 2022-10-25 | 2022-11-30 |
+| 1.8.1 | SC068 | Allow VATEL and VATXI for organizationIdentifier | 2024-02-01 | 2024-03-04 |
+| 2.0.0 | SC065 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
+| 2.0.1 | SC072 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 2024-04-03 | 2024-05-06 |
+| 2.0.2 | SC095 | Clean-up 2025                                                                            | 2026-02-27 | 2026-05-04 |
+| 2.0.3 | SC087 | Registration Number Improvement for EV Certificates                                     | 2026-06-03 | 2026-07-06 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -97,6 +98,7 @@ These Guidelines do not address the verification of information, or the issuance
 | 2020-09-01 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) & [Appendix F](#appendix-f--unused) | Certificates issued MUST NOT have a Validity Period greater than 398 days. |
 | 2020-10-01 | [3.2.2.1.3](#32213-disclosure-of-verification-sources) | Prior to using an Incorporating Agency or Registration Agency, the CA MUST ensure the agency has been publicly disclosed |
 | 2022-09-01 | [7.1.4.2.7](#71427-subject-organizational-unit-name-field) | CAs MUST NOT include the organizationalUnitName field in the Subject |
+| 2027-09-15 | [7.1.4.2.5](#71425-subject-registration-number-field) | If the CA includes the Date of Formation in the `subject:serialNumber` field, then the CA MUST use the Canonical Date Representation. |
 
 **Implementers' Note**: Version 1.3 of these EV Guidelines was published on 2010-11-20 and supplemented through 2012-05 when version 1.4 was published. ETSI TS 102 042 and ETSI TR 101 564 Technical Report: Guidance on ETSI TS 102 042 for Issuing Extended Validation Certificates for Auditors and CSPs reference version 1.3 of these EV Guidelines, and ETSI Draft EN 319 411-1 references version 1.4. Version 1.4.5 of Webtrust(r) for Certification Authorities – Extended Validation Audit Criteria references version 1.4.5 of these EV Guidelines. As illustrated in the Document History table above, the CA/Browser Forum continues to improve relevant industry guidelines, including this document, the Baseline Requirements, and the Network and Certificate System Security Requirements. We encourage all CAs to conform to each revision on the date specified without awaiting a corresponding update to an applicable audit criterion. In the event of a conflict between an existing audit criterion and a guideline revision, we will communicate with the audit community and attempt to resolve any uncertainty. We will respond to implementation questions directed to <questions@cabforum.org>. Our coordination with compliance auditors will continue as we develop guideline revision cycles that harmonize with the revision cycles for audit criteria, the compliance auditing periods and cycles of CAs, and the CA/Browser Forum's guideline implementation dates.
 
@@ -181,6 +183,8 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Business Entity**: Any entity that is not a Private Organization, Government Entity, or Non-Commercial Entity as defined herein. Examples include, but are not limited to, general partnerships, unincorporated associations, sole proprietorships, etc.
 
+**Canonical Date Representation**: A date that is formatted as YYYY-MM-DD, where "YYYY" is the four-digit year, "MM" is the two-digit month, and "DD" is the two-digit day of the month. Each element of the date is separated with a single hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)). Each element is padded with leading zeroes as needed to ensure that year values consist of four digits and month and day of the month values consist of two digits. Example dates in this representation: "0748-04-02", "2024-10-14".
+
 **Certificate Approver**: A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant to:
 
   i. act as a Certificate Requester and to authorize other employees or third parties to act as a Certificate Requester, and
@@ -193,6 +197,8 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 **Confirming Person**: A position within an Applicant's organization that confirms the particular fact at issue.
 
 **Contract Signer**: A natural person who is either the Applicant, employed by the Applicant, or an authorized agent who has express authority to represent the Applicant, and who has authority on behalf of the Applicant to sign Subscriber Agreements.
+
+**Date of Formation**: The date on which a Legal Entity is first recognized by the jurisdiction in which it was created or formed.
 
 **Demand Deposit Account**: A deposit account held at a bank or other financial institution, the funds deposited in which are payable on demand. The primary purpose of demand accounts is to facilitate cashless payments by means of check, bank draft, direct debit, electronic funds transfer, etc. Usage varies among countries, but a demand deposit account is commonly known as a share draft account, a current account, or a checking account.
 
@@ -283,7 +289,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Registered Office**: The official address of a company, as recorded with the Incorporating Agency, to which official documents are sent and at which legal notices are received.
 
-**Registration Number**: The unique number assigned to a Private Organization by the Incorporating Agency in such entity's Jurisdiction of Incorporation.
+**Registration Number**: The identifier assigned to a Business Entity, Private Organization, or Government Entity by the Incorporating Agency in such entity's Jurisdiction of Incorporation or Registration.
 
 **Regulated Financial Institution**: A financial institution that is regulated, supervised, and examined by governmental, national, state or provincial, or local authorities.
 
@@ -438,7 +444,7 @@ This Agency Information SHALL include at least the following:
 
 - Sufficient information to unambiguously identify the Incorporating Agency or Registration Agency (such as a name, jurisdiction, and website); and,
 - The accepted value or values for each of the `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1), `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2), and `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3) fields, when a certificate is issued using information from that Incorporating Agency or Registration Agency, indicating the jurisdiction(s) that the Agency is appropriate for; and,
-- The acceptable form or syntax of Registration Numbers used by the Incorporating Agency or Registration Agency, if the CA restricts such Numbers to an acceptable form or syntax; and,
+- The acceptable form or syntax of Registration Numbers that are assigned by the Incorporating Agency or Registration Agency, if the CA restricts such Numbers to an acceptable form or syntax; and,
 - A revision history that includes a unique version number and date of publication for any additions, modifications, and/or removals from this list.
 
 The CA MUST document where to obtain this information within Section 3.2 of the CA's Certificate Policy and/or Certification Practice Statement.
@@ -453,27 +459,27 @@ To verify the Applicant's legal existence and identity, the CA MUST do the follo
 
    A.  **Legal Existence**: Verify that the Applicant is a legally recognized entity, in existence and validly formed (e.g., incorporated) with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration, and not designated on the records of the Incorporating or Registration Agency by labels such as "inactive", "invalid", "not current", or the equivalent.
    B.  **Organization Name**: Verify that the Applicant's formal legal name as recorded with the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: Obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Incorporating or Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Incorporation or Registration.
+   C.  **Registration Number or Date of Formation**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Incorporating or Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's Date of Formation from the Incorporating or Registration Agency.
    D.  **Registered Agent**: Obtain the identity and address of the Applicant's Registered Agent or Registered Office (as applicable in the Applicant's Jurisdiction of Incorporation or Registration).
 
 2. **Government Entity Subjects**
 
    A.  **Legal Existence**: Verify that the Applicant is a legally recognized Government Entity, in existence in the political subdivision in which such Government Entity operates.
    B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: The CA MUST attempt to obtain the Applicant's date of incorporation, registration, or formation, or the identifier for the legislative act that created the Government Entity. In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is a Government Entity.
+   C.  **Registration Number or Date of Formation**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Incorporating or Registration Agency in the Applicant's Jurisdiction of Incorporation or Registration. Where the Registration Agency does not assign a Registration Number, the CA SHALL attempt to obtain the Applicant's Date of Formation from the Registration Agency.
 
 3. **Business Entity Subjects**
 
    A.  **Legal Existence**: Verify that the Applicant is engaged in business under the name submitted by the Applicant in the Application.
    B.  **Organization Name**: Verify that the Applicant's formal legal name as recognized by the Registration Agency in the Applicant's Jurisdiction of Registration matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: Attempt to obtain the specific unique Registration Number assigned to the Applicant by the Registration Agency in the Applicant's Jurisdiction of Registration. Where the Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's date of Registration.
+   C.  **Registration Number or Date of Formation**: Attempt to obtain the specific Registration Number assigned to the Applicant by the Registration Agency in the Applicant's Jurisdiction of Registration. Where the Registration Agency does not assign a Registration Number, the CA SHALL obtain the Applicant's Date of Formation.
    D.  **Principal Individual**: Verify the identity of the identified Principal Individual.
 
 4. **Non-Commercial Entity Subjects (International Organizations)**
 
    A.  **Legal Existence**: Verify that the Applicant is a legally recognized International Organization Entity.
    B.  **Entity Name**: Verify that the Applicant's formal legal name matches the Applicant's name in the EV Certificate Request.
-   C.  **Registration Number**: The CA MUST attempt to obtain the Applicant's date of formation, or the identifier for the legislative act that created the International Organization Entity. In circumstances where this information is not available, the CA MUST enter appropriate language to indicate that the Subject is an International Organization Entity.
+   C.  **Date of Formation**: Attempt to obtain the Applicant's Date of Formation.
 
 ##### 3.2.2.2.2 Acceptable Method of Verification
 
@@ -1503,15 +1509,17 @@ The CA SHALL ensure that, at time of issuance, the values within these fields ha
 
 ##### 7.1.4.2.5 Subject Registration Number Field
 
-**Certificate Field**: `subject:serialNumber` (OID: 2.5.4.5)  
-**Required/Optional**: **Required**  
-**Contents**: For Private Organizations, this field MUST contain the Registration (or similar) Number assigned to the Subject by the Incorporating or Registration Agency in its Jurisdiction of Incorporation or Registration, as appropriate. If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the date of Incorporation or Registration SHALL be entered into this field using the ISO 8601 Complete Date format (YYYY-MM-DD, e.g., 2025-01-23).
+__Certificate Field__: `subject:serialNumber` (OID: 2.5.4.5)  
+__Required/Optional__: __Required__  
+__Contents__: For Private Organizations, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.A). If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats. Effective 2027-09-15, if the CA includes the Date of Formation, then the CA MUST use the Canonical Date Representation.
 
-For Government Entities that do not have a Registration Number or readily verifiable date of creation, the CA SHALL enter appropriate language to indicate that the Subject is a Government Entity.
+For Government Entities, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.B). If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats. If the Jurisdiction of Incorporation or Registration does not provide a Date of Formation for the Applicant, then the CA SHALL indicate that the Subject is a Government Entity by including the string "Government Entity" or another appropriate value. Effective 2027-09-15, if the CA includes the Date of Formation, then the CA MUST use the Canonical Date Representation.
 
-For Business Entities, the Registration Number that was received by the Business Entity upon government registration SHALL be entered in this field. For those Business Entities that register with an Incorporating Agency or Registration Agency in a jurisdiction that does not issue numbers pursuant to government registration, the date of the registration SHALL be entered into this field in using the ISO 8601 Complete Date format (YYYY-MM-DD, e.g., 2025-01-23).
+For Business Entities, the CA SHALL include the Registration Number that it obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.C). If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats. Effective 2027-09-15, if the CA includes the Date of Formation, then the CA MUST use the Canonical Date Representation.
 
-If the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in [Section 3.2.2.1.3](#32213-disclosure-of-verification-sources), the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating agency.
+For Non‐Commercial Entity Subjects (International Organizations), the CA SHALL include the Date of Formation as obtained and verified in accordance with [Section 3.2.2.2.1](#32221-verification-requirements) (1.D), using any one of the common date formats. If the Jurisdiction of Incorporation or Registration does not provide a Date of Formation for the Applicant, then the CA SHALL indicate that the Subject is a Non-Commercial Entity by including the string "Non-Commercial Entity" or another appropriate value. Effective 2027-09-15, if the CA includes the Date of Formation, then the CA MUST use the Canonical Date Representation.
+
+If the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in [Section 3.2.2.1.3](#32213-disclosure-of-verification-sources), the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating Agency.
 
 ##### 7.1.4.2.6 Subject Physical Address of Place of Business Field
 
