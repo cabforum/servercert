@@ -1415,6 +1415,8 @@ The full set of DNS lookup information related to DNSSEC validation is considere
 1. self-audits performed to fulfill the requirements in [Section 8.7](#87-self-audits); and
 2. the logging requirements of [Section 5.4.1](#541-types-of-events-recorded).
 
+The above exclusions notwithstanding, the CA MUST retain information sufficient to verify that DNSSEC validation is being carried out in accordance with the requirements contained in the rest of [Section 4.2.2.2](#4222-dnssec-validation-requirements).
+
 ### 4.2.3 Time to process certificate applications
 
 No stipulation.
