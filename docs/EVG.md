@@ -880,7 +880,7 @@ A Qualified Government Tax Information Source is a Qualified Government Informat
 
 ##### 3.2.2.12.1 High Risk Status
 
-The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirements apply equally to EV Certificates.
+No stipulation.
 
 ##### 3.2.2.12.2 Denied Lists and Other Legal Block Lists
 
