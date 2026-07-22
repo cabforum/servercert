@@ -880,8 +880,6 @@ A Qualified Government Tax Information Source is a Qualified Government Informat
 
 ##### 3.2.2.12.1 High Risk Status
 
-No stipulation.
-
 ##### 3.2.2.12.2 Denied Lists and Other Legal Block Lists
 
 1. **Verification Requirements**: The CA MUST verify whether the Applicant, the Contract Signer, the Certificate Approver, the Applicant's Jurisdiction of Incorporation, Registration, or Place of Business:
