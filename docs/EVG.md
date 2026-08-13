@@ -1,10 +1,10 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.3
+subtitle: Version 2.0.4
 author:
   - CA/Browser Forum
-date: 6 July, 2026
+date: 13 August, 2026
 copyright: |
   Copyright 2026 CA/Browser Forum
 
@@ -86,7 +86,8 @@ These Guidelines do not address the verification of information, or the issuance
 | 2.0.0 | SC065 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
 | 2.0.1 | SC072 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 2024-04-03 | 2024-05-06 |
 | 2.0.2 | SC095 | Clean-up 2025                                                                            | 2026-02-27 | 2026-05-04 |
-| 2.0.3 | SC087 | Registration Number Improvement for EV Certificates                                     | 2026-06-03 | 2026-07-06 |
+| 2.0.3 | SC087 | Registration Number Improvement for EV Certificates                                      | 2026-06-03 | 2026-07-06 |
+| 2.0.4 | SC102 | EV Domain Reuse and Validity Alignment                                                   | 2026-07-14 | 2026-08-13 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
