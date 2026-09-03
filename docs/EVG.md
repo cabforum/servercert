@@ -1,10 +1,10 @@
 ---
 title: Guidelines for the Issuance and Management of Extended Validation Certificates
 
-subtitle: Version 2.0.3
+subtitle: Version 2.0.4
 author:
   - CA/Browser Forum
-date: 6 July, 2026
+date: 13 August, 2026
 copyright: |
   Copyright 2026 CA/Browser Forum
 
@@ -86,7 +86,8 @@ These Guidelines do not address the verification of information, or the issuance
 | 2.0.0 | SC065 | Convert EVGs into RFC 3647 format | 2024-03-15 | 2024-05-15 |
 | 2.0.1 | SC072 | Delete except to policyQualifiers in EVGs; align with BRs by making them NOT RECOMMENDED | 2024-04-03 | 2024-05-06 |
 | 2.0.2 | SC095 | Clean-up 2025                                                                            | 2026-02-27 | 2026-05-04 |
-| 2.0.3 | SC087 | Registration Number Improvement for EV Certificates                                     | 2026-06-03 | 2026-07-06 |
+| 2.0.3 | SC087 | Registration Number Improvement for EV Certificates                                      | 2026-06-03 | 2026-07-06 |
+| 2.0.4 | SC102 | EV Domain Reuse and Validity Alignment                                                   | 2026-07-14 | 2026-08-13 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -941,7 +942,7 @@ If an Applicant has a currently valid EV Certificate issued by the CA, a CA MAY 
 3. The Applicant's Verified Method of Communication required by [Section 3.2.2.5](#3225-verified-method-of-communication) but still MUST perform the verification required by [Section 3.2.2.5.2](#32252-acceptable-methods-of-verification) (B);
 4. The Applicant's Operational Existence under [Section 3.2.2.6](#3226-verification-of-applicants-operational-existence);
 5. The Name, Title, Agency and Authority of the Contract Signer, and Certificate Approver, under [Section 3.2.2.8](#3228-verification-of-name-title-and-authority-of-contract-signer-and-certificate-approver); and
-6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name), provided that the CA verifies that the WHOIS record or RDAP registry data still shows the same registrant as when the CA verified the specified Domain Name for the initial EV Certificate.
+6. The Applicant's right to use the specified Domain Name under [Section 3.2.2.7](#3227-verification-of-applicants-domain-name).
 
 ##### 3.2.2.14.2 Re-issuance Requests
 
@@ -959,10 +960,10 @@ A CA may rely on a previously verified certificate request to issue a replacemen
    C.  Address of Place of Business - 398 days;
    D.  Verified Method of Communication - 398 days;
    E.  Operational existence - 398 days;
-   F.  Domain Name - 398 days;
+   F.  Domain Name - the maximum data reuse period specified for Domain Names in Section 4.2.1 of the Baseline Requirements;
    G.  Name, Title, Agency, and Authority - 398 days, unless a contract between the CA and the Applicant specifies a different term, in which case, the term specified in such contract controls. For example, the contract MAY include the perpetual assignment of EV roles until revoked by the Applicant or CA, or until the contract expires or is terminated.
 
-2. The 398-day period set forth above SHALL begin to run on the date the information was collected by the CA.
+2. Each period set forth above SHALL begin to run on the date the relevant information was collected by the CA.
 3. The CA MAY reuse a previously submitted EV Certificate Request, Subscriber Agreement, or Terms of Use, including use of a single EV Certificate Request in support of multiple EV Certificates containing the same Subject to the extent permitted under [Section 3.2.2.9](#3229-verification-of-signature-on-subscriber-agreement-and-ev-certificate-requests) and [Section 3.2.2.10](#32210-verification-of-approval-of-ev-certificate-request).
 4. The CA MUST repeat the verification process required in these Guidelines for any information obtained outside the time limits specified above except when permitted otherwise under [Section 3.2.2.14.1](#322141-validation-for-existing-subscribers).
 
@@ -1376,9 +1377,7 @@ All requirements in Section 6.1.1.1 of the Baseline Requirements apply equally t
 
 ### 6.3.2 Certificate operational periods and key pair usage periods
 
-The Validity Period for an EV Certificate SHALL NOT exceed 398 days.
-
-It is RECOMMENDED that EV Subscriber Certificates have a Maximum Validity Period of twelve months.
+EV Certificates are subject to the Validity Period requirements of Section 6.3.2 of the Baseline Requirements.
 
 ## 6.4 Activation data
 
