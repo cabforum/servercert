@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.2.9
+subtitle: Version 2.2.X
 author:
   - CA/Browser Forum
 
-date: 6-Aug-2026
+date: TBD
 
 copyright: |
   Copyright 2026 CA/Browser Forum
@@ -164,6 +164,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.7 | SC099 | Improve Recording of Validation Method                                                  | 2026-04-18 | 2026-05-19 |
 | 2.2.8 | SC098 | Process RFC 8657 CAA Parameters                                                         | 2026-05-13 | 2026-06-16 |
 | 2.2.9 | SC101 | Clarify Authorization Domain Names                                                      | 2026-07-02 | 2026-08-06 |
+| 2.2.X | SC1XX | EVG Cleanup and BR Sync                                                                 | TBD        | TBD        |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
@@ -198,6 +199,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2027-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 100 days. |
 | 2027-03-15 | [4.2.2.1.2](#42212-caa-parameters) | CAs MUST process the `accounturi` and `validationmethods` parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657). |
 | 2027-03-15 | [4.2.2.1.2](#42212-caa-parameters) | If the CA does not identify the Subscriber account via an ACME Account URL as described in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the `acct` URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565) |
+| 2027-09-15 | [7.1.4.7](#7147-extended-validation-subject-registration-number) | If the CA includes the Date of Formation in the `subject:serialNumber` attribute of an Extended Validation Certificate, then the CA MUST use the Canonical Date Representation. |
 | 2028-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.4, 3.2.2.4.13, and 3.2.2.4.14 to issue Subscriber Certificates. |
 | 2029-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 10 days. |
 | 2029-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 47 days. |
@@ -310,6 +312,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 **CAA**: From [RFC 8659](https://datatracker.ietf.org/doc/html/rfc8659): "The Certification Authority Authorization (CAA) DNS Resource Record allows a DNS domain name holder to specify one or more Certification Authorities (CAs) authorized to issue certificates for that domain name. CAA Resource Records allow a public CA to implement additional controls to reduce the risk of unintended certificate mis-issue."
 
 **CA Key Pair**: A Key Pair where the Public Key appears as the Subject Public Key Info in one or more Root CA Certificate(s) and/or Subordinate CA Certificate(s).
+
+**Canonical Date Representation**: A date that is formatted as YYYY-MM-DD, where "YYYY" is the four-digit year, "MM" is the two-digit month, and "DD" is the two-digit day of the month. Each element of the date is separated with a single hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8)). Each element is padded with leading zeroes as needed to ensure that year values consist of four digits and month and day of the month values consist of two digits. Example dates in this representation: "0748-04-02", "2024-10-14".
 
 **Certificate**: An electronic document that uses a digital signature to bind a public key and an identity.
 
@@ -436,6 +440,10 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 **Registered Domain Name**: A Domain Name that has been registered with a Domain Name Registrar.
 
 **Registration Authority (RA)**: Any Legal Entity that is responsible for identification and authentication of subjects of Certificates, but is not a CA, and hence does not sign or issue Certificates. An RA may assist in the certificate application process or revocation process or both. When "RA" is used as an adjective to describe a role or function, it does not necessarily imply a separate body, but can be part of the CA.
+
+**Registration Reference**: A unique identifier assigned to a Legal Entity.
+
+**Registration Scheme**: A scheme for assigning a Registration Reference meeting the requirements identified in [Appendix D](#appendix-d--registration-schemes).
 
 **Reliable Data Source**: An identification document or source of data used to verify Subject Identity Information that is generally recognized among commercial enterprises and governments as reliable, and which was created by a third party for a purpose other than the Applicant obtaining a Certificate.
 
@@ -2802,15 +2810,50 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 
 ##### 7.1.2.7.5 Extended Validation
 
-For a Subscriber Certificate to be Extended Validation, it MUST comply with the Certificate Profile specified in the then-current version of the Guidelines for the Issuance and Management of Extended Validation Certificates.
+For a Subscriber Certificate to be Extended Validation, the Subject Information in the Certificate MUST have been validated in accordance with the then-current version of the Guidelines for the Issuance and Management of Extended Validation Certificates ("EV Guidelines").
 
 In addition, it MUST meet the following profile:
 
 | **Field**             | **Requirements**     |
 | ---                   | -------              |
-| `subject`             | See Guidelines for the Issuance and Management of Extended Validation Certificates, Section 7.1.4.2. |
+| `subject`             | See following table. |
 | `certificatePolicies` | MUST be present. MUST assert the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.1` as a `policyIdentifier`. See [Section 7.1.2.7.9](#71279-subscriber-certificate-certificate-policies). |
-| All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) and the Guidelines for the Issuance and Management of Extended Validation Certificates. |
+| All other extensions  | See [Section 7.1.2.7.6](#71276-subscriber-certificate-extensions) |
+
+Capitalized terms used in this profile and in [Section 7.1.2.7.13](#712713-subscriber-certificate-cabrowser-forum-organization-identifier) and Sections [7.1.4.5](#7145-extended-validation-subject-organization-name) through [7.1.4.8](#7148-extended-validation-subject-organization-identifier) that are not defined in these Requirements are defined in the EV Guidelines.
+
+All `subject` names MUST be encoded as specified in [Section 7.1.4](#714-name-forms).
+
+The `subjectAltName` extension is subject to [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name), with the following additional requirements:
+
+- The extension MUST contain one or more `dNSName` entries containing host Domain Name(s) owned or controlled by the Subject and to be associated with the Subject's server. Such server MAY be owned and operated by the Subject or another entity (e.g., a hosting service).
+- The extension MUST NOT contain an `iPAddress` `GeneralName`.
+- A `dNSName` entry MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name verified in accordance with [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names).
+
+The following table details the acceptable `AttributeType`s that may appear within the `type` field of an `AttributeTypeAndValue`, as well as the contents permitted within the `value` field.
+
+Table: Extended Validation `subject` Attributes
+
+| **Attribute Name**             | **Presence**    | **Value**   | **Verification** |
+| ---                            | --              | ---         | --               |
+| `countryName`                  | MUST            | The two-letter ISO 3166-1 country code of the Subject's verified physical address of its Place of Business. If a Country is not represented by an official ISO 3166-1 country code, the CA MUST specify the ISO 3166-1 user-assigned code of `XX`, indicating that an official ISO 3166-1 alpha-2 code has not been assigned. | Section 3.2.2.4 of the EV Guidelines |
+| `stateOrProvinceName`          | MUST / MAY      | MUST be present if `localityName` is absent, MAY be present otherwise. If present, MUST contain the state or province information of the Subject's verified physical address of its Place of Business. | Section 3.2.2.4 of the EV Guidelines |
+| `localityName`                 | MUST / MAY      | MUST be present if `stateOrProvinceName` is absent, MAY be present otherwise. If present, MUST contain the locality information of the Subject's verified physical address of its Place of Business. | Section 3.2.2.4 of the EV Guidelines |
+| `postalCode`                   | MAY             | If present, MUST contain the zip or postal information of the Subject's verified physical address of its Place of Business. | Section 3.2.2.4 of the EV Guidelines |
+| `streetAddress`                | MAY             | If present, MUST contain the street address information of the Subject's verified physical address of its Place of Business. Multiple instances MAY be present. | Section 3.2.2.4 of the EV Guidelines |
+| `organizationName`             | MUST            | The Subject's full legal organization name, subject to the requirements of [Section 7.1.4.5](#7145-extended-validation-subject-organization-name). | Sections 3.2.2.2 and 3.2.2.3 of the EV Guidelines |
+| `businessCategory`             | MUST            | One of the strings "Private Organization", "Government Entity", "Business Entity", or "Non-Commercial Entity", depending upon whether the Subject qualifies under Section 4.1.1.1, 4.1.1.2, 4.1.1.3, or 4.1.1.4 of the EV Guidelines, respectively. | Section 4.1.1 of the EV Guidelines |
+| `jurisdictionCountry`          | MUST            | See [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration). | Sections 3.2.2.1.3 and 3.2.2.2 of the EV Guidelines |
+| `jurisdictionStateOrProvince`  | MUST / MUST NOT | Whether this attribute MUST or MUST NOT be present depends on the level at which the applicable Incorporating Agency or Registration Agency operates. See [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration). | Sections 3.2.2.1.3 and 3.2.2.2 of the EV Guidelines |
+| `jurisdictionLocality`         | MUST / MUST NOT | Whether this attribute MUST or MUST NOT be present depends on the level at which the applicable Incorporating Agency or Registration Agency operates. See [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration). | Sections 3.2.2.1.3 and 3.2.2.2 of the EV Guidelines |
+| `serialNumber`                 | MUST            | The Subject's Registration Number, or its Date of Formation or other value where permitted, as specified in [Section 7.1.4.7](#7147-extended-validation-subject-registration-number). | Section 3.2.2.2.1 of the EV Guidelines |
+| `organizationIdentifier`       | MAY             | If present, MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme, as specified in [Section 7.1.4.8](#7148-extended-validation-subject-organization-identifier). If present, the `cabfOrganizationIdentifier` extension MUST be present (see [Section 7.1.2.7.13](#712713-subscriber-certificate-cabrowser-forum-organization-identifier)). | [Section 7.1.4.8](#7148-extended-validation-subject-organization-identifier) |
+| `domainComponent`              | MUST NOT        | -           | -           |
+| `surname`                      | MUST NOT        | -           | -           |
+| `givenName`                    | MUST NOT        | -           | -           |
+| `organizationalUnitName`       | MUST NOT        | -           | -           |
+| `commonName`                   | NOT RECOMMENDED | If present, MUST contain exactly one Fully-Qualified Domain Name or Wildcard Domain Name that is one of the values contained in the Certificate's `subjectAltName` extension, encoded according to [Section 7.1.4.3](#7143-subscriber-certificate-common-name-attribute). This attribute MUST NOT contain an IP address. This attribute MUST NOT contain a Wildcard Domain Name unless the FQDN portion of the Wildcard Domain Name is an Onion Domain Name. | |
+| Any other attribute            | MUST NOT        | -           | -                |
 
 In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-', and ' ' (i.e. space) characters, and/or any other indication that the value is absent, incomplete, or not applicable.
 
@@ -2829,12 +2872,14 @@ In addition, `subject` Attributes MUST NOT contain only metadata such as '.', '-
 | `crlDistributionPoints`           | *               | N            | See [Section 7.1.2.11.2](#712112-crl-distribution-points) |
 | Signed Certificate Timestamp List | MAY             | N            | See [Section 7.1.2.11.3](#712113-signed-certificate-timestamp-list) |
 | `subjectKeyIdentifier`            | NOT RECOMMENDED | N            | See [Section 7.1.2.11.4](#712114-subject-key-identifier) |
+| `cabfOrganizationIdentifier`      | *               | N            | See [Section 7.1.2.7.13](#712713-subscriber-certificate-cabrowser-forum-organization-identifier) |
 | Any other extension               | NOT RECOMMENDED | -            | See [Section 7.1.2.11.5](#712115-other-extensions) |
 
 **Notes**:
 
 - whether or not the `subjectAltName` extension should be marked Critical depends on the contents of the Certificate's `subject` field, as detailed in [Section 7.1.2.7.12](#712712-subscriber-certificate-subject-alternative-name).
 - whether or not the CRL Distribution Points extension must be present depends on 1) whether the Certificate includes an Authority Information Access extension with an `id-ad-ocsp` accessMethod and 2) the Certificate's validity period, as detailed in [Section 7.1.2.11.2](#712112-crl-distribution-points).
+- for Extended Validation Certificates, the `cabfOrganizationIdentifier` extension MUST be present if the `subject:organizationIdentifier` attribute is present, and MAY be present otherwise, as detailed in [Section 7.1.2.7.13](#712713-subscriber-certificate-cabrowser-forum-organization-identifier). For all other Certificate types, this extension is NOT RECOMMENDED.
 
 ##### 7.1.2.7.7 Subscriber Certificate Authority Information Access
 
@@ -2949,6 +2994,40 @@ Table: `GeneralName` within a `subjectAltName` extension
 | `registeredID`              | N             | -              |
 
 **Note**: As an explicit exception from [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280), P-Labels are permitted to not conform to IDNA 2003. These Requirements allow for the inclusion of P-Labels that do not conform with IDNA 2003 to support newer versions of the Unicode character repertoire, among other improvements to the various IDNA standards.
+
+##### 7.1.2.7.13 Subscriber Certificate CA/Browser Forum Organization Identifier
+
+**Extension Name**: `cabfOrganizationIdentifier` (OID: 2.23.140.3.1)  
+**Verbose OID**: `{joint-iso-itu-t(2) international-organizations(23) ca-browser-forum(140) certificate-extensions(3) cabf-organization-identifier(1) }`
+
+In an Extended Validation Certificate, if the `subject:organizationIdentifier` attribute is present, this extension MUST be present.
+
+If present, this extension MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
+
+The Registration Scheme MUST be encoded as described by the following ASN.1 grammar:
+
+```ASN.1
+id-CABFOrganizationIdentifier OBJECT IDENTIFIER ::= {
+    joint-iso-itu-t(2) international-organizations(23)
+    ca-browser-forum(140) certificate-extensions(3)
+    cabf-organizationIdentifier(1) 
+}
+
+ext-CABFOrganizationIdentifier EXTENSION ::= {
+    SYNTAX CABFOrganizationIdentifier
+    IDENTIFIED BY id-CABFOrganizationIdentifier
+}
+
+CABFOrganizationIdentifier ::= SEQUENCE {
+    registrationSchemeIdentifier PrintableString (SIZE(3)),
+    registrationCountry          PrintableString (SIZE(2)),
+    registrationStateOrProvince  [0] IMPLICIT PrintableString
+                                  (SIZE(1..128)) OPTIONAL,
+    registrationReference        UTF8String
+}
+```
+
+where the subfields have the same values, meanings, and restrictions described in [Section 7.1.4.8](#7148-extended-validation-subject-organization-identifier). The CA SHALL validate the contents using the requirements in [Section 7.1.4.8](#7148-extended-validation-subject-organization-identifier).
 
 #### 7.1.2.8 OCSP Responder Certificate Profile
 
@@ -3187,6 +3266,8 @@ The following table details the acceptable `AttributeType`s that may appear with
 | `organizationalUnitName`  | This attribute MUST NOT be included in Root CA Certificates defined in [Section 7.1.2.1](#7121-root-ca-certificate-profile) or TLS Subordinate CA Certificates defined in [Section 7.1.2.5](#7125-technically-constrained-tls-subordinate-ca-certificate-profile) or Technically-Constrained TLS Subordinate CA Certificates defined in [Section 7.1.2.6](#7126-tls-subordinate-ca-certificate-profile). This attribute SHOULD NOT be included in other types of CA Certificates. | -           | -           |
 | `commonName`             | MUST            | The contents SHOULD be an identifier for the certificate such that the certificate's Name is unique across all certificates issued by the issuing certificate. | |
 | Any other attribute      | NOT RECOMMENDED | -           | See [Section 7.1.4.4](#7144-other-subject-attributes) |
+
+If the Certificate is issued to a Subordinate CA that is not controlled by the same entity as the Issuing CA and the Certificate asserts the [Reserved Certificate Policy Identifier](#7161-reserved-certificate-policy-identifiers) of `2.23.140.1.1` (see [Section 7.1.2.10.5](#712105-ca-certificate-certificate-policies)), then, in addition to the requirements of this section, the Subject organization information in the `countryName`, `stateOrProvinceName`, `localityName`, `postalCode`, `streetAddress`, `organizationName`, `businessCategory`, `jurisdictionCountry`, `jurisdictionStateOrProvince`, `jurisdictionLocality`, `serialNumber`, and `organizationIdentifier` attributes MUST meet the requirements of, and MUST be present where required by, the Extended Validation `subject` Attributes table in [Section 7.1.2.7.5](#71275-extended-validation), validated in accordance with the EV Guidelines.
 
 ##### 7.1.2.10.3 CA Certificate Authority Information Access
 
@@ -3570,9 +3651,9 @@ Table: Encoding Requirements for Selected Attributes
 | **Attribute**            | **OID**    | **Specification**                               | **Encoding Requirements**                  | **Max Length\*** |
 | ----                     | --         | ---                                             | ----                                       | - |
 | `businessCategory`       | 2.5.4.15 | X.520                                           | MUST use `UTF8String` or `PrintableString` | 128 |
-| `jurisdictionCountry`    | 1.3.6.1.4.1.311.60.2.1.3 | Guidelines for the Issuance and Management of Extended Validation Certificates | MUST use `PrintableString` | 2 |
-| `jurisdictionStateOrProvince`    | 1.3.6.1.4.1.311.60.2.1.2 | Guidelines for the Issuance and Management of Extended Validation Certificates | MUST use `UTF8String` or `PrintableString` | 128 |
-| `jurisdictionLocality`    | 1.3.6.1.4.1.311.60.2.1.1 | Guidelines for the Issuance and Management of Extended Validation Certificates | MUST use `UTF8String` or `PrintableString` | 128 |
+| `jurisdictionCountry`    | 1.3.6.1.4.1.311.60.2.1.3 | [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration) and [Appendix C](#appendix-c--abstract-syntax-notation-one-module-for-ev-certificates) | MUST use `PrintableString` | 2 |
+| `jurisdictionStateOrProvince`    | 1.3.6.1.4.1.311.60.2.1.2 | [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration) and [Appendix C](#appendix-c--abstract-syntax-notation-one-module-for-ev-certificates) | MUST use `UTF8String` or `PrintableString` | 128 |
+| `jurisdictionLocality`    | 1.3.6.1.4.1.311.60.2.1.1 | [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration) and [Appendix C](#appendix-c--abstract-syntax-notation-one-module-for-ev-certificates) | MUST use `UTF8String` or `PrintableString` | 128 |
 | `serialNumber`    | 2.5.4.5 | [RFC 5280](https://datatracker.ietf.org/doc/html/rfc5280) | MUST use `PrintableString` | 64 |
 | `organizationIdentifier` | 2.5.4.97 | X.520 | MUST use `UTF8String` or `PrintableString` | None |
 
@@ -3586,6 +3667,8 @@ If present, this attribute MUST contain exactly one entry that is one of the val
 - If the value is an IPv6 address, then the value MUST be encoded in the text representation specified in [RFC 5952, Section 4](https://datatracker.ietf.org/doc/html/rfc5952#section-4).
 - If the value is a Fully-Qualified Domain Name or Wildcard Domain Name, then the value MUST be encoded as a character-for-character copy of the `dNSName` entry value from the `subjectAltName` extension. Specifically, all Domain Labels of the Fully-Qualified Domain Name or FQDN portion of the Wildcard Domain Name must be encoded as LDH Labels, and P-Labels MUST NOT be converted to their Unicode representation.
 
+**Note**: For Extended Validation Certificates, additional restrictions on this attribute apply, as detailed in [Section 7.1.2.7.5](#71275-extended-validation).
+
 #### 7.1.4.4 Other Subject Attributes
 
 When explicitly stated as permitted by the relevant certificate profile specified within [Section 7.1.2](#712-certificate-content-and-extensions), CAs MAY include additional attributes within the `AttributeTypeAndValue` beyond those specified in [Section 7.1.4.2](#7142-subject-attribute-encoding).
@@ -3594,6 +3677,80 @@ Before including such an attribute, the CA SHALL:
 
 - Document the attributes within Section 7.1.4 of their CP or CPS, along with the applicable validation practices.
 - Ensure that the contents contain information that has been verified by the CA, independent of the Applicant.
+
+#### 7.1.4.5 Extended Validation Subject Organization Name
+
+This section applies to the `subject:organizationName` (OID 2.5.4.10) attribute of Extended Validation Certificates (see [Section 7.1.2.7.5](#71275-extended-validation)).
+
+This field MUST contain the Subject's full legal organization name as listed in the official records of the Incorporating or Registration Agency in the Subject's Jurisdiction of Incorporation or Registration or as otherwise verified by the CA as provided in the EV Guidelines. A CA MAY abbreviate the organization prefixes or suffixes in the organization name, e.g., if the official record shows "Company Name Incorporated" the CA MAY include "Company Name, Inc."
+
+When abbreviating a Subject's full legal name as allowed by this subsection, the CA MUST use abbreviations that are not misleading in the Jurisdiction of Incorporation or Registration.
+
+In addition, an assumed name or DBA name used by the Subject MAY be included at the beginning of this field, provided that it is followed by the full legal organization name in parenthesis.
+
+If the combination of names or the organization name by itself exceeds 64 characters, the CA MAY abbreviate parts of the organization name, and/or omit non-material words in the organization name in such a way that the text in this field does not exceed the 64-character limit; provided that the CA checks this field in accordance with [Section 4.2.1](#421-performing-identification-and-authentication-functions) and a Relying Party will not be misled into thinking that they are dealing with a different organization. In cases where this is not possible, the CA MUST NOT issue the EV Certificate.
+
+#### 7.1.4.6 Extended Validation Subject Jurisdiction of Incorporation or Registration
+
+This section applies to the following attributes of Extended Validation Certificates (see [Section 7.1.2.7.5](#71275-extended-validation)):
+
+Locality (if required): `subject:jurisdictionLocalityName` (OID: 1.3.6.1.4.1.311.60.2.1.1)  
+State or province (if required): `subject:jurisdictionStateOrProvinceName` (OID: 1.3.6.1.4.1.311.60.2.1.2)  
+Country: `subject:jurisdictionCountryName` (OID: 1.3.6.1.4.1.311.60.2.1.3)
+
+These fields MUST NOT contain information that is not relevant to the level of the Incorporating Agency or Registration Agency. For example, the Jurisdiction of Incorporation for an Incorporating Agency or Jurisdiction of Registration for a Registration Agency that operates at the country level MUST include the country information but MUST NOT include the state or province or locality information. Similarly, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the state or province level MUST include both country and state or province information, but MUST NOT include locality information. And, the jurisdiction for the applicable Incorporating Agency or Registration Agency at the locality level MUST include the country and state or province information, where the state or province regulates the registration of the entities at the locality level, as well as the locality information. Country information MUST be specified using the applicable ISO country code. State or province or locality information (where applicable) for the Subject's Jurisdiction of Incorporation or Registration MUST be specified using the full name of the applicable jurisdiction.
+
+The CA SHALL ensure that, at time of issuance, the values within these fields have been disclosed within the latest publicly-available disclosure, as described in Section 3.2.2.1.3 of the EV Guidelines, as acceptable values for the applicable Incorporating Agency or Registration Agency.
+
+#### 7.1.4.7 Extended Validation Subject Registration Number
+
+This section applies to the `subject:serialNumber` (OID: 2.5.4.5) attribute of Extended Validation Certificates (see [Section 7.1.2.7.5](#71275-extended-validation)).
+
+For Private Organizations, the CA SHALL include the Registration Number that it obtained and verified in accordance with Section 3.2.2.2.1 (1.C) of the EV Guidelines. If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats. Effective 2027-09-15, if the CA includes the Date of Formation, then the CA MUST use the Canonical Date Representation.
+
+For Government Entities, the CA SHALL include the Registration Number that it obtained and verified in accordance with Section 3.2.2.2.1 (2.C) of the EV Guidelines. If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats. If the Jurisdiction of Incorporation or Registration does not provide a Date of Formation for the Applicant, then the CA SHALL indicate that the Subject is a Government Entity by including the string "Government Entity" or another appropriate value. Effective 2027-09-15, if the CA includes the Date of Formation, then the CA MUST use the Canonical Date Representation.
+
+For Business Entities, the CA SHALL include the Registration Number that it obtained and verified in accordance with Section 3.2.2.2.1 (3.C) of the EV Guidelines. If the Jurisdiction of Incorporation or Registration does not provide a Registration Number, then the CA SHALL include the Date of Formation in any one of the common date formats. Effective 2027-09-15, if the CA includes the Date of Formation, then the CA MUST use the Canonical Date Representation.
+
+For Non-Commercial Entity Subjects (International Organizations), the CA SHALL include the Date of Formation as obtained and verified in accordance with Section 3.2.2.2.1 (4.C) of the EV Guidelines, using any one of the common date formats. If the Jurisdiction of Incorporation or Registration does not provide a Date of Formation for the Applicant, then the CA SHALL indicate that the Subject is a Non-Commercial Entity by including the string "Non-Commercial Entity" or another appropriate value. Effective 2027-09-15, if the CA includes the Date of Formation, then the CA MUST use the Canonical Date Representation.
+
+If the CA has disclosed a set of acceptable format or formats for Registration Numbers for the applicable Registration Agency or Incorporating Agency, as described in Section 3.2.2.1.3 of the EV Guidelines, the CA MUST ensure, prior to issuance, that the Registration Number is valid according to at least one currently disclosed format for that applicable Registration Agency or Incorporating Agency.
+
+#### 7.1.4.8 Extended Validation Subject Organization Identifier
+
+This section applies to the `subject:organizationIdentifier` (OID: 2.5.4.97) attribute of Extended Validation Certificates (see [Section 7.1.2.7.5](#71275-extended-validation)).
+
+If present, this field MUST contain a Registration Reference for a Legal Entity assigned in accordance to the identified Registration Scheme.
+
+The organizationIdentifier MUST be encoded as a PrintableString or UTF8String.
+
+The Registration Scheme MUST be identified using the following structure in the presented order:
+
+- 3 character Registration Scheme identifier;
+- 2 character ISO 3166 country code for the nation in which the Registration Scheme is operated, or if the scheme is operated globally ISO 3166 code "XG" shall be used;
+- For the NTR Registration Scheme identifier, where registrations are administrated at the subdivision (state or province) level, if required under [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration), a plus "+" (0x2B (ASCII), U+002B (UTF-8)) followed by an up-to-three alphanumeric character ISO 3166-2 identifier for the subdivision of the nation in which the Registration Scheme is operated;
+- a hyphen-minus "-" (0x2D (ASCII), U+002D (UTF-8));
+- Registration Reference allocated in accordance with the identified Registration Scheme.
+
+Note: Registration References MAY contain hyphens, but Registration Schemes, ISO 3166 country codes, and ISO 3166-2 identifiers do not. Therefore if more than one hyphen appears in the structure, the leftmost hyphen is a separator, and the remaining hyphens are part of the Registration Reference.
+
+As in [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration), the specified location information MUST match the scope of the registration being referenced.
+
+Examples:
+
+- `NTRGB-12345678` (NTR scheme, Great Britain, Unique Identifier at Country level is 12345678)
+- `NTRUS+CA-12345678` (NTR Scheme, United States - California, Unique identifier at State level is 12345678)
+- `VATDE-123456789` (VAT Scheme, Germany, Unique Identifier at Country Level is 12345678)
+- `PSDBE-NBB-1234.567.890` (PSD Scheme, Belgium, NCA's identifier is NBB, Subject Unique Identifier assigned by the NCA is 1234.567.890)
+
+Registration Schemes listed in [Appendix D](#appendix-d--registration-schemes) are currently recognized as valid under these Requirements.
+
+The CA SHALL:
+
+1. confirm that the organization represented by the Registration Reference is the same as the organization named in the `organizationName` field as specified in [Section 7.1.4.5](#7145-extended-validation-subject-organization-name) within the context of the subject's jurisdiction as specified in [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration);
+2. further verify the Registration Reference matches other information verified in accordance with Section 3.2 of the EV Guidelines;
+3. take appropriate measures to disambiguate between different organizations as described in [Appendix D](#appendix-d--registration-schemes) for each Registration Scheme;
+4. Apply the validation rules relevant to the Registration Scheme as specified in [Appendix D](#appendix-d--registration-schemes).
 
 ### 7.1.5 Name constraints
 
@@ -4108,3 +4265,75 @@ This appendix defines permissible verification procedures for including one or m
       The Random Value SHALL remain valid for use in a confirming response for no more than 30 days from its creation. The CPS MAY specify a shorter validity period for Random Values.
 
 3. When a Certificate includes an Onion Domain Name, the Domain Name shall not be considered an Internal Name provided that the Certificate was issued in compliance with this [Appendix B](#appendix-b--issuance-of-certificates-for-onion-domain-names).
+
+# Appendix C – Abstract Syntax Notation One module for EV certificates
+
+```ASN.1
+CABFSelectedAttributeTypes {
+    joint-iso-itu-t(2) international-organizations(23)
+    ca-browser-forum(140) module(4)
+    cabfSelectedAttributeTypes(1) 1 }
+DEFINITIONS ::=
+BEGIN
+-- EXPORTS All
+IMPORTS
+  -- from Rec. ITU-T X.501 | ISO/IEC 9594-2
+  selectedAttributeTypes, ID, ldap-enterprise
+    FROM UsefulDefinitions {joint-iso-itu-t ds(5) module(1)
+    usefulDefinitions(0) 7}
+
+  -- from the X.500 series
+  ub-locality-name, ub-state-name
+    FROM UpperBounds {joint-iso-itu-t ds(5) module(1) upperBounds(10) 7}
+
+  -- from Rec. ITU-T X.520 | ISO/IEC 9594-6
+  DirectoryString{}, CountryName
+    FROM SelectedAttributeTypes selectedAttributeTypes;
+
+id-evat-jurisdiction ID ::= {ldap-enterprise 311 ev(60) 2 1}
+id-evat-jurisdiction-localityName ID ::= {id-evat-jurisdiction 1}
+id-evat-jurisdiction-stateOrProvinceName ID ::= {id-evat-jurisdiction 2}
+id-evat-jurisdiction-countryName ID ::= {id-evat-jurisdiction 3}
+
+jurisdictionLocalityName ATTRIBUTE ::= {
+  SUBTYPE OF    name
+  WITH SYNTAX   DirectoryString{ub-locality-name}
+  LDAP-SYNTAX   directoryString.&id
+  LDAP-NAME     {"jurisdictionL"}
+  ID            id-evat-jurisdiction-localityName }
+
+jurisdictionStateOrProvinceName ATTRIBUTE ::= {
+  SUBTYPE OF    name
+  WITH SYNTAX   DirectoryString{ub-state-name}
+  LDAP-SYNTAX   directoryString.&id
+  LDAP-NAME     {"jurisdictionST"}
+  ID            id-evat-jurisdiction-stateOrProvinceName }
+
+jurisdictionCountryName ATTRIBUTE ::= {
+  SUBTYPE OF    name
+  WITH SYNTAX   CountryName
+  SINGLE VALUE  TRUE
+  LDAP-SYNTAX   countryString.&id
+  LDAP-NAME     {"jurisdictionC"}
+  ID            id-evat-jurisdiction-countryName }
+
+END
+```
+
+# Appendix D – Registration Schemes
+
+The following Registration Schemes are currently recognized as valid under these Requirements:
+
+- **NTR**:
+
+  The information carried in this field shall be the same as held in the Subject Registration Number attribute as specified in [Section 7.1.4.7](#7147-extended-validation-subject-registration-number) and the country code used in the Registration Scheme identifier shall match that of the subject's jurisdiction as specified in [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration).
+
+  Where the Subject Jurisdiction of Incorporation or Registration attributes specified in [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration) include more than the country code, the additional locality information shall be included as specified in [Section 7.1.4.8](#7148-extended-validation-subject-organization-identifier) and/or [Section 7.1.2.7.13](#712713-subscriber-certificate-cabrowser-forum-organization-identifier).
+
+- **VAT**:
+
+  Reference allocated by the national tax authorities to a Legal Entity. This information shall be validated using information provided by the national tax authority against the organization as identified by the Subject Organization Name attribute (see [Section 7.1.4.5](#7145-extended-validation-subject-organization-name)) and Subject Registration Number attribute (see [Section 7.1.4.7](#7147-extended-validation-subject-registration-number)) within the context of the subject's jurisdiction as specified in [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration). For the purpose of identifying tax authorities, the country prefix described in article 215 of EU Council Directive 2006/112/EC, as amended, MAY be used instead of the ISO 3166 2-letter country codes.
+
+- **PSD**:
+
+  Authorization number as specified in ETSI TS 119 495 clause 4.4 allocated to a payment service provider and containing the information as specified in ETSI TS 119 495 clause 5.2.1. This information SHALL be obtained directly from the national competent authority register for payment services or from an information source approved by a government agency, regulatory body, or legislation for this purpose. This information SHALL be validated by being matched directly or indirectly (for example, by matching a globally unique registration number) against the organization as identified by the Subject Organization Name attribute (see [Section 7.1.4.5](#7145-extended-validation-subject-organization-name)) and Subject Registration Number attribute (see [Section 7.1.4.7](#7147-extended-validation-subject-registration-number)) within the context of the subject's jurisdiction as specified in [Section 7.1.4.6](#7146-extended-validation-subject-jurisdiction-of-incorporation-or-registration). The stated address of the organization combined with the organization name SHALL NOT be the only information used to disambiguate the organization.
