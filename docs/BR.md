@@ -1,11 +1,11 @@
 ---
 title: Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates
 
-subtitle: Version 2.3.0
+subtitle: Version 2.3.1
 author:
   - CA/Browser Forum
 
-date: 7-Sep-2026
+date: 4-Oct-2026
 
 copyright: |
   Copyright 2026 CA/Browser Forum
@@ -165,6 +165,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2.2.8 | SC098 | Process RFC 8657 CAA Parameters                                                         | 2026-05-13 | 2026-06-16 |
 | 2.2.9 | SC101 | Clarify Authorization Domain Names                                                      | 2026-07-02 | 2026-08-06 |
 | 2.3.0 | SC100 | DNSSEC Clarification and Consolidation                                                  | 2026-08-06 | 2026-09-07 |
+| 2.3.1 | SC104 | Set presence of AIA extension to SHOULD for Subscriber Certificates                     | 2026-09-03 | 2026-10-04 |
 
 \* Effective Date and Additionally Relevant Compliance Date(s)
 
