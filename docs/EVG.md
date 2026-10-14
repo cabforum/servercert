@@ -646,7 +646,7 @@ To verify the Applicant's ability to engage in business, the CA MUST verify the 
 
 1. For each Fully-Qualified Domain Name listed in a Certificate which is not an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section) either is the Domain Name Registrant or has control over the FQDN using a procedure specified in Section 3.2.2.4 of the Baseline Requirements. For a Certificate issued to an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the Applicant's control over the Onion Domain Name in accordance with Appendix B of the Baseline Requirements.
 
-2. **Mixed Character Set Domain Names**: EV Certificates MAY include Domain Names containing mixed character sets only in compliance with the rules set forth by the domain registrar. The CA MUST visually compare any Domain Names with mixed character sets with known high risk domains. If a similarity is found, then the EV Certificate Request MUST be flagged as High Risk. The CA must perform reasonably appropriate additional authentication and verification to be certain beyond reasonable doubt that the Applicant and the target in question are the same organization.
+2. **Mixed Character Set Domain Names**: EV Certificates MAY include Domain Names containing mixed character sets only in compliance with the rules set forth by the domain registrar. The CA must perform reasonably appropriate additional authentication and verification to be certain beyond reasonable doubt that the Applicant and the target in question are the same organization.
 
 #### 3.2.2.8 Verification of Name, Title, and Authority of Contract Signer and Certificate Approver
 
@@ -880,8 +880,6 @@ A Qualified Government Tax Information Source is a Qualified Government Informat
 #### 3.2.2.12 Other Verification Requirements
 
 ##### 3.2.2.12.1 High Risk Status
-
-The High Risk Certificate requirements of Section 4.2.1 of the Baseline Requirements apply equally to EV Certificates.
 
 ##### 3.2.2.12.2 Denied Lists and Other Legal Block Lists
 
