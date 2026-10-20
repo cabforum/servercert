@@ -108,7 +108,7 @@ These Guidelines do not address the verification of information, or the issuance
 
 ### 1.3.2 Registration authorities
 
-Delegation is governed by Section 1.3.2 of the Baseline Requirements. For the purposes of Section 1.3.2 of the Baseline Requirements, the Section 3.2 requirements that MAY be delegated include the EV validation requirements of [Section 3.2.2](#322-authentication-of-organization-identity) of these Guidelines. Affiliates and/or RAs must comply with the qualification requirements of [Section 5.3.2](#532-background-check-procedures).
+Delegation is governed by Section 1.3.2 of the Baseline Requirements. For the purposes of Section 1.3.2 of the Baseline Requirements, the Section 3.2 requirements that MAY be delegated include the EV validation requirements of [Section 3.2.2](#322-authentication-of-organization-identity) of these Guidelines, with the exception of [Section 3.2.2.7](#3227-verification-of-applicants-domain-name). Affiliates and/or RAs must comply with the qualification requirements of [Section 5.3.2](#532-background-check-procedures).
 
 #### 1.3.2.1 Enterprise Registration authorities
 
@@ -174,7 +174,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Accounting Practitioner**: A certified public accountant, chartered accountant, or a person with an equivalent license within the country of the Applicant's Jurisdiction of Incorporation or Registration or any jurisdiction where the Applicant maintains an office or physical facility; provided that an accounting standards body in the jurisdiction maintains full (not "suspended" or "associate") membership status with the International Federation of Accountants.
 
-**Baseline Requirements**: The Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates as published by the CA/Browser Forum and any amendments to such document.
+**Baseline Requirements**: The Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates as published by the CA/Browser Forum and any amendments to such document.
 
 **Business Entity**: Any entity that is not a Private Organization, Government Entity, or Non-Commercial Entity as defined herein. Examples include, but are not limited to, general partnerships, unincorporated associations, sole proprietorships, etc.
 
@@ -248,7 +248,7 @@ Capitalized Terms are defined in the Baseline Requirements except where provided
 
 **Qualified Government Tax Information Source**: A Qualified Government Information Source that specifically contains tax information relating to Private Organizations, Business Entities, or Individuals (e.g., the IRS in the United States).
 
-**Qualified Independent Information Source**: A regularly-updated and current, publicly available, database designed for the purpose of accurately providing the information for which it is consulted, and which is generally recognized as a dependable source of such information.
+**Qualified Independent Information Source**: A Reliable Data Source, as defined in the Baseline Requiremements; regularly-updated and current, publicly available, designed for the purpose of accurately providing the information for which it is consulted, and which is generally recognized as a dependable source of such information.
 
 **Registration Agency**: A Governmental Agency that registers business information in connection with an entity's business formation or authorization to conduct business under a license, charter or other certification. A Registration Agency MAY include, but is not limited to:
 
@@ -589,11 +589,7 @@ To verify the Applicant's ability to engage in business, the CA MUST verify the 
 
 #### 3.2.2.7 Verification of Applicant's Domain Name
 
-##### 3.2.2.7.1 Verification Requirements
-
-1. For each Fully-Qualified Domain Name listed in a Certificate which is not an Onion Domain Name, the CA SHALL confirm that, as of the date the Certificate was issued, the ownership or control of the FQDN by the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section) has been validated in accordance with Section 3.2.2.4 of the Baseline Requirements. For a Certificate issued to an Onion Domain Name, the CA SHALL confirm the Applicant's control over the Onion Domain Name in accordance with Appendix B of the Baseline Requirements.
-
-2. **Mixed Character Set Domain Names**: EV Certificates MAY include Domain Names containing mixed character sets only in compliance with the rules set forth by the domain registrar. The CA MUST visually compare any Domain Names with mixed character sets with known high risk domains. If a similarity is found, then the EV Certificate Request MUST be flagged as High Risk. The CA must perform reasonably appropriate additional authentication and verification to be certain beyond reasonable doubt that the Applicant and the target in question are the same organization.
+For each Fully Qualified Domain Name listed as a dnsName in the subjectAltName of a Certificate the CA SHALL confirm that, as of the date the Certificate was issued, the ownership or control of the FQDN by the Applicant (or the Applicant's Parent Company, Subsidiary Company, or Affiliate, collectively referred to as "Applicant" for the purposes of this section) has been validated in accordance with Section 3.2.2.4 of the Baseline Requirements.
 
 #### 3.2.2.8 Verification of Name, Title, and Authority of Contract Signer and Certificate Approver
 
@@ -986,7 +982,7 @@ Subsidiary organizations or agencies of an entity that qualifies as a Non-Commer
 
 ### 4.1.2 Enrollment process and responsibilities
 
-The Certificate Request requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates subject to the additional more stringent ageing and updating requirement of [Section 3.2.2.14](#32214-requirements-for-re-use-of-existing-documentation).
+The Certificate Request requirements in Section 4.1.2 of the Baseline Requirements apply equally to EV Certificates subject to the additional ageing and updating requirement of [Section 3.2.2.14](#32214-requirements-for-re-use-of-existing-documentation).
 
 ## 4.2 Certificate application processing
 
