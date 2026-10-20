@@ -1531,7 +1531,7 @@ Postal code: `subject:postalCode` (OID: 2.5.4.17)
 **Required/Optional**: Required/Optional  
 **Contents**: These fields MUST contain the verified physical address of the Subject's Place of Business.
 
-The `countryName` field MUST be present and MUST contain the applicable two-letter ISO 3166-1 country code. If the country is not represented by an official ISO 3166-1 code, the ISO 3166-1 user-assigned code "XX" MUST be used.
+The `countryName` field MUST be present and MUST contain the two-letter ISO 3166-1 country code for the location associated with the Subject. The ISO 3166-1 country code MUST have a Status of “Officially Assigned”. If a ISO 3166-1 country code is assigned with “Independent: No”, the CA MAY utilize either (a) the country code in question, or; (b) the ISO 3166-1 country code assigned to the sovereign state of which that location forms a part. If a Country is not represented by an official ISO 3166-1 country code, the CA MUST specify the ISO 3166-1 user-assigned code of XX, indicating that an official ISO 3166-1 alpha-2 code has not been assigned.
 
 The `localityName` and `stateOrProvinceName` fields are OPTIONAL, but at least one of them MUST be present. When included, these fields MUST accurately represent the locality and/or state or province information verified in accordance with Section 3.2.2.1 of the Baseline Requirements.
 
