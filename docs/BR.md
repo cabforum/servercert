@@ -2120,8 +2120,7 @@ No other algorithms or key sizes are permitted.
 For RSA public keys, the CA MUST:
 
 - Ensure that the public exponent is an odd number equal to 3 or more.
-- Ensure that the corresponding Private Key cannot be computed within 100 rounds
-  using Fermat's factorization method. (The [Close Primes vulnerability](<https://fermatattack.secvuln.info/>).)
+- Ensure that the corresponding Private Key cannot be computed within 100 rounds using Fermat's factorization method. (The [Close Primes vulnerability](<https://fermatattack.secvuln.info/>).)
 - Ensure that the key is not detected as being vulnerable to the [ROCA attack](https://roca.crocs.fi.muni.cz/) using the tools available at <https://github.com/crocs-muni/roca> or equivalent.
 - Ensure that the key is not a [Debian Weak Key](https://wiki.debian.org/SSLkeys), unless it has a key size greater than 8192 bits. (For common key sizes and public exponents, the weak keys have been enumerated at <https://github.com/cabforum/Debian-weak-keys/>.)
 
@@ -2139,12 +2138,11 @@ For ECDSA public keys, the CA SHOULD:
 
 - Ensure that the key passes either the ECC Full Public Key Validation Routine or the ECC Partial Public Key Validation Routine. [Source: Sections 5.6.2.3.2 and 5.6.2.3.3, respectively, of NIST SP 800-56A: Revision 2]
 
-These checks MUST be performed prior to issuing a certificate, and it is
-RECOMMENDED that they be performed as part of pre-issuance Linting (see [Section 4.3.1.2]). Additionally, for all public key types, the CA MUST refuse to issue if:
+These checks MUST be performed prior to issuing a certificate, and it is RECOMMENDED that they be performed as part of pre-issuance Linting (see [Section 4.3.1.2]). Additionally, for all public key types, the CA MUST refuse to issue if:
 
 - There is clear evidence that the specific method used to generate the corresponding Private Key was flawed;
-- The CA is aware of a demonstrated or proven method that exposes the corresponding Private Key to compromise;
-- The CA has previously been notified that the corresponding Private Key has suffered a Key Compromise using the CA's procedure for revocation request as described in [Section 4.9.3](#493-procedure-for-revocation-request) and [Section 4.9.12](#4912-special-requirements-re-key-compromise);
+- The CA is aware of a demonstrated or proven method that exposes the corresponding Private Key to compromise; or
+- The CA has previously been notified that the corresponding Private Key has suffered a Key Compromise using the CA's procedure for revocation request as described in [Section 4.9.3](#493-procedure-for-revocation-request) and [Section 4.9.12](#4912-special-requirements-re-key-compromise).
 
 Suggested tools for detecting weak or vulnerable keys can be found here: <https://cabforum.org/resources/tools/>
 
