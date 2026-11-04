@@ -509,6 +509,8 @@ The script outputs:
 
 **Subscriber Agreement**: An agreement between the CA and the Applicant/Subscriber that specifies the rights and responsibilities of the parties.
 
+**Subscriber Revocation Request**: A request from a subscriber to request revocation of a certificate. Requests from subscribers that do not use the CA defined and authenticated method are instead Certificate Problem Reports.
+
 **Subsidiary Company**: A company that is controlled by a Parent Company.
 
 **Technically Constrained Subordinate CA Certificate**: A Subordinate CA certificate which uses a combination of Extended Key Usage and/or Name Constraint extensions, as defined within the relevant Certificate Profiles of this document, to limit the scope within which the Subordinate CA Certificate may issue Subscriber or additional Subordinate CA Certificates.
@@ -1644,7 +1646,7 @@ The CA SHALL maintain highly available systems to accept revocation requests and
 
 The CA SHALL provide Subscribers, Relying Parties, Application Software Suppliers, and other third parties with clear instructions for submitting Certificate Problem Reports. The CA SHALL publicly disclose the instructions in Section 1.5.2 of their CPS and SHOULD additionally disclose the instructions through readily accessible online means (e.g. a KB article, dedicated webpage, FAQ).
  
-A revocation request submitted by the Subscriber of the identified Certificate, an entity with demonstrated access to the Certificate's Private Key, or an account key (e.g., an ACME account key) authorized to make requests on behalf of the Subscriber is considered a Subscriber revocation request and NOT a Certificate Problem Report. Where a report is received through the CA's Certificate Problem Report channel and the CA authenticates the requester as the Subscriber (or as possessing the Certificate's Private Key or an authorized account key), the CA SHALL handle it as a Subscriber revocation request under [Section 4.9.5](#495-time-within-which-ca-must-process-the-revocation-request). This does not affect the CA's obligations with respect to Key Compromise, including where the demonstration of access is itself evidence of Key Compromise, or the CA's obligations under this Section where the report also describes how a Certificate violates these Requirements or the CA's own policies.
+A revocation request submitted by the Subscriber of the identified Certificate, an entity with demonstrated access to the Certificate's Private Key, or an account key (e.g., an ACME account key) authorized to make requests on behalf of the Subscriber is considered a Subscriber Revocation Request. Where a report is received through the CA's Certificate Problem Report channel and the CA authenticates the requester as the Subscriber (or as possessing the Certificate's Private Key or an authorized account key), the CA SHALL handle it as a Subscriber revocation request under [Section 4.9.5](#495-time-within-which-ca-must-process-the-revocation-request). This does not affect the CA's obligations with respect to Key Compromise, including where the demonstration of access is itself evidence of Key Compromise, or the CA's obligations under this Section where the report also describes how a Certificate violates these Requirements or the CA's own policies.
 
 Within twenty-four (24) hours after receiving a Certificate Problem Report, the CA SHALL investigate the facts and circumstances related to the report and determine if it's "actionable."
 
