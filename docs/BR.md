@@ -194,7 +194,7 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2026-07-15  | [5.4.1](#541-types-of-events-recorded) | Audit logs of verification activity MUST include specific information. |
 | 2026-09-15 | [7.1.3.2.1](#71321-rsa) | Sunset all remaining use of SHA-1 in Certificates and CRLs. |
 | 2026-11-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) | Authorization Domain Names must be derived based on the validation method to be used. |
-| 2027-01-15 | [6.1.6](#616-public-key-parameters-generation-and-quality-checking) | CAs MUST check ECDSA keys for small private scalars |
+| 2027-03-15 | [6.1.6](#616-public-key-parameters-generation-and-quality-checking) | CAs MUST check ECDSA keys for small private scalars, and RSA keys for public exponents less than 65537. |
 | 2027-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.16, 3.2.2.4.17, 3.2.2.5.2, and 3.2.2.5.5 to issue Subscriber Certificates. |
 | 2027-03-15 | [3.2.2.5.3](#32253-reverse-address-lookup) | CAs MUST NOT rely on Method 3.2.2.5.3 to issue Subscriber Certificates. |
 | 2027-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 100 days. |
@@ -2120,18 +2120,19 @@ No other algorithms or key sizes are permitted.
 For RSA public keys, the CA MUST:
 
 - Ensure that the public exponent is an odd number equal to 3 or more.
+- Effective 2027-03-15, ensure that the public exponent is in the range between 2^16 + 1 and 2^256 - 1.
 - Ensure that the corresponding Private Key cannot be computed within 100 rounds using Fermat's factorization method. (The [Close Primes vulnerability](<https://fermatattack.secvuln.info/>).)
 - Ensure that the key is not detected as being vulnerable to the [ROCA attack](https://roca.crocs.fi.muni.cz/) using the tools available at <https://github.com/crocs-muni/roca> or equivalent.
 - Ensure that the key is not a [Debian Weak Key](https://wiki.debian.org/SSLkeys), unless it has a key size greater than 8192 bits. (For common key sizes and public exponents, the weak keys have been enumerated at <https://github.com/cabforum/Debian-weak-keys/>.)
 
 For RSA public keys, the CA SHOULD:
 
-- Ensure that the public exponent is in the range between 2^16 + 1 and 2^256 - 1.
+- Ensure that the public exponent is exactly equal to 65537 (2^16 + 1).
 - Ensure that the modulus is odd number, is not a power of a prime, and has no factors smaller than 752. [Source: Section 5.3.3, NIST SP 800-89]
 
 For ECDSA public keys, the CA MUST:
 
-- Effective 2027-01-15, ensure that the public key does not correspond to a Private Key whose private scalar is less than 256.
+- Effective 2027-03-15, ensure that the public key does not correspond to a Private Key whose private scalar is less than 256.
 - Ensure that the key is not a [Debian Weak Key](https://wiki.debian.org/SSLkeys). (For common key sizes, the weak keys have been enumerated at <https://github.com/cabforum/Debian-weak-keys/>.)
 
 For ECDSA public keys, the CA SHOULD:
