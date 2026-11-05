@@ -320,7 +320,7 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Certificate Policy**: A set of rules that indicates the applicability of a named Certificate to a particular community and/or PKI implementation with common security requirements.
 
-**Certificate Problem Report**: Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates. A revocation request submitted by the Subscriber of the identified Certificate, or by a party authorized to act on that Subscriber's behalf, is not a Certificate Problem Report.
+**Certificate Problem Report**: Complaint of suspected Key Compromise, Certificate misuse, or other types of fraud, compromise, misuse, or inappropriate conduct related to Certificates.
 
 **Certificate Profile**: A set of documents or files that defines Certificate content and Certificate extensions, e.g. a Section in a CA's CPS or a certificate template file used by CA software.
 
