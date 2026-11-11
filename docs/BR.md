@@ -2244,7 +2244,7 @@ A CA Private Key SHOULD be generated as a key that the Qualifying Module will no
 
 ### 6.2.2 Private key (n out of m) multi-person control
 
-See [Section 5.2.2](#522-number-of-individuals-required-per-task). Effective 2027-03-15, the backup, transfer, restoration and destruction of a CA Private Key SHALL require multi-person control.
+See [Section 5.2.2](#522-number-of-individuals-required-per-task). Effective 2027-03-15, the backup, restoration and destruction of a CA Private Key SHALL require multi-person control. A transfer of a CA Private Key SHALL require multi-person control as specified in Section 6.2.6.
 
 ### 6.2.3 Private key escrow
 
@@ -2272,7 +2272,7 @@ Effective 2027-03-15, each transfer of a CA Private Key SHALL meet all of the fo
 6. Before the CA Private Key is used in a module that it has entered, the CA obtains a signature that the CA Private Key produces within that module and verifies it using the Public Key whose SubjectPublicKeyInfo hash is in the Key Generation Record for that CA Key Pair.
 7. The CA records the date, the SubjectPublicKeyInfo hash of the CA Key Pair, the make, model, serial number and firmware version of each Qualifying Module involved, any backup medium involved, the mechanism used, the key-encryption key or set of shares used, the result of the check in item 6, and the persons involved.
 
-Items 4 through 7 do not apply to replication that Qualifying Modules perform automatically, using a mechanism that is part of their validated configuration, among a group of modules that the CA has configured for that purpose. Adding a module to such a group is a transfer to which all of the items apply.
+Items 4 through 7 do not apply to automatic replication of a CA Private Key among a group of Qualifying Modules that the CA has configured to hold the same CA Private Keys, using a mechanism that is part of their validated configuration. Items 4 through 7 also do not apply where a module of such a group, using such a mechanism, stores a CA Private Key outside the modules in the encrypted form described in Section 6.2, or loads a CA Private Key that a module of the group stored in that way. Adding a module to such a group is a transfer to which all of the items apply. A module is added to a group when the CA provides it with the key-encryption key, or other secret, that enables it to receive or load the CA Private Keys that the group holds.
 
 Effective 2027-03-15, where two modules have no mechanism in common that meets these requirements, the CA SHALL NOT transfer a CA Private Key between them. If the CA requires a CA Key Pair in the second module, it SHALL generate a new CA Key Pair as required by [Section 6.1.1.1](#6111-ca-key-pair-generation).
 
