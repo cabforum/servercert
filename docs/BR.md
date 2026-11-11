@@ -2240,7 +2240,7 @@ Effective 2027-09-15, the CA SHALL configure each Qualifying Module that holds a
 
 The CA SHALL NOT rely on a procedural control alone to meet this requirement.
 
-A CA Private Key SHOULD be generated as a key that the Qualifying Module will not export through its application programming interface, with backup and transfer performed by a mechanism between Qualifying Modules that is part of their validated configuration.
+A CA Private Key SHOULD be generated as a key that the Qualifying Module will not export through its application programming interface (i.e., in PKCS#11 terms, generate the key with `CKA_EXTRACTABLE` = false), with backup and transfer performed by a mechanism between Qualifying Modules that is part of their validated configuration.
 
 ### 6.2.2 Private key (n out of m) multi-person control
 
