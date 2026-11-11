@@ -200,6 +200,10 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2027-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 100 days. |
 | 2027-03-15 | [4.2.2.1.2](#42212-caa-parameters) | CAs MUST process the `accounturi` and `validationmethods` parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657). |
 | 2027-03-15 | [4.2.2.1.2](#42212-caa-parameters) | If the CA does not identify the Subscriber account via an ACME Account URL as described in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the `acct` URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565) |
+| 2027-03-15 | [6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls) and [6.2.6](#626-private-key-transfer-into-or-from-a-cryptographic-module) | CAs SHALL NOT create a copy of a CA Private Key outside a Qualifying Module other than in encrypted form or as threshold shares, and SHALL transfer CA Private Keys only between Qualifying Modules. |
+| 2027-09-15 | [6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls) | CA Private Keys SHALL NOT exist outside a Qualifying Module other than in encrypted form or as threshold shares. CAs SHALL operate Qualifying Modules in their validated mode at all times, maintain an inventory of CA Key Pairs, and be able to demonstrate the protection of each CA Private Key. |
+| 2027-09-15 | [4.9.1.2](#4912-reasons-for-revoking-a-subordinate-ca-certificate) | Issuing CAs SHALL revoke Subordinate CA Certificates where the Private Key existed unprotected outside a cryptographic module before 2027-03-15. |
+| 2027-09-15 | [8.6](#86-communication-of-results) | Audit Reports MUST identify each CA Key Pair held by the CA by SubjectPublicKeyInfo hash. |
 | 2028-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.4, 3.2.2.4.13, and 3.2.2.4.14 to issue Subscriber Certificates. |
 | 2029-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 10 days. |
 | 2029-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 47 days. |
@@ -387,6 +391,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 
 **Key Compromise**: A Private Key is said to be compromised if its value has been disclosed to an unauthorized person, or an unauthorized person has had access to it.
 
+**Key Generation Record**: The record that a CA creates of the generation of a CA Key Pair, as described in [Section 6.1.1.1](#6111-ca-key-pair-generation).
+
 **Key Generation Script**: A documented plan of procedures for the generation of a CA Key Pair.
 
 **Key Pair**: The Private Key and its associated Public Key.
@@ -432,6 +438,8 @@ The Definitions found in the CA/Browser Forum's Network and Certificate System S
 **P-Label**: A XN-Label that contains valid output of the Punycode algorithm (as defined in [RFC 3492, Section 6.3](https://datatracker.ietf.org/doc/html/rfc3492#section-6.3)) from the fifth and subsequent positions.
 
 **Qualified Auditor**: A natural person or Legal Entity that meets the requirements of [Section 8.2](#82-identityqualifications-of-assessor).
+
+**Qualifying Module**: A system or device that has been validated as meeting a standard specified in [Section 6.2.7](#627-private-key-storage-on-cryptographic-module).
 
 **Random Value**: A value specified by a CA to the Applicant that exhibits at least 112 bits of entropy.
 
@@ -1624,8 +1632,12 @@ The Issuing CA SHALL revoke a Subordinate CA Certificate within seven (7) days i
 5. The Issuing CA is made aware that the Certificate was not issued in accordance with or that Subordinate CA has not complied with this document or the applicable Certificate Policy or Certification Practice Statement;
 6. The Issuing CA determines that any of the information appearing in the Certificate is inaccurate or misleading;
 7. The Issuing CA or Subordinate CA ceases operations for any reason and has not made arrangements for another CA to provide revocation support for the Certificate;
-8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository; or
-9. Revocation is required by the Issuing CA's Certificate Policy and/or Certification Practice Statement.
+8. The Issuing CA's or Subordinate CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the Issuing CA has made arrangements to continue maintaining the CRL/OCSP Repository;
+9. Revocation is required by the Issuing CA's Certificate Policy and/or Certification Practice Statement;
+10. The Issuing CA has or obtains evidence that a copy of the Subordinate CA's Private Key was created on or after 2027-03-15, or existed on or after 2027-09-15, outside a Qualifying Module in a form other than the two forms described in [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls); or
+11. On or after 2027-09-15, the Subordinate CA is unable to make the demonstration required by [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls).
+
+The Issuing CA SHALL also revoke a Subordinate CA Certificate if the Issuing CA has or obtains evidence that, before 2027-03-15, the Subordinate CA's Private Key existed outside a hardware cryptographic module without being encrypted and without being divided into shares. The Issuing CA SHALL revoke the Certificate by 2027-09-15, or within seven (7) days of obtaining the evidence, whichever is later.
 
 ### 4.9.2 Who can request revocation
 
@@ -1883,7 +1895,7 @@ The CA SHALL record at least the following events:
 
 1. CA certificate and key lifecycle events, including:
 
-   1. Key generation, backup, storage, recovery, archival, and destruction;
+   1. Key generation, backup, storage, transfer, recovery, archival, and destruction;
    2. Certificate requests, renewal, and re-key requests, and revocation;
    3. Approval and rejection of certificate requests;
    4. Cryptographic device lifecycle management events;
@@ -2144,17 +2156,45 @@ Private Keys corresponding to Root Certificates MUST NOT be used to sign Certifi
 
 ## 6.2 Private Key Protection and Cryptographic Module Engineering Controls
 
-The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance. Protection of the CA Private Key outside the validated system or device specified in [Section 6.2.7](#627-private-key-storage-on-cryptographic-module) MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
+The CA SHALL implement physical and logical safeguards to prevent unauthorized certificate issuance.
+
+For the purposes of this Section 6.2, a Private Key that a CA generates for use as a CA Private Key is a CA Private Key from the time of its generation, whether or not a CA Certificate containing the corresponding Public Key has been issued.
+
+Prior to 2027-09-15, protection of the CA Private Key outside the validated system or device specified in [Section 6.2.7](#627-private-key-storage-on-cryptographic-module) MUST consist of physical security, encryption, or a combination of both, implemented in a manner that prevents disclosure of the Private Key. The CA SHALL encrypt its Private Key with an algorithm and key-length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key or key part.
+
+Effective 2027-03-15, the CA SHALL NOT create a copy of a CA Private Key outside a Qualifying Module in any form other than the two forms described below. Effective 2027-09-15, a CA Private Key SHALL NOT exist outside a Qualifying Module in any form other than these two forms:
+
+1. Encrypted with an algorithm and key length that, according to the state of the art, are capable of withstanding cryptanalytic attacks for the residual life of the encrypted key, using a key-encryption key whose secret or private component was generated within a Qualifying Module and has never existed outside a Qualifying Module in any form other than these two forms.
+2. Divided into shares under a threshold scheme that requires at least two shares to reconstruct the key and in which fewer shares than the threshold reveal no information about the key. The shares SHALL be combined only within a Qualifying Module, and no single person SHALL have access to enough shares to reconstruct the key.
+
+Effective 2027-03-15, the CA SHALL NOT use a CA Private Key to test or rehearse a procedure, and SHALL NOT create a copy of a CA Private Key for that purpose.
+
+Effective 2027-09-15, the CA SHALL be able to demonstrate that each CA Private Key that it holds has been protected as required by this Section 6.2 at all times on and after 2027-09-15, or since its generation if it was generated later. The demonstration SHALL rest on evidence produced by each Qualifying Module that has held the CA Private Key, such as key attributes, configuration records, attestations and logs, together with the records that this section requires. If the CA cannot make this demonstration for a CA Private Key, the CA SHALL treat that CA Private Key as having suffered a Key Compromise.
 
 ### 6.2.1 Cryptographic module standards and controls
 
+Effective 2027-03-15, the CA SHALL operate each Qualifying Module in the mode of operation and configuration in which it was validated (for example, the FIPS Approved mode of operation) throughout each CA Key Pair generation and each transfer of a CA Private Key. Effective 2027-09-15, the CA SHALL operate each Qualifying Module that holds a CA Private Key in that mode of operation and configuration at all times. While either requirement applies to a Qualifying Module, the CA SHALL NOT disable, suspend or bypass that mode of operation for any purpose, including as a step of a Key Generation Script or as an approved exception.
+
+The CA MAY operate a Qualifying Module with a firmware version later than the validated version, provided that the vendor supports that version, that the module remains in the mode of operation in which it was validated, and that the CA records the firmware version and the reason for using it.
+
+Effective 2027-09-15, the CA SHALL configure each Qualifying Module that holds a CA Private Key, or the partition or equivalent security domain of the module that holds it, so that the module itself enforces both of the following:
+
+1. The module does not output a CA Private Key in any form other than one of the two forms described in [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls).
+2. The module does not accept a private key from outside the module in any form other than one of the two forms described in [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls).
+
+The CA SHALL NOT rely on a procedural control alone to meet this requirement.
+
+A CA Private Key SHOULD be generated as a key that the Qualifying Module will not export through its application programming interface, with backup and transfer performed by a mechanism between Qualifying Modules that is part of their validated configuration.
+
 ### 6.2.2 Private key (n out of m) multi-person control
+
+See [Section 5.2.2](#522-number-of-individuals-required-per-task). Effective 2027-03-15, the backup, transfer, restoration and destruction of a CA Private Key SHALL require multi-person control.
 
 ### 6.2.3 Private key escrow
 
 ### 6.2.4 Private key backup
 
-See [Section 5.2.2](#522-number-of-individuals-required-per-task).
+See [Section 5.2.2](#522-number-of-individuals-required-per-task). Effective 2027-03-15, each backup copy of a CA Private Key SHALL be created and restored as required by [Section 6.2.6](#626-private-key-transfer-into-or-from-a-cryptographic-module).
 
 ### 6.2.5 Private key archival
 
@@ -2164,15 +2204,43 @@ Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Priva
 
 If the Issuing CA generated the Private Key on behalf of the Subordinate CA, then the Issuing CA SHALL encrypt the Private Key for transport to the Subordinate CA. If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
+For the purposes of these Requirements, a transfer of a CA Private Key is any operation that causes the CA Private Key, or a copy of it, to leave or to enter a Qualifying Module. Backup, restoration, replication and migration are transfers.
+
+Effective 2027-03-15, each transfer of a CA Private Key SHALL meet all of the following requirements:
+
+1. Each module that the CA Private Key leaves or enters is a Qualifying Module that is operated as required by [Section 6.2.1](#621-cryptographic-module-standards-and-controls). The CA Private Key is not made usable anywhere other than within a Qualifying Module.
+2. Outside the Qualifying Modules, the CA Private Key exists only in one of the two forms described in [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls). No software or system outside a Qualifying Module has access to the CA Private Key in any other form at any point in the transfer.
+3. Before the CA Private Key is encrypted for transfer, the CA confirms, using evidence produced by a Qualifying Module, that the key-encryption key meets the requirements of [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls).
+4. The transfer is performed by personnel in Trusted Roles under multi-person control.
+5. The transfer follows a script that meets the requirements that [Section 6.1.1.1](#6111-ca-key-pair-generation) sets for a Key Generation Script, including the requirements for rehearsal and for departures from the script, and is video recorded.
+6. Before the CA Private Key is used in a module that it has entered, the CA obtains a signature that the CA Private Key produces within that module and verifies it using the Public Key whose SubjectPublicKeyInfo hash is in the Key Generation Record for that CA Key Pair.
+7. The CA records the date, the SubjectPublicKeyInfo hash of the CA Key Pair, the make, model, serial number and firmware version of each Qualifying Module involved, any backup medium involved, the mechanism used, the key-encryption key or set of shares used, the result of the check in item 6, and the persons involved.
+
+Items 4 through 7 do not apply to replication that Qualifying Modules perform automatically, using a mechanism that is part of their validated configuration, among a group of modules that the CA has configured for that purpose. Adding a module to such a group is a transfer to which all of the items apply.
+
+Effective 2027-03-15, where two modules have no mechanism in common that meets these requirements, the CA SHALL NOT transfer a CA Private Key between them. If the CA requires a CA Key Pair in the second module, it SHALL generate a new CA Key Pair as required by [Section 6.1.1.1](#6111-ca-key-pair-generation).
+
+Effective 2027-09-15, the CA SHALL NOT transfer into a Qualifying Module, for use as a CA Private Key, a Private Key that was not generated within a Qualifying Module.
+
+Effective 2027-09-15, the CA SHALL maintain an inventory that identifies, by SubjectPublicKeyInfo hash, each CA Key Pair for which it holds the CA Private Key, and each Qualifying Module and backup medium that holds, or is configured to receive, a copy of that CA Private Key in any form. At least once in each Audit Period, the CA SHALL reconcile the inventory against the contents of each Qualifying Module, so that every private key and key-encryption key in a partition that holds a CA Private Key is accounted for in the inventory. For a backup medium that has remained in secure storage since the previous reconciliation, the CA MAY rely on custody records. The CA SHALL record the result of each reconciliation and SHALL make it available to its Qualified Auditor.
+
 ### 6.2.7 Private key storage on cryptographic module
 
 The CA SHALL protect its Private Key in a system or device that has been validated as meeting at least FIPS 140-2 level 3, FIPS 140-3 level 3, or an appropriate Common Criteria Protection Profile or Security Target, EAL 4 (or higher), which includes requirements to protect the Private Key and other assets against known threats.
 
 ### 6.2.8 Activating Private Keys
 
+Effective 2027-09-15, before a signing system first uses a CA Private Key, and after any change to the configuration that determines which key the system uses, the CA SHALL obtain a signature from the system and SHALL verify it using the Public Key in the CA Certificate for which the system signs.
+
+Effective 2027-09-15, the CA SHALL NOT select a CA Private Key for use on the basis of a label or other operator-assigned name alone.
+
+Effective 2027-09-15, if the CA finds a private key that is not accounted for in the inventory required by [Section 6.2.6](#626-private-key-transfer-into-or-from-a-cryptographic-module), or finds that a Certificate, CRL or OCSP response signed by one of its systems does not verify using the expected Public Key, the CA SHALL determine the origin of each private key involved, by reference to the Key Generation Record and the inventory, before it changes which key the system uses. The CA SHALL record what it finds.
+
 ### 6.2.9 Deactivating Private Keys
 
 ### 6.2.10 Destroying Private Keys
+
+Effective 2027-09-15, the CA SHALL record the destruction of each CA Private Key and of each copy of it, SHALL update the inventory required by [Section 6.2.6](#626-private-key-transfer-into-or-from-a-cryptographic-module), and SHALL NOT destroy a private key that is not accounted for in the inventory until it has determined and recorded the origin of that key.
 
 ### 6.2.11 Cryptographic Module Rating
 
@@ -3841,9 +3909,11 @@ The Audit Report MUST contain at least the following clearly-labelled informatio
 10. (for audits conducted in accordance with any of the ETSI standards) a statement to indicate if the audit was a full audit or a surveillance audit, and which portions of the criteria were applied and evaluated, e.g. DVCP, OVCP, NCP, NCP+, LCP, EVCP, EVCP+, QCP-w, Part 1 (General Requirements), and/or Part 2 (Requirements for Trust Service Providers).
 11. (for audits conducted in accordance with any of the ETSI standards) a statement to indicate that the auditor referenced the applicable CA/Browser Forum criteria, such as this document, and the version used.
 
+For each Audit Report that covers an Audit Period ending on or after 2027-09-15, or a point in time on or after 2027-09-15, the Audit Report MUST also contain the SHA-256 hash of the SubjectPublicKeyInfo of each CA Key Pair for which the CA held the Private Key at any time during the Audit Period or at the point in time. This includes each CA Key Pair for which no CA Certificate has been issued. The Audit Report MUST identify each of these CA Key Pairs that was generated, destroyed, or transferred as described in [Section 6.2.6](#626-private-key-transfer-into-or-from-a-cryptographic-module) during the Audit Period, other than by the automatic replication described in that section.
+
 An authoritative English language version of the publicly available audit information MUST be provided by the Qualified Auditor and the CA SHALL ensure it is publicly available.
 
-The Audit Report MUST be available as a PDF, and SHALL be text searchable for all information required. Each SHA-256 fingerprint within the Audit Report MUST be uppercase letters and MUST NOT contain colons, spaces, or line feeds.
+The Audit Report MUST be available as a PDF, and SHALL be text searchable for all information required. Each SHA-256 fingerprint within the Audit Report MUST be uppercase letters and MUST NOT contain colons, spaces, or line feeds. Each SubjectPublicKeyInfo hash within the Audit Report MUST be formatted in the same way.
 
 ## 8.7 Self-Audits
 
