@@ -201,9 +201,11 @@ The following Certificate Policy identifiers are reserved for use by CAs to asse
 | 2027-03-15 | [4.2.2.1.2](#42212-caa-parameters) | CAs MUST process the `accounturi` and `validationmethods` parameters as specified in [RFC 8657](https://datatracker.ietf.org/doc/html/rfc8657). |
 | 2027-03-15 | [4.2.2.1.2](#42212-caa-parameters) | If the CA does not identify the Subscriber account via an ACME Account URL as described in [RFC 8555](https://datatracker.ietf.org/doc/html/rfc8555), the CA MUST define the supported format of the `accounturi` in Section 4.2 of their CP and/or CPS, and SHOULD comply with the `acct` URI scheme defined in [RFC 7565](https://datatracker.ietf.org/doc/html/rfc7565) |
 | 2027-03-15 | [6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls) and [6.2.6](#626-private-key-transfer-into-or-from-a-cryptographic-module) | CAs SHALL NOT create a copy of a CA Private Key outside a Qualifying Module other than in encrypted form or as threshold shares, and SHALL transfer CA Private Keys only between Qualifying Modules. |
+| 2027-03-15 | [6.1.1.1](#6111-ca-key-pair-generation) | For all CA Key Pairs, CAs SHALL follow a rehearsed Key Generation Script, obtain a Qualified Auditor's report, create a Key Generation Record, and check each CA Public Key before it is certified. |
 | 2027-09-15 | [6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls) | CA Private Keys SHALL NOT exist outside a Qualifying Module other than in encrypted form or as threshold shares. CAs SHALL operate Qualifying Modules in their validated mode at all times, maintain an inventory of CA Key Pairs, and be able to demonstrate the protection of each CA Private Key. |
 | 2027-09-15 | [4.9.1.2](#4912-reasons-for-revoking-a-subordinate-ca-certificate) | Issuing CAs SHALL revoke Subordinate CA Certificates where the Private Key existed unprotected outside a cryptographic module before 2027-03-15. |
 | 2027-09-15 | [8.6](#86-communication-of-results) | Audit Reports MUST identify each CA Key Pair held by the CA by SubjectPublicKeyInfo hash. |
+| 2027-09-15 | [6.1.1.1](#6111-ca-key-pair-generation) | CAs SHALL describe their CA Key Pair generation process in Section 6.1.1 of their CP and/or CPS. |
 | 2028-03-15 | [3.2.2.4](#3224-validation-of-domain-authorization-or-control) and [3.2.2.5](#3225-authentication-for-an-ip-address) | CAs MUST NOT rely on Methods 3.2.2.4.4, 3.2.2.4.13, and 3.2.2.4.14 to issue Subscriber Certificates. |
 | 2029-03-15 | [4.2.1](#421-performing-identification-and-authentication-functions) | Domain Name and IP Address validation maximum data reuse period is 10 days. |
 | 2029-03-15 | [6.3.2](#632-certificate-operational-periods-and-key-pair-usage-periods) | Maximum validity period of Subscriber Certificates is 47 days. |
@@ -2073,29 +2075,83 @@ Mass revocation provisions MUST include:
 
 #### 6.1.1.1 CA Key Pair Generation
 
-For CA Key Pairs that are either:
+Prior to 2027-03-15, the CA SHALL adhere to Section 6.1.1.1 of these Requirements *or* Section 6.1.1.1 of Version 2.3.1 of the Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates. Effective 2027-03-15, the CA SHALL adhere to Section 6.1.1.1 of these Requirements.
 
-  i. used as a CA Key Pair for a Root Certificate or
-  ii. used as a CA Key Pair for a Subordinate CA Certificate, where the Subordinate CA is not the operator of the Root CA or an Affiliate of the Root CA,
-
-the CA SHALL:
+For all CA Key Pairs, the CA SHALL:
 
 1. prepare and follow a Key Generation Script,
 2. have a Qualified Auditor witness the CA Key Pair generation process or record a video of the entire CA Key Pair generation process, and
 3. have a Qualified Auditor issue a report opining that the CA followed its key ceremony during its Key and Certificate generation process and the controls used to ensure the integrity and confidentiality of the Key Pair.
 
-For other CA Key Pairs that are for the operator of the Root CA or an Affiliate of the Root CA, the CA SHOULD:
-
-1. prepare and follow a Key Generation Script and
-2. have a Qualified Auditor witness the CA Key Pair generation process or record a video of the entire CA Key Pair generation process.
+A report that a Qualified Auditor issues under this section MAY cover more than one CA Key Pair.
 
 In all cases, the CA SHALL:
 
 1. generate the CA Key Pair in a physically secured environment as described in the CA's Certificate Policy and/or Certification Practice Statement;
 2. generate the CA Key Pair using personnel in Trusted Roles under the principles of multiple person control and split knowledge;
-3. generate the CA Key Pair within cryptographic modules meeting the applicable technical and business requirements as disclosed in the CA's Certificate Policy and/or Certification Practice Statement;
+3. generate the CA Key Pair within a Qualifying Module that is operated as required by [Section 6.2.1](#621-cryptographic-module-standards-and-controls);
 4. log its CA Key Pair generation activities; and
-5. maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in its Certificate Policy and/or Certification Practice Statement and (if applicable) its Key Generation Script.
+5. maintain effective controls to provide reasonable assurance that the Private Key was generated and protected in conformance with the procedures described in its Certificate Policy and/or Certification Practice Statement and its Key Generation Script.
+
+A Key Generation Script SHALL include all of the following:
+
+1. A version identifier.
+2. The Trusted Roles required at each step and the number of persons required in each role.
+3. The make, model and firmware version of each Qualifying Module to be used, the configuration required of it, and the steps that confirm its configuration and mode of operation before a key is generated.
+4. Each operation to be performed on key material, in order, with its expected result.
+5. The algorithm, parameters and protection settings of each key to be generated.
+6. The version and a cryptographic hash of each piece of software that the script causes to run, and the source code of any such software that was written by or for the CA.
+7. The checks that this section requires before a CA Public Key is certified, and the criteria for passing each check.
+8. The records that the ceremony will produce.
+9. The conditions under which the ceremony is to be stopped.
+
+Each Key Generation Script SHALL be consistent with the CA's Certificate Policy and/or Certification Practice Statement. Software written by or for the CA that a Key Generation Script causes to run SHALL be held under version control and SHALL be reviewed, before the rehearsal, by a person in a Trusted Role who did not write it.
+
+Before each CA Key Pair generation, the CA SHALL rehearse the Key Generation Script from start to finish. The rehearsal SHALL use the same version of the Key Generation Script and the same software as the ceremony, and a Qualifying Module of the same make, model, firmware version and configuration. The rehearsal SHALL NOT use a CA Private Key or a module partition that holds a CA Private Key. The keys generated in the rehearsal SHALL pass the checks that this section requires before a CA Public Key is certified and SHALL NOT be certified. If the Key Generation Script or any software that it causes to run changes after the rehearsal, the CA SHALL repeat the rehearsal before the ceremony.
+
+During a ceremony, the CA SHALL NOT add, remove, reorder or alter a step of the Key Generation Script that operates on key material. If such a change occurs or becomes necessary, the CA SHALL stop the ceremony, SHALL NOT certify a CA Public Key generated in it, and SHALL NOT resume until the revised Key Generation Script has been rehearsed. The CA SHALL record every other departure from the Key Generation Script in the Key Generation Record and SHALL disclose it to the Qualified Auditor.
+
+For each CA Key Pair that it generates, the CA SHALL create a Key Generation Record that contains all of the following:
+
+1. The SHA-256 hash of the SubjectPublicKeyInfo of the CA Public Key, encoded as specified in [Section 7.1.3.1](#7131-subjectpublickeyinfo). The CA SHALL obtain the Public Key for this purpose from the Qualifying Module at the time of generation, before any other operation is performed on the CA Private Key.
+2. The make, model, serial number and firmware version of the Qualifying Module in which the CA Key Pair was generated, and its configuration and mode of operation at that time.
+3. Evidence produced by the Qualifying Module that the CA Key Pair was generated within it, such as a signed attestation of key origin or the value of an attribute that the module sets only on keys that it generated.
+4. The version of the Key Generation Script that was followed and the date of its rehearsal.
+5. The result of each check that this section requires before the CA Public Key is certified.
+6. Each departure from the Key Generation Script.
+
+The CA SHALL identify each CA Key Pair in its Key Generation Scripts, Key Generation Records and other records by the hash described in item 1. A label or other operator-assigned name SHALL NOT be the only means of identifying a CA Key Pair.
+
+Before the CA creates a Certificate Signing Request for a CA Public Key, and before a CA Certificate that contains a CA Public Key is signed, the CA that holds the corresponding CA Private Key SHALL do all of the following:
+
+1. Confirm that the SHA-256 hash of the SubjectPublicKeyInfo to be certified is equal to the hash in the Key Generation Record for that CA Key Pair.
+2. Obtain a signature that the CA Private Key produces within the Qualifying Module in which it will be used, and verify the signature using the Public Key to be certified.
+3. Confirm that the Public Key meets the requirements of [Section 6.1.5](#615-key-sizes) and [Section 6.1.6](#616-public-key-parameters-generation-and-quality-checking), and that it is not a Public Key for which these Requirements require the CA to reject a certificate request or to refuse to issue a Certificate.
+4. For an ECDSA key, confirm that the Public Key does not correspond to a private scalar `d` for which `d` or `n - d` is less than 2^32, where `n` is the order of the curve.
+
+Before an Issuing CA signs a CA Certificate, the Issuing CA SHALL perform the checks in items 3 and 4 above on the Public Key to be certified. If the corresponding CA Private Key is held by an organization that is neither the Issuing CA nor an Affiliate of the Issuing CA, the Issuing CA SHALL also do all of the following:
+
+1. Obtain the Key Generation Record for the CA Key Pair and the report that a Qualified Auditor issued under this section for its generation.
+2. Confirm that the SHA-256 hash of the SubjectPublicKeyInfo to be certified is equal to the hash in the Key Generation Record.
+3. Verify, using the Public Key to be certified, a signature produced by the corresponding CA Private Key, such as the signature on a Certificate Signing Request.
+
+For a CA Key Pair that was generated before 2027-03-15, the CA SHALL record the SHA-256 hash of the SubjectPublicKeyInfo of the CA Public Key, taken from the CA's records of the generation of the CA Key Pair or from a CA Certificate containing the Public Key that was issued before 2027-03-15. That record takes the place of the Key Generation Record for the purposes of the checks in this section and of [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls).
+
+The Key Generation Script, the Key Generation Record, any video recording made under this section, and the Qualified Auditor's report are records of CA key lifecycle events for the purposes of [Section 5.4.1](#541-types-of-events-recorded) and SHALL be retained as required by [Section 5.4.3](#543-retention-period-for-audit-log).
+
+Effective 2027-09-15, the CA SHALL describe its CA Key Pair generation process in Section 6.1.1 of its Certificate Policy and/or Certification Practice Statement in sufficient detail that each CA Key Pair generation can be assessed against the description. The description SHALL cover at least the following:
+
+1. The Trusted Roles and the number of persons required.
+2. The physically secured environment.
+3. The type of Qualifying Module used and the standard and level to which it is validated.
+4. The key algorithms and parameters.
+5. The phases of the ceremony, in order.
+6. The checks performed before a CA Public Key is certified.
+7. The handling of departures from the Key Generation Script.
+8. The mechanisms that the CA permits for the backup and transfer of CA Private Keys.
+9. The records that are retained.
+
+The description SHOULD identify roles by title and SHOULD NOT name individuals.
 
 #### 6.1.1.2 RA Key Pair Generation
 
