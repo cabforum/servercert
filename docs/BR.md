@@ -2116,9 +2116,10 @@ For each CA Key Pair that it generates, the CA SHALL create a Key Generation Rec
 1. The SHA-256 hash of the SubjectPublicKeyInfo of the CA Public Key, encoded as specified in [Section 7.1.3.1](#7131-subjectpublickeyinfo). The CA SHALL obtain the Public Key for this purpose from the Qualifying Module at the time of generation, before any other operation is performed on the CA Private Key.
 2. The make, model, serial number and firmware version of the Qualifying Module in which the CA Key Pair was generated, and its configuration and mode of operation at that time.
 3. Evidence produced by the Qualifying Module that the CA Key Pair was generated within it, such as a signed attestation of key origin or the value of an attribute that the module sets only on keys that it generated.
-4. The version of the Key Generation Script that was followed and the date of its rehearsal.
-5. The result of each check that this section requires before the CA Public Key is certified.
-6. Each departure from the Key Generation Script.
+4. The protection settings of the CA Private Key as reported by the Qualifying Module immediately after generation, including whether and in what form the module will export it or include it in a backup or snapshot.
+5. The version of the Key Generation Script that was followed and the date of its rehearsal.
+6. The result of each check that this section requires before the CA Public Key is certified.
+7. Each departure from the Key Generation Script.
 
 The CA SHALL identify each CA Key Pair in its Key Generation Scripts, Key Generation Records and other records by the hash described in item 1. A label or other operator-assigned name SHALL NOT be the only means of identifying a CA Key Pair.
 
@@ -2231,9 +2232,11 @@ Effective 2027-09-15, the CA SHALL be able to demonstrate that each CA Private K
 
 Effective 2027-03-15, the CA SHALL operate each Qualifying Module in the mode of operation and configuration in which it was validated (for example, the FIPS Approved mode of operation) throughout each CA Key Pair generation and each transfer of a CA Private Key. Effective 2027-09-15, the CA SHALL operate each Qualifying Module that holds a CA Private Key in that mode of operation and configuration at all times. While either requirement applies to a Qualifying Module, the CA SHALL NOT disable, suspend or bypass that mode of operation for any purpose, including as a step of a Key Generation Script or as an approved exception.
 
-The CA MAY operate a Qualifying Module with a firmware version later than the validated version, provided that the vendor supports that version, that the module remains in the mode of operation in which it was validated, and that the CA records the firmware version and the reason for using it.
+Effective 2027-03-15, the CA SHALL operate each Qualifying Module in the mode of operation and configuration in which it was validated (for example, the FIPS Approved mode of operation) throughout each CA Key Pair generation and each transfer of a CA Private Key. Effective 2027-03-15, the CA SHALL NOT take a Qualifying Module that holds a CA Private Key out of that mode of operation. Effective 2027-09-15, the CA SHALL operate each Qualifying Module that holds a CA Private Key in that mode of operation and configuration at all times. While any of these requirements applies to a Qualifying Module, the CA SHALL NOT disable, suspend or bypass that mode of operation for any purpose, including as a step of a Key Generation Script or as an approved exception.
 
-Effective 2027-09-15, the CA SHALL configure each Qualifying Module that holds a CA Private Key, or the partition or equivalent security domain of the module that holds it, so that the module itself enforces both of the following:
+The CA MAY operate a Qualifying Module with a firmware version released by the vendor that is later than the validated version, provided that the vendor supports that version, that the module remains in the mode of operation in which it was validated, and that the CA records the firmware version and the reason for using it. Effective 2027-03-15, the CA SHALL NOT load into a Qualifying Module that holds a CA Private Key any code that was not released by the vendor of the module.
+
+Effective 2027-09-15, the CA SHALL configure each Qualifying Module that holds a CA Private Key, or the partition or equivalent security domain of the module that holds it, together with the protection settings of each CA Private Key, so that the module itself enforces both of the following:
 
 1. The module does not output a CA Private Key in any form other than one of the two forms described in [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls).
 2. The module does not accept a private key from outside the module in any form other than one of the two forms described in [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls).
@@ -2260,7 +2263,7 @@ Parties other than the Subordinate CA SHALL NOT archive the Subordinate CA Priva
 
 If the Issuing CA generated the Private Key on behalf of the Subordinate CA, then the Issuing CA SHALL encrypt the Private Key for transport to the Subordinate CA. If the Issuing CA becomes aware that a Subordinate CA's Private Key has been communicated to an unauthorized person or an organization not affiliated with the Subordinate CA, then the Issuing CA SHALL revoke all certificates that include the Public Key corresponding to the communicated Private Key.
 
-For the purposes of these Requirements, a transfer of a CA Private Key is any operation that causes the CA Private Key, or a copy of it, to leave or to enter a Qualifying Module. Backup, restoration, replication and migration are transfers.
+For the purposes of these Requirements, a transfer of a CA Private Key is any operation that causes the CA Private Key, or a copy of it, to leave or to enter a Qualifying Module. Backup, restoration, replication, migration, and the taking or loading of a snapshot of a module or of a container within it are transfers, regardless of what the module vendor or its operator calls the operation.
 
 Effective 2027-03-15, each transfer of a CA Private Key SHALL meet all of the following requirements:
 
@@ -2278,7 +2281,7 @@ Effective 2027-03-15, where two modules have no mechanism in common that meets t
 
 Effective 2027-09-15, the CA SHALL NOT transfer into a Qualifying Module, for use as a CA Private Key, a Private Key that was not generated within a Qualifying Module.
 
-Effective 2027-09-15, the CA SHALL maintain an inventory that identifies, by SubjectPublicKeyInfo hash, each CA Key Pair for which it holds the CA Private Key, and each Qualifying Module and backup medium that holds, or is configured to receive, a copy of that CA Private Key in any form. At least once in each Audit Period, the CA SHALL reconcile the inventory against the contents of each Qualifying Module, so that every private key and key-encryption key in a partition that holds a CA Private Key is accounted for in the inventory. For a backup medium that has remained in secure storage since the previous reconciliation, the CA MAY rely on custody records. The CA SHALL record the result of each reconciliation and SHALL make it available to its Qualified Auditor.
+Effective 2027-09-15, the CA SHALL maintain an inventory that identifies, by SubjectPublicKeyInfo hash, each CA Key Pair for which it holds the CA Private Key, and each Qualifying Module and backup medium that holds, or is configured to receive, a copy of that CA Private Key in any form. For each CA Private Key or key-encryption key that exists as shares in the threshold scheme described in [Section 6.2](#62-private-key-protection-and-cryptographic-module-engineering-controls), the inventory SHALL also identify who holds each share and where it is stored. At least once in each Audit Period, the CA SHALL reconcile the inventory against the contents of each Qualifying Module, so that every private key and key-encryption key in a partition that holds a CA Private Key is accounted for in the inventory. For a backup medium that has remained in secure storage since the previous reconciliation, the CA MAY rely on custody records. The CA SHALL record the result of each reconciliation and SHALL make it available to its Qualified Auditor.
 
 ### 6.2.7 Private key storage on cryptographic module
 
